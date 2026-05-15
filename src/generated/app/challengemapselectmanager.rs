@@ -35,39 +35,369 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-challengemapselectmanager")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ChallengeMapSelectManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedata :: ChallengeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager as ::unity2::ClassIdentity>::class(),
+                "Create",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        default_challenge_data: crate::app::challengedata::ChallengeData,
+        return_event_handler : crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::challengemapselectmanager::ChallengeMapSelectManager {
+        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot , crate :: app :: challengedata :: ChallengeData , crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(
+            super_,
+            root,
+            default_challenge_data,
+            return_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedata :: ChallengeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ChallengeMapSelectManager,
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        default_challenge_data: crate::app::challengedata::ChallengeData,
+        return_event_handler : crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectManager,
+            crate::app::procinst::ProcInst,
+            crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+            crate::app::challengedata::ChallengeData,
+            crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            root,
+            default_challenge_data,
+            return_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager as ::unity2::ClassIdentity>::NAME,
+                    "OnSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: ChallengeMapSelectManager,
+        challenge_data: crate::app::challengedata::ChallengeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectManager,
+            crate::app::challengedata::ChallengeData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_select::get_offset() as isize),
+        );
+        inner(this, challenge_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_decide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager as ::unity2::ClassIdentity>::class(),
+                "OnDecide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager as ::unity2::ClassIdentity>::NAME,
+                    "OnDecide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_decide(
+        this: ChallengeMapSelectManager,
+        challenge_data: crate::app::challengedata::ChallengeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectManager,
+            crate::app::challengedata::ChallengeData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_decide::get_offset() as isize),
+        );
+        inner(this, challenge_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_request_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager as ::unity2::ClassIdentity>::class(),
+                "OnRequestClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager as ::unity2::ClassIdentity>::NAME,
+                    "OnRequestClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_request_close(
+        this: ChallengeMapSelectManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ChallengeMapSelectManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_request_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
 impl ChallengeMapSelectManager {
     #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler)` overload"]
-    #[method(name = "Create", args = 4)]
     pub fn create(
-        super_: crate::app::procinst::ProcInst,
-        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
-        default_challenge_data: crate::app::challengedata::ChallengeData,
-        return_event_handler : crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler,
-    ) -> crate::app::challengemapselectmanager::ChallengeMapSelectManager;
-
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
-        default_challenge_data: crate::app::challengedata::ChallengeData,
-        return_event_handler : crate :: app :: challengemapselectmanager :: ChallengeMapSelectManager_ReturnEventHandler,
-    ) -> ();
-
-    #[doc = "`OnSelect(crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "OnSelect", args = 1)]
-    pub fn on_select(self, challenge_data: crate::app::challengedata::ChallengeData) -> ();
-
-    #[doc = "`OnDecide(crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "OnDecide", args = 1)]
-    pub fn on_decide(self, challenge_data: crate::app::challengedata::ChallengeData) -> ();
-
-    #[doc = "`OnRequestClose()` overload"]
-    #[method(name = "OnRequestClose", args = 0)]
-    pub fn on_request_close(self) -> ();
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        root: impl ::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot>,
+        default_challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
+        return_event_handler: impl ::core::convert::Into<
+            crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler,
+        >,
+    ) -> crate::app::challengemapselectmanager::ChallengeMapSelectManager {
+        unsafe {
+            __ChallengeMapSelectManager_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(default_challenge_data),
+                ::core::convert::Into::into(return_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-challengemapselectmanager")]
+pub trait IChallengeMapSelectManagerMethods: IChallengeMapSelectManager {
+    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler)` overload"]
+    fn ctor(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        root: impl ::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot>,
+        default_challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
+        return_event_handler: impl ::core::convert::Into<
+            crate::app::challengemapselectmanager::ChallengeMapSelectManager_ReturnEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ChallengeMapSelectManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ChallengeMapSelectManager_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(default_challenge_data),
+                ::core::convert::Into::into(return_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect(crate::app::challengedata::ChallengeData)` overload"]
+    fn on_select(
+        self,
+        challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ChallengeMapSelectManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ChallengeMapSelectManager_unity2_raw::on_select(
+                __receiver,
+                ::core::convert::Into::into(challenge_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDecide(crate::app::challengedata::ChallengeData)` overload"]
+    fn on_decide(
+        self,
+        challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ChallengeMapSelectManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ChallengeMapSelectManager_unity2_raw::on_decide(
+                __receiver,
+                ::core::convert::Into::into(challenge_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnRequestClose()` overload"]
+    fn on_request_close(self) -> () {
+        unsafe {
+            let __receiver =
+                <ChallengeMapSelectManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ChallengeMapSelectManager_unity2_raw::on_request_close(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+impl<__T: IChallengeMapSelectManager> IChallengeMapSelectManagerMethods for __T {}
 
 #[cfg(feature = "app-challengemapselectmanager")]
 impl ChallengeMapSelectManager {
@@ -97,19 +427,162 @@ impl ChallengeMapSelectManager {
 }
 
 #[cfg(feature = "app-challengemapselectmanager")]
-#[::unity2::methods]
-impl ChallengeMapSelectManager_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ChallengeMapSelectManager_ReturnEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ChallengeMapSelectManager_ReturnEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectManager_ReturnEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::basicmenu::BasicMenu_Result as ::unity2::IlType>::il_type(),
+                <crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectManager_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectManager_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ChallengeMapSelectManager_ReturnEventHandler,
         result: crate::app::basicmenu::BasicMenu_Result,
         challenge_data: crate::app::challengedata::ChallengeData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectManager_ReturnEventHandler,
+            crate::app::basicmenu::BasicMenu_Result,
+            crate::app::challengedata::ChallengeData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, challenge_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+pub trait IChallengeMapSelectManager_ReturnEventHandlerMethods:
+    IChallengeMapSelectManager_ReturnEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ChallengeMapSelectManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeMapSelectManager_ReturnEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::challengedata::ChallengeData)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>,
+        challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ChallengeMapSelectManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeMapSelectManager_ReturnEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(challenge_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+impl<__T: IChallengeMapSelectManager_ReturnEventHandler>
+    IChallengeMapSelectManager_ReturnEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-challengemapselectmanager")]
@@ -126,4 +599,23 @@ impl ChallengeMapSelectManager_ReturnEventHandler {
         <Self as IChallengeMapSelectManager_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+pub mod prelude {
+    pub use super::ChallengeMapSelectManager;
+    pub use super::ChallengeMapSelectManager_ReturnEventHandler;
+    pub use super::IChallengeMapSelectManager;
+    pub use super::IChallengeMapSelectManagerMethods;
+    pub use super::IChallengeMapSelectManager_ReturnEventHandler;
+    pub use super::IChallengeMapSelectManager_ReturnEventHandlerMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

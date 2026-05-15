@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-assemblyiseditorassembly-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-assemblyiseditorassembly")]
+pub mod prelude {
+    pub use super::AssemblyIsEditorAssembly;
+    pub use super::IAssemblyIsEditorAssembly;
+}

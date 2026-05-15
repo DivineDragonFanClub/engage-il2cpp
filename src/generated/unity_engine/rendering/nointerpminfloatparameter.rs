@@ -27,20 +27,215 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
-#[::unity2::methods]
-impl NoInterpMinFloatParameter {
-    #[doc = "`get_value()` overload"]
-    #[method(name = "get_value", args = 0)]
-    pub fn get_value(self) -> f32;
-
-    #[doc = "`set_value(f32)` overload"]
-    #[method(name = "set_value", args = 1)]
-    pub fn set_value(self, value: f32) -> ();
-
-    #[doc = "`.ctor(f32, f32, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, value: f32, min: f32, override_state: bool) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NoInterpMinFloatParameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::class(),
+                "get_value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::NAME,
+                    "get_value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: NoInterpMinFloatParameter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(NoInterpMinFloatParameter, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::class(),
+                "set_value",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::NAME,
+                    "set_value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_value(
+        this: NoInterpMinFloatParameter,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NoInterpMinFloatParameter, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_value::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoInterpMinFloatParameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NoInterpMinFloatParameter,
+        value: f32,
+        min: f32,
+        override_state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NoInterpMinFloatParameter,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, value, min, override_state, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
+pub trait INoInterpMinFloatParameterMethods: INoInterpMinFloatParameter {
+    #[doc = "`get_value()` overload"]
+    fn get_value(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <NoInterpMinFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoInterpMinFloatParameter_unity2_raw::get_value(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_value(f32)` overload"]
+    fn set_value(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <NoInterpMinFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoInterpMinFloatParameter_unity2_raw::set_value(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(f32, f32, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        min: impl ::core::convert::Into<f32>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NoInterpMinFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoInterpMinFloatParameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
+impl<__T: INoInterpMinFloatParameter> INoInterpMinFloatParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
 impl NoInterpMinFloatParameter {
@@ -56,4 +251,20 @@ impl NoInterpMinFloatParameter {
         <Self as INoInterpMinFloatParameterMethods>::ctor(this, value, min, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
+pub mod prelude {
+    pub use super::INoInterpMinFloatParameter;
+    pub use super::INoInterpMinFloatParameterMethods;
+    pub use super::NoInterpMinFloatParameter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "nn-hid-controllerstrapguide-types")]
 pub use __types::*;
+
+#[cfg(feature = "nn-hid-controllerstrapguide")]
+pub mod prelude {
+    pub use super::ControllerStrapGuide;
+    pub use super::IControllerStrapGuide;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

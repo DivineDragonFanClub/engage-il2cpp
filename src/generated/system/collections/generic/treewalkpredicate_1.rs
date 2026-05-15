@@ -50,3 +50,19 @@ impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
+pub mod prelude {
+    pub use super::ITreeWalkPredicate_1;
+    pub use super::ITreeWalkPredicate_1Methods;
+    pub use super::TreeWalkPredicate_1;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

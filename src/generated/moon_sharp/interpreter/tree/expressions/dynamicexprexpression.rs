@@ -25,37 +25,290 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
-#[::unity2::methods]
-impl DynamicExprExpression {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DynamicExprExpression_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicExprExpression as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicExprExpression as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DynamicExprExpression,
         exp: crate::moon_sharp::interpreter::tree::expression::Expression,
         lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-    ) -> ();
-
-    #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
-    #[method(name = "Eval", args = 1)]
-    pub fn eval(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DynamicExprExpression,
+            crate::moon_sharp::interpreter::tree::expression::Expression,
+            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, exp, lcontext, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_eval {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicExprExpression as ::unity2::ClassIdentity>::class(),
+                "Eval",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicExprExpression as ::unity2::ClassIdentity>::NAME,
+                    "Eval",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn eval(
+        this: DynamicExprExpression,
         context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    #[method(name = "Compile", args = 1)]
-    pub fn compile(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            DynamicExprExpression,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_eval::get_offset() as isize),
+        );
+        inner(this, context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicExprExpression as ::unity2::ClassIdentity>::class(),
+                "Compile",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicExprExpression as ::unity2::ClassIdentity>::NAME,
+                    "Compile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compile(
+        this: DynamicExprExpression,
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    ) -> ();
-
-    #[doc = "`FindDynamic(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
-    #[method(name = "FindDynamic", args = 1)]
-    pub fn find_dynamic(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DynamicExprExpression,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compile::get_offset() as isize),
+        );
+        inner(this, bc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_dynamic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicExprExpression as ::unity2::ClassIdentity>::class(),
+                "FindDynamic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicExprExpression as ::unity2::ClassIdentity>::NAME,
+                    "FindDynamic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_dynamic(
+        this: DynamicExprExpression,
         context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+        let inner: extern "C" fn(
+            DynamicExprExpression,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_dynamic::get_offset() as isize),
+        );
+        inner(this, context, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
+pub trait IDynamicExprExpressionMethods: IDynamicExprExpression {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
+    fn ctor(
+        self,
+        exp: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
+        lcontext: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DynamicExprExpression as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DynamicExprExpression_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(exp),
+                ::core::convert::Into::into(lcontext),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
+    fn eval(
+        self,
+        context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver = <DynamicExprExpression as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DynamicExprExpression_unity2_raw::eval(
+                __receiver,
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn compile(
+        self,
+        bc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DynamicExprExpression as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DynamicExprExpression_unity2_raw::compile(
+                __receiver,
+                ::core::convert::Into::into(bc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindDynamic(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
+    fn find_dynamic(
+        self,
+        context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+        unsafe {
+            let __receiver = <DynamicExprExpression as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DynamicExprExpression_unity2_raw::find_dynamic(
+                __receiver,
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
+impl<__T: IDynamicExprExpression> IDynamicExprExpressionMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
 impl DynamicExprExpression {
@@ -74,4 +327,20 @@ impl DynamicExprExpression {
         <Self as IDynamicExprExpressionMethods>::ctor(this, exp, lcontext);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
+pub mod prelude {
+    pub use super::DynamicExprExpression;
+    pub use super::IDynamicExprExpression;
+    pub use super::IDynamicExprExpressionMethods;
+    pub use crate::moon_sharp::interpreter::tree::expression::IExpression;
+    #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
+    pub use crate::moon_sharp::interpreter::tree::expression::IExpressionMethods;
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

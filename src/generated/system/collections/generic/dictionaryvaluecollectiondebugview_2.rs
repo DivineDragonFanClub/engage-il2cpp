@@ -21,3 +21,12 @@ mod __types {
 
 #[cfg(feature = "system-collections-generic-dictionaryvaluecollectiondebugview_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-dictionaryvaluecollectiondebugview_2")]
+pub mod prelude {
+    pub use super::DictionaryValueCollectionDebugView_2;
+    pub use super::IDictionaryValueCollectionDebugView_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

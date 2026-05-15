@@ -37,3 +37,10 @@ impl<T0: ::unity2::ClassIdentity> IList_1_Interface<T0> {
     #[method(name = "RemoveAt", args = 1)]
     pub fn remove_at(self, index: i32) -> ();
 }
+
+#[cfg(feature = "system-collections-generic-ilist_1_interface")]
+pub mod prelude {
+    pub use super::IIList_1_Interface;
+    pub use super::IIList_1_InterfaceMethods;
+    pub use super::IList_1_Interface;
+}

@@ -16,6 +16,61 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NetEnableSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NetEnableSequence {
+        #[rename(name = "m_WithoutConfirm")]
+        pub m_without_confirm: bool,
+        #[rename(name = "m_CanWriteConfig")]
+        pub m_can_write_config: bool,
+        #[rename(name = "m_IsNetLoginOnce")]
+        pub m_is_net_login_once: bool,
+        #[rename(name = "m_IsReflectNetResult")]
+        pub m_is_reflect_net_result: bool,
+        #[rename(name = "m_ResultFunc")]
+        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        #[rename(name = "m_IsLoginSucceeded")]
+        pub m_is_login_succeeded: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ResultFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NetEnableSequence_ResultFunction {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Arg.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NetEnableSequence_Arg {
+        pub without_confirm: bool,
+        pub can_write_config: bool,
+        pub is_net_login_once: bool,
+        pub is_reflect_net_result: bool,
+        pub result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    }
+
+    impl ::unity2::ClassIdentity for NetEnableSequence_Arg {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NetEnableSequence.Arg";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NetEnableSequence_Arg {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_YesMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -23,6 +78,11 @@ mod __types {
     )]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct NetEnableSequence_ConfirmDialog_YesMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetEnableSequence_ConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog.NoMenuItem")]
@@ -72,85 +132,1182 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NetEnableSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NetEnableSequence {
-        #[rename(name = "m_WithoutConfirm")]
-        pub m_without_confirm: bool,
-        #[rename(name = "m_CanWriteConfig")]
-        pub m_can_write_config: bool,
-        #[rename(name = "m_IsNetLoginOnce")]
-        pub m_is_net_login_once: bool,
-        #[rename(name = "m_IsReflectNetResult")]
-        pub m_is_reflect_net_result: bool,
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        #[rename(name = "m_IsLoginSucceeded")]
-        pub m_is_login_succeeded: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ResultFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NetEnableSequence_ResultFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetEnableSequence_ConfirmDialog {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Arg.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct NetEnableSequence_Arg {
-        pub without_confirm: bool,
-        pub can_write_config: bool,
-        pub is_net_login_once: bool,
-        pub is_reflect_net_result: bool,
-        pub result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    }
-
-    impl ::unity2::ClassIdentity for NetEnableSequence_Arg {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NetEnableSequence.Arg";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NetEnableSequence_Arg {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-netenablesequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog_YesMenuItem {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetEnableSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: app :: netenablesequence :: NetEnableSequence_Arg as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetEnableSequence,
+        arg: *mut crate::app::netenablesequence::NetEnableSequence_Arg,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetEnableSequence,
+            *mut crate::app::netenablesequence::NetEnableSequence_Arg,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, arg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_confirm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "Confirm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "Confirm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn confirm(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_confirm::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_login {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "Login",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "Login",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn login(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_login::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_message_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "WaitMessageOpen",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "WaitMessageOpen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_message_open(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_wait_message_open::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_message_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "WaitMessageClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "WaitMessageClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_message_close(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_wait_message_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "Result",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "Result",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn result(
+        this: NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_result::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_write_config {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "TryWriteConfig",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "TryWriteConfig",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_write_config(
+        this: NetEnableSequence,
+        is_enable: bool,
+        with_user_data: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_write_config::get_offset() as isize),
+            );
+        inner(this, is_enable, with_user_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_new_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindNewPlay",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindNewPlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_new_play(
+        super_: crate::app::procinst::ProcInst,
+        is_net_login_once: bool,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            bool,
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_new_play::get_offset() as isize),
+        );
+        inner(super_, is_net_login_once, result_func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_config {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindConfig",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindConfig",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_config(
+        super_: crate::app::procinst::ProcInst,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_config::get_offset() as isize),
+        );
+        inner(super_, result_func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_ranking {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindRanking",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindRanking",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_ranking(
+        super_: crate::app::procinst::ProcInst,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_ranking::get_offset() as isize),
+        );
+        inner(super_, result_func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_cape_tower {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindCapeTower",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindCapeTower",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_cape_tower(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind_cape_tower::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::netenablesequence::NetEnableSequence as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindImpl",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        p: crate::app::netenablesequence::NetEnableSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::netenablesequence::NetEnableSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_impl::get_offset() as isize),
+        );
+        inner(super_, p, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence {
+    #[doc = "`CreateBindNewPlay(crate::app::procinst::ProcInst, bool, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    pub fn create_bind_new_play(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_net_login_once: impl ::core::convert::Into<bool>,
+        result_func: impl ::core::convert::Into<
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        >,
+    ) -> () {
+        unsafe {
+            __NetEnableSequence_unity2_raw::create_bind_new_play(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(is_net_login_once),
+                ::core::convert::Into::into(result_func),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindConfig(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    pub fn create_bind_config(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        result_func: impl ::core::convert::Into<
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        >,
+    ) -> () {
+        unsafe {
+            __NetEnableSequence_unity2_raw::create_bind_config(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(result_func),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindRanking(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    pub fn create_bind_ranking(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        result_func: impl ::core::convert::Into<
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        >,
+    ) -> () {
+        unsafe {
+            __NetEnableSequence_unity2_raw::create_bind_ranking(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(result_func),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindCapeTower(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind_cape_tower(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        unsafe {
+            __NetEnableSequence_unity2_raw::create_bind_cape_tower(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence)` overload"]
+    pub fn create_bind_impl(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        p: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence>,
+    ) -> () {
+        unsafe {
+            __NetEnableSequence_unity2_raw::create_bind_impl(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(p),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+pub trait INetEnableSequenceMethods: INetEnableSequence {
+    #[doc = "`.ctor(*mutcrate::app::netenablesequence::NetEnableSequence_Arg)` overload"]
+    fn ctor(self) -> crate::app::netenablesequence::NetEnableSequence_Arg {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::app::netenablesequence::NetEnableSequence_Arg,
+            >::uninit();
+            __NetEnableSequence_unity2_raw::ctor(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Confirm()` overload"]
+    fn confirm(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::confirm(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::postlogin(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitMessageOpen()` overload"]
+    fn wait_message_open(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::wait_message_open(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitMessageClose()` overload"]
+    fn wait_message_close(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::wait_message_close(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Result()` overload"]
+    fn result(self) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryWriteConfig(bool, bool)` overload"]
+    fn try_write_config(
+        self,
+        is_enable: impl ::core::convert::Into<bool>,
+        with_user_data: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NetEnableSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NetEnableSequence_unity2_raw::try_write_config(
+                __receiver,
+                ::core::convert::Into::into(is_enable),
+                ::core::convert::Into::into(with_user_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl<__T: INetEnableSequence> INetEnableSequenceMethods for __T {}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence {
+    #[doc = "`.ctor(*mutcrate::app::netenablesequence::NetEnableSequence_Arg)` — overload selector"]
+    pub fn new(arg: *mut crate::app::netenablesequence::NetEnableSequence_Arg) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequenceMethods>::ctor(this, arg);
+        this
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetEnableSequence_ResultFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ResultFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ResultFunction as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetEnableSequence_ResultFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetEnableSequence_ResultFunction,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ResultFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ResultFunction as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: NetEnableSequence_ResultFunction,
+        is_enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetEnableSequence_ResultFunction,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, is_enable, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+pub trait INetEnableSequence_ResultFunctionMethods: INetEnableSequence_ResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NetEnableSequence_ResultFunction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NetEnableSequence_ResultFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(bool)` overload"]
+    fn invoke(self, is_enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <NetEnableSequence_ResultFunction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NetEnableSequence_ResultFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(is_enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl<__T: INetEnableSequence_ResultFunction> INetEnableSequence_ResultFunctionMethods for __T {}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence_ResultFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequence_ResultFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetEnableSequence_ConfirmDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: NetEnableSequence_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            NetEnableSequence_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: NetEnableSequence_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            NetEnableSequence_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetEnableSequence_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetEnableSequence_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+pub trait INetEnableSequence_ConfirmDialog_YesMenuItemMethods:
+    INetEnableSequence_ConfirmDialog_YesMenuItem
+{
     #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < NetEnableSequence_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetEnableSequence_ConfirmDialog_YesMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < NetEnableSequence_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetEnableSequence_ConfirmDialog_YesMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < NetEnableSequence_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetEnableSequence_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl<__T: INetEnableSequence_ConfirmDialog_YesMenuItem>
+    INetEnableSequence_ConfirmDialog_YesMenuItemMethods for __T
+{
 }
 
 #[cfg(feature = "app-netenablesequence")]
@@ -170,15 +1327,283 @@ impl NetEnableSequence_ConfirmDialog_YesMenuItem {
 }
 
 #[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog_NoMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetEnableSequence_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetEnableSequence_ConfirmDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetEnableSequence_ConfirmDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __NetEnableSequence_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+pub trait INetEnableSequence_ConfirmDialogMethods: INetEnableSequence_ConfirmDialog {
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <NetEnableSequence_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NetEnableSequence_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl<__T: INetEnableSequence_ConfirmDialog> INetEnableSequence_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetEnableSequence_ConfirmDialog_NoMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: NetEnableSequence_ConfirmDialog_NoMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            NetEnableSequence_ConfirmDialog_NoMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetEnableSequence_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetEnableSequence_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetEnableSequence_ConfirmDialog_NoMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetEnableSequence_ConfirmDialog_NoMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+pub trait INetEnableSequence_ConfirmDialog_NoMenuItemMethods:
+    INetEnableSequence_ConfirmDialog_NoMenuItem
+{
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < NetEnableSequence_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetEnableSequence_ConfirmDialog_NoMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < NetEnableSequence_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetEnableSequence_ConfirmDialog_NoMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl<__T: INetEnableSequence_ConfirmDialog_NoMenuItem>
+    INetEnableSequence_ConfirmDialog_NoMenuItemMethods for __T
+{
 }
 
 #[cfg(feature = "app-netenablesequence")]
@@ -198,142 +1623,52 @@ impl NetEnableSequence_ConfirmDialog_NoMenuItem {
 }
 
 #[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_Arg)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, arg: crate::app::netenablesequence::NetEnableSequence_Arg) -> ();
-
-    #[doc = "`Confirm()` overload"]
-    #[method(name = "Confirm", args = 0)]
-    pub fn confirm(self) -> ();
-
-    #[doc = "`Login()` overload"]
-    #[method(name = "Login", args = 0)]
-    pub fn login(self) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`WaitMessageOpen()` overload"]
-    #[method(name = "WaitMessageOpen", args = 0)]
-    pub fn wait_message_open(self) -> ();
-
-    #[doc = "`WaitMessageClose()` overload"]
-    #[method(name = "WaitMessageClose", args = 0)]
-    pub fn wait_message_close(self) -> ();
-
-    #[doc = "`Result()` overload"]
-    #[method(name = "Result", args = 0)]
-    pub fn result(self) -> ();
-
-    #[doc = "`TryWriteConfig(bool, bool)` overload"]
-    #[method(name = "TryWriteConfig", args = 2)]
-    pub fn try_write_config(self, is_enable: bool, with_user_data: bool) -> ();
-
-    #[doc = "`CreateBindNewPlay(crate::app::procinst::ProcInst, bool, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = "CreateBindNewPlay", args = 3)]
-    pub fn create_bind_new_play(
-        super_: crate::app::procinst::ProcInst,
-        is_net_login_once: bool,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-
-    #[doc = "`CreateBindConfig(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = "CreateBindConfig", args = 2)]
-    pub fn create_bind_config(
-        super_: crate::app::procinst::ProcInst,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-
-    #[doc = "`CreateBindRanking(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = "CreateBindRanking", args = 2)]
-    pub fn create_bind_ranking(
-        super_: crate::app::procinst::ProcInst,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-
-    #[doc = "`CreateBindCapeTower(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindCapeTower", args = 1)]
-    pub fn create_bind_cape_tower(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence)` overload"]
-    #[method(name = "CreateBindImpl", args = 2)]
-    pub fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        p: crate::app::netenablesequence::NetEnableSequence,
-    ) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_Arg)` — overload selector"]
-    pub fn new(arg: crate::app::netenablesequence::NetEnableSequence_Arg) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequenceMethods>::ctor(this, arg);
-        this
-    }
-}
-
-#[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_enable: bool) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ResultFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequence_ResultFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::INetEnableSequence;
+    pub use super::INetEnableSequenceMethods;
+    pub use super::INetEnableSequence_ConfirmDialog;
+    pub use super::INetEnableSequence_ConfirmDialogMethods;
+    pub use super::INetEnableSequence_ConfirmDialog_NoMenuItem;
+    pub use super::INetEnableSequence_ConfirmDialog_NoMenuItemMethods;
+    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItem;
+    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItemMethods;
+    pub use super::INetEnableSequence_ResultFunction;
+    pub use super::INetEnableSequence_ResultFunctionMethods;
+    pub use super::NetEnableSequence;
+    pub use super::NetEnableSequence_Arg;
+    pub use super::NetEnableSequence_ConfirmDialog;
+    pub use super::NetEnableSequence_ConfirmDialog_NoMenuItem;
+    pub use super::NetEnableSequence_ConfirmDialog_YesMenuItem;
+    pub use super::NetEnableSequence_Label;
+    pub use super::NetEnableSequence_ResultFunction;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    #[cfg(feature = "app-basicdialogitem")]
+    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
+    #[cfg(feature = "app-basicdialogitemno")]
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    #[cfg(feature = "app-basicdialogitemyes")]
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

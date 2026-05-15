@@ -46,21 +46,225 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-raycasthit2d")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RaycastHit2D_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RaycastHit2D as ::unity2::ClassIdentity>::class(),
+                "get_point",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RaycastHit2D as ::unity2::ClassIdentity>::NAME,
+                    "get_point",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_point(
+        this: RaycastHit2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            RaycastHit2D,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_point::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RaycastHit2D as ::unity2::ClassIdentity>::class(),
+                "get_normal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RaycastHit2D as ::unity2::ClassIdentity>::NAME,
+                    "get_normal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal(
+        this: RaycastHit2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            RaycastHit2D,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RaycastHit2D as ::unity2::ClassIdentity>::class(),
+                "get_distance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RaycastHit2D as ::unity2::ClassIdentity>::NAME,
+                    "get_distance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_distance(
+        this: RaycastHit2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(RaycastHit2D, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_distance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_collider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RaycastHit2D as ::unity2::ClassIdentity>::class(),
+                "get_collider",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RaycastHit2D as ::unity2::ClassIdentity>::NAME,
+                    "get_collider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_collider(
+        this: RaycastHit2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::collider2d::Collider2D {
+        let inner: extern "C" fn(
+            RaycastHit2D,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::collider2d::Collider2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_collider::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-raycasthit2d")]
 impl RaycastHit2D {
     #[doc = "`get_point()` overload"]
-    #[method(name = "get_point", args = 0)]
-    pub fn get_point(self) -> crate::unity_engine::vector2::Vector2;
-
+    pub fn get_point(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __RaycastHit2D_unity2_raw::get_point(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_normal()` overload"]
-    #[method(name = "get_normal", args = 0)]
-    pub fn get_normal(self) -> crate::unity_engine::vector2::Vector2;
-
+    pub fn get_normal(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __RaycastHit2D_unity2_raw::get_normal(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_distance()` overload"]
-    #[method(name = "get_distance", args = 0)]
-    pub fn get_distance(self) -> f32;
-
+    pub fn get_distance(self) -> f32 {
+        unsafe { __RaycastHit2D_unity2_raw::get_distance(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_collider()` overload"]
-    #[method(name = "get_collider", args = 0)]
-    pub fn get_collider(self) -> crate::unity_engine::collider2d::Collider2D;
+    pub fn get_collider(self) -> crate::unity_engine::collider2d::Collider2D {
+        unsafe { __RaycastHit2D_unity2_raw::get_collider(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-raycasthit2d")]
+pub mod prelude {
+    pub use super::RaycastHit2D;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

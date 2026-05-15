@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))]
+    #[::unity2::class(namespace = "App", name = "InteractData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
+    pub struct InteractData {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md"))]
     #[repr(C)]
     #[derive(
@@ -59,54 +64,479 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))]
-    #[::unity2::class(namespace = "App", name = "InteractData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
-    pub struct InteractData {}
 }
 
 #[cfg(feature = "app-interactdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-interactdata")]
-#[::unity2::methods]
-impl InteractData {
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load() -> ();
-
-    #[doc = "`GetDebugName()` overload"]
-    #[method(name = "GetDebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Kind()` overload"]
-    #[method(name = "get_Kind", args = 0)]
-    pub fn get_kind(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Kind(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Kind", args = 1)]
-    pub fn set_kind(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Flag()` overload"]
-    #[method(name = "get_Flag", args = 0)]
-    pub fn get_flag(self) -> crate::app::bitfield32::BitField32;
-
-    #[doc = "`set_Flag(crate::app::bitfield32::BitField32)` overload"]
-    #[method(name = "set_Flag", args = 1)]
-    pub fn set_flag(self, value: crate::app::bitfield32::BitField32) -> ();
-
-    #[doc = "`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "GetInteract", args = 2)]
-    pub fn get_interact(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InteractData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "Load",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "Load",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_debug_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "GetDebugName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "GetDebugName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_debug_name(
+        this: InteractData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_debug_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "get_Kind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "get_Kind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_kind(
+        this: InteractData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_kind::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "set_Kind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "set_Kind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_kind(
+        this: InteractData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InteractData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_kind::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "get_Flag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "get_Flag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flag(
+        this: InteractData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::bitfield32::BitField32 {
+        let inner: extern "C" fn(
+            InteractData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::bitfield32::BitField32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flag::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_flag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::bitfield32::BitField32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "set_Flag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "set_Flag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_flag(
+        this: InteractData,
+        value: crate::app::bitfield32::BitField32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InteractData,
+            crate::app::bitfield32::BitField32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_flag::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interact {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                "GetInteract",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    "GetInteract",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interact(
         current: crate::app::unititem::UnitItem,
         reverse: crate::app::unititem::UnitItem,
-    ) -> crate::app::interactdata::InteractData_Interacts;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::interactdata::InteractData_Interacts {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::interactdata::InteractData_Interacts = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interact::get_offset() as isize),
+        );
+        inner(current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InteractData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InteractData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: InteractData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InteractData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-interactdata")]
+impl InteractData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe { __InteractData_unity2_raw::load(::core::option::Option::None) }
+    }
+    #[doc = "`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"]
+    pub fn get_interact(
+        current: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        reverse: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> crate::app::interactdata::InteractData_Interacts {
+        unsafe {
+            __InteractData_unity2_raw::get_interact(
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-interactdata")]
+pub trait IInteractDataMethods: IInteractData {
+    #[doc = "`GetDebugName()` overload"]
+    fn get_debug_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Kind()` overload"]
+    fn get_kind(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Kind(::unity2::Il2CppString)` overload"]
+    fn set_kind(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::set_kind(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Flag()` overload"]
+    fn get_flag(self) -> crate::app::bitfield32::BitField32 {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::get_flag(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Flag(crate::app::bitfield32::BitField32)` overload"]
+    fn set_flag(self, value: impl ::core::convert::Into<crate::app::bitfield32::BitField32>) -> () {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::set_flag(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <InteractData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InteractData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-interactdata")]
+impl<__T: IInteractData> IInteractDataMethods for __T {}
 
 #[cfg(feature = "app-interactdata")]
 impl InteractData {
@@ -122,4 +552,30 @@ impl InteractData {
         <Self as IInteractDataMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-interactdata")]
+pub mod prelude {
+    pub use super::IInteractData;
+    pub use super::IInteractDataMethods;
+    pub use super::InteractData;
+    pub use super::InteractData_Interacts;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::app::structdata_1::IStructData_1;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

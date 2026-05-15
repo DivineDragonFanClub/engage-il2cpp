@@ -24,16 +24,130 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-gesture")]
-#[::unity2::methods]
-impl Gesture {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-
-    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::gesturestate::GestureState>, i32)` overload"]
-    #[method(name = "GetStates", args = 2)]
-    pub fn get_states(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Gesture_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Gesture as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Gesture as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_states {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: gesturestate :: GestureState > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Gesture as ::unity2::ClassIdentity>::class(),
+                "GetStates",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Gesture as ::unity2::ClassIdentity>::NAME,
+                    "GetStates",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_states(
         p_out_values: ::unity2::Array<crate::nn::hid::gesturestate::GestureState>,
         count: i32,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::gesturestate::GestureState>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_states::get_offset() as isize),
+        );
+        inner(p_out_values, count, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nn-hid-gesture")]
+impl Gesture {
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __Gesture_unity2_raw::initialize(::core::option::Option::None) }
+    }
+    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::gesturestate::GestureState>, i32)` overload"]
+    pub fn get_states(
+        p_out_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::gesturestate::GestureState>,
+        >,
+        count: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __Gesture_unity2_raw::get_states(
+                ::core::convert::Into::into(p_out_values),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nn-hid-gesture")]
+pub mod prelude {
+    pub use super::Gesture;
+    pub use super::IGesture;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

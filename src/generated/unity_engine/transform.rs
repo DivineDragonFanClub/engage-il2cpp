@@ -29,24 +29,248 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-transform")]
-#[::unity2::methods]
-impl Transform_Enumerator {
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, outer: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Transform_Enumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform_Enumerator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Transform_Enumerator,
+        outer: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform_Enumerator,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, outer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform_Enumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    "get_Current",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: Transform_Enumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            Transform_Enumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform_Enumerator as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    "MoveNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_next(
+        this: Transform_Enumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_move_next::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform_Enumerator as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: Transform_Enumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-transform")]
+pub trait ITransform_EnumeratorMethods: ITransform_Enumerator {
+    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
+    fn ctor(
+        self,
+        outer: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform_Enumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_Enumerator_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(outer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Transform_Enumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_Enumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = <Transform_Enumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_Enumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <Transform_Enumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_Enumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-transform")]
+impl<__T: ITransform_Enumerator> ITransform_EnumeratorMethods for __T {}
 
 #[cfg(feature = "unity_engine-transform")]
 impl Transform_Enumerator {
@@ -65,685 +289,8048 @@ impl Transform_Enumerator {
 }
 
 #[cfg(feature = "unity_engine-transform")]
-#[::unity2::methods]
-impl Transform {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_position()` overload"]
-    #[method(name = "get_position", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position", args = 1)]
-    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_localPosition()` overload"]
-    #[method(name = "get_localPosition", args = 0)]
-    pub fn get_local_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_localPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_localPosition", args = 1)]
-    pub fn set_local_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`GetLocalEulerAngles(crate::unity_engine::rotationorder::RotationOrder)` overload"]
-    #[method(name = "GetLocalEulerAngles", args = 1)]
-    pub fn get_local_euler_angles(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Transform_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Transform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_position",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_position",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_position(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_position(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetLocalEulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetLocalEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_euler_angles(
+        this: Transform,
         order: crate::unity_engine::rotationorder::RotationOrder,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`SetLocalEulerAngles(crate::unity_engine::vector3::Vector3, crate::unity_engine::rotationorder::RotationOrder)` overload"]
-    #[method(name = "SetLocalEulerAngles", args = 2)]
-    pub fn set_local_euler_angles(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::rotationorder::RotationOrder,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_euler_angles::get_offset() as isize),
+        );
+        inner(this, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetLocalEulerAngles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetLocalEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_euler_angles(
+        this: Transform,
         euler: crate::unity_engine::vector3::Vector3,
         order: crate::unity_engine::rotationorder::RotationOrder,
-    ) -> ();
-
-    #[doc = "`SetLocalEulerHint(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLocalEulerHint", args = 1)]
-    pub fn set_local_euler_hint(self, euler: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_eulerAngles()` overload"]
-    #[method(name = "get_eulerAngles", args = 0)]
-    pub fn get_euler_angles(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_eulerAngles", args = 1)]
-    pub fn set_euler_angles(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_localEulerAngles()` overload"]
-    #[method(name = "get_localEulerAngles", args = 0)]
-    pub fn get_local_euler_angles_2(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_localEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_localEulerAngles", args = 1)]
-    pub fn set_local_euler_angles_2(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_right()` overload"]
-    #[method(name = "get_right", args = 0)]
-    pub fn get_right(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_right(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_right", args = 1)]
-    pub fn set_right(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_up()` overload"]
-    #[method(name = "get_up", args = 0)]
-    pub fn get_up(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_up(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_up", args = 1)]
-    pub fn set_up(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_forward()` overload"]
-    #[method(name = "get_forward", args = 0)]
-    pub fn get_forward(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_forward(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_forward", args = 1)]
-    pub fn set_forward(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rotation()` overload"]
-    #[method(name = "get_rotation", args = 0)]
-    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_rotation", args = 1)]
-    pub fn set_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_localRotation()` overload"]
-    #[method(name = "get_localRotation", args = 0)]
-    pub fn get_local_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_localRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_localRotation", args = 1)]
-    pub fn set_local_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_rotationOrder()` overload"]
-    #[method(name = "get_rotationOrder", args = 0)]
-    pub fn get_rotation_order(self) -> crate::unity_engine::rotationorder::RotationOrder;
-
-    #[doc = "`set_rotationOrder(crate::unity_engine::rotationorder::RotationOrder)` overload"]
-    #[method(name = "set_rotationOrder", args = 1)]
-    pub fn set_rotation_order(self, value: crate::unity_engine::rotationorder::RotationOrder)
-        -> ();
-
-    #[doc = "`GetRotationOrderInternal()` overload"]
-    #[method(name = "GetRotationOrderInternal", args = 0)]
-    pub fn get_rotation_order_internal(self) -> i32;
-
-    #[doc = "`SetRotationOrderInternal(crate::unity_engine::rotationorder::RotationOrder)` overload"]
-    #[method(name = "SetRotationOrderInternal", args = 1)]
-    pub fn set_rotation_order_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::rotationorder::RotationOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_euler_angles::get_offset() as isize),
+        );
+        inner(this, euler, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_euler_hint {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetLocalEulerHint",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetLocalEulerHint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_euler_hint(
+        this: Transform,
+        euler: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_euler_hint::get_offset() as isize),
+        );
+        inner(this, euler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_eulerAngles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_eulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_euler_angles(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_euler_angles::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_eulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_eulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_euler_angles(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_euler_angles::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_euler_angles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localEulerAngles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_euler_angles_2(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_euler_angles_2::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_euler_angles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localEulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_euler_angles_2(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_euler_angles_2::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_right",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_right",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_right(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_right::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_right",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_right",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_right(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_right::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_up",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_up",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_up(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_up::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_up",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_up",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_up(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_up::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_forward {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_forward",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_forward",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_forward(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_forward::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_forward {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_forward",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_forward",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_forward(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_forward::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_rotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_rotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation(
+        this: Transform,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_rotation(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_rotation(
+        this: Transform,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_rotationOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_order(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rotationorder::RotationOrder {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rotationorder::RotationOrder = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_order::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_rotationOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_order(
+        this: Transform,
+        value: crate::unity_engine::rotationorder::RotationOrder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::rotationorder::RotationOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_order::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_order_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetRotationOrderInternal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetRotationOrderInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_order_internal(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rotation_order_internal::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_order_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetRotationOrderInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetRotationOrderInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_order_internal(
+        this: Transform,
         rotation_order: crate::unity_engine::rotationorder::RotationOrder,
-    ) -> ();
-
-    #[doc = "`get_localScale()` overload"]
-    #[method(name = "get_localScale", args = 0)]
-    pub fn get_local_scale(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_localScale(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_localScale", args = 1)]
-    pub fn set_local_scale(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_parent()` overload"]
-    #[method(name = "get_parent", args = 0)]
-    pub fn get_parent(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`set_parent(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "set_parent", args = 1)]
-    pub fn set_parent(self, value: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`get_parentInternal()` overload"]
-    #[method(name = "get_parentInternal", args = 0)]
-    pub fn get_parent_internal(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`set_parentInternal(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "set_parentInternal", args = 1)]
-    pub fn set_parent_internal(self, value: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`SetParent(crate::unity_engine::transform::Transform, bool)` overload"]
-    #[method(name = "SetParent", args = 2)]
-    pub fn set_parent_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::rotationorder::RotationOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_order_internal::get_offset() as isize),
+        );
+        inner(this, rotation_order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_scale(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_scale::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localScale",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_scale(
+        this: Transform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_scale::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_parent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_parent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parent(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_parent::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_parent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_parent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parent(
+        this: Transform,
+        value: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_parent::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parent_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_parentInternal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_parentInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parent_internal(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_parent_internal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parent_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_parentInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_parentInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parent_internal(
+        this: Transform,
+        value: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_parent_internal::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parent_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetParent",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parent_2(
+        this: Transform,
         parent: crate::unity_engine::transform::Transform,
         world_position_stays: bool,
-    ) -> ();
-
-    #[doc = "`get_worldToLocalMatrix()` overload"]
-    #[method(name = "get_worldToLocalMatrix", args = 0)]
-    pub fn get_world_to_local_matrix(self) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
-    #[doc = "`get_localToWorldMatrix()` overload"]
-    #[method(name = "get_localToWorldMatrix", args = 0)]
-    pub fn get_local_to_world_matrix(self) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
-    #[doc = "`SetPositionAndRotation(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetPositionAndRotation", args = 2)]
-    pub fn set_position_and_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_parent_2::get_offset() as isize),
+        );
+        inner(this, parent, world_position_stays, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_world_to_local_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_worldToLocalMatrix",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_worldToLocalMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_world_to_local_matrix(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_world_to_local_matrix::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_to_world_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localToWorldMatrix",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localToWorldMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_to_world_matrix(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_to_world_matrix::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_and_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetPositionAndRotation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetPositionAndRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_and_rotation(
+        this: Transform,
         position: crate::unity_engine::vector3::Vector3,
         rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`Translate(crate::unity_engine::vector3::Vector3, crate::unity_engine::space::Space)` overload"]
-    #[method(name = "Translate", args = 2)]
-    pub fn translate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_and_rotation::get_offset() as isize),
+        );
+        inner(this, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::space::Space as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate(
+        this: Transform,
         translation: crate::unity_engine::vector3::Vector3,
         relative_to: crate::unity_engine::space::Space,
-    ) -> ();
-
-    #[doc = "`Translate(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Translate", args = 1)]
-    pub fn translate_2(self, translation: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`Translate(f32, f32, f32, crate::unity_engine::space::Space)` overload"]
-    #[method(name = "Translate", args = 4)]
-    pub fn translate_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::space::Space,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translate::get_offset() as isize),
+        );
+        inner(this, translation, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_2(
+        this: Transform,
+        translation: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translate_2::get_offset() as isize),
+        );
+        inner(this, translation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::space::Space as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_3(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
         relative_to: crate::unity_engine::space::Space,
-    ) -> ();
-
-    #[doc = "`Translate(f32, f32, f32)` overload"]
-    #[method(name = "Translate", args = 3)]
-    pub fn translate_4(self, x: f32, y: f32, z: f32) -> ();
-
-    #[doc = "`Translate(crate::unity_engine::vector3::Vector3, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Translate", args = 2)]
-    pub fn translate_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::space::Space,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translate_3::get_offset() as isize),
+        );
+        inner(this, x, y, z, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_4(
+        this: Transform,
+        x: f32,
+        y: f32,
+        z: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_translate_4::get_offset() as isize),
+            );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_5(
+        this: Transform,
         translation: crate::unity_engine::vector3::Vector3,
         relative_to: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`Translate(f32, f32, f32, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Translate", args = 4)]
-    pub fn translate_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translate_5::get_offset() as isize),
+        );
+        inner(this, translation, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Translate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Translate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_6(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
         relative_to: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, crate::unity_engine::space::Space)` overload"]
-    #[method(name = "Rotate", args = 2)]
-    pub fn rotate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translate_6::get_offset() as isize),
+        );
+        inner(this, x, y, z, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::space::Space as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate(
+        this: Transform,
         eulers: crate::unity_engine::vector3::Vector3,
         relative_to: crate::unity_engine::space::Space,
-    ) -> ();
-
-    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Rotate", args = 1)]
-    pub fn rotate_2(self, eulers: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`Rotate(f32, f32, f32, crate::unity_engine::space::Space)` overload"]
-    #[method(name = "Rotate", args = 4)]
-    pub fn rotate_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::space::Space,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate::get_offset() as isize),
+        );
+        inner(this, eulers, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_2(
+        this: Transform,
+        eulers: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_2::get_offset() as isize),
+        );
+        inner(this, eulers, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::space::Space as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_3(
+        this: Transform,
         x_angle: f32,
         y_angle: f32,
         z_angle: f32,
         relative_to: crate::unity_engine::space::Space,
-    ) -> ();
-
-    #[doc = "`Rotate(f32, f32, f32)` overload"]
-    #[method(name = "Rotate", args = 3)]
-    pub fn rotate_4(self, x_angle: f32, y_angle: f32, z_angle: f32) -> ();
-
-    #[doc = "`RotateAroundInternal(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAroundInternal", args = 2)]
-    pub fn rotate_around_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::space::Space,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            x_angle,
+            y_angle,
+            z_angle,
+            relative_to,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_4(
+        this: Transform,
+        x_angle: f32,
+        y_angle: f32,
+        z_angle: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rotate_4::get_offset() as isize),
+            );
+        inner(this, x_angle, y_angle, z_angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAroundInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAroundInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_internal(
+        this: Transform,
         axis: crate::unity_engine::vector3::Vector3,
         angle: f32,
-    ) -> ();
-
-    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::space::Space)` overload"]
-    #[method(name = "Rotate", args = 3)]
-    pub fn rotate_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_internal::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::space::Space as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_5(
+        this: Transform,
         axis: crate::unity_engine::vector3::Vector3,
         angle: f32,
         relative_to: crate::unity_engine::space::Space,
-    ) -> ();
-
-    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Rotate", args = 2)]
-    pub fn rotate_6(self, axis: crate::unity_engine::vector3::Vector3, angle: f32) -> ();
-
-    #[doc = "`RotateAround(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAround", args = 3)]
-    pub fn rotate_around(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            crate::unity_engine::space::Space,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_5::get_offset() as isize),
+        );
+        inner(this, axis, angle, relative_to, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Rotate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Rotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_6(
+        this: Transform,
+        axis: crate::unity_engine::vector3::Vector3,
+        angle: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_6::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAround",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAround",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around(
+        this: Transform,
         point: crate::unity_engine::vector3::Vector3,
         axis: crate::unity_engine::vector3::Vector3,
         angle: f32,
-    ) -> ();
-
-    #[doc = "`LookAt(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "LookAt", args = 2)]
-    pub fn look_at(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around::get_offset() as isize),
+        );
+        inner(this, point, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_look_at {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "LookAt",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "LookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn look_at(
+        this: Transform,
         target: crate::unity_engine::transform::Transform,
         world_up: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`LookAt(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "LookAt", args = 1)]
-    pub fn look_at_2(self, target: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`LookAt(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "LookAt", args = 2)]
-    pub fn look_at_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_look_at::get_offset() as isize),
+        );
+        inner(this, target, world_up, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_look_at_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "LookAt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "LookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn look_at_2(
+        this: Transform,
+        target: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_look_at_2::get_offset() as isize),
+        );
+        inner(this, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_look_at_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "LookAt",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "LookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn look_at_3(
+        this: Transform,
         world_position: crate::unity_engine::vector3::Vector3,
         world_up: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`LookAt(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "LookAt", args = 1)]
-    pub fn look_at_4(self, world_position: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`Internal_LookAt(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Internal_LookAt", args = 2)]
-    pub fn internal_look_at(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_look_at_3::get_offset() as isize),
+        );
+        inner(this, world_position, world_up, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_look_at_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "LookAt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "LookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn look_at_4(
+        this: Transform,
+        world_position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_look_at_4::get_offset() as isize),
+        );
+        inner(this, world_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_look_at {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Internal_LookAt",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Internal_LookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_look_at(
+        this: Transform,
         world_position: crate::unity_engine::vector3::Vector3,
         world_up: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`TransformDirection(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformDirection", args = 1)]
-    pub fn transform_direction(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_look_at::get_offset() as isize),
+        );
+        inner(this, world_position, world_up, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_direction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformDirection",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_direction(
+        this: Transform,
         direction: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TransformDirection(f32, f32, f32)` overload"]
-    #[method(name = "TransformDirection", args = 3)]
-    pub fn transform_direction_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_direction::get_offset() as isize),
+        );
+        inner(this, direction, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_direction_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformDirection",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_direction_2(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformDirection(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformDirection", args = 1)]
-    pub fn inverse_transform_direction(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_direction_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_direction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformDirection",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_direction(
+        this: Transform,
         direction: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformDirection(f32, f32, f32)` overload"]
-    #[method(name = "InverseTransformDirection", args = 3)]
-    pub fn inverse_transform_direction_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_direction::get_offset() as isize),
+        );
+        inner(this, direction, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_direction_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformDirection",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_direction_2(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TransformVector(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformVector", args = 1)]
-    pub fn transform_vector(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_direction_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_vector(
+        this: Transform,
         vector: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TransformVector(f32, f32, f32)` overload"]
-    #[method(name = "TransformVector", args = 3)]
-    pub fn transform_vector_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_vector::get_offset() as isize),
+        );
+        inner(this, vector, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_vector_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformVector",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_vector_2(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformVector(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformVector", args = 1)]
-    pub fn inverse_transform_vector(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_vector_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_vector(
+        this: Transform,
         vector: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformVector(f32, f32, f32)` overload"]
-    #[method(name = "InverseTransformVector", args = 3)]
-    pub fn inverse_transform_vector_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_vector::get_offset() as isize),
+        );
+        inner(this, vector, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_vector_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformVector",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_vector_2(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TransformPoint(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformPoint", args = 1)]
-    pub fn transform_point(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_vector_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformPoint",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_point(
+        this: Transform,
         position: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TransformPoint(f32, f32, f32)` overload"]
-    #[method(name = "TransformPoint", args = 3)]
-    pub fn transform_point_2(self, x: f32, y: f32, z: f32)
-        -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformPoint(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformPoint", args = 1)]
-    pub fn inverse_transform_point(
-        self,
-        position: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InverseTransformPoint(f32, f32, f32)` overload"]
-    #[method(name = "InverseTransformPoint", args = 3)]
-    pub fn inverse_transform_point_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_point::get_offset() as isize),
+        );
+        inner(this, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_point_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformPoint",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_point_2(
+        this: Transform,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_root()` overload"]
-    #[method(name = "get_root", args = 0)]
-    pub fn get_root(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_childCount()` overload"]
-    #[method(name = "get_childCount", args = 0)]
-    pub fn get_child_count(self) -> i32;
-
-    #[doc = "`DetachChildren()` overload"]
-    #[method(name = "DetachChildren", args = 0)]
-    pub fn detach_children(self) -> ();
-
-    #[doc = "`SetAsFirstSibling()` overload"]
-    #[method(name = "SetAsFirstSibling", args = 0)]
-    pub fn set_as_first_sibling(self) -> ();
-
-    #[doc = "`SetAsLastSibling()` overload"]
-    #[method(name = "SetAsLastSibling", args = 0)]
-    pub fn set_as_last_sibling(self) -> ();
-
-    #[doc = "`SetSiblingIndex(i32)` overload"]
-    #[method(name = "SetSiblingIndex", args = 1)]
-    pub fn set_sibling_index(self, index: i32) -> ();
-
-    #[doc = "`MoveAfterSibling(crate::unity_engine::transform::Transform, bool)` overload"]
-    #[method(name = "MoveAfterSibling", args = 2)]
-    pub fn move_after_sibling(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_point_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformPoint",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_point(
+        this: Transform,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_point::get_offset() as isize),
+        );
+        inner(this, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_point_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformPoint",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_point_2(
+        this: Transform,
+        x: f32,
+        y: f32,
+        z: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_point_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_root",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_root",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_child_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_childCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_childCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_child_count(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_child_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_detach_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "DetachChildren",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "DetachChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn detach_children(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_detach_children::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_as_first_sibling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetAsFirstSibling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetAsFirstSibling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_as_first_sibling(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_as_first_sibling::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_as_last_sibling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetAsLastSibling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetAsLastSibling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_as_last_sibling(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_as_last_sibling::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sibling_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetSiblingIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetSiblingIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sibling_index(
+        this: Transform,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_sibling_index::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_after_sibling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "MoveAfterSibling",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "MoveAfterSibling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_after_sibling(
+        this: Transform,
         transform: crate::unity_engine::transform::Transform,
         notify_editor_and_mark_dirty: bool,
-    ) -> ();
-
-    #[doc = "`GetSiblingIndex()` overload"]
-    #[method(name = "GetSiblingIndex", args = 0)]
-    pub fn get_sibling_index(self) -> i32;
-
-    #[doc = "`FindRelativeTransformWithPath(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "FindRelativeTransformWithPath", args = 3)]
-    pub fn find_relative_transform_with_path(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_after_sibling::get_offset() as isize),
+        );
+        inner(
+            this,
+            transform,
+            notify_editor_and_mark_dirty,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sibling_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetSiblingIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetSiblingIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sibling_index(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sibling_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_relative_transform_with_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "FindRelativeTransformWithPath",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "FindRelativeTransformWithPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_relative_transform_with_path(
         transform: crate::unity_engine::transform::Transform,
         path: ::unity2::Il2CppString,
         is_active_only: bool,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    #[method(name = "Find", args = 1)]
-    pub fn find(self, n: ::unity2::Il2CppString) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`SendTransformChangedScale()` overload"]
-    #[method(name = "SendTransformChangedScale", args = 0)]
-    pub fn send_transform_changed_scale(self) -> ();
-
-    #[doc = "`get_lossyScale()` overload"]
-    #[method(name = "get_lossyScale", args = 0)]
-    pub fn get_lossy_scale(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`IsChildOf(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "IsChildOf", args = 1)]
-    pub fn is_child_of(self, parent: crate::unity_engine::transform::Transform) -> bool;
-
-    #[doc = "`get_hasChanged()` overload"]
-    #[method(name = "get_hasChanged", args = 0)]
-    pub fn get_has_changed(self) -> bool;
-
-    #[doc = "`set_hasChanged(bool)` overload"]
-    #[method(name = "set_hasChanged", args = 1)]
-    pub fn set_has_changed(self, value: bool) -> ();
-
-    #[doc = "`FindChild(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindChild", args = 1)]
-    pub fn find_child(self, n: ::unity2::Il2CppString)
-        -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`RotateAround(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAround", args = 2)]
-    pub fn rotate_around_2(self, axis: crate::unity_engine::vector3::Vector3, angle: f32) -> ();
-
-    #[doc = "`RotateAroundLocal(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAroundLocal", args = 2)]
-    pub fn rotate_around_local(self, axis: crate::unity_engine::vector3::Vector3, angle: f32)
-        -> ();
-
-    #[doc = "`GetChild(i32)` overload"]
-    #[method(name = "GetChild", args = 1)]
-    pub fn get_child(self, index: i32) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_hierarchyCapacity()` overload"]
-    #[method(name = "get_hierarchyCapacity", args = 0)]
-    pub fn get_hierarchy_capacity(self) -> i32;
-
-    #[doc = "`set_hierarchyCapacity(i32)` overload"]
-    #[method(name = "set_hierarchyCapacity", args = 1)]
-    pub fn set_hierarchy_capacity(self, value: i32) -> ();
-
-    #[doc = "`internal_getHierarchyCapacity()` overload"]
-    #[method(name = "internal_getHierarchyCapacity", args = 0)]
-    pub fn internal_get_hierarchy_capacity(self) -> i32;
-
-    #[doc = "`internal_setHierarchyCapacity(i32)` overload"]
-    #[method(name = "internal_setHierarchyCapacity", args = 1)]
-    pub fn internal_set_hierarchy_capacity(self, value: i32) -> ();
-
-    #[doc = "`get_hierarchyCount()` overload"]
-    #[method(name = "get_hierarchyCount", args = 0)]
-    pub fn get_hierarchy_count(self) -> i32;
-
-    #[doc = "`internal_getHierarchyCount()` overload"]
-    #[method(name = "internal_getHierarchyCount", args = 0)]
-    pub fn internal_get_hierarchy_count(self) -> i32;
-
-    #[doc = "`IsNonUniformScaleTransform()` overload"]
-    #[method(name = "IsNonUniformScaleTransform", args = 0)]
-    pub fn is_non_uniform_scale_transform(self) -> bool;
-
-    #[doc = "`get_position_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_position_Injected", args = 1)]
-    pub fn get_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_position_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position_Injected", args = 1)]
-    pub fn set_position_injected(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_localPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_localPosition_Injected", args = 1)]
-    pub fn get_local_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_localPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_localPosition_Injected", args = 1)]
-    pub fn set_local_position_injected(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`GetLocalEulerAngles_Injected(crate::unity_engine::rotationorder::RotationOrder, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetLocalEulerAngles_Injected", args = 2)]
-    pub fn get_local_euler_angles_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_relative_transform_with_path::get_offset() as isize),
+        );
+        inner(transform, path, is_active_only, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Find",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Find",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find(
+        this: Transform,
+        n: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find::get_offset() as isize),
+        );
+        inner(this, n, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_transform_changed_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SendTransformChangedScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SendTransformChangedScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_transform_changed_scale(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_send_transform_changed_scale::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lossy_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_lossyScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_lossyScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lossy_scale(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_lossy_scale::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_child_of {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "IsChildOf",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "IsChildOf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_child_of(
+        this: Transform,
+        parent: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_child_of::get_offset() as isize),
+        );
+        inner(this, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_hasChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_hasChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_changed(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_changed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_has_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_hasChanged",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_hasChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_has_changed(
+        this: Transform,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_has_changed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_child {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "FindChild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "FindChild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_child(
+        this: Transform,
+        n: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_child::get_offset() as isize),
+        );
+        inner(this, n, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetEnumerator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enumerator::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAround",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAround",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_2(
+        this: Transform,
+        axis: crate::unity_engine::vector3::Vector3,
+        angle: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_2::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_local {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAroundLocal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAroundLocal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_local(
+        this: Transform,
+        axis: crate::unity_engine::vector3::Vector3,
+        angle: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_local::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_child {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetChild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetChild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_child(
+        this: Transform,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Transform,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_child::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hierarchy_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_hierarchyCapacity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_hierarchyCapacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hierarchy_capacity(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hierarchy_capacity::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hierarchy_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_hierarchyCapacity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_hierarchyCapacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hierarchy_capacity(
+        this: Transform,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_hierarchy_capacity::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_hierarchy_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "internal_getHierarchyCapacity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "internal_getHierarchyCapacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_get_hierarchy_capacity(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_get_hierarchy_capacity::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_hierarchy_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "internal_setHierarchyCapacity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "internal_setHierarchyCapacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_hierarchy_capacity(
+        this: Transform,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Transform, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_set_hierarchy_capacity::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hierarchy_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_hierarchyCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_hierarchyCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hierarchy_count(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hierarchy_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_hierarchy_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "internal_getHierarchyCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "internal_getHierarchyCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_get_hierarchy_count(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_get_hierarchy_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_non_uniform_scale_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "IsNonUniformScaleTransform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "IsNonUniformScaleTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_non_uniform_scale_transform(
+        this: Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Transform, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_non_uniform_scale_transform::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_position_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_position_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_position_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_position_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_injected(
+        this: Transform,
+        value: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_position_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_position_injected(
+        this: Transform,
+        value: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_position_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_euler_angles_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "GetLocalEulerAngles_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "GetLocalEulerAngles_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_euler_angles_injected(
+        this: Transform,
         order: crate::unity_engine::rotationorder::RotationOrder,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetLocalEulerAngles_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::rotationorder::RotationOrder)` overload"]
-    #[method(name = "SetLocalEulerAngles_Injected", args = 2)]
-    pub fn set_local_euler_angles_injected(
-        self,
-        euler: crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            crate::unity_engine::rotationorder::RotationOrder,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_euler_angles_injected::get_offset() as isize),
+        );
+        inner(this, order, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_euler_angles_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rotationorder::RotationOrder as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetLocalEulerAngles_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetLocalEulerAngles_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_euler_angles_injected(
+        this: Transform,
+        euler: *mut crate::unity_engine::vector3::Vector3,
         order: crate::unity_engine::rotationorder::RotationOrder,
-    ) -> ();
-
-    #[doc = "`SetLocalEulerHint_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLocalEulerHint_Injected", args = 1)]
-    pub fn set_local_euler_hint_injected(self, euler: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_rotation_Injected", args = 1)]
-    pub fn get_rotation_injected(self, ret: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`set_rotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_rotation_Injected", args = 1)]
-    pub fn set_rotation_injected(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_localRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_localRotation_Injected", args = 1)]
-    pub fn get_local_rotation_injected(
-        self,
-        ret: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`set_localRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_localRotation_Injected", args = 1)]
-    pub fn set_local_rotation_injected(
-        self,
-        value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_localScale_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_localScale_Injected", args = 1)]
-    pub fn get_local_scale_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_localScale_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_localScale_Injected", args = 1)]
-    pub fn set_local_scale_injected(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_worldToLocalMatrix_Injected(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "get_worldToLocalMatrix_Injected", args = 1)]
-    pub fn get_world_to_local_matrix_injected(
-        self,
-        ret: crate::unity_engine::matrix4x4::Matrix4x4,
-    ) -> ();
-
-    #[doc = "`get_localToWorldMatrix_Injected(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "get_localToWorldMatrix_Injected", args = 1)]
-    pub fn get_local_to_world_matrix_injected(
-        self,
-        ret: crate::unity_engine::matrix4x4::Matrix4x4,
-    ) -> ();
-
-    #[doc = "`SetPositionAndRotation_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetPositionAndRotation_Injected", args = 2)]
-    pub fn set_position_and_rotation_injected(
-        self,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`RotateAroundInternal_Injected(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAroundInternal_Injected", args = 2)]
-    pub fn rotate_around_internal_injected(
-        self,
-        axis: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::rotationorder::RotationOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_euler_angles_injected::get_offset() as isize),
+        );
+        inner(this, euler, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_euler_hint_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetLocalEulerHint_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetLocalEulerHint_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_euler_hint_injected(
+        this: Transform,
+        euler: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_euler_hint_injected::get_offset() as isize),
+        );
+        inner(this, euler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_rotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_rotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_rotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_rotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_injected(
+        this: Transform,
+        value: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_rotation_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_rotation_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_rotation_injected(
+        this: Transform,
+        value: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_rotation_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_scale_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localScale_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localScale_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_scale_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_scale_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_scale_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "set_localScale_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "set_localScale_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_scale_injected(
+        this: Transform,
+        value: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_scale_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_world_to_local_matrix_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_worldToLocalMatrix_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_worldToLocalMatrix_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_world_to_local_matrix_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_world_to_local_matrix_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_to_world_matrix_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_localToWorldMatrix_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_localToWorldMatrix_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_local_to_world_matrix_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_local_to_world_matrix_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_and_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "SetPositionAndRotation_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "SetPositionAndRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_and_rotation_injected(
+        this: Transform,
+        position: *mut crate::unity_engine::vector3::Vector3,
+        rotation: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_and_rotation_injected::get_offset() as isize),
+        );
+        inner(this, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAroundInternal_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAroundInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_internal_injected(
+        this: Transform,
+        axis: *mut crate::unity_engine::vector3::Vector3,
         angle: f32,
-    ) -> ();
-
-    #[doc = "`Internal_LookAt_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Internal_LookAt_Injected", args = 2)]
-    pub fn internal_look_at_injected(
-        self,
-        world_position: crate::unity_engine::vector3::Vector3,
-        world_up: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`TransformDirection_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformDirection_Injected", args = 2)]
-    pub fn transform_direction_injected(
-        self,
-        direction: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`InverseTransformDirection_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformDirection_Injected", args = 2)]
-    pub fn inverse_transform_direction_injected(
-        self,
-        direction: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`TransformVector_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformVector_Injected", args = 2)]
-    pub fn transform_vector_injected(
-        self,
-        vector: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`InverseTransformVector_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformVector_Injected", args = 2)]
-    pub fn inverse_transform_vector_injected(
-        self,
-        vector: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`TransformPoint_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "TransformPoint_Injected", args = 2)]
-    pub fn transform_point_injected(
-        self,
-        position: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`InverseTransformPoint_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "InverseTransformPoint_Injected", args = 2)]
-    pub fn inverse_transform_point_injected(
-        self,
-        position: crate::unity_engine::vector3::Vector3,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`get_lossyScale_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_lossyScale_Injected", args = 1)]
-    pub fn get_lossy_scale_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`RotateAround_Injected(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAround_Injected", args = 2)]
-    pub fn rotate_around_injected(
-        self,
-        axis: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_internal_injected::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_look_at_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "Internal_LookAt_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "Internal_LookAt_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_look_at_injected(
+        this: Transform,
+        world_position: *mut crate::unity_engine::vector3::Vector3,
+        world_up: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_look_at_injected::get_offset() as isize),
+        );
+        inner(this, world_position, world_up, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_direction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformDirection_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformDirection_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_direction_injected(
+        this: Transform,
+        direction: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_direction_injected::get_offset() as isize),
+        );
+        inner(this, direction, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_direction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformDirection_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformDirection_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_direction_injected(
+        this: Transform,
+        direction: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_direction_injected::get_offset() as isize),
+        );
+        inner(this, direction, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_vector_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformVector_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformVector_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_vector_injected(
+        this: Transform,
+        vector: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_vector_injected::get_offset() as isize),
+        );
+        inner(this, vector, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_vector_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformVector_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformVector_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_vector_injected(
+        this: Transform,
+        vector: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_vector_injected::get_offset() as isize),
+        );
+        inner(this, vector, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_transform_point_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "TransformPoint_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "TransformPoint_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn transform_point_injected(
+        this: Transform,
+        position: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_transform_point_injected::get_offset() as isize),
+        );
+        inner(this, position, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inverse_transform_point_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "InverseTransformPoint_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "InverseTransformPoint_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inverse_transform_point_injected(
+        this: Transform,
+        position: *mut crate::unity_engine::vector3::Vector3,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inverse_transform_point_injected::get_offset() as isize),
+        );
+        inner(this, position, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lossy_scale_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "get_lossyScale_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "get_lossyScale_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lossy_scale_injected(
+        this: Transform,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_lossy_scale_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAround_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAround_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_injected(
+        this: Transform,
+        axis: *mut crate::unity_engine::vector3::Vector3,
         angle: f32,
-    ) -> ();
-
-    #[doc = "`RotateAroundLocal_Injected(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "RotateAroundLocal_Injected", args = 2)]
-    pub fn rotate_around_local_injected(
-        self,
-        axis: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_injected::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rotate_around_local_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Transform as ::unity2::ClassIdentity>::class(),
+                "RotateAroundLocal_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Transform as ::unity2::ClassIdentity>::NAME,
+                    "RotateAroundLocal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rotate_around_local_injected(
+        this: Transform,
+        axis: *mut crate::unity_engine::vector3::Vector3,
         angle: f32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Transform,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rotate_around_local_injected::get_offset() as isize),
+        );
+        inner(this, axis, angle, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-transform")]
+impl Transform {
+    #[doc = "`FindRelativeTransformWithPath(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, bool)` overload"]
+    pub fn find_relative_transform_with_path(
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_active_only: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            __Transform_unity2_raw::find_relative_transform_with_path(
+                ::core::convert::Into::into(transform),
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(is_active_only),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-transform")]
+pub trait ITransformMethods: ITransform {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_position()` overload"]
+    fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_localPosition()` overload"]
+    fn get_local_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_localPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLocalEulerAngles(crate::unity_engine::rotationorder::RotationOrder)` overload"]
+    fn get_local_euler_angles(
+        self,
+        order: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLocalEulerAngles(crate::unity_engine::vector3::Vector3, crate::unity_engine::rotationorder::RotationOrder)` overload"]
+    fn set_local_euler_angles(
+        self,
+        euler: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        order: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(euler),
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLocalEulerHint(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_euler_hint(
+        self,
+        euler: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_euler_hint(
+                __receiver,
+                ::core::convert::Into::into(euler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_eulerAngles()` overload"]
+    fn get_euler_angles(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_euler_angles(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_euler_angles(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_localEulerAngles()` overload"]
+    fn get_local_euler_angles_2(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_euler_angles_2(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_localEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_euler_angles_2(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_euler_angles_2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_right()` overload"]
+    fn get_right(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_right(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_right(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_right(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_right(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_up()` overload"]
+    fn get_up(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_up(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_up(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_up(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_up(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_forward()` overload"]
+    fn get_forward(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_forward(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_forward(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_forward(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_forward(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotation()` overload"]
+    fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_localRotation()` overload"]
+    fn get_local_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_localRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_local_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotationOrder()` overload"]
+    fn get_rotation_order(self) -> crate::unity_engine::rotationorder::RotationOrder {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_rotation_order(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_rotationOrder(crate::unity_engine::rotationorder::RotationOrder)` overload"]
+    fn set_rotation_order(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_rotation_order(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRotationOrderInternal()` overload"]
+    fn get_rotation_order_internal(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_rotation_order_internal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRotationOrderInternal(crate::unity_engine::rotationorder::RotationOrder)` overload"]
+    fn set_rotation_order_internal(
+        self,
+        rotation_order: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_rotation_order_internal(
+                __receiver,
+                ::core::convert::Into::into(rotation_order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_localScale()` overload"]
+    fn get_local_scale(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_scale(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_localScale(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_scale(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_local_scale(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_parent()` overload"]
+    fn get_parent(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_parent(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_parent(crate::unity_engine::transform::Transform)` overload"]
+    fn set_parent(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_parent(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_parentInternal()` overload"]
+    fn get_parent_internal(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_parent_internal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_parentInternal(crate::unity_engine::transform::Transform)` overload"]
+    fn set_parent_internal(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_parent_internal(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParent(crate::unity_engine::transform::Transform, bool)` overload"]
+    fn set_parent_2(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        world_position_stays: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_parent_2(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(world_position_stays),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_worldToLocalMatrix()` overload"]
+    fn get_world_to_local_matrix(self) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_world_to_local_matrix(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_localToWorldMatrix()` overload"]
+    fn get_local_to_world_matrix(self) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_local_to_world_matrix(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPositionAndRotation(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_position_and_rotation(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_position_and_rotation(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(crate::unity_engine::vector3::Vector3, crate::unity_engine::space::Space)` overload"]
+    fn translate(
+        self,
+        translation: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::space::Space>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate(
+                __receiver,
+                ::core::convert::Into::into(translation),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(crate::unity_engine::vector3::Vector3)` overload"]
+    fn translate_2(
+        self,
+        translation: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate_2(
+                __receiver,
+                ::core::convert::Into::into(translation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(f32, f32, f32, crate::unity_engine::space::Space)` overload"]
+    fn translate_3(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::space::Space>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate_3(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(f32, f32, f32)` overload"]
+    fn translate_4(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate_4(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(crate::unity_engine::vector3::Vector3, crate::unity_engine::transform::Transform)` overload"]
+    fn translate_5(
+        self,
+        translation: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate_5(
+                __receiver,
+                ::core::convert::Into::into(translation),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Translate(f32, f32, f32, crate::unity_engine::transform::Transform)` overload"]
+    fn translate_6(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::translate_6(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, crate::unity_engine::space::Space)` overload"]
+    fn rotate(
+        self,
+        eulers: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::space::Space>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate(
+                __receiver,
+                ::core::convert::Into::into(eulers),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3)` overload"]
+    fn rotate_2(
+        self,
+        eulers: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_2(
+                __receiver,
+                ::core::convert::Into::into(eulers),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(f32, f32, f32, crate::unity_engine::space::Space)` overload"]
+    fn rotate_3(
+        self,
+        x_angle: impl ::core::convert::Into<f32>,
+        y_angle: impl ::core::convert::Into<f32>,
+        z_angle: impl ::core::convert::Into<f32>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::space::Space>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_3(
+                __receiver,
+                ::core::convert::Into::into(x_angle),
+                ::core::convert::Into::into(y_angle),
+                ::core::convert::Into::into(z_angle),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(f32, f32, f32)` overload"]
+    fn rotate_4(
+        self,
+        x_angle: impl ::core::convert::Into<f32>,
+        y_angle: impl ::core::convert::Into<f32>,
+        z_angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_4(
+                __receiver,
+                ::core::convert::Into::into(x_angle),
+                ::core::convert::Into::into(y_angle),
+                ::core::convert::Into::into(z_angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RotateAroundInternal(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_internal(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_around_internal(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::space::Space)` overload"]
+    fn rotate_5(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+        relative_to: impl ::core::convert::Into<crate::unity_engine::space::Space>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_5(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::convert::Into::into(relative_to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rotate(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_6(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_6(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RotateAround(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around(
+        self,
+        point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_around(
+                __receiver,
+                ::core::convert::Into::into(point),
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LookAt(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"]
+    fn look_at(
+        self,
+        target: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        world_up: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::look_at(
+                __receiver,
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(world_up),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LookAt(crate::unity_engine::transform::Transform)` overload"]
+    fn look_at_2(
+        self,
+        target: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::look_at_2(
+                __receiver,
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LookAt(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    fn look_at_3(
+        self,
+        world_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        world_up: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::look_at_3(
+                __receiver,
+                ::core::convert::Into::into(world_position),
+                ::core::convert::Into::into(world_up),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LookAt(crate::unity_engine::vector3::Vector3)` overload"]
+    fn look_at_4(
+        self,
+        world_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::look_at_4(
+                __receiver,
+                ::core::convert::Into::into(world_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_LookAt(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    fn internal_look_at(
+        self,
+        world_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        world_up: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::internal_look_at(
+                __receiver,
+                ::core::convert::Into::into(world_position),
+                ::core::convert::Into::into(world_up),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformDirection(crate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_direction(
+        self,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_direction(
+                __receiver,
+                ::core::convert::Into::into(direction),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformDirection(f32, f32, f32)` overload"]
+    fn transform_direction_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_direction_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformDirection(crate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_direction(
+        self,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_direction(
+                __receiver,
+                ::core::convert::Into::into(direction),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformDirection(f32, f32, f32)` overload"]
+    fn inverse_transform_direction_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_direction_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformVector(crate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_vector(
+        self,
+        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_vector(
+                __receiver,
+                ::core::convert::Into::into(vector),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformVector(f32, f32, f32)` overload"]
+    fn transform_vector_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_vector_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformVector(crate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_vector(
+        self,
+        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_vector(
+                __receiver,
+                ::core::convert::Into::into(vector),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformVector(f32, f32, f32)` overload"]
+    fn inverse_transform_vector_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_vector_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformPoint(crate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_point(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_point(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TransformPoint(f32, f32, f32)` overload"]
+    fn transform_point_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::transform_point_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformPoint(crate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_point(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_point(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InverseTransformPoint(f32, f32, f32)` overload"]
+    fn inverse_transform_point_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::inverse_transform_point_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_root()` overload"]
+    fn get_root(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_childCount()` overload"]
+    fn get_child_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_child_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DetachChildren()` overload"]
+    fn detach_children(self) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::detach_children(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetAsFirstSibling()` overload"]
+    fn set_as_first_sibling(self) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_as_first_sibling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetAsLastSibling()` overload"]
+    fn set_as_last_sibling(self) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_as_last_sibling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetSiblingIndex(i32)` overload"]
+    fn set_sibling_index(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_sibling_index(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveAfterSibling(crate::unity_engine::transform::Transform, bool)` overload"]
+    fn move_after_sibling(
+        self,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        notify_editor_and_mark_dirty: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::move_after_sibling(
+                __receiver,
+                ::core::convert::Into::into(transform),
+                ::core::convert::Into::into(notify_editor_and_mark_dirty),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSiblingIndex()` overload"]
+    fn get_sibling_index(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_sibling_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Find(::unity2::Il2CppString)` overload"]
+    fn find(
+        self,
+        n: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::find(
+                __receiver,
+                ::core::convert::Into::into(n),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendTransformChangedScale()` overload"]
+    fn send_transform_changed_scale(self) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::send_transform_changed_scale(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_lossyScale()` overload"]
+    fn get_lossy_scale(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_lossy_scale(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsChildOf(crate::unity_engine::transform::Transform)` overload"]
+    fn is_child_of(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::is_child_of(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_hasChanged()` overload"]
+    fn get_has_changed(self) -> bool {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_has_changed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_hasChanged(bool)` overload"]
+    fn set_has_changed(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_has_changed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindChild(::unity2::Il2CppString)` overload"]
+    fn find_child(
+        self,
+        n: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::find_child(
+                __receiver,
+                ::core::convert::Into::into(n),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RotateAround(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_2(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_around_2(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RotateAroundLocal(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_local(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::rotate_around_local(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetChild(i32)` overload"]
+    fn get_child(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_child(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_hierarchyCapacity()` overload"]
+    fn get_hierarchy_capacity(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_hierarchy_capacity(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_hierarchyCapacity(i32)` overload"]
+    fn set_hierarchy_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::set_hierarchy_capacity(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`internal_getHierarchyCapacity()` overload"]
+    fn internal_get_hierarchy_capacity(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::internal_get_hierarchy_capacity(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`internal_setHierarchyCapacity(i32)` overload"]
+    fn internal_set_hierarchy_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::internal_set_hierarchy_capacity(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_hierarchyCount()` overload"]
+    fn get_hierarchy_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::get_hierarchy_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`internal_getHierarchyCount()` overload"]
+    fn internal_get_hierarchy_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::internal_get_hierarchy_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNonUniformScaleTransform()` overload"]
+    fn is_non_uniform_scale_transform(self) -> bool {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Transform_unity2_raw::is_non_uniform_scale_transform(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_position_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::get_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_position_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::set_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_localPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_local_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::get_local_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_localPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::set_local_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetLocalEulerAngles_Injected(crate::unity_engine::rotationorder::RotationOrder, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_local_euler_angles_injected(
+        self,
+        order: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::get_local_euler_angles_injected(
+                __receiver,
+                ::core::convert::Into::into(order),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetLocalEulerAngles_Injected(*mutcrate::unity_engine::vector3::Vector3, crate::unity_engine::rotationorder::RotationOrder)` overload"]
+    fn set_local_euler_angles_injected(
+        self,
+        order: impl ::core::convert::Into<crate::unity_engine::rotationorder::RotationOrder>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::set_local_euler_angles_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetLocalEulerHint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_euler_hint_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::set_local_euler_hint_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_rotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Transform_unity2_raw::get_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Transform_unity2_raw::set_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_localRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_local_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Transform_unity2_raw::get_local_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_localRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_local_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Transform_unity2_raw::set_local_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_localScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_local_scale_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::get_local_scale_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_localScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_local_scale_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::set_local_scale_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_worldToLocalMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
+    fn get_world_to_local_matrix_injected(self) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __Transform_unity2_raw::get_world_to_local_matrix_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_localToWorldMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
+    fn get_local_to_world_matrix_injected(self) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __Transform_unity2_raw::get_local_to_world_matrix_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetPositionAndRotation_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_position_and_rotation_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::quaternion::Quaternion,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Transform_unity2_raw::set_position_and_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`RotateAroundInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_internal_injected(
+        self,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::rotate_around_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Internal_LookAt_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn internal_look_at_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::internal_look_at_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`TransformDirection_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_direction_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::transform_direction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`InverseTransformDirection_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_direction_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::inverse_transform_direction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`TransformVector_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_vector_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::transform_vector_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`InverseTransformVector_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_vector_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::inverse_transform_vector_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`TransformPoint_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn transform_point_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::transform_point_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`InverseTransformPoint_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn inverse_transform_point_injected(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::inverse_transform_point_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`get_lossyScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_lossy_scale_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::get_lossy_scale_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RotateAround_Injected(*mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_injected(
+        self,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::rotate_around_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RotateAroundLocal_Injected(*mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn rotate_around_local_injected(
+        self,
+        angle: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Transform as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Transform_unity2_raw::rotate_around_local_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(angle),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-transform")]
+impl<__T: ITransform> ITransformMethods for __T {}
 
 #[cfg(feature = "unity_engine-transform")]
 impl Transform {
@@ -759,4 +8346,23 @@ impl Transform {
         <Self as ITransformMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-transform")]
+pub mod prelude {
+    pub use super::ITransform;
+    pub use super::ITransformMethods;
+    pub use super::ITransform_Enumerator;
+    pub use super::ITransform_EnumeratorMethods;
+    pub use super::Transform;
+    pub use super::Transform_Enumerator;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

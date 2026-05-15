@@ -45,3 +45,10 @@ impl<T0: ::unity2::ClassIdentity> NullableComparer_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-nullablecomparer_1")]
+pub mod prelude {
+    pub use super::INullableComparer_1;
+    pub use super::INullableComparer_1Methods;
+    pub use super::NullableComparer_1;
+}

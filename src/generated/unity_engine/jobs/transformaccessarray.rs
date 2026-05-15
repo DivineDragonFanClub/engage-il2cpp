@@ -41,66 +41,710 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-jobs-transformaccessarray")]
-#[::unity2::methods(value)]
-impl TransformAccessArray {
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::transform::Transform>, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TransformAccessArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TransformAccessArray,
         transforms: ::unity2::Array<crate::unity_engine::transform::Transform>,
         desired_job_count: i32,
-    ) -> ();
-
-    #[doc = "`Allocate(i32, i32, crate::unity_engine::jobs::transformaccessarray::TransformAccessArray)` overload"]
-    #[method(name = "Allocate", args = 3)]
-    pub fn allocate(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TransformAccessArray,
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, transforms, desired_job_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allocate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: jobs :: transformaccessarray :: TransformAccessArray as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "Allocate",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "Allocate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allocate(
         capacity: i32,
         desired_job_count: i32,
-        array: crate::unity_engine::jobs::transformaccessarray::TransformAccessArray,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`GetTransformAccessArrayForSchedule()` overload"]
-    #[method(name = "GetTransformAccessArrayForSchedule", args = 0)]
-    pub fn get_transform_access_array_for_schedule(self) -> ::unity2::IntPtr;
-
-    #[doc = "`set_Item(i32, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, index: i32, value: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`Create(i32, i32)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(capacity: i32, desired_job_count: i32) -> ::unity2::IntPtr;
-
-    #[doc = "`DestroyTransformAccessArray(::unity2::IntPtr)` overload"]
-    #[method(name = "DestroyTransformAccessArray", args = 1)]
-    pub fn destroy_transform_access_array(transform_array: ::unity2::IntPtr) -> ();
-
-    #[doc = "`SetTransforms(::unity2::IntPtr, ::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]
-    #[method(name = "SetTransforms", args = 2)]
-    pub fn set_transforms(
+        array: *mut crate::unity_engine::jobs::transformaccessarray::TransformAccessArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            *mut crate::unity_engine::jobs::transformaccessarray::TransformAccessArray,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_allocate::get_offset() as isize),
+        );
+        inner(capacity, desired_job_count, array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: TransformAccessArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TransformAccessArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transform_access_array_for_schedule {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "GetTransformAccessArrayForSchedule",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "GetTransformAccessArrayForSchedule",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transform_access_array_for_schedule(
+        this: TransformAccessArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            TransformAccessArray,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transform_access_array_for_schedule::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "set_Item",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "set_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item(
+        this: TransformAccessArray,
+        index: i32,
+        value: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TransformAccessArray,
+            i32,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_item::get_offset() as isize),
+        );
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        capacity: i32,
+        desired_job_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create::get_offset() as isize),
+            );
+        inner(capacity, desired_job_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_transform_access_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "DestroyTransformAccessArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "DestroyTransformAccessArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_transform_access_array(
+        transform_array: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_transform_access_array::get_offset() as isize),
+            );
+        inner(transform_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_transforms {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "SetTransforms",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "SetTransforms",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_transforms(
         transform_array_int_ptr: ::unity2::IntPtr,
         transforms: ::unity2::Array<crate::unity_engine::transform::Transform>,
-    ) -> ();
-
-    #[doc = "`GetSortedTransformAccess(::unity2::IntPtr)` overload"]
-    #[method(name = "GetSortedTransformAccess", args = 1)]
-    pub fn get_sorted_transform_access(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_transforms::get_offset() as isize),
+        );
+        inner(transform_array_int_ptr, transforms, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sorted_transform_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "GetSortedTransformAccess",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "GetSortedTransformAccess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sorted_transform_access(
         transform_array_int_ptr: ::unity2::IntPtr,
-    ) -> ::unity2::IntPtr;
-
-    #[doc = "`GetSortedToUserIndex(::unity2::IntPtr)` overload"]
-    #[method(name = "GetSortedToUserIndex", args = 1)]
-    pub fn get_sorted_to_user_index(transform_array_int_ptr: ::unity2::IntPtr) -> ::unity2::IntPtr;
-
-    #[doc = "`SetTransform(::unity2::IntPtr, i32, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "SetTransform", args = 3)]
-    pub fn set_transform(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sorted_transform_access::get_offset() as isize),
+            );
+        inner(transform_array_int_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sorted_to_user_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "GetSortedToUserIndex",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "GetSortedToUserIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sorted_to_user_index(
+        transform_array_int_ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sorted_to_user_index::get_offset() as isize),
+            );
+        inner(transform_array_int_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccessArray as ::unity2::ClassIdentity>::class(),
+                "SetTransform",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccessArray as ::unity2::ClassIdentity>::NAME,
+                    "SetTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_transform(
         transform_array_int_ptr: ::unity2::IntPtr,
         index: i32,
         transform: crate::unity_engine::transform::Transform,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            i32,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_transform::get_offset() as isize),
+        );
+        inner(
+            transform_array_int_ptr,
+            index,
+            transform,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "unity_engine-jobs-transformaccessarray")]
+impl TransformAccessArray {
+    #[doc = "`Allocate(i32, i32, *mutcrate::unity_engine::jobs::transformaccessarray::TransformAccessArray)` overload"]
+    pub fn allocate(
+        capacity: impl ::core::convert::Into<i32>,
+        desired_job_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::jobs::transformaccessarray::TransformAccessArray {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::jobs::transformaccessarray::TransformAccessArray,
+            >::uninit();
+            __TransformAccessArray_unity2_raw::allocate(
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(desired_job_count),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Create(i32, i32)` overload"]
+    pub fn create(
+        capacity: impl ::core::convert::Into<i32>,
+        desired_job_count: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            __TransformAccessArray_unity2_raw::create(
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(desired_job_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyTransformAccessArray(::unity2::IntPtr)` overload"]
+    pub fn destroy_transform_access_array(
+        transform_array: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            __TransformAccessArray_unity2_raw::destroy_transform_access_array(
+                ::core::convert::Into::into(transform_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTransforms(::unity2::IntPtr, ::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]
+    pub fn set_transforms(
+        transform_array_int_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        transforms: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+        >,
+    ) -> () {
+        unsafe {
+            __TransformAccessArray_unity2_raw::set_transforms(
+                ::core::convert::Into::into(transform_array_int_ptr),
+                ::core::convert::Into::into(transforms),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSortedTransformAccess(::unity2::IntPtr)` overload"]
+    pub fn get_sorted_transform_access(
+        transform_array_int_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            __TransformAccessArray_unity2_raw::get_sorted_transform_access(
+                ::core::convert::Into::into(transform_array_int_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSortedToUserIndex(::unity2::IntPtr)` overload"]
+    pub fn get_sorted_to_user_index(
+        transform_array_int_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            __TransformAccessArray_unity2_raw::get_sorted_to_user_index(
+                ::core::convert::Into::into(transform_array_int_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTransform(::unity2::IntPtr, i32, crate::unity_engine::transform::Transform)` overload"]
+    pub fn set_transform(
+        transform_array_int_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        index: impl ::core::convert::Into<i32>,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            __TransformAccessArray_unity2_raw::set_transform(
+                ::core::convert::Into::into(transform_array_int_ptr),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-jobs-transformaccessarray")]
+impl TransformAccessArray {
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::transform::Transform>, i32)` overload"]
+    pub fn ctor(
+        self,
+        transforms: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+        >,
+        desired_job_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TransformAccessArray_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(transforms),
+                ::core::convert::Into::into(desired_job_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __TransformAccessArray_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+    #[doc = "`GetTransformAccessArrayForSchedule()` overload"]
+    pub fn get_transform_access_array_for_schedule(self) -> ::unity2::IntPtr {
+        unsafe {
+            __TransformAccessArray_unity2_raw::get_transform_access_array_for_schedule(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Item(i32, crate::unity_engine::transform::Transform)` overload"]
+    pub fn set_item(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            __TransformAccessArray_unity2_raw::set_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-jobs-transformaccessarray")]
+pub mod prelude {
+    pub use super::TransformAccessArray;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

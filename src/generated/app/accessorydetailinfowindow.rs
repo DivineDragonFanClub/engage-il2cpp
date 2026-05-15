@@ -42,32 +42,310 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-accessorydetailinfowindow")]
-#[::unity2::methods]
-impl AccessoryDetailInfoWindow {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Close()` overload"]
-    #[method(name = "Close", args = 0)]
-    pub fn close(self) -> ();
-
-    #[doc = "`SetData(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"]
-    #[method(name = "SetData", args = 2)]
-    pub fn set_data(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryDetailInfoWindow_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryDetailInfoWindow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryDetailInfoWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::NAME,
+                    "Hide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hide(
+        this: AccessoryDetailInfoWindow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryDetailInfoWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hide::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::NAME,
+                    "Show",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show(
+        this: AccessoryDetailInfoWindow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryDetailInfoWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::NAME,
+                    "Close",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close(
+        this: AccessoryDetailInfoWindow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryDetailInfoWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data(
+        this: AccessoryDetailInfoWindow,
         accessory_data: crate::app::accessorydata::AccessoryData,
         female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryDetailInfoWindow,
+            crate::app::accessorydata::AccessoryData,
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data::get_offset() as isize),
+        );
+        inner(this, accessory_data, female, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+pub trait IAccessoryDetailInfoWindowMethods: IAccessoryDetailInfoWindow {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"]
+    fn set_data(
+        self,
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        female: impl ::core::convert::Into<
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(accessory_data),
+                ::core::convert::Into::into(female),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+impl<__T: IAccessoryDetailInfoWindow> IAccessoryDetailInfoWindowMethods for __T {}
 
 #[cfg(feature = "app-accessorydetailinfowindow")]
 impl AccessoryDetailInfoWindow {
@@ -86,11 +364,82 @@ impl AccessoryDetailInfoWindow {
 }
 
 #[cfg(feature = "app-accessorydetailinfowindow")]
-#[::unity2::methods]
-impl AccessoryDetailInfoWindow_BodyParts {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryDetailInfoWindow_BodyParts_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryDetailInfoWindow_BodyParts,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryDetailInfoWindow_BodyParts,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+pub trait IAccessoryDetailInfoWindow_BodyPartsMethods:
+    IAccessoryDetailInfoWindow_BodyParts
+{
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryDetailInfoWindow_BodyParts as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryDetailInfoWindow_BodyParts_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+impl<__T: IAccessoryDetailInfoWindow_BodyParts> IAccessoryDetailInfoWindow_BodyPartsMethods
+    for __T
+{
 }
 
 #[cfg(feature = "app-accessorydetailinfowindow")]
@@ -107,4 +456,29 @@ impl AccessoryDetailInfoWindow_BodyParts {
         <Self as IAccessoryDetailInfoWindow_BodyPartsMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+pub mod prelude {
+    pub use super::AccessoryDetailInfoWindow;
+    pub use super::AccessoryDetailInfoWindow_BodyParts;
+    pub use super::IAccessoryDetailInfoWindow;
+    pub use super::IAccessoryDetailInfoWindowMethods;
+    pub use super::IAccessoryDetailInfoWindow_BodyParts;
+    pub use super::IAccessoryDetailInfoWindow_BodyPartsMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

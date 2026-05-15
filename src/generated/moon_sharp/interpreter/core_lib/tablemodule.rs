@@ -17,77 +17,670 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
-#[::unity2::methods]
-impl TableModule {
-    #[doc = "`unpack(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "unpack", args = 2)]
-    pub fn unpack(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TableModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unpack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "unpack",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "unpack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unpack(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`pack(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "pack", args = 2)]
-    pub fn pack(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unpack::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "pack",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "pack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pack(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`sort(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "sort", args = 2)]
-    pub fn sort(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pack::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "sort",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "sort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`SortComparer(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "SortComparer", args = 4)]
-    pub fn sort_comparer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sort::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_comparer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "SortComparer",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "SortComparer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_comparer(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         a: crate::moon_sharp::interpreter::dynvalue::DynValue,
         b: crate::moon_sharp::interpreter::dynvalue::DynValue,
         lt: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> i32;
-
-    #[doc = "`LuaComparerToClrComparer(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "LuaComparerToClrComparer", args = 2)]
-    pub fn lua_comparer_to_clr_comparer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sort_comparer::get_offset() as isize),
+        );
+        inner(execution_context, a, b, lt, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lua_comparer_to_clr_comparer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "LuaComparerToClrComparer",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "LuaComparerToClrComparer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lua_comparer_to_clr_comparer(
         dyn_value1: crate::moon_sharp::interpreter::dynvalue::DynValue,
         dyn_value2: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> i32;
-
-    #[doc = "`insert(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "insert", args = 2)]
-    pub fn insert(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lua_comparer_to_clr_comparer::get_offset() as isize),
+        );
+        inner(dyn_value1, dyn_value2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "insert",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "insert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insert(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`remove(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "remove", args = 2)]
-    pub fn remove(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insert::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "remove",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`concat(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "concat", args = 2)]
-    pub fn concat(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_concat {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "concat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "concat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn concat(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`GetTableLength(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "GetTableLength", args = 2)]
-    pub fn get_table_length(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_concat::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_table_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                "GetTableLength",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    "GetTableLength",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_table_length(
         execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
         vlist: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_table_length::get_offset() as isize),
+        );
+        inner(execution_context, vlist, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TableModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TableModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TableModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+impl TableModule {
+    #[doc = "`unpack(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn unpack(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::unpack(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`pack(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn pack(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::pack(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`sort(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn sort(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::sort(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortComparer(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    pub fn sort_comparer(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        a: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        b: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        lt: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> i32 {
+        unsafe {
+            __TableModule_unity2_raw::sort_comparer(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(lt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LuaComparerToClrComparer(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    pub fn lua_comparer_to_clr_comparer(
+        dyn_value1: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        dyn_value2: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> i32 {
+        unsafe {
+            __TableModule_unity2_raw::lua_comparer_to_clr_comparer(
+                ::core::convert::Into::into(dyn_value1),
+                ::core::convert::Into::into(dyn_value2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`insert(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn insert(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::insert(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn remove(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::remove(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`concat(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    pub fn concat(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __TableModule_unity2_raw::concat(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTableLength(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    pub fn get_table_length(
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        vlist: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> i32 {
+        unsafe {
+            __TableModule_unity2_raw::get_table_length(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(vlist),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+pub trait ITableModuleMethods: ITableModule {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TableModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TableModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+impl<__T: ITableModule> ITableModuleMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
 impl TableModule {
@@ -103,4 +696,14 @@ impl TableModule {
         <Self as ITableModuleMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+pub mod prelude {
+    pub use super::ITableModule;
+    pub use super::ITableModuleMethods;
+    pub use super::TableModule;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

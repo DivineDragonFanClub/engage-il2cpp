@@ -18,381 +18,4808 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-gameobject")]
-#[::unity2::methods]
-impl GameObject {
-    #[doc = "`CreatePrimitive(crate::unity_engine::primitivetype::PrimitiveType)` overload"]
-    #[method(name = "CreatePrimitive", args = 1)]
-    pub fn create_primitive(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_primitive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::primitivetype::PrimitiveType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "CreatePrimitive",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "CreatePrimitive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_primitive(
         r#type: crate::unity_engine::primitivetype::PrimitiveType,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetComponent(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponent", args = 1)]
-    pub fn get_component(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::unity_engine::primitivetype::PrimitiveType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_primitive::get_offset() as isize),
+        );
+        inner(r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentFastPath(::unity2::SystemType, ::unity2::IntPtr)` overload"]
-    #[method(name = "GetComponentFastPath", args = 2)]
-    pub fn get_component_fast_path(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_fast_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentFastPath",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentFastPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_fast_path(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         one_further_than_result_value: ::unity2::IntPtr,
-    ) -> ();
-
-    #[doc = "`GetComponentByName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetComponentByName", args = 1)]
-    pub fn get_component_by_name(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_fast_path::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            one_further_than_result_value,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_by_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentByName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentByName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_by_name(
+        this: GameObject,
         r#type: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponent(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetComponent", args = 1)]
-    pub fn get_component_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_by_name::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_3(
+        this: GameObject,
         r#type: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentInChildren(::unity2::SystemType, bool)` overload"]
-    #[method(name = "GetComponentInChildren", args = 2)]
-    pub fn get_component_in_children(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_3::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_in_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInChildren",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_in_children(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         include_inactive: bool,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentInChildren(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponentInChildren", args = 1)]
-    pub fn get_component_in_children_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_in_children::get_offset() as isize),
+        );
+        inner(this, r#type, include_inactive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_in_children_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInChildren",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_in_children_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentInParent(::unity2::SystemType, bool)` overload"]
-    #[method(name = "GetComponentInParent", args = 2)]
-    pub fn get_component_in_parent(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_in_children_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_in_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInParent",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentInParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_in_parent(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         include_inactive: bool,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentInParent(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponentInParent", args = 1)]
-    pub fn get_component_in_parent_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_in_parent::get_offset() as isize),
+        );
+        inner(this, r#type, include_inactive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_component_in_parent_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInParent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentInParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_component_in_parent_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`GetComponentsInternal(::unity2::SystemType, bool, bool, bool, bool, crate::system::object::Object)` overload"]
-    #[method(name = "GetComponentsInternal", args = 6)]
-    pub fn get_components_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_component_in_parent_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInternal",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentsInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_internal(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         use_search_type_as_array_return_type: bool,
         recursive: bool,
         include_inactive: bool,
         reverse: bool,
         result_list: crate::system::object::Object,
-    ) -> ::unity2::IlInstance;
-
-    #[doc = "`GetComponents(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponents", args = 1)]
-    pub fn get_components(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IlInstance {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            bool,
+            bool,
+            bool,
+            bool,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IlInstance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_internal::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            use_search_type_as_array_return_type,
+            recursive,
+            include_inactive,
+            reverse,
+            result_list,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::component::Component>;
-
-    #[doc = "`GetComponents(::unity2::SystemType, crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
-    #[method(name = "GetComponents", args = 2)]
-    pub fn get_components_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::component::Component> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::component::Component,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponents",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_3(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         results: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::component::Component,
         >,
-    ) -> ();
-
-    #[doc = "`GetComponentsInChildren(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponentsInChildren", args = 1)]
-    pub fn get_components_in_children(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_3::get_offset() as isize),
+        );
+        inner(this, r#type, results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_in_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentsInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_in_children(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::component::Component>;
-
-    #[doc = "`GetComponentsInChildren(::unity2::SystemType, bool)` overload"]
-    #[method(name = "GetComponentsInChildren", args = 2)]
-    pub fn get_components_in_children_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::component::Component> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_in_children::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_in_children_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentsInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_in_children_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         include_inactive: bool,
-    ) -> ::unity2::Array<crate::unity_engine::component::Component>;
-
-    #[doc = "`GetComponentsInParent(::unity2::SystemType)` overload"]
-    #[method(name = "GetComponentsInParent", args = 1)]
-    pub fn get_components_in_parent(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::component::Component> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_in_children_2::get_offset() as isize),
+        );
+        inner(this, r#type, include_inactive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_in_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInParent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentsInParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_in_parent(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::component::Component>;
-
-    #[doc = "`GetComponentsInParent(::unity2::SystemType, bool)` overload"]
-    #[method(name = "GetComponentsInParent", args = 2)]
-    pub fn get_components_in_parent_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::component::Component> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_in_parent::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_components_in_parent_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInParent",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "GetComponentsInParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_components_in_parent_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         include_inactive: bool,
-    ) -> ::unity2::Array<crate::unity_engine::component::Component>;
-
-    #[doc = "`TryGetComponent(::unity2::SystemType, crate::unity_engine::component::Component)` overload"]
-    #[method(name = "TryGetComponent", args = 2)]
-    pub fn try_get_component(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::component::Component> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_components_in_parent_2::get_offset() as isize),
+        );
+        inner(this, r#type, include_inactive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_component_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::component::Component as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "TryGetComponent",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "TryGetComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_component_2(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-        component: crate::unity_engine::component::Component,
-    ) -> bool;
-
-    #[doc = "`TryGetComponentInternal(::unity2::SystemType)` overload"]
-    #[method(name = "TryGetComponentInternal", args = 1)]
-    pub fn try_get_component_internal(
-        self,
+        component: *mut crate::unity_engine::component::Component,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            *mut crate::unity_engine::component::Component,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_component_2::get_offset() as isize),
+        );
+        inner(this, r#type, component, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_component_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "TryGetComponentInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "TryGetComponentInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_component_internal(
+        this: GameObject,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`TryGetComponentFastPath(::unity2::SystemType, ::unity2::IntPtr)` overload"]
-    #[method(name = "TryGetComponentFastPath", args = 2)]
-    pub fn try_get_component_fast_path(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_component_internal::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_component_fast_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "TryGetComponentFastPath",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "TryGetComponentFastPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_component_fast_path(
+        this: GameObject,
         r#type: ::unity2::SystemType,
         one_further_than_result_value: ::unity2::IntPtr,
-    ) -> ();
-
-    #[doc = "`FindWithTag(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindWithTag", args = 1)]
-    pub fn find_with_tag(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_component_fast_path::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            one_further_than_result_value,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_with_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "FindWithTag",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "FindWithTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_with_tag(
         tag: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "SendMessageUpwards", args = 2)]
-    pub fn send_message_upwards(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_with_tag::get_offset() as isize),
+        );
+        inner(tag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_upwards {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessageUpwards",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessageUpwards",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_upwards(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`SendMessage(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "SendMessage", args = 2)]
-    pub fn send_message(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_upwards::get_offset() as isize),
+        );
+        inner(this, method_name, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessage",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "BroadcastMessage", args = 2)]
-    pub fn broadcast_message(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message::get_offset() as isize),
+        );
+        inner(this, method_name, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_broadcast_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "BroadcastMessage",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "BroadcastMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn broadcast_message(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`AddComponentInternal(::unity2::Il2CppString)` overload"]
-    #[method(name = "AddComponentInternal", args = 1)]
-    pub fn add_component_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_broadcast_message::get_offset() as isize),
+        );
+        inner(this, method_name, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_component_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "AddComponentInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "AddComponentInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_component_internal(
+        this: GameObject,
         class_name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`Internal_AddComponentWithType(::unity2::SystemType)` overload"]
-    #[method(name = "Internal_AddComponentWithType", args = 1)]
-    pub fn internal_add_component_with_type(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_component_internal::get_offset() as isize),
+        );
+        inner(this, class_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_add_component_with_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "Internal_AddComponentWithType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "Internal_AddComponentWithType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_add_component_with_type(
+        this: GameObject,
         component_type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`AddComponent(::unity2::SystemType)` overload"]
-    #[method(name = "AddComponent", args = 1)]
-    pub fn add_component(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_add_component_with_type::get_offset() as isize),
+        );
+        inner(this, component_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "AddComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "AddComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_component(
+        this: GameObject,
         component_type: ::unity2::SystemType,
-    ) -> crate::unity_engine::component::Component;
-
-    #[doc = "`get_transform()` overload"]
-    #[method(name = "get_transform", args = 0)]
-    pub fn get_transform(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_layer()` overload"]
-    #[method(name = "get_layer", args = 0)]
-    pub fn get_layer(self) -> i32;
-
-    #[doc = "`set_layer(i32)` overload"]
-    #[method(name = "set_layer", args = 1)]
-    pub fn set_layer(self, value: i32) -> ();
-
-    #[doc = "`get_active()` overload"]
-    #[method(name = "get_active", args = 0)]
-    pub fn get_active(self) -> bool;
-
-    #[doc = "`set_active(bool)` overload"]
-    #[method(name = "set_active", args = 1)]
-    pub fn set_active(self, value: bool) -> ();
-
-    #[doc = "`get_activeSelf()` overload"]
-    #[method(name = "get_activeSelf", args = 0)]
-    pub fn get_active_self(self) -> bool;
-
-    #[doc = "`get_activeInHierarchy()` overload"]
-    #[method(name = "get_activeInHierarchy", args = 0)]
-    pub fn get_active_in_hierarchy(self) -> bool;
-
-    #[doc = "`SetActiveRecursively(bool)` overload"]
-    #[method(name = "SetActiveRecursively", args = 1)]
-    pub fn set_active_recursively(self, state: bool) -> ();
-
-    #[doc = "`get_isStatic()` overload"]
-    #[method(name = "get_isStatic", args = 0)]
-    pub fn get_is_static(self) -> bool;
-
-    #[doc = "`set_isStatic(bool)` overload"]
-    #[method(name = "set_isStatic", args = 1)]
-    pub fn set_is_static(self, value: bool) -> ();
-
-    #[doc = "`get_isStaticBatchable()` overload"]
-    #[method(name = "get_isStaticBatchable", args = 0)]
-    pub fn get_is_static_batchable(self) -> bool;
-
-    #[doc = "`get_tag()` overload"]
-    #[method(name = "get_tag", args = 0)]
-    pub fn get_tag(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_tag(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_tag", args = 1)]
-    pub fn set_tag(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`CompareTag(::unity2::Il2CppString)` overload"]
-    #[method(name = "CompareTag", args = 1)]
-    pub fn compare_tag(self, tag: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`FindGameObjectWithTag(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindGameObjectWithTag", args = 1)]
-    pub fn find_game_object_with_tag(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::component::Component {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::component::Component = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_component::get_offset() as isize),
+        );
+        inner(this, component_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_transform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_transform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transform(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_layer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_layer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layer(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_layer::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_layer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "set_layer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "set_layer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_layer(
+        this: GameObject,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameObject, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_layer::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_active",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_active",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_active::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "set_active",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "set_active",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: GameObject,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active_self {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_activeSelf",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_activeSelf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active_self(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_active_self::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active_in_hierarchy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_activeInHierarchy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_activeInHierarchy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active_in_hierarchy(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_active_in_hierarchy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active_recursively {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SetActiveRecursively",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SetActiveRecursively",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active_recursively(
+        this: GameObject,
+        state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active_recursively::get_offset() as isize),
+            );
+        inner(this, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_isStatic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_isStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_static(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_static::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "set_isStatic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "set_isStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_static(
+        this: GameObject,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_static::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_static_batchable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_isStaticBatchable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_isStaticBatchable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_static_batchable(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_static_batchable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_tag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_tag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tag(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tag::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "set_tag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "set_tag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tag(
+        this: GameObject,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tag::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "CompareTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "CompareTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_tag(
+        this: GameObject,
         tag: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`FindGameObjectsWithTag(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindGameObjectsWithTag", args = 1)]
-    pub fn find_game_objects_with_tag(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_tag::get_offset() as isize),
+        );
+        inner(this, tag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_game_object_with_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "FindGameObjectWithTag",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "FindGameObjectWithTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_game_object_with_tag(
         tag: ::unity2::Il2CppString,
-    ) -> ::unity2::Array<crate::unity_engine::gameobject::GameObject>;
-
-    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "SendMessageUpwards", args = 3)]
-    pub fn send_message_upwards_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_game_object_with_tag::get_offset() as isize),
+        );
+        inner(tag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_game_objects_with_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "FindGameObjectsWithTag",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "FindGameObjectsWithTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_game_objects_with_tag(
+        tag: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::gameobject::GameObject> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::gameobject::GameObject> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_find_game_objects_with_tag::get_offset() as isize),
+            );
+        inner(tag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_upwards_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessageUpwards",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessageUpwards",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_upwards_2(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         value: crate::system::object::Object,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = "SendMessageUpwards", args = 2)]
-    pub fn send_message_upwards_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_upwards_2::get_offset() as isize),
+        );
+        inner(this, method_name, value, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_upwards_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessageUpwards",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessageUpwards",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_upwards_3(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`SendMessageUpwards(::unity2::Il2CppString)` overload"]
-    #[method(name = "SendMessageUpwards", args = 1)]
-    pub fn send_message_upwards_4(self, method_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SendMessage(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "SendMessage", args = 3)]
-    pub fn send_message_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_upwards_3::get_offset() as isize),
+        );
+        inner(this, method_name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_upwards_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessageUpwards",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessageUpwards",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_upwards_4(
+        this: GameObject,
+        method_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_upwards_4::get_offset() as isize),
+        );
+        inner(this, method_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessage",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_2(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         value: crate::system::object::Object,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`SendMessage(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = "SendMessage", args = 2)]
-    pub fn send_message_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_2::get_offset() as isize),
+        );
+        inner(this, method_name, value, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessage",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_3(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SendMessage", args = 1)]
-    pub fn send_message_4(self, method_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
-    #[method(name = "BroadcastMessage", args = 3)]
-    pub fn broadcast_message_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_3::get_offset() as isize),
+        );
+        inner(this, method_name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "SendMessage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "SendMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message_4(
+        this: GameObject,
+        method_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message_4::get_offset() as isize),
+        );
+        inner(this, method_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_broadcast_message_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "BroadcastMessage",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "BroadcastMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn broadcast_message_2(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         parameter: crate::system::object::Object,
         options: crate::unity_engine::sendmessageoptions::SendMessageOptions,
-    ) -> ();
-
-    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = "BroadcastMessage", args = 2)]
-    pub fn broadcast_message_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            crate::unity_engine::sendmessageoptions::SendMessageOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_broadcast_message_2::get_offset() as isize),
+        );
+        inner(this, method_name, parameter, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_broadcast_message_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "BroadcastMessage",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "BroadcastMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn broadcast_message_3(
+        this: GameObject,
         method_name: ::unity2::Il2CppString,
         parameter: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`BroadcastMessage(::unity2::Il2CppString)` overload"]
-    #[method(name = "BroadcastMessage", args = 1)]
-    pub fn broadcast_message_4(self, method_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor_2(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_broadcast_message_3::get_offset() as isize),
+        );
+        inner(this, method_name, parameter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_broadcast_message_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "BroadcastMessage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "BroadcastMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn broadcast_message_4(
+        this: GameObject,
+        method_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_broadcast_message_4::get_offset() as isize),
+        );
+        inner(this, method_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameObject,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(this: GameObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: GameObject,
         name: ::unity2::Il2CppString,
         components: ::unity2::Array<::unity2::SystemType>,
-    ) -> ();
-
-    #[doc = "`Internal_CreateGameObject(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Internal_CreateGameObject", args = 2)]
-    pub fn internal_create_game_object(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::Array<::unity2::SystemType>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, name, components, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "Internal_CreateGameObject",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CreateGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create_game_object(
         self_: crate::unity_engine::gameobject::GameObject,
         name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    #[method(name = "Find", args = 1)]
-    pub fn find(name: ::unity2::Il2CppString) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_scene()` overload"]
-    #[method(name = "get_scene", args = 0)]
-    pub fn get_scene(self) -> crate::unity_engine::scene_management::scene::Scene;
-
-    #[doc = "`get_sceneCullingMask()` overload"]
-    #[method(name = "get_sceneCullingMask", args = 0)]
-    pub fn get_scene_culling_mask(self) -> u64;
-
-    #[doc = "`get_gameObject()` overload"]
-    #[method(name = "get_gameObject", args = 0)]
-    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_scene_Injected(crate::unity_engine::scene_management::scene::Scene)` overload"]
-    #[method(name = "get_scene_Injected", args = 1)]
-    pub fn get_scene_injected(self, ret: crate::unity_engine::scene_management::scene::Scene)
-        -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create_game_object::get_offset() as isize),
+        );
+        inner(self_, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "Find",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "Find",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_scene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_scene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scene(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scene_management::scene::Scene {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::scene_management::scene::Scene = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scene::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_culling_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_sceneCullingMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_sceneCullingMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scene_culling_mask(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u64 {
+        let inner: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> u64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_scene_culling_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_gameObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_gameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_game_object(
+        this: GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_game_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: scene_management :: scene :: Scene as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "get_scene_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameObject as ::unity2::ClassIdentity>::NAME,
+                    "get_scene_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scene_injected(
+        this: GameObject,
+        ret: *mut crate::unity_engine::scene_management::scene::Scene,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameObject,
+            *mut crate::unity_engine::scene_management::scene::Scene,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scene_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-gameobject")]
+impl GameObject {
+    #[doc = "`CreatePrimitive(crate::unity_engine::primitivetype::PrimitiveType)` overload"]
+    pub fn create_primitive(
+        r#type: impl ::core::convert::Into<crate::unity_engine::primitivetype::PrimitiveType>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameObject_unity2_raw::create_primitive(
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindWithTag(::unity2::Il2CppString)` overload"]
+    pub fn find_with_tag(
+        tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameObject_unity2_raw::find_with_tag(
+                ::core::convert::Into::into(tag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindGameObjectWithTag(::unity2::Il2CppString)` overload"]
+    pub fn find_game_object_with_tag(
+        tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameObject_unity2_raw::find_game_object_with_tag(
+                ::core::convert::Into::into(tag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindGameObjectsWithTag(::unity2::Il2CppString)` overload"]
+    pub fn find_game_objects_with_tag(
+        tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<crate::unity_engine::gameobject::GameObject> {
+        unsafe {
+            __GameObject_unity2_raw::find_game_objects_with_tag(
+                ::core::convert::Into::into(tag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_CreateGameObject(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    pub fn internal_create_game_object(
+        self_: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __GameObject_unity2_raw::internal_create_game_object(
+                ::core::convert::Into::into(self_),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Find(::unity2::Il2CppString)` overload"]
+    pub fn find(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameObject_unity2_raw::find(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gameobject")]
+pub trait IGameObjectMethods: IGameObject {
+    pub fn get_component<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponent",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`GetComponent(::unity2::SystemType)` overload"]
+    fn get_component_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentFastPath(::unity2::SystemType, ::unity2::IntPtr)` overload"]
+    fn get_component_fast_path(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        one_further_than_result_value: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_fast_path(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(one_further_than_result_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentByName(::unity2::Il2CppString)` overload"]
+    fn get_component_by_name(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_by_name(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponent(::unity2::Il2CppString)` overload"]
+    fn get_component_3(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_3(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentInChildren(::unity2::SystemType, bool)` overload"]
+    fn get_component_in_children(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_in_children(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentInChildren(::unity2::SystemType)` overload"]
+    fn get_component_in_children_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_in_children_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_component_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInChildren",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    pub fn get_component_in_children_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInChildren",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, bool, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetComponentInParent(::unity2::SystemType, bool)` overload"]
+    fn get_component_in_parent(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_in_parent(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentInParent(::unity2::SystemType)` overload"]
+    fn get_component_in_parent_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_component_in_parent_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_component_in_parent_3<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInParent",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentInParent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    pub fn get_component_in_parent_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentInParent",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentInParent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, bool, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetComponentsInternal(::unity2::SystemType, bool, bool, bool, bool, crate::system::object::Object)` overload"]
+    fn get_components_internal(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        use_search_type_as_array_return_type: impl ::core::convert::Into<bool>,
+        recursive: impl ::core::convert::Into<bool>,
+        include_inactive: impl ::core::convert::Into<bool>,
+        reverse: impl ::core::convert::Into<bool>,
+        result_list: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::IlInstance {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_internal(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(use_search_type_as_array_return_type),
+                ::core::convert::Into::into(recursive),
+                ::core::convert::Into::into(include_inactive),
+                ::core::convert::Into::into(reverse),
+                ::core::convert::Into::into(result_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponents(::unity2::SystemType)` overload"]
+    fn get_components(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_components_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponents",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponents",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`GetComponents(::unity2::SystemType, crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
+    fn get_components_3(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_3(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_components_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponents",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponents",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(results),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetComponentsInChildren(::unity2::SystemType)` overload"]
+    fn get_components_in_children(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_in_children(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentsInChildren(::unity2::SystemType, bool)` overload"]
+    fn get_components_in_children_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_in_children_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_components_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                bool,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_components_in_children_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                bool,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_components_in_children_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    pub fn get_components_in_children_6<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInChildren",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInChildren",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(results),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetComponentsInParent(::unity2::SystemType)` overload"]
+    fn get_components_in_parent(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_in_parent(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetComponentsInParent(::unity2::SystemType, bool)` overload"]
+    fn get_components_in_parent_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::unity_engine::component::Component> {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_components_in_parent_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_components_in_parent_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInParent",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInParent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                bool,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_components_in_parent_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        include_inactive: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInParent",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInParent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                GameObject,
+                bool,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(include_inactive),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_components_in_parent_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "GetComponentsInParent",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "GetComponentsInParent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        component: impl ::core::convert::Into<*mut M0>,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "TryGetComponent",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "TryGetComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, *mut M0, ::unity2::OptionalMethod) -> bool =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(component),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`TryGetComponent(::unity2::SystemType, *mutcrate::unity_engine::component::Component)` overload"]
+    fn try_get_component_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> (bool, crate::unity_engine::component::Component) {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::component::Component>::uninit();
+            let __ret = {
+                __GameObject_unity2_raw::try_get_component_2(
+                    __receiver,
+                    ::core::convert::Into::into(r#type),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetComponentInternal(::unity2::SystemType)` overload"]
+    fn try_get_component_internal(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::try_get_component_internal(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetComponentFastPath(::unity2::SystemType, ::unity2::IntPtr)` overload"]
+    fn try_get_component_fast_path(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        one_further_than_result_value: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::try_get_component_fast_path(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(one_further_than_result_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn send_message_upwards(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_upwards(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessage(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn send_message(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn broadcast_message(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::broadcast_message(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddComponentInternal(::unity2::Il2CppString)` overload"]
+    fn add_component_internal(
+        self,
+        class_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::add_component_internal(
+                __receiver,
+                ::core::convert::Into::into(class_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_AddComponentWithType(::unity2::SystemType)` overload"]
+    fn internal_add_component_with_type(
+        self,
+        component_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::internal_add_component_with_type(
+                __receiver,
+                ::core::convert::Into::into(component_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddComponent(::unity2::SystemType)` overload"]
+    fn add_component(
+        self,
+        component_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::component::Component {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::add_component(
+                __receiver,
+                ::core::convert::Into::into(component_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn add_component_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <GameObject as ::unity2::ClassIdentity>::class(),
+                "AddComponent",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <GameObject as ::unity2::ClassIdentity>::NAME,
+                "AddComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`get_transform()` overload"]
+    fn get_transform(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_transform(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_layer()` overload"]
+    fn get_layer(self) -> i32 {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_layer(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_layer(i32)` overload"]
+    fn set_layer(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::set_layer(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_active()` overload"]
+    fn get_active(self) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_active(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_active(bool)` overload"]
+    fn set_active(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_activeSelf()` overload"]
+    fn get_active_self(self) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_active_self(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_activeInHierarchy()` overload"]
+    fn get_active_in_hierarchy(self) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_active_in_hierarchy(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetActiveRecursively(bool)` overload"]
+    fn set_active_recursively(self, state: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::set_active_recursively(
+                __receiver,
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isStatic()` overload"]
+    fn get_is_static(self) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_isStatic(bool)` overload"]
+    fn set_is_static(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::set_is_static(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isStaticBatchable()` overload"]
+    fn get_is_static_batchable(self) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_is_static_batchable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_tag()` overload"]
+    fn get_tag(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_tag(::unity2::Il2CppString)` overload"]
+    fn set_tag(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::set_tag(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareTag(::unity2::Il2CppString)` overload"]
+    fn compare_tag(self, tag: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::compare_tag(
+                __receiver,
+                ::core::convert::Into::into(tag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn send_message_upwards_2(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_upwards_2(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessageUpwards(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn send_message_upwards_3(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_upwards_3(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessageUpwards(::unity2::Il2CppString)` overload"]
+    fn send_message_upwards_4(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_upwards_4(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessage(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn send_message_2(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_2(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessage(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn send_message_3(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_3(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
+    fn send_message_4(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::send_message_4(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::system::object::Object, crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]
+    fn broadcast_message_2(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parameter: impl ::core::convert::Into<crate::system::object::Object>,
+        options: impl ::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::broadcast_message_2(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(parameter),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BroadcastMessage(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn broadcast_message_3(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parameter: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::broadcast_message_3(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(parameter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BroadcastMessage(::unity2::Il2CppString)` overload"]
+    fn broadcast_message_4(
+        self,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::broadcast_message_4(
+                __receiver,
+                ::core::convert::Into::into(method_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor_2(self) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
+    fn ctor_3(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        components: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(components),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_scene()` overload"]
+    fn get_scene(self) -> crate::unity_engine::scene_management::scene::Scene {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_sceneCullingMask()` overload"]
+    fn get_scene_culling_mask(self) -> u64 {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_scene_culling_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_gameObject()` overload"]
+    fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameObject_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_scene_Injected(*mutcrate::unity_engine::scene_management::scene::Scene)` overload"]
+    fn get_scene_injected(self) -> crate::unity_engine::scene_management::scene::Scene {
+        unsafe {
+            let __receiver = <GameObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::scene_management::scene::Scene,
+            >::uninit();
+            __GameObject_unity2_raw::get_scene_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gameobject")]
+impl<__T: IGameObject> IGameObjectMethods for __T {}
 
 #[cfg(feature = "unity_engine-gameobject")]
 impl GameObject {
@@ -437,4 +4864,17 @@ impl GameObject {
         <Self as IGameObjectMethods>::ctor_3(this, name, components);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-gameobject")]
+pub mod prelude {
+    pub use super::GameObject;
+    pub use super::IGameObject;
+    pub use super::IGameObjectMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

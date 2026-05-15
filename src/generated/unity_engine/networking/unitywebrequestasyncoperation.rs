@@ -22,25 +22,197 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
-#[::unity2::methods]
-impl UnityWebRequestAsyncOperation {
-    #[doc = "`get_webRequest()` overload"]
-    #[method(name = "get_webRequest", args = 0)]
-    pub fn get_web_request(
-        self,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
-
-    #[doc = "`set_webRequest(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"]
-    #[method(name = "set_webRequest", args = 1)]
-    pub fn set_web_request(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnityWebRequestAsyncOperation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_web_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::class(),
+                "get_webRequest",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::NAME,
+                    "get_webRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_web_request(
+        this: UnityWebRequestAsyncOperation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        let inner : extern "C" fn (UnityWebRequestAsyncOperation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_web_request :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_web_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::class(),
+                "set_webRequest",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::NAME,
+                    "set_webRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_web_request(
+        this: UnityWebRequestAsyncOperation,
         value: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnityWebRequestAsyncOperation,
+            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_web_request::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAsyncOperation as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnityWebRequestAsyncOperation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnityWebRequestAsyncOperation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
+pub trait IUnityWebRequestAsyncOperationMethods: IUnityWebRequestAsyncOperation {
+    #[doc = "`get_webRequest()` overload"]
+    fn get_web_request(self) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        unsafe {
+            let __receiver =
+                <UnityWebRequestAsyncOperation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnityWebRequestAsyncOperation_unity2_raw::get_web_request(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_webRequest(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"]
+    fn set_web_request(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnityWebRequestAsyncOperation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnityWebRequestAsyncOperation_unity2_raw::set_web_request(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnityWebRequestAsyncOperation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnityWebRequestAsyncOperation_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
+impl<__T: IUnityWebRequestAsyncOperation> IUnityWebRequestAsyncOperationMethods for __T {}
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
 impl UnityWebRequestAsyncOperation {
@@ -56,4 +228,20 @@ impl UnityWebRequestAsyncOperation {
         <Self as IUnityWebRequestAsyncOperationMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
+pub mod prelude {
+    pub use super::IUnityWebRequestAsyncOperation;
+    pub use super::IUnityWebRequestAsyncOperationMethods;
+    pub use super::UnityWebRequestAsyncOperation;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::asyncoperation::IAsyncOperation;
+    #[cfg(feature = "unity_engine-asyncoperation")]
+    pub use crate::unity_engine::asyncoperation::IAsyncOperationMethods;
+    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
+    #[cfg(feature = "unity_engine-yieldinstruction")]
+    pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
 }

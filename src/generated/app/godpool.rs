@@ -19,73 +19,821 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-godpool")]
-#[::unity2::methods]
-impl GodPool {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`TryGet(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "TryGet", args = 2)]
-    pub fn try_get(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodPool_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GodPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodPool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "get_Version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version(
+        this: GodPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GodPool, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_version::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "TryGet",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "TryGet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get(
         gid: ::unity2::Il2CppString,
         include_reserved: bool,
-    ) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`TryGet(crate::app::goddata::GodData, bool)` overload"]
-    #[method(name = "TryGet", args = 2)]
-    pub fn try_get_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get::get_offset() as isize),
+        );
+        inner(gid, include_reserved, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "TryGet",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "TryGet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_2(
         data: crate::app::goddata::GodData,
         include_reserved: bool,
-    ) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`TryGetImpl(crate::app::goddata::GodData, bool)` overload"]
-    #[method(name = "TryGetImpl", args = 2)]
-    pub fn try_get_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(
+            crate::app::goddata::GodData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_2::get_offset() as isize),
+        );
+        inner(data, include_reserved, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "TryGetImpl",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "TryGetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_impl(
         data: crate::app::goddata::GodData,
         include_reserved: bool,
-    ) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`Create(crate::app::goddata::GodData)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(data: crate::app::goddata::GodData) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`Delete(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "Delete", args = 1)]
-    pub fn delete(god: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`DeleteOrReserve(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "DeleteOrReserve", args = 1)]
-    pub fn delete_or_reserve(god: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`DeleteReserved()` overload"]
-    #[method(name = "DeleteReserved", args = 0)]
-    pub fn delete_reserved() -> ();
-
-    #[doc = "`DeleteExceptForPlayer()` overload"]
-    #[method(name = "DeleteExceptForPlayer", args = 0)]
-    pub fn delete_except_for_player() -> ();
-
-    #[doc = "`AppendEnemyGod(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "AppendEnemyGod", args = 1)]
-    pub fn append_enemy_god(god: crate::app::godunit::GodUnit) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`HasArmlet()` overload"]
-    #[method(name = "HasArmlet", args = 0)]
-    pub fn has_armlet() -> bool;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(
+            crate::app::goddata::GodData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_impl::get_offset() as isize),
+        );
+        inner(data, include_reserved, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "Delete",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "Delete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete(
+        god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete::get_offset() as isize),
+            );
+        inner(god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_or_reserve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "DeleteOrReserve",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "DeleteOrReserve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_or_reserve(
+        god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_or_reserve::get_offset() as isize),
+            );
+        inner(god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_reserved {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "DeleteReserved",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "DeleteReserved",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_reserved(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_delete_reserved::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_except_for_player {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "DeleteExceptForPlayer",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "DeleteExceptForPlayer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_except_for_player(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_delete_except_for_player::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_append_enemy_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "AppendEnemyGod",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "AppendEnemyGod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn append_enemy_god(
+        god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_append_enemy_god::get_offset() as isize),
+        );
+        inner(god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_armlet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "HasArmlet",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "HasArmlet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_armlet(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_armlet::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "OnSerialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "OnSerialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_serialize(
+        this: GodPool,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodPool,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_serialize::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodPool as ::unity2::ClassIdentity>::class(),
+                "OnDeserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodPool as ::unity2::ClassIdentity>::NAME,
+                    "OnDeserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_deserialize(
+        this: GodPool,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodPool,
+            crate::app::stream_2::Stream_2,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_deserialize::get_offset() as isize),
+        );
+        inner(this, stream, version, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-godpool")]
+impl GodPool {
+    #[doc = "`TryGet(::unity2::Il2CppString, bool)` overload"]
+    pub fn try_get(
+        gid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        include_reserved: impl ::core::convert::Into<bool>,
+    ) -> crate::app::godunit::GodUnit {
+        unsafe {
+            __GodPool_unity2_raw::try_get(
+                ::core::convert::Into::into(gid),
+                ::core::convert::Into::into(include_reserved),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGet(crate::app::goddata::GodData, bool)` overload"]
+    pub fn try_get_2(
+        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        include_reserved: impl ::core::convert::Into<bool>,
+    ) -> crate::app::godunit::GodUnit {
+        unsafe {
+            __GodPool_unity2_raw::try_get_2(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(include_reserved),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetImpl(crate::app::goddata::GodData, bool)` overload"]
+    pub fn try_get_impl(
+        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        include_reserved: impl ::core::convert::Into<bool>,
+    ) -> crate::app::godunit::GodUnit {
+        unsafe {
+            __GodPool_unity2_raw::try_get_impl(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(include_reserved),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Create(crate::app::goddata::GodData)` overload"]
+    pub fn create(
+        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> crate::app::godunit::GodUnit {
+        unsafe {
+            __GodPool_unity2_raw::create(
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Delete(crate::app::godunit::GodUnit)` overload"]
+    pub fn delete(god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
+        unsafe {
+            __GodPool_unity2_raw::delete(
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteOrReserve(crate::app::godunit::GodUnit)` overload"]
+    pub fn delete_or_reserve(god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
+        unsafe {
+            __GodPool_unity2_raw::delete_or_reserve(
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteReserved()` overload"]
+    pub fn delete_reserved() -> () {
+        unsafe { __GodPool_unity2_raw::delete_reserved(::core::option::Option::None) }
+    }
+    #[doc = "`DeleteExceptForPlayer()` overload"]
+    pub fn delete_except_for_player() -> () {
+        unsafe { __GodPool_unity2_raw::delete_except_for_player(::core::option::Option::None) }
+    }
+    #[doc = "`AppendEnemyGod(crate::app::godunit::GodUnit)` overload"]
+    pub fn append_enemy_god(
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> crate::app::godunit::GodUnit {
+        unsafe {
+            __GodPool_unity2_raw::append_enemy_god(
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasArmlet()` overload"]
+    pub fn has_armlet() -> bool {
+        unsafe { __GodPool_unity2_raw::has_armlet(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-godpool")]
+pub trait IGodPoolMethods: IGodPool {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GodPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Version()` overload"]
+    fn get_version(self) -> i32 {
+        unsafe {
+            let __receiver = <GodPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodPool_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    fn on_serialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodPool_unity2_raw::on_serialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn on_deserialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+        version: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodPool_unity2_raw::on_deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-godpool")]
+impl<__T: IGodPool> IGodPoolMethods for __T {}
 
 #[cfg(feature = "app-godpool")]
 impl GodPool {
@@ -101,4 +849,20 @@ impl GodPool {
         <Self as IGodPoolMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-godpool")]
+pub mod prelude {
+    pub use super::GodPool;
+    pub use super::IGodPool;
+    pub use super::IGodPoolMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::app::singletonpool_2::ISingletonPool_2;
+    #[cfg(feature = "app-singletonpool_2")]
+    pub use crate::app::singletonpool_2::ISingletonPool_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

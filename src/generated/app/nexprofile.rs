@@ -11,6 +11,62 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexProfile_Results {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexProfile_Results {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexProfile.Results";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexProfile_Results {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexProfile_Results {
+        pub fn failed() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn failed_not_found() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn failed_permission_denied() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn cancelled() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn succeeded() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -96,62 +152,6 @@ mod __types {
         pub m_data_id: u64,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexProfile_Results {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexProfile_Results {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexProfile.Results";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexProfile_Results {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexProfile_Results {
-        pub fn failed() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn failed_not_found() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn failed_permission_denied() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn cancelled() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md"))]
     #[::unity2::class(namespace = "App", name = "NexProfile")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)]
@@ -211,100 +211,1186 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-nexprofile")]
-#[::unity2::methods]
-impl NexProfile_ServerSequence {
-    #[doc = "`.ctor(crate::app::nexprofile::NexProfile_ServerSequence_Mode, u64, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexProfile_ServerSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexprofile :: NexProfile_ServerSequence_Mode as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexProfile_ServerSequence,
         mode: crate::app::nexprofile::NexProfile_ServerSequence_Mode,
         principal_id: u64,
         profile: crate::app::profilecard::ProfileCard,
-    ) -> ();
-
-    #[doc = "`Login()` overload"]
-    #[method(name = "Login", args = 0)]
-    pub fn login(self) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`Branch()` overload"]
-    #[method(name = "Branch", args = 0)]
-    pub fn branch(self) -> ();
-
-    #[doc = "`UploadBranch()` overload"]
-    #[method(name = "UploadBranch", args = 0)]
-    pub fn upload_branch(self) -> ();
-
-    #[doc = "`UploadNew()` overload"]
-    #[method(name = "UploadNew", args = 0)]
-    pub fn upload_new(self) -> ();
-
-    #[doc = "`Change()` overload"]
-    #[method(name = "Change", args = 0)]
-    pub fn change(self) -> ();
-
-    #[doc = "`ChangeMeta()` overload"]
-    #[method(name = "ChangeMeta", args = 0)]
-    pub fn change_meta(self) -> ();
-
-    #[doc = "`SerializeData(::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "SerializeData", args = 2)]
-    pub fn serialize_data(self, data: ::unity2::Array<u8>, size: u32) -> ();
-
-    #[doc = "`Download()` overload"]
-    #[method(name = "Download", args = 0)]
-    pub fn download(self) -> ();
-
-    #[doc = "`DeserializeData(::unity2::Array<u8>)` overload"]
-    #[method(name = "DeserializeData", args = 1)]
-    pub fn deserialize_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexProfile_ServerSequence,
+            crate::app::nexprofile::NexProfile_ServerSequence_Mode,
+            u64,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, mode, principal_id, profile, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_login {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Login",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Login",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn login(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_login::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_branch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Branch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Branch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn branch(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_branch::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_branch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "UploadBranch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadBranch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_branch(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_branch::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "UploadNew",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadNew",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_new(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_new::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Change",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Change",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_meta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "ChangeMeta",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeMeta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_meta(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_meta::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut ::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <*mut u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SerializeData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SerializeData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize_data(
+        this: NexProfile_ServerSequence,
+        data: *mut ::unity2::Array<u8>,
+        size: *mut u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexProfile_ServerSequence,
+            *mut ::unity2::Array<u8>,
+            *mut u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize_data::get_offset() as isize),
+        );
+        inner(this, data, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Download",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Download",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_download::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "DeserializeData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "DeserializeData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deserialize_data(
+        this: NexProfile_ServerSequence,
         data: ::unity2::Array<u8>,
-    ) -> crate::app::profilecard::ProfileCard;
-
-    #[doc = "`Succeeded()` overload"]
-    #[method(name = "Succeeded", args = 0)]
-    pub fn succeeded(self) -> ();
-
-    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
-    #[method(name = "SetError", args = 1)]
-    pub fn set_error(self, error: crate::app::neterror::NetError_App) -> ();
-
-    #[doc = "`SetErrorNotFound()` overload"]
-    #[method(name = "SetErrorNotFound", args = 0)]
-    pub fn set_error_not_found(self) -> ();
-
-    #[doc = "`SetErrorPermissionDenied()` overload"]
-    #[method(name = "SetErrorPermissionDenied", args = 0)]
-    pub fn set_error_permission_denied(self) -> ();
-
-    #[doc = "`Error()` overload"]
-    #[method(name = "Error", args = 0)]
-    pub fn error(self) -> ();
-
-    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst, u64)` overload"]
-    #[method(name = "CreateBindDownload", args = 2)]
-    pub fn create_bind_download(super_: crate::app::procinst::ProcInst, principal_id: u64) -> ();
-
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "CreateBindUpload", args = 2)]
-    pub fn create_bind_upload(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard {
+        let inner: extern "C" fn(
+            NexProfile_ServerSequence,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_deserialize_data::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Succeeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Succeeded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn succeeded(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_succeeded::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::neterror::NetError_App as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SetError",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_error(
+        this: NexProfile_ServerSequence,
+        error: crate::app::neterror::NetError_App,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexProfile_ServerSequence,
+            crate::app::neterror::NetError_App,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_error::get_offset() as isize),
+        );
+        inner(this, error, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_error_not_found {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SetErrorNotFound",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetErrorNotFound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_error_not_found(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_error_not_found::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_error_permission_denied {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SetErrorPermissionDenied",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetErrorPermissionDenied",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_error_permission_denied(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_error_permission_denied::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Error",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Error",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn error(
+        this: NexProfile_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_error::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindDownload",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_download(
+        super_: crate::app::procinst::ProcInst,
+        principal_id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_download::get_offset() as isize),
+        );
+        inner(super_, principal_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindUpload",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindUpload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_upload(
         super_: crate::app::procinst::ProcInst,
         profile: crate::app::profilecard::ProfileCard,
-    ) -> ();
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexprofile::NexProfile_ServerSequence_Mode, u64, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "CreateBindImpl", args = 4)]
-    pub fn create_bind_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_upload::get_offset() as isize),
+        );
+        inner(super_, profile, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexprofile :: NexProfile_ServerSequence_Mode as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindImpl",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_impl(
         super_: crate::app::procinst::ProcInst,
         mode: crate::app::nexprofile::NexProfile_ServerSequence_Mode,
         principal_id: u64,
         profile: crate::app::profilecard::ProfileCard,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::nexprofile::NexProfile_ServerSequence_Mode,
+            u64,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_impl::get_offset() as isize),
+        );
+        inner(super_, mode, principal_id, profile, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-nexprofile")]
+impl NexProfile_ServerSequence {
+    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst, u64)` overload"]
+    pub fn create_bind_download(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        principal_id: impl ::core::convert::Into<u64>,
+    ) -> () {
+        unsafe {
+            __NexProfile_ServerSequence_unity2_raw::create_bind_download(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(principal_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
+    pub fn create_bind_upload(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> () {
+        unsafe {
+            __NexProfile_ServerSequence_unity2_raw::create_bind_upload(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(profile),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexprofile::NexProfile_ServerSequence_Mode, u64, crate::app::profilecard::ProfileCard)` overload"]
+    pub fn create_bind_impl(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mode: impl ::core::convert::Into<crate::app::nexprofile::NexProfile_ServerSequence_Mode>,
+        principal_id: impl ::core::convert::Into<u64>,
+        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> () {
+        unsafe {
+            __NexProfile_ServerSequence_unity2_raw::create_bind_impl(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(profile),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexprofile")]
+pub trait INexProfile_ServerSequenceMethods: INexProfile_ServerSequence {
+    #[doc = "`.ctor(crate::app::nexprofile::NexProfile_ServerSequence_Mode, u64, crate::app::profilecard::ProfileCard)` overload"]
+    fn ctor(
+        self,
+        mode: impl ::core::convert::Into<crate::app::nexprofile::NexProfile_ServerSequence_Mode>,
+        principal_id: impl ::core::convert::Into<u64>,
+        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(profile),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Branch()` overload"]
+    fn branch(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UploadBranch()` overload"]
+    fn upload_branch(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::upload_branch(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadNew()` overload"]
+    fn upload_new(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::upload_new(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Change()` overload"]
+    fn change(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::change(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ChangeMeta()` overload"]
+    fn change_meta(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::change_meta(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SerializeData(*mut::unity2::Array<u8>, *mutu32)` overload"]
+    fn serialize_data(self) -> (::unity2::Array<u8>, u32) {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<u8>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u32>::uninit();
+            __NexProfile_ServerSequence_unity2_raw::serialize_data(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Download()` overload"]
+    fn download(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::download(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeserializeData(::unity2::Array<u8>)` overload"]
+    fn deserialize_data(
+        self,
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> crate::app::profilecard::ProfileCard {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::deserialize_data(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Succeeded()` overload"]
+    fn succeeded(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::succeeded(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
+    fn set_error(
+        self,
+        error: impl ::core::convert::Into<crate::app::neterror::NetError_App>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::set_error(
+                __receiver,
+                ::core::convert::Into::into(error),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetErrorNotFound()` overload"]
+    fn set_error_not_found(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::set_error_not_found(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetErrorPermissionDenied()` overload"]
+    fn set_error_permission_denied(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::set_error_permission_denied(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Error()` overload"]
+    fn error(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexProfile_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexProfile_ServerSequence_unity2_raw::error(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexprofile")]
+impl<__T: INexProfile_ServerSequence> INexProfile_ServerSequenceMethods for __T {}
 
 #[cfg(feature = "app-nexprofile")]
 impl NexProfile_ServerSequence {
@@ -327,44 +1413,487 @@ impl NexProfile_ServerSequence {
 }
 
 #[cfg(feature = "app-nexprofile")]
-#[::unity2::methods]
-impl NexProfile {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "Upload", args = 2)]
-    pub fn upload(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexProfile_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: NexProfile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: NexProfile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "Upload",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "Upload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload(
+        this: NexProfile,
         super_: crate::app::procinst::ProcInst,
         profile: crate::app::profilecard::ProfileCard,
-    ) -> bool;
-
-    #[doc = "`Download(crate::app::procinst::ProcInst, u64)` overload"]
-    #[method(name = "Download", args = 2)]
-    pub fn download(self, super_: crate::app::procinst::ProcInst, principal_id: u64) -> bool;
-
-    #[doc = "`get_Result()` overload"]
-    #[method(name = "get_Result", args = 0)]
-    pub fn get_result(self) -> crate::app::nexprofile::NexProfile_Results;
-
-    #[doc = "`get_ResultData()` overload"]
-    #[method(name = "get_ResultData", args = 0)]
-    pub fn get_result_data(self) -> crate::app::profilecard::ProfileCard;
-
-    #[doc = "`ClearResult()` overload"]
-    #[method(name = "ClearResult", args = 0)]
-    pub fn clear_result(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexProfile,
+            crate::app::procinst::ProcInst,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload::get_offset() as isize),
+        );
+        inner(this, super_, profile, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "Download",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "Download",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download(
+        this: NexProfile,
+        super_: crate::app::procinst::ProcInst,
+        principal_id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexProfile,
+            crate::app::procinst::ProcInst,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_download::get_offset() as isize),
+        );
+        inner(this, super_, principal_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "get_Result",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "get_Result",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        this: NexProfile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::nexprofile::NexProfile_Results {
+        let inner: extern "C" fn(
+            NexProfile,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::nexprofile::NexProfile_Results = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_result::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "get_ResultData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "get_ResultData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result_data(
+        this: NexProfile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard {
+        let inner: extern "C" fn(
+            NexProfile,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_result_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                "ClearResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    "ClearResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_result(
+        this: NexProfile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexProfile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_result::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexProfile as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexProfile as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: NexProfile, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexProfile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-nexprofile")]
+pub trait INexProfileMethods: INexProfile {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
+    fn upload(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::upload(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(profile),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Download(crate::app::procinst::ProcInst, u64)` overload"]
+    fn download(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        principal_id: impl ::core::convert::Into<u64>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::download(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(principal_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Result()` overload"]
+    fn get_result(self) -> crate::app::nexprofile::NexProfile_Results {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::get_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ResultData()` overload"]
+    fn get_result_data(self) -> crate::app::profilecard::ProfileCard {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::get_result_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearResult()` overload"]
+    fn clear_result(self) -> () {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::clear_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <NexProfile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexProfile_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexprofile")]
+impl<__T: INexProfile> INexProfileMethods for __T {}
 
 #[cfg(feature = "app-nexprofile")]
 impl NexProfile {
@@ -380,4 +1909,32 @@ impl NexProfile {
         <Self as INexProfileMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-nexprofile")]
+pub mod prelude {
+    pub use super::INexProfile;
+    pub use super::INexProfileMethods;
+    pub use super::INexProfile_ServerSequence;
+    pub use super::INexProfile_ServerSequenceMethods;
+    pub use super::NexProfile;
+    pub use super::NexProfile_Results;
+    pub use super::NexProfile_ServerSequence;
+    pub use super::NexProfile_ServerSequence_Label;
+    pub use super::NexProfile_ServerSequence_Mode;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

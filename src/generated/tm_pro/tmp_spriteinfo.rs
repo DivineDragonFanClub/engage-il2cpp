@@ -41,3 +41,14 @@ mod __types {
 
 #[cfg(feature = "tm_pro-tmp_spriteinfo-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-tmp_spriteinfo")]
+pub mod prelude {
+    pub use super::TMP_SpriteInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

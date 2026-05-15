@@ -79,64 +79,801 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-configbasicmenuitem")]
-#[::unity2::methods]
-impl ConfigBasicMenuItem {
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`InitContent()` overload"]
-    #[method(name = "InitContent", args = 0)]
-    pub fn init_content(self) -> ();
-
-    #[doc = "`InitColor()` overload"]
-    #[method(name = "InitColor", args = 0)]
-    pub fn init_color(self) -> ();
-
-    #[doc = "`SetTitleText(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTitleText", args = 1)]
-    pub fn set_title_text(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateText()` overload"]
-    #[method(name = "UpdateText", args = 0)]
-    pub fn update_text(self) -> ();
-
-    #[doc = "`IsConfigMethod(crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind)` overload"]
-    #[method(name = "IsConfigMethod", args = 1)]
-    pub fn is_config_method(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConfigBasicMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build_menu_item_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuildMenuItemContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnBuildMenuItemContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build_menu_item_content(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_select::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deselect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnDeselect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnDeselect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_deselect(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_deselect::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "InitContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "InitContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_content(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_content::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "InitColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "InitColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_color(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_color::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_title_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "SetTitleText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "SetTitleText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_title_text(
+        this: ConfigBasicMenuItem,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ConfigBasicMenuItem,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_title_text::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "UpdateText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "UpdateText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_config_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "IsConfigMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "IsConfigMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_config_method(
+        this: ConfigBasicMenuItem,
         config_method: crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind,
-    ) -> bool;
-
-    #[doc = "`ChangeKeyValueImpl(f64, f64, f64, f64, bool)` overload"]
-    #[method(name = "ChangeKeyValueImpl", args = 5)]
-    pub fn change_key_value_impl(value: f64, min: f64, max: f64, step: f64, is_repeat: bool)
-        -> f64;
-
-    #[doc = "`ChangeKeyValue(i32, i32, i32, i32)` overload"]
-    #[method(name = "ChangeKeyValue", args = 4)]
-    pub fn change_key_value(value: i32, min: i32, max: i32, step: i32) -> i32;
-
-    #[doc = "`ChangeKeyValue(f32, f32, f32, f32)` overload"]
-    #[method(name = "ChangeKeyValue", args = 4)]
-    pub fn change_key_value_2(value: f32, min: f32, max: f32, step: f32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ConfigBasicMenuItem,
+            crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_config_method::get_offset() as isize),
+        );
+        inner(this, config_method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_key_value_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f64 as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "ChangeKeyValueImpl",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ChangeKeyValueImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_key_value_impl(
+        value: f64,
+        min: f64,
+        max: f64,
+        step: f64,
+        is_repeat: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(f64, f64, f64, f64, bool, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_key_value_impl::get_offset() as isize),
+            );
+        inner(value, min, max, step, is_repeat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_key_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "ChangeKeyValue",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ChangeKeyValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_key_value(
+        value: i32,
+        min: i32,
+        max: i32,
+        step: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_key_value::get_offset() as isize),
+            );
+        inner(value, min, max, step, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_key_value_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                "ChangeKeyValue",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ChangeKeyValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_key_value_2(
+        value: f32,
+        min: f32,
+        max: f32,
+        step: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_key_value_2::get_offset() as isize),
+            );
+        inner(value, min, max, step, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConfigBasicMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConfigBasicMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ConfigBasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConfigBasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "root-configbasicmenuitem")]
+impl ConfigBasicMenuItem {
+    #[doc = "`ChangeKeyValueImpl(f64, f64, f64, f64, bool)` overload"]
+    pub fn change_key_value_impl(
+        value: impl ::core::convert::Into<f64>,
+        min: impl ::core::convert::Into<f64>,
+        max: impl ::core::convert::Into<f64>,
+        step: impl ::core::convert::Into<f64>,
+        is_repeat: impl ::core::convert::Into<bool>,
+    ) -> f64 {
+        unsafe {
+            __ConfigBasicMenuItem_unity2_raw::change_key_value_impl(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::convert::Into::into(step),
+                ::core::convert::Into::into(is_repeat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeKeyValue(i32, i32, i32, i32)` overload"]
+    pub fn change_key_value(
+        value: impl ::core::convert::Into<i32>,
+        min: impl ::core::convert::Into<i32>,
+        max: impl ::core::convert::Into<i32>,
+        step: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ConfigBasicMenuItem_unity2_raw::change_key_value(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::convert::Into::into(step),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeKeyValue(f32, f32, f32, f32)` overload"]
+    pub fn change_key_value_2(
+        value: impl ::core::convert::Into<f32>,
+        min: impl ::core::convert::Into<f32>,
+        max: impl ::core::convert::Into<f32>,
+        step: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            __ConfigBasicMenuItem_unity2_raw::change_key_value_2(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::convert::Into::into(step),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-configbasicmenuitem")]
+pub trait IConfigBasicMenuItemMethods: IConfigBasicMenuItem {
+    #[doc = "`OnBuild()` overload"]
+    fn on_build(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    fn on_build_menu_item_content(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::on_build_menu_item_content(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDeselect()` overload"]
+    fn on_deselect(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitContent()` overload"]
+    fn init_content(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::init_content(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitColor()` overload"]
+    fn init_color(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::init_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTitleText(::unity2::Il2CppString)` overload"]
+    fn set_title_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::set_title_text(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateText()` overload"]
+    fn update_text(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::update_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsConfigMethod(crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind)` overload"]
+    fn is_config_method(
+        self,
+        config_method: impl ::core::convert::Into<
+            crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::is_config_method(
+                __receiver,
+                ::core::convert::Into::into(config_method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ConfigBasicMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConfigBasicMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-configbasicmenuitem")]
+impl<__T: IConfigBasicMenuItem> IConfigBasicMenuItemMethods for __T {}
 
 #[cfg(feature = "root-configbasicmenuitem")]
 impl ConfigBasicMenuItem {
@@ -152,4 +889,24 @@ impl ConfigBasicMenuItem {
         <Self as IConfigBasicMenuItemMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "root-configbasicmenuitem")]
+pub mod prelude {
+    pub use super::ConfigBasicMenuItem;
+    pub use super::ConfigBasicMenuItem_ConfigMethodKind;
+    pub use super::IConfigBasicMenuItem;
+    pub use super::IConfigBasicMenuItemMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -67,85 +67,1018 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-refineshopengravedemo")]
-#[::unity2::methods]
-impl RefineShopEngraveDemo {
-    #[doc = "`get_m_BaseUnitItem()` overload"]
-    #[method(name = "get_m_BaseUnitItem", args = 0)]
-    pub fn get_m_base_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "set_m_BaseUnitItem", args = 1)]
-    pub fn set_m_base_unit_item(self, value: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`get_m_EngravedUnitItem()` overload"]
-    #[method(name = "get_m_EngravedUnitItem", args = 0)]
-    pub fn get_m_engraved_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`set_m_EngravedUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "set_m_EngravedUnitItem", args = 1)]
-    pub fn set_m_engraved_unit_item(self, value: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`get_m_GodData()` overload"]
-    #[method(name = "get_m_GodData", args = 0)]
-    pub fn get_m_god_data(self) -> crate::app::goddata::GodData;
-
-    #[doc = "`set_m_GodData(crate::app::goddata::GodData)` overload"]
-    #[method(name = "set_m_GodData", args = 1)]
-    pub fn set_m_god_data(self, value: crate::app::goddata::GodData) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopEngraveDemo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_base_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "get_m_BaseUnitItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "get_m_BaseUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_base_unit_item(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_base_unit_item::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_base_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "set_m_BaseUnitItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "set_m_BaseUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_base_unit_item(
+        this: RefineShopEngraveDemo,
+        value: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_base_unit_item::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_engraved_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "get_m_EngravedUnitItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "get_m_EngravedUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_engraved_unit_item(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_engraved_unit_item::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_engraved_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "set_m_EngravedUnitItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "set_m_EngravedUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_engraved_unit_item(
+        this: RefineShopEngraveDemo,
+        value: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_engraved_unit_item::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_god_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "get_m_GodData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GodData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_god_data(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::goddata::GodData {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::goddata::GodData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_god_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_god_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "set_m_GodData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GodData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_god_data(
+        this: RefineShopEngraveDemo,
+        value: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_god_data::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
         base_unit_item: crate::app::unititem::UnitItem,
         engraved_unit_item: crate::app::unititem::UnitItem,
         god_data: crate::app::goddata::GodData,
-    ) -> crate::app::refineshopengravedemo::RefineShopEngraveDemo;
-
-    #[doc = "`CreateDefaultDesc()` overload"]
-    #[method(name = "CreateDefaultDesc", args = 0)]
-    pub fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::refineshopengravedemo::RefineShopEngraveDemo {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::refineshopengravedemo::RefineShopEngraveDemo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            shop_weapon_model_renderer,
+            base_unit_item,
+            engraved_unit_item,
+            god_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_default_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "CreateDefaultDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "CreateDefaultDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_default_desc(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_default_desc::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopEngraveDemo,
         super_: crate::app::procinst::ProcInst,
         shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
         base_unit_item: crate::app::unititem::UnitItem,
         engraved_unit_item: crate::app::unititem::UnitItem,
         god_data: crate::app::goddata::GodData,
-    ) -> ();
-
-    #[doc = "`LoadPrefabs()` overload"]
-    #[method(name = "LoadPrefabs", args = 0)]
-    pub fn load_prefabs(self) -> ();
-
-    #[doc = "`IsLoadingPrefabs()` overload"]
-    #[method(name = "IsLoadingPrefabs", args = 0)]
-    pub fn is_loading_prefabs(self) -> bool;
-
-    #[doc = "`Build()` overload"]
-    #[method(name = "Build", args = 0)]
-    pub fn build(self) -> ();
-
-    #[doc = "`StartSound()` overload"]
-    #[method(name = "StartSound", args = 0)]
-    pub fn start_sound(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`IsPlaying()` overload"]
-    #[method(name = "IsPlaying", args = 0)]
-    pub fn is_playing(self) -> bool;
-
-    #[doc = "`DestroyAndUnloadPrefabs()` overload"]
-    #[method(name = "DestroyAndUnloadPrefabs", args = 0)]
-    pub fn destroy_and_unload_prefabs(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveDemo,
+            crate::app::procinst::ProcInst,
+            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            shop_weapon_model_renderer,
+            base_unit_item,
+            engraved_unit_item,
+            god_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_prefabs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "LoadPrefabs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "LoadPrefabs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_prefabs(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_prefabs::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_prefabs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "IsLoadingPrefabs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingPrefabs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_prefabs(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loading_prefabs::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "Build",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "Build",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_sound {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "StartSound",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "StartSound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_sound(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start_sound::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "IsPlaying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "IsPlaying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_playing(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_playing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_and_unload_prefabs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveDemo as ::unity2::ClassIdentity>::class(),
+                "DestroyAndUnloadPrefabs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopEngraveDemo as ::unity2::ClassIdentity>::NAME,
+                    "DestroyAndUnloadPrefabs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_and_unload_prefabs(
+        this: RefineShopEngraveDemo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveDemo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_and_unload_prefabs::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-refineshopengravedemo")]
+impl RefineShopEngraveDemo {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        shop_weapon_model_renderer: impl ::core::convert::Into<
+            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        >,
+        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        engraved_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> crate::app::refineshopengravedemo::RefineShopEngraveDemo {
+        unsafe {
+            __RefineShopEngraveDemo_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(shop_weapon_model_renderer),
+                ::core::convert::Into::into(base_unit_item),
+                ::core::convert::Into::into(engraved_unit_item),
+                ::core::convert::Into::into(god_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopengravedemo")]
+pub trait IRefineShopEngraveDemoMethods: IRefineShopEngraveDemo {
+    #[doc = "`get_m_BaseUnitItem()` overload"]
+    fn get_m_base_unit_item(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::get_m_base_unit_item(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"]
+    fn set_m_base_unit_item(
+        self,
+        value: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::set_m_base_unit_item(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_EngravedUnitItem()` overload"]
+    fn get_m_engraved_unit_item(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::get_m_engraved_unit_item(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_EngravedUnitItem(crate::app::unititem::UnitItem)` overload"]
+    fn set_m_engraved_unit_item(
+        self,
+        value: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::set_m_engraved_unit_item(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_GodData()` overload"]
+    fn get_m_god_data(self) -> crate::app::goddata::GodData {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::get_m_god_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GodData(crate::app::goddata::GodData)` overload"]
+    fn set_m_god_data(self, value: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::set_m_god_data(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDefaultDesc()` overload"]
+    fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::create_default_desc(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]
+    fn ctor(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        shop_weapon_model_renderer: impl ::core::convert::Into<
+            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        >,
+        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        engraved_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(shop_weapon_model_renderer),
+                ::core::convert::Into::into(base_unit_item),
+                ::core::convert::Into::into(engraved_unit_item),
+                ::core::convert::Into::into(god_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadPrefabs()` overload"]
+    fn load_prefabs(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::load_prefabs(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoadingPrefabs()` overload"]
+    fn is_loading_prefabs(self) -> bool {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::is_loading_prefabs(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Build()` overload"]
+    fn build(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartSound()` overload"]
+    fn start_sound(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::start_sound(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsPlaying()` overload"]
+    fn is_playing(self) -> bool {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::is_playing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DestroyAndUnloadPrefabs()` overload"]
+    fn destroy_and_unload_prefabs(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveDemo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveDemo_unity2_raw::destroy_and_unload_prefabs(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopengravedemo")]
+impl<__T: IRefineShopEngraveDemo> IRefineShopEngraveDemoMethods for __T {}
 
 #[cfg(feature = "app-refineshopengravedemo")]
 impl RefineShopEngraveDemo {
@@ -174,4 +1107,24 @@ impl RefineShopEngraveDemo {
         );
         this
     }
+}
+
+#[cfg(feature = "app-refineshopengravedemo")]
+pub mod prelude {
+    pub use super::IRefineShopEngraveDemo;
+    pub use super::IRefineShopEngraveDemoMethods;
+    pub use super::RefineShopEngraveDemo;
+    pub use super::RefineShopEngraveDemo_Label;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

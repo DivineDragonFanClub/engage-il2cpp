@@ -59,3 +59,19 @@ impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-procdescargt_1")]
+pub mod prelude {
+    pub use super::IProcDescArgT_1;
+    pub use super::IProcDescArgT_1Methods;
+    pub use super::ProcDescArgT_1;
+    pub use crate::app::procdesc::IProcDesc;
+    #[cfg(feature = "app-procdesc")]
+    pub use crate::app::procdesc::IProcDescMethods;
+    pub use crate::app::procdesccallbase::IProcDescCallBase;
+    #[cfg(feature = "app-procdesccallbase")]
+    pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

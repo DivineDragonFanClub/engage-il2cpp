@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync.onLoad")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct CharacterFactoryAsync_onLoad {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_2.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync")]
     #[parent(crate::system::object::Object)]
@@ -48,137 +43,926 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync.onLoad")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct CharacterFactoryAsync_onLoad {}
 }
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-#[::unity2::methods]
-impl CharacterFactoryAsync_onLoad {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::combat::character::Character)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, chara: crate::combat::character::Character) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_onLoad {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterFactoryAsync_onLoad),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterFactoryAsync_2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForTalk",
+                4,
+                param_types,
+                true,
             )
         });
-        <Self as ICharacterFactoryAsync_onLoadMethods>::ctor(this, object, method);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-#[::unity2::methods]
-impl CharacterFactoryAsync_2 {
-    #[doc = "`CreateForTalk(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "CreateForTalk", args = 4)]
-    pub fn create_for_talk(
+    pub unsafe fn create_for_talk(
         pid: ::unity2::Il2CppString,
         pid_for_create: ::unity2::Il2CppString,
         locator: crate::unity_engine::gameobject::GameObject,
         use_talk_controller: bool,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForTalk(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "CreateForTalk", args = 3)]
-    pub fn create_for_talk_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_talk::get_offset() as isize),
+        );
+        inner(
+            pid,
+            pid_for_create,
+            locator,
+            use_talk_controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_talk_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForTalk",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_talk_2(
         unit: crate::app::unit::Unit,
         locator: crate::unity_engine::gameobject::GameObject,
         use_talk_controller: bool,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForTalk(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "CreateForTalk", args = 3)]
-    pub fn create_for_talk_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::unity_engine::gameobject::GameObject,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_talk_2::get_offset() as isize),
+        );
+        inner(unit, locator, use_talk_controller, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_talk_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForTalk",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_talk_3(
         god_unit: crate::app::godunit::GodUnit,
         locator: crate::unity_engine::gameobject::GameObject,
         use_talk_controller: bool,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForUnitInfo(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateForUnitInfo", args = 2)]
-    pub fn create_for_unit_info(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::godunit::GodUnit,
+            crate::unity_engine::gameobject::GameObject,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_talk_3::get_offset() as isize),
+        );
+        inner(god_unit, locator, use_talk_controller, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_unit_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForUnitInfo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForUnitInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_unit_info(
         unit: crate::app::unit::Unit,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForUnitInfo(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateForUnitInfo", args = 2)]
-    pub fn create_for_unit_info_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_unit_info::get_offset() as isize),
+        );
+        inner(unit, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_unit_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForUnitInfo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForUnitInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_unit_info_2(
         god: crate::app::godunit::GodUnit,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForUnitHub(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateForUnitHub", args = 2)]
-    pub fn create_for_unit_hub(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::godunit::GodUnit,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_unit_info_2::get_offset() as isize),
+        );
+        inner(god, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_unit_hub {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForUnitHub",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForUnitHub",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_unit_hub(
         unit: crate::app::unit::Unit,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForUnitRelay(crate::unity_engine::gameobject::GameObject, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]
-    #[method(name = "CreateForUnitRelay", args = 4)]
-    pub fn create_for_unit_relay(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_unit_hub::get_offset() as isize),
+        );
+        inner(unit, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_unit_relay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::unitedit::UnitEdit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForUnitRelay",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForUnitRelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_unit_relay(
         locator: crate::unity_engine::gameobject::GameObject,
         person: crate::app::persondata::PersonData,
         job: crate::app::jobdata::JobData,
         edit: crate::app::unitedit::UnitEdit,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForRingCleaning(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateForRingCleaning", args = 2)]
-    pub fn create_for_ring_cleaning(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::persondata::PersonData,
+            crate::app::jobdata::JobData,
+            crate::app::unitedit::UnitEdit,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_unit_relay::get_offset() as isize),
+        );
+        inner(locator, person, job, edit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_ring_cleaning {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForRingCleaning",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForRingCleaning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_ring_cleaning(
         unit: crate::app::unit::Unit,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateForRingCleaning(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateForRingCleaning", args = 2)]
-    pub fn create_for_ring_cleaning_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_ring_cleaning::get_offset() as isize),
+        );
+        inner(unit, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_ring_cleaning_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateForRingCleaning",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateForRingCleaning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_ring_cleaning_2(
         god_unit: crate::app::godunit::GodUnit,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`CreateCommon(crate::app::assettable::AssetTable_Result, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, bool, bool)` overload"]
-    #[method(name = "CreateCommon", args = 6)]
-    pub fn create_common(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::godunit::GodUnit,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_ring_cleaning_2::get_offset() as isize),
+        );
+        inner(god_unit, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::assettable::AssetTable_Result as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "CreateCommon",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_common(
         result: crate::app::assettable::AssetTable_Result,
         pid: ::unity2::Il2CppString,
         locator: crate::unity_engine::gameobject::GameObject,
         use_talk_controller: bool,
         invisible: bool,
         is_engage: bool,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`SetupLookAt(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetupLookAt", args = 2)]
-    pub fn setup_look_at(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            crate::app::assettable::AssetTable_Result,
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            bool,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_common::get_offset() as isize),
+        );
+        inner(
+            result,
+            pid,
+            locator,
+            use_talk_controller,
+            invisible,
+            is_engage,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_look_at {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "SetupLookAt",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "SetupLookAt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_look_at(
         chara: crate::combat::character::Character,
         locator: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`Delete(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Delete", args = 1)]
-    pub fn delete(locator: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_look_at::get_offset() as isize),
+        );
+        inner(chara, locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                "Delete",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    "Delete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete(
+        locator: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_delete::get_offset() as isize),
+        );
+        inner(locator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_2 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterFactoryAsync_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterFactoryAsync_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+impl CharacterFactoryAsync_2 {
+    #[doc = "`CreateForTalk(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    pub fn create_for_talk(
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pid_for_create: impl ::core::convert::Into<::unity2::Il2CppString>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        use_talk_controller: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_talk(
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(pid_for_create),
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(use_talk_controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForTalk(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    pub fn create_for_talk_2(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        use_talk_controller: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_talk_2(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(use_talk_controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForTalk(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    pub fn create_for_talk_3(
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        use_talk_controller: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_talk_3(
+                ::core::convert::Into::into(god_unit),
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(use_talk_controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForUnitInfo(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_for_unit_info(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_unit_info(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForUnitInfo(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_for_unit_info_2(
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_unit_info_2(
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForUnitHub(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_for_unit_hub(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_unit_hub(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForUnitRelay(crate::unity_engine::gameobject::GameObject, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]
+    pub fn create_for_unit_relay(
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        edit: impl ::core::convert::Into<crate::app::unitedit::UnitEdit>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_unit_relay(
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(job),
+                ::core::convert::Into::into(edit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForRingCleaning(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_for_ring_cleaning(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_ring_cleaning(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForRingCleaning(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_for_ring_cleaning_2(
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_for_ring_cleaning_2(
+                ::core::convert::Into::into(god_unit),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateCommon(crate::app::assettable::AssetTable_Result, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, bool, bool)` overload"]
+    pub fn create_common(
+        result: impl ::core::convert::Into<crate::app::assettable::AssetTable_Result>,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        use_talk_controller: impl ::core::convert::Into<bool>,
+        invisible: impl ::core::convert::Into<bool>,
+        is_engage: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::create_common(
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(use_talk_controller),
+                ::core::convert::Into::into(invisible),
+                ::core::convert::Into::into(is_engage),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupLookAt(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn setup_look_at(
+        chara: impl ::core::convert::Into<crate::combat::character::Character>,
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::setup_look_at(
+                ::core::convert::Into::into(chara),
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Delete(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn delete(
+        locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            __CharacterFactoryAsync_2_unity2_raw::delete(
+                ::core::convert::Into::into(locator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+pub trait ICharacterFactoryAsync_2Methods: ICharacterFactoryAsync_2 {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CharacterFactoryAsync_2 as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CharacterFactoryAsync_2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+impl<__T: ICharacterFactoryAsync_2> ICharacterFactoryAsync_2Methods for __T {}
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
 impl CharacterFactoryAsync_2 {
@@ -197,13 +981,318 @@ impl CharacterFactoryAsync_2 {
 }
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterFactoryAsync_UnitStatusScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_UnitStatusScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_UnitStatusScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterFactoryAsync_UnitStatusScope,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterFactoryAsync_UnitStatusScope,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_UnitStatusScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_UnitStatusScope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: CharacterFactoryAsync_UnitStatusScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterFactoryAsync_UnitStatusScope,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
 impl CharacterFactoryAsync_UnitStatusScope {
     #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
+    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            __CharacterFactoryAsync_UnitStatusScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    pub fn dispose(self) -> () {
+        unsafe {
+            __CharacterFactoryAsync_UnitStatusScope_unity2_raw::dispose(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterFactoryAsync_onLoad_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_onLoad as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_onLoad as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterFactoryAsync_onLoad,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterFactoryAsync_onLoad,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterFactoryAsync_onLoad as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterFactoryAsync_onLoad as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: CharacterFactoryAsync_onLoad,
+        chara: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterFactoryAsync_onLoad,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, chara, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+pub trait ICharacterFactoryAsync_onLoadMethods: ICharacterFactoryAsync_onLoad {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CharacterFactoryAsync_onLoad as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CharacterFactoryAsync_onLoad_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::combat::character::Character)` overload"]
+    fn invoke(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
+        unsafe {
+            let __receiver =
+                <CharacterFactoryAsync_onLoad as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CharacterFactoryAsync_onLoad_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(chara),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+impl<__T: ICharacterFactoryAsync_onLoad> ICharacterFactoryAsync_onLoadMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+impl CharacterFactoryAsync_onLoad {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterFactoryAsync_onLoad),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterFactoryAsync_onLoadMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+pub mod prelude {
+    pub use super::CharacterFactoryAsync_2;
+    pub use super::CharacterFactoryAsync_UnitStatusScope;
+    pub use super::CharacterFactoryAsync_onLoad;
+    pub use super::ICharacterFactoryAsync_2;
+    pub use super::ICharacterFactoryAsync_2Methods;
+    pub use super::ICharacterFactoryAsync_onLoad;
+    pub use super::ICharacterFactoryAsync_onLoadMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

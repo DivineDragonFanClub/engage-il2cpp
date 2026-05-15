@@ -10,14 +10,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayTalk")]
     #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayTalk_CallPuppetEvent {
-        #[rename(name = "File")]
-        pub file: ::unity2::Il2CppString,
-        #[rename(name = "Mid")]
-        pub mid: ::unity2::Il2CppString,
+    pub struct HubPlayTalk {
+        #[static_field]
+        #[rename(name = "GiveAccessoryFlag1")]
+        pub give_accessory_flag1: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "GiveAccessoryFlag2")]
+        pub give_accessory_flag2: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalk/HubPlayTalk_TalkType.md"))]
@@ -68,16 +70,14 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayTalk")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
     #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayTalk {
-        #[static_field]
-        #[rename(name = "GiveAccessoryFlag1")]
-        pub give_accessory_flag1: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GiveAccessoryFlag2")]
-        pub give_accessory_flag2: ::unity2::Il2CppString,
+    pub struct HubPlayTalk_CallPuppetEvent {
+        #[rename(name = "File")]
+        pub file: ::unity2::Il2CppString,
+        #[rename(name = "Mid")]
+        pub mid: ::unity2::Il2CppString,
     }
 }
 
@@ -85,370 +85,3818 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-hubplaytalk")]
-#[::unity2::methods]
-impl HubPlayTalk_CallPuppetEvent {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        file: ::unity2::Il2CppString,
-        mid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Entry()` overload"]
-    #[method(name = "Entry", args = 0)]
-    pub fn entry(self) -> ();
-
-    #[doc = "`Main()` overload"]
-    #[method(name = "Main", args = 0)]
-    pub fn main(self) -> ();
-
-    #[doc = "`Exit()` overload"]
-    #[method(name = "Exit", args = 0)]
-    pub fn exit(self) -> ();
-
-    #[doc = "`CreateDesc()` overload"]
-    #[method(name = "CreateDesc", args = 0)]
-    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-}
-
-#[cfg(feature = "app-hubplaytalk")]
-impl HubPlayTalk_CallPuppetEvent {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalk_CallPuppetEvent),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubPlayTalk_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_PlayerController",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as IHubPlayTalk_CallPuppetEventMethods>::ctor(this, file, mid);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_PlayerController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-hubplaytalk")]
-#[::unity2::methods]
-impl HubPlayTalk {
-    #[doc = "`get_PlayerController()` overload"]
-    #[method(name = "get_PlayerController", args = 0)]
-    pub fn get_player_controller(self) -> crate::app::hubplayercontroller::HubPlayerController;
-
-    #[doc = "`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"]
-    #[method(name = "set_PlayerController", args = 1)]
-    pub fn set_player_controller(
-        self,
+    pub unsafe fn get_player_controller(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubplayercontroller::HubPlayerController {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubplayercontroller::HubPlayerController = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_player_controller::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_player_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_PlayerController",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_PlayerController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_player_controller(
+        this: HubPlayTalk,
         value: crate::app::hubplayercontroller::HubPlayerController,
-    ) -> ();
-
-    #[doc = "`get_Player()` overload"]
-    #[method(name = "get_Player", args = 0)]
-    pub fn get_player(self) -> crate::app::hubunitcontroller::HubUnitController;
-
-    #[doc = "`set_Player(crate::app::hubunitcontroller::HubUnitController)` overload"]
-    #[method(name = "set_Player", args = 1)]
-    pub fn set_player(self, value: crate::app::hubunitcontroller::HubUnitController) -> ();
-
-    #[doc = "`get_Other()` overload"]
-    #[method(name = "get_Other", args = 0)]
-    pub fn get_other(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubplayercontroller::HubPlayerController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_player_controller::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_Player",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_Player",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_player(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubunitcontroller::HubUnitController {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubunitcontroller::HubUnitController = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_player::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_player {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_Player",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_Player",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_player(
+        this: HubPlayTalk,
+        value: crate::app::hubunitcontroller::HubUnitController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubunitcontroller::HubUnitController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_player::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_other {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_Other",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_Other",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_other(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::hubunitcontroller::HubUnitController,
-    >;
-
-    #[doc = "`set_Other(crate::system::collections::generic::list_1::List_1<crate::app::hubunitcontroller::HubUnitController>)` overload"]
-    #[method(name = "set_Other", args = 1)]
-    pub fn set_other(
-        self,
+    > {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::hubunitcontroller::HubUnitController,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_other::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_other {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::hubunitcontroller::HubUnitController,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_Other",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_Other",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_other(
+        this: HubPlayTalk,
         value: crate::system::collections::generic::list_1::List_1<
             crate::app::hubunitcontroller::HubUnitController,
         >,
-    ) -> ();
-
-    #[doc = "`get_Camera()` overload"]
-    #[method(name = "get_Camera", args = 0)]
-    pub fn get_camera(self) -> crate::app::hubcamera::HubCamera;
-
-    #[doc = "`set_Camera(crate::app::hubcamera::HubCamera)` overload"]
-    #[method(name = "set_Camera", args = 1)]
-    pub fn set_camera(self, value: crate::app::hubcamera::HubCamera) -> ();
-
-    #[doc = "`get_Access()` overload"]
-    #[method(name = "get_Access", args = 0)]
-    pub fn get_access(self) -> crate::app::hubaccess::HubAccess;
-
-    #[doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"]
-    #[method(name = "set_Access", args = 1)]
-    pub fn set_access(self, value: crate::app::hubaccess::HubAccess) -> ();
-
-    #[doc = "`get_MID()` overload"]
-    #[method(name = "get_MID", args = 0)]
-    pub fn get_mid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_MID(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_MID", args = 1)]
-    pub fn set_mid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Args()` overload"]
-    #[method(name = "get_Args", args = 0)]
-    pub fn get_args(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Args(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Args", args = 1)]
-    pub fn set_args(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_FlagName()` overload"]
-    #[method(name = "get_FlagName", args = 0)]
-    pub fn get_flag_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_PieceOfBond_Tutorial()` overload"]
-    #[method(name = "get_PieceOfBond_Tutorial", args = 0)]
-    pub fn get_piece_of_bond_tutorial(self) -> bool;
-
-    #[doc = "`set_PieceOfBond_Tutorial(bool)` overload"]
-    #[method(name = "set_PieceOfBond_Tutorial", args = 1)]
-    pub fn set_piece_of_bond_tutorial(self, value: bool) -> ();
-
-    #[doc = "`.ctor(crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::hubunitcontroller::HubUnitController,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_other::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_Camera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_Camera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_camera(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubcamera::HubCamera {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubcamera::HubCamera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_Camera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_Camera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_camera(
+        this: HubPlayTalk,
+        value: crate::app::hubcamera::HubCamera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubcamera::HubCamera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_camera::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_Access",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_Access",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_access(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccess::HubAccess {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubaccess::HubAccess = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_access::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_Access",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_Access",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_access(
+        this: HubPlayTalk,
+        value: crate::app::hubaccess::HubAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_access::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_MID",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_MID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mid(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_mid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_MID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_MID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mid(
+        this: HubPlayTalk,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mid::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_Args",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_Args",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_args(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_args::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_Args",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_Args",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_args(
+        this: HubPlayTalk,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_args::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flag_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_FlagName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_FlagName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flag_name(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_flag_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_piece_of_bond_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_PieceOfBond_Tutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_PieceOfBond_Tutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_piece_of_bond_tutorial(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_piece_of_bond_tutorial::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_piece_of_bond_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_PieceOfBond_Tutorial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_PieceOfBond_Tutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_piece_of_bond_tutorial(
+        this: HubPlayTalk,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_piece_of_bond_tutorial::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubPlayTalk,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, player, camera, access, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: HubPlayTalk,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
         mid: ::unity2::Il2CppString,
         args: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`IsPlayerMove()` overload"]
-    #[method(name = "IsPlayerMove", args = 0)]
-    pub fn is_player_move(self) -> bool;
-
-    #[doc = "`GetOtherPosition()` overload"]
-    #[method(name = "GetOtherPosition", args = 0)]
-    pub fn get_other_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetOtherHeadPosition()` overload"]
-    #[method(name = "GetOtherHeadPosition", args = 0)]
-    pub fn get_other_head_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetMessPID(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetMessPID", args = 1)]
-    pub fn get_mess_pid(mid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMessPIDList(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetMessPIDList", args = 1)]
-    pub fn get_mess_pid_list(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            player,
+            camera,
+            access,
+            mid,
+            args,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "Init",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(this: HubPlayTalk, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_player_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "IsPlayerMove",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "IsPlayerMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_player_move(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_player_move::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_other_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "GetOtherPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetOtherPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_other_position(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_other_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_other_head_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "GetOtherHeadPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetOtherHeadPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_other_head_position(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_other_head_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mess_pid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "GetMessPID",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetMessPID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mess_pid(
         mid: ::unity2::Il2CppString,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
-
-    #[doc = "`SetupNormal()` overload"]
-    #[method(name = "SetupNormal", args = 0)]
-    pub fn setup_normal(self) -> ();
-
-    #[doc = "`Tutorial()` overload"]
-    #[method(name = "Tutorial", args = 0)]
-    pub fn tutorial(self) -> ();
-
-    #[doc = "`SetupShop()` overload"]
-    #[method(name = "SetupShop", args = 0)]
-    pub fn setup_shop(self) -> ();
-
-    #[doc = "`IsExistAdditionalStock(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsExistAdditionalStock", args = 1)]
-    pub fn is_exist_additional_stock(self, shop_type: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`SetupShop(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetupShop", args = 1)]
-    pub fn setup_shop_2(self, mid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetupEvent()` overload"]
-    #[method(name = "SetupEvent", args = 0)]
-    pub fn setup_event(self) -> ();
-
-    #[doc = "`ExecTalk()` overload"]
-    #[method(name = "ExecTalk", args = 0)]
-    pub fn exec_talk(self) -> ();
-
-    #[doc = "`ExecTalkPresent()` overload"]
-    #[method(name = "ExecTalkPresent", args = 0)]
-    pub fn exec_talk_present(self) -> ();
-
-    #[doc = "`GetFavoriteItem()` overload"]
-    #[method(name = "GetFavoriteItem", args = 0)]
-    pub fn get_favorite_item(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ExecTalkAfter()` overload"]
-    #[method(name = "ExecTalkAfter", args = 0)]
-    pub fn exec_talk_after(self) -> ();
-
-    #[doc = "`TryJoinUnit(::unity2::Il2CppString)` overload"]
-    #[method(name = "TryJoinUnit", args = 1)]
-    pub fn try_join_unit(self, pid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`JoinEvent()` overload"]
-    #[method(name = "JoinEvent", args = 0)]
-    pub fn join_event(self) -> ();
-
-    #[doc = "`ExecEvent()` overload"]
-    #[method(name = "ExecEvent", args = 0)]
-    pub fn exec_event(self) -> ();
-
-    #[doc = "`ExecEventAfter()` overload"]
-    #[method(name = "ExecEventAfter", args = 0)]
-    pub fn exec_event_after(self) -> ();
-
-    #[doc = "`ExecShop()` overload"]
-    #[method(name = "ExecShop", args = 0)]
-    pub fn exec_shop(self) -> ();
-
-    #[doc = "`ReturnTalk()` overload"]
-    #[method(name = "ReturnTalk", args = 0)]
-    pub fn return_talk(self) -> ();
-
-    #[doc = "`ReturnTalkEvent()` overload"]
-    #[method(name = "ReturnTalkEvent", args = 0)]
-    pub fn return_talk_event(self) -> ();
-
-    #[doc = "`CreateDescNormal()` overload"]
-    #[method(name = "CreateDescNormal", args = 0)]
-    pub fn create_desc_normal(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateDescShop()` overload"]
-    #[method(name = "CreateDescShop", args = 0)]
-    pub fn create_desc_shop(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateDescEvent()` overload"]
-    #[method(name = "CreateDescEvent", args = 0)]
-    pub fn create_desc_event(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateProcDesc(crate::app::hubplaytalk::HubPlayTalk_TalkType)` overload"]
-    #[method(name = "CreateProcDesc", args = 1)]
-    pub fn create_proc_desc(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mess_pid::get_offset() as isize),
+        );
+        inner(mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mess_pid_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "GetMessPIDList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetMessPIDList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mess_pid_list(
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            ::unity2::Il2CppString,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mess_pid_list::get_offset() as isize),
+        );
+        inner(mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "SetupNormal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "SetupNormal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_normal(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup_normal::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "Tutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "Tutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tutorial(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tutorial::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "SetupShop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "SetupShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_shop(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup_shop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist_additional_stock {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "IsExistAdditionalStock",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "IsExistAdditionalStock",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_exist_additional_stock(
+        this: HubPlayTalk,
+        shop_type: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_exist_additional_stock::get_offset() as isize),
+        );
+        inner(this, shop_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_shop_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "SetupShop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "SetupShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_shop_2(
+        this: HubPlayTalk,
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_shop_2::get_offset() as isize),
+        );
+        inner(this, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "SetupEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "SetupEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_event(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup_event::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecTalk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_talk(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_talk::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_talk_present {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecTalkPresent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecTalkPresent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_talk_present(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_talk_present::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_favorite_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "GetFavoriteItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetFavoriteItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_favorite_item(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_favorite_item::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_talk_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecTalkAfter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecTalkAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_talk_after(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_talk_after::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_join_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryJoinUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryJoinUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_join_unit(
+        this: HubPlayTalk,
+        pid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_join_unit::get_offset() as isize),
+        );
+        inner(this, pid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_join_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "JoinEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "JoinEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn join_event(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_join_event::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_event(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_event::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_event_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecEventAfter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecEventAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_event_after(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_event_after::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ExecShop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ExecShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_shop(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exec_shop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_return_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ReturnTalk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ReturnTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn return_talk(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_return_talk::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_return_talk_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "ReturnTalkEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "ReturnTalkEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn return_talk_event(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_return_talk_event::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateDescNormal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateDescNormal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc_normal(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc_normal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateDescShop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateDescShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc_shop(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc_shop::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateDescEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateDescEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc_event(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc_event::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_proc_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubplaytalk::HubPlayTalk_TalkType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateProcDesc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateProcDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_proc_desc(
+        this: HubPlayTalk,
         talk_type: crate::app::hubplaytalk::HubPlayTalk_TalkType,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            crate::app::hubplaytalk::HubPlayTalk_TalkType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_proc_desc::get_offset() as isize),
+        );
+        inner(this, talk_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubplaytalk::HubPlayTalk_TalkType as ::unity2::IlType>::il_type(),
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         talk_type: crate::app::hubplaytalk::HubPlayTalk_TalkType,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBind", args = 6)]
-    pub fn create_bind_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubplaytalk::HubPlayTalk_TalkType,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            talk_type,
+            player,
+            camera,
+            access,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubplaytalk::HubPlayTalk_TalkType as ::unity2::IlType>::il_type(),
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
         super_: crate::app::procinst::ProcInst,
         talk_type: crate::app::hubplaytalk::HubPlayTalk_TalkType,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         mid: ::unity2::Il2CppString,
         script: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`CreateShopBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateShopBind", args = 6)]
-    pub fn create_shop_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubplaytalk::HubPlayTalk_TalkType,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(
+            super_,
+            talk_type,
+            player,
+            camera,
+            mid,
+            script,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_shop_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubplaytalk::HubPlayTalk_TalkType as ::unity2::IlType>::il_type(),
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateShopBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateShopBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_shop_bind(
         super_: crate::app::procinst::ProcInst,
         talk_type: crate::app::hubplaytalk::HubPlayTalk_TalkType,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
         shop_type: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`TrySilverCardMessage()` overload"]
-    #[method(name = "TrySilverCardMessage", args = 0)]
-    pub fn try_silver_card_message(self) -> ();
-
-    #[doc = "`TryGiveAccessory(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]
-    #[method(name = "TryGiveAccessory", args = 2)]
-    pub fn try_give_accessory(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubplaytalk::HubPlayTalk_TalkType,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_shop_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            talk_type,
+            player,
+            camera,
+            access,
+            shop_type,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_silver_card_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TrySilverCardMessage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TrySilverCardMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_silver_card_message(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_silver_card_message::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_give_accessory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryGiveAccessory",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryGiveAccessory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_give_accessory(
+        this: HubPlayTalk,
         aid_table: ::unity2::Array<::unity2::Il2CppString>,
         mid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`TryGiveAccessory1()` overload"]
-    #[method(name = "TryGiveAccessory1", args = 0)]
-    pub fn try_give_accessory1(self) -> ();
-
-    #[doc = "`TryGiveAccessory2()` overload"]
-    #[method(name = "TryGiveAccessory2", args = 0)]
-    pub fn try_give_accessory2(self) -> ();
-
-    #[doc = "`CanGiveAccessory1()` overload"]
-    #[method(name = "CanGiveAccessory1", args = 0)]
-    pub fn can_give_accessory1() -> bool;
-
-    #[doc = "`CanGiveAccessory2()` overload"]
-    #[method(name = "CanGiveAccessory2", args = 0)]
-    pub fn can_give_accessory2() -> bool;
-
-    #[doc = "`CreateDescGiveAccessory()` overload"]
-    #[method(name = "CreateDescGiveAccessory", args = 0)]
-    pub fn create_desc_give_accessory(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`TryCreateGiveAccessoryBind(crate::app::procinst::ProcInst, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString)` overload"]
-    #[method(name = "TryCreateGiveAccessoryBind", args = 5)]
-    pub fn try_create_give_accessory_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_give_accessory::get_offset() as isize),
+        );
+        inner(this, aid_table, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_give_accessory1 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryGiveAccessory1",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryGiveAccessory1",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_give_accessory1(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_give_accessory1::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_give_accessory2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryGiveAccessory2",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryGiveAccessory2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_give_accessory2(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_give_accessory2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_give_accessory1 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CanGiveAccessory1",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CanGiveAccessory1",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_give_accessory1(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_give_accessory1::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_give_accessory2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CanGiveAccessory2",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CanGiveAccessory2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_give_accessory2(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_give_accessory2::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc_give_accessory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateDescGiveAccessory",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateDescGiveAccessory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc_give_accessory(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc_give_accessory::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_give_accessory_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryCreateGiveAccessoryBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryCreateGiveAccessoryBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_create_give_accessory_bind(
         super_: crate::app::procinst::ProcInst,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
         mid: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`get_WellTutorial()` overload"]
-    #[method(name = "get_WellTutorial", args = 0)]
-    pub fn get_well_tutorial(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_WellTutorial(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_WellTutorial", args = 1)]
-    pub fn set_well_tutorial(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`TryWellTutorial()` overload"]
-    #[method(name = "TryWellTutorial", args = 0)]
-    pub fn try_well_tutorial(self) -> ();
-
-    #[doc = "`CreateDescShopTalk()` overload"]
-    #[method(name = "CreateDescShopTalk", args = 0)]
-    pub fn create_desc_shop_talk(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateShopTalkBind(crate::app::procinst::ProcInst, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateShopTalkBind", args = 6)]
-    pub fn create_shop_talk_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_create_give_accessory_bind::get_offset() as isize),
+        );
+        inner(super_, player, camera, access, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_well_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "get_WellTutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "get_WellTutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_well_tutorial(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_well_tutorial::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_well_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "set_WellTutorial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "set_WellTutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_well_tutorial(
+        this: HubPlayTalk,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_well_tutorial::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_well_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "TryWellTutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "TryWellTutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_well_tutorial(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_well_tutorial::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc_shop_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateDescShopTalk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateDescShopTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc_shop_talk(
+        this: HubPlayTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc_shop_talk::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_shop_talk_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubplayercontroller::HubPlayerController as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::hubcamera::HubCamera as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk as ::unity2::ClassIdentity>::class(),
+                "CreateShopTalkBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateShopTalkBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_shop_talk_bind(
         super_: crate::app::procinst::ProcInst,
         player: crate::app::hubplayercontroller::HubPlayerController,
         camera: crate::app::hubcamera::HubCamera,
         access: crate::app::hubaccess::HubAccess,
         mid: ::unity2::Il2CppString,
         tutorial: ::unity2::Il2CppString,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubplayercontroller::HubPlayerController,
+            crate::app::hubcamera::HubCamera,
+            crate::app::hubaccess::HubAccess,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_shop_talk_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            player,
+            camera,
+            access,
+            mid,
+            tutorial,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "app-hubplaytalk")]
+impl HubPlayTalk {
+    #[doc = "`GetMessPID(::unity2::Il2CppString)` overload"]
+    pub fn get_mess_pid(
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __HubPlayTalk_unity2_raw::get_mess_pid(
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMessPIDList(::unity2::Il2CppString)` overload"]
+    pub fn get_mess_pid_list(
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe {
+            __HubPlayTalk_unity2_raw::get_mess_pid_list(
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        talk_type: impl ::core::convert::Into<crate::app::hubplaytalk::HubPlayTalk_TalkType>,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+    ) -> () {
+        unsafe {
+            __HubPlayTalk_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(talk_type),
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        talk_type: impl ::core::convert::Into<crate::app::hubplaytalk::HubPlayTalk_TalkType>,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        script: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __HubPlayTalk_unity2_raw::create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(talk_type),
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(mid),
+                ::core::convert::Into::into(script),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateShopBind(crate::app::procinst::ProcInst, crate::app::hubplaytalk::HubPlayTalk_TalkType, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString)` overload"]
+    pub fn create_shop_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        talk_type: impl ::core::convert::Into<crate::app::hubplaytalk::HubPlayTalk_TalkType>,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+        shop_type: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __HubPlayTalk_unity2_raw::create_shop_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(talk_type),
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::convert::Into::into(shop_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanGiveAccessory1()` overload"]
+    pub fn can_give_accessory1() -> bool {
+        unsafe { __HubPlayTalk_unity2_raw::can_give_accessory1(::core::option::Option::None) }
+    }
+    #[doc = "`CanGiveAccessory2()` overload"]
+    pub fn can_give_accessory2() -> bool {
+        unsafe { __HubPlayTalk_unity2_raw::can_give_accessory2(::core::option::Option::None) }
+    }
+    #[doc = "`TryCreateGiveAccessoryBind(crate::app::procinst::ProcInst, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString)` overload"]
+    pub fn try_create_give_accessory_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            __HubPlayTalk_unity2_raw::try_create_give_accessory_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateShopTalkBind(crate::app::procinst::ProcInst, crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_shop_talk_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        tutorial: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __HubPlayTalk_unity2_raw::create_shop_talk_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::convert::Into::into(mid),
+                ::core::convert::Into::into(tutorial),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+pub trait IHubPlayTalkMethods: IHubPlayTalk {
+    #[doc = "`get_PlayerController()` overload"]
+    fn get_player_controller(self) -> crate::app::hubplayercontroller::HubPlayerController {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_player_controller(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"]
+    fn set_player_controller(
+        self,
+        value: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_player_controller(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Player()` overload"]
+    fn get_player(self) -> crate::app::hubunitcontroller::HubUnitController {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_player(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Player(crate::app::hubunitcontroller::HubUnitController)` overload"]
+    fn set_player(
+        self,
+        value: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_player(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Other()` overload"]
+    fn get_other(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::hubunitcontroller::HubUnitController,
+    > {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_other(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Other(crate::system::collections::generic::list_1::List_1<crate::app::hubunitcontroller::HubUnitController>)` overload"]
+    fn set_other(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::hubunitcontroller::HubUnitController,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_other(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Camera()` overload"]
+    fn get_camera(self) -> crate::app::hubcamera::HubCamera {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Camera(crate::app::hubcamera::HubCamera)` overload"]
+    fn set_camera(self, value: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_camera(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Access()` overload"]
+    fn get_access(self) -> crate::app::hubaccess::HubAccess {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_access(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"]
+    fn set_access(self, value: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_access(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_MID()` overload"]
+    fn get_mid(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_mid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MID(::unity2::Il2CppString)` overload"]
+    fn set_mid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_mid(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Args()` overload"]
+    fn get_args(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_args(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Args(::unity2::Il2CppString)` overload"]
+    fn set_args(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_args(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_FlagName()` overload"]
+    fn get_flag_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_flag_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_PieceOfBond_Tutorial()` overload"]
+    fn get_piece_of_bond_tutorial(self) -> bool {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_piece_of_bond_tutorial(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PieceOfBond_Tutorial(bool)` overload"]
+    fn set_piece_of_bond_tutorial(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_piece_of_bond_tutorial(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess)` overload"]
+    fn ctor(
+        self,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::hubplayercontroller::HubPlayerController, crate::app::hubcamera::HubCamera, crate::app::hubaccess::HubAccess, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor_2(
+        self,
+        player: impl ::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>,
+        camera: impl ::core::convert::Into<crate::app::hubcamera::HubCamera>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(player),
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(access),
+                ::core::convert::Into::into(mid),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::init(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsPlayerMove()` overload"]
+    fn is_player_move(self) -> bool {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::is_player_move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetOtherPosition()` overload"]
+    fn get_other_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_other_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetOtherHeadPosition()` overload"]
+    fn get_other_head_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_other_head_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupNormal()` overload"]
+    fn setup_normal(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::setup_normal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tutorial()` overload"]
+    fn tutorial(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::tutorial(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupShop()` overload"]
+    fn setup_shop(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::setup_shop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsExistAdditionalStock(::unity2::Il2CppString)` overload"]
+    fn is_exist_additional_stock(
+        self,
+        shop_type: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::is_exist_additional_stock(
+                __receiver,
+                ::core::convert::Into::into(shop_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupShop(::unity2::Il2CppString)` overload"]
+    fn setup_shop_2(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::setup_shop_2(
+                __receiver,
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupEvent()` overload"]
+    fn setup_event(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::setup_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecTalk()` overload"]
+    fn exec_talk(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_talk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecTalkPresent()` overload"]
+    fn exec_talk_present(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_talk_present(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetFavoriteItem()` overload"]
+    fn get_favorite_item(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_favorite_item(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecTalkAfter()` overload"]
+    fn exec_talk_after(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_talk_after(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryJoinUnit(::unity2::Il2CppString)` overload"]
+    fn try_join_unit(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_join_unit(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`JoinEvent()` overload"]
+    fn join_event(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::join_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecEvent()` overload"]
+    fn exec_event(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecEventAfter()` overload"]
+    fn exec_event_after(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_event_after(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecShop()` overload"]
+    fn exec_shop(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::exec_shop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReturnTalk()` overload"]
+    fn return_talk(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::return_talk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReturnTalkEvent()` overload"]
+    fn return_talk_event(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::return_talk_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDescNormal()` overload"]
+    fn create_desc_normal(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_desc_normal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDescShop()` overload"]
+    fn create_desc_shop(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_desc_shop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDescEvent()` overload"]
+    fn create_desc_event(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_desc_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateProcDesc(crate::app::hubplaytalk::HubPlayTalk_TalkType)` overload"]
+    fn create_proc_desc(
+        self,
+        talk_type: impl ::core::convert::Into<crate::app::hubplaytalk::HubPlayTalk_TalkType>,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_proc_desc(
+                __receiver,
+                ::core::convert::Into::into(talk_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrySilverCardMessage()` overload"]
+    fn try_silver_card_message(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_silver_card_message(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGiveAccessory(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]
+    fn try_give_accessory(
+        self,
+        aid_table: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_give_accessory(
+                __receiver,
+                ::core::convert::Into::into(aid_table),
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGiveAccessory1()` overload"]
+    fn try_give_accessory1(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_give_accessory1(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryGiveAccessory2()` overload"]
+    fn try_give_accessory2(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_give_accessory2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDescGiveAccessory()` overload"]
+    fn create_desc_give_accessory(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_desc_give_accessory(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_WellTutorial()` overload"]
+    fn get_well_tutorial(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::get_well_tutorial(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_WellTutorial(::unity2::Il2CppString)` overload"]
+    fn set_well_tutorial(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::set_well_tutorial(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryWellTutorial()` overload"]
+    fn try_well_tutorial(self) -> () {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::try_well_tutorial(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDescShopTalk()` overload"]
+    fn create_desc_shop_talk(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <HubPlayTalk as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubPlayTalk_unity2_raw::create_desc_shop_talk(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+impl<__T: IHubPlayTalk> IHubPlayTalkMethods for __T {}
 
 #[cfg(feature = "app-hubplaytalk")]
 impl HubPlayTalk {
@@ -487,4 +3935,432 @@ impl HubPlayTalk {
         <Self as IHubPlayTalkMethods>::ctor_2(this, player, camera, access, mid, args);
         this
     }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubPlayTalk_CallPuppetEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        file: ::unity2::Il2CppString,
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, file, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubPlayTalk_CallPuppetEvent,
+        file: ::unity2::Il2CppString,
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubPlayTalk_CallPuppetEvent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, file, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                "Entry",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    "Entry",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn entry(
+        this: HubPlayTalk_CallPuppetEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk_CallPuppetEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_entry::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_main {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                "Main",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    "Main",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn main(
+        this: HubPlayTalk_CallPuppetEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk_CallPuppetEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_main::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                "Exit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    "Exit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exit(
+        this: HubPlayTalk_CallPuppetEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubPlayTalk_CallPuppetEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubPlayTalk_CallPuppetEvent as ::unity2::ClassIdentity>::NAME,
+                    "CreateDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: HubPlayTalk_CallPuppetEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            HubPlayTalk_CallPuppetEvent,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+impl HubPlayTalk_CallPuppetEvent {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        file: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(file),
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+pub trait IHubPlayTalk_CallPuppetEventMethods: IHubPlayTalk_CallPuppetEvent {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        file: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <HubPlayTalk_CallPuppetEvent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(file),
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Entry()` overload"]
+    fn entry(self) -> () {
+        unsafe {
+            let __receiver =
+                <HubPlayTalk_CallPuppetEvent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::entry(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Main()` overload"]
+    fn main(self) -> () {
+        unsafe {
+            let __receiver =
+                <HubPlayTalk_CallPuppetEvent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::main(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Exit()` overload"]
+    fn exit(self) -> () {
+        unsafe {
+            let __receiver =
+                <HubPlayTalk_CallPuppetEvent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver =
+                <HubPlayTalk_CallPuppetEvent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubPlayTalk_CallPuppetEvent_unity2_raw::create_desc(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+impl<__T: IHubPlayTalk_CallPuppetEvent> IHubPlayTalk_CallPuppetEventMethods for __T {}
+
+#[cfg(feature = "app-hubplaytalk")]
+impl HubPlayTalk_CallPuppetEvent {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalk_CallPuppetEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalk_CallPuppetEventMethods>::ctor(this, file, mid);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+pub mod prelude {
+    pub use super::HubPlayTalk;
+    pub use super::HubPlayTalk_CallPuppetEvent;
+    pub use super::HubPlayTalk_TalkType;
+    pub use super::IHubPlayTalk;
+    pub use super::IHubPlayTalkMethods;
+    pub use super::IHubPlayTalk_CallPuppetEvent;
+    pub use super::IHubPlayTalk_CallPuppetEventMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

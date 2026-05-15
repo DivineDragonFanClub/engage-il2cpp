@@ -48,18 +48,149 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-monoeventinfo")]
-#[::unity2::methods(value)]
-impl MonoEventInfo {
-    #[doc = "`get_event_info(crate::system::reflection::monoevent::MonoEvent, crate::system::reflection::monoeventinfo::MonoEventInfo)` overload"]
-    #[method(name = "get_event_info", args = 2)]
-    pub fn get_event_info(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MonoEventInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: monoevent :: MonoEvent as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: reflection :: monoeventinfo :: MonoEventInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MonoEventInfo as ::unity2::ClassIdentity>::class(),
+                "get_event_info",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MonoEventInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_event_info",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_info(
         ev: crate::system::reflection::monoevent::MonoEvent,
-        info: crate::system::reflection::monoeventinfo::MonoEventInfo,
-    ) -> ();
+        info: *mut crate::system::reflection::monoeventinfo::MonoEventInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::reflection::monoevent::MonoEvent,
+            *mut crate::system::reflection::monoeventinfo::MonoEventInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_info::get_offset() as isize),
+        );
+        inner(ev, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::monoevent::MonoEvent as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MonoEventInfo as ::unity2::ClassIdentity>::class(),
+                "GetEventInfo",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MonoEventInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetEventInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_info_2(
+        ev: crate::system::reflection::monoevent::MonoEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo {
+        let inner: extern "C" fn(
+            crate::system::reflection::monoevent::MonoEvent,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::reflection::monoeventinfo::MonoEventInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_info_2::get_offset() as isize),
+        );
+        inner(ev, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "system-reflection-monoeventinfo")]
+impl MonoEventInfo {
+    #[doc = "`get_event_info(crate::system::reflection::monoevent::MonoEvent, *mutcrate::system::reflection::monoeventinfo::MonoEventInfo)` overload"]
+    pub fn get_event_info(
+        ev: impl ::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>,
+    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::reflection::monoeventinfo::MonoEventInfo,
+            >::uninit();
+            __MonoEventInfo_unity2_raw::get_event_info(
+                ::core::convert::Into::into(ev),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
     #[doc = "`GetEventInfo(crate::system::reflection::monoevent::MonoEvent)` overload"]
-    #[method(name = "GetEventInfo", args = 1)]
     pub fn get_event_info_2(
-        ev: crate::system::reflection::monoevent::MonoEvent,
-    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo;
+        ev: impl ::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>,
+    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo {
+        unsafe {
+            __MonoEventInfo_unity2_raw::get_event_info_2(
+                ::core::convert::Into::into(ev),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-monoeventinfo")]
+pub mod prelude {
+    pub use super::MonoEventInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

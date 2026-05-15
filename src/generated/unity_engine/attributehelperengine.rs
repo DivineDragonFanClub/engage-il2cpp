@@ -31,33 +31,403 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-attributehelperengine")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AttributeHelperEngine_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parent_type_disallowing_multiple_inclusion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "GetParentTypeDisallowingMultipleInclusion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetParentTypeDisallowingMultipleInclusion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parent_type_disallowing_multiple_inclusion(
+        r#type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_parent_type_disallowing_multiple_inclusion::get_offset() as isize,
+                ),
+        );
+        inner(r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_required_components {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "GetRequiredComponents",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetRequiredComponents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_required_components(
+        klass: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_required_components::get_offset() as isize),
+        );
+        inner(klass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_execute_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "GetExecuteMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetExecuteMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_execute_mode(
+        klass: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_execute_mode::get_offset() as isize),
+            );
+        inner(klass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_is_editor_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "CheckIsEditorScript",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    "CheckIsEditorScript",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_is_editor_script(
+        klass: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_is_editor_script::get_offset() as isize),
+            );
+        inner(klass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_execution_order_for {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "GetDefaultExecutionOrderFor",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetDefaultExecutionOrderFor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_execution_order_for(
+        klass: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_default_execution_order_for::get_offset() as isize),
+            );
+        inner(klass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-attributehelperengine")]
 impl AttributeHelperEngine {
     #[doc = "`GetParentTypeDisallowingMultipleInclusion(::unity2::SystemType)` overload"]
-    #[method(name = "GetParentTypeDisallowingMultipleInclusion", args = 1)]
     pub fn get_parent_type_disallowing_multiple_inclusion(
-        r#type: ::unity2::SystemType,
-    ) -> ::unity2::SystemType;
-
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::SystemType {
+        unsafe {
+            __AttributeHelperEngine_unity2_raw::get_parent_type_disallowing_multiple_inclusion(
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetRequiredComponents(::unity2::SystemType)` overload"]
-    #[method(name = "GetRequiredComponents", args = 1)]
     pub fn get_required_components(
-        klass: ::unity2::SystemType,
-    ) -> ::unity2::Array<::unity2::SystemType>;
-
+        klass: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe {
+            __AttributeHelperEngine_unity2_raw::get_required_components(
+                ::core::convert::Into::into(klass),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetExecuteMode(::unity2::SystemType)` overload"]
-    #[method(name = "GetExecuteMode", args = 1)]
-    pub fn get_execute_mode(klass: ::unity2::SystemType) -> i32;
-
+    pub fn get_execute_mode(klass: impl ::core::convert::Into<::unity2::SystemType>) -> i32 {
+        unsafe {
+            __AttributeHelperEngine_unity2_raw::get_execute_mode(
+                ::core::convert::Into::into(klass),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CheckIsEditorScript(::unity2::SystemType)` overload"]
-    #[method(name = "CheckIsEditorScript", args = 1)]
-    pub fn check_is_editor_script(klass: ::unity2::SystemType) -> i32;
-
+    pub fn check_is_editor_script(klass: impl ::core::convert::Into<::unity2::SystemType>) -> i32 {
+        unsafe {
+            __AttributeHelperEngine_unity2_raw::check_is_editor_script(
+                ::core::convert::Into::into(klass),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetDefaultExecutionOrderFor(::unity2::SystemType)` overload"]
-    #[method(name = "GetDefaultExecutionOrderFor", args = 1)]
-    pub fn get_default_execution_order_for(klass: ::unity2::SystemType) -> i32;
-
+    pub fn get_default_execution_order_for(
+        klass: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> i32 {
+        unsafe {
+            __AttributeHelperEngine_unity2_raw::get_default_execution_order_for(
+                ::core::convert::Into::into(klass),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_custom_attribute_of_type<M0: ::unity2::IlType + ::core::marker::Copy>(
+        klass: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::class(),
+                "GetCustomAttributeOfType",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <AttributeHelperEngine as ::unity2::ClassIdentity>::NAME,
+                "GetCustomAttributeOfType",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(klass),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __AttributeHelperEngine_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-attributehelperengine")]
+pub mod prelude {
+    pub use super::AttributeHelperEngine;
+    pub use super::IAttributeHelperEngine;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

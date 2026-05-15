@@ -18,12 +18,83 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
-#[::unity2::methods]
-impl GUITargetAttribute {
-    #[doc = "`GetGUITargetAttrValue(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetGUITargetAttrValue", args = 2)]
-    pub fn get_gui_target_attr_value(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUITargetAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gui_target_attr_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUITargetAttribute as ::unity2::ClassIdentity>::class(),
+                "GetGUITargetAttrValue",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUITargetAttribute as ::unity2::ClassIdentity>::NAME,
+                    "GetGUITargetAttrValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gui_target_attr_value(
         klass: ::unity2::SystemType,
         method_name: ::unity2::Il2CppString,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gui_target_attr_value::get_offset() as isize),
+        );
+        inner(klass, method_name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guitargetattribute")]
+impl GUITargetAttribute {
+    #[doc = "`GetGUITargetAttrValue(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    pub fn get_gui_target_attr_value(
+        klass: impl ::core::convert::Into<::unity2::SystemType>,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            __GUITargetAttribute_unity2_raw::get_gui_target_attr_value(
+                ::core::convert::Into::into(klass),
+                ::core::convert::Into::into(method_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guitargetattribute")]
+pub mod prelude {
+    pub use super::GUITargetAttribute;
+    pub use super::IGUITargetAttribute;
 }

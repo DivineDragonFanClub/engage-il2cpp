@@ -20,108 +20,1421 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-decorator")]
-#[::unity2::methods]
-impl Decorator {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_m_Phase()` overload"]
-    #[method(name = "get_m_Phase", args = 0)]
-    pub fn get_m_phase(self) -> crate::combat::phase::Phase;
-
-    #[doc = "`set_m_Phase(crate::combat::phase::Phase)` overload"]
-    #[method(name = "set_m_Phase", args = 1)]
-    pub fn set_m_phase(self, value: crate::combat::phase::Phase) -> ();
-
-    #[doc = "`get_m_Chrs()` overload"]
-    #[method(name = "get_m_Chrs", args = 0)]
-    pub fn get_m_chrs(self) -> ::unity2::Array<crate::combat::character::Character>;
-
-    #[doc = "`get_m_Master()` overload"]
-    #[method(name = "get_m_Master", args = 0)]
-    pub fn get_m_master(self) -> crate::combat::character::Character;
-
-    #[doc = "`get_m_Enemy()` overload"]
-    #[method(name = "get_m_Enemy", args = 0)]
-    pub fn get_m_enemy(self) -> crate::combat::character::Character;
-
-    #[doc = "`get_m_Grandew()` overload"]
-    #[method(name = "get_m_Grandew", args = 0)]
-    pub fn get_m_grandew(self) -> crate::combat::character::Character;
-
-    #[doc = "`get_m_EnemyGrandew()` overload"]
-    #[method(name = "get_m_EnemyGrandew", args = 0)]
-    pub fn get_m_enemy_grandew(self) -> crate::combat::character::Character;
-
-    #[doc = "`UseOnArrivalTimePredicted()` overload"]
-    #[method(name = "UseOnArrivalTimePredicted", args = 0)]
-    pub fn use_on_arrival_time_predicted(self) -> ();
-
-    #[doc = "`UseOnHitTimePredicted()` overload"]
-    #[method(name = "UseOnHitTimePredicted", args = 0)]
-    pub fn use_on_hit_time_predicted(self) -> ();
-
-    #[doc = "`UseOnEnemyDamage()` overload"]
-    #[method(name = "UseOnEnemyDamage", args = 0)]
-    pub fn use_on_enemy_damage(self) -> ();
-
-    #[doc = "`UseOnBackwardCancel(crate::combat::character::Character)` overload"]
-    #[method(name = "UseOnBackwardCancel", args = 1)]
-    pub fn use_on_backward_cancel(self, chr: crate::combat::character::Character) -> ();
-
-    #[doc = "`OnEnter()` overload"]
-    #[method(name = "OnEnter", args = 0)]
-    pub fn on_enter(self) -> ();
-
-    #[doc = "`OnEnterAttack()` overload"]
-    #[method(name = "OnEnterAttack", args = 0)]
-    pub fn on_enter_attack(self) -> ();
-
-    #[doc = "`OnUpdate()` overload"]
-    #[method(name = "OnUpdate", args = 0)]
-    pub fn on_update(self) -> ();
-
-    #[doc = "`OnExit()` overload"]
-    #[method(name = "OnExit", args = 0)]
-    pub fn on_exit(self) -> ();
-
-    #[doc = "`OnArrivalTimePredicted_(f32)` overload"]
-    #[method(name = "OnArrivalTimePredicted_", args = 1)]
-    pub fn on_arrival_time_predicted(self, world_arrival_time: f32) -> ();
-
-    #[doc = "`OnHitTimePredicted_(f32, crate::combat::weaponstyle::WeaponStyle)` overload"]
-    #[method(name = "OnHitTimePredicted_", args = 2)]
-    pub fn on_hit_time_predicted(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Decorator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_Name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_Name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_phase {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_Phase",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Phase",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_phase(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_phase::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_phase {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "set_m_Phase",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "set_m_Phase",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_phase(
+        this: Decorator,
+        value: crate::combat::phase::Phase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::combat::phase::Phase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_phase::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_chrs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_Chrs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Chrs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_chrs(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::character::Character> {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::combat::character::Character> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_chrs::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_master {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_Master",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Master",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_master(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_master::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_enemy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_Enemy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Enemy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_enemy(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_enemy::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_grandew {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_Grandew",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Grandew",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_grandew(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_grandew::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_enemy_grandew {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "get_m_EnemyGrandew",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "get_m_EnemyGrandew",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_enemy_grandew(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            Decorator,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_enemy_grandew::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_on_arrival_time_predicted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "UseOnArrivalTimePredicted",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "UseOnArrivalTimePredicted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn use_on_arrival_time_predicted(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_use_on_arrival_time_predicted::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_on_hit_time_predicted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "UseOnHitTimePredicted",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "UseOnHitTimePredicted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn use_on_hit_time_predicted(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_use_on_hit_time_predicted::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_on_enemy_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "UseOnEnemyDamage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "UseOnEnemyDamage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn use_on_enemy_damage(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_use_on_enemy_damage::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_on_backward_cancel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "UseOnBackwardCancel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "UseOnBackwardCancel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn use_on_backward_cancel(
+        this: Decorator,
+        chr: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_use_on_backward_cancel::get_offset() as isize),
+        );
+        inner(this, chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnEnter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enter(this: Decorator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enter_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnEnterAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnEnterAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enter_attack(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enter_attack::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_update(this: Decorator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_exit(this: Decorator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_exit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_arrival_time_predicted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnArrivalTimePredicted_",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnArrivalTimePredicted_",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_arrival_time_predicted(
+        this: Decorator,
+        world_arrival_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_arrival_time_predicted::get_offset() as isize),
+            );
+        inner(this, world_arrival_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_hit_time_predicted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnHitTimePredicted_",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnHitTimePredicted_",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_hit_time_predicted(
+        this: Decorator,
         world_hit_time: f32,
         weapon_style: crate::combat::weaponstyle::WeaponStyle,
-    ) -> ();
-
-    #[doc = "`OnShoot(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "OnShoot", args = 1)]
-    pub fn on_shoot(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
-
-    #[doc = "`OnMissPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "OnMissPassed", args = 1)]
-    pub fn on_miss_passed(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
-
-    #[doc = "`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "OnHitPassed", args = 1)]
-    pub fn on_hit_passed(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
-
-    #[doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "OnEnemyDamage_", args = 1)]
-    pub fn on_enemy_damage(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
-
-    #[doc = "`OnBackwardCancel_()` overload"]
-    #[method(name = "OnBackwardCancel_", args = 0)]
-    pub fn on_backward_cancel(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            f32,
+            crate::combat::weaponstyle::WeaponStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_hit_time_predicted::get_offset() as isize),
+        );
+        inner(this, world_hit_time, weapon_style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_shoot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnShoot",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnShoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_shoot(
+        this: Decorator,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_shoot::get_offset() as isize),
+        );
+        inner(this, ev, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_miss_passed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnMissPassed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnMissPassed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_miss_passed(
+        this: Decorator,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_miss_passed::get_offset() as isize),
+        );
+        inner(this, ev, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_hit_passed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnHitPassed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnHitPassed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_hit_passed(
+        this: Decorator,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_hit_passed::get_offset() as isize),
+        );
+        inner(this, ev, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enemy_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnEnemyDamage_",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnEnemyDamage_",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enemy_damage(
+        this: Decorator,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Decorator,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_enemy_damage::get_offset() as isize),
+        );
+        inner(this, ev, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_backward_cancel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                "OnBackwardCancel_",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    "OnBackwardCancel_",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_backward_cancel(
+        this: Decorator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_backward_cancel::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Decorator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Decorator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Decorator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Decorator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-decorator")]
+pub trait IDecoratorMethods: IDecorator {
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_m_Phase()` overload"]
+    fn get_m_phase(self) -> crate::combat::phase::Phase {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_phase(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_m_Phase(crate::combat::phase::Phase)` overload"]
+    fn set_m_phase(self, value: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::set_m_phase(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_Chrs()` overload"]
+    fn get_m_chrs(self) -> ::unity2::Array<crate::combat::character::Character> {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_chrs(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_m_Master()` overload"]
+    fn get_m_master(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_master(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_m_Enemy()` overload"]
+    fn get_m_enemy(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_enemy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_m_Grandew()` overload"]
+    fn get_m_grandew(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_grandew(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_m_EnemyGrandew()` overload"]
+    fn get_m_enemy_grandew(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::get_m_enemy_grandew(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UseOnArrivalTimePredicted()` overload"]
+    fn use_on_arrival_time_predicted(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::use_on_arrival_time_predicted(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UseOnHitTimePredicted()` overload"]
+    fn use_on_hit_time_predicted(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::use_on_hit_time_predicted(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UseOnEnemyDamage()` overload"]
+    fn use_on_enemy_damage(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::use_on_enemy_damage(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UseOnBackwardCancel(crate::combat::character::Character)` overload"]
+    fn use_on_backward_cancel(
+        self,
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::use_on_backward_cancel(
+                __receiver,
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnEnter()` overload"]
+    fn on_enter(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnEnterAttack()` overload"]
+    fn on_enter_attack(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnUpdate()` overload"]
+    fn on_update(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnExit()` overload"]
+    fn on_exit(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnArrivalTimePredicted_(f32)` overload"]
+    fn on_arrival_time_predicted(self, world_arrival_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_arrival_time_predicted(
+                __receiver,
+                ::core::convert::Into::into(world_arrival_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnHitTimePredicted_(f32, crate::combat::weaponstyle::WeaponStyle)` overload"]
+    fn on_hit_time_predicted(
+        self,
+        world_hit_time: impl ::core::convert::Into<f32>,
+        weapon_style: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_hit_time_predicted(
+                __receiver,
+                ::core::convert::Into::into(world_hit_time),
+                ::core::convert::Into::into(weapon_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnShoot(crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    fn on_shoot(
+        self,
+        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_shoot(
+                __receiver,
+                ::core::convert::Into::into(ev),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnMissPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    fn on_miss_passed(
+        self,
+        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_miss_passed(
+                __receiver,
+                ::core::convert::Into::into(ev),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    fn on_hit_passed(
+        self,
+        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_hit_passed(
+                __receiver,
+                ::core::convert::Into::into(ev),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    fn on_enemy_damage(
+        self,
+        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_enemy_damage(
+                __receiver,
+                ::core::convert::Into::into(ev),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBackwardCancel_()` overload"]
+    fn on_backward_cancel(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::on_backward_cancel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Decorator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Decorator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-decorator")]
+impl<__T: IDecorator> IDecoratorMethods for __T {}
 
 #[cfg(feature = "combat-decorator")]
 impl Decorator {
@@ -137,4 +1450,14 @@ impl Decorator {
         <Self as IDecoratorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-decorator")]
+pub mod prelude {
+    pub use super::Decorator;
+    pub use super::IDecorator;
+    pub use super::IDecoratorMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

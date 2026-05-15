@@ -21,16 +21,158 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-intparameter")]
-#[::unity2::methods]
-impl IntParameter {
-    #[doc = "`.ctor(i32, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, value: i32, override_state: bool) -> ();
-
-    #[doc = "`Interp(i32, i32, f32)` overload"]
-    #[method(name = "Interp", args = 3)]
-    pub fn interp(self, from: i32, to: i32, t: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IntParameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntParameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntParameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: IntParameter,
+        value: i32,
+        override_state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IntParameter, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, value, override_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_interp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntParameter as ::unity2::ClassIdentity>::class(),
+                "Interp",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntParameter as ::unity2::ClassIdentity>::NAME,
+                    "Interp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn interp(
+        this: IntParameter,
+        from: i32,
+        to: i32,
+        t: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IntParameter, i32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_interp::get_offset() as isize),
+            );
+        inner(this, from, to, t, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+pub trait IIntParameterMethods: IIntParameter {
+    #[doc = "`.ctor(i32, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<i32>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IntParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IntParameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Interp(i32, i32, f32)` overload"]
+    fn interp(
+        self,
+        from: impl ::core::convert::Into<i32>,
+        to: impl ::core::convert::Into<i32>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IntParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IntParameter_unity2_raw::interp(
+                __receiver,
+                ::core::convert::Into::into(from),
+                ::core::convert::Into::into(to),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+impl<__T: IIntParameter> IIntParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-intparameter")]
 impl IntParameter {
@@ -46,4 +188,20 @@ impl IntParameter {
         <Self as IIntParameterMethods>::ctor(this, value, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+pub mod prelude {
+    pub use super::IIntParameter;
+    pub use super::IIntParameterMethods;
+    pub use super::IntParameter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

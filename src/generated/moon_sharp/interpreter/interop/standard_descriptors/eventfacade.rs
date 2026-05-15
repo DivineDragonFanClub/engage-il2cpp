@@ -37,20 +37,110 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
-#[::unity2::methods]
-impl EventFacade {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor, crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventFacade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: eventmemberdescriptor :: EventMemberDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventFacade as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventFacade as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventFacade,
         parent : crate :: moon_sharp :: interpreter :: interop :: eventmemberdescriptor :: EventMemberDescriptor,
         obj: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventFacade,
+            crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, parent, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::func_4::Func_4<
+                    crate::system::object::Object,
+                    crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                    crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::func_4::Func_4<
+                    crate::system::object::Object,
+                    crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                    crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventFacade as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventFacade as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: EventFacade,
         add_callback: crate::system::func_4::Func_4<
             crate::system::object::Object,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
@@ -64,35 +154,343 @@ impl EventFacade {
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
         obj: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Index(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]
-    #[method(name = "Index", args = 3)]
-    pub fn index(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventFacade,
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            add_callback,
+            remove_callback,
+            obj,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventFacade as ::unity2::ClassIdentity>::class(),
+                "Index",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventFacade as ::unity2::ClassIdentity>::NAME,
+                    "Index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn index(
+        this: EventFacade,
         script: crate::moon_sharp::interpreter::script::Script,
         index: crate::moon_sharp::interpreter::dynvalue::DynValue,
         is_direct_indexing: bool,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`SetIndex(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]
-    #[method(name = "SetIndex", args = 4)]
-    pub fn set_index(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            EventFacade,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_index::get_offset() as isize),
+        );
+        inner(
+            this,
+            script,
+            index,
+            is_direct_indexing,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventFacade as ::unity2::ClassIdentity>::class(),
+                "SetIndex",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventFacade as ::unity2::ClassIdentity>::NAME,
+                    "SetIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_index(
+        this: EventFacade,
         script: crate::moon_sharp::interpreter::script::Script,
         index: crate::moon_sharp::interpreter::dynvalue::DynValue,
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         is_direct_indexing: bool,
-    ) -> bool;
-
-    #[doc = "`MetaIndex(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString)` overload"]
-    #[method(name = "MetaIndex", args = 2)]
-    pub fn meta_index(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EventFacade,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_index::get_offset() as isize),
+        );
+        inner(
+            this,
+            script,
+            index,
+            value,
+            is_direct_indexing,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_meta_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventFacade as ::unity2::ClassIdentity>::class(),
+                "MetaIndex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventFacade as ::unity2::ClassIdentity>::NAME,
+                    "MetaIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn meta_index(
+        this: EventFacade,
         script: crate::moon_sharp::interpreter::script::Script,
         metaname: ::unity2::Il2CppString,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            EventFacade,
+            crate::moon_sharp::interpreter::script::Script,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_meta_index::get_offset() as isize),
+        );
+        inner(this, script, metaname, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
+pub trait IEventFacadeMethods: IEventFacade {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor, crate::system::object::Object)` overload"]
+    fn ctor(
+        self,
+        parent: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor,
+        >,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventFacade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventFacade_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::system::object::Object)` overload"]
+    fn ctor_2(
+        self,
+        add_callback: impl ::core::convert::Into<
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+        remove_callback: impl ::core::convert::Into<
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventFacade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventFacade_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(add_callback),
+                ::core::convert::Into::into(remove_callback),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Index(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]
+    fn index(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        index: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        is_direct_indexing: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver = <EventFacade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventFacade_unity2_raw::index(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(is_direct_indexing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndex(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]
+    fn set_index(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        index: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        is_direct_indexing: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <EventFacade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventFacade_unity2_raw::set_index(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(is_direct_indexing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MetaIndex(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString)` overload"]
+    fn meta_index(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        metaname: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver = <EventFacade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventFacade_unity2_raw::meta_index(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(metaname),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
+impl<__T: IEventFacade> IEventFacadeMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
 impl EventFacade {
@@ -138,4 +536,14 @@ impl EventFacade {
         <Self as IEventFacadeMethods>::ctor_2(this, add_callback, remove_callback, obj);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
+pub mod prelude {
+    pub use super::EventFacade;
+    pub use super::IEventFacade;
+    pub use super::IEventFacadeMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-ilgenerator-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-ilgenerator")]
+pub mod prelude {
+    pub use super::IILGenerator;
+    pub use super::ILGenerator;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

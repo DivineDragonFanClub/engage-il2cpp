@@ -11,6 +11,12 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
+    #[parent(crate::system::object::Object)]
+    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))]
     #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
@@ -61,16 +67,43 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
-    #[parent(crate::system::object::Object)]
-    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "app-commonbattlesequence_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    #[doc = "`TryAdd(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "TryAdd", args = 3)]
+    pub fn try_add(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        exp: i32,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonBattleSequence_1_RelianceList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonBattleSequence_1_RelianceListMethods<T0>>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-commonbattlesequence_1")]
 #[::unity2::methods]
@@ -188,34 +221,27 @@ impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1<T0> {
 }
 
 #[cfg(feature = "app-commonbattlesequence_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
-    #[doc = "`TryAdd(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "TryAdd", args = 3)]
-    pub fn try_add(
-        self,
-        unit: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        exp: i32,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-commonbattlesequence_1")]
-impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommonBattleSequence_1_RelianceList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICommonBattleSequence_1_RelianceListMethods<T0>>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::CommonBattleSequence_1;
+    pub use super::CommonBattleSequence_1_Reliance;
+    pub use super::CommonBattleSequence_1_RelianceList;
+    pub use super::ICommonBattleSequence_1;
+    pub use super::ICommonBattleSequence_1Methods;
+    pub use super::ICommonBattleSequence_1_RelianceList;
+    pub use super::ICommonBattleSequence_1_RelianceListMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

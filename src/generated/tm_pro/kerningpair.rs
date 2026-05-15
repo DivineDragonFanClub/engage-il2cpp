@@ -35,66 +35,728 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-kerningpair")]
-#[::unity2::methods]
-impl KerningPair {
-    #[doc = "`get_firstGlyph()` overload"]
-    #[method(name = "get_firstGlyph", args = 0)]
-    pub fn get_first_glyph(self) -> u32;
-
-    #[doc = "`set_firstGlyph(u32)` overload"]
-    #[method(name = "set_firstGlyph", args = 1)]
-    pub fn set_first_glyph(self, value: u32) -> ();
-
-    #[doc = "`get_firstGlyphAdjustments()` overload"]
-    #[method(name = "get_firstGlyphAdjustments", args = 0)]
-    pub fn get_first_glyph_adjustments(
-        self,
-    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy;
-
-    #[doc = "`get_secondGlyph()` overload"]
-    #[method(name = "get_secondGlyph", args = 0)]
-    pub fn get_second_glyph(self) -> u32;
-
-    #[doc = "`set_secondGlyph(u32)` overload"]
-    #[method(name = "set_secondGlyph", args = 1)]
-    pub fn set_second_glyph(self, value: u32) -> ();
-
-    #[doc = "`get_secondGlyphAdjustments()` overload"]
-    #[method(name = "get_secondGlyphAdjustments", args = 0)]
-    pub fn get_second_glyph_adjustments(
-        self,
-    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy;
-
-    #[doc = "`get_ignoreSpacingAdjustments()` overload"]
-    #[method(name = "get_ignoreSpacingAdjustments", args = 0)]
-    pub fn get_ignore_spacing_adjustments(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(u32, u32, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(self, left: u32, right: u32, offset: f32) -> ();
-
-    #[doc = "`.ctor(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_3(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __KerningPair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_first_glyph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "get_firstGlyph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "get_firstGlyph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_first_glyph(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(KerningPair, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_first_glyph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_first_glyph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "set_firstGlyph",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "set_firstGlyph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_first_glyph(
+        this: KerningPair,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningPair, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_first_glyph::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_first_glyph_adjustments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "get_firstGlyphAdjustments",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "get_firstGlyphAdjustments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_first_glyph_adjustments(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
+        let inner : extern "C" fn (KerningPair , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_first_glyph_adjustments :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_second_glyph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "get_secondGlyph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "get_secondGlyph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_second_glyph(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(KerningPair, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_second_glyph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_second_glyph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "set_secondGlyph",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "set_secondGlyph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_second_glyph(
+        this: KerningPair,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningPair, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_second_glyph::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_second_glyph_adjustments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "get_secondGlyphAdjustments",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "get_secondGlyphAdjustments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_second_glyph_adjustments(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
+        let inner : extern "C" fn (KerningPair , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_second_glyph_adjustments :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ignore_spacing_adjustments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "get_ignoreSpacingAdjustments",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "get_ignoreSpacingAdjustments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ignore_spacing_adjustments(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(KerningPair, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_ignore_spacing_adjustments::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: KerningPair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(KerningPair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: KerningPair,
+        left: u32,
+        right: u32,
+        offset: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningPair, u32, u32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, left, right, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: KerningPair,
         first_glyph: u32,
         first_glyph_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
         second_glyph: u32,
         second_glyph_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-    ) -> ();
-
-    #[doc = "`ConvertLegacyKerningData()` overload"]
-    #[method(name = "ConvertLegacyKerningData", args = 0)]
-    pub fn convert_legacy_kerning_data(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            KerningPair,
+            u32,
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+            u32,
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            first_glyph,
+            first_glyph_adjustments,
+            second_glyph,
+            second_glyph_adjustments,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_legacy_kerning_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                "ConvertLegacyKerningData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    "ConvertLegacyKerningData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_legacy_kerning_data(
+        this: KerningPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningPair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_convert_legacy_kerning_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningPair as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningPair as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-kerningpair")]
+impl KerningPair {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __KerningPair_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "tm_pro-kerningpair")]
+pub trait IKerningPairMethods: IKerningPair {
+    #[doc = "`get_firstGlyph()` overload"]
+    fn get_first_glyph(self) -> u32 {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::get_first_glyph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_firstGlyph(u32)` overload"]
+    fn set_first_glyph(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::set_first_glyph(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_firstGlyphAdjustments()` overload"]
+    fn get_first_glyph_adjustments(
+        self,
+    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::get_first_glyph_adjustments(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_secondGlyph()` overload"]
+    fn get_second_glyph(self) -> u32 {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::get_second_glyph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_secondGlyph(u32)` overload"]
+    fn set_second_glyph(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::set_second_glyph(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_secondGlyphAdjustments()` overload"]
+    fn get_second_glyph_adjustments(
+        self,
+    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::get_second_glyph_adjustments(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ignoreSpacingAdjustments()` overload"]
+    fn get_ignore_spacing_adjustments(self) -> bool {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::get_ignore_spacing_adjustments(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(u32, u32, f32)` overload"]
+    fn ctor_2(
+        self,
+        left: impl ::core::convert::Into<u32>,
+        right: impl ::core::convert::Into<u32>,
+        offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(left),
+                ::core::convert::Into::into(right),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
+    fn ctor_3(
+        self,
+        first_glyph: impl ::core::convert::Into<u32>,
+        first_glyph_adjustments: impl ::core::convert::Into<
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        >,
+        second_glyph: impl ::core::convert::Into<u32>,
+        second_glyph_adjustments: impl ::core::convert::Into<
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(first_glyph),
+                ::core::convert::Into::into(first_glyph_adjustments),
+                ::core::convert::Into::into(second_glyph),
+                ::core::convert::Into::into(second_glyph_adjustments),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConvertLegacyKerningData()` overload"]
+    fn convert_legacy_kerning_data(self) -> () {
+        unsafe {
+            let __receiver = <KerningPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningPair_unity2_raw::convert_legacy_kerning_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-kerningpair")]
+impl<__T: IKerningPair> IKerningPairMethods for __T {}
 
 #[cfg(feature = "tm_pro-kerningpair")]
 impl KerningPair {
@@ -147,4 +809,14 @@ impl KerningPair {
         );
         this
     }
+}
+
+#[cfg(feature = "tm_pro-kerningpair")]
+pub mod prelude {
+    pub use super::IKerningPair;
+    pub use super::IKerningPairMethods;
+    pub use super::KerningPair;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

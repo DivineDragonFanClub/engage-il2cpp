@@ -41,3 +41,17 @@ impl<T0: ::unity2::ClassIdentity> IntegratedSubsystem_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-integratedsubsystem_1")]
+pub mod prelude {
+    pub use super::IIntegratedSubsystem_1;
+    pub use super::IIntegratedSubsystem_1Methods;
+    pub use super::IntegratedSubsystem_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+    #[cfg(feature = "unity_engine-integratedsubsystem")]
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
+    pub use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+}

@@ -33,101 +33,1222 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-godbondholder")]
-#[::unity2::methods]
-impl GodBondHolder {
-    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodBondHolder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "Build",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build(
+        this: GodBondHolder,
         data: crate::app::goddata::GodData,
-    ) -> crate::app::godbondholder::GodBondHolder;
-
-    #[doc = "`Get(crate::app::unit::Unit)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, unit: crate::app::unit::Unit) -> crate::app::godbond::GodBond;
-
-    #[doc = "`Create(crate::app::unit::Unit)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`UpdateAllBondsForGodState(crate::app::godstate::GodState)` overload"]
-    #[method(name = "UpdateAllBondsForGodState", args = 1)]
-    pub fn update_all_bonds_for_god_state(self, god_state: crate::app::godstate::GodState) -> ();
-
-    #[doc = "`DeleteExluding(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "DeleteExluding", args = 1)]
-    pub fn delete_exluding(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godbondholder::GodBondHolder {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godbondholder::GodBondHolder = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "Get",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: GodBondHolder,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godbond::GodBond {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godbond::GodBond = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        this: GodBondHolder,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_all_bonds_for_god_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godstate::GodState as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "UpdateAllBondsForGodState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "UpdateAllBondsForGodState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_all_bonds_for_god_state(
+        this: GodBondHolder,
+        god_state: crate::app::godstate::GodState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::godstate::GodState,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_all_bonds_for_god_state::get_offset() as isize),
+        );
+        inner(this, god_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_exluding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    ::unity2::Il2CppString,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "DeleteExluding",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "DeleteExluding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_exluding(
+        this: GodBondHolder,
         pids: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`GetMaxLevel()` overload"]
-    #[method(name = "GetMaxLevel", args = 0)]
-    pub fn get_max_level(self) -> i32;
-
-    #[doc = "`GetCountOfRelianceLevelA()` overload"]
-    #[method(name = "GetCountOfRelianceLevelA", args = 0)]
-    pub fn get_count_of_reliance_level_a(self) -> i32;
-
-    #[doc = "`NewGodBond(::unity2::Il2CppString)` overload"]
-    #[method(name = "NewGodBond", args = 1)]
-    pub fn new_god_bond(self, pid: ::unity2::Il2CppString) -> crate::app::godbond::GodBond;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`SetLevelFromUnitRelianceIfPossible(crate::app::goddata::GodData)` overload"]
-    #[method(name = "SetLevelFromUnitRelianceIfPossible", args = 1)]
-    pub fn set_level_from_unit_reliance_if_possible(self, data: crate::app::goddata::GodData)
-        -> ();
-
-    #[doc = "`SetLevelFromUnitReliance(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]
-    #[method(name = "SetLevelFromUnitReliance", args = 2)]
-    pub fn set_level_from_unit_reliance(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_delete_exluding::get_offset() as isize),
+        );
+        inner(this, pids, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "GetMaxLevel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "GetMaxLevel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_level(
+        this: GodBondHolder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GodBondHolder, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_level::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count_of_reliance_level_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "GetCountOfRelianceLevelA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "GetCountOfRelianceLevelA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count_of_reliance_level_a(
+        this: GodBondHolder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GodBondHolder, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count_of_reliance_level_a::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new_god_bond {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "NewGodBond",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "NewGodBond",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn new_god_bond(
+        this: GodBondHolder,
+        pid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godbond::GodBond {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::godbond::GodBond = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_new_god_bond::get_offset() as isize),
+        );
+        inner(this, pid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: GodBondHolder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodBondHolder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_level_from_unit_reliance_if_possible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "SetLevelFromUnitRelianceIfPossible",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "SetLevelFromUnitRelianceIfPossible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_level_from_unit_reliance_if_possible(
+        this: GodBondHolder,
+        data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_level_from_unit_reliance_if_possible::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_level_from_unit_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "SetLevelFromUnitReliance",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "SetLevelFromUnitReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_level_from_unit_reliance(
+        this: GodBondHolder,
         link_unit: crate::app::unit::Unit,
         force_type: crate::app::force::Force_Type,
-    ) -> ();
-
-    #[doc = "`ChangeOpponent(crate::app::goddata::GodData)` overload"]
-    #[method(name = "ChangeOpponent", args = 1)]
-    pub fn change_opponent(self, data: crate::app::goddata::GodData) -> ();
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`SerializeForRewindLatest(crate::app::stream_2::Stream_2, crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "SerializeForRewindLatest", args = 2)]
-    pub fn serialize_for_rewind_latest(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::unit::Unit,
+            crate::app::force::Force_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_level_from_unit_reliance::get_offset() as isize),
+        );
+        inner(this, link_unit, force_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_opponent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "ChangeOpponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "ChangeOpponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_opponent(
+        this: GodBondHolder,
+        data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_opponent::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "OnSerialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "OnSerialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_serialize(
+        this: GodBondHolder,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_serialize::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "OnDeserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "OnDeserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_deserialize(
+        this: GodBondHolder,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::stream_2::Stream_2,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_deserialize::get_offset() as isize),
+        );
+        inner(this, stream, version, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize_for_rewind_latest {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[
+                    <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                    <crate::system::collections::generic::hashset_1::HashSet_1<
+                        ::unity2::Il2CppString,
+                    > as ::unity2::IlType>::il_type(),
+                ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "SerializeForRewindLatest",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "SerializeForRewindLatest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize_for_rewind_latest(
+        this: GodBondHolder,
         stream: crate::app::stream_2::Stream_2,
         exclude_pids: crate::system::collections::generic::hashset_1::HashSet_1<
             ::unity2::Il2CppString,
         >,
-    ) -> ();
-
-    #[doc = "`DeserializeForRewindLatest(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "DeserializeForRewindLatest", args = 1)]
-    pub fn deserialize_for_rewind_latest(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::goddata::GodData;
-
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::stream_2::Stream_2,
+            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize_for_rewind_latest::get_offset() as isize),
+        );
+        inner(this, stream, exclude_pids, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize_for_rewind_latest {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "DeserializeForRewindLatest",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "DeserializeForRewindLatest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deserialize_for_rewind_latest(
+        this: GodBondHolder,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_deserialize_for_rewind_latest::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "get_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: GodBondHolder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::goddata::GodData {
+        let inner: extern "C" fn(
+            GodBondHolder,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::goddata::GodData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        this: GodBondHolder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GodBondHolder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodBondHolder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodBondHolder as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GodBondHolder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodBondHolder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-godbondholder")]
+pub trait IGodBondHolderMethods: IGodBondHolder {
+    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
+    fn build(
+        self,
+        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> crate::app::godbondholder::GodBondHolder {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::build(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(crate::app::unit::Unit)` overload"]
+    fn get(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::godbond::GodBond {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::get(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Create(crate::app::unit::Unit)` overload"]
+    fn create(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::create(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateAllBondsForGodState(crate::app::godstate::GodState)` overload"]
+    fn update_all_bonds_for_god_state(
+        self,
+        god_state: impl ::core::convert::Into<crate::app::godstate::GodState>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::update_all_bonds_for_god_state(
+                __receiver,
+                ::core::convert::Into::into(god_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteExluding(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
+    fn delete_exluding(
+        self,
+        pids: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::delete_exluding(
+                __receiver,
+                ::core::convert::Into::into(pids),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMaxLevel()` overload"]
+    fn get_max_level(self) -> i32 {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::get_max_level(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCountOfRelianceLevelA()` overload"]
+    fn get_count_of_reliance_level_a(self) -> i32 {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::get_count_of_reliance_level_a(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`NewGodBond(::unity2::Il2CppString)` overload"]
+    fn new_god_bond(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::godbond::GodBond {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::new_god_bond(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetLevelFromUnitRelianceIfPossible(crate::app::goddata::GodData)` overload"]
+    fn set_level_from_unit_reliance_if_possible(
+        self,
+        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::set_level_from_unit_reliance_if_possible(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLevelFromUnitReliance(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]
+    fn set_level_from_unit_reliance(
+        self,
+        link_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::set_level_from_unit_reliance(
+                __receiver,
+                ::core::convert::Into::into(link_unit),
+                ::core::convert::Into::into(force_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeOpponent(crate::app::goddata::GodData)` overload"]
+    fn change_opponent(self, data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::change_opponent(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    fn on_serialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::on_serialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn on_deserialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+        version: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::on_deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SerializeForRewindLatest(crate::app::stream_2::Stream_2, crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"]
+    fn serialize_for_rewind_latest(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+        exclude_pids: impl ::core::convert::Into<
+            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::serialize_for_rewind_latest(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(exclude_pids),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeserializeForRewindLatest(crate::app::stream_2::Stream_2)` overload"]
+    fn deserialize_for_rewind_latest(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::deserialize_for_rewind_latest(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::goddata::GodData {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::get_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsValid()` overload"]
+    fn is_valid(self) -> bool {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GodBondHolder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodBondHolder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-godbondholder")]
+impl<__T: IGodBondHolder> IGodBondHolderMethods for __T {}
 
 #[cfg(feature = "app-godbondholder")]
 impl GodBondHolder {
@@ -143,4 +1264,17 @@ impl GodBondHolder {
         <Self as IGodBondHolderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-godbondholder")]
+pub mod prelude {
+    pub use super::GodBondHolder;
+    pub use super::IGodBondHolder;
+    pub use super::IGodBondHolderMethods;
+    pub use crate::app::linknode_1::ILinkNode_1;
+    #[cfg(feature = "app-linknode_1")]
+    pub use crate::app::linknode_1::ILinkNode_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

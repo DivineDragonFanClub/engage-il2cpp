@@ -26,12 +26,76 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-growmodeselectmenuitemcontent")]
-#[::unity2::methods]
-impl GrowModeSelectMenuItemContent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GrowModeSelectMenuItemContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GrowModeSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GrowModeSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GrowModeSelectMenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GrowModeSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-growmodeselectmenuitemcontent")]
+pub trait IGrowModeSelectMenuItemContentMethods: IGrowModeSelectMenuItemContent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GrowModeSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GrowModeSelectMenuItemContent_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-growmodeselectmenuitemcontent")]
+impl<__T: IGrowModeSelectMenuItemContent> IGrowModeSelectMenuItemContentMethods for __T {}
 
 #[cfg(feature = "app-growmodeselectmenuitemcontent")]
 impl GrowModeSelectMenuItemContent {
@@ -47,4 +111,32 @@ impl GrowModeSelectMenuItemContent {
         <Self as IGrowModeSelectMenuItemContentMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-growmodeselectmenuitemcontent")]
+pub mod prelude {
+    pub use super::GrowModeSelectMenuItemContent;
+    pub use super::IGrowModeSelectMenuItemContent;
+    pub use super::IGrowModeSelectMenuItemContentMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    #[cfg(feature = "app-basicmenuitemcontent")]
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    pub use crate::app::mainmenusequence::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent;
+    #[cfg(feature = "app-mainmenusequence")]
+    pub use crate::app::mainmenusequence::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

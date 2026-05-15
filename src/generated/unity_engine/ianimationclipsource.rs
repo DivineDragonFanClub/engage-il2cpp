@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-ianimationclipsource-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-ianimationclipsource")]
+pub mod prelude {
+    pub use super::IAnimationClipSource;
+    pub use super::IIAnimationClipSource;
+}

@@ -42,3 +42,14 @@ mod __types {
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflowbranch-types")]
 pub use __types::*;
+
+#[cfg(feature = "nintendo-message_studio-lib-lmsflowbranch")]
+pub mod prelude {
+    pub use super::LMSFlowBranch;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

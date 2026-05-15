@@ -289,3 +289,17 @@ impl<T0: ::unity2::ClassIdentity> LinkedList_1_Enumerator<T0> {
         sender: crate::system::object::Object,
     ) -> ();
 }
+
+#[cfg(feature = "system-collections-generic-linkedlist_1")]
+pub mod prelude {
+    pub use super::ILinkedList_1;
+    pub use super::ILinkedList_1Methods;
+    pub use super::LinkedList_1;
+    pub use super::LinkedList_1_Enumerator;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

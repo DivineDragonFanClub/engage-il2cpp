@@ -42,39 +42,398 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-highlightstate")]
-#[::unity2::methods(value)]
-impl HighlightState {
-    #[doc = "`.ctor(crate::unity_engine::color32::Color32, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HighlightState_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HighlightState,
         color: crate::unity_engine::color32::Color32,
         padding: crate::tm_pro::tmp_offset::TMP_Offset,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HighlightState,
+            crate::unity_engine::color32::Color32,
+            crate::tm_pro::tmp_offset::TMP_Offset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, color, padding, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_equality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::highlightstate::HighlightState as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::highlightstate::HighlightState as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                "op_Equality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    "op_Equality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_equality(
+        lhs: crate::tm_pro::highlightstate::HighlightState,
+        rhs: crate::tm_pro::highlightstate::HighlightState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::tm_pro::highlightstate::HighlightState,
+            crate::tm_pro::highlightstate::HighlightState,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_equality::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_inequality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::highlightstate::HighlightState as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::highlightstate::HighlightState as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                "op_Inequality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    "op_Inequality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_inequality(
+        lhs: crate::tm_pro::highlightstate::HighlightState,
+        rhs: crate::tm_pro::highlightstate::HighlightState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::tm_pro::highlightstate::HighlightState,
+            crate::tm_pro::highlightstate::HighlightState,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_inequality::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: HighlightState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(HighlightState, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: HighlightState,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            HighlightState,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::highlightstate::HighlightState as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HighlightState as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HighlightState as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
+        this: HighlightState,
+        other: crate::tm_pro::highlightstate::HighlightState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            HighlightState,
+            crate::tm_pro::highlightstate::HighlightState,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "tm_pro-highlightstate")]
+impl HighlightState {
     #[doc = "`op_Equality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"]
-    #[method(name = "op_Equality", args = 2)]
     pub fn op_equality(
-        lhs: crate::tm_pro::highlightstate::HighlightState,
-        rhs: crate::tm_pro::highlightstate::HighlightState,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>,
+        rhs: impl ::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>,
+    ) -> bool {
+        unsafe {
+            __HighlightState_unity2_raw::op_equality(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Inequality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"]
-    #[method(name = "op_Inequality", args = 2)]
     pub fn op_inequality(
-        lhs: crate::tm_pro::highlightstate::HighlightState,
-        rhs: crate::tm_pro::highlightstate::HighlightState,
-    ) -> bool;
+        lhs: impl ::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>,
+        rhs: impl ::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>,
+    ) -> bool {
+        unsafe {
+            __HighlightState_unity2_raw::op_inequality(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
+#[cfg(feature = "tm_pro-highlightstate")]
+impl HighlightState {
+    #[doc = "`.ctor(crate::unity_engine::color32::Color32, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]
+    pub fn ctor(
+        self,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        padding: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>,
+    ) -> () {
+        unsafe {
+            __HighlightState_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(padding),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
-
+    pub fn get_hash_code(self) -> i32 {
+        unsafe { __HighlightState_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
+    }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, obj: crate::system::object::Object) -> bool;
-
+    pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __HighlightState_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Equals(crate::tm_pro::highlightstate::HighlightState)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals_2(self, other: crate::tm_pro::highlightstate::HighlightState) -> bool;
+    pub fn equals_2(
+        self,
+        other: impl ::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>,
+    ) -> bool {
+        unsafe {
+            __HighlightState_unity2_raw::equals_2(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-highlightstate")]
+pub mod prelude {
+    pub use super::HighlightState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

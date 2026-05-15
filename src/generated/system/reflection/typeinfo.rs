@@ -17,24 +17,188 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-typeinfo")]
-#[::unity2::methods]
-impl TypeInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`System.Reflection.IReflectableType.GetTypeInfo()` overload"]
-    #[method(name = "System.Reflection.IReflectableType.GetTypeInfo", args = 0)]
-    pub fn system_reflection_i_reflectable_type_get_type_info(
-        self,
-    ) -> crate::system::reflection::typeinfo::TypeInfo;
-
-    #[doc = "`get_ImplementedInterfaces()` overload"]
-    #[method(name = "get_ImplementedInterfaces", args = 0)]
-    pub fn get_implemented_interfaces(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TypeInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TypeInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TypeInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TypeInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TypeInfo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_reflection_i_reflectable_type_get_type_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TypeInfo as ::unity2::ClassIdentity>::class(),
+                "System.Reflection.IReflectableType.GetTypeInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "System.Reflection.IReflectableType.GetTypeInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_reflection_i_reflectable_type_get_type_info(
+        this: TypeInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::typeinfo::TypeInfo {
+        let inner: extern "C" fn(
+            TypeInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::typeinfo::TypeInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_reflection_i_reflectable_type_get_type_info::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_implemented_interfaces {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TypeInfo as ::unity2::ClassIdentity>::class(),
+                "get_ImplementedInterfaces",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_ImplementedInterfaces",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_implemented_interfaces(
+        this: TypeInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
+    {
+        let inner : extern "C" fn (TypeInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_implemented_interfaces :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-reflection-typeinfo")]
+pub trait ITypeInfoMethods: ITypeInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TypeInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`System.Reflection.IReflectableType.GetTypeInfo()` overload"]
+    fn system_reflection_i_reflectable_type_get_type_info(
+        self,
+    ) -> crate::system::reflection::typeinfo::TypeInfo {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TypeInfo_unity2_raw::system_reflection_i_reflectable_type_get_type_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ImplementedInterfaces()` overload"]
+    fn get_implemented_interfaces(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
+    {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TypeInfo_unity2_raw::get_implemented_interfaces(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-typeinfo")]
+impl<__T: ITypeInfo> ITypeInfoMethods for __T {}
 
 #[cfg(feature = "system-reflection-typeinfo")]
 impl TypeInfo {
@@ -50,4 +214,17 @@ impl TypeInfo {
         <Self as ITypeInfoMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "system-reflection-typeinfo")]
+pub mod prelude {
+    pub use super::ITypeInfo;
+    pub use super::ITypeInfoMethods;
+    pub use super::TypeInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    #[cfg(feature = "system-reflection-memberinfo")]
+    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
 }

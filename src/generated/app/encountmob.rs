@@ -45,186 +45,2171 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-encountmob")]
-#[::unity2::methods]
-impl EncountMob {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Dump()` overload"]
-    #[method(name = "Dump", args = 0)]
-    pub fn dump(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Appear(crate::app::gmapspot::GmapSpot_EncountPersonType, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Appear", args = 4)]
-    pub fn appear(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EncountMob_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: EncountMob, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Dump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dump::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_appear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gmapspot::GmapSpot_EncountPersonType as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Appear",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Appear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn appear(
+        this: EncountMob,
         r#type: crate::app::gmapspot::GmapSpot_EncountPersonType,
         rank: i32,
         ejid: ::unity2::Il2CppString,
         spot_id: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`DecideEncountRare(::unity2::Il2CppString, crate::app::encountunitdata::EncountUnitData_RareType, i32)` overload"]
-    #[method(name = "DecideEncountRare", args = 3)]
-    pub fn decide_encount_rare(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::gmapspot::GmapSpot_EncountPersonType,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_appear::get_offset() as isize),
+        );
+        inner(this, r#type, rank, ejid, spot_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decide_encount_rare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < * mut crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "DecideEncountRare",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "DecideEncountRare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decide_encount_rare(
+        this: EncountMob,
         spot_id: ::unity2::Il2CppString,
-        rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-        rare_num: i32,
-    ) -> bool;
-
-    #[doc = "`DecideEnemyType(::unity2::Il2CppString)` overload"]
-    #[method(name = "DecideEnemyType", args = 1)]
-    pub fn decide_enemy_type(
-        self,
+        rare_type: *mut crate::app::encountunitdata::EncountUnitData_RareType,
+        rare_num: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::Il2CppString,
+            *mut crate::app::encountunitdata::EncountUnitData_RareType,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decide_encount_rare::get_offset() as isize),
+        );
+        inner(this, spot_id, rare_type, rare_num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decide_enemy_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "DecideEnemyType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "DecideEnemyType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decide_enemy_type(
+        this: EncountMob,
         nation_name: ::unity2::Il2CppString,
-    ) -> crate::app::encountunitdata::EncountUnitData_RareType;
-
-    #[doc = "`GetEnemyRate(::unity2::Il2CppString, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
-    #[method(name = "GetEnemyRate", args = 2)]
-    pub fn get_enemy_rate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::encountunitdata::EncountUnitData_RareType {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::encountunitdata::EncountUnitData_RareType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decide_enemy_type::get_offset() as isize),
+        );
+        inner(this, nation_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enemy_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetEnemyRate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetEnemyRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enemy_rate(
+        this: EncountMob,
         nation_name: ::unity2::Il2CppString,
         rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-    ) -> i32;
-
-    #[doc = "`GetEnemyRateAvarage(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
-    #[method(name = "GetEnemyRateAvarage", args = 1)]
-    pub fn get_enemy_rate_avarage(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::Il2CppString,
+            crate::app::encountunitdata::EncountUnitData_RareType,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enemy_rate::get_offset() as isize),
+        );
+        inner(this, nation_name, rare_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enemy_rate_avarage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetEnemyRateAvarage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetEnemyRateAvarage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enemy_rate_avarage(
+        this: EncountMob,
         rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-    ) -> i32;
-
-    #[doc = "`DecideEnemyNum(i32)` overload"]
-    #[method(name = "DecideEnemyNum", args = 1)]
-    pub fn decide_enemy_num(self, nation_level: i32) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`SetRandomEncountJob(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetRandomEncountJob", args = 1)]
-    pub fn set_random_encount_job(self, ejid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetEncountJob(crate::app::random_2::Random_2, i32, bool, bool)` overload"]
-    #[method(name = "GetEncountJob", args = 4)]
-    pub fn get_encount_job(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::encountunitdata::EncountUnitData_RareType,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enemy_rate_avarage::get_offset() as isize),
+        );
+        inner(this, rare_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decide_enemy_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "DecideEnemyNum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "DecideEnemyNum",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decide_enemy_num(
+        this: EncountMob,
+        nation_level: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_decide_enemy_num::get_offset() as isize),
+            );
+        inner(this, nation_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: EncountMob, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_random_encount_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "SetRandomEncountJob",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "SetRandomEncountJob",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_random_encount_job(
+        this: EncountMob,
+        ejid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_random_encount_job::get_offset() as isize),
+        );
+        inner(this, ejid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_encount_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetEncountJob",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetEncountJob",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_encount_job(
+        this: EncountMob,
         random: crate::app::random_2::Random_2,
         level: i32,
         is_leader: bool,
         is_ignore_mage_cannon: bool,
-    ) -> crate::app::jobdata::JobData;
-
-    #[doc = "`GetLeaderJob()` overload"]
-    #[method(name = "GetLeaderJob", args = 0)]
-    pub fn get_leader_job(self) -> crate::app::jobdata::JobData;
-
-    #[doc = "`GetEncountPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
-    #[method(name = "GetEncountPerson", args = 3)]
-    pub fn get_encount_person(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::jobdata::JobData {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::random_2::Random_2,
+            i32,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_encount_job::get_offset() as isize),
+        );
+        inner(
+            this,
+            random,
+            level,
+            is_leader,
+            is_ignore_mage_cannon,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_leader_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetLeaderJob",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetLeaderJob",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_leader_job(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::jobdata::JobData {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_leader_job::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_encount_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: random_2 :: Random_2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type () , < crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetEncountPerson",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetEncountPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_encount_person(
+        this: EncountMob,
         random: crate::app::random_2::Random_2,
         job: crate::app::jobdata::JobData,
         unit_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-    ) -> crate::app::persondata::PersonData;
-
-    #[doc = "`GetLeaderPerson(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
-    #[method(name = "GetLeaderPerson", args = 1)]
-    pub fn get_leader_person(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::random_2::Random_2,
+            crate::app::jobdata::JobData,
+            crate::app::encountunitdata::EncountUnitData_RareType,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_encount_person::get_offset() as isize),
+        );
+        inner(this, random, job, unit_rare_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_leader_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetLeaderPerson",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetLeaderPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_leader_person(
+        this: EncountMob,
         unit_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-    ) -> crate::app::persondata::PersonData;
-
-    #[doc = "`GetIconPerson()` overload"]
-    #[method(name = "GetIconPerson", args = 0)]
-    pub fn get_icon_person(self) -> crate::app::persondata::PersonData;
-
-    #[doc = "`GetRareCount()` overload"]
-    #[method(name = "GetRareCount", args = 0)]
-    pub fn get_rare_count(self) -> i32;
-
-    #[doc = "`TryGetHighJobPerson(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "TryGetHighJobPerson", args = 2)]
-    pub fn try_get_high_job_person(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::encountunitdata::EncountUnitData_RareType,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_leader_person::get_offset() as isize),
+        );
+        inner(this, unit_rare_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_icon_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetIconPerson",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetIconPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_icon_person(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_icon_person::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rare_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "GetRareCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "GetRareCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rare_count(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rare_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_high_job_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "TryGetHighJobPerson",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "TryGetHighJobPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_high_job_person(
         person: crate::app::persondata::PersonData,
         job: crate::app::jobdata::JobData,
-    ) -> crate::app::persondata::PersonData;
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Correct()` overload"]
-    #[method(name = "Correct", args = 0)]
-    pub fn correct(self) -> ();
-
-    #[doc = "`get_Rank()` overload"]
-    #[method(name = "get_Rank", args = 0)]
-    pub fn get_rank(self) -> i32;
-
-    #[doc = "`set_Rank(i32)` overload"]
-    #[method(name = "set_Rank", args = 1)]
-    pub fn set_rank(self, value: i32) -> ();
-
-    #[doc = "`get_LeaderRank()` overload"]
-    #[method(name = "get_LeaderRank", args = 0)]
-    pub fn get_leader_rank(self) -> i32;
-
-    #[doc = "`get_Cycle()` overload"]
-    #[method(name = "get_Cycle", args = 0)]
-    pub fn get_cycle(self) -> i32;
-
-    #[doc = "`set_Cycle(i32)` overload"]
-    #[method(name = "set_Cycle", args = 1)]
-    pub fn set_cycle(self, value: i32) -> ();
-
-    #[doc = "`get_PlayerDispos()` overload"]
-    #[method(name = "get_PlayerDispos", args = 0)]
-    pub fn get_player_dispos(self) -> i32;
-
-    #[doc = "`set_PlayerDispos(i32)` overload"]
-    #[method(name = "set_PlayerDispos", args = 1)]
-    pub fn set_player_dispos(self, value: i32) -> ();
-
-    #[doc = "`get_EnemyDispos()` overload"]
-    #[method(name = "get_EnemyDispos", args = 0)]
-    pub fn get_enemy_dispos(self) -> i32;
-
-    #[doc = "`set_EnemyDispos(i32)` overload"]
-    #[method(name = "set_EnemyDispos", args = 1)]
-    pub fn set_enemy_dispos(self, value: i32) -> ();
-
-    #[doc = "`get_Seed()` overload"]
-    #[method(name = "get_Seed", args = 0)]
-    pub fn get_seed(self) -> crate::app::randomseed::RandomSeed;
-
-    #[doc = "`get_RareType()` overload"]
-    #[method(name = "get_RareType", args = 0)]
-    pub fn get_rare_type(self) -> crate::app::encountunitdata::EncountUnitData_RareType;
-
-    #[doc = "`set_ExpRareCount(i32)` overload"]
-    #[method(name = "set_ExpRareCount", args = 1)]
-    pub fn set_exp_rare_count(self, value: i32) -> ();
-
-    #[doc = "`set_GoldRareCount(i32)` overload"]
-    #[method(name = "set_GoldRareCount", args = 1)]
-    pub fn set_gold_rare_count(self, value: i32) -> ();
-
-    #[doc = "`get_LeaderGender()` overload"]
-    #[method(name = "get_LeaderGender", args = 0)]
-    pub fn get_leader_gender(self) -> crate::app::gender::Gender;
-
-    #[doc = "`set_LeaderGender(crate::app::gender::Gender)` overload"]
-    #[method(name = "set_LeaderGender", args = 1)]
-    pub fn set_leader_gender(self, value: crate::app::gender::Gender) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(
+            crate::app::persondata::PersonData,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_high_job_person::get_offset() as isize),
+        );
+        inner(person, job, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Serialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Serialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize(
+        this: EncountMob,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Deserialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Deserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deserialize(
+        this: EncountMob,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_deserialize::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_correct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "Correct",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "Correct",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn correct(this: EncountMob, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_correct::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_Rank",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_Rank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rank(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rank::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_Rank",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_Rank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rank(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rank::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_leader_rank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_LeaderRank",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_LeaderRank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_leader_rank(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_leader_rank::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cycle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_Cycle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_Cycle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cycle(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_cycle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cycle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_Cycle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_Cycle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cycle(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_cycle::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_PlayerDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_PlayerDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_player_dispos(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_player_dispos::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_player_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_PlayerDispos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_PlayerDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_player_dispos(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_player_dispos::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enemy_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_EnemyDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_EnemyDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enemy_dispos(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EncountMob, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enemy_dispos::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enemy_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_EnemyDispos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_EnemyDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enemy_dispos(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enemy_dispos::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_Seed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_Seed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_seed(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::randomseed::RandomSeed {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::randomseed::RandomSeed = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_seed::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rare_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_RareType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_RareType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rare_type(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::encountunitdata::EncountUnitData_RareType {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::encountunitdata::EncountUnitData_RareType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rare_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_exp_rare_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_ExpRareCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_ExpRareCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_exp_rare_count(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_exp_rare_count::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gold_rare_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_GoldRareCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_GoldRareCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gold_rare_count(
+        this: EncountMob,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountMob, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_gold_rare_count::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_leader_gender {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "get_LeaderGender",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "get_LeaderGender",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_leader_gender(
+        this: EncountMob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gender::Gender {
+        let inner: extern "C" fn(
+            EncountMob,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::gender::Gender = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_leader_gender::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_leader_gender {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gender::Gender as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountMob as ::unity2::ClassIdentity>::class(),
+                "set_LeaderGender",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountMob as ::unity2::ClassIdentity>::NAME,
+                    "set_LeaderGender",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_leader_gender(
+        this: EncountMob,
+        value: crate::app::gender::Gender,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EncountMob,
+            crate::app::gender::Gender,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_leader_gender::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-encountmob")]
+impl EncountMob {
+    #[doc = "`TryGetHighJobPerson(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
+    pub fn try_get_high_job_person(
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> crate::app::persondata::PersonData {
+        unsafe {
+            __EncountMob_unity2_raw::try_get_high_job_person(
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(job),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-encountmob")]
+pub trait IEncountMobMethods: IEncountMob {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dump()` overload"]
+    fn dump(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::dump(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Appear(crate::app::gmapspot::GmapSpot_EncountPersonType, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn appear(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_EncountPersonType>,
+        rank: impl ::core::convert::Into<i32>,
+        ejid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::appear(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(ejid),
+                ::core::convert::Into::into(spot_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecideEncountRare(::unity2::Il2CppString, *mutcrate::app::encountunitdata::EncountUnitData_RareType, *muti32)` overload"]
+    fn decide_encount_rare(
+        self,
+        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> (
+        bool,
+        crate::app::encountunitdata::EncountUnitData_RareType,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::app::encountunitdata::EncountUnitData_RareType,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __EncountMob_unity2_raw::decide_encount_rare(
+                    __receiver,
+                    ::core::convert::Into::into(spot_id),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`DecideEnemyType(::unity2::Il2CppString)` overload"]
+    fn decide_enemy_type(
+        self,
+        nation_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::encountunitdata::EncountUnitData_RareType {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::decide_enemy_type(
+                __receiver,
+                ::core::convert::Into::into(nation_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEnemyRate(::unity2::Il2CppString, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
+    fn get_enemy_rate(
+        self,
+        nation_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        rare_type: impl ::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_enemy_rate(
+                __receiver,
+                ::core::convert::Into::into(nation_name),
+                ::core::convert::Into::into(rare_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEnemyRateAvarage(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
+    fn get_enemy_rate_avarage(
+        self,
+        rare_type: impl ::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_enemy_rate_avarage(
+                __receiver,
+                ::core::convert::Into::into(rare_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecideEnemyNum(i32)` overload"]
+    fn decide_enemy_num(self, nation_level: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::decide_enemy_num(
+                __receiver,
+                ::core::convert::Into::into(nation_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRandomEncountJob(::unity2::Il2CppString)` overload"]
+    fn set_random_encount_job(
+        self,
+        ejid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_random_encount_job(
+                __receiver,
+                ::core::convert::Into::into(ejid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEncountJob(crate::app::random_2::Random_2, i32, bool, bool)` overload"]
+    fn get_encount_job(
+        self,
+        random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
+        level: impl ::core::convert::Into<i32>,
+        is_leader: impl ::core::convert::Into<bool>,
+        is_ignore_mage_cannon: impl ::core::convert::Into<bool>,
+    ) -> crate::app::jobdata::JobData {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_encount_job(
+                __receiver,
+                ::core::convert::Into::into(random),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(is_leader),
+                ::core::convert::Into::into(is_ignore_mage_cannon),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLeaderJob()` overload"]
+    fn get_leader_job(self) -> crate::app::jobdata::JobData {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_leader_job(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEncountPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
+    fn get_encount_person(
+        self,
+        random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        unit_rare_type: impl ::core::convert::Into<
+            crate::app::encountunitdata::EncountUnitData_RareType,
+        >,
+    ) -> crate::app::persondata::PersonData {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_encount_person(
+                __receiver,
+                ::core::convert::Into::into(random),
+                ::core::convert::Into::into(job),
+                ::core::convert::Into::into(unit_rare_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLeaderPerson(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
+    fn get_leader_person(
+        self,
+        unit_rare_type: impl ::core::convert::Into<
+            crate::app::encountunitdata::EncountUnitData_RareType,
+        >,
+    ) -> crate::app::persondata::PersonData {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_leader_person(
+                __receiver,
+                ::core::convert::Into::into(unit_rare_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIconPerson()` overload"]
+    fn get_icon_person(self) -> crate::app::persondata::PersonData {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_icon_person(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetRareCount()` overload"]
+    fn get_rare_count(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_rare_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::serialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Correct()` overload"]
+    fn correct(self) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::correct(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Rank()` overload"]
+    fn get_rank(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_rank(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Rank(i32)` overload"]
+    fn set_rank(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_rank(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_LeaderRank()` overload"]
+    fn get_leader_rank(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_leader_rank(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Cycle()` overload"]
+    fn get_cycle(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_cycle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Cycle(i32)` overload"]
+    fn set_cycle(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_cycle(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PlayerDispos()` overload"]
+    fn get_player_dispos(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_player_dispos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_PlayerDispos(i32)` overload"]
+    fn set_player_dispos(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_player_dispos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_EnemyDispos()` overload"]
+    fn get_enemy_dispos(self) -> i32 {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_enemy_dispos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_EnemyDispos(i32)` overload"]
+    fn set_enemy_dispos(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_enemy_dispos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Seed()` overload"]
+    fn get_seed(self) -> crate::app::randomseed::RandomSeed {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_seed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RareType()` overload"]
+    fn get_rare_type(self) -> crate::app::encountunitdata::EncountUnitData_RareType {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_rare_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_ExpRareCount(i32)` overload"]
+    fn set_exp_rare_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_exp_rare_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_GoldRareCount(i32)` overload"]
+    fn set_gold_rare_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_gold_rare_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_LeaderGender()` overload"]
+    fn get_leader_gender(self) -> crate::app::gender::Gender {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::get_leader_gender(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_LeaderGender(crate::app::gender::Gender)` overload"]
+    fn set_leader_gender(
+        self,
+        value: impl ::core::convert::Into<crate::app::gender::Gender>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EncountMob as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountMob_unity2_raw::set_leader_gender(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-encountmob")]
+impl<__T: IEncountMob> IEncountMobMethods for __T {}
 
 #[cfg(feature = "app-encountmob")]
 impl EncountMob {
@@ -240,4 +2225,14 @@ impl EncountMob {
         <Self as IEncountMobMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-encountmob")]
+pub mod prelude {
+    pub use super::EncountMob;
+    pub use super::IEncountMob;
+    pub use super::IEncountMobMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

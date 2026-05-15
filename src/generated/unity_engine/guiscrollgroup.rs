@@ -44,28 +44,313 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
-#[::unity2::methods]
-impl GUIScrollGroup {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CalcWidth()` overload"]
-    #[method(name = "CalcWidth", args = 0)]
-    pub fn calc_width(self) -> ();
-
-    #[doc = "`SetHorizontal(f32, f32)` overload"]
-    #[method(name = "SetHorizontal", args = 2)]
-    pub fn set_horizontal(self, x: f32, width: f32) -> ();
-
-    #[doc = "`CalcHeight()` overload"]
-    #[method(name = "CalcHeight", args = 0)]
-    pub fn calc_height(self) -> ();
-
-    #[doc = "`SetVertical(f32, f32)` overload"]
-    #[method(name = "SetVertical", args = 2)]
-    pub fn set_vertical(self, y: f32, height: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUIScrollGroup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GUIScrollGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
+                "CalcWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
+                    "CalcWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_width(
+        this: GUIScrollGroup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
+                "SetHorizontal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
+                    "SetHorizontal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_horizontal(
+        this: GUIScrollGroup,
+        x: f32,
+        width: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUIScrollGroup, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_horizontal::get_offset() as isize),
+            );
+        inner(this, x, width, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
+                "CalcHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
+                    "CalcHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_height(
+        this: GUIScrollGroup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIScrollGroup as ::unity2::ClassIdentity>::class(),
+                "SetVertical",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIScrollGroup as ::unity2::ClassIdentity>::NAME,
+                    "SetVertical",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertical(
+        this: GUIScrollGroup,
+        y: f32,
+        height: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUIScrollGroup, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_vertical::get_offset() as isize),
+            );
+        inner(this, y, height, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-guiscrollgroup")]
+pub trait IGUIScrollGroupMethods: IGUIScrollGroup {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUIScrollGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcWidth()` overload"]
+    fn calc_width(self) -> () {
+        unsafe {
+            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUIScrollGroup_unity2_raw::calc_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetHorizontal(f32, f32)` overload"]
+    fn set_horizontal(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        width: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUIScrollGroup_unity2_raw::set_horizontal(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(width),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcHeight()` overload"]
+    fn calc_height(self) -> () {
+        unsafe {
+            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUIScrollGroup_unity2_raw::calc_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetVertical(f32, f32)` overload"]
+    fn set_vertical(
+        self,
+        y: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUIScrollGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUIScrollGroup_unity2_raw::set_vertical(
+                __receiver,
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guiscrollgroup")]
+impl<__T: IGUIScrollGroup> IGUIScrollGroupMethods for __T {}
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
 impl GUIScrollGroup {
@@ -81,4 +366,20 @@ impl GUIScrollGroup {
         <Self as IGUIScrollGroupMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-guiscrollgroup")]
+pub mod prelude {
+    pub use super::GUIScrollGroup;
+    pub use super::IGUIScrollGroup;
+    pub use super::IGUIScrollGroupMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
+    #[cfg(feature = "unity_engine-guilayoutentry")]
+    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
+    pub use crate::unity_engine::guilayoutgroup::IGUILayoutGroup;
+    #[cfg(feature = "unity_engine-guilayoutgroup")]
+    pub use crate::unity_engine::guilayoutgroup::IGUILayoutGroupMethods;
 }

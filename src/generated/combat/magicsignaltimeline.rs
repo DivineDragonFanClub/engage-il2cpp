@@ -17,52 +17,661 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-magicsignaltimeline")]
-#[::unity2::methods]
-impl MagicSignalTimeline {
-    #[doc = "`get_Track()` overload"]
-    #[method(name = "get_Track", args = 0)]
-    pub fn get_track(self) -> crate::combat::magicsignaltrack::MagicSignalTrack;
-
-    #[doc = "`set_Track(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]
-    #[method(name = "set_Track", args = 1)]
-    pub fn set_track(self, value: crate::combat::magicsignaltrack::MagicSignalTrack) -> ();
-
-    #[doc = "`get_PrevTime()` overload"]
-    #[method(name = "get_PrevTime", args = 0)]
-    pub fn get_prev_time(self) -> f32;
-
-    #[doc = "`set_PrevTime(f32)` overload"]
-    #[method(name = "set_PrevTime", args = 1)]
-    pub fn set_prev_time(self, value: f32) -> ();
-
-    #[doc = "`get_Time()` overload"]
-    #[method(name = "get_Time", args = 0)]
-    pub fn get_time(self) -> f32;
-
-    #[doc = "`set_Time(f32)` overload"]
-    #[method(name = "set_Time", args = 1)]
-    pub fn set_time(self, value: f32) -> ();
-
-    #[doc = "`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, track: crate::combat::magicsignaltrack::MagicSignalTrack) -> ();
-
-    #[doc = "`get_IsEnd()` overload"]
-    #[method(name = "get_IsEnd", args = 0)]
-    pub fn get_is_end(self) -> bool;
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Stop()` overload"]
-    #[method(name = "Stop", args = 0)]
-    pub fn stop(self) -> ();
-
-    #[doc = "`Advance(f32)` overload"]
-    #[method(name = "Advance", args = 1)]
-    pub fn advance(self, dt: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MagicSignalTimeline_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "get_Track",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "get_Track",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_track(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::magicsignaltrack::MagicSignalTrack {
+        let inner: extern "C" fn(
+            MagicSignalTimeline,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::magicsignaltrack::MagicSignalTrack = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_track::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::magicsignaltrack::MagicSignalTrack as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "set_Track",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "set_Track",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_track(
+        this: MagicSignalTimeline,
+        value: crate::combat::magicsignaltrack::MagicSignalTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MagicSignalTimeline,
+            crate::combat::magicsignaltrack::MagicSignalTrack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_track::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prev_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "get_PrevTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "get_PrevTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_prev_time(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MagicSignalTimeline, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_prev_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_prev_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "set_PrevTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "set_PrevTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_prev_time(
+        this: MagicSignalTimeline,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MagicSignalTimeline, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_prev_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "get_Time",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "get_Time",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_time(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MagicSignalTimeline, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "set_Time",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "set_Time",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_time(
+        this: MagicSignalTimeline,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MagicSignalTimeline, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::magicsignaltrack::MagicSignalTrack as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MagicSignalTimeline,
+        track: crate::combat::magicsignaltrack::MagicSignalTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MagicSignalTimeline,
+            crate::combat::magicsignaltrack::MagicSignalTrack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, track, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "get_IsEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "get_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_end(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MagicSignalTimeline, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MagicSignalTimeline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "Stop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "Stop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop(
+        this: MagicSignalTimeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MagicSignalTimeline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_stop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_advance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MagicSignalTimeline as ::unity2::ClassIdentity>::class(),
+                "Advance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MagicSignalTimeline as ::unity2::ClassIdentity>::NAME,
+                    "Advance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn advance(
+        this: MagicSignalTimeline,
+        dt: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MagicSignalTimeline, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_advance::get_offset() as isize),
+            );
+        inner(this, dt, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-magicsignaltimeline")]
+pub trait IMagicSignalTimelineMethods: IMagicSignalTimeline {
+    #[doc = "`get_Track()` overload"]
+    fn get_track(self) -> crate::combat::magicsignaltrack::MagicSignalTrack {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::get_track(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Track(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]
+    fn set_track(
+        self,
+        value: impl ::core::convert::Into<crate::combat::magicsignaltrack::MagicSignalTrack>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::set_track(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PrevTime()` overload"]
+    fn get_prev_time(self) -> f32 {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::get_prev_time(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PrevTime(f32)` overload"]
+    fn set_prev_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::set_prev_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Time()` overload"]
+    fn get_time(self) -> f32 {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::get_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Time(f32)` overload"]
+    fn set_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::set_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]
+    fn ctor(
+        self,
+        track: impl ::core::convert::Into<crate::combat::magicsignaltrack::MagicSignalTrack>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsEnd()` overload"]
+    fn get_is_end(self) -> bool {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::get_is_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop(self) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::stop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Advance(f32)` overload"]
+    fn advance(self, dt: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MagicSignalTimeline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MagicSignalTimeline_unity2_raw::advance(
+                __receiver,
+                ::core::convert::Into::into(dt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-magicsignaltimeline")]
+impl<__T: IMagicSignalTimeline> IMagicSignalTimelineMethods for __T {}
 
 #[cfg(feature = "combat-magicsignaltimeline")]
 impl MagicSignalTimeline {
@@ -78,4 +687,14 @@ impl MagicSignalTimeline {
         <Self as IMagicSignalTimelineMethods>::ctor(this, track);
         this
     }
+}
+
+#[cfg(feature = "combat-magicsignaltimeline")]
+pub mod prelude {
+    pub use super::IMagicSignalTimeline;
+    pub use super::IMagicSignalTimelineMethods;
+    pub use super::MagicSignalTimeline;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -36,117 +36,1348 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-characterassetform")]
-#[::unity2::methods]
-impl CharacterAssetForm {
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`get_Item(crate::combat::assettype::AssetType)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterAssetForm_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: CharacterAssetForm,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::assettype::AssetType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item_2(
+        this: CharacterAssetForm,
         r#type: crate::combat::assettype::AssetType,
-    ) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`get_InitialInvisibility()` overload"]
-    #[method(name = "get_InitialInvisibility", args = 0)]
-    pub fn get_initial_invisibility(self) -> bool;
-
-    #[doc = "`set_InitialInvisibility(bool)` overload"]
-    #[method(name = "set_InitialInvisibility", args = 1)]
-    pub fn set_initial_invisibility(self, value: bool) -> ();
-
-    #[doc = "`get_IsDone()` overload"]
-    #[method(name = "get_IsDone", args = 0)]
-    pub fn get_is_done(self) -> bool;
-
-    #[doc = "`set_IsDone(bool)` overload"]
-    #[method(name = "set_IsDone", args = 1)]
-    pub fn set_is_done(self, value: bool) -> ();
-
-    #[doc = "`Build(crate::combat::characterappearance::CharacterAppearance, bool)` overload"]
-    #[method(name = "Build", args = 2)]
-    pub fn build(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            crate::combat::assettype::AssetType,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_initial_invisibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "get_InitialInvisibility",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "get_InitialInvisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_initial_invisibility(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_initial_invisibility::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_initial_invisibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "set_InitialInvisibility",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "set_InitialInvisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_initial_invisibility(
+        this: CharacterAssetForm,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_initial_invisibility::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_done {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "get_IsDone",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "get_IsDone",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_done(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_done::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_done {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "set_IsDone",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "set_IsDone",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_done(
+        this: CharacterAssetForm,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_done::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "Build",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "Build",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build(
+        this: CharacterAssetForm,
         appearance: crate::combat::characterappearance::CharacterAppearance,
         invisible: bool,
-    ) -> ();
-
-    #[doc = "`BuildForTest()` overload"]
-    #[method(name = "BuildForTest", args = 0)]
-    pub fn build_for_test(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`BuildCoroutine()` overload"]
-    #[method(name = "BuildCoroutine", args = 0)]
-    pub fn build_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`BuildHierarchy()` overload"]
-    #[method(name = "BuildHierarchy", args = 0)]
-    pub fn build_hierarchy(self) -> ();
-
-    #[doc = "`CoBuildHierarchy()` overload"]
-    #[method(name = "CoBuildHierarchy", args = 0)]
-    pub fn co_build_hierarchy(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`BeginContentsChange()` overload"]
-    #[method(name = "BeginContentsChange", args = 0)]
-    pub fn begin_contents_change(self) -> ();
-
-    #[doc = "`EndContentsChange()` overload"]
-    #[method(name = "EndContentsChange", args = 0)]
-    pub fn end_contents_change(self) -> ();
-
-    #[doc = "`SetViaTableResult(crate::app::assettable::AssetTable_Result)` overload"]
-    #[method(name = "SetViaTableResult", args = 1)]
-    pub fn set_via_table_result(self, r: crate::app::assettable::AssetTable_Result) -> ();
-
-    #[doc = "`UnloadD(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "UnloadD", args = 1)]
-    pub fn unload_d(self, chr: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`Attach(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Attach", args = 2)]
-    pub fn attach(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            crate::combat::characterappearance::CharacterAppearance,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build::get_offset() as isize),
+        );
+        inner(this, appearance, invisible, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_for_test {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "BuildForTest",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "BuildForTest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_for_test(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_for_test::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_coroutine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "BuildCoroutine",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "BuildCoroutine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_coroutine(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_coroutine::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_hierarchy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "BuildHierarchy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "BuildHierarchy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_hierarchy(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build_hierarchy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_co_build_hierarchy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "CoBuildHierarchy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "CoBuildHierarchy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn co_build_hierarchy(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_co_build_hierarchy::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_contents_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "BeginContentsChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "BeginContentsChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_contents_change(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_begin_contents_change::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_contents_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "EndContentsChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "EndContentsChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_contents_change(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end_contents_change::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_via_table_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::assettable::AssetTable_Result as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "SetViaTableResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "SetViaTableResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_via_table_result(
+        this: CharacterAssetForm,
+        r: crate::app::assettable::AssetTable_Result,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            crate::app::assettable::AssetTable_Result,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_via_table_result::get_offset() as isize),
+        );
+        inner(this, r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "UnloadD",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "UnloadD",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_d(
+        this: CharacterAssetForm,
+        chr: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_d::get_offset() as isize),
+        );
+        inner(this, chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attach {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "Attach",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "Attach",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn attach(
         me: crate::unity_engine::gameobject::GameObject,
         parent: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`Attach(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Attach", args = 2)]
-    pub fn attach_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_attach::get_offset() as isize),
+        );
+        inner(me, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attach_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "Attach",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "Attach",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn attach_2(
+        this: CharacterAssetForm,
         me: crate::unity_engine::gameobject::GameObject,
         parent: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`FindInChildren(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindInChildren", args = 1)]
-    pub fn find_in_children(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_attach_2::get_offset() as isize),
+        );
+        inner(this, me, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_in_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "FindInChildren",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "FindInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_in_children(
+        this: CharacterAssetForm,
         parent: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            CharacterAssetForm,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_in_children::get_offset() as isize),
+        );
+        inner(this, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_accessories {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "GetAccessories",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "GetAccessories",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_accessories(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::combat::characterasset::CharacterAsset,
+    > {
+        let inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: combat :: characterasset :: CharacterAsset > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_accessories :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "OnDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "OnDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_destroy(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_database {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                "LoadDatabase",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    "LoadDatabase",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_database(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_database::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAssetForm as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAssetForm as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterAssetForm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "combat-characterassetform")]
+impl CharacterAssetForm {
+    #[doc = "`Attach(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]
+    pub fn attach(
+        me: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            __CharacterAssetForm_unity2_raw::attach(
+                ::core::convert::Into::into(me),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadDatabase()` overload"]
+    pub fn load_database() -> () {
+        unsafe { __CharacterAssetForm_unity2_raw::load_database(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-characterassetform")]
+pub trait ICharacterAssetFormMethods: ICharacterAssetForm {
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Item(crate::combat::assettype::AssetType)` overload"]
+    fn get_item_2(
+        self,
+        r#type: impl ::core::convert::Into<crate::combat::assettype::AssetType>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::get_item_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_InitialInvisibility()` overload"]
+    fn get_initial_invisibility(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::get_initial_invisibility(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_InitialInvisibility(bool)` overload"]
+    fn set_initial_invisibility(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::set_initial_invisibility(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsDone()` overload"]
+    fn get_is_done(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::get_is_done(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsDone(bool)` overload"]
+    fn set_is_done(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::set_is_done(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Build(crate::combat::characterappearance::CharacterAppearance, bool)` overload"]
+    fn build(
+        self,
+        appearance: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+        invisible: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::build(
+                __receiver,
+                ::core::convert::Into::into(appearance),
+                ::core::convert::Into::into(invisible),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildForTest()` overload"]
+    fn build_for_test(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::build_for_test(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildCoroutine()` overload"]
+    fn build_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::build_coroutine(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildHierarchy()` overload"]
+    fn build_hierarchy(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::build_hierarchy(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CoBuildHierarchy()` overload"]
+    fn co_build_hierarchy(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::co_build_hierarchy(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BeginContentsChange()` overload"]
+    fn begin_contents_change(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::begin_contents_change(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndContentsChange()` overload"]
+    fn end_contents_change(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::end_contents_change(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetViaTableResult(crate::app::assettable::AssetTable_Result)` overload"]
+    fn set_via_table_result(
+        self,
+        r: impl ::core::convert::Into<crate::app::assettable::AssetTable_Result>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::set_via_table_result(
+                __receiver,
+                ::core::convert::Into::into(r),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadD(crate::unity_engine::transform::Transform)` overload"]
+    fn unload_d(
+        self,
+        chr: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::unload_d(
+                __receiver,
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Attach(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    fn attach_2(
+        self,
+        me: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::attach_2(
+                __receiver,
+                ::core::convert::Into::into(me),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindInChildren(::unity2::Il2CppString)` overload"]
+    fn find_in_children(
+        self,
+        parent: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::find_in_children(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetAccessories()` overload"]
-    #[method(name = "GetAccessories", args = 0)]
-    pub fn get_accessories(
+    fn get_accessories(
         self,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::combat::characterasset::CharacterAsset,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::get_accessories(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`LoadDatabase()` overload"]
-    #[method(name = "LoadDatabase", args = 0)]
-    pub fn load_database() -> ();
-
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAssetForm as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAssetForm_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "combat-characterassetform")]
+impl<__T: ICharacterAssetForm> ICharacterAssetFormMethods for __T {}
 
 #[cfg(feature = "combat-characterassetform")]
 impl CharacterAssetForm {
@@ -162,4 +1393,26 @@ impl CharacterAssetForm {
         <Self as ICharacterAssetFormMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-characterassetform")]
+pub mod prelude {
+    pub use super::CharacterAssetForm;
+    pub use super::ICharacterAssetForm;
+    pub use super::ICharacterAssetFormMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

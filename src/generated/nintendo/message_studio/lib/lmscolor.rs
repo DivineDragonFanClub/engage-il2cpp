@@ -44,9 +44,96 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LMSColor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LMSColor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LMSColor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LMSColor,
+        r: u8,
+        g: u8,
+        b: u8,
+        a: u8,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LMSColor, u8, u8, u8, u8, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, r, g, b, a, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
 impl LMSColor {
     #[doc = "`.ctor(u8, u8, u8, u8)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(self, r: u8, g: u8, b: u8, a: u8) -> ();
+    pub fn ctor(
+        self,
+        r: impl ::core::convert::Into<u8>,
+        g: impl ::core::convert::Into<u8>,
+        b: impl ::core::convert::Into<u8>,
+        a: impl ::core::convert::Into<u8>,
+    ) -> () {
+        unsafe {
+            __LMSColor_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(r),
+                ::core::convert::Into::into(g),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(a),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
+pub mod prelude {
+    pub use super::LMSColor;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

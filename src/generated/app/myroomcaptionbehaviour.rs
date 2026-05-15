@@ -20,21 +20,150 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-myroomcaptionbehaviour")]
-#[::unity2::methods]
-impl MyRoomCaptionBehaviour {
-    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
-    #[method(name = "ProcessFrame", args = 3)]
-    pub fn process_frame(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomCaptionBehaviour_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomCaptionBehaviour as ::unity2::ClassIdentity>::class(),
+                "ProcessFrame",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomCaptionBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "ProcessFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_frame(
+        this: MyRoomCaptionBehaviour,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
         player_data: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomCaptionBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_frame::get_offset() as isize),
+        );
+        inner(this, playable, info, player_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomCaptionBehaviour as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomCaptionBehaviour as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomCaptionBehaviour,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomCaptionBehaviour, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-myroomcaptionbehaviour")]
+pub trait IMyRoomCaptionBehaviourMethods: IMyRoomCaptionBehaviour {
+    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
+    fn process_frame(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+        player_data: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomCaptionBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomCaptionBehaviour_unity2_raw::process_frame(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(player_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomCaptionBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomCaptionBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomcaptionbehaviour")]
+impl<__T: IMyRoomCaptionBehaviour> IMyRoomCaptionBehaviourMethods for __T {}
 
 #[cfg(feature = "app-myroomcaptionbehaviour")]
 impl MyRoomCaptionBehaviour {
@@ -50,4 +179,17 @@ impl MyRoomCaptionBehaviour {
         <Self as IMyRoomCaptionBehaviourMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-myroomcaptionbehaviour")]
+pub mod prelude {
+    pub use super::IMyRoomCaptionBehaviour;
+    pub use super::IMyRoomCaptionBehaviourMethods;
+    pub use super::MyRoomCaptionBehaviour;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
 }

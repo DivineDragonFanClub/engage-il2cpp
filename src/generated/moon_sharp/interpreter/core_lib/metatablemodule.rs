@@ -17,54 +17,472 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MetaTableModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setmetatable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "setmetatable",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "setmetatable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setmetatable(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setmetatable::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_getmetatable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "getmetatable",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "getmetatable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn getmetatable(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_getmetatable::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rawget {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "rawget",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "rawget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rawget(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rawget::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rawset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "rawset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "rawset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rawset(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rawset::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rawequal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "rawequal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "rawequal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rawequal(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rawequal::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rawlen {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                "rawlen",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    "rawlen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rawlen(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rawlen::get_offset() as isize),
+        );
+        inner(execution_context, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MetaTableModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MetaTableModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MetaTableModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MetaTableModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
 impl MetaTableModule {
     #[doc = "`setmetatable(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "setmetatable", args = 2)]
     pub fn setmetatable(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::setmetatable(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`getmetatable(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "getmetatable", args = 2)]
     pub fn getmetatable(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::getmetatable(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`rawget(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "rawget", args = 2)]
     pub fn rawget(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::rawget(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`rawset(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "rawset", args = 2)]
     pub fn rawset(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::rawset(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`rawequal(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "rawequal", args = 2)]
     pub fn rawequal(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::rawequal(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`rawlen(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "rawlen", args = 2)]
     pub fn rawlen(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
-        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        execution_context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __MetaTableModule_unity2_raw::rawlen(
+                ::core::convert::Into::into(execution_context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
+pub trait IMetaTableModuleMethods: IMetaTableModule {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MetaTableModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MetaTableModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
+impl<__T: IMetaTableModule> IMetaTableModuleMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
 impl MetaTableModule {
@@ -80,4 +498,14 @@ impl MetaTableModule {
         <Self as IMetaTableModuleMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
+pub mod prelude {
+    pub use super::IMetaTableModule;
+    pub use super::IMetaTableModuleMethods;
+    pub use super::MetaTableModule;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -20,196 +20,2085 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
-#[::unity2::methods]
-impl FrameworkBase {
-    #[doc = "`StringContainsChar(::unity2::Il2CppString, u16)` overload"]
-    #[method(name = "StringContainsChar", args = 2)]
-    pub fn string_contains_char(self, str: ::unity2::Il2CppString, chr: u16) -> bool;
-
-    #[doc = "`IsValueType(::unity2::SystemType)` overload"]
-    #[method(name = "IsValueType", args = 1)]
-    pub fn is_value_type(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`GetAssembly(::unity2::SystemType)` overload"]
-    #[method(name = "GetAssembly", args = 1)]
-    pub fn get_assembly(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FrameworkBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_string_contains_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "StringContainsChar",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "StringContainsChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn string_contains_char(
+        this: FrameworkBase,
+        str: ::unity2::Il2CppString,
+        chr: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::Il2CppString,
+            u16,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_string_contains_char::get_offset() as isize),
+        );
+        inner(this, str, chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_value_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsValueType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsValueType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_value_type(
+        this: FrameworkBase,
         t: ::unity2::SystemType,
-    ) -> crate::system::reflection::assembly::Assembly;
-
-    #[doc = "`GetBaseType(::unity2::SystemType)` overload"]
-    #[method(name = "GetBaseType", args = 1)]
-    pub fn get_base_type(self, t: ::unity2::SystemType) -> ::unity2::SystemType;
-
-    #[doc = "`IsGenericType(::unity2::SystemType)` overload"]
-    #[method(name = "IsGenericType", args = 1)]
-    pub fn is_generic_type(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`IsGenericTypeDefinition(::unity2::SystemType)` overload"]
-    #[method(name = "IsGenericTypeDefinition", args = 1)]
-    pub fn is_generic_type_definition(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`IsEnum(::unity2::SystemType)` overload"]
-    #[method(name = "IsEnum", args = 1)]
-    pub fn is_enum(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`IsNestedPublic(::unity2::SystemType)` overload"]
-    #[method(name = "IsNestedPublic", args = 1)]
-    pub fn is_nested_public(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`IsAbstract(::unity2::SystemType)` overload"]
-    #[method(name = "IsAbstract", args = 1)]
-    pub fn is_abstract(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`IsInterface(::unity2::SystemType)` overload"]
-    #[method(name = "IsInterface", args = 1)]
-    pub fn is_interface(self, t: ::unity2::SystemType) -> bool;
-
-    #[doc = "`GetInterfaces(::unity2::SystemType)` overload"]
-    #[method(name = "GetInterfaces", args = 1)]
-    pub fn get_interfaces(self, t: ::unity2::SystemType) -> ::unity2::Array<::unity2::SystemType>;
-
-    #[doc = "`IsInstanceOfType(::unity2::SystemType, crate::system::object::Object)` overload"]
-    #[method(name = "IsInstanceOfType", args = 2)]
-    pub fn is_instance_of_type(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_value_type::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assembly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetAssembly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetAssembly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_assembly(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::assembly::Assembly {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::assembly::Assembly = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_assembly::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetBaseType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetBaseType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_type(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_base_type::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_generic_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsGenericType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsGenericType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_generic_type(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_generic_type::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_generic_type_definition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsGenericTypeDefinition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsGenericTypeDefinition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_generic_type_definition(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_generic_type_definition::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enum {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsEnum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsEnum",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enum(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enum::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_nested_public {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsNestedPublic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsNestedPublic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_nested_public(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_nested_public::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_abstract {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsAbstract",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsAbstract",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_abstract(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_abstract::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_interface {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsInterface",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsInterface",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_interface(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_interface::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interfaces {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetInterfaces",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetInterfaces",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interfaces(
+        this: FrameworkBase,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interfaces::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_instance_of_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsInstanceOfType",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsInstanceOfType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_instance_of_type(
+        this: FrameworkBase,
         t: ::unity2::SystemType,
         o: crate::system::object::Object,
-    ) -> bool;
-
-    #[doc = "`GetAddMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]
-    #[method(name = "GetAddMethod", args = 1)]
-    pub fn get_add_method(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_instance_of_type::get_offset() as isize),
+        );
+        inner(this, t, o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_add_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::eventinfo::EventInfo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetAddMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetAddMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_add_method(
+        this: FrameworkBase,
         ei: crate::system::reflection::eventinfo::EventInfo,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`GetRemoveMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]
-    #[method(name = "GetRemoveMethod", args = 1)]
-    pub fn get_remove_method(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::reflection::eventinfo::EventInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_add_method::get_offset() as isize),
+        );
+        inner(this, ei, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_remove_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::eventinfo::EventInfo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetRemoveMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetRemoveMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_remove_method(
+        this: FrameworkBase,
         ei: crate::system::reflection::eventinfo::EventInfo,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`GetGetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    #[method(name = "GetGetMethod", args = 1)]
-    pub fn get_get_method(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::reflection::eventinfo::EventInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_remove_method::get_offset() as isize),
+        );
+        inner(this, ei, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_get_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetGetMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetGetMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_get_method(
+        this: FrameworkBase,
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`GetSetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    #[method(name = "GetSetMethod", args = 1)]
-    pub fn get_set_method(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_get_method::get_offset() as isize),
+        );
+        inner(this, pi, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_set_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetSetMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetSetMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_set_method(
+        this: FrameworkBase,
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`GetInterface(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetInterface", args = 2)]
-    pub fn get_interface(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_set_method::get_offset() as isize),
+        );
+        inner(this, pi, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interface {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetInterface",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetInterface",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interface(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
         name: ::unity2::Il2CppString,
-    ) -> ::unity2::SystemType;
-
-    #[doc = "`GetProperties(::unity2::SystemType)` overload"]
-    #[method(name = "GetProperties", args = 1)]
-    pub fn get_properties(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interface::get_offset() as isize),
+        );
+        inner(this, r#type, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetProperties",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_properties(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>;
-
-    #[doc = "`GetProperty(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetProperty", args = 2)]
-    pub fn get_property(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::propertyinfo::PropertyInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_properties::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_property {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetProperty",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetProperty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_property(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
         name: ::unity2::Il2CppString,
-    ) -> crate::system::reflection::propertyinfo::PropertyInfo;
-
-    #[doc = "`GetNestedTypes(::unity2::SystemType)` overload"]
-    #[method(name = "GetNestedTypes", args = 1)]
-    pub fn get_nested_types(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::propertyinfo::PropertyInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_property::get_offset() as isize),
+        );
+        inner(this, r#type, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_nested_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetNestedTypes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetNestedTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_nested_types(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<::unity2::SystemType>;
-
-    #[doc = "`GetEvents(::unity2::SystemType)` overload"]
-    #[method(name = "GetEvents", args = 1)]
-    pub fn get_events(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_nested_types::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetEvents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetEvents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_events(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>;
-
-    #[doc = "`GetConstructors(::unity2::SystemType)` overload"]
-    #[method(name = "GetConstructors", args = 1)]
-    pub fn get_constructors(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::eventinfo::EventInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_events::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_constructors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetConstructors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetConstructors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_constructors(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>;
-
-    #[doc = "`GetAssemblyTypes(crate::system::reflection::assembly::Assembly)` overload"]
-    #[method(name = "GetAssemblyTypes", args = 1)]
-    pub fn get_assembly_types(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::constructorinfo::ConstructorInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_constructors::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assembly_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetAssemblyTypes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetAssemblyTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_assembly_types(
+        this: FrameworkBase,
         asm: crate::system::reflection::assembly::Assembly,
-    ) -> ::unity2::Array<::unity2::SystemType>;
-
-    #[doc = "`GetMethods(::unity2::SystemType)` overload"]
-    #[method(name = "GetMethods", args = 1)]
-    pub fn get_methods(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::reflection::assembly::Assembly,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_assembly_types::get_offset() as isize),
+        );
+        inner(this, asm, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_methods {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetMethods",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetMethods",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_methods(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>;
-
-    #[doc = "`GetFields(::unity2::SystemType)` overload"]
-    #[method(name = "GetFields", args = 1)]
-    pub fn get_fields(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::methodinfo::MethodInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_methods::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fields {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetFields",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetFields",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fields(
+        this: FrameworkBase,
         t: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>;
-
-    #[doc = "`GetMethod(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetMethod", args = 2)]
-    pub fn get_method(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::fieldinfo::FieldInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fields::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetMethod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method(
+        this: FrameworkBase,
         r#type: ::unity2::SystemType,
         name: ::unity2::Il2CppString,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`GetGenericArguments(::unity2::SystemType)` overload"]
-    #[method(name = "GetGenericArguments", args = 1)]
-    pub fn get_generic_arguments(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_method::get_offset() as isize),
+        );
+        inner(this, r#type, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_generic_arguments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetGenericArguments",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetGenericArguments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_generic_arguments(
+        this: FrameworkBase,
         t: ::unity2::SystemType,
-    ) -> ::unity2::Array<::unity2::SystemType>;
-
-    #[doc = "`IsAssignableFrom(::unity2::SystemType, ::unity2::SystemType)` overload"]
-    #[method(name = "IsAssignableFrom", args = 2)]
-    pub fn is_assignable_from(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_generic_arguments::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_assignable_from {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsAssignableFrom",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsAssignableFrom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_assignable_from(
+        this: FrameworkBase,
         current: ::unity2::SystemType,
         to_compare: ::unity2::SystemType,
-    ) -> bool;
-
-    #[doc = "`IsDbNull(crate::system::object::Object)` overload"]
-    #[method(name = "IsDbNull", args = 1)]
-    pub fn is_db_null(self, o: crate::system::object::Object) -> bool;
-
-    #[doc = "`GetMethod(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
-    #[method(name = "GetMethod", args = 3)]
-    pub fn get_method_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_assignable_from::get_offset() as isize),
+        );
+        inner(this, current, to_compare, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_db_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "IsDbNull",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "IsDbNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_db_null(
+        this: FrameworkBase,
+        o: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_db_null::get_offset() as isize),
+        );
+        inner(this, o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                "GetMethod",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    "GetMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method_2(
+        this: FrameworkBase,
         resources_type: ::unity2::SystemType,
         v: ::unity2::Il2CppString,
         r#type: ::unity2::Array<::unity2::SystemType>,
-    ) -> crate::system::reflection::methodinfo::MethodInfo;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(
+            FrameworkBase,
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::Array<::unity2::SystemType>,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_method_2::get_offset() as isize),
+        );
+        inner(this, resources_type, v, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FrameworkBase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FrameworkBase as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: FrameworkBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FrameworkBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
+pub trait IFrameworkBaseMethods: IFrameworkBase {
+    #[doc = "`StringContainsChar(::unity2::Il2CppString, u16)` overload"]
+    fn string_contains_char(
+        self,
+        str: impl ::core::convert::Into<::unity2::Il2CppString>,
+        chr: impl ::core::convert::Into<u16>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::string_contains_char(
+                __receiver,
+                ::core::convert::Into::into(str),
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsValueType(::unity2::SystemType)` overload"]
+    fn is_value_type(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_value_type(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssembly(::unity2::SystemType)` overload"]
+    fn get_assembly(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::system::reflection::assembly::Assembly {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_assembly(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBaseType(::unity2::SystemType)` overload"]
+    fn get_base_type(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_base_type(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsGenericType(::unity2::SystemType)` overload"]
+    fn is_generic_type(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_generic_type(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsGenericTypeDefinition(::unity2::SystemType)` overload"]
+    fn is_generic_type_definition(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_generic_type_definition(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnum(::unity2::SystemType)` overload"]
+    fn is_enum(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_enum(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNestedPublic(::unity2::SystemType)` overload"]
+    fn is_nested_public(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_nested_public(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsAbstract(::unity2::SystemType)` overload"]
+    fn is_abstract(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_abstract(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsInterface(::unity2::SystemType)` overload"]
+    fn is_interface(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_interface(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInterfaces(::unity2::SystemType)` overload"]
+    fn get_interfaces(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_interfaces(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsInstanceOfType(::unity2::SystemType, crate::system::object::Object)` overload"]
+    fn is_instance_of_type(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+        o: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_instance_of_type(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(o),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAddMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]
+    fn get_add_method(
+        self,
+        ei: impl ::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_add_method(
+                __receiver,
+                ::core::convert::Into::into(ei),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRemoveMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]
+    fn get_remove_method(
+        self,
+        ei: impl ::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_remove_method(
+                __receiver,
+                ::core::convert::Into::into(ei),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    fn get_get_method(
+        self,
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_get_method(
+                __receiver,
+                ::core::convert::Into::into(pi),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    fn get_set_method(
+        self,
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_set_method(
+                __receiver,
+                ::core::convert::Into::into(pi),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInterface(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    fn get_interface(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_interface(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetProperties(::unity2::SystemType)` overload"]
+    fn get_properties(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_properties(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetProperty(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    fn get_property(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_property(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNestedTypes(::unity2::SystemType)` overload"]
+    fn get_nested_types(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_nested_types(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEvents(::unity2::SystemType)` overload"]
+    fn get_events(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_events(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetConstructors(::unity2::SystemType)` overload"]
+    fn get_constructors(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_constructors(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssemblyTypes(crate::system::reflection::assembly::Assembly)` overload"]
+    fn get_assembly_types(
+        self,
+        asm: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_assembly_types(
+                __receiver,
+                ::core::convert::Into::into(asm),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMethods(::unity2::SystemType)` overload"]
+    fn get_methods(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_methods(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFields(::unity2::SystemType)` overload"]
+    fn get_fields(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_fields(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMethod(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    fn get_method(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_method(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGenericArguments(::unity2::SystemType)` overload"]
+    fn get_generic_arguments(
+        self,
+        t: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_generic_arguments(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsAssignableFrom(::unity2::SystemType, ::unity2::SystemType)` overload"]
+    fn is_assignable_from(
+        self,
+        current: impl ::core::convert::Into<::unity2::SystemType>,
+        to_compare: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_assignable_from(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(to_compare),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDbNull(crate::system::object::Object)` overload"]
+    fn is_db_null(self, o: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::is_db_null(
+                __receiver,
+                ::core::convert::Into::into(o),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMethod(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
+    fn get_method_2(
+        self,
+        resources_type: impl ::core::convert::Into<::unity2::SystemType>,
+        v: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
+    ) -> crate::system::reflection::methodinfo::MethodInfo {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::get_method_2(
+                __receiver,
+                ::core::convert::Into::into(resources_type),
+                ::core::convert::Into::into(v),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FrameworkBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FrameworkBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
+impl<__T: IFrameworkBase> IFrameworkBaseMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
 impl FrameworkBase {
@@ -225,4 +2114,14 @@ impl FrameworkBase {
         <Self as IFrameworkBaseMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase")]
+pub mod prelude {
+    pub use super::FrameworkBase;
+    pub use super::IFrameworkBase;
+    pub use super::IFrameworkBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

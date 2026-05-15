@@ -25,32 +25,265 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-signalasset")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SignalAsset_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_enable_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::timeline::signalasset::SignalAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalAsset as ::unity2::ClassIdentity>::class(),
+                "add_OnEnableCallback",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalAsset as ::unity2::ClassIdentity>::NAME,
+                    "add_OnEnableCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_enable_callback(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<
+                crate::unity_engine::timeline::signalasset::SignalAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_on_enable_callback::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_enable_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::timeline::signalasset::SignalAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalAsset as ::unity2::ClassIdentity>::class(),
+                "remove_OnEnableCallback",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalAsset as ::unity2::ClassIdentity>::NAME,
+                    "remove_OnEnableCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_enable_callback(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<
+                crate::unity_engine::timeline::signalasset::SignalAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_on_enable_callback::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalAsset as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalAsset as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(
+        this: SignalAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SignalAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalAsset as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalAsset as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: SignalAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SignalAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
 impl SignalAsset {
     #[doc = "`add_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"]
-    #[method(name = "add_OnEnableCallback", args = 1)]
     pub fn add_on_enable_callback(
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<
+                crate::unity_engine::timeline::signalasset::SignalAsset,
+            >,
         >,
-    ) -> ();
-
+    ) -> () {
+        unsafe {
+            __SignalAsset_unity2_raw::add_on_enable_callback(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`remove_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"]
-    #[method(name = "remove_OnEnableCallback", args = 1)]
     pub fn remove_on_enable_callback(
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<
+                crate::unity_engine::timeline::signalasset::SignalAsset,
+            >,
         >,
-    ) -> ();
-
-    #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    ) -> () {
+        unsafe {
+            __SignalAsset_unity2_raw::remove_on_enable_callback(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
+pub trait ISignalAssetMethods: ISignalAsset {
+    #[doc = "`OnEnable()` overload"]
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <SignalAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalAsset_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SignalAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
+impl<__T: ISignalAsset> ISignalAssetMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-signalasset")]
 impl SignalAsset {
@@ -66,4 +299,20 @@ impl SignalAsset {
         <Self as ISignalAssetMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
+pub mod prelude {
+    pub use super::ISignalAsset;
+    pub use super::ISignalAssetMethods;
+    pub use super::SignalAsset;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

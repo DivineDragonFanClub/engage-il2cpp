@@ -42,3 +42,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-tiledata_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-tiledata_2")]
+pub mod prelude {
+    pub use super::TileData_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

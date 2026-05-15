@@ -21,22 +21,160 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-selfiecamera")]
-#[::unity2::methods]
-impl SelfieCamera {
-    #[doc = "`WriteSelfieParametersToCamera(crate::unity_engine::camera::Camera, crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteSelfieParametersToCamera", args = 5)]
-    pub fn write_selfie_parameters_to_camera(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SelfieCamera_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_selfie_parameters_to_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SelfieCamera as ::unity2::ClassIdentity>::class(),
+                "WriteSelfieParametersToCamera",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SelfieCamera as ::unity2::ClassIdentity>::NAME,
+                    "WriteSelfieParametersToCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_selfie_parameters_to_camera(
         target_camera: crate::unity_engine::camera::Camera,
         hierarchy_root: crate::unity_engine::transform::Transform,
         body_root: crate::unity_engine::transform::Transform,
         follow_name: ::unity2::Il2CppString,
         lookat_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_selfie_parameters_to_camera::get_offset() as isize),
+        );
+        inner(
+            target_camera,
+            hierarchy_root,
+            body_root,
+            follow_name,
+            lookat_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SelfieCamera as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SelfieCamera as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: SelfieCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SelfieCamera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-selfiecamera")]
+impl SelfieCamera {
+    #[doc = "`WriteSelfieParametersToCamera(crate::unity_engine::camera::Camera, crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn write_selfie_parameters_to_camera(
+        target_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        hierarchy_root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        body_root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        follow_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        lookat_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            __SelfieCamera_unity2_raw::write_selfie_parameters_to_camera(
+                ::core::convert::Into::into(target_camera),
+                ::core::convert::Into::into(hierarchy_root),
+                ::core::convert::Into::into(body_root),
+                ::core::convert::Into::into(follow_name),
+                ::core::convert::Into::into(lookat_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-selfiecamera")]
+pub trait ISelfieCameraMethods: ISelfieCamera {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SelfieCamera as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SelfieCamera_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-selfiecamera")]
+impl<__T: ISelfieCamera> ISelfieCameraMethods for __T {}
 
 #[cfg(feature = "combat-selfiecamera")]
 impl SelfieCamera {
@@ -52,4 +190,26 @@ impl SelfieCamera {
         <Self as ISelfieCameraMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-selfiecamera")]
+pub mod prelude {
+    pub use super::ISelfieCamera;
+    pub use super::ISelfieCameraMethods;
+    pub use super::SelfieCamera;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

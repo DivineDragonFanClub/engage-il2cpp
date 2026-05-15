@@ -11,6 +11,16 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct TimeNotificationBehaviour {
+# [rename (name = "m_Notifications")] pub m_notifications : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > ,
+# [rename (name = "m_PreviousTime")] pub m_previous_time : f64 ,
+# [rename (name = "m_NeedSortNotifications")] pub m_need_sort_notifications : bool ,
+# [rename (name = "m_TimeSource")] pub m_time_source : crate :: unity_engine :: playables :: playable :: Playable ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,133 +51,895 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct TimeNotificationBehaviour {
-# [rename (name = "m_Notifications")] pub m_notifications : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > ,
-# [rename (name = "m_PreviousTime")] pub m_previous_time : f64 ,
-# [rename (name = "m_NeedSortNotifications")] pub m_need_sort_notifications : bool ,
-# [rename (name = "m_TimeSource")] pub m_time_source : crate :: unity_engine :: playables :: playable :: Playable ,
-}
 }
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-#[::unity2::methods(value)]
-impl TimeNotificationBehaviour_NotificationEntry {
-    #[doc = "`get_triggerInEditor()` overload"]
-    #[method(name = "get_triggerInEditor", args = 0)]
-    pub fn get_trigger_in_editor(self) -> bool;
-
-    #[doc = "`get_prewarm()` overload"]
-    #[method(name = "get_prewarm", args = 0)]
-    pub fn get_prewarm(self) -> bool;
-
-    #[doc = "`get_triggerOnce()` overload"]
-    #[method(name = "get_triggerOnce", args = 0)]
-    pub fn get_trigger_once(self) -> bool;
-}
-
-#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-#[::unity2::methods]
-impl TimeNotificationBehaviour {
-    #[doc = "`set_timeSource(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "set_timeSource", args = 1)]
-    pub fn set_time_source(self, value: crate::unity_engine::playables::playable::Playable) -> ();
-
-    #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, f64, crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]
-    #[method(name = "Create", args = 3)]
-    pub fn create(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimeNotificationBehaviour_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "set_timeSource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "set_timeSource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_time_source(
+        this: TimeNotificationBehaviour,
+        value: crate::unity_engine::playables::playable::Playable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_time_source::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "Create",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         duration: f64,
         loop_mode: crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
         crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour,
-    >;
-
-    #[doc = "`AddNotification(f64, crate::unity_engine::playables::inotification::INotification, crate::unity_engine::timeline::notificationflags::NotificationFlags)` overload"]
-    #[method(name = "AddNotification", args = 3)]
-    pub fn add_notification(
-        self,
+    > {
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , f64 , crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayable_1 :: ScriptPlayable_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(graph, duration, loop_mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_notification {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: inotification :: INotification as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "AddNotification",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "AddNotification",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_notification(
+        this: TimeNotificationBehaviour,
         time: f64,
         payload: crate::unity_engine::playables::inotification::INotification,
         flags: crate::unity_engine::timeline::notificationflags::NotificationFlags,
-    ) -> ();
-
-    #[doc = "`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "OnGraphStart", args = 1)]
-    pub fn on_graph_start(self, playable: crate::unity_engine::playables::playable::Playable)
-        -> ();
-
-    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    #[method(name = "OnBehaviourPause", args = 2)]
-    pub fn on_behaviour_pause(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            f64,
+            crate::unity_engine::playables::inotification::INotification,
+            crate::unity_engine::timeline::notificationflags::NotificationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_notification::get_offset() as isize),
+        );
+        inner(this, time, payload, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_graph_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnGraphStart",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnGraphStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_graph_start(
+        this: TimeNotificationBehaviour,
+        playable: crate::unity_engine::playables::playable::Playable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_graph_start::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_behaviour_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnBehaviourPause",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnBehaviourPause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_behaviour_pause(
+        this: TimeNotificationBehaviour,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
-    ) -> ();
-
-    #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    #[method(name = "PrepareFrame", args = 2)]
-    pub fn prepare_frame(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_behaviour_pause::get_offset() as isize),
+        );
+        inner(this, playable, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "PrepareFrame",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "PrepareFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare_frame(
+        this: TimeNotificationBehaviour,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
-    ) -> ();
-
-    #[doc = "`SortNotifications()` overload"]
-    #[method(name = "SortNotifications", args = 0)]
-    pub fn sort_notifications(self) -> ();
-
-    #[doc = "`CanRestoreNotification(crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry, crate::unity_engine::playables::framedata::FrameData, f64, f64)` overload"]
-    #[method(name = "CanRestoreNotification", args = 4)]
-    pub fn can_restore_notification(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_prepare_frame::get_offset() as isize),
+        );
+        inner(this, playable, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_notifications {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "SortNotifications",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "SortNotifications",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_notifications(
+        this: TimeNotificationBehaviour,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TimeNotificationBehaviour, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_notifications::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_restore_notification {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: framedata :: FrameData as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "CanRestoreNotification",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "CanRestoreNotification",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_restore_notification(
         e : crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry,
         info: crate::unity_engine::playables::framedata::FrameData,
         current_time: f64,
         previous_time: f64,
-    ) -> bool;
-
-    #[doc = "`TriggerNotificationsInRange(f64, f64, crate::unity_engine::playables::framedata::FrameData, crate::unity_engine::playables::playable::Playable, bool)` overload"]
-    #[method(name = "TriggerNotificationsInRange", args = 5)]
-    pub fn trigger_notifications_in_range(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry , crate :: unity_engine :: playables :: framedata :: FrameData , f64 , f64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_can_restore_notification :: get_offset () as isize) ,) ;
+        inner(e, info, current_time, previous_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_notifications_in_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f64 as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "TriggerNotificationsInRange",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "TriggerNotificationsInRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_notifications_in_range(
+        this: TimeNotificationBehaviour,
         start: f64,
         end: f64,
         info: crate::unity_engine::playables::framedata::FrameData,
         playable: crate::unity_engine::playables::playable::Playable,
         check_state: bool,
-    ) -> ();
-
-    #[doc = "`SyncDurationWithExternalSource(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "SyncDurationWithExternalSource", args = 1)]
-    pub fn sync_duration_with_external_source(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            f64,
+            f64,
+            crate::unity_engine::playables::framedata::FrameData,
+            crate::unity_engine::playables::playable::Playable,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_notifications_in_range::get_offset() as isize),
+        );
+        inner(
+            this,
+            start,
+            end,
+            info,
+            playable,
+            check_state,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sync_duration_with_external_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "SyncDurationWithExternalSource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "SyncDurationWithExternalSource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sync_duration_with_external_source(
+        this: TimeNotificationBehaviour,
         playable: crate::unity_engine::playables::playable::Playable,
-    ) -> ();
-
-    #[doc = "`Trigger_internal(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playableoutput::PlayableOutput, crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry)` overload"]
-    #[method(name = "Trigger_internal", args = 3)]
-    pub fn trigger_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sync_duration_with_external_source::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "Trigger_internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "Trigger_internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_internal(
         playable: crate::unity_engine::playables::playable::Playable,
         output: crate::unity_engine::playables::playableoutput::PlayableOutput,
-        e : crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry,
-    ) -> ();
-
-    #[doc = "`Restore_internal(crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry)` overload"]
-    #[method(name = "Restore_internal", args = 1)]
-    pub fn restore_internal(
-        e : crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        e : * mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , * mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_trigger_internal :: get_offset () as isize) ,) ;
+        inner(playable, output, e, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_restore_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                "Restore_internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "Restore_internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn restore_internal(
+        e : * mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_restore_internal :: get_offset () as isize) ,) ;
+        inner(e, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TimeNotificationBehaviour,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TimeNotificationBehaviour, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+impl TimeNotificationBehaviour {
+    #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, f64, crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]
+    pub fn create(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        duration: impl ::core::convert::Into<f64>,
+        loop_mode: impl ::core::convert::Into<
+            crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
+        >,
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
+        crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour,
+    > {
+        unsafe {
+            __TimeNotificationBehaviour_unity2_raw::create(
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(loop_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanRestoreNotification(crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry, crate::unity_engine::playables::framedata::FrameData, f64, f64)` overload"]
+    pub fn can_restore_notification(
+        e : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry >,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+        current_time: impl ::core::convert::Into<f64>,
+        previous_time: impl ::core::convert::Into<f64>,
+    ) -> bool {
+        unsafe {
+            __TimeNotificationBehaviour_unity2_raw::can_restore_notification(
+                ::core::convert::Into::into(e),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(current_time),
+                ::core::convert::Into::into(previous_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Trigger_internal(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playableoutput::PlayableOutput, *mutcrate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry)` overload"]    pub fn trigger_internal (playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , output : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput >) -> crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry{
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > :: uninit () ;
+            __TimeNotificationBehaviour_unity2_raw::trigger_internal(
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(output),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Restore_internal(*mutcrate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry)` overload"]    pub fn restore_internal () -> crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry{
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > :: uninit () ;
+            __TimeNotificationBehaviour_unity2_raw::restore_internal(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+pub trait ITimeNotificationBehaviourMethods: ITimeNotificationBehaviour {
+    #[doc = "`set_timeSource(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn set_time_source(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::set_time_source(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddNotification(f64, crate::unity_engine::playables::inotification::INotification, crate::unity_engine::timeline::notificationflags::NotificationFlags)` overload"]
+    fn add_notification(
+        self,
+        time: impl ::core::convert::Into<f64>,
+        payload: impl ::core::convert::Into<
+            crate::unity_engine::playables::inotification::INotification,
+        >,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::timeline::notificationflags::NotificationFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::add_notification(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::convert::Into::into(payload),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn on_graph_start(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::on_graph_start(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
+    fn on_behaviour_pause(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::on_behaviour_pause(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
+    fn prepare_frame(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::prepare_frame(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortNotifications()` overload"]
+    fn sort_notifications(self) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::sort_notifications(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerNotificationsInRange(f64, f64, crate::unity_engine::playables::framedata::FrameData, crate::unity_engine::playables::playable::Playable, bool)` overload"]
+    fn trigger_notifications_in_range(
+        self,
+        start: impl ::core::convert::Into<f64>,
+        end: impl ::core::convert::Into<f64>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        check_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::trigger_notifications_in_range(
+                __receiver,
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(end),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(check_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SyncDurationWithExternalSource(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn sync_duration_with_external_source(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::sync_duration_with_external_source(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TimeNotificationBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TimeNotificationBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+impl<__T: ITimeNotificationBehaviour> ITimeNotificationBehaviourMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
 impl TimeNotificationBehaviour {
@@ -183,4 +955,200 @@ impl TimeNotificationBehaviour {
         <Self as ITimeNotificationBehaviourMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimeNotificationBehaviour_NotificationEntry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trigger_in_editor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_triggerInEditor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_triggerInEditor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_trigger_in_editor(
+        this: TimeNotificationBehaviour_NotificationEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour_NotificationEntry,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_trigger_in_editor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prewarm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_prewarm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_prewarm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_prewarm(
+        this: TimeNotificationBehaviour_NotificationEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour_NotificationEntry,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_prewarm::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trigger_once {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_triggerOnce",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_triggerOnce",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_trigger_once(
+        this: TimeNotificationBehaviour_NotificationEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TimeNotificationBehaviour_NotificationEntry,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_trigger_once::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+impl TimeNotificationBehaviour_NotificationEntry {
+    #[doc = "`get_triggerInEditor()` overload"]
+    pub fn get_trigger_in_editor(self) -> bool {
+        unsafe {
+            __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_in_editor(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_prewarm()` overload"]
+    pub fn get_prewarm(self) -> bool {
+        unsafe {
+            __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_prewarm(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_triggerOnce()` overload"]
+    pub fn get_trigger_once(self) -> bool {
+        unsafe {
+            __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_once(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+pub mod prelude {
+    pub use super::ITimeNotificationBehaviour;
+    pub use super::ITimeNotificationBehaviourMethods;
+    pub use super::TimeNotificationBehaviour;
+    pub use super::TimeNotificationBehaviour_NotificationEntry;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
 }

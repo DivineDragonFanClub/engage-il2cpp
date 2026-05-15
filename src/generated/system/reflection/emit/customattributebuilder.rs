@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-customattributebuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-customattributebuilder")]
+pub mod prelude {
+    pub use super::CustomAttributeBuilder;
+    pub use super::ICustomAttributeBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -9,6 +9,25 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionState")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugActionState {
+        #[rename(name = "m_Type")]
+        pub m_type:
+            crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType,
+        #[rename(name = "m_PressedButtons")]
+        pub m_pressed_buttons: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_PressedAxis")]
+        pub m_pressed_axis: ::unity2::Il2CppString,
+        #[rename(name = "m_PressedKeys")]
+        pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+        #[rename(name = "m_TriggerPressedUp")]
+        pub m_trigger_pressed_up: ::unity2::Array<bool>,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md"))]
     #[repr(C)]
     #[derive(
@@ -56,88 +75,714 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionState")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugActionState {
-        #[rename(name = "m_Type")]
-        pub m_type:
-            crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType,
-        #[rename(name = "m_PressedButtons")]
-        pub m_pressed_buttons: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_PressedAxis")]
-        pub m_pressed_axis: ::unity2::Il2CppString,
-        #[rename(name = "m_PressedKeys")]
-        pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
-        #[rename(name = "m_TriggerPressedUp")]
-        pub m_trigger_pressed_up: ::unity2::Array<bool>,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
-#[::unity2::methods]
-impl DebugActionState {
-    #[doc = "`get_runningAction()` overload"]
-    #[method(name = "get_runningAction", args = 0)]
-    pub fn get_running_action(self) -> bool;
-
-    #[doc = "`set_runningAction(bool)` overload"]
-    #[method(name = "set_runningAction", args = 1)]
-    pub fn set_running_action(self, value: bool) -> ();
-
-    #[doc = "`get_actionState()` overload"]
-    #[method(name = "get_actionState", args = 0)]
-    pub fn get_action_state(self) -> f32;
-
-    #[doc = "`set_actionState(f32)` overload"]
-    #[method(name = "set_actionState", args = 1)]
-    pub fn set_action_state(self, value: f32) -> ();
-
-    #[doc = "`Trigger(i32, f32)` overload"]
-    #[method(name = "Trigger", args = 2)]
-    pub fn trigger(self, trigger_count: i32, state: f32) -> ();
-
-    #[doc = "`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"]
-    #[method(name = "TriggerWithButton", args = 2)]
-    pub fn trigger_with_button(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugActionState_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_running_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "get_runningAction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "get_runningAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_running_action(
+        this: DebugActionState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_running_action::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_running_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "set_runningAction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "set_runningAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_running_action(
+        this: DebugActionState,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugActionState, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_running_action::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_action_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "get_actionState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "get_actionState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_action_state(
+        this: DebugActionState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_action_state::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_action_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "set_actionState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "set_actionState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_action_state(
+        this: DebugActionState,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugActionState, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_action_state::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "Trigger",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "Trigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger(
+        this: DebugActionState,
+        trigger_count: i32,
+        state: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugActionState, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_trigger::get_offset() as isize),
+            );
+        inner(this, trigger_count, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_with_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "TriggerWithButton",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "TriggerWithButton",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_with_button(
+        this: DebugActionState,
         buttons: ::unity2::Array<::unity2::Il2CppString>,
         state: f32,
-    ) -> ();
-
-    #[doc = "`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "TriggerWithAxis", args = 2)]
-    pub fn trigger_with_axis(self, axis: ::unity2::Il2CppString, state: f32) -> ();
-
-    #[doc = "`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"]
-    #[method(name = "TriggerWithKey", args = 2)]
-    pub fn trigger_with_key(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugActionState,
+            ::unity2::Array<::unity2::Il2CppString>,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_with_button::get_offset() as isize),
+        );
+        inner(this, buttons, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_with_axis {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "TriggerWithAxis",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "TriggerWithAxis",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_with_axis(
+        this: DebugActionState,
+        axis: ::unity2::Il2CppString,
+        state: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugActionState,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_with_axis::get_offset() as isize),
+        );
+        inner(this, axis, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_with_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "TriggerWithKey",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "TriggerWithKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_with_key(
+        this: DebugActionState,
         keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
         state: f32,
-    ) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugActionState,
+            ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_with_key::get_offset() as isize),
+        );
+        inner(this, keys, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: DebugActionState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                "Update",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: DebugActionState,
         desc: crate::unity_engine::rendering::debugactiondesc::DebugActionDesc,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugActionState,
+            crate::unity_engine::rendering::debugactiondesc::DebugActionDesc,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugActionState as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugActionState as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugActionState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugActionState, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+pub trait IDebugActionStateMethods: IDebugActionState {
+    #[doc = "`get_runningAction()` overload"]
+    fn get_running_action(self) -> bool {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::get_running_action(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_runningAction(bool)` overload"]
+    fn set_running_action(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::set_running_action(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_actionState()` overload"]
+    fn get_action_state(self) -> f32 {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::get_action_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_actionState(f32)` overload"]
+    fn set_action_state(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::set_action_state(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Trigger(i32, f32)` overload"]
+    fn trigger(
+        self,
+        trigger_count: impl ::core::convert::Into<i32>,
+        state: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::trigger(
+                __receiver,
+                ::core::convert::Into::into(trigger_count),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"]
+    fn trigger_with_button(
+        self,
+        buttons: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        state: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::trigger_with_button(
+                __receiver,
+                ::core::convert::Into::into(buttons),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"]
+    fn trigger_with_axis(
+        self,
+        axis: impl ::core::convert::Into<::unity2::Il2CppString>,
+        state: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::trigger_with_axis(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"]
+    fn trigger_with_key(
+        self,
+        keys: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::keycode::KeyCode>>,
+        state: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::trigger_with_key(
+                __receiver,
+                ::core::convert::Into::into(keys),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"]
+    fn update(
+        self,
+        desc: impl ::core::convert::Into<
+            crate::unity_engine::rendering::debugactiondesc::DebugActionDesc,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DebugActionState as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugActionState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+impl<__T: IDebugActionState> IDebugActionStateMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
 impl DebugActionState {
@@ -153,4 +798,21 @@ impl DebugActionState {
         <Self as IDebugActionStateMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+pub mod prelude {
+    pub use super::DebugActionState;
+    pub use super::DebugActionState_DebugActionKeyType;
+    pub use super::IDebugActionState;
+    pub use super::IDebugActionStateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

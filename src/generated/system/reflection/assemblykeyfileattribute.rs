@@ -18,12 +18,82 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-assemblykeyfileattribute")]
-#[::unity2::methods]
-impl AssemblyKeyFileAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, key_file: ::unity2::Il2CppString) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssemblyKeyFileAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssemblyKeyFileAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssemblyKeyFileAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AssemblyKeyFileAttribute,
+        key_file: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssemblyKeyFileAttribute,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, key_file, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+pub trait IAssemblyKeyFileAttributeMethods: IAssemblyKeyFileAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, key_file: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssemblyKeyFileAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssemblyKeyFileAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(key_file),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+impl<__T: IAssemblyKeyFileAttribute> IAssemblyKeyFileAttributeMethods for __T {}
 
 #[cfg(feature = "system-reflection-assemblykeyfileattribute")]
 impl AssemblyKeyFileAttribute {
@@ -39,4 +109,11 @@ impl AssemblyKeyFileAttribute {
         <Self as IAssemblyKeyFileAttributeMethods>::ctor(this, key_file);
         this
     }
+}
+
+#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+pub mod prelude {
+    pub use super::AssemblyKeyFileAttribute;
+    pub use super::IAssemblyKeyFileAttribute;
+    pub use super::IAssemblyKeyFileAttributeMethods;
 }

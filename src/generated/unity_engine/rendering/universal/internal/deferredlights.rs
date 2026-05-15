@@ -9,111 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "DeferredLights"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct DeferredLights {
-# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
-# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
-# [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
-# [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
-# [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
-# [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
-# [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
-# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
-# [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
-# [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
-# [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
-# [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
-# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-# [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_DrawCall {
-        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub tile_list_size: i32,
-        pub punctual_light_buffer_size: i32,
-        pub rel_light_list_size: i32,
-        pub instance_offset: i32,
-        pub instance_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.DrawCall";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_DrawCall {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_CullLightsJob {}
-
-    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.CullLightsJob";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_CullLightsJob {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
     #[repr(C)]
     #[derive(
@@ -177,6 +72,85 @@ mod __types {
             Self { value: 6 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_DrawCall {
+        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub tile_list_size: i32,
+        pub punctual_light_buffer_size: i32,
+        pub rel_light_list_size: i32,
+        pub instance_offset: i32,
+        pub instance_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.DrawCall";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_DrawCall {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "DeferredLights"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct DeferredLights {
+# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
+# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
+# [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
+# [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
+# [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
+# [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
+# [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
+# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
+# [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
+# [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
+# [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
+# [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
+# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
+# [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md"))]
     #[::unity2::class(
@@ -372,308 +346,2482 @@ mod __types {
         #[rename(name = "_ShadowLightIndex")]
         pub shadow_light_index: i32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_CullLightsJob {}
+
+    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.CullLightsJob";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_CullLightsJob {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[::unity2::methods]
-impl DeferredLights {
-    #[doc = "`get_GbufferDepthIndex()` overload"]
-    #[method(name = "get_GbufferDepthIndex", args = 0)]
-    pub fn get_gbuffer_depth_index(self) -> i32;
-
-    #[doc = "`get_GBufferAlbedoIndex()` overload"]
-    #[method(name = "get_GBufferAlbedoIndex", args = 0)]
-    pub fn get_g_buffer_albedo_index(self) -> i32;
-
-    #[doc = "`get_GBufferSpecularMetallicIndex()` overload"]
-    #[method(name = "get_GBufferSpecularMetallicIndex", args = 0)]
-    pub fn get_g_buffer_specular_metallic_index(self) -> i32;
-
-    #[doc = "`get_GBufferNormalSmoothnessIndex()` overload"]
-    #[method(name = "get_GBufferNormalSmoothnessIndex", args = 0)]
-    pub fn get_g_buffer_normal_smoothness_index(self) -> i32;
-
-    #[doc = "`get_GBufferLightingIndex()` overload"]
-    #[method(name = "get_GBufferLightingIndex", args = 0)]
-    pub fn get_g_buffer_lighting_index(self) -> i32;
-
-    #[doc = "`get_GBufferShadowMask()` overload"]
-    #[method(name = "get_GBufferShadowMask", args = 0)]
-    pub fn get_g_buffer_shadow_mask(self) -> i32;
-
-    #[doc = "`get_GBufferSliceCount()` overload"]
-    #[method(name = "get_GBufferSliceCount", args = 0)]
-    pub fn get_g_buffer_slice_count(self) -> i32;
-
-    #[doc = "`GetGBufferFormat(i32)` overload"]
-    #[method(name = "GetGBufferFormat", args = 1)]
-    pub fn get_g_buffer_format(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeferredLights_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gbuffer_depth_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GbufferDepthIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GbufferDepthIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gbuffer_depth_index(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_gbuffer_depth_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_albedo_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferAlbedoIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferAlbedoIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_albedo_index(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_albedo_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_specular_metallic_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferSpecularMetallicIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferSpecularMetallicIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_specular_metallic_index(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_specular_metallic_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_normal_smoothness_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferNormalSmoothnessIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferNormalSmoothnessIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_normal_smoothness_index(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_normal_smoothness_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_lighting_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferLightingIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferLightingIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_lighting_index(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_lighting_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_shadow_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferShadowMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferShadowMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_shadow_mask(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_shadow_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_slice_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GBufferSliceCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GBufferSliceCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_slice_count(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_g_buffer_slice_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_g_buffer_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "GetGBufferFormat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "GetGBufferFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_g_buffer_format(
+        this: DeferredLights,
         index: i32,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`get_UseShadowMask()` overload"]
-    #[method(name = "get_UseShadowMask", args = 0)]
-    pub fn get_use_shadow_mask(self) -> bool;
-
-    #[doc = "`get_UseRenderPass()` overload"]
-    #[method(name = "get_UseRenderPass", args = 0)]
-    pub fn get_use_render_pass(self) -> bool;
-
-    #[doc = "`set_UseRenderPass(bool)` overload"]
-    #[method(name = "set_UseRenderPass", args = 1)]
-    pub fn set_use_render_pass(self, value: bool) -> ();
-
-    #[doc = "`get_HasDepthPrepass()` overload"]
-    #[method(name = "get_HasDepthPrepass", args = 0)]
-    pub fn get_has_depth_prepass(self) -> bool;
-
-    #[doc = "`set_HasDepthPrepass(bool)` overload"]
-    #[method(name = "set_HasDepthPrepass", args = 1)]
-    pub fn set_has_depth_prepass(self, value: bool) -> ();
-
-    #[doc = "`get_IsOverlay()` overload"]
-    #[method(name = "get_IsOverlay", args = 0)]
-    pub fn get_is_overlay(self) -> bool;
-
-    #[doc = "`set_IsOverlay(bool)` overload"]
-    #[method(name = "set_IsOverlay", args = 1)]
-    pub fn set_is_overlay(self, value: bool) -> ();
-
-    #[doc = "`get_AccurateGbufferNormals()` overload"]
-    #[method(name = "get_AccurateGbufferNormals", args = 0)]
-    pub fn get_accurate_gbuffer_normals(self) -> bool;
-
-    #[doc = "`set_AccurateGbufferNormals(bool)` overload"]
-    #[method(name = "set_AccurateGbufferNormals", args = 1)]
-    pub fn set_accurate_gbuffer_normals(self, value: bool) -> ();
-
-    #[doc = "`get_TiledDeferredShading()` overload"]
-    #[method(name = "get_TiledDeferredShading", args = 0)]
-    pub fn get_tiled_deferred_shading(self) -> bool;
-
-    #[doc = "`set_TiledDeferredShading(bool)` overload"]
-    #[method(name = "set_TiledDeferredShading", args = 1)]
-    pub fn set_tiled_deferred_shading(self, value: bool) -> ();
-
-    #[doc = "`get_MixedLightingSetup()` overload"]
-    #[method(name = "get_MixedLightingSetup", args = 0)]
-    pub fn get_mixed_lighting_setup(
-        self,
-    ) -> crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup;
-
-    #[doc = "`set_MixedLightingSetup(crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup)` overload"]
-    #[method(name = "set_MixedLightingSetup", args = 1)]
-    pub fn set_mixed_lighting_setup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (DeferredLights , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_g_buffer_format :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_shadow_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_UseShadowMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_UseShadowMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_shadow_mask(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_shadow_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_render_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_UseRenderPass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_UseRenderPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_render_pass(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_render_pass::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_render_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_UseRenderPass",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_UseRenderPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_render_pass(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_render_pass::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_depth_prepass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_HasDepthPrepass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_HasDepthPrepass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_depth_prepass(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_depth_prepass::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_has_depth_prepass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_HasDepthPrepass",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_HasDepthPrepass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_has_depth_prepass(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_has_depth_prepass::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_overlay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_IsOverlay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_IsOverlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_overlay(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_overlay::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_overlay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_IsOverlay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_IsOverlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_overlay(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_overlay::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_accurate_gbuffer_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_AccurateGbufferNormals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_AccurateGbufferNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_accurate_gbuffer_normals(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_accurate_gbuffer_normals::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_accurate_gbuffer_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_AccurateGbufferNormals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_AccurateGbufferNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_accurate_gbuffer_normals(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_accurate_gbuffer_normals::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tiled_deferred_shading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_TiledDeferredShading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_TiledDeferredShading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tiled_deferred_shading(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tiled_deferred_shading::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tiled_deferred_shading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_TiledDeferredShading",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_TiledDeferredShading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tiled_deferred_shading(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_tiled_deferred_shading::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mixed_lighting_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_MixedLightingSetup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_MixedLightingSetup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mixed_lighting_setup(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: mixedlightingsetup :: MixedLightingSetup = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mixed_lighting_setup :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mixed_lighting_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: mixedlightingsetup :: MixedLightingSetup as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_MixedLightingSetup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_MixedLightingSetup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mixed_lighting_setup(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
-    ) -> ();
-
-    #[doc = "`get_UseJobSystem()` overload"]
-    #[method(name = "get_UseJobSystem", args = 0)]
-    pub fn get_use_job_system(self) -> bool;
-
-    #[doc = "`set_UseJobSystem(bool)` overload"]
-    #[method(name = "set_UseJobSystem", args = 1)]
-    pub fn set_use_job_system(self, value: bool) -> ();
-
-    #[doc = "`get_RenderWidth()` overload"]
-    #[method(name = "get_RenderWidth", args = 0)]
-    pub fn get_render_width(self) -> i32;
-
-    #[doc = "`set_RenderWidth(i32)` overload"]
-    #[method(name = "set_RenderWidth", args = 1)]
-    pub fn set_render_width(self, value: i32) -> ();
-
-    #[doc = "`get_RenderHeight()` overload"]
-    #[method(name = "get_RenderHeight", args = 0)]
-    pub fn get_render_height(self) -> i32;
-
-    #[doc = "`set_RenderHeight(i32)` overload"]
-    #[method(name = "set_RenderHeight", args = 1)]
-    pub fn set_render_height(self, value: i32) -> ();
-
-    #[doc = "`get_GbufferAttachments()` overload"]
-    #[method(name = "get_GbufferAttachments", args = 0)]
-    pub fn get_gbuffer_attachments(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mixed_lighting_setup::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_job_system {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_UseJobSystem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_UseJobSystem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_job_system(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_job_system::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_job_system {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_UseJobSystem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_UseJobSystem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_job_system(
+        this: DeferredLights,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_job_system::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_RenderWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_RenderWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_width(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_render_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_RenderWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_RenderWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_width(
+        this: DeferredLights,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_render_width::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_RenderHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_RenderHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_height(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_render_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_RenderHeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_RenderHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_height(
+        this: DeferredLights,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_render_height::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gbuffer_attachments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GbufferAttachments",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GbufferAttachments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gbuffer_attachments(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<
         crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    >;
-
-    #[doc = "`set_GbufferAttachments(::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)` overload"]
-    #[method(name = "set_GbufferAttachments", args = 1)]
-    pub fn set_gbuffer_attachments(
-        self,
+    > {
+        let inner: extern "C" fn(
+            DeferredLights,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gbuffer_attachments::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gbuffer_attachments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_GbufferAttachments",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_GbufferAttachments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gbuffer_attachments(
+        this: DeferredLights,
         value: ::unity2::Array<
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         >,
-    ) -> ();
-
-    #[doc = "`get_DepthAttachment()` overload"]
-    #[method(name = "get_DepthAttachment", args = 0)]
-    pub fn get_depth_attachment(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
-
-    #[doc = "`set_DepthAttachment(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    #[method(name = "set_DepthAttachment", args = 1)]
-    pub fn set_depth_attachment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            ::unity2::Array<
+                crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_gbuffer_attachments::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_attachment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthAttachment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthAttachment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_attachment(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_attachment :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_attachment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthAttachment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthAttachment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_attachment(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    ) -> ();
-
-    #[doc = "`get_DepthCopyTexture()` overload"]
-    #[method(name = "get_DepthCopyTexture", args = 0)]
-    pub fn get_depth_copy_texture(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
-
-    #[doc = "`set_DepthCopyTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    #[method(name = "set_DepthCopyTexture", args = 1)]
-    pub fn set_depth_copy_texture(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_attachment::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_copy_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthCopyTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthCopyTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_copy_texture(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_copy_texture :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_copy_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthCopyTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthCopyTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_copy_texture(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    ) -> ();
-
-    #[doc = "`get_DepthInfoTexture()` overload"]
-    #[method(name = "get_DepthInfoTexture", args = 0)]
-    pub fn get_depth_info_texture(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
-
-    #[doc = "`set_DepthInfoTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    #[method(name = "set_DepthInfoTexture", args = 1)]
-    pub fn set_depth_info_texture(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_copy_texture::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_info_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthInfoTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthInfoTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_info_texture(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_info_texture :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_info_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthInfoTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthInfoTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_info_texture(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    ) -> ();
-
-    #[doc = "`get_TileDepthInfoTexture()` overload"]
-    #[method(name = "get_TileDepthInfoTexture", args = 0)]
-    pub fn get_tile_depth_info_texture(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
-
-    #[doc = "`set_TileDepthInfoTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    #[method(name = "set_TileDepthInfoTexture", args = 1)]
-    pub fn set_tile_depth_info_texture(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_info_texture::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tile_depth_info_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_TileDepthInfoTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_TileDepthInfoTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tile_depth_info_texture(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_tile_depth_info_texture :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tile_depth_info_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_TileDepthInfoTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_TileDepthInfoTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tile_depth_info_texture(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    ) -> ();
-
-    #[doc = "`get_GbufferAttachmentIdentifiers()` overload"]
-    #[method(name = "get_GbufferAttachmentIdentifiers", args = 0)]
-    pub fn get_gbuffer_attachment_identifiers(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tile_depth_info_texture::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gbuffer_attachment_identifiers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_GbufferAttachmentIdentifiers",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_GbufferAttachmentIdentifiers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gbuffer_attachment_identifiers(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<
         crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    >;
-
-    #[doc = "`set_GbufferAttachmentIdentifiers(::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)` overload"]
-    #[method(name = "set_GbufferAttachmentIdentifiers", args = 1)]
-    pub fn set_gbuffer_attachment_identifiers(
-        self,
+    > {
+        let inner: extern "C" fn(
+            DeferredLights,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gbuffer_attachment_identifiers::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gbuffer_attachment_identifiers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_GbufferAttachmentIdentifiers",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_GbufferAttachmentIdentifiers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gbuffer_attachment_identifiers(
+        this: DeferredLights,
         value: ::unity2::Array<
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         >,
-    ) -> ();
-
-    #[doc = "`get_DepthAttachmentIdentifier()` overload"]
-    #[method(name = "get_DepthAttachmentIdentifier", args = 0)]
-    pub fn get_depth_attachment_identifier(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
-
-    #[doc = "`set_DepthAttachmentIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "set_DepthAttachmentIdentifier", args = 1)]
-    pub fn set_depth_attachment_identifier(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            ::unity2::Array<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_gbuffer_attachment_identifiers::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_attachment_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthAttachmentIdentifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthAttachmentIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_attachment_identifier(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_attachment_identifier :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_attachment_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthAttachmentIdentifier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthAttachmentIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_attachment_identifier(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    ) -> ();
-
-    #[doc = "`get_DepthCopyTextureIdentifier()` overload"]
-    #[method(name = "get_DepthCopyTextureIdentifier", args = 0)]
-    pub fn get_depth_copy_texture_identifier(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
-
-    #[doc = "`set_DepthCopyTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "set_DepthCopyTextureIdentifier", args = 1)]
-    pub fn set_depth_copy_texture_identifier(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_attachment_identifier::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_copy_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthCopyTextureIdentifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthCopyTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_copy_texture_identifier(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_copy_texture_identifier :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_copy_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthCopyTextureIdentifier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthCopyTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_copy_texture_identifier(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    ) -> ();
-
-    #[doc = "`get_DepthInfoTextureIdentifier()` overload"]
-    #[method(name = "get_DepthInfoTextureIdentifier", args = 0)]
-    pub fn get_depth_info_texture_identifier(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
-
-    #[doc = "`set_DepthInfoTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "set_DepthInfoTextureIdentifier", args = 1)]
-    pub fn set_depth_info_texture_identifier(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_copy_texture_identifier::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth_info_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_DepthInfoTextureIdentifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_DepthInfoTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth_info_texture_identifier(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_depth_info_texture_identifier :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth_info_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_DepthInfoTextureIdentifier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_DepthInfoTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth_info_texture_identifier(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    ) -> ();
-
-    #[doc = "`get_TileDepthInfoTextureIdentifier()` overload"]
-    #[method(name = "get_TileDepthInfoTextureIdentifier", args = 0)]
-    pub fn get_tile_depth_info_texture_identifier(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
-
-    #[doc = "`set_TileDepthInfoTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "set_TileDepthInfoTextureIdentifier", args = 1)]
-    pub fn set_tile_depth_info_texture_identifier(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth_info_texture_identifier::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tile_depth_info_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "get_TileDepthInfoTextureIdentifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "get_TileDepthInfoTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tile_depth_info_texture_identifier(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        let inner : extern "C" fn (DeferredLights , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_tile_depth_info_texture_identifier :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tile_depth_info_texture_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "set_TileDepthInfoTextureIdentifier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "set_TileDepthInfoTextureIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tile_depth_info_texture_identifier(
+        this: DeferredLights,
         value: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::material::Material, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tile_depth_info_texture_identifier::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DeferredLights,
         tile_depth_info_material: crate::unity_engine::material::Material,
         tile_deferred_material: crate::unity_engine::material::Material,
         stencil_deferred_material: crate::unity_engine::material::Material,
-    ) -> ();
-
-    #[doc = "`GetTiler(i32)` overload"]
-    #[method(name = "GetTiler", args = 1)]
-    pub fn get_tiler(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::material::Material,
+            crate::unity_engine::material::Material,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            tile_depth_info_material,
+            tile_deferred_material,
+            stencil_deferred_material,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tiler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "GetTiler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "GetTiler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tiler(
+        this: DeferredLights,
         i: i32,
-    ) -> crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler;
-
-    #[doc = "`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "SetupLights", args = 2)]
-    pub fn setup_lights(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> *mut crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler
+    {
+        let inner : extern "C" fn (DeferredLights , i32 , :: unity2 :: OptionalMethod ,) -> * mut crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_tiler :: get_offset () as isize) ,) ;
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "SetupLights",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "SetupLights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_lights(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`ResolveMixedLightingMode(crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "ResolveMixedLightingMode", args = 1)]
-    pub fn resolve_mixed_lighting_mode(
-        self,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`IsRuntimeSupportedThisFrame()` overload"]
-    #[method(name = "IsRuntimeSupportedThisFrame", args = 0)]
-    pub fn is_runtime_supported_this_frame(self) -> bool;
-
-    #[doc = "`Setup(crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::universal::internal::additionallightsshadowcasterpass::AdditionalLightsShadowCasterPass, bool, bool, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, ::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)` overload"]
-    #[method(name = "Setup", args = 9)]
-    pub fn setup(
-        self,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_lights::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resolve_mixed_lighting_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "ResolveMixedLightingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "ResolveMixedLightingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resolve_mixed_lighting_mode(
+        this: DeferredLights,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resolve_mixed_lighting_mode::get_offset() as isize),
+        );
+        inner(this, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_runtime_supported_this_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "IsRuntimeSupportedThisFrame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "IsRuntimeSupportedThisFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_runtime_supported_this_frame(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_runtime_supported_this_frame::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: DeferredLights,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
         additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass,
         has_depth_prepass: bool,
         is_overlay: bool,
@@ -684,159 +2832,2364 @@ impl DeferredLights {
         gbuffer_handles: ::unity2::Array<
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         >,
-    ) -> ();
-
-    #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    #[method(name = "OnCameraCleanup", args = 1)]
-    pub fn on_camera_cleanup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (DeferredLights , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass , bool , bool , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_setup :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            rendering_data,
+            additional_lights_shadow_caster_pass,
+            has_depth_prepass,
+            is_overlay,
+            depth_copy_texture,
+            depth_info_texture,
+            tile_depth_info_texture,
+            depth_attachment,
+            gbuffer_handles,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_camera_cleanup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "OnCameraCleanup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "OnCameraCleanup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_camera_cleanup(
+        this: DeferredLights,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-    ) -> ();
-
-    #[doc = "`OverwriteStencil(crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
-    #[method(name = "OverwriteStencil", args = 2)]
-    pub fn overwrite_stencil(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_camera_cleanup::get_offset() as isize),
+        );
+        inner(this, cmd, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_overwrite_stencil {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "OverwriteStencil",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "OverwriteStencil",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn overwrite_stencil(
         s: crate::unity_engine::rendering::stencilstate::StencilState,
         stencil_write_mask: i32,
-    ) -> crate::unity_engine::rendering::stencilstate::StencilState;
-
-    #[doc = "`OverwriteStencil(crate::unity_engine::rendering::renderstateblock::RenderStateBlock, i32, i32)` overload"]
-    #[method(name = "OverwriteStencil", args = 3)]
-    pub fn overwrite_stencil_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::stencilstate::StencilState {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::stencilstate::StencilState,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::stencilstate::StencilState = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_overwrite_stencil::get_offset() as isize),
+        );
+        inner(s, stencil_write_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_overwrite_stencil_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "OverwriteStencil",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "OverwriteStencil",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn overwrite_stencil_2(
         block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
         stencil_write_mask: i32,
         stencil_ref: i32,
-    ) -> crate::unity_engine::rendering::renderstateblock::RenderStateBlock;
-
-    #[doc = "`HasTileLights()` overload"]
-    #[method(name = "HasTileLights", args = 0)]
-    pub fn has_tile_lights(self) -> bool;
-
-    #[doc = "`HasTileDepthRangeExtraPass()` overload"]
-    #[method(name = "HasTileDepthRangeExtraPass", args = 0)]
-    pub fn has_tile_depth_range_extra_pass(self) -> bool;
-
-    #[doc = "`ExecuteTileDepthInfoPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "ExecuteTileDepthInfoPass", args = 2)]
-    pub fn execute_tile_depth_info_pass(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::renderstateblock::RenderStateBlock {
+        let inner : extern "C" fn (crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_overwrite_stencil_2 :: get_offset () as isize) ,) ;
+        inner(block, stencil_write_mask, stencil_ref, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_tile_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "HasTileLights",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "HasTileLights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_tile_lights(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_tile_lights::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_tile_depth_range_extra_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "HasTileDepthRangeExtraPass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "HasTileDepthRangeExtraPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_tile_depth_range_extra_pass(
+        this: DeferredLights,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DeferredLights, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_tile_depth_range_extra_pass::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_tile_depth_info_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "ExecuteTileDepthInfoPass",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteTileDepthInfoPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_tile_depth_info_pass(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`ExecuteDownsampleBitmaskPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "ExecuteDownsampleBitmaskPass", args = 2)]
-    pub fn execute_downsample_bitmask_pass(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_tile_depth_info_pass::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_downsample_bitmask_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "ExecuteDownsampleBitmaskPass",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteDownsampleBitmaskPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_downsample_bitmask_pass(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`ClearStencilPartial(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    #[method(name = "ClearStencilPartial", args = 1)]
-    pub fn clear_stencil_partial(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_downsample_bitmask_pass::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_stencil_partial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "ClearStencilPartial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "ClearStencilPartial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_stencil_partial(
+        this: DeferredLights,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-    ) -> ();
-
-    #[doc = "`ExecuteDeferredPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "ExecuteDeferredPass", args = 2)]
-    pub fn execute_deferred_pass(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_stencil_partial::get_offset() as isize),
+        );
+        inner(this, cmd, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_deferred_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "ExecuteDeferredPass",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteDeferredPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_deferred_pass(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`SetupShaderLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "SetupShaderLightConstants", args = 2)]
-    pub fn setup_shader_light_constants(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_deferred_pass::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_shader_light_constants {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "SetupShaderLightConstants",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "SetupShaderLightConstants",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_shader_light_constants(
+        this: DeferredLights,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`SetupMainLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::lightdata::LightData)` overload"]
-    #[method(name = "SetupMainLightConstants", args = 2)]
-    pub fn setup_main_light_constants(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_shader_light_constants::get_offset() as isize),
+        );
+        inner(this, cmd, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_main_light_constants {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: lightdata :: LightData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "SetupMainLightConstants",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "SetupMainLightConstants",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_main_light_constants(
+        this: DeferredLights,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        light_data: crate::unity_engine::rendering::universal::lightdata::LightData,
-    ) -> ();
-
-    #[doc = "`SetupMatrixConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "SetupMatrixConstants", args = 2)]
-    pub fn setup_matrix_constants(
-        self,
+        light_data: *mut crate::unity_engine::rendering::universal::lightdata::LightData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::lightdata::LightData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_main_light_constants::get_offset() as isize),
+        );
+        inner(this, cmd, light_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_matrix_constants {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "SetupMatrixConstants",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "SetupMatrixConstants",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_matrix_constants(
+        this: DeferredLights,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`RenderTileLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "RenderTileLights", args = 3)]
-    pub fn render_tile_lights(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_matrix_constants::get_offset() as isize),
+        );
+        inner(this, cmd, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_render_tile_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "RenderTileLights",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "RenderTileLights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn render_tile_lights(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`RenderStencilLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "RenderStencilLights", args = 3)]
-    pub fn render_stencil_lights(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_render_tile_lights::get_offset() as isize),
+        );
+        inner(this, context, cmd, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_render_stencil_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "RenderStencilLights",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "RenderStencilLights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn render_stencil_lights(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`RenderFog(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "RenderFog", args = 3)]
-    pub fn render_fog(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_render_stencil_lights::get_offset() as isize),
+        );
+        inner(this, context, cmd, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_render_fog {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "RenderFog",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "RenderFog",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn render_fog(
+        this: DeferredLights,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`IsTileLight(crate::unity_engine::rendering::visiblelight::VisibleLight)` overload"]
-    #[method(name = "IsTileLight", args = 1)]
-    pub fn is_tile_light(
-        self,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_render_fog::get_offset() as isize),
+        );
+        inner(this, context, cmd, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_tile_light {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: visiblelight :: VisibleLight as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "IsTileLight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "IsTileLight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_tile_light(
+        this: DeferredLights,
         visible_light: crate::unity_engine::rendering::visiblelight::VisibleLight,
-    ) -> bool;
-
-    #[doc = "`CreateSphereMesh()` overload"]
-    #[method(name = "CreateSphereMesh", args = 0)]
-    pub fn create_sphere_mesh() -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`CreateHemisphereMesh()` overload"]
-    #[method(name = "CreateHemisphereMesh", args = 0)]
-    pub fn create_hemisphere_mesh() -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`CreateFullscreenMesh()` overload"]
-    #[method(name = "CreateFullscreenMesh", args = 0)]
-    pub fn create_fullscreen_mesh() -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`Align(i32, i32)` overload"]
-    #[method(name = "Align", args = 2)]
-    pub fn align(s: i32, alignment: i32) -> i32;
-
-    #[doc = "`PackTileID(u32, u32)` overload"]
-    #[method(name = "PackTileID", args = 2)]
-    pub fn pack_tile_id(i: u32, j: u32) -> u32;
-
-    #[doc = "`FloatToUInt(f32)` overload"]
-    #[method(name = "FloatToUInt", args = 1)]
-    pub fn float_to_u_int(val: f32) -> u32;
-
-    #[doc = "`Half2ToUInt(f32, f32)` overload"]
-    #[method(name = "Half2ToUInt", args = 2)]
-    pub fn half2_to_u_int(x: f32, y: f32) -> u32;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            DeferredLights,
+            crate::unity_engine::rendering::visiblelight::VisibleLight,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_tile_light::get_offset() as isize),
+        );
+        inner(this, visible_light, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_sphere_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "CreateSphereMesh",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "CreateSphereMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_sphere_mesh(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_sphere_mesh::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_hemisphere_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "CreateHemisphereMesh",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "CreateHemisphereMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_hemisphere_mesh(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_hemisphere_mesh::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_fullscreen_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "CreateFullscreenMesh",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "CreateFullscreenMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_fullscreen_mesh(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_fullscreen_mesh::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_align {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "Align",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "Align",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn align(
+        s: i32,
+        alignment: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_align::get_offset() as isize),
+            );
+        inner(s, alignment, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pack_tile_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "PackTileID",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "PackTileID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pack_tile_id(
+        i: u32,
+        j: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(u32, u32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pack_tile_id::get_offset() as isize),
+            );
+        inner(i, j, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_float_to_u_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "FloatToUInt",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "FloatToUInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn float_to_u_int(val: f32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_float_to_u_int::get_offset() as isize),
+        );
+        inner(val, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_half2_to_u_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                "Half2ToUInt",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    "Half2ToUInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn half2_to_u_int(
+        x: f32,
+        y: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_half2_to_u_int::get_offset() as isize),
+            );
+        inner(x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights {
+    #[doc = "`OverwriteStencil(crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
+    pub fn overwrite_stencil(
+        s: impl ::core::convert::Into<crate::unity_engine::rendering::stencilstate::StencilState>,
+        stencil_write_mask: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::stencilstate::StencilState {
+        unsafe {
+            __DeferredLights_unity2_raw::overwrite_stencil(
+                ::core::convert::Into::into(s),
+                ::core::convert::Into::into(stencil_write_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OverwriteStencil(crate::unity_engine::rendering::renderstateblock::RenderStateBlock, i32, i32)` overload"]
+    pub fn overwrite_stencil_2(
+        block: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+        >,
+        stencil_write_mask: impl ::core::convert::Into<i32>,
+        stencil_ref: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::renderstateblock::RenderStateBlock {
+        unsafe {
+            __DeferredLights_unity2_raw::overwrite_stencil_2(
+                ::core::convert::Into::into(block),
+                ::core::convert::Into::into(stencil_write_mask),
+                ::core::convert::Into::into(stencil_ref),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateSphereMesh()` overload"]
+    pub fn create_sphere_mesh() -> crate::unity_engine::mesh::Mesh {
+        unsafe { __DeferredLights_unity2_raw::create_sphere_mesh(::core::option::Option::None) }
+    }
+    #[doc = "`CreateHemisphereMesh()` overload"]
+    pub fn create_hemisphere_mesh() -> crate::unity_engine::mesh::Mesh {
+        unsafe { __DeferredLights_unity2_raw::create_hemisphere_mesh(::core::option::Option::None) }
+    }
+    #[doc = "`CreateFullscreenMesh()` overload"]
+    pub fn create_fullscreen_mesh() -> crate::unity_engine::mesh::Mesh {
+        unsafe { __DeferredLights_unity2_raw::create_fullscreen_mesh(::core::option::Option::None) }
+    }
+    #[doc = "`Align(i32, i32)` overload"]
+    pub fn align(
+        s: impl ::core::convert::Into<i32>,
+        alignment: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __DeferredLights_unity2_raw::align(
+                ::core::convert::Into::into(s),
+                ::core::convert::Into::into(alignment),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PackTileID(u32, u32)` overload"]
+    pub fn pack_tile_id(
+        i: impl ::core::convert::Into<u32>,
+        j: impl ::core::convert::Into<u32>,
+    ) -> u32 {
+        unsafe {
+            __DeferredLights_unity2_raw::pack_tile_id(
+                ::core::convert::Into::into(i),
+                ::core::convert::Into::into(j),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FloatToUInt(f32)` overload"]
+    pub fn float_to_u_int(val: impl ::core::convert::Into<f32>) -> u32 {
+        unsafe {
+            __DeferredLights_unity2_raw::float_to_u_int(
+                ::core::convert::Into::into(val),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Half2ToUInt(f32, f32)` overload"]
+    pub fn half2_to_u_int(
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+    ) -> u32 {
+        unsafe {
+            __DeferredLights_unity2_raw::half2_to_u_int(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DeferredLights_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+pub trait IDeferredLightsMethods: IDeferredLights {
+    #[doc = "`get_GbufferDepthIndex()` overload"]
+    fn get_gbuffer_depth_index(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_gbuffer_depth_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferAlbedoIndex()` overload"]
+    fn get_g_buffer_albedo_index(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_albedo_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferSpecularMetallicIndex()` overload"]
+    fn get_g_buffer_specular_metallic_index(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_specular_metallic_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferNormalSmoothnessIndex()` overload"]
+    fn get_g_buffer_normal_smoothness_index(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_normal_smoothness_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferLightingIndex()` overload"]
+    fn get_g_buffer_lighting_index(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_lighting_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferShadowMask()` overload"]
+    fn get_g_buffer_shadow_mask(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_shadow_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GBufferSliceCount()` overload"]
+    fn get_g_buffer_slice_count(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_slice_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGBufferFormat(i32)` overload"]
+    fn get_g_buffer_format(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_g_buffer_format(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UseShadowMask()` overload"]
+    fn get_use_shadow_mask(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_use_shadow_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UseRenderPass()` overload"]
+    fn get_use_render_pass(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_use_render_pass(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_UseRenderPass(bool)` overload"]
+    fn set_use_render_pass(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_use_render_pass(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HasDepthPrepass()` overload"]
+    fn get_has_depth_prepass(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_has_depth_prepass(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_HasDepthPrepass(bool)` overload"]
+    fn set_has_depth_prepass(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_has_depth_prepass(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsOverlay()` overload"]
+    fn get_is_overlay(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_is_overlay(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsOverlay(bool)` overload"]
+    fn set_is_overlay(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_is_overlay(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AccurateGbufferNormals()` overload"]
+    fn get_accurate_gbuffer_normals(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_accurate_gbuffer_normals(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_AccurateGbufferNormals(bool)` overload"]
+    fn set_accurate_gbuffer_normals(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_accurate_gbuffer_normals(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TiledDeferredShading()` overload"]
+    fn get_tiled_deferred_shading(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_tiled_deferred_shading(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_TiledDeferredShading(bool)` overload"]
+    fn set_tiled_deferred_shading(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_tiled_deferred_shading(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_MixedLightingSetup()` overload"]
+    fn get_mixed_lighting_setup(
+        self,
+    ) -> crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_mixed_lighting_setup(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_MixedLightingSetup(crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup)` overload"]
+    fn set_mixed_lighting_setup(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_mixed_lighting_setup(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UseJobSystem()` overload"]
+    fn get_use_job_system(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_use_job_system(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_UseJobSystem(bool)` overload"]
+    fn set_use_job_system(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_use_job_system(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RenderWidth()` overload"]
+    fn get_render_width(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_render_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RenderWidth(i32)` overload"]
+    fn set_render_width(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_render_width(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RenderHeight()` overload"]
+    fn get_render_height(self) -> i32 {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_render_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RenderHeight(i32)` overload"]
+    fn set_render_height(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_render_height(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GbufferAttachments()` overload"]
+    fn get_gbuffer_attachments(
+        self,
+    ) -> ::unity2::Array<
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    > {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_gbuffer_attachments(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_GbufferAttachments(::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)` overload"]
+    fn set_gbuffer_attachments(
+        self,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_gbuffer_attachments(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthAttachment()` overload"]
+    fn get_depth_attachment(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_attachment(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthAttachment(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
+    fn set_depth_attachment(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_attachment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthCopyTexture()` overload"]
+    fn get_depth_copy_texture(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_copy_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthCopyTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
+    fn set_depth_copy_texture(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_copy_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthInfoTexture()` overload"]
+    fn get_depth_info_texture(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_info_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthInfoTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
+    fn set_depth_info_texture(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_info_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TileDepthInfoTexture()` overload"]
+    fn get_tile_depth_info_texture(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_tile_depth_info_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_TileDepthInfoTexture(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
+    fn set_tile_depth_info_texture(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_tile_depth_info_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_GbufferAttachmentIdentifiers()` overload"]
+    fn get_gbuffer_attachment_identifiers(
+        self,
+    ) -> ::unity2::Array<
+        crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    > {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_gbuffer_attachment_identifiers(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_GbufferAttachmentIdentifiers(::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)` overload"]
+    fn set_gbuffer_attachment_identifiers(
+        self,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_gbuffer_attachment_identifiers(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthAttachmentIdentifier()` overload"]
+    fn get_depth_attachment_identifier(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_attachment_identifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthAttachmentIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    fn set_depth_attachment_identifier(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_attachment_identifier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthCopyTextureIdentifier()` overload"]
+    fn get_depth_copy_texture_identifier(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_copy_texture_identifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthCopyTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    fn set_depth_copy_texture_identifier(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_copy_texture_identifier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DepthInfoTextureIdentifier()` overload"]
+    fn get_depth_info_texture_identifier(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_depth_info_texture_identifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DepthInfoTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    fn set_depth_info_texture_identifier(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_depth_info_texture_identifier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TileDepthInfoTextureIdentifier()` overload"]
+    fn get_tile_depth_info_texture_identifier(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_tile_depth_info_texture_identifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_TileDepthInfoTextureIdentifier(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    fn set_tile_depth_info_texture_identifier(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::set_tile_depth_info_texture_identifier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::material::Material, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]
+    fn ctor(
+        self,
+        tile_depth_info_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        tile_deferred_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        stencil_deferred_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(tile_depth_info_material),
+                ::core::convert::Into::into(tile_deferred_material),
+                ::core::convert::Into::into(stencil_deferred_material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTiler(i32)` overload"]
+    fn get_tiler(
+        self,
+        i: impl ::core::convert::Into<i32>,
+    ) -> *mut crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler
+    {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::get_tiler(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn setup_lights(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::setup_lights(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ResolveMixedLightingMode(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn resolve_mixed_lighting_mode(
+        self,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::resolve_mixed_lighting_mode(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`IsRuntimeSupportedThisFrame()` overload"]
+    fn is_runtime_supported_this_frame(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::is_runtime_supported_this_frame(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::universal::internal::additionallightsshadowcasterpass::AdditionalLightsShadowCasterPass, bool, bool, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, ::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)` overload"]
+    fn setup(
+        self,
+        additional_lights_shadow_caster_pass : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass >,
+        has_depth_prepass: impl ::core::convert::Into<bool>,
+        is_overlay: impl ::core::convert::Into<bool>,
+        depth_copy_texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+        depth_info_texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+        tile_depth_info_texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+        depth_attachment: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        >,
+        gbuffer_handles: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+            >,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::setup(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(additional_lights_shadow_caster_pass),
+                ::core::convert::Into::into(has_depth_prepass),
+                ::core::convert::Into::into(is_overlay),
+                ::core::convert::Into::into(depth_copy_texture),
+                ::core::convert::Into::into(depth_info_texture),
+                ::core::convert::Into::into(tile_depth_info_texture),
+                ::core::convert::Into::into(depth_attachment),
+                ::core::convert::Into::into(gbuffer_handles),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
+    fn on_camera_cleanup(
+        self,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::on_camera_cleanup(
+                __receiver,
+                ::core::convert::Into::into(cmd),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasTileLights()` overload"]
+    fn has_tile_lights(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::has_tile_lights(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasTileDepthRangeExtraPass()` overload"]
+    fn has_tile_depth_range_extra_pass(self) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::has_tile_depth_range_extra_pass(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteTileDepthInfoPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn execute_tile_depth_info_pass(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::execute_tile_depth_info_pass(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ExecuteDownsampleBitmaskPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn execute_downsample_bitmask_pass(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::execute_downsample_bitmask_pass(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ClearStencilPartial(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
+    fn clear_stencil_partial(
+        self,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::clear_stencil_partial(
+                __receiver,
+                ::core::convert::Into::into(cmd),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteDeferredPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn execute_deferred_pass(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::execute_deferred_pass(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetupShaderLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn setup_shader_light_constants(
+        self,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::setup_shader_light_constants(
+                __receiver,
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetupMainLightConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::lightdata::LightData)` overload"]
+    fn setup_main_light_constants(
+        self,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::lightdata::LightData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::lightdata::LightData,
+            >::uninit();
+            __DeferredLights_unity2_raw::setup_main_light_constants(
+                __receiver,
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetupMatrixConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn setup_matrix_constants(
+        self,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::setup_matrix_constants(
+                __receiver,
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RenderTileLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn render_tile_lights(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::render_tile_lights(
+                __receiver,
+                ::core::convert::Into::into(context),
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RenderStencilLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn render_stencil_lights(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::render_stencil_lights(
+                __receiver,
+                ::core::convert::Into::into(context),
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RenderFog(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn render_fog(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DeferredLights_unity2_raw::render_fog(
+                __receiver,
+                ::core::convert::Into::into(context),
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`IsTileLight(crate::unity_engine::rendering::visiblelight::VisibleLight)` overload"]
+    fn is_tile_light(
+        self,
+        visible_light: impl ::core::convert::Into<
+            crate::unity_engine::rendering::visiblelight::VisibleLight,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = <DeferredLights as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeferredLights_unity2_raw::is_tile_light(
+                __receiver,
+                ::core::convert::Into::into(visible_light),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl<__T: IDeferredLights> IDeferredLightsMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
 impl DeferredLights {
@@ -864,17 +5217,140 @@ impl DeferredLights {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[::unity2::methods(value)]
-impl DeferredLights_CullLightsJob {
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeferredLights_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[::unity2::methods]
 impl DeferredLights_ShaderConstants {
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __DeferredLights_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeferredLights_CullLightsJob_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: DeferredLights_CullLightsJob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights_CullLightsJob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_execute::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights_CullLightsJob {
+    #[doc = "`Execute()` overload"]
+    pub fn execute(self) -> () {
+        unsafe {
+            __DeferredLights_CullLightsJob_unity2_raw::execute(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+pub mod prelude {
+    pub use super::DeferredLights;
+    pub use super::DeferredLights_CullLightsJob;
+    pub use super::DeferredLights_DrawCall;
+    pub use super::DeferredLights_GBufferHandles;
+    pub use super::DeferredLights_ShaderConstants;
+    pub use super::IDeferredLights;
+    pub use super::IDeferredLightsMethods;
+    pub use super::IDeferredLights_ShaderConstants;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

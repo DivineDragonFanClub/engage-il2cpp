@@ -10,28 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RefineGodWeaponSequence {
-        #[rename(name = "m_ShopMenuResult")]
-        pub m_shop_menu_result: crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2,
-        #[rename(name = "m_MenuResult")]
-        pub m_menu_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_WeaponModelRenderer")]
-        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        #[rename(name = "m_RefineGodWeaponRoot")]
-        pub m_refine_god_weapon_root: crate::app::refinegodweaponroot::RefineGodWeaponRoot,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_GodWeapon")]
-        pub m_god_weapon: crate::app::itemdata::ItemData,
-        #[rename(name = "m_RefineKind")]
-        pub m_refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-        #[rename(name = "m_WeaponSelectMenuScrollIndex")]
-        pub m_weapon_select_menu_scroll_index: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -111,70 +89,864 @@ mod __types {
             Self { value: 10 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RefineGodWeaponSequence {
+        #[rename(name = "m_ShopMenuResult")]
+        pub m_shop_menu_result: crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2,
+        #[rename(name = "m_MenuResult")]
+        pub m_menu_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_WeaponModelRenderer")]
+        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        #[rename(name = "m_RefineGodWeaponRoot")]
+        pub m_refine_god_weapon_root: crate::app::refinegodweaponroot::RefineGodWeaponRoot,
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_GodWeapon")]
+        pub m_god_weapon: crate::app::itemdata::ItemData,
+        #[rename(name = "m_RefineKind")]
+        pub m_refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+        #[rename(name = "m_WeaponSelectMenuScrollIndex")]
+        pub m_weapon_select_menu_scroll_index: i32,
+    }
 }
 
 #[cfg(feature = "app-refinegodweaponsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refinegodweaponsequence")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineGodWeaponSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            RefineGodWeaponSequence,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "LoadResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "LoadResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_resources(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_resources::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "IsLoadingResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_resources(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loading_resources::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "StartSequence",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "StartSequence",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_sequence(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start_sequence::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_top_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponTopMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponTopMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_top_menu(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_refine_god_weapon_top_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_root(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_refine_god_weapon_root::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_refine_god_weapon_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "DestroyRefineGodWeaponRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "DestroyRefineGodWeaponRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_refine_god_weapon_root(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_refine_god_weapon_root::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_select_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponSelectMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponSelectMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_select_menu(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_refine_god_weapon_select_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_param_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponParamMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponParamMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_param_menu(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_refine_god_weapon_param_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_select_menu_for_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponSelectMenuForReset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponSelectMenuForReset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_select_menu_for_reset(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_create_refine_god_weapon_select_menu_for_reset::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_refine_god_weapon_param_menu_for_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRefineGodWeaponParamMenuForReset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateRefineGodWeaponParamMenuForReset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_refine_god_weapon_param_menu_for_reset(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_create_refine_god_weapon_param_menu_for_reset::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponSequence as ::unity2::ClassIdentity>::class(),
+                "EndSequence",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponSequence as ::unity2::ClassIdentity>::NAME,
+                    "EndSequence",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_sequence(
+        this: RefineGodWeaponSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end_sequence::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponsequence")]
 impl RefineGodWeaponSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CreateDesc()` overload"]
-    #[method(name = "CreateDesc", args = 0)]
-    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`LoadResources()` overload"]
-    #[method(name = "LoadResources", args = 0)]
-    pub fn load_resources(self) -> ();
-
-    #[doc = "`IsLoadingResources()` overload"]
-    #[method(name = "IsLoadingResources", args = 0)]
-    pub fn is_loading_resources(self) -> bool;
-
-    #[doc = "`StartSequence()` overload"]
-    #[method(name = "StartSequence", args = 0)]
-    pub fn start_sequence(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponTopMenu()` overload"]
-    #[method(name = "CreateRefineGodWeaponTopMenu", args = 0)]
-    pub fn create_refine_god_weapon_top_menu(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponRoot()` overload"]
-    #[method(name = "CreateRefineGodWeaponRoot", args = 0)]
-    pub fn create_refine_god_weapon_root(self) -> ();
-
-    #[doc = "`DestroyRefineGodWeaponRoot()` overload"]
-    #[method(name = "DestroyRefineGodWeaponRoot", args = 0)]
-    pub fn destroy_refine_god_weapon_root(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponSelectMenu()` overload"]
-    #[method(name = "CreateRefineGodWeaponSelectMenu", args = 0)]
-    pub fn create_refine_god_weapon_select_menu(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponParamMenu()` overload"]
-    #[method(name = "CreateRefineGodWeaponParamMenu", args = 0)]
-    pub fn create_refine_god_weapon_param_menu(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponSelectMenuForReset()` overload"]
-    #[method(name = "CreateRefineGodWeaponSelectMenuForReset", args = 0)]
-    pub fn create_refine_god_weapon_select_menu_for_reset(self) -> ();
-
-    #[doc = "`CreateRefineGodWeaponParamMenuForReset()` overload"]
-    #[method(name = "CreateRefineGodWeaponParamMenuForReset", args = 0)]
-    pub fn create_refine_god_weapon_param_menu_for_reset(self) -> ();
-
-    #[doc = "`EndSequence()` overload"]
-    #[method(name = "EndSequence", args = 0)]
-    pub fn end_sequence(self) -> ();
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __RefineGodWeaponSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-refinegodweaponsequence")]
+pub trait IRefineGodWeaponSequenceMethods: IRefineGodWeaponSequence {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_desc(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadResources()` overload"]
+    fn load_resources(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::load_resources(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoadingResources()` overload"]
+    fn is_loading_resources(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::is_loading_resources(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StartSequence()` overload"]
+    fn start_sequence(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::start_sequence(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponTopMenu()` overload"]
+    fn create_refine_god_weapon_top_menu(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_top_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponRoot()` overload"]
+    fn create_refine_god_weapon_root(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_root(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyRefineGodWeaponRoot()` overload"]
+    fn destroy_refine_god_weapon_root(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::destroy_refine_god_weapon_root(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponSelectMenu()` overload"]
+    fn create_refine_god_weapon_select_menu(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_select_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponParamMenu()` overload"]
+    fn create_refine_god_weapon_param_menu(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_param_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponSelectMenuForReset()` overload"]
+    fn create_refine_god_weapon_select_menu_for_reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_select_menu_for_reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRefineGodWeaponParamMenuForReset()` overload"]
+    fn create_refine_god_weapon_param_menu_for_reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::create_refine_god_weapon_param_menu_for_reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndSequence()` overload"]
+    fn end_sequence(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponSequence_unity2_raw::end_sequence(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponsequence")]
+impl<__T: IRefineGodWeaponSequence> IRefineGodWeaponSequenceMethods for __T {}
 
 #[cfg(feature = "app-refinegodweaponsequence")]
 impl RefineGodWeaponSequence {
@@ -190,4 +962,24 @@ impl RefineGodWeaponSequence {
         <Self as IRefineGodWeaponSequenceMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-refinegodweaponsequence")]
+pub mod prelude {
+    pub use super::IRefineGodWeaponSequence;
+    pub use super::IRefineGodWeaponSequenceMethods;
+    pub use super::RefineGodWeaponSequence;
+    pub use super::RefineGodWeaponSequence_Label2;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

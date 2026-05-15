@@ -15,12 +15,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
-#[::unity2::methods]
-impl IMoveHandler {
-    #[doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]
-    #[method(name = "OnMove", args = 1)]
-    pub fn on_move(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IMoveHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IMoveHandler as ::unity2::ClassIdentity>::class(),
+                "OnMove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IMoveHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_move(
+        this: IMoveHandler,
         event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IMoveHandler,
+            crate::unity_engine::event_systems::axiseventdata::AxisEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_move::get_offset() as isize),
+        );
+        inner(this, event_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-imovehandler")]
+pub trait IIMoveHandlerMethods: IIMoveHandler {
+    #[doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]
+    fn on_move(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::axiseventdata::AxisEventData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <IMoveHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IMoveHandler_unity2_raw::on_move(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-imovehandler")]
+impl<__T: IIMoveHandler> IIMoveHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-imovehandler")]
+pub mod prelude {
+    pub use super::IIMoveHandler;
+    pub use super::IIMoveHandlerMethods;
+    pub use super::IMoveHandler;
 }

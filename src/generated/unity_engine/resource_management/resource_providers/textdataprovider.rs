@@ -39,43 +39,450 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
-#[::unity2::methods]
-impl TextDataProvider_InternalOp {
-    #[doc = "`GetPercentComplete()` overload"]
-    #[method(name = "GetPercentComplete", args = 0)]
-    pub fn get_percent_complete(self) -> f32;
-
-    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider)` overload"]
-    #[method(name = "Start", args = 2)]
-    pub fn start(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextDataProvider_InternalOp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_percent_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetPercentComplete",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetPercentComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_percent_complete(
+        this: TextDataProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TextDataProvider_InternalOp, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_percent_complete::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "Start",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: TextDataProvider_InternalOp,
         provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
         raw_provider : crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider,
-    ) -> ();
-
-    #[doc = "`WaitForCompletionHandler()` overload"]
-    #[method(name = "WaitForCompletionHandler", args = 0)]
-    pub fn wait_for_completion_handler(self) -> bool;
-
-    #[doc = "`RequestOperation_completed(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "RequestOperation_completed", args = 1)]
-    pub fn request_operation_completed(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (TextDataProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_start :: get_offset () as isize) ,) ;
+        inner(this, provide_handle, raw_provider, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_for_completion_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "WaitForCompletionHandler",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "WaitForCompletionHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_for_completion_handler(
+        this: TextDataProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TextDataProvider_InternalOp, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_wait_for_completion_handler::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_operation_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "RequestOperation_completed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "RequestOperation_completed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_operation_completed(
+        this: TextDataProvider_InternalOp,
         op: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`ConvertText(::unity2::Il2CppString)` overload"]
-    #[method(name = "ConvertText", args = 1)]
-    pub fn convert_text(self, text: ::unity2::Il2CppString) -> crate::system::object::Object;
-
-    #[doc = "`SendWebRequest(::unity2::Il2CppString)` overload"]
-    #[method(name = "SendWebRequest", args = 1)]
-    pub fn send_web_request(self, path: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextDataProvider_InternalOp,
+            crate::unity_engine::asyncoperation::AsyncOperation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_request_operation_completed::get_offset() as isize),
+        );
+        inner(this, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "ConvertText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "ConvertText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_text(
+        this: TextDataProvider_InternalOp,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            TextDataProvider_InternalOp,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_text::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_web_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "SendWebRequest",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "SendWebRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_web_request(
+        this: TextDataProvider_InternalOp,
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextDataProvider_InternalOp,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_web_request::get_offset() as isize),
+        );
+        inner(this, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TextDataProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextDataProvider_InternalOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+pub trait ITextDataProvider_InternalOpMethods: ITextDataProvider_InternalOp {
+    #[doc = "`GetPercentComplete()` overload"]
+    fn get_percent_complete(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::get_percent_complete(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider)` overload"]
+    fn start(
+        self,
+        provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+        raw_provider : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::start(
+                __receiver,
+                ::core::convert::Into::into(provide_handle),
+                ::core::convert::Into::into(raw_provider),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitForCompletionHandler()` overload"]
+    fn wait_for_completion_handler(self) -> bool {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::wait_for_completion_handler(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RequestOperation_completed(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    fn request_operation_completed(
+        self,
+        op: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::request_operation_completed(
+                __receiver,
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConvertText(::unity2::Il2CppString)` overload"]
+    fn convert_text(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::convert_text(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendWebRequest(::unity2::Il2CppString)` overload"]
+    fn send_web_request(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::send_web_request(
+                __receiver,
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TextDataProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextDataProvider_InternalOp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+impl<__T: ITextDataProvider_InternalOp> ITextDataProvider_InternalOpMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
 impl TextDataProvider_InternalOp {
@@ -94,35 +501,318 @@ impl TextDataProvider_InternalOp {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
-#[::unity2::methods]
-impl TextDataProvider {
-    #[doc = "`get_IgnoreFailures()` overload"]
-    #[method(name = "get_IgnoreFailures", args = 0)]
-    pub fn get_ignore_failures(self) -> bool;
-
-    #[doc = "`set_IgnoreFailures(bool)` overload"]
-    #[method(name = "set_IgnoreFailures", args = 1)]
-    pub fn set_ignore_failures(self, value: bool) -> ();
-
-    #[doc = "`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Convert", args = 2)]
-    pub fn convert(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextDataProvider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ignore_failures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider as ::unity2::ClassIdentity>::class(),
+                "get_IgnoreFailures",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider as ::unity2::ClassIdentity>::NAME,
+                    "get_IgnoreFailures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ignore_failures(
+        this: TextDataProvider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TextDataProvider, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_ignore_failures::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ignore_failures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider as ::unity2::ClassIdentity>::class(),
+                "set_IgnoreFailures",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider as ::unity2::ClassIdentity>::NAME,
+                    "set_IgnoreFailures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ignore_failures(
+        this: TextDataProvider,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextDataProvider, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_ignore_failures::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider as ::unity2::ClassIdentity>::class(),
+                "Convert",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider as ::unity2::ClassIdentity>::NAME,
+                    "Convert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert(
+        this: TextDataProvider,
         r#type: ::unity2::SystemType,
         text: ::unity2::Il2CppString,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            TextDataProvider,
+            ::unity2::SystemType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert::get_offset() as isize),
+        );
+        inner(this, r#type, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_provide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider as ::unity2::ClassIdentity>::class(),
+                "Provide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider as ::unity2::ClassIdentity>::NAME,
+                    "Provide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn provide(
+        this: TextDataProvider,
         provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (TextDataProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide :: get_offset () as isize) ,) ;
+        inner(this, provide_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextDataProvider as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextDataProvider as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TextDataProvider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextDataProvider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+pub trait ITextDataProviderMethods: ITextDataProvider {
+    #[doc = "`get_IgnoreFailures()` overload"]
+    fn get_ignore_failures(self) -> bool {
+        unsafe {
+            let __receiver = <TextDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextDataProvider_unity2_raw::get_ignore_failures(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IgnoreFailures(bool)` overload"]
+    fn set_ignore_failures(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TextDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextDataProvider_unity2_raw::set_ignore_failures(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    fn convert(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <TextDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextDataProvider_unity2_raw::convert(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn provide(
+        self,
+        provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TextDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextDataProvider_unity2_raw::provide(
+                __receiver,
+                ::core::convert::Into::into(provide_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TextDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextDataProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+impl<__T: ITextDataProvider> ITextDataProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
 impl TextDataProvider {
@@ -138,4 +828,22 @@ impl TextDataProvider {
         <Self as ITextDataProviderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+pub mod prelude {
+    pub use super::ITextDataProvider;
+    pub use super::ITextDataProviderMethods;
+    pub use super::ITextDataProvider_InternalOp;
+    pub use super::ITextDataProvider_InternalOpMethods;
+    pub use super::TextDataProvider;
+    pub use super::TextDataProvider_InternalOp;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+    #[cfg(
+        feature = "unity_engine-resource_management-resource_providers-resourceproviderbase"
+    )]
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
 }

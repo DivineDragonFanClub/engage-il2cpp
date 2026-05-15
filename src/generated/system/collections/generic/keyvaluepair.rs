@@ -17,12 +17,86 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-keyvaluepair")]
-#[::unity2::methods]
-impl KeyValuePair {
-    #[doc = "`PairToString(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "PairToString", args = 2)]
-    pub fn pair_to_string(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __KeyValuePair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pair_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KeyValuePair as ::unity2::ClassIdentity>::class(),
+                "PairToString",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KeyValuePair as ::unity2::ClassIdentity>::NAME,
+                    "PairToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pair_to_string(
         key: crate::system::object::Object,
         value: crate::system::object::Object,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pair_to_string::get_offset() as isize),
+        );
+        inner(key, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-generic-keyvaluepair")]
+impl KeyValuePair {
+    #[doc = "`PairToString(crate::system::object::Object, crate::system::object::Object)` overload"]
+    pub fn pair_to_string(
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __KeyValuePair_unity2_raw::pair_to_string(
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-generic-keyvaluepair")]
+pub mod prelude {
+    pub use super::IKeyValuePair;
+    pub use super::KeyValuePair;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

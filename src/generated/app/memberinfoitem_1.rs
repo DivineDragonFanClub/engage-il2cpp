@@ -94,3 +94,16 @@ impl<T0: ::unity2::ClassIdentity> MemberInfoItem_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-memberinfoitem_1")]
+pub mod prelude {
+    pub use super::IMemberInfoItem_1;
+    pub use super::IMemberInfoItem_1Methods;
+    pub use super::MemberInfoItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    #[cfg(feature = "app-menuitem")]
+    pub use crate::app::menuitem::IMenuItemMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

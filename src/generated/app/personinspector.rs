@@ -22,20 +22,149 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-personinspector")]
-#[::unity2::methods]
-impl PersonInspector {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PersonInspector_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapinspector :: MapInspector_Kind as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersonInspector as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersonInspector as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PersonInspector,
         kind: crate::app::mapinspector::MapInspector_Kind,
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ();
-
-    #[doc = "`IsEanble(i32)` overload"]
-    #[method(name = "IsEanble", args = 1)]
-    pub fn is_eanble(self, person: i32) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PersonInspector,
+            crate::app::mapinspector::MapInspector_Kind,
+            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, kind, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_eanble {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersonInspector as ::unity2::ClassIdentity>::class(),
+                "IsEanble",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersonInspector as ::unity2::ClassIdentity>::NAME,
+                    "IsEanble",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_eanble(
+        this: PersonInspector,
+        person: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PersonInspector, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_eanble::get_offset() as isize),
+            );
+        inner(this, person, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-personinspector")]
+pub trait IPersonInspectorMethods: IPersonInspector {
+    #[doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn ctor(
+        self,
+        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
+        args: impl ::core::convert::Into<
+            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PersonInspector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersonInspector_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEanble(i32)` overload"]
+    fn is_eanble(self, person: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <PersonInspector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersonInspector_unity2_raw::is_eanble(
+                __receiver,
+                ::core::convert::Into::into(person),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-personinspector")]
+impl<__T: IPersonInspector> IPersonInspectorMethods for __T {}
 
 #[cfg(feature = "app-personinspector")]
 impl PersonInspector {
@@ -54,4 +183,20 @@ impl PersonInspector {
         <Self as IPersonInspectorMethods>::ctor(this, kind, args);
         this
     }
+}
+
+#[cfg(feature = "app-personinspector")]
+pub mod prelude {
+    pub use super::IPersonInspector;
+    pub use super::IPersonInspectorMethods;
+    pub use super::PersonInspector;
+    pub use crate::app::mapinspector::IMapInspector;
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    pub use crate::app::scriptutil::IScriptUtil;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -71,3 +71,16 @@ impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-treeset_1")]
+pub mod prelude {
+    pub use super::ITreeSet_1;
+    pub use super::ITreeSet_1Methods;
+    pub use super::TreeSet_1;
+    pub use crate::system::collections::generic::sortedset_1::ISortedSet_1;
+    #[cfg(feature = "system-collections-generic-sortedset_1")]
+    pub use crate::system::collections::generic::sortedset_1::ISortedSet_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -10,20 +10,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]
-    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.ItemParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct ExchangeYesNoDialog_ItemParam {
-        #[rename(name = "sprite")]
-        pub sprite: crate::unity_engine::sprite::Sprite,
-        #[rename(name = "name")]
-        pub name: ::unity2::Il2CppString,
-        #[rename(name = "num")]
-        pub num: i32,
-        #[rename(name = "enabledNum")]
-        pub enabled_num: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
     #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
     #[parent(crate::system::object::Object)]
@@ -41,42 +27,96 @@ mod __types {
         #[rename(name = "m_IsForWell")]
         pub m_is_for_well: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]
+    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.ItemParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct ExchangeYesNoDialog_ItemParam {
+        #[rename(name = "sprite")]
+        pub sprite: crate::unity_engine::sprite::Sprite,
+        #[rename(name = "name")]
+        pub name: ::unity2::Il2CppString,
+        #[rename(name = "num")]
+        pub num: i32,
+        #[rename(name = "enabledNum")]
+        pub enabled_num: bool,
+    }
 }
 
 #[cfg(feature = "app-exchangeyesnodialog-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-#[::unity2::methods]
-impl ExchangeYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeYesNoDialog_ItemParam),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExchangeYesNoDialog_MoneyParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as IExchangeYesNoDialog_ItemParamMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ExchangeYesNoDialog_MoneyParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-#[::unity2::methods]
-impl ExchangeYesNoDialog_MoneyParam {
+pub trait IExchangeYesNoDialog_MoneyParamMethods: IExchangeYesNoDialog_MoneyParam {
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ExchangeYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ExchangeYesNoDialog_MoneyParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl<__T: IExchangeYesNoDialog_MoneyParam> IExchangeYesNoDialog_MoneyParamMethods for __T {}
 
 #[cfg(feature = "app-exchangeyesnodialog")]
 impl ExchangeYesNoDialog_MoneyParam {
@@ -95,153 +135,1286 @@ impl ExchangeYesNoDialog_MoneyParam {
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-#[::unity2::methods]
-impl ExchangeYesNoDialog {
-    #[doc = "`get_m_GetItemTitle()` overload"]
-    #[method(name = "get_m_GetItemTitle", args = 0)]
-    pub fn get_m_get_item_title(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_m_GetItemTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_m_GetItemTitle", args = 1)]
-    pub fn set_m_get_item_title(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_m_GetItemParamList()` overload"]
-    #[method(name = "get_m_GetItemParamList", args = 0)]
-    pub fn get_m_get_item_param_list(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExchangeYesNoDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_get_item_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_GetItemTitle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GetItemTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_get_item_title(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_get_item_title::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_get_item_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_GetItemTitle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GetItemTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_get_item_title(
+        this: ExchangeYesNoDialog,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_get_item_title::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_get_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_GetItemParamList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GetItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_get_item_param_list(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-    >;
-
-    #[doc = "`set_m_GetItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)` overload"]
-    #[method(name = "set_m_GetItemParamList", args = 1)]
-    pub fn set_m_get_item_param_list(
-        self,
+    > {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_get_item_param_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_get_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_GetItemParamList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GetItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_get_item_param_list(
+        this: ExchangeYesNoDialog,
         value: crate::system::collections::generic::list_1::List_1<
             crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
         >,
-    ) -> ();
-
-    #[doc = "`get_m_GetMoneyParam()` overload"]
-    #[method(name = "get_m_GetMoneyParam", args = 0)]
-    pub fn get_m_get_money_param(
-        self,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam;
-
-    #[doc = "`set_m_GetMoneyParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    #[method(name = "set_m_GetMoneyParam", args = 1)]
-    pub fn set_m_get_money_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_get_item_param_list::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_get_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_GetMoneyParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GetMoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_get_money_param(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam {
+        let inner : extern "C" fn (ExchangeYesNoDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_m_get_money_param :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_get_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_GetMoneyParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GetMoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_get_money_param(
+        this: ExchangeYesNoDialog,
         value: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`get_m_GetItemBeforeParam()` overload"]
-    #[method(name = "get_m_GetItemBeforeParam", args = 0)]
-    pub fn get_m_get_item_before_param(
-        self,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam;
-
-    #[doc = "`set_m_GetItemBeforeParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)` overload"]
-    #[method(name = "set_m_GetItemBeforeParam", args = 1)]
-    pub fn set_m_get_item_before_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_get_money_param::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_get_item_before_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_GetItemBeforeParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GetItemBeforeParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_get_item_before_param(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_get_item_before_param::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_get_item_before_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_GetItemBeforeParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GetItemBeforeParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_get_item_before_param(
+        this: ExchangeYesNoDialog,
         value: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-    ) -> ();
-
-    #[doc = "`get_m_GetItemAfterParam()` overload"]
-    #[method(name = "get_m_GetItemAfterParam", args = 0)]
-    pub fn get_m_get_item_after_param(
-        self,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam;
-
-    #[doc = "`set_m_GetItemAfterParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)` overload"]
-    #[method(name = "set_m_GetItemAfterParam", args = 1)]
-    pub fn set_m_get_item_after_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_get_item_before_param::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_get_item_after_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_GetItemAfterParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_GetItemAfterParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_get_item_after_param(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_get_item_after_param::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_get_item_after_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_GetItemAfterParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_GetItemAfterParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_get_item_after_param(
+        this: ExchangeYesNoDialog,
         value: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-    ) -> ();
-
-    #[doc = "`get_m_CostItemTitle()` overload"]
-    #[method(name = "get_m_CostItemTitle", args = 0)]
-    pub fn get_m_cost_item_title(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_m_CostItemTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_m_CostItemTitle", args = 1)]
-    pub fn set_m_cost_item_title(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_m_CostItemParamList()` overload"]
-    #[method(name = "get_m_CostItemParamList", args = 0)]
-    pub fn get_m_cost_item_param_list(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_get_item_after_param::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_cost_item_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_CostItemTitle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_CostItemTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_cost_item_title(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_cost_item_title::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_cost_item_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_CostItemTitle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_CostItemTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_cost_item_title(
+        this: ExchangeYesNoDialog,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_cost_item_title::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_cost_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_CostItemParamList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_CostItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_cost_item_param_list(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-    >;
-
-    #[doc = "`set_m_CostItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)` overload"]
-    #[method(name = "set_m_CostItemParamList", args = 1)]
-    pub fn set_m_cost_item_param_list(
-        self,
+    > {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_cost_item_param_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_cost_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_CostItemParamList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_CostItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_cost_item_param_list(
+        this: ExchangeYesNoDialog,
         value: crate::system::collections::generic::list_1::List_1<
             crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
         >,
-    ) -> ();
-
-    #[doc = "`get_m_CostMoneyParam()` overload"]
-    #[method(name = "get_m_CostMoneyParam", args = 0)]
-    pub fn get_m_cost_money_param(
-        self,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam;
-
-    #[doc = "`set_m_CostMoneyParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    #[method(name = "set_m_CostMoneyParam", args = 1)]
-    pub fn set_m_cost_money_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_cost_item_param_list::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_cost_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_CostMoneyParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_CostMoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_cost_money_param(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam {
+        let inner : extern "C" fn (ExchangeYesNoDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_m_cost_money_param :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_cost_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_CostMoneyParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_CostMoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_cost_money_param(
+        this: ExchangeYesNoDialog,
         value: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`get_m_UsingGetItemList()` overload"]
-    #[method(name = "get_m_UsingGetItemList", args = 0)]
-    pub fn get_m_using_get_item_list(self) -> bool;
-
-    #[doc = "`set_m_UsingGetItemList(bool)` overload"]
-    #[method(name = "set_m_UsingGetItemList", args = 1)]
-    pub fn set_m_using_get_item_list(self, value: bool) -> ();
-
-    #[doc = "`get_m_UsingGetBeforeAfter()` overload"]
-    #[method(name = "get_m_UsingGetBeforeAfter", args = 0)]
-    pub fn get_m_using_get_before_after(self) -> bool;
-
-    #[doc = "`set_m_UsingGetBeforeAfter(bool)` overload"]
-    #[method(name = "set_m_UsingGetBeforeAfter", args = 1)]
-    pub fn set_m_using_get_before_after(self, value: bool) -> ();
-
-    #[doc = "`get_m_UsingGetLongName()` overload"]
-    #[method(name = "get_m_UsingGetLongName", args = 0)]
-    pub fn get_m_using_get_long_name(self) -> bool;
-
-    #[doc = "`set_m_UsingGetLongName(bool)` overload"]
-    #[method(name = "set_m_UsingGetLongName", args = 1)]
-    pub fn set_m_using_get_long_name(self, value: bool) -> ();
-
-    #[doc = "`get_m_UsingGetNameOnly()` overload"]
-    #[method(name = "get_m_UsingGetNameOnly", args = 0)]
-    pub fn get_m_using_get_name_only(self) -> bool;
-
-    #[doc = "`set_m_UsingGetNameOnly(bool)` overload"]
-    #[method(name = "set_m_UsingGetNameOnly", args = 1)]
-    pub fn set_m_using_get_name_only(self, value: bool) -> ();
-
-    #[doc = "`get_m_EnabledKeyWaitStyle()` overload"]
-    #[method(name = "get_m_EnabledKeyWaitStyle", args = 0)]
-    pub fn get_m_enabled_key_wait_style(self) -> bool;
-
-    #[doc = "`set_m_EnabledKeyWaitStyle(bool)` overload"]
-    #[method(name = "set_m_EnabledKeyWaitStyle", args = 1)]
-    pub fn set_m_enabled_key_wait_style(self, value: bool) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
-    #[method(name = "CreateBind", args = 10)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_cost_money_param::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_using_get_item_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_UsingGetItemList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_UsingGetItemList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_using_get_item_list(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_using_get_item_list::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_using_get_item_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_UsingGetItemList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_UsingGetItemList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_using_get_item_list(
+        this: ExchangeYesNoDialog,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_m_using_get_item_list::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_using_get_before_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_UsingGetBeforeAfter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_UsingGetBeforeAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_using_get_before_after(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_using_get_before_after::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_using_get_before_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_UsingGetBeforeAfter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_UsingGetBeforeAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_using_get_before_after(
+        this: ExchangeYesNoDialog,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_m_using_get_before_after::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_using_get_long_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_UsingGetLongName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_UsingGetLongName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_using_get_long_name(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_using_get_long_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_using_get_long_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_UsingGetLongName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_UsingGetLongName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_using_get_long_name(
+        this: ExchangeYesNoDialog,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_m_using_get_long_name::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_using_get_name_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_UsingGetNameOnly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_UsingGetNameOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_using_get_name_only(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_using_get_name_only::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_using_get_name_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_UsingGetNameOnly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_UsingGetNameOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_using_get_name_only(
+        this: ExchangeYesNoDialog,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_m_using_get_name_only::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_enabled_key_wait_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_EnabledKeyWaitStyle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_EnabledKeyWaitStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_enabled_key_wait_style(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_m_enabled_key_wait_style::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_enabled_key_wait_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_EnabledKeyWaitStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_EnabledKeyWaitStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_enabled_key_wait_style(
+        this: ExchangeYesNoDialog,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_m_enabled_key_wait_style::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemyes :: BasicDialogItemYes as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemno :: BasicDialogItemNo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         top_message: ::unity2::Il2CppString,
         get_item_title: ::unity2::Il2CppString,
@@ -256,11 +1429,77 @@ impl ExchangeYesNoDialog {
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
         yes_menu_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
         no_menu_item: crate::app::basicdialogitemno::BasicDialogItemNo,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
-    #[method(name = "CreateBind", args = 10)]
-    pub fn create_bind_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::basicdialogitemno::BasicDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            yes_menu_item,
+            no_menu_item,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemyes :: BasicDialogItemYes as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemno :: BasicDialogItemNo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
         super_: crate::app::procinst::ProcInst,
         top_message: ::unity2::Il2CppString,
         get_item_title: ::unity2::Il2CppString,
@@ -273,11 +1512,75 @@ impl ExchangeYesNoDialog {
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
         yes_menu_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
         no_menu_item: crate::app::basicdialogitemno::BasicDialogItemNo,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
-    #[method(name = "CreateBind", args = 9)]
-    pub fn create_bind_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::basicdialogitemno::BasicDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(
+            super_,
+            top_message,
+            get_item_title,
+            get_before_item_param,
+            get_after_item_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            yes_menu_item,
+            no_menu_item,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemyes :: BasicDialogItemYes as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemno :: BasicDialogItemNo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                9,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_3(
         super_: crate::app::procinst::ProcInst,
         top_message: ::unity2::Il2CppString,
         get_item_title: ::unity2::Il2CppString,
@@ -289,11 +1592,82 @@ impl ExchangeYesNoDialog {
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
         yes_menu_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
         no_menu_item: crate::app::basicdialogitemno::BasicDialogItemNo,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
-    #[method(name = "CreateBind", args = 8)]
-    pub fn create_bind_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::basicdialogitemno::BasicDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_3::get_offset() as isize),
+        );
+        inner(
+            super_,
+            top_message,
+            get_item_title,
+            get_item_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            yes_menu_item,
+            no_menu_item,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogitemyes::BasicDialogItemYes as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogitemno::BasicDialogItemNo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_4(
         super_: crate::app::procinst::ProcInst,
         top_message: ::unity2::Il2CppString,
         get_item_title: ::unity2::Il2CppString,
@@ -302,11 +1676,80 @@ impl ExchangeYesNoDialog {
         cost_item_name: ::unity2::Il2CppString,
         yes_menu_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
         no_menu_item: crate::app::basicdialogitemno::BasicDialogItemNo,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBindForWell(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
-    #[method(name = "CreateBindForWell", args = 8)]
-    pub fn create_bind_for_well(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::basicdialogitemno::BasicDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_4::get_offset() as isize),
+        );
+        inner(
+            super_,
+            top_message,
+            get_item_title,
+            get_item_name,
+            cost_item_title,
+            cost_item_name,
+            yes_menu_item,
+            no_menu_item,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_for_well {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+                > as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogitemyes::BasicDialogItemYes as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogitemno::BasicDialogItemNo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBindForWell",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindForWell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_for_well(
         super_: crate::app::procinst::ProcInst,
         top_message: ::unity2::Il2CppString,
         get_item_title: ::unity2::Il2CppString,
@@ -317,22 +1760,138 @@ impl ExchangeYesNoDialog {
         cost_item_name: ::unity2::Il2CppString,
         yes_menu_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
         no_menu_item: crate::app::basicdialogitemno::BasicDialogItemNo,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateDifficultyChangeBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = "CreateDifficultyChangeBind", args = 3)]
-    pub fn create_difficulty_change_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::basicdialogitemno::BasicDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_for_well::get_offset() as isize),
+        );
+        inner(
+            super_,
+            top_message,
+            get_item_title,
+            get_item_list,
+            cost_item_title,
+            cost_item_name,
+            yes_menu_item,
+            no_menu_item,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_difficulty_change_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateDifficultyChangeBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateDifficultyChangeBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_difficulty_change_bind(
         super_: crate::app::procinst::ProcInst,
         now_difficulty_name: ::unity2::Il2CppString,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_difficulty_change_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            now_difficulty_name,
+            menu_item_list,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ExchangeYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -348,12 +1907,80 @@ impl ExchangeYesNoDialog {
             crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
         >,
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: ExchangeYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -367,12 +1994,78 @@ impl ExchangeYesNoDialog {
             crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
         >,
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    #[method(name = ".ctor", args = 8)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_before_param,
+            get_item_after_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: ExchangeYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -385,12 +2078,76 @@ impl ExchangeYesNoDialog {
             crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
         >,
         cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: ExchangeYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -400,12 +2157,72 @@ impl ExchangeYesNoDialog {
         get_item_name: ::unity2::Il2CppString,
         cost_item_title: ::unity2::Il2CppString,
         cost_item_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_name,
+            cost_item_title,
+            cost_item_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_5(
+        this: ExchangeYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -417,35 +2234,1159 @@ impl ExchangeYesNoDialog {
         >,
         cost_item_title: ::unity2::Il2CppString,
         cost_item_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`AfterBuild()` overload"]
-    #[method(name = "AfterBuild", args = 0)]
-    pub fn after_build(self) -> ();
-
-    #[doc = "`SetKeyWaitStyle(bool)` overload"]
-    #[method(name = "SetKeyWaitStyle", args = 1)]
-    pub fn set_key_wait_style(self, enabled: bool) -> ();
-
-    #[doc = "`GetGetItemParamMax()` overload"]
-    #[method(name = "GetGetItemParamMax", args = 0)]
-    pub fn get_get_item_param_max() -> i32;
-
-    #[doc = "`GetCostItemParamMax()` overload"]
-    #[method(name = "GetCostItemParamMax", args = 0)]
-    pub fn get_cost_item_param_max() -> i32;
-
-    #[doc = "`SetDisposeEventHandler(crate::system::action::Action)` overload"]
-    #[method(name = "SetDisposeEventHandler", args = 1)]
-    pub fn set_dispose_event_handler(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_list,
+            cost_item_title,
+            cost_item_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_after_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "AfterBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn after_build(
+        this: ExchangeYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_after_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_key_wait_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "SetKeyWaitStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "SetKeyWaitStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_key_wait_style(
+        this: ExchangeYesNoDialog,
+        enabled: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_key_wait_style::get_offset() as isize),
+            );
+        inner(this, enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_get_item_param_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "GetGetItemParamMax",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "GetGetItemParamMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_get_item_param_max(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_get_item_param_max::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cost_item_param_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "GetCostItemParamMax",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "GetCostItemParamMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cost_item_param_max(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_cost_item_param_max::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dispose_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "SetDisposeEventHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "SetDisposeEventHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_dispose_event_handler(
+        this: ExchangeYesNoDialog,
         dispose_event_handler: crate::system::action::Action,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ExchangeYesNoDialog,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_dispose_event_handler::get_offset() as isize),
+        );
+        inner(this, dispose_event_handler, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        get_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        yes_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_param_list),
+                ::core::convert::Into::into(get_money_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::convert::Into::into(yes_menu_item),
+                ::core::convert::Into::into(no_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_before_item_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_after_item_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        yes_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_before_item_param),
+                ::core::convert::Into::into(get_after_item_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::convert::Into::into(yes_menu_item),
+                ::core::convert::Into::into(no_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind_3(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        yes_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_bind_3(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::convert::Into::into(yes_menu_item),
+                ::core::convert::Into::into(no_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind_4(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_bind_4(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_name),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_name),
+                ::core::convert::Into::into(yes_menu_item),
+                ::core::convert::Into::into(no_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindForWell(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind_for_well(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_menu_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_bind_for_well(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_list),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_name),
+                ::core::convert::Into::into(yes_menu_item),
+                ::core::convert::Into::into(no_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDifficultyChangeBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    pub fn create_difficulty_change_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        now_difficulty_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::create_difficulty_change_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(now_difficulty_name),
+                ::core::convert::Into::into(menu_item_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGetItemParamMax()` overload"]
+    pub fn get_get_item_param_max() -> i32 {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::get_get_item_param_max(::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCostItemParamMax()` overload"]
+    pub fn get_cost_item_param_max() -> i32 {
+        unsafe {
+            __ExchangeYesNoDialog_unity2_raw::get_cost_item_param_max(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+pub trait IExchangeYesNoDialogMethods: IExchangeYesNoDialog {
+    #[doc = "`get_m_GetItemTitle()` overload"]
+    fn get_m_get_item_title(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_get_item_title(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GetItemTitle(::unity2::Il2CppString)` overload"]
+    fn set_m_get_item_title(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_get_item_title(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_GetItemParamList()` overload"]
+    fn get_m_get_item_param_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+    > {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_get_item_param_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GetItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)` overload"]
+    fn set_m_get_item_param_list(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_get_item_param_list(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_GetMoneyParam()` overload"]
+    fn get_m_get_money_param(
+        self,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_get_money_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GetMoneyParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn set_m_get_money_param(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_get_money_param(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_GetItemBeforeParam()` overload"]
+    fn get_m_get_item_before_param(
+        self,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_get_item_before_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GetItemBeforeParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)` overload"]
+    fn set_m_get_item_before_param(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_get_item_before_param(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_GetItemAfterParam()` overload"]
+    fn get_m_get_item_after_param(
+        self,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_get_item_after_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_GetItemAfterParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)` overload"]
+    fn set_m_get_item_after_param(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_get_item_after_param(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_CostItemTitle()` overload"]
+    fn get_m_cost_item_title(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_cost_item_title(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_CostItemTitle(::unity2::Il2CppString)` overload"]
+    fn set_m_cost_item_title(
+        self,
+        value: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_cost_item_title(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_CostItemParamList()` overload"]
+    fn get_m_cost_item_param_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+    > {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_cost_item_param_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_CostItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)` overload"]
+    fn set_m_cost_item_param_list(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_cost_item_param_list(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_CostMoneyParam()` overload"]
+    fn get_m_cost_money_param(
+        self,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_cost_money_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_CostMoneyParam(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn set_m_cost_money_param(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_cost_money_param(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_UsingGetItemList()` overload"]
+    fn get_m_using_get_item_list(self) -> bool {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_using_get_item_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_UsingGetItemList(bool)` overload"]
+    fn set_m_using_get_item_list(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_using_get_item_list(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_UsingGetBeforeAfter()` overload"]
+    fn get_m_using_get_before_after(self) -> bool {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_using_get_before_after(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_UsingGetBeforeAfter(bool)` overload"]
+    fn set_m_using_get_before_after(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_using_get_before_after(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_UsingGetLongName()` overload"]
+    fn get_m_using_get_long_name(self) -> bool {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_using_get_long_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_UsingGetLongName(bool)` overload"]
+    fn set_m_using_get_long_name(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_using_get_long_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_UsingGetNameOnly()` overload"]
+    fn get_m_using_get_name_only(self) -> bool {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_using_get_name_only(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_UsingGetNameOnly(bool)` overload"]
+    fn set_m_using_get_name_only(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_using_get_name_only(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_EnabledKeyWaitStyle()` overload"]
+    fn get_m_enabled_key_wait_style(self) -> bool {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::get_m_enabled_key_wait_style(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_EnabledKeyWaitStyle(bool)` overload"]
+    fn set_m_enabled_key_wait_style(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_m_enabled_key_wait_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        get_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_param_list),
+                ::core::convert::Into::into(get_money_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn ctor_2(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_before_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_item_after_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_before_param),
+                ::core::convert::Into::into(get_item_after_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn ctor_3(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor_4(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_name),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor_5(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::ctor_5(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_list),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::after_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetKeyWaitStyle(bool)` overload"]
+    fn set_key_wait_style(self, enabled: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_key_wait_style(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetDisposeEventHandler(crate::system::action::Action)` overload"]
+    fn set_dispose_event_handler(
+        self,
+        dispose_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ExchangeYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExchangeYesNoDialog_unity2_raw::set_dispose_event_handler(
+                __receiver,
+                ::core::convert::Into::into(dispose_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl<__T: IExchangeYesNoDialog> IExchangeYesNoDialogMethods for __T {}
 
 #[cfg(feature = "app-exchangeyesnodialog")]
 impl ExchangeYesNoDialog {
@@ -628,4 +3569,117 @@ impl ExchangeYesNoDialog {
         );
         this
     }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExchangeYesNoDialog_ItemParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExchangeYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ExchangeYesNoDialog_ItemParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+pub trait IExchangeYesNoDialog_ItemParamMethods: IExchangeYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ExchangeYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ExchangeYesNoDialog_ItemParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl<__T: IExchangeYesNoDialog_ItemParam> IExchangeYesNoDialog_ItemParamMethods for __T {}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExchangeYesNoDialog_ItemParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExchangeYesNoDialog_ItemParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+pub mod prelude {
+    pub use super::ExchangeYesNoDialog;
+    pub use super::ExchangeYesNoDialog_ItemParam;
+    pub use super::ExchangeYesNoDialog_MoneyParam;
+    pub use super::IExchangeYesNoDialog;
+    pub use super::IExchangeYesNoDialogMethods;
+    pub use super::IExchangeYesNoDialog_ItemParam;
+    pub use super::IExchangeYesNoDialog_ItemParamMethods;
+    pub use super::IExchangeYesNoDialog_MoneyParam;
+    pub use super::IExchangeYesNoDialog_MoneyParamMethods;
+    pub use crate::app::basicdialog::IBasicDialog;
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

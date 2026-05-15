@@ -43,51 +43,612 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-characterlyingpegasus")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterLyingPegasus_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_need_to_work {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "IsNeedToWork",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "IsNeedToWork",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_need_to_work(
+        chr: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_need_to_work::get_offset() as isize),
+        );
+        inner(chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_my_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "MyStart",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "MyStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn my_start(
+        this: CharacterLyingPegasus,
+        die_hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_my_start::get_offset() as isize),
+            );
+        inner(this, die_hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_my_dead_pose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "MakeMyDeadPose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "MakeMyDeadPose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_my_dead_pose(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_make_my_dead_pose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_my_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "MyUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "MyUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn my_update(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_my_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_my_late_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "MyLateUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "MyLateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn my_late_update(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_my_late_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ground_tr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "GetGroundTR",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "GetGroundTR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ground_tr(
+        pos: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ground_tr::get_offset() as isize),
+        );
+        inner(pos, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ground_tr_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "GetGroundTR",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "GetGroundTR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ground_tr_2(
+        pos: *mut crate::unity_engine::vector3::Vector3,
+        abcd: *mut crate::unity_engine::vector4::Vector4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ground_tr_2::get_offset() as isize),
+        );
+        inner(pos, abcd, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_land_human {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "OnLandHuman",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "OnLandHuman",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_land_human(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_land_human::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_land_pegasus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                "OnLandPegasus",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    "OnLandPegasus",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_land_pegasus(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_land_pegasus::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLyingPegasus as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLyingPegasus as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterLyingPegasus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterLyingPegasus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-characterlyingpegasus")]
 impl CharacterLyingPegasus {
     #[doc = "`IsNeedToWork(crate::combat::character::Character)` overload"]
-    #[method(name = "IsNeedToWork", args = 1)]
-    pub fn is_need_to_work(chr: crate::combat::character::Character) -> bool;
-
-    #[doc = "`MyStart(i32)` overload"]
-    #[method(name = "MyStart", args = 1)]
-    pub fn my_start(self, die_hash: i32) -> ();
-
-    #[doc = "`MakeMyDeadPose()` overload"]
-    #[method(name = "MakeMyDeadPose", args = 0)]
-    pub fn make_my_dead_pose(self) -> ();
-
-    #[doc = "`MyUpdate()` overload"]
-    #[method(name = "MyUpdate", args = 0)]
-    pub fn my_update(self) -> ();
-
-    #[doc = "`MyLateUpdate()` overload"]
-    #[method(name = "MyLateUpdate", args = 0)]
-    pub fn my_late_update(self) -> ();
-
-    #[doc = "`GetGroundTR(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetGroundTR", args = 1)]
-    pub fn get_ground_tr(pos: crate::unity_engine::vector3::Vector3) -> crate::combat::tr::TR;
-
-    #[doc = "`GetGroundTR(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "GetGroundTR", args = 2)]
-    pub fn get_ground_tr_2(
-        pos: crate::unity_engine::vector3::Vector3,
-        abcd: crate::unity_engine::vector4::Vector4,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`OnLandHuman()` overload"]
-    #[method(name = "OnLandHuman", args = 0)]
-    pub fn on_land_human(self) -> ();
-
-    #[doc = "`OnLandPegasus()` overload"]
-    #[method(name = "OnLandPegasus", args = 0)]
-    pub fn on_land_pegasus(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn is_need_to_work(
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> bool {
+        unsafe {
+            __CharacterLyingPegasus_unity2_raw::is_need_to_work(
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn get_ground_tr() -> (crate::combat::tr::TR, crate::unity_engine::vector3::Vector3) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __CharacterLyingPegasus_unity2_raw::get_ground_tr(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector4::Vector4)` overload"]
+    pub fn get_ground_tr_2() -> (
+        crate::combat::tr::TR,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector4::Vector4,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let __ret = {
+                __CharacterLyingPegasus_unity2_raw::get_ground_tr_2(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
 }
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+pub trait ICharacterLyingPegasusMethods: ICharacterLyingPegasus {
+    #[doc = "`MyStart(i32)` overload"]
+    fn my_start(self, die_hash: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::my_start(
+                __receiver,
+                ::core::convert::Into::into(die_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MakeMyDeadPose()` overload"]
+    fn make_my_dead_pose(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::make_my_dead_pose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MyUpdate()` overload"]
+    fn my_update(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::my_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MyLateUpdate()` overload"]
+    fn my_late_update(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::my_late_update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnLandHuman()` overload"]
+    fn on_land_human(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::on_land_human(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnLandPegasus()` overload"]
+    fn on_land_pegasus(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::on_land_pegasus(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLyingPegasus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLyingPegasus_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+impl<__T: ICharacterLyingPegasus> ICharacterLyingPegasusMethods for __T {}
 
 #[cfg(feature = "combat-characterlyingpegasus")]
 impl CharacterLyingPegasus {
@@ -103,4 +664,29 @@ impl CharacterLyingPegasus {
         <Self as ICharacterLyingPegasusMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+pub mod prelude {
+    pub use super::CharacterLyingPegasus;
+    pub use super::ICharacterLyingPegasus;
+    pub use super::ICharacterLyingPegasusMethods;
+    pub use crate::combat::characterlying::ICharacterLying;
+    #[cfg(feature = "combat-characterlying")]
+    pub use crate::combat::characterlying::ICharacterLyingMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -10,62 +10,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_TrailModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.TrailModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_TrailModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Trail {
-        pub m_timer: f32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Trail";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Trail {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -94,111 +38,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Emission {
-        pub m_particle_spacing: f32,
-        pub m_to_emit_accumulator: f32,
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Lights {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-        pub m_particle_emission_counter: f32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_Trails {
-        pub positions: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
-        pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
-        pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
-        pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
-        pub max_trail_count: i32,
-        pub max_positions_per_trail_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_Trails {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.Trails";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_Trails {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_RotationOverLifetimeModule {
+    pub struct ParticleSystem_ColorOverLifetimeModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
+        const NAME: &'static str = "ParticleSystem.ColorOverLifetimeModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -207,91 +57,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_VelocityOverLifetimeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Collision {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Collision";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Collision {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_RotationBySpeedModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
+    impl ::unity2::IlType for ParticleSystem_ColorOverLifetimeModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -328,90 +94,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_CollisionModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.CollisionModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_CollisionModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ExternalForcesModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Initial {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -437,6 +119,296 @@ mod __types {
     }
 
     impl ::unity2::IlType for ParticleSystem_MinMaxCurve {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_Particle {
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        pub m_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
+        pub m_rotation: crate::unity_engine::vector3::Vector3,
+        pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_start_size: crate::unity_engine::vector3::Vector3,
+        pub m_start_color: crate::unity_engine::color32::Color32,
+        pub m_random_seed: u32,
+        pub m_parent_random_seed: u32,
+        pub m_lifetime: f32,
+        pub m_start_lifetime: f32,
+        pub m_mesh_index: i32,
+        pub m_emit_accumulator0: f32,
+        pub m_emit_accumulator1: f32,
+        pub m_flags: u32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_Particle {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.Particle";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_Particle {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_MainModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.MainModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_MainModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Trail {
+        pub m_timer: f32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Trail";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Trail {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_RotationBySpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Shape {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+        pub m_radius_timer: f32,
+        pub m_radius_timer_prev: f32,
+        pub m_arc_timer: f32,
+        pub m_arc_timer_prev: f32,
+        pub m_mesh_spawn_timer: f32,
+        pub m_mesh_spawn_timer_prev: f32,
+        pub m_ordered_mesh_vertex_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Seed {
+        pub x: u32,
+        pub y: u32,
+        pub z: u32,
+        pub w: u32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState {
+        pub m_accumulated_dt: f32,
+        pub m_start_delay: f32,
+        pub m_playback_time: f32,
+        pub m_ring_buffer_index: i32,
+        pub m_emission: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Emission,
+        pub m_initial: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Initial,
+        pub m_shape: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Shape,
+        pub m_force: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Force,
+        pub m_collision:
+            crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Collision,
+        pub m_noise: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Noise,
+        pub m_lights: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Lights,
+        pub m_trail: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Trail,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Force {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -504,62 +476,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_EmissionModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_EmissionModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.EmissionModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_EmissionModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_NoiseModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_NoiseModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.NoiseModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_NoiseModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CustomDataModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -580,34 +496,6 @@ mod __types {
     }
 
     impl ::unity2::IlType for ParticleSystem_CustomDataModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ShapeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_ShapeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.ShapeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_ShapeModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -644,17 +532,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_TriggerModule {
+    pub struct ParticleSystem_RotationOverLifetimeModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.TriggerModule";
+        const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -663,194 +551,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_TriggerModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState {
-        pub m_accumulated_dt: f32,
-        pub m_start_delay: f32,
-        pub m_playback_time: f32,
-        pub m_ring_buffer_index: i32,
-        pub m_emission: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Emission,
-        pub m_initial: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Initial,
-        pub m_shape: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Shape,
-        pub m_force: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Force,
-        pub m_collision:
-            crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Collision,
-        pub m_noise: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Noise,
-        pub m_lights: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Lights,
-        pub m_trail: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Trail,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_InheritVelocityModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.InheritVelocityModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_InheritVelocityModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Force {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_SizeBySpeedModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Shape {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-        pub m_radius_timer: f32,
-        pub m_radius_timer_prev: f32,
-        pub m_arc_timer: f32,
-        pub m_arc_timer_prev: f32,
-        pub m_mesh_spawn_timer: f32,
-        pub m_mesh_spawn_timer_prev: f32,
-        pub m_ordered_mesh_vertex_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_MainModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.MainModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_MainModule {
+    impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -887,54 +588,17 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/particlesystem/ParticleSystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ParticleSystem")]
-    #[parent(crate::unity_engine::component::Component)]
-    pub struct ParticleSystem {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_MinMaxGradient {
-        pub m_mode: crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,
-        pub m_gradient_min: crate::unity_engine::gradient::Gradient,
-        pub m_gradient_max: crate::unity_engine::gradient::Gradient,
-        pub m_color_min: crate::unity_engine::color::Color,
-        pub m_color_max: crate::unity_engine::color::Color,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxGradient {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.MinMaxGradient";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_MinMaxGradient {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ColorOverLifetimeModule {
+    pub struct ParticleSystem_ShapeModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_ShapeModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.ColorOverLifetimeModule";
+        const NAME: &'static str = "ParticleSystem.ShapeModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -943,7 +607,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_ColorOverLifetimeModule {
+    impl ::unity2::IlType for ParticleSystem_ShapeModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -952,48 +616,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Seed {
-        pub x: u32,
-        pub y: u32,
-        pub z: u32,
-        pub w: u32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_LifetimeByEmitterSpeedModule {
+    pub struct ParticleSystem_TriggerModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.LifetimeByEmitterSpeedModule";
+        const NAME: &'static str = "ParticleSystem.TriggerModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1002,7 +635,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule {
+    impl ::unity2::IlType for ParticleSystem_TriggerModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1011,17 +644,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
+    pub struct ParticleSystem_CollisionModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
+        const NAME: &'static str = "ParticleSystem.CollisionModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1030,7 +663,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
+    impl ::unity2::IlType for ParticleSystem_CollisionModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1067,33 +700,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_Particle {
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        pub m_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
-        pub m_rotation: crate::unity_engine::vector3::Vector3,
-        pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_start_size: crate::unity_engine::vector3::Vector3,
-        pub m_start_color: crate::unity_engine::color32::Color32,
-        pub m_random_seed: u32,
-        pub m_parent_random_seed: u32,
-        pub m_lifetime: f32,
-        pub m_start_lifetime: f32,
-        pub m_mesh_index: i32,
-        pub m_emit_accumulator0: f32,
-        pub m_emit_accumulator1: f32,
-        pub m_flags: u32,
+    pub struct ParticleSystem_LifetimeByEmitterSpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_Particle {
+    impl ::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.Particle";
+        const NAME: &'static str = "ParticleSystem.LifetimeByEmitterSpeedModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1102,7 +719,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_Particle {
+    impl ::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1111,17 +728,22 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/particlesystem/ParticleSystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "ParticleSystem")]
+    #[parent(crate::unity_engine::component::Component)]
+    pub struct ParticleSystem {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Noise {
-        pub m_scroll_offset: f32,
+    pub struct ParticleSystem_SizeBySpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
+    impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
+        const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1130,7 +752,154 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
+    impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ExternalForcesModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_Trails {
+        pub positions: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector4::Vector4,
+        >,
+        pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
+        pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
+        pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
+        pub max_trail_count: i32,
+        pub max_positions_per_trail_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_Trails {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.Trails";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_Trails {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_NoiseModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_NoiseModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.NoiseModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_NoiseModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_VelocityOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Initial {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1177,1384 +946,15026 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Lights {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+        pub m_particle_emission_counter: f32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Emission {
+        pub m_particle_spacing: f32,
+        pub m_to_emit_accumulator: f32,
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_MinMaxGradient {
+        pub m_mode: crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,
+        pub m_gradient_min: crate::unity_engine::gradient::Gradient,
+        pub m_gradient_max: crate::unity_engine::gradient::Gradient,
+        pub m_color_min: crate::unity_engine::color::Color,
+        pub m_color_max: crate::unity_engine::color::Color,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxGradient {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.MinMaxGradient";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_MinMaxGradient {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Noise {
+        pub m_scroll_offset: f32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_TrailModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.TrailModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_TrailModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_EmissionModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_EmissionModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.EmissionModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_EmissionModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_InheritVelocityModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.InheritVelocityModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_InheritVelocityModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Collision {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Collision";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Collision {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_TrailModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_ForceOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ForceOverLifetimeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ForceOverLifetimeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_ForceOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ForceOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
 impl ParticleSystem_ForceOverLifetimeModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ForceOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_RotationOverLifetimeModule {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_ColorOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ColorOverLifetimeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ColorOverLifetimeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_ColorOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ColorOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_ColorOverLifetimeModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ColorOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_VelocityOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_TextureSheetAnimationModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_TextureSheetAnimationModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_TextureSheetAnimationModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_TextureSheetAnimationModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_TextureSheetAnimationModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_RotationBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
 impl ParticleSystem_TextureSheetAnimationModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_TextureSheetAnimationModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_CollisionModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_MinMaxCurve_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MinMaxCurve as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MinMaxCurve as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_MinMaxCurve,
+        constant: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MinMaxCurve, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, constant, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MinMaxCurve as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MinMaxCurve as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        constant: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        inner(constant, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ExternalForcesModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+impl ParticleSystem_MinMaxCurve {
+    #[doc = "`op_Implicit(f32)` overload"]
+    pub fn op_implicit(
+        constant: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            __ParticleSystem_MinMaxCurve_unity2_raw::op_implicit(
+                ::core::convert::Into::into(constant),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
 impl ParticleSystem_MinMaxCurve {
     #[doc = "`.ctor(f32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, constant: f32) -> ();
-
-    #[doc = "`op_Implicit(f32)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        constant: f32,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
+    pub fn ctor(self, constant: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MinMaxCurve_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(constant),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SizeOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_Particle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_lifetime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_lifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_lifetime(
+        this: ParticleSystem_Particle,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_lifetime::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_position",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position(
+        this: ParticleSystem_Particle,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_Particle,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_velocity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_velocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_velocity(
+        this: ParticleSystem_Particle,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_Particle,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_velocity::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_remaining_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_remainingLifetime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_remainingLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_remaining_lifetime(
+        this: ParticleSystem_Particle,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_remaining_lifetime::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_startLifetime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_startLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_lifetime(
+        this: ParticleSystem_Particle,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_lifetime::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_startColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_startColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_color(
+        this: ParticleSystem_Particle,
+        value: crate::unity_engine::color32::Color32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_Particle,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_random_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_randomSeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_randomSeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_random_seed(
+        this: ParticleSystem_Particle,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_random_seed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_startSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_startSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_size(
+        this: ParticleSystem_Particle,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_size::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_rotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation(
+        this: ParticleSystem_Particle,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_Particle, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rotation::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_rotation3D",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_rotation3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation3_d(
+        this: ParticleSystem_Particle,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_Particle,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation3_d::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_angular_velocity3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_Particle as ::unity2::ClassIdentity>::class(),
+                "set_angularVelocity3D",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_Particle as ::unity2::ClassIdentity>::NAME,
+                    "set_angularVelocity3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_angular_velocity3_d(
+        this: ParticleSystem_Particle,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_Particle,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_angular_velocity3_d::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_EmissionModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-
-    #[doc = "`get_enabled()` overload"]
-    #[method(name = "get_enabled", args = 0)]
-    pub fn get_enabled(self) -> bool;
-
-    #[doc = "`set_enabled(bool)` overload"]
-    #[method(name = "set_enabled", args = 1)]
-    pub fn set_enabled(self, value: bool) -> ();
-
-    #[doc = "`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rateOverTime", args = 1)]
-    pub fn set_rate_over_time(
+impl ParticleSystem_Particle {
+    #[doc = "`set_lifetime(f32)` overload"]
+    pub fn set_lifetime(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_lifetime(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_position(
         self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rateOverTimeMultiplier()` overload"]
-    #[method(name = "get_rateOverTimeMultiplier", args = 0)]
-    pub fn get_rate_over_time_multiplier(self) -> f32;
-
-    #[doc = "`get_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
-    #[method(name = "get_enabled_Injected", args = 1)]
-    pub fn get_enabled_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-    ) -> bool;
-
-    #[doc = "`set_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]
-    #[method(name = "set_enabled_Injected", args = 2)]
-    pub fn set_enabled_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`set_rateOverTime_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rateOverTime_Injected", args = 2)]
-    pub fn set_rate_over_time_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rateOverTimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
-    #[method(name = "get_rateOverTimeMultiplier_Injected", args = 1)]
-    pub fn get_rate_over_time_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-    ) -> f32;
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_NoiseModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_CustomDataModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ShapeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-
-    #[doc = "`set_enabled(bool)` overload"]
-    #[method(name = "set_enabled", args = 1)]
-    pub fn set_enabled(self, value: bool) -> ();
-
-    #[doc = "`set_shapeType(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]
-    #[method(name = "set_shapeType", args = 1)]
-    pub fn set_shape_type(
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_position(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_velocity(
         self,
-        value: crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
-    ) -> ();
-
-    #[doc = "`get_skinnedMeshRenderer()` overload"]
-    #[method(name = "get_skinnedMeshRenderer", args = 0)]
-    pub fn get_skinned_mesh_renderer(
-        self,
-    ) -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
-
-    #[doc = "`set_skinnedMeshRenderer(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]
-    #[method(name = "set_skinnedMeshRenderer", args = 1)]
-    pub fn set_skinned_mesh_renderer(
-        self,
-        value: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
-    ) -> ();
-
-    #[doc = "`set_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_ShapeModule, bool)` overload"]
-    #[method(name = "set_enabled_Injected", args = 2)]
-    pub fn set_enabled_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`set_shapeType_Injected(crate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]
-    #[method(name = "set_shapeType_Injected", args = 2)]
-    pub fn set_shape_type_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
-        value: crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
-    ) -> ();
-
-    #[doc = "`get_skinnedMeshRenderer_Injected(crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)` overload"]
-    #[method(name = "get_skinnedMeshRenderer_Injected", args = 1)]
-    pub fn get_skinned_mesh_renderer_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
-    ) -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
-
-    #[doc = "`set_skinnedMeshRenderer_Injected(crate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]
-    #[method(name = "set_skinnedMeshRenderer_Injected", args = 2)]
-    pub fn set_skinned_mesh_renderer_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
-        value: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ColorBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_TriggerModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_InheritVelocityModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SizeBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_MainModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-
-    #[doc = "`get_duration()` overload"]
-    #[method(name = "get_duration", args = 0)]
-    pub fn get_duration(self) -> f32;
-
-    #[doc = "`get_loop()` overload"]
-    #[method(name = "get_loop", args = 0)]
-    pub fn get_loop(self) -> bool;
-
-    #[doc = "`set_loop(bool)` overload"]
-    #[method(name = "set_loop", args = 1)]
-    pub fn set_loop(self, value: bool) -> ();
-
-    #[doc = "`get_startDelayMultiplier()` overload"]
-    #[method(name = "get_startDelayMultiplier", args = 0)]
-    pub fn get_start_delay_multiplier(self) -> f32;
-
-    #[doc = "`set_startDelayMultiplier(f32)` overload"]
-    #[method(name = "set_startDelayMultiplier", args = 1)]
-    pub fn set_start_delay_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startLifetimeMultiplier()` overload"]
-    #[method(name = "get_startLifetimeMultiplier", args = 0)]
-    pub fn get_start_lifetime_multiplier(self) -> f32;
-
-    #[doc = "`set_startLifetimeMultiplier(f32)` overload"]
-    #[method(name = "set_startLifetimeMultiplier", args = 1)]
-    pub fn set_start_lifetime_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startSpeedMultiplier()` overload"]
-    #[method(name = "get_startSpeedMultiplier", args = 0)]
-    pub fn get_start_speed_multiplier(self) -> f32;
-
-    #[doc = "`set_startSpeedMultiplier(f32)` overload"]
-    #[method(name = "set_startSpeedMultiplier", args = 1)]
-    pub fn set_start_speed_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startSizeMultiplier()` overload"]
-    #[method(name = "get_startSizeMultiplier", args = 0)]
-    pub fn get_start_size_multiplier(self) -> f32;
-
-    #[doc = "`set_startSizeMultiplier(f32)` overload"]
-    #[method(name = "set_startSizeMultiplier", args = 1)]
-    pub fn set_start_size_multiplier(self, value: f32) -> ();
-
-    #[doc = "`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_startRotation", args = 1)]
-    pub fn set_start_rotation(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_startRotationMultiplier()` overload"]
-    #[method(name = "get_startRotationMultiplier", args = 0)]
-    pub fn get_start_rotation_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationMultiplier", args = 1)]
-    pub fn set_start_rotation_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationXMultiplier()` overload"]
-    #[method(name = "get_startRotationXMultiplier", args = 0)]
-    pub fn get_start_rotation_x_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationXMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationXMultiplier", args = 1)]
-    pub fn set_start_rotation_x_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationYMultiplier()` overload"]
-    #[method(name = "get_startRotationYMultiplier", args = 0)]
-    pub fn get_start_rotation_y_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationYMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationYMultiplier", args = 1)]
-    pub fn set_start_rotation_y_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationZMultiplier()` overload"]
-    #[method(name = "get_startRotationZMultiplier", args = 0)]
-    pub fn get_start_rotation_z_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationZMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationZMultiplier", args = 1)]
-    pub fn set_start_rotation_z_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startColor()` overload"]
-    #[method(name = "get_startColor", args = 0)]
-    pub fn get_start_color(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
-
-    #[doc = "`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
-    #[method(name = "set_startColor", args = 1)]
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_velocity(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_remainingLifetime(f32)` overload"]
+    pub fn set_remaining_lifetime(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_remaining_lifetime(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startLifetime(f32)` overload"]
+    pub fn set_start_lifetime(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_start_lifetime(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
     pub fn set_start_color(
         self,
+        value: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_start_color(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_randomSeed(u32)` overload"]
+    pub fn set_random_seed(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_random_seed(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startSize(f32)` overload"]
+    pub fn set_start_size(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_start_size(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rotation(f32)` overload"]
+    pub fn set_rotation(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_rotation(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_rotation3_d(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_rotation3_d(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_angular_velocity3_d(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_Particle_unity2_raw::set_angular_velocity3_d(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_MainModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_MainModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_duration {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_duration",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_duration",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_duration(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_duration::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_loop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_loop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_loop(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_loop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_loop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_loop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_loop(
+        this: ParticleSystem_MainModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_loop::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_delay_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startDelayMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startDelayMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_delay_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_delay_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_delay_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startDelayMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startDelayMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_delay_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_delay_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_lifetime_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startLifetimeMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startLifetimeMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_lifetime_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_lifetime_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_lifetime_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startLifetimeMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startLifetimeMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_lifetime_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_lifetime_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_speed_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startSpeedMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startSpeedMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_speed_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_speed_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_speed_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startSpeedMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startSpeedMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_speed_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_speed_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_size_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startSizeMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startSizeMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_size_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_size_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_size_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startSizeMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startSizeMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_size_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_size_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation(
+        this: ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_rotation_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_rotation_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_x_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationXMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationXMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_x_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_rotation_x_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_x_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationXMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationXMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_x_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_rotation_x_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_y_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationYMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationYMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_y_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_rotation_y_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_y_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationYMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationYMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_y_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_rotation_y_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_z_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationZMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationZMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_z_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_rotation_z_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_z_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationZMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationZMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_z_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_rotation_z_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_color(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient {
+        let inner : extern "C" fn (ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxGradient = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_start_color :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxGradient as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_color(
+        this: ParticleSystem_MainModule,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_modifier_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_gravityModifierMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_gravityModifierMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_modifier_multiplier(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_gravity_modifier_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity_modifier_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_gravityModifierMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_gravityModifierMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity_modifier_multiplier(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_gravity_modifier_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_simulation_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_simulationSpace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_simulationSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_simulation_space(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace {
+        let inner : extern "C" fn (ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_simulation_space :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_simulation_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_simulationSpace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_simulationSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_simulation_space(
+        this: ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_simulation_space::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_simulation_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_simulationSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_simulationSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_simulation_speed(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_simulation_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_simulation_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_simulationSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_simulationSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_simulation_speed(
+        this: ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_simulation_speed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scaling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_scalingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_scalingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scaling_mode(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode {
+        let inner : extern "C" fn (ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scaling_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scaling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_scalingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_scalingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scaling_mode(
+        this: ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scaling_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_playOnAwake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_playOnAwake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_play_on_awake(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_play_on_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_playOnAwake",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_playOnAwake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_play_on_awake(
+        this: ParticleSystem_MainModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_play_on_awake::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_maxParticles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_maxParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_particles(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ParticleSystem_MainModule, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_particles::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_maxParticles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_maxParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_particles(
+        this: ParticleSystem_MainModule,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_MainModule, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_particles::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stop_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_stopAction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_stopAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stop_action(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction {
+        let inner : extern "C" fn (ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemstopaction :: ParticleSystemStopAction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_stop_action :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_stop_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemstopaction :: ParticleSystemStopAction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_stopAction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_stopAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_stop_action(
+        this: ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_stop_action::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_culling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_cullingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_cullingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_culling_mode(
+        this: ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode {
+        let inner : extern "C" fn (ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemcullingmode :: ParticleSystemCullingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_culling_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_culling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemcullingmode :: ParticleSystemCullingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_cullingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_cullingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_culling_mode(
+        this: ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_culling_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_duration_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_duration_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_duration_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_duration_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_duration_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_loop_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_loop_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_loop_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_loop_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_loop_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_loop_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_loop_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_loop_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_loop_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_loop_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_delay_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startDelayMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startDelayMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_delay_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_delay_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_delay_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startDelayMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startDelayMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_delay_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_delay_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_lifetime_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startLifetimeMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startLifetimeMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_lifetime_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_lifetime_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_lifetime_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startLifetimeMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startLifetimeMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_lifetime_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_lifetime_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_speed_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startSpeedMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startSpeedMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_speed_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_speed_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_speed_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startSpeedMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startSpeedMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_speed_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_speed_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_size_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startSizeMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startSizeMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_size_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_size_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_size_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startSizeMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startSizeMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_size_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_size_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotation_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_rotation_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_x_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationXMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationXMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_x_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_rotation_x_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_x_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationXMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationXMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_x_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation_x_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_y_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationYMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationYMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_y_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_rotation_y_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_y_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationYMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationYMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_y_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation_y_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation_z_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startRotationZMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotationZMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation_z_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_rotation_z_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation_z_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startRotationZMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotationZMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation_z_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation_z_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxGradient as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_startColor_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_startColor_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_color_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_color_injected::get_offset() as isize),
+        );
+        inner(unity_self, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxGradient as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_startColor_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_startColor_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_color_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_color_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_modifier_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_gravityModifierMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_gravityModifierMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_modifier_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gravity_modifier_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity_modifier_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_gravityModifierMultiplier_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_gravityModifierMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity_modifier_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_gravity_modifier_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_simulation_space_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_simulationSpace_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_simulationSpace_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_simulation_space_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_simulation_space_injected :: get_offset () as isize) ,) ;
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_simulation_space_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_simulationSpace_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_simulationSpace_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_simulation_space_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_simulation_space_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_simulation_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_simulationSpeed_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_simulationSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_simulation_speed_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_simulation_speed_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_simulation_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_simulationSpeed_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_simulationSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_simulation_speed_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_simulation_speed_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scaling_mode_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_scalingMode_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_scalingMode_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scaling_mode_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scaling_mode_injected :: get_offset () as isize) ,) ;
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scaling_mode_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_scalingMode_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_scalingMode_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scaling_mode_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scaling_mode_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_on_awake_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_playOnAwake_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_playOnAwake_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_play_on_awake_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_play_on_awake_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_play_on_awake_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_playOnAwake_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_playOnAwake_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_play_on_awake_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_play_on_awake_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_particles_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_maxParticles_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_maxParticles_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_particles_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_max_particles_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_particles_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_maxParticles_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_maxParticles_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_particles_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_max_particles_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stop_action_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_stopAction_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_stopAction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stop_action_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemstopaction :: ParticleSystemStopAction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_stop_action_injected :: get_offset () as isize) ,) ;
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_stop_action_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemstopaction :: ParticleSystemStopAction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_stopAction_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_stopAction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_stop_action_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_stop_action_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_culling_mode_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "get_cullingMode_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "get_cullingMode_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_culling_mode_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemcullingmode :: ParticleSystemCullingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_culling_mode_injected :: get_offset () as isize) ,) ;
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_culling_mode_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MainModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemcullingmode :: ParticleSystemCullingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MainModule as ::unity2::ClassIdentity>::class(),
+                "set_cullingMode_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MainModule as ::unity2::ClassIdentity>::NAME,
+                    "set_cullingMode_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_culling_mode_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_culling_mode_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_MainModule {
+    #[doc = "`get_duration_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_duration_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_duration_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`get_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_loop_injected() -> (
+        bool,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_loop_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
+    pub fn set_loop_injected(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_loop_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_delay_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_delay_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_delay_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_delay_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_lifetime_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_lifetime_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_lifetime_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_lifetime_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_speed_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_speed_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_speed_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_speed_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_size_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_size_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_size_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_size_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_startRotation_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    pub fn set_start_rotation_injected() -> (
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`get_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_rotation_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_rotation_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_rotation_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_rotation_x_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_rotation_x_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_rotation_x_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_x_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_rotation_y_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_rotation_y_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_rotation_y_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_y_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_start_rotation_z_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_start_rotation_z_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_start_rotation_z_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_z_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    pub fn get_start_color_injected() -> (
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::get_start_color_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`set_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    pub fn set_start_color_injected() -> (
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_start_color_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`get_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_gravity_modifier_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_gravity_modifier_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_gravity_modifier_multiplier_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_gravity_modifier_multiplier_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_simulation_space_injected() -> (
+        crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_simulation_space_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
+    pub fn set_simulation_space_injected(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        >,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_simulation_space_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_simulation_speed_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_simulation_speed_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    pub fn set_simulation_speed_injected(
+        value: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_simulation_speed_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_scaling_mode_injected() -> (
+        crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_scaling_mode_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
+    pub fn set_scaling_mode_injected(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        >,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_scaling_mode_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_play_on_awake_injected() -> (
+        bool,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_play_on_awake_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
+    pub fn set_play_on_awake_injected(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_play_on_awake_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_max_particles_injected() -> (
+        i32,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_max_particles_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]
+    pub fn set_max_particles_injected(
+        value: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_max_particles_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_stop_action_injected() -> (
+        crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_stop_action_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
+    pub fn set_stop_action_injected(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+        >,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_stop_action_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    pub fn get_culling_mode_injected() -> (
+        crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+        crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_MainModule_unity2_raw::get_culling_mode_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
+    pub fn set_culling_mode_injected(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+        >,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+            >::uninit();
+            __ParticleSystem_MainModule_unity2_raw::set_culling_mode_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_MainModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_duration()` overload"]
+    pub fn get_duration(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_duration(self, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_loop()` overload"]
+    pub fn get_loop(self) -> bool {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_loop(self, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_loop(bool)` overload"]
+    pub fn set_loop(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_loop(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startDelayMultiplier()` overload"]
+    pub fn get_start_delay_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_delay_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startDelayMultiplier(f32)` overload"]
+    pub fn set_start_delay_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_delay_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startLifetimeMultiplier()` overload"]
+    pub fn get_start_lifetime_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_lifetime_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startLifetimeMultiplier(f32)` overload"]
+    pub fn set_start_lifetime_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_lifetime_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startSpeedMultiplier()` overload"]
+    pub fn get_start_speed_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_speed_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startSpeedMultiplier(f32)` overload"]
+    pub fn set_start_speed_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_speed_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startSizeMultiplier()` overload"]
+    pub fn get_start_size_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_size_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startSizeMultiplier(f32)` overload"]
+    pub fn set_start_size_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_size_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    pub fn set_start_rotation(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotationMultiplier()` overload"]
+    pub fn get_start_rotation_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_rotation_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotationMultiplier(f32)` overload"]
+    pub fn set_start_rotation_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotationXMultiplier()` overload"]
+    pub fn get_start_rotation_x_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_rotation_x_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotationXMultiplier(f32)` overload"]
+    pub fn set_start_rotation_x_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_x_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotationYMultiplier()` overload"]
+    pub fn get_start_rotation_y_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_rotation_y_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotationYMultiplier(f32)` overload"]
+    pub fn set_start_rotation_y_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_y_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotationZMultiplier()` overload"]
+    pub fn get_start_rotation_z_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_rotation_z_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotationZMultiplier(f32)` overload"]
+    pub fn set_start_rotation_z_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_rotation_z_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startColor()` overload"]
+    pub fn get_start_color(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_start_color(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    pub fn set_start_color(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_start_color(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_gravityModifierMultiplier()` overload"]
-    #[method(name = "get_gravityModifierMultiplier", args = 0)]
-    pub fn get_gravity_modifier_multiplier(self) -> f32;
-
+    pub fn get_gravity_modifier_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_gravity_modifier_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_gravityModifierMultiplier(f32)` overload"]
-    #[method(name = "set_gravityModifierMultiplier", args = 1)]
-    pub fn set_gravity_modifier_multiplier(self, value: f32) -> ();
-
+    pub fn set_gravity_modifier_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_gravity_modifier_multiplier(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_simulationSpace()` overload"]
-    #[method(name = "get_simulationSpace", args = 0)]
     pub fn get_simulation_space(
         self,
-    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_simulation_space(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
-    #[method(name = "set_simulationSpace", args = 1)]
     pub fn set_simulation_space(
         self,
-        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
-    ) -> ();
-
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_simulation_space(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_simulationSpeed()` overload"]
-    #[method(name = "get_simulationSpeed", args = 0)]
-    pub fn get_simulation_speed(self) -> f32;
-
+    pub fn get_simulation_speed(self) -> f32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_simulation_speed(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_simulationSpeed(f32)` overload"]
-    #[method(name = "set_simulationSpeed", args = 1)]
-    pub fn set_simulation_speed(self, value: f32) -> ();
-
+    pub fn set_simulation_speed(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_simulation_speed(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_scalingMode()` overload"]
-    #[method(name = "get_scalingMode", args = 0)]
     pub fn get_scaling_mode(
         self,
-    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_scaling_mode(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
-    #[method(name = "set_scalingMode", args = 1)]
     pub fn set_scaling_mode(
         self,
-        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
-    ) -> ();
-
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_scaling_mode(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_playOnAwake()` overload"]
-    #[method(name = "get_playOnAwake", args = 0)]
-    pub fn get_play_on_awake(self) -> bool;
-
+    pub fn get_play_on_awake(self) -> bool {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_play_on_awake(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_playOnAwake(bool)` overload"]
-    #[method(name = "set_playOnAwake", args = 1)]
-    pub fn set_play_on_awake(self, value: bool) -> ();
-
+    pub fn set_play_on_awake(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_play_on_awake(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_maxParticles()` overload"]
-    #[method(name = "get_maxParticles", args = 0)]
-    pub fn get_max_particles(self) -> i32;
-
+    pub fn get_max_particles(self) -> i32 {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_max_particles(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_maxParticles(i32)` overload"]
-    #[method(name = "set_maxParticles", args = 1)]
-    pub fn set_max_particles(self, value: i32) -> ();
-
+    pub fn set_max_particles(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_max_particles(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_stopAction()` overload"]
-    #[method(name = "get_stopAction", args = 0)]
     pub fn get_stop_action(
         self,
-    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-
+    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_stop_action(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_stopAction(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
-    #[method(name = "set_stopAction", args = 1)]
     pub fn set_stop_action(
         self,
-        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
-    ) -> ();
-
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_stop_action(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_cullingMode()` overload"]
-    #[method(name = "get_cullingMode", args = 0)]
     pub fn get_culling_mode(
         self,
-    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-
+    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::get_culling_mode(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_cullingMode(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
-    #[method(name = "set_cullingMode", args = 1)]
     pub fn set_culling_mode(
         self,
-        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
-    ) -> ();
-
-    #[doc = "`get_duration_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_duration_Injected", args = 1)]
-    pub fn get_duration_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`get_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_loop_Injected", args = 1)]
-    pub fn get_loop_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> bool;
-
-    #[doc = "`set_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
-    #[method(name = "set_loop_Injected", args = 2)]
-    pub fn set_loop_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`get_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startDelayMultiplier_Injected", args = 1)]
-    pub fn get_start_delay_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startDelayMultiplier_Injected", args = 2)]
-    pub fn set_start_delay_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startLifetimeMultiplier_Injected", args = 1)]
-    pub fn get_start_lifetime_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startLifetimeMultiplier_Injected", args = 2)]
-    pub fn set_start_lifetime_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startSpeedMultiplier_Injected", args = 1)]
-    pub fn get_start_speed_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startSpeedMultiplier_Injected", args = 2)]
-    pub fn set_start_speed_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startSizeMultiplier_Injected", args = 1)]
-    pub fn get_start_size_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startSizeMultiplier_Injected", args = 2)]
-    pub fn set_start_size_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`set_startRotation_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_startRotation_Injected", args = 2)]
-    pub fn set_start_rotation_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationXMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_x_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationXMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_x_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationYMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_y_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationYMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_y_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationZMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_z_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationZMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_z_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
-    #[method(name = "get_startColor_Injected", args = 2)]
-    pub fn get_start_color_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
-
-    #[doc = "`set_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
-    #[method(name = "set_startColor_Injected", args = 2)]
-    pub fn set_start_color_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
-
-    #[doc = "`get_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_gravityModifierMultiplier_Injected", args = 1)]
-    pub fn get_gravity_modifier_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_gravityModifierMultiplier_Injected", args = 2)]
-    pub fn set_gravity_modifier_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_simulationSpace_Injected", args = 1)]
-    pub fn get_simulation_space_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-
-    #[doc = "`set_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
-    #[method(name = "set_simulationSpace_Injected", args = 2)]
-    pub fn set_simulation_space_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
-    ) -> ();
-
-    #[doc = "`get_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_simulationSpeed_Injected", args = 1)]
-    pub fn get_simulation_speed_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_simulationSpeed_Injected", args = 2)]
-    pub fn set_simulation_speed_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_scalingMode_Injected", args = 1)]
-    pub fn get_scaling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-
-    #[doc = "`set_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
-    #[method(name = "set_scalingMode_Injected", args = 2)]
-    pub fn set_scaling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
-    ) -> ();
-
-    #[doc = "`get_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_playOnAwake_Injected", args = 1)]
-    pub fn get_play_on_awake_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> bool;
-
-    #[doc = "`set_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
-    #[method(name = "set_playOnAwake_Injected", args = 2)]
-    pub fn set_play_on_awake_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`get_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_maxParticles_Injected", args = 1)]
-    pub fn get_max_particles_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> i32;
-
-    #[doc = "`set_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]
-    #[method(name = "set_maxParticles_Injected", args = 2)]
-    pub fn set_max_particles_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: i32,
-    ) -> ();
-
-    #[doc = "`get_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_stopAction_Injected", args = 1)]
-    pub fn get_stop_action_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-
-    #[doc = "`set_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
-    #[method(name = "set_stopAction_Injected", args = 2)]
-    pub fn set_stop_action_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
-    ) -> ();
-
-    #[doc = "`get_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_cullingMode_Injected", args = 1)]
-    pub fn get_culling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-
-    #[doc = "`set_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
-    #[method(name = "set_cullingMode_Injected", args = 2)]
-    pub fn set_culling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
-    ) -> ();
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_MainModule_unity2_raw::set_culling_mode(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_RotationBySpeedModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_RotationBySpeedModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_RotationBySpeedModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_RotationBySpeedModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_RotationBySpeedModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_RotationBySpeedModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_RotationBySpeedModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_LimitVelocityOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_LimitVelocityOverLifetimeModule as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ParticleSystem_LimitVelocityOverLifetimeModule as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_LimitVelocityOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_LimitVelocityOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_LimitVelocityOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_LimitVelocityOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_SizeOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_SizeOverLifetimeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_SizeOverLifetimeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_SizeOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_SizeOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_SizeOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_SizeOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_CustomDataModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_CustomDataModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_CustomDataModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_CustomDataModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_CustomDataModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_CustomDataModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_CustomDataModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_ColorBySpeedModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ColorBySpeedModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ColorBySpeedModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_ColorBySpeedModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ColorBySpeedModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_ColorBySpeedModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ColorBySpeedModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_RotationOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_RotationOverLifetimeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_RotationOverLifetimeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_RotationOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_RotationOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_RotationOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_RotationOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_LightsModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_LightsModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_LightsModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_LightsModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_LightsModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
 impl ParticleSystem_LightsModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_LightsModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods]
-impl ParticleSystem {
-    #[doc = "`Emit(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "Emit", args = 5)]
-    pub fn emit(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_ShapeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_ShapeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ShapeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_enabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_enabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enabled(
+        this: ParticleSystem_ShapeModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem_ShapeModule, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enabled::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shape_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemshapetype :: ParticleSystemShapeType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_shapeType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_shapeType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shape_type(
+        this: ParticleSystem_ShapeModule,
+        value: crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ShapeModule,
+            crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shape_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skinned_mesh_renderer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "get_skinnedMeshRenderer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "get_skinnedMeshRenderer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skinned_mesh_renderer(
+        this: ParticleSystem_ShapeModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer {
+        let inner: extern "C" fn(
+            ParticleSystem_ShapeModule,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_skinned_mesh_renderer::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skinned_mesh_renderer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_skinnedMeshRenderer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_skinnedMeshRenderer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skinned_mesh_renderer(
+        this: ParticleSystem_ShapeModule,
+        value: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ShapeModule,
+            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skinned_mesh_renderer::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enabled_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_ShapeModule as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_enabled_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_enabled_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enabled_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enabled_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shape_type_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_ShapeModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemshapetype :: ParticleSystemShapeType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_shapeType_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_shapeType_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shape_type_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+        value: crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shape_type_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skinned_mesh_renderer_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_ShapeModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "get_skinnedMeshRenderer_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "get_skinnedMeshRenderer_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skinned_mesh_renderer_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_skinned_mesh_renderer_injected::get_offset() as isize),
+            );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skinned_mesh_renderer_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_ShapeModule as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::class(),
+                "set_skinnedMeshRenderer_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ShapeModule as ::unity2::ClassIdentity>::NAME,
+                    "set_skinnedMeshRenderer_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skinned_mesh_renderer_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+        value: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skinned_mesh_renderer_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_ShapeModule {
+    #[doc = "`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, bool)` overload"]
+    pub fn set_enabled_injected(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            >::uninit();
+            __ParticleSystem_ShapeModule_unity2_raw::set_enabled_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_shapeType_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]
+    pub fn set_shape_type_injected(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+        >,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            >::uninit();
+            __ParticleSystem_ShapeModule_unity2_raw::set_shape_type_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule)` overload"]
+    pub fn get_skinned_mesh_renderer_injected() -> (
+        crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_ShapeModule_unity2_raw::get_skinned_mesh_renderer_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]
+    pub fn set_skinned_mesh_renderer_injected(
+        value: impl ::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_ShapeModule,
+            >::uninit();
+            __ParticleSystem_ShapeModule_unity2_raw::set_skinned_mesh_renderer_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_ShapeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
         self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ShapeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_enabled(bool)` overload"]
+    pub fn set_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __ParticleSystem_ShapeModule_unity2_raw::set_enabled(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_shapeType(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]
+    pub fn set_shape_type(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ShapeModule_unity2_raw::set_shape_type(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_skinnedMeshRenderer()` overload"]
+    pub fn get_skinned_mesh_renderer(
+        self,
+    ) -> crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer {
+        unsafe {
+            __ParticleSystem_ShapeModule_unity2_raw::get_skinned_mesh_renderer(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_skinnedMeshRenderer(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]
+    pub fn set_skinned_mesh_renderer(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ShapeModule_unity2_raw::set_skinned_mesh_renderer(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_TriggerModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_TriggerModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_TriggerModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_TriggerModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_TriggerModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_TriggerModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_TriggerModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_CollisionModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_CollisionModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_CollisionModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_CollisionModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_CollisionModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_CollisionModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_CollisionModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_SubEmittersModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_SubEmittersModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_SubEmittersModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_SubEmittersModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_SubEmittersModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_SubEmittersModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_SubEmittersModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_LifetimeByEmitterSpeedModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_LifetimeByEmitterSpeedModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_LifetimeByEmitterSpeedModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_LifetimeByEmitterSpeedModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_LifetimeByEmitterSpeedModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_LifetimeByEmitterSpeedModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_LifetimeByEmitterSpeedModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit(
+        this: ParticleSystem,
         position: crate::unity_engine::vector3::Vector3,
         velocity: crate::unity_engine::vector3::Vector3,
         size: f32,
         lifetime: f32,
         color: crate::unity_engine::color32::Color32,
-    ) -> ();
-
-    #[doc = "`Emit(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "Emit", args = 1)]
-    pub fn emit_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            f32,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit::get_offset() as isize),
+        );
+        inner(
+            this,
+            position,
+            velocity,
+            size,
+            lifetime,
+            color,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_2(
+        this: ParticleSystem,
         particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> ();
-
-    #[doc = "`get_startDelay()` overload"]
-    #[method(name = "get_startDelay", args = 0)]
-    pub fn get_start_delay(self) -> f32;
-
-    #[doc = "`set_startDelay(f32)` overload"]
-    #[method(name = "set_startDelay", args = 1)]
-    pub fn set_start_delay(self, value: f32) -> ();
-
-    #[doc = "`get_loop()` overload"]
-    #[method(name = "get_loop", args = 0)]
-    pub fn get_loop(self) -> bool;
-
-    #[doc = "`set_loop(bool)` overload"]
-    #[method(name = "set_loop", args = 1)]
-    pub fn set_loop(self, value: bool) -> ();
-
-    #[doc = "`get_playOnAwake()` overload"]
-    #[method(name = "get_playOnAwake", args = 0)]
-    pub fn get_play_on_awake(self) -> bool;
-
-    #[doc = "`set_playOnAwake(bool)` overload"]
-    #[method(name = "set_playOnAwake", args = 1)]
-    pub fn set_play_on_awake(self, value: bool) -> ();
-
-    #[doc = "`get_duration()` overload"]
-    #[method(name = "get_duration", args = 0)]
-    pub fn get_duration(self) -> f32;
-
-    #[doc = "`get_playbackSpeed()` overload"]
-    #[method(name = "get_playbackSpeed", args = 0)]
-    pub fn get_playback_speed(self) -> f32;
-
-    #[doc = "`set_playbackSpeed(f32)` overload"]
-    #[method(name = "set_playbackSpeed", args = 1)]
-    pub fn set_playback_speed(self, value: f32) -> ();
-
-    #[doc = "`get_enableEmission()` overload"]
-    #[method(name = "get_enableEmission", args = 0)]
-    pub fn get_enable_emission(self) -> bool;
-
-    #[doc = "`set_enableEmission(bool)` overload"]
-    #[method(name = "set_enableEmission", args = 1)]
-    pub fn set_enable_emission(self, value: bool) -> ();
-
-    #[doc = "`get_emissionRate()` overload"]
-    #[method(name = "get_emissionRate", args = 0)]
-    pub fn get_emission_rate(self) -> f32;
-
-    #[doc = "`set_emissionRate(f32)` overload"]
-    #[method(name = "set_emissionRate", args = 1)]
-    pub fn set_emission_rate(self, value: f32) -> ();
-
-    #[doc = "`get_startSpeed()` overload"]
-    #[method(name = "get_startSpeed", args = 0)]
-    pub fn get_start_speed(self) -> f32;
-
-    #[doc = "`set_startSpeed(f32)` overload"]
-    #[method(name = "set_startSpeed", args = 1)]
-    pub fn set_start_speed(self, value: f32) -> ();
-
-    #[doc = "`get_startSize()` overload"]
-    #[method(name = "get_startSize", args = 0)]
-    pub fn get_start_size(self) -> f32;
-
-    #[doc = "`set_startSize(f32)` overload"]
-    #[method(name = "set_startSize", args = 1)]
-    pub fn set_start_size(self, value: f32) -> ();
-
-    #[doc = "`get_startColor()` overload"]
-    #[method(name = "get_startColor", args = 0)]
-    pub fn get_start_color(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`set_startColor(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_startColor", args = 1)]
-    pub fn set_start_color(self, value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`get_startRotation()` overload"]
-    #[method(name = "get_startRotation", args = 0)]
-    pub fn get_start_rotation(self) -> f32;
-
-    #[doc = "`set_startRotation(f32)` overload"]
-    #[method(name = "set_startRotation", args = 1)]
-    pub fn set_start_rotation(self, value: f32) -> ();
-
-    #[doc = "`get_startRotation3D()` overload"]
-    #[method(name = "get_startRotation3D", args = 0)]
-    pub fn get_start_rotation3_d(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_startRotation3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_startRotation3D", args = 1)]
-    pub fn set_start_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_startLifetime()` overload"]
-    #[method(name = "get_startLifetime", args = 0)]
-    pub fn get_start_lifetime(self) -> f32;
-
-    #[doc = "`set_startLifetime(f32)` overload"]
-    #[method(name = "set_startLifetime", args = 1)]
-    pub fn set_start_lifetime(self, value: f32) -> ();
-
-    #[doc = "`get_gravityModifier()` overload"]
-    #[method(name = "get_gravityModifier", args = 0)]
-    pub fn get_gravity_modifier(self) -> f32;
-
-    #[doc = "`set_gravityModifier(f32)` overload"]
-    #[method(name = "set_gravityModifier", args = 1)]
-    pub fn set_gravity_modifier(self, value: f32) -> ();
-
-    #[doc = "`get_maxParticles()` overload"]
-    #[method(name = "get_maxParticles", args = 0)]
-    pub fn get_max_particles(self) -> i32;
-
-    #[doc = "`set_maxParticles(i32)` overload"]
-    #[method(name = "set_maxParticles", args = 1)]
-    pub fn set_max_particles(self, value: i32) -> ();
-
-    #[doc = "`get_simulationSpace()` overload"]
-    #[method(name = "get_simulationSpace", args = 0)]
-    pub fn get_simulation_space(
-        self,
-    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-
-    #[doc = "`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
-    #[method(name = "set_simulationSpace", args = 1)]
-    pub fn set_simulation_space(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_2::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_delay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startDelay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startDelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_delay(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_delay::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_delay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startDelay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startDelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_delay(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_delay::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_loop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_loop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_loop(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_loop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_loop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_loop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_loop(
+        this: ParticleSystem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_loop::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_playOnAwake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_playOnAwake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_play_on_awake(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_play_on_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_playOnAwake",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_playOnAwake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_play_on_awake(
+        this: ParticleSystem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_play_on_awake::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_duration {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_duration",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_duration",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_duration(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_duration::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playback_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_playbackSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_playbackSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_playback_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_playback_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playback_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_playbackSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_playbackSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_playback_speed(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_playback_speed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_emission {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_enableEmission",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_enableEmission",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_emission(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_emission::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_emission {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_enableEmission",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_enableEmission",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_emission(
+        this: ParticleSystem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_emission::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_emission_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_emissionRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_emissionRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_emission_rate(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_emission_rate::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_emission_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_emissionRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_emissionRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_emission_rate(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_emission_rate::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_speed(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_speed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_size(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_size(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_size::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_color(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_color(
+        this: ParticleSystem,
+        value: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_rotation::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_rotation::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_rotation3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startRotation3D",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startRotation3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_rotation3_d(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_start_rotation3_d::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_rotation3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startRotation3D",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startRotation3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_rotation3_d(
+        this: ParticleSystem,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_rotation3_d::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_startLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_startLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_lifetime::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_startLifetime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_startLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_lifetime(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_lifetime::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_modifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_gravityModifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_gravityModifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_modifier(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_gravity_modifier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity_modifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_gravityModifier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_gravityModifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity_modifier(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_gravity_modifier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_maxParticles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_maxParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_particles(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_particles::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_maxParticles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_maxParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_particles(
+        this: ParticleSystem,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_particles::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_simulation_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_simulationSpace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_simulationSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_simulation_space(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_simulation_space :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_simulation_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemsimulationspace :: ParticleSystemSimulationSpace as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_simulationSpace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_simulationSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_simulation_space(
+        this: ParticleSystem,
         value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
-    ) -> ();
-
-    #[doc = "`get_scalingMode()` overload"]
-    #[method(name = "get_scalingMode", args = 0)]
-    pub fn get_scaling_mode(
-        self,
-    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-
-    #[doc = "`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
-    #[method(name = "set_scalingMode", args = 1)]
-    pub fn set_scaling_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_simulation_space::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scaling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_scalingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_scalingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scaling_mode(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scaling_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scaling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemscalingmode :: ParticleSystemScalingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_scalingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_scalingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scaling_mode(
+        this: ParticleSystem,
         value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
-    ) -> ();
-
-    #[doc = "`get_automaticCullingEnabled()` overload"]
-    #[method(name = "get_automaticCullingEnabled", args = 0)]
-    pub fn get_automatic_culling_enabled(self) -> bool;
-
-    #[doc = "`get_isPlaying()` overload"]
-    #[method(name = "get_isPlaying", args = 0)]
-    pub fn get_is_playing(self) -> bool;
-
-    #[doc = "`get_isEmitting()` overload"]
-    #[method(name = "get_isEmitting", args = 0)]
-    pub fn get_is_emitting(self) -> bool;
-
-    #[doc = "`get_isStopped()` overload"]
-    #[method(name = "get_isStopped", args = 0)]
-    pub fn get_is_stopped(self) -> bool;
-
-    #[doc = "`get_isPaused()` overload"]
-    #[method(name = "get_isPaused", args = 0)]
-    pub fn get_is_paused(self) -> bool;
-
-    #[doc = "`get_particleCount()` overload"]
-    #[method(name = "get_particleCount", args = 0)]
-    pub fn get_particle_count(self) -> i32;
-
-    #[doc = "`get_time()` overload"]
-    #[method(name = "get_time", args = 0)]
-    pub fn get_time(self) -> f32;
-
-    #[doc = "`set_time(f32)` overload"]
-    #[method(name = "set_time", args = 1)]
-    pub fn set_time(self, value: f32) -> ();
-
-    #[doc = "`get_randomSeed()` overload"]
-    #[method(name = "get_randomSeed", args = 0)]
-    pub fn get_random_seed(self) -> u32;
-
-    #[doc = "`set_randomSeed(u32)` overload"]
-    #[method(name = "set_randomSeed", args = 1)]
-    pub fn set_random_seed(self, value: u32) -> ();
-
-    #[doc = "`get_useAutoRandomSeed()` overload"]
-    #[method(name = "get_useAutoRandomSeed", args = 0)]
-    pub fn get_use_auto_random_seed(self) -> bool;
-
-    #[doc = "`set_useAutoRandomSeed(bool)` overload"]
-    #[method(name = "set_useAutoRandomSeed", args = 1)]
-    pub fn set_use_auto_random_seed(self, value: bool) -> ();
-
-    #[doc = "`get_proceduralSimulationSupported()` overload"]
-    #[method(name = "get_proceduralSimulationSupported", args = 0)]
-    pub fn get_procedural_simulation_supported(self) -> bool;
-
-    #[doc = "`GetParticleCurrentSize(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "GetParticleCurrentSize", args = 1)]
-    pub fn get_particle_current_size(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> f32;
-
-    #[doc = "`GetParticleCurrentSize3D(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "GetParticleCurrentSize3D", args = 1)]
-    pub fn get_particle_current_size3_d(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetParticleCurrentColor(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "GetParticleCurrentColor", args = 1)]
-    pub fn get_particle_current_color(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> crate::unity_engine::color32::Color32;
-
-    #[doc = "`GetParticleMeshIndex(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "GetParticleMeshIndex", args = 1)]
-    pub fn get_particle_mesh_index(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> i32;
-
-    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32, i32)` overload"]
-    #[method(name = "SetParticles", args = 3)]
-    pub fn set_particles(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scaling_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_automatic_culling_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_automaticCullingEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_automaticCullingEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_automatic_culling_enabled(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_automatic_culling_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_isPlaying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_isPlaying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_playing(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_playing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_emitting {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_isEmitting",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_isEmitting",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_emitting(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_emitting::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_stopped {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_isStopped",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_isStopped",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_stopped(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_stopped::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_paused {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_isPaused",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_isPaused",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_paused(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_paused::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_particleCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_particleCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_count(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_particle_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_time",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_time",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_time(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_time",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_time",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_time(
+        this: ParticleSystem,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_random_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_randomSeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_randomSeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_random_seed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_random_seed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_random_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_randomSeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_randomSeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_random_seed(
+        this: ParticleSystem,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_random_seed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_auto_random_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_useAutoRandomSeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_useAutoRandomSeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_auto_random_seed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_auto_random_seed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_auto_random_seed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "set_useAutoRandomSeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "set_useAutoRandomSeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_auto_random_seed(
+        this: ParticleSystem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_auto_random_seed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_procedural_simulation_supported {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_proceduralSimulationSupported",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_proceduralSimulationSupported",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_procedural_simulation_supported(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_procedural_simulation_supported::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_current_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleCurrentSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleCurrentSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_current_size(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_current_size::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_current_size3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleCurrentSize3D",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleCurrentSize3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_current_size3_d(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_current_size3_d::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_current_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleCurrentColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleCurrentColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_current_color(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color32::Color32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_current_color::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_mesh_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleMeshIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleMeshIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_mesh_index(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_mesh_index::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: particlesystem :: ParticleSystem_Particle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetParticles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_particles(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
         size: i32,
         offset: i32,
-    ) -> ();
-
-    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32)` overload"]
-    #[method(name = "SetParticles", args = 2)]
-    pub fn set_particles_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_particles::get_offset() as isize),
+        );
+        inner(this, particles, size, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_particles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: particlesystem :: ParticleSystem_Particle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetParticles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_particles_2(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
         size: i32,
-    ) -> ();
-
-    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
-    #[method(name = "SetParticles", args = 1)]
-    pub fn set_particles_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_particles_2::get_offset() as isize),
+        );
+        inner(this, particles, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_particles_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetParticles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_particles_3(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
-    ) -> ();
-
-    #[doc = "`SetParticlesWithNativeArray(::unity2::IntPtr, i32, i32, i32)` overload"]
-    #[method(name = "SetParticlesWithNativeArray", args = 4)]
-    pub fn set_particles_with_native_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_particles_3::get_offset() as isize),
+        );
+        inner(this, particles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_particles_with_native_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetParticlesWithNativeArray",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetParticlesWithNativeArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_particles_with_native_array(
+        this: ParticleSystem,
         particles: ::unity2::IntPtr,
         particles_length: i32,
         size: i32,
         offset: i32,
-    ) -> ();
-
-    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32, i32)` overload"]
-    #[method(name = "GetParticles", args = 3)]
-    pub fn get_particles(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_particles_with_native_array::get_offset() as isize),
+        );
+        inner(
+            this,
+            particles,
+            particles_length,
+            size,
+            offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: particlesystem :: ParticleSystem_Particle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particles(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
         size: i32,
         offset: i32,
-    ) -> i32;
-
-    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32)` overload"]
-    #[method(name = "GetParticles", args = 2)]
-    pub fn get_particles_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particles::get_offset() as isize),
+        );
+        inner(this, particles, size, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: particlesystem :: ParticleSystem_Particle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particles_2(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
         size: i32,
-    ) -> i32;
-
-    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
-    #[method(name = "GetParticles", args = 1)]
-    pub fn get_particles_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particles_2::get_offset() as isize),
+        );
+        inner(this, particles, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particles_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particles_3(
+        this: ParticleSystem,
         particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
-    ) -> i32;
-
-    #[doc = "`GetParticlesWithNativeArray(::unity2::IntPtr, i32, i32, i32)` overload"]
-    #[method(name = "GetParticlesWithNativeArray", args = 4)]
-    pub fn get_particles_with_native_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particles_3::get_offset() as isize),
+        );
+        inner(this, particles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particles_with_native_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticlesWithNativeArray",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticlesWithNativeArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particles_with_native_array(
+        this: ParticleSystem,
         particles: ::unity2::IntPtr,
         particles_length: i32,
         size: i32,
         offset: i32,
-    ) -> i32;
-
-    #[doc = "`SetCustomParticleData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
-    #[method(name = "SetCustomParticleData", args = 2)]
-    pub fn set_custom_particle_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particles_with_native_array::get_offset() as isize),
+        );
+        inner(
+            this,
+            particles,
+            particles_length,
+            size,
+            offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_custom_particle_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemcustomdata :: ParticleSystemCustomData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetCustomParticleData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetCustomParticleData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_custom_particle_data(
+        this: ParticleSystem,
         custom_data: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
         stream_index: crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
-    ) -> ();
-
-    #[doc = "`GetCustomParticleData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
-    #[method(name = "GetCustomParticleData", args = 2)]
-    pub fn get_custom_particle_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_custom_particle_data::get_offset() as isize),
+        );
+        inner(this, custom_data, stream_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_custom_particle_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemcustomdata :: ParticleSystemCustomData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetCustomParticleData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetCustomParticleData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_custom_particle_data(
+        this: ParticleSystem,
         custom_data: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
         stream_index: crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
-    ) -> i32;
-
-    #[doc = "`GetPlaybackState()` overload"]
-    #[method(name = "GetPlaybackState", args = 0)]
-    pub fn get_playback_state(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_PlaybackState;
-
-    #[doc = "`SetPlaybackState(crate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
-    #[method(name = "SetPlaybackState", args = 1)]
-    pub fn set_playback_state(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_custom_particle_data::get_offset() as isize),
+        );
+        inner(this, custom_data, stream_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playback_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetPlaybackState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetPlaybackState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_playback_state(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_PlaybackState {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_PlaybackState = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_playback_state :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playback_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_PlaybackState as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetPlaybackState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetPlaybackState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_playback_state(
+        this: ParticleSystem,
         playback_state: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
-    ) -> ();
-
-    #[doc = "`GetTrailDataInternal(crate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
-    #[method(name = "GetTrailDataInternal", args = 1)]
-    pub fn get_trail_data_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_playback_state::get_offset() as isize),
+        );
+        inner(this, playback_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trail_data_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Trails as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetTrailDataInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetTrailDataInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_trail_data_internal(
+        this: ParticleSystem,
+        trail_data: *mut crate::unity_engine::particlesystem::ParticleSystem_Trails,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Trails,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_trail_data_internal::get_offset() as isize),
+        );
+        inner(this, trail_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trails {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetTrails",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetTrails",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_trails(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_Trails {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::particlesystem::ParticleSystem_Trails = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_trails::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trails {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_Trails as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetTrails",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetTrails",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trails(
+        this: ParticleSystem,
         trail_data: crate::unity_engine::particlesystem::ParticleSystem_Trails,
-    ) -> ();
-
-    #[doc = "`GetTrails()` overload"]
-    #[method(name = "GetTrails", args = 0)]
-    pub fn get_trails(self) -> crate::unity_engine::particlesystem::ParticleSystem_Trails;
-
-    #[doc = "`SetTrails(crate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
-    #[method(name = "SetTrails", args = 1)]
-    pub fn set_trails(
-        self,
-        trail_data: crate::unity_engine::particlesystem::ParticleSystem_Trails,
-    ) -> ();
-
-    #[doc = "`Simulate(f32, bool, bool, bool)` overload"]
-    #[method(name = "Simulate", args = 4)]
-    pub fn simulate(self, t: f32, with_children: bool, restart: bool, fixed_time_step: bool) -> ();
-
-    #[doc = "`Simulate(f32, bool, bool)` overload"]
-    #[method(name = "Simulate", args = 3)]
-    pub fn simulate_2(self, t: f32, with_children: bool, restart: bool) -> ();
-
-    #[doc = "`Simulate(f32, bool)` overload"]
-    #[method(name = "Simulate", args = 2)]
-    pub fn simulate_3(self, t: f32, with_children: bool) -> ();
-
-    #[doc = "`Simulate(f32)` overload"]
-    #[method(name = "Simulate", args = 1)]
-    pub fn simulate_4(self, t: f32) -> ();
-
-    #[doc = "`Play(bool)` overload"]
-    #[method(name = "Play", args = 1)]
-    pub fn play(self, with_children: bool) -> ();
-
-    #[doc = "`Play()` overload"]
-    #[method(name = "Play", args = 0)]
-    pub fn play_2(self) -> ();
-
-    #[doc = "`Pause(bool)` overload"]
-    #[method(name = "Pause", args = 1)]
-    pub fn pause(self, with_children: bool) -> ();
-
-    #[doc = "`Pause()` overload"]
-    #[method(name = "Pause", args = 0)]
-    pub fn pause_2(self) -> ();
-
-    #[doc = "`Stop(bool, crate::unity_engine::particlesystemstopbehavior::ParticleSystemStopBehavior)` overload"]
-    #[method(name = "Stop", args = 2)]
-    pub fn stop(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystem::ParticleSystem_Trails,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_trails::get_offset() as isize),
+        );
+        inner(this, trail_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_simulate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Simulate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Simulate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn simulate(
+        this: ParticleSystem,
+        t: f32,
+        with_children: bool,
+        restart: bool,
+        fixed_time_step: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            f32,
+            bool,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_simulate::get_offset() as isize),
+        );
+        inner(
+            this,
+            t,
+            with_children,
+            restart,
+            fixed_time_step,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_simulate_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Simulate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Simulate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn simulate_2(
+        this: ParticleSystem,
+        t: f32,
+        with_children: bool,
+        restart: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_simulate_2::get_offset() as isize),
+            );
+        inner(this, t, with_children, restart, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_simulate_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Simulate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Simulate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn simulate_3(
+        this: ParticleSystem,
+        t: f32,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_simulate_3::get_offset() as isize),
+            );
+        inner(this, t, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_simulate_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Simulate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Simulate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn simulate_4(
+        this: ParticleSystem,
+        t: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_simulate_4::get_offset() as isize),
+            );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Play",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play(
+        this: ParticleSystem,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play::get_offset() as isize),
+            );
+        inner(this, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Play",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_2(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Pause",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Pause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pause(
+        this: ParticleSystem,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pause::get_offset() as isize),
+            );
+        inner(this, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pause_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Pause",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Pause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pause_2(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pause_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystemstopbehavior :: ParticleSystemStopBehavior as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Stop",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Stop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop(
+        this: ParticleSystem,
         with_children: bool,
         stop_behavior: crate::unity_engine::particlesystemstopbehavior::ParticleSystemStopBehavior,
-    ) -> ();
-
-    #[doc = "`Stop(bool)` overload"]
-    #[method(name = "Stop", args = 1)]
-    pub fn stop_2(self, with_children: bool) -> ();
-
-    #[doc = "`Stop()` overload"]
-    #[method(name = "Stop", args = 0)]
-    pub fn stop_3(self) -> ();
-
-    #[doc = "`Clear(bool)` overload"]
-    #[method(name = "Clear", args = 1)]
-    pub fn clear(self, with_children: bool) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear_2(self) -> ();
-
-    #[doc = "`IsAlive(bool)` overload"]
-    #[method(name = "IsAlive", args = 1)]
-    pub fn is_alive(self, with_children: bool) -> bool;
-
-    #[doc = "`IsAlive()` overload"]
-    #[method(name = "IsAlive", args = 0)]
-    pub fn is_alive_2(self) -> bool;
-
-    #[doc = "`Emit(i32)` overload"]
-    #[method(name = "Emit", args = 1)]
-    pub fn emit_3(self, count: i32) -> ();
-
-    #[doc = "`Emit_Internal(i32)` overload"]
-    #[method(name = "Emit_Internal", args = 1)]
-    pub fn emit_internal(self, count: i32) -> ();
-
-    #[doc = "`Emit(crate::unity_engine::particlesystem::ParticleSystem_EmitParams, i32)` overload"]
-    #[method(name = "Emit", args = 2)]
-    pub fn emit_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            bool,
+            crate::unity_engine::particlesystemstopbehavior::ParticleSystemStopBehavior,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_stop::get_offset() as isize),
+        );
+        inner(this, with_children, stop_behavior, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Stop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Stop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_2(
+        this: ParticleSystem,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_stop_2::get_offset() as isize),
+            );
+        inner(this, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Stop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Stop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_3(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_stop_3::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: ParticleSystem,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_2(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "IsAlive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "IsAlive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_alive(
+        this: ParticleSystem,
+        with_children: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_alive::get_offset() as isize),
+            );
+        inner(this, with_children, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_alive_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "IsAlive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "IsAlive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_alive_2(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_alive_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_3(
+        this: ParticleSystem,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_emit_3::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit_Internal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_internal(
+        this: ParticleSystem,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_emit_internal::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_EmitParams as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_4(
+        this: ParticleSystem,
         emit_params: crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
         count: i32,
-    ) -> ();
-
-    #[doc = "`EmitOld_Internal(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "EmitOld_Internal", args = 1)]
-    pub fn emit_old_internal(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> ();
-
-    #[doc = "`TriggerSubEmitter(i32)` overload"]
-    #[method(name = "TriggerSubEmitter", args = 1)]
-    pub fn trigger_sub_emitter(self, sub_emitter_index: i32) -> ();
-
-    #[doc = "`TriggerSubEmitter(i32, crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "TriggerSubEmitter", args = 2)]
-    pub fn trigger_sub_emitter_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_4::get_offset() as isize),
+        );
+        inner(this, emit_params, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_old_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "EmitOld_Internal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "EmitOld_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_old_internal(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_old_internal::get_offset() as isize),
+        );
+        inner(this, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_sub_emitter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "TriggerSubEmitter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "TriggerSubEmitter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_sub_emitter(
+        this: ParticleSystem,
+        sub_emitter_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_trigger_sub_emitter::get_offset() as isize),
+            );
+        inner(this, sub_emitter_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_sub_emitter_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "TriggerSubEmitter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "TriggerSubEmitter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_sub_emitter_2(
+        this: ParticleSystem,
+        sub_emitter_index: i32,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            i32,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_sub_emitter_2::get_offset() as isize),
+        );
+        inner(this, sub_emitter_index, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_sub_emitter_for_particle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "TriggerSubEmitterForParticle",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "TriggerSubEmitterForParticle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_sub_emitter_for_particle(
+        this: ParticleSystem,
         sub_emitter_index: i32,
         particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> ();
-
-    #[doc = "`TriggerSubEmitterForParticle(i32, crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "TriggerSubEmitterForParticle", args = 2)]
-    pub fn trigger_sub_emitter_for_particle(
-        self,
-        sub_emitter_index: i32,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> ();
-
-    #[doc = "`TriggerSubEmitter(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
-    #[method(name = "TriggerSubEmitter", args = 2)]
-    pub fn trigger_sub_emitter_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            i32,
+            crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_sub_emitter_for_particle::get_offset() as isize),
+        );
+        inner(this, sub_emitter_index, particle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_sub_emitter_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::particlesystem::ParticleSystem_Particle,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "TriggerSubEmitter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "TriggerSubEmitter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_sub_emitter_3(
+        this: ParticleSystem,
         sub_emitter_index: i32,
         particles: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::particlesystem::ParticleSystem_Particle,
         >,
-    ) -> ();
-
-    #[doc = "`ResetPreMappedBufferMemory()` overload"]
-    #[method(name = "ResetPreMappedBufferMemory", args = 0)]
-    pub fn reset_pre_mapped_buffer_memory() -> ();
-
-    #[doc = "`SetMaximumPreMappedBufferCounts(i32, i32)` overload"]
-    #[method(name = "SetMaximumPreMappedBufferCounts", args = 2)]
-    pub fn set_maximum_pre_mapped_buffer_counts(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_sub_emitter_3::get_offset() as isize),
+        );
+        inner(this, sub_emitter_index, particles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_pre_mapped_buffer_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "ResetPreMappedBufferMemory",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "ResetPreMappedBufferMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_pre_mapped_buffer_memory(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset_pre_mapped_buffer_memory::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_maximum_pre_mapped_buffer_counts {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetMaximumPreMappedBufferCounts",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetMaximumPreMappedBufferCounts",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_maximum_pre_mapped_buffer_counts(
         vertex_buffers_count: i32,
         index_buffers_count: i32,
-    ) -> ();
-
-    #[doc = "`AllocateAxisOfRotationAttribute()` overload"]
-    #[method(name = "AllocateAxisOfRotationAttribute", args = 0)]
-    pub fn allocate_axis_of_rotation_attribute(self) -> ();
-
-    #[doc = "`AllocateMeshIndexAttribute()` overload"]
-    #[method(name = "AllocateMeshIndexAttribute", args = 0)]
-    pub fn allocate_mesh_index_attribute(self) -> ();
-
-    #[doc = "`AllocateCustomDataAttribute(crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
-    #[method(name = "AllocateCustomDataAttribute", args = 1)]
-    pub fn allocate_custom_data_attribute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_maximum_pre_mapped_buffer_counts::get_offset() as isize),
+        );
+        inner(
+            vertex_buffers_count,
+            index_buffers_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allocate_axis_of_rotation_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "AllocateAxisOfRotationAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "AllocateAxisOfRotationAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allocate_axis_of_rotation_attribute(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_allocate_axis_of_rotation_attribute::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allocate_mesh_index_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "AllocateMeshIndexAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "AllocateMeshIndexAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allocate_mesh_index_attribute(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_allocate_mesh_index_attribute::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allocate_custom_data_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemcustomdata :: ParticleSystemCustomData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "AllocateCustomDataAttribute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "AllocateCustomDataAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allocate_custom_data_attribute(
+        this: ParticleSystem,
         stream: crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
-    ) -> ();
-
-    #[doc = "`get_main()` overload"]
-    #[method(name = "get_main", args = 0)]
-    pub fn get_main(self) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule;
-
-    #[doc = "`get_emission()` overload"]
-    #[method(name = "get_emission", args = 0)]
-    pub fn get_emission(self)
-        -> crate::unity_engine::particlesystem::ParticleSystem_EmissionModule;
-
-    #[doc = "`get_shape()` overload"]
-    #[method(name = "get_shape", args = 0)]
-    pub fn get_shape(self) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule;
-
-    #[doc = "`get_velocityOverLifetime()` overload"]
-    #[method(name = "get_velocityOverLifetime", args = 0)]
-    pub fn get_velocity_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_VelocityOverLifetimeModule;
-
-    #[doc = "`get_limitVelocityOverLifetime()` overload"]
-    #[method(name = "get_limitVelocityOverLifetime", args = 0)]
-    pub fn get_limit_velocity_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_LimitVelocityOverLifetimeModule;
-
-    #[doc = "`get_inheritVelocity()` overload"]
-    #[method(name = "get_inheritVelocity", args = 0)]
-    pub fn get_inherit_velocity(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_InheritVelocityModule;
-
-    #[doc = "`get_lifetimeByEmitterSpeed()` overload"]
-    #[method(name = "get_lifetimeByEmitterSpeed", args = 0)]
-    pub fn get_lifetime_by_emitter_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_LifetimeByEmitterSpeedModule;
-
-    #[doc = "`get_forceOverLifetime()` overload"]
-    #[method(name = "get_forceOverLifetime", args = 0)]
-    pub fn get_force_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_ForceOverLifetimeModule;
-
-    #[doc = "`get_colorOverLifetime()` overload"]
-    #[method(name = "get_colorOverLifetime", args = 0)]
-    pub fn get_color_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorOverLifetimeModule;
-
-    #[doc = "`get_colorBySpeed()` overload"]
-    #[method(name = "get_colorBySpeed", args = 0)]
-    pub fn get_color_by_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorBySpeedModule;
-
-    #[doc = "`get_sizeOverLifetime()` overload"]
-    #[method(name = "get_sizeOverLifetime", args = 0)]
-    pub fn get_size_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeOverLifetimeModule;
-
-    #[doc = "`get_sizeBySpeed()` overload"]
-    #[method(name = "get_sizeBySpeed", args = 0)]
-    pub fn get_size_by_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeBySpeedModule;
-
-    #[doc = "`get_rotationOverLifetime()` overload"]
-    #[method(name = "get_rotationOverLifetime", args = 0)]
-    pub fn get_rotation_over_lifetime(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationOverLifetimeModule;
-
-    #[doc = "`get_rotationBySpeed()` overload"]
-    #[method(name = "get_rotationBySpeed", args = 0)]
-    pub fn get_rotation_by_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationBySpeedModule;
-
-    #[doc = "`get_externalForces()` overload"]
-    #[method(name = "get_externalForces", args = 0)]
-    pub fn get_external_forces(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_ExternalForcesModule;
-
-    #[doc = "`get_noise()` overload"]
-    #[method(name = "get_noise", args = 0)]
-    pub fn get_noise(self) -> crate::unity_engine::particlesystem::ParticleSystem_NoiseModule;
-
-    #[doc = "`get_collision()` overload"]
-    #[method(name = "get_collision", args = 0)]
-    pub fn get_collision(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_CollisionModule;
-
-    #[doc = "`get_trigger()` overload"]
-    #[method(name = "get_trigger", args = 0)]
-    pub fn get_trigger(self) -> crate::unity_engine::particlesystem::ParticleSystem_TriggerModule;
-
-    #[doc = "`get_subEmitters()` overload"]
-    #[method(name = "get_subEmitters", args = 0)]
-    pub fn get_sub_emitters(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_SubEmittersModule;
-
-    #[doc = "`get_textureSheetAnimation()` overload"]
-    #[method(name = "get_textureSheetAnimation", args = 0)]
-    pub fn get_texture_sheet_animation(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_TextureSheetAnimationModule;
-
-    #[doc = "`get_lights()` overload"]
-    #[method(name = "get_lights", args = 0)]
-    pub fn get_lights(self) -> crate::unity_engine::particlesystem::ParticleSystem_LightsModule;
-
-    #[doc = "`get_customData()` overload"]
-    #[method(name = "get_customData", args = 0)]
-    pub fn get_custom_data(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_CustomDataModule;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetParticleCurrentSize3D_Injected(crate::unity_engine::particlesystem::ParticleSystem_Particle, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetParticleCurrentSize3D_Injected", args = 2)]
-    pub fn get_particle_current_size3_d_injected(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetParticleCurrentColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_Particle, crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "GetParticleCurrentColor_Injected", args = 2)]
-    pub fn get_particle_current_color_injected(
-        self,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-        ret: crate::unity_engine::color32::Color32,
-    ) -> ();
-
-    #[doc = "`GetPlaybackState_Injected(crate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
-    #[method(name = "GetPlaybackState_Injected", args = 1)]
-    pub fn get_playback_state_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
-    ) -> ();
-
-    #[doc = "`SetPlaybackState_Injected(crate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
-    #[method(name = "SetPlaybackState_Injected", args = 1)]
-    pub fn set_playback_state_injected(
-        self,
-        playback_state: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
-    ) -> ();
-
-    #[doc = "`SetTrails_Injected(crate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
-    #[method(name = "SetTrails_Injected", args = 1)]
-    pub fn set_trails_injected(
-        self,
-        trail_data: crate::unity_engine::particlesystem::ParticleSystem_Trails,
-    ) -> ();
-
-    #[doc = "`Emit_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmitParams, i32)` overload"]
-    #[method(name = "Emit_Injected", args = 2)]
-    pub fn emit_injected(
-        self,
-        emit_params: crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_allocate_custom_data_attribute::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_main {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_main",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_main",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_main(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::particlesystem::ParticleSystem_MainModule =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_main::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_emission {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_emission",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_emission",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_emission(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_EmissionModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_EmissionModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_emission :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shape {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_shape",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_shape",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shape(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_ShapeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_shape :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_velocity_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_velocityOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_velocityOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_velocity_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_VelocityOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_VelocityOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_velocity_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_limit_velocity_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_limitVelocityOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_limitVelocityOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_limit_velocity_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_LimitVelocityOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_LimitVelocityOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_limit_velocity_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_inherit_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_inheritVelocity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_inheritVelocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_inherit_velocity(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_InheritVelocityModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_InheritVelocityModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_inherit_velocity :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lifetime_by_emitter_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_lifetimeByEmitterSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_lifetimeByEmitterSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lifetime_by_emitter_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_LifetimeByEmitterSpeedModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_LifetimeByEmitterSpeedModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_lifetime_by_emitter_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_force_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_forceOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_forceOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_force_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ForceOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_ForceOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_force_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_colorOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_colorOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_ColorOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_color_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_by_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_colorBySpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_colorBySpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_by_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorBySpeedModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_ColorBySpeedModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_color_by_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_size_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_sizeOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_sizeOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_size_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_SizeOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_size_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_size_by_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_sizeBySpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_sizeBySpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_size_by_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeBySpeedModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_SizeBySpeedModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_size_by_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_over_lifetime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_rotationOverLifetime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationOverLifetime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_over_lifetime(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationOverLifetimeModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_RotationOverLifetimeModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rotation_over_lifetime :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_by_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_rotationBySpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationBySpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_by_speed(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationBySpeedModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_RotationBySpeedModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rotation_by_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_external_forces {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_externalForces",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_externalForces",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_external_forces(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ExternalForcesModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_ExternalForcesModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_external_forces :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_noise {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_noise",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_noise",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_noise(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_NoiseModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_NoiseModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_noise :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_collision {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_collision",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_collision",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_collision(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_CollisionModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_CollisionModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_collision :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_trigger",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_trigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_trigger(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_TriggerModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_TriggerModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_trigger :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_emitters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_subEmitters",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_subEmitters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_emitters(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SubEmittersModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_SubEmittersModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_sub_emitters :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_texture_sheet_animation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_textureSheetAnimation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_textureSheetAnimation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_texture_sheet_animation(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_TextureSheetAnimationModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_TextureSheetAnimationModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_texture_sheet_animation :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_lights",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_lights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lights(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_LightsModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_LightsModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_lights :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_custom_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "get_customData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_customData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_custom_data(
+        this: ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_CustomDataModule {
+        let inner : extern "C" fn (ParticleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_CustomDataModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_data :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: ParticleSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ParticleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_current_size3_d_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleCurrentSize3D_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleCurrentSize3D_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_current_size3_d_injected(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_current_size3_d_injected::get_offset() as isize),
+        );
+        inner(this, particle, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_particle_current_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: color32 :: Color32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetParticleCurrentColor_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetParticleCurrentColor_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_particle_current_color_injected(
+        this: ParticleSystem,
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        ret: *mut crate::unity_engine::color32::Color32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            *mut crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_particle_current_color_injected::get_offset() as isize),
+        );
+        inner(this, particle, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playback_state_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_PlaybackState as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "GetPlaybackState_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetPlaybackState_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_playback_state_injected(
+        this: ParticleSystem,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_playback_state_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playback_state_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_PlaybackState as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetPlaybackState_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetPlaybackState_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_playback_state_injected(
+        this: ParticleSystem,
+        playback_state: *mut crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_playback_state_injected::get_offset() as isize),
+        );
+        inner(this, playback_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trails_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Trails as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "SetTrails_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetTrails_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trails_injected(
+        this: ParticleSystem,
+        trail_data: *mut crate::unity_engine::particlesystem::ParticleSystem_Trails,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Trails,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_trails_injected::get_offset() as isize),
+        );
+        inner(this, trail_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_EmitParams as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "Emit_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_injected(
+        this: ParticleSystem,
+        emit_params: *mut crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
         count: i32,
-    ) -> ();
-
-    #[doc = "`TriggerSubEmitterForParticle_Injected(i32, crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
-    #[method(name = "TriggerSubEmitterForParticle_Injected", args = 2)]
-    pub fn trigger_sub_emitter_for_particle_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_injected::get_offset() as isize),
+        );
+        inner(this, emit_params, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_trigger_sub_emitter_for_particle_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_Particle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem as ::unity2::ClassIdentity>::class(),
+                "TriggerSubEmitterForParticle_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem as ::unity2::ClassIdentity>::NAME,
+                    "TriggerSubEmitterForParticle_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn trigger_sub_emitter_for_particle_injected(
+        this: ParticleSystem,
         sub_emitter_index: i32,
-        particle: crate::unity_engine::particlesystem::ParticleSystem_Particle,
-    ) -> ();
+        particle: *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem,
+            i32,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_trigger_sub_emitter_for_particle_injected::get_offset() as isize),
+        );
+        inner(this, sub_emitter_index, particle, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem {
+    #[doc = "`ResetPreMappedBufferMemory()` overload"]
+    pub fn reset_pre_mapped_buffer_memory() -> () {
+        unsafe {
+            __ParticleSystem_unity2_raw::reset_pre_mapped_buffer_memory(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMaximumPreMappedBufferCounts(i32, i32)` overload"]
+    pub fn set_maximum_pre_mapped_buffer_counts(
+        vertex_buffers_count: impl ::core::convert::Into<i32>,
+        index_buffers_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_unity2_raw::set_maximum_pre_mapped_buffer_counts(
+                ::core::convert::Into::into(vertex_buffers_count),
+                ::core::convert::Into::into(index_buffers_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+pub trait IParticleSystemMethods: IParticleSystem {
+    #[doc = "`Emit(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, crate::unity_engine::color32::Color32)` overload"]
+    fn emit(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        velocity: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        size: impl ::core::convert::Into<f32>,
+        lifetime: impl ::core::convert::Into<f32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::emit(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(velocity),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(lifetime),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit(crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn emit_2(
+        self,
+        particle: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::emit_2(
+                __receiver,
+                ::core::convert::Into::into(particle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startDelay()` overload"]
+    fn get_start_delay(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_delay(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_startDelay(f32)` overload"]
+    fn set_start_delay(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_delay(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_loop()` overload"]
+    fn get_loop(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_loop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_loop(bool)` overload"]
+    fn set_loop(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_loop(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_playOnAwake()` overload"]
+    fn get_play_on_awake(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_play_on_awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_playOnAwake(bool)` overload"]
+    fn set_play_on_awake(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_play_on_awake(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_duration()` overload"]
+    fn get_duration(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_playbackSpeed()` overload"]
+    fn get_playback_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_playback_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_playbackSpeed(f32)` overload"]
+    fn set_playback_speed(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_playback_speed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_enableEmission()` overload"]
+    fn get_enable_emission(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_enable_emission(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_enableEmission(bool)` overload"]
+    fn set_enable_emission(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_enable_emission(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_emissionRate()` overload"]
+    fn get_emission_rate(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_emission_rate(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_emissionRate(f32)` overload"]
+    fn set_emission_rate(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_emission_rate(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startSpeed()` overload"]
+    fn get_start_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_startSpeed(f32)` overload"]
+    fn set_start_speed(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_speed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startSize()` overload"]
+    fn get_start_size(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_startSize(f32)` overload"]
+    fn set_start_size(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_size(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startColor()` overload"]
+    fn get_start_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_startColor(crate::unity_engine::color::Color)` overload"]
+    fn set_start_color(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_color(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotation()` overload"]
+    fn get_start_rotation(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_rotation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotation(f32)` overload"]
+    fn set_start_rotation(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRotation3D()` overload"]
+    fn get_start_rotation3_d(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_rotation3_d(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRotation3D(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_start_rotation3_d(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_rotation3_d(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startLifetime()` overload"]
+    fn get_start_lifetime(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_start_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startLifetime(f32)` overload"]
+    fn set_start_lifetime(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_start_lifetime(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_gravityModifier()` overload"]
+    fn get_gravity_modifier(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_gravity_modifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_gravityModifier(f32)` overload"]
+    fn set_gravity_modifier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_gravity_modifier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_maxParticles()` overload"]
+    fn get_max_particles(self) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_max_particles(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_maxParticles(i32)` overload"]
+    fn set_max_particles(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_max_particles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_simulationSpace()` overload"]
+    fn get_simulation_space(
+        self,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_simulation_space(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
+    fn set_simulation_space(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_simulation_space(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_scalingMode()` overload"]
+    fn get_scaling_mode(
+        self,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_scaling_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
+    fn set_scaling_mode(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_scaling_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_automaticCullingEnabled()` overload"]
+    fn get_automatic_culling_enabled(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_automatic_culling_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isPlaying()` overload"]
+    fn get_is_playing(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_is_playing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isEmitting()` overload"]
+    fn get_is_emitting(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_is_emitting(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isStopped()` overload"]
+    fn get_is_stopped(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_is_stopped(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isPaused()` overload"]
+    fn get_is_paused(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_is_paused(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_particleCount()` overload"]
+    fn get_particle_count(self) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_particle_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_time()` overload"]
+    fn get_time(self) -> f32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_time(f32)` overload"]
+    fn set_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_randomSeed()` overload"]
+    fn get_random_seed(self) -> u32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_random_seed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_randomSeed(u32)` overload"]
+    fn set_random_seed(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_random_seed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_useAutoRandomSeed()` overload"]
+    fn get_use_auto_random_seed(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_use_auto_random_seed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_useAutoRandomSeed(bool)` overload"]
+    fn set_use_auto_random_seed(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_use_auto_random_seed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_proceduralSimulationSupported()` overload"]
+    fn get_procedural_simulation_supported(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_procedural_simulation_supported(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParticleCurrentSize(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn get_particle_current_size(
+        self,
+    ) -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_unity2_raw::get_particle_current_size(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetParticleCurrentSize3D(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn get_particle_current_size3_d(
+        self,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_unity2_raw::get_particle_current_size3_d(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetParticleCurrentColor(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn get_particle_current_color(
+        self,
+    ) -> (
+        crate::unity_engine::color32::Color32,
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_unity2_raw::get_particle_current_color(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetParticleMeshIndex(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn get_particle_mesh_index(
+        self,
+    ) -> (
+        i32,
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_unity2_raw::get_particle_mesh_index(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32, i32)` overload"]
+    fn set_particles(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+        size: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_particles(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32)` overload"]
+    fn set_particles_2(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+        size: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_particles_2(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
+    fn set_particles_3(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_particles_3(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParticlesWithNativeArray(::unity2::IntPtr, i32, i32, i32)` overload"]
+    fn set_particles_with_native_array(
+        self,
+        particles: impl ::core::convert::Into<::unity2::IntPtr>,
+        particles_length: impl ::core::convert::Into<i32>,
+        size: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_particles_with_native_array(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(particles_length),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32, i32)` overload"]
+    fn get_particles(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+        size: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_particles(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>, i32)` overload"]
+    fn get_particles_2(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+        size: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_particles_2(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParticles(::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
+    fn get_particles_3(
+        self,
+        particles: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_particles_3(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParticlesWithNativeArray(::unity2::IntPtr, i32, i32, i32)` overload"]
+    fn get_particles_with_native_array(
+        self,
+        particles: impl ::core::convert::Into<::unity2::IntPtr>,
+        particles_length: impl ::core::convert::Into<i32>,
+        size: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_particles_with_native_array(
+                __receiver,
+                ::core::convert::Into::into(particles),
+                ::core::convert::Into::into(particles_length),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCustomParticleData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
+    fn set_custom_particle_data(
+        self,
+        custom_data: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        stream_index: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_custom_particle_data(
+                __receiver,
+                ::core::convert::Into::into(custom_data),
+                ::core::convert::Into::into(stream_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCustomParticleData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
+    fn get_custom_particle_data(
+        self,
+        custom_data: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        stream_index: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_custom_particle_data(
+                __receiver,
+                ::core::convert::Into::into(custom_data),
+                ::core::convert::Into::into(stream_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPlaybackState()` overload"]
+    fn get_playback_state(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_PlaybackState {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_playback_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPlaybackState(crate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
+    fn set_playback_state(
+        self,
+        playback_state: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_playback_state(
+                __receiver,
+                ::core::convert::Into::into(playback_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTrailDataInternal(*mutcrate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
+    fn get_trail_data_internal(self) -> crate::unity_engine::particlesystem::ParticleSystem_Trails {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Trails,
+            >::uninit();
+            __ParticleSystem_unity2_raw::get_trail_data_internal(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetTrails()` overload"]
+    fn get_trails(self) -> crate::unity_engine::particlesystem::ParticleSystem_Trails {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_trails(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTrails(crate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
+    fn set_trails(
+        self,
+        trail_data: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_Trails,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::set_trails(
+                __receiver,
+                ::core::convert::Into::into(trail_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Simulate(f32, bool, bool, bool)` overload"]
+    fn simulate(
+        self,
+        t: impl ::core::convert::Into<f32>,
+        with_children: impl ::core::convert::Into<bool>,
+        restart: impl ::core::convert::Into<bool>,
+        fixed_time_step: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::simulate(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(with_children),
+                ::core::convert::Into::into(restart),
+                ::core::convert::Into::into(fixed_time_step),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Simulate(f32, bool, bool)` overload"]
+    fn simulate_2(
+        self,
+        t: impl ::core::convert::Into<f32>,
+        with_children: impl ::core::convert::Into<bool>,
+        restart: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::simulate_2(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(with_children),
+                ::core::convert::Into::into(restart),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Simulate(f32, bool)` overload"]
+    fn simulate_3(
+        self,
+        t: impl ::core::convert::Into<f32>,
+        with_children: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::simulate_3(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Simulate(f32)` overload"]
+    fn simulate_4(self, t: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::simulate_4(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(bool)` overload"]
+    fn play(self, with_children: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::play(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play()` overload"]
+    fn play_2(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::play_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Pause(bool)` overload"]
+    fn pause(self, with_children: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::pause(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Pause()` overload"]
+    fn pause_2(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::pause_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Stop(bool, crate::unity_engine::particlesystemstopbehavior::ParticleSystemStopBehavior)` overload"]
+    fn stop(
+        self,
+        with_children: impl ::core::convert::Into<bool>,
+        stop_behavior: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemstopbehavior::ParticleSystemStopBehavior,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::stop(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::convert::Into::into(stop_behavior),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Stop(bool)` overload"]
+    fn stop_2(self, with_children: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::stop_2(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop_3(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::stop_3(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear(bool)` overload"]
+    fn clear(self, with_children: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::clear(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear_2(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::clear_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsAlive(bool)` overload"]
+    fn is_alive(self, with_children: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::is_alive(
+                __receiver,
+                ::core::convert::Into::into(with_children),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsAlive()` overload"]
+    fn is_alive_2(self) -> bool {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::is_alive_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Emit(i32)` overload"]
+    fn emit_3(self, count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::emit_3(
+                __receiver,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Internal(i32)` overload"]
+    fn emit_internal(self, count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::emit_internal(
+                __receiver,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit(crate::unity_engine::particlesystem::ParticleSystem_EmitParams, i32)` overload"]
+    fn emit_4(
+        self,
+        emit_params: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
+        >,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::emit_4(
+                __receiver,
+                ::core::convert::Into::into(emit_params),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EmitOld_Internal(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn emit_old_internal(self) -> crate::unity_engine::particlesystem::ParticleSystem_Particle {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            __ParticleSystem_unity2_raw::emit_old_internal(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TriggerSubEmitter(i32)` overload"]
+    fn trigger_sub_emitter(self, sub_emitter_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::trigger_sub_emitter(
+                __receiver,
+                ::core::convert::Into::into(sub_emitter_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerSubEmitter(i32, *mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn trigger_sub_emitter_2(
+        self,
+        sub_emitter_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_Particle {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            __ParticleSystem_unity2_raw::trigger_sub_emitter_2(
+                __receiver,
+                ::core::convert::Into::into(sub_emitter_index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TriggerSubEmitterForParticle(i32, crate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn trigger_sub_emitter_for_particle(
+        self,
+        sub_emitter_index: impl ::core::convert::Into<i32>,
+        particle: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::trigger_sub_emitter_for_particle(
+                __receiver,
+                ::core::convert::Into::into(sub_emitter_index),
+                ::core::convert::Into::into(particle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TriggerSubEmitter(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::particlesystem::ParticleSystem_Particle>)` overload"]
+    fn trigger_sub_emitter_3(
+        self,
+        sub_emitter_index: impl ::core::convert::Into<i32>,
+        particles: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::trigger_sub_emitter_3(
+                __receiver,
+                ::core::convert::Into::into(sub_emitter_index),
+                ::core::convert::Into::into(particles),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllocateAxisOfRotationAttribute()` overload"]
+    fn allocate_axis_of_rotation_attribute(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::allocate_axis_of_rotation_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllocateMeshIndexAttribute()` overload"]
+    fn allocate_mesh_index_attribute(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::allocate_mesh_index_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllocateCustomDataAttribute(crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData)` overload"]
+    fn allocate_custom_data_attribute(
+        self,
+        stream: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemcustomdata::ParticleSystemCustomData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::allocate_custom_data_attribute(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_main()` overload"]
+    fn get_main(self) -> crate::unity_engine::particlesystem::ParticleSystem_MainModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_main(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_emission()` overload"]
+    fn get_emission(self) -> crate::unity_engine::particlesystem::ParticleSystem_EmissionModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_emission(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_shape()` overload"]
+    fn get_shape(self) -> crate::unity_engine::particlesystem::ParticleSystem_ShapeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_shape(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_velocityOverLifetime()` overload"]
+    fn get_velocity_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_VelocityOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_velocity_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_limitVelocityOverLifetime()` overload"]
+    fn get_limit_velocity_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_LimitVelocityOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_limit_velocity_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_inheritVelocity()` overload"]
+    fn get_inherit_velocity(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_InheritVelocityModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_inherit_velocity(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_lifetimeByEmitterSpeed()` overload"]
+    fn get_lifetime_by_emitter_speed(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_LifetimeByEmitterSpeedModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_lifetime_by_emitter_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_forceOverLifetime()` overload"]
+    fn get_force_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ForceOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_force_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colorOverLifetime()` overload"]
+    fn get_color_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_color_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colorBySpeed()` overload"]
+    fn get_color_by_speed(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ColorBySpeedModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_color_by_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_sizeOverLifetime()` overload"]
+    fn get_size_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_size_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_sizeBySpeed()` overload"]
+    fn get_size_by_speed(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SizeBySpeedModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_size_by_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_rotationOverLifetime()` overload"]
+    fn get_rotation_over_lifetime(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationOverLifetimeModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_rotation_over_lifetime(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotationBySpeed()` overload"]
+    fn get_rotation_by_speed(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_RotationBySpeedModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_rotation_by_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_externalForces()` overload"]
+    fn get_external_forces(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_ExternalForcesModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_external_forces(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_noise()` overload"]
+    fn get_noise(self) -> crate::unity_engine::particlesystem::ParticleSystem_NoiseModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_noise(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_collision()` overload"]
+    fn get_collision(self) -> crate::unity_engine::particlesystem::ParticleSystem_CollisionModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_collision(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_trigger()` overload"]
+    fn get_trigger(self) -> crate::unity_engine::particlesystem::ParticleSystem_TriggerModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_trigger(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_subEmitters()` overload"]
+    fn get_sub_emitters(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_SubEmittersModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_sub_emitters(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_textureSheetAnimation()` overload"]
+    fn get_texture_sheet_animation(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_TextureSheetAnimationModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_texture_sheet_animation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_lights()` overload"]
+    fn get_lights(self) -> crate::unity_engine::particlesystem::ParticleSystem_LightsModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_lights(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_customData()` overload"]
+    fn get_custom_data(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_CustomDataModule {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::get_custom_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ParticleSystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetParticleCurrentSize3D_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_particle_current_size3_d_injected(
+        self,
+    ) -> (
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ParticleSystem_unity2_raw::get_particle_current_size3_d_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetParticleCurrentColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_Particle, *mutcrate::unity_engine::color32::Color32)` overload"]
+    fn get_particle_current_color_injected(
+        self,
+    ) -> (
+        crate::unity_engine::particlesystem::ParticleSystem_Particle,
+        crate::unity_engine::color32::Color32,
+    ) {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color32::Color32>::uninit();
+            __ParticleSystem_unity2_raw::get_particle_current_color_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetPlaybackState_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
+    fn get_playback_state_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_PlaybackState {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+            >::uninit();
+            __ParticleSystem_unity2_raw::get_playback_state_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetPlaybackState_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_PlaybackState)` overload"]
+    fn set_playback_state_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_PlaybackState {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_PlaybackState,
+            >::uninit();
+            __ParticleSystem_unity2_raw::set_playback_state_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetTrails_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_Trails)` overload"]
+    fn set_trails_injected(self) -> crate::unity_engine::particlesystem::ParticleSystem_Trails {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Trails,
+            >::uninit();
+            __ParticleSystem_unity2_raw::set_trails_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Emit_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmitParams, i32)` overload"]
+    fn emit_injected(
+        self,
+        count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_EmitParams {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_EmitParams,
+            >::uninit();
+            __ParticleSystem_unity2_raw::emit_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TriggerSubEmitterForParticle_Injected(i32, *mutcrate::unity_engine::particlesystem::ParticleSystem_Particle)` overload"]
+    fn trigger_sub_emitter_for_particle_injected(
+        self,
+        sub_emitter_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_Particle {
+        unsafe {
+            let __receiver = <ParticleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_Particle,
+            >::uninit();
+            __ParticleSystem_unity2_raw::trigger_sub_emitter_for_particle_injected(
+                __receiver,
+                ::core::convert::Into::into(sub_emitter_index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl<__T: IParticleSystem> IParticleSystemMethods for __T {}
 
 #[cfg(feature = "unity_engine-particlesystem")]
 impl ParticleSystem {
@@ -2573,99 +15984,1274 @@ impl ParticleSystem {
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_SizeBySpeedModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_SizeBySpeedModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_SizeBySpeedModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_SizeBySpeedModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_SizeBySpeedModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_SizeBySpeedModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_SizeBySpeedModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_ExternalForcesModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_ExternalForcesModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_ExternalForcesModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_ExternalForcesModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_ExternalForcesModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_ExternalForcesModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_ExternalForcesModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_NoiseModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_NoiseModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_NoiseModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_NoiseModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_NoiseModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_NoiseModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_NoiseModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_VelocityOverLifetimeModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_VelocityOverLifetimeModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_VelocityOverLifetimeModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_VelocityOverLifetimeModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_VelocityOverLifetimeModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_VelocityOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_VelocityOverLifetimeModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_MinMaxGradient_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_MinMaxGradient,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_MinMaxGradient,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::class(),
+                "get_color",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::NAME,
+                    "get_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color(
+        this: ParticleSystem_MinMaxGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            ParticleSystem_MinMaxGradient,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_MinMaxGradient as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient {
+        let inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxGradient = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        inner(color, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_MinMaxGradient {
+    #[doc = "`op_Implicit(crate::unity_engine::color::Color)` overload"]
+    pub fn op_implicit(
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient {
+        unsafe {
+            __ParticleSystem_MinMaxGradient_unity2_raw::op_implicit(
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
 impl ParticleSystem_MinMaxGradient {
     #[doc = "`.ctor(crate::unity_engine::color::Color)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, color: crate::unity_engine::color::Color) -> ();
-
+    pub fn ctor(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            __ParticleSystem_MinMaxGradient_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_color()` overload"]
-    #[method(name = "get_color", args = 0)]
-    pub fn get_color(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`op_Implicit(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        color: crate::unity_engine::color::Color,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
+    pub fn get_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            __ParticleSystem_MinMaxGradient_unity2_raw::get_color(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ColorOverLifetimeModule {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_TrailModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_TrailModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_TrailModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_TrailModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_TrailModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_TrailModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_TrailModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_LifetimeByEmitterSpeedModule {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_EmissionModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_EmissionModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_EmissionModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "get_enabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "get_enabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enabled(
+        this: ParticleSystem_EmissionModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystem_EmissionModule, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "set_enabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "set_enabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enabled(
+        this: ParticleSystem_EmissionModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_EmissionModule,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enabled::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rate_over_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "set_rateOverTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "set_rateOverTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rate_over_time(
+        this: ParticleSystem_EmissionModule,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_EmissionModule,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rate_over_time::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rate_over_time_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "get_rateOverTimeMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "get_rateOverTimeMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rate_over_time_multiplier(
+        this: ParticleSystem_EmissionModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystem_EmissionModule, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rate_over_time_multiplier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enabled_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_EmissionModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "get_enabled_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "get_enabled_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enabled_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enabled_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enabled_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_EmissionModule as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "set_enabled_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "set_enabled_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enabled_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enabled_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rate_over_time_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_EmissionModule as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "set_rateOverTime_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "set_rateOverTime_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rate_over_time_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rate_over_time_injected::get_offset() as isize),
+        );
+        inner(unity_self, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rate_over_time_multiplier_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_EmissionModule as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::class(),
+                "get_rateOverTimeMultiplier_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_EmissionModule as ::unity2::ClassIdentity>::NAME,
+                    "get_rateOverTimeMultiplier_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rate_over_time_multiplier_injected(
+        unity_self: *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rate_over_time_multiplier_injected::get_offset() as isize),
+        );
+        inner(unity_self, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_EmissionModule {
+    #[doc = "`get_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
+    pub fn get_enabled_injected() -> (
+        bool,
+        crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_EmissionModule_unity2_raw::get_enabled_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]
+    pub fn set_enabled_injected(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_EmissionModule {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            >::uninit();
+            __ParticleSystem_EmissionModule_unity2_raw::set_enabled_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rateOverTime_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    pub fn set_rate_over_time_injected() -> (
+        crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystem_EmissionModule_unity2_raw::set_rate_over_time_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`get_rateOverTimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
+    pub fn get_rate_over_time_multiplier_injected() -> (
+        f32,
+        crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+            >::uninit();
+            let __ret = {
+                __ParticleSystem_EmissionModule_unity2_raw::get_rate_over_time_multiplier_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_EmissionModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_EmissionModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_enabled()` overload"]
+    pub fn get_enabled(self) -> bool {
+        unsafe {
+            __ParticleSystem_EmissionModule_unity2_raw::get_enabled(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_enabled(bool)` overload"]
+    pub fn set_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __ParticleSystem_EmissionModule_unity2_raw::set_enabled(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    pub fn set_rate_over_time(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_EmissionModule_unity2_raw::set_rate_over_time(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rateOverTimeMultiplier()` overload"]
+    pub fn get_rate_over_time_multiplier(self) -> f32 {
+        unsafe {
+            __ParticleSystem_EmissionModule_unity2_raw::get_rate_over_time_multiplier(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_LimitVelocityOverLifetimeModule {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystem_InheritVelocityModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::particlesystem::ParticleSystem as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystem_InheritVelocityModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystem_InheritVelocityModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystem_InheritVelocityModule,
+        particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystem_InheritVelocityModule,
+            crate::unity_engine::particlesystem::ParticleSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, particle_system, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+impl ParticleSystem_InheritVelocityModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+    pub fn ctor(
+        self,
+        particle_system: impl ::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>,
+    ) -> () {
+        unsafe {
+            __ParticleSystem_InheritVelocityModule_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(particle_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SubEmittersModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_Particle {
-    #[doc = "`set_lifetime(f32)` overload"]
-    #[method(name = "set_lifetime", args = 1)]
-    pub fn set_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position", args = 1)]
-    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_velocity", args = 1)]
-    pub fn set_velocity(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_remainingLifetime(f32)` overload"]
-    #[method(name = "set_remainingLifetime", args = 1)]
-    pub fn set_remaining_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startLifetime(f32)` overload"]
-    #[method(name = "set_startLifetime", args = 1)]
-    pub fn set_start_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "set_startColor", args = 1)]
-    pub fn set_start_color(self, value: crate::unity_engine::color32::Color32) -> ();
-
-    #[doc = "`set_randomSeed(u32)` overload"]
-    #[method(name = "set_randomSeed", args = 1)]
-    pub fn set_random_seed(self, value: u32) -> ();
-
-    #[doc = "`set_startSize(f32)` overload"]
-    #[method(name = "set_startSize", args = 1)]
-    pub fn set_start_size(self, value: f32) -> ();
-
-    #[doc = "`set_rotation(f32)` overload"]
-    #[method(name = "set_rotation", args = 1)]
-    pub fn set_rotation(self, value: f32) -> ();
-
-    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_rotation3D", args = 1)]
-    pub fn set_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_angularVelocity3D", args = 1)]
-    pub fn set_angular_velocity3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
+pub mod prelude {
+    pub use super::IParticleSystem;
+    pub use super::IParticleSystemMethods;
+    pub use super::ParticleSystem;
+    pub use super::ParticleSystem_CollisionModule;
+    pub use super::ParticleSystem_ColorBySpeedModule;
+    pub use super::ParticleSystem_ColorOverLifetimeModule;
+    pub use super::ParticleSystem_CustomDataModule;
+    pub use super::ParticleSystem_EmissionModule;
+    pub use super::ParticleSystem_EmitParams;
+    pub use super::ParticleSystem_ExternalForcesModule;
+    pub use super::ParticleSystem_ForceOverLifetimeModule;
+    pub use super::ParticleSystem_InheritVelocityModule;
+    pub use super::ParticleSystem_LifetimeByEmitterSpeedModule;
+    pub use super::ParticleSystem_LightsModule;
+    pub use super::ParticleSystem_LimitVelocityOverLifetimeModule;
+    pub use super::ParticleSystem_MainModule;
+    pub use super::ParticleSystem_MinMaxCurve;
+    pub use super::ParticleSystem_MinMaxGradient;
+    pub use super::ParticleSystem_NoiseModule;
+    pub use super::ParticleSystem_Particle;
+    pub use super::ParticleSystem_PlaybackState;
+    pub use super::ParticleSystem_PlaybackState_Collision;
+    pub use super::ParticleSystem_PlaybackState_Emission;
+    pub use super::ParticleSystem_PlaybackState_Force;
+    pub use super::ParticleSystem_PlaybackState_Initial;
+    pub use super::ParticleSystem_PlaybackState_Lights;
+    pub use super::ParticleSystem_PlaybackState_Noise;
+    pub use super::ParticleSystem_PlaybackState_Seed;
+    pub use super::ParticleSystem_PlaybackState_Seed4;
+    pub use super::ParticleSystem_PlaybackState_Shape;
+    pub use super::ParticleSystem_PlaybackState_Trail;
+    pub use super::ParticleSystem_RotationBySpeedModule;
+    pub use super::ParticleSystem_RotationOverLifetimeModule;
+    pub use super::ParticleSystem_ShapeModule;
+    pub use super::ParticleSystem_SizeBySpeedModule;
+    pub use super::ParticleSystem_SizeOverLifetimeModule;
+    pub use super::ParticleSystem_SubEmittersModule;
+    pub use super::ParticleSystem_TextureSheetAnimationModule;
+    pub use super::ParticleSystem_TrailModule;
+    pub use super::ParticleSystem_Trails;
+    pub use super::ParticleSystem_TriggerModule;
+    pub use super::ParticleSystem_VelocityOverLifetimeModule;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

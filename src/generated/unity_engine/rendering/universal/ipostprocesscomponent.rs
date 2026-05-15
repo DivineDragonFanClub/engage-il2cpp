@@ -18,13 +18,133 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
-#[::unity2::methods]
-impl IPostProcessComponent {
-    #[doc = "`IsActive()` overload"]
-    #[method(name = "IsActive", args = 0)]
-    pub fn is_active(self) -> bool;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPostProcessComponent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPostProcessComponent as ::unity2::ClassIdentity>::class(),
+                "IsActive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPostProcessComponent as ::unity2::ClassIdentity>::NAME,
+                    "IsActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_active(
+        this: IPostProcessComponent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(IPostProcessComponent, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_active::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_tile_compatible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPostProcessComponent as ::unity2::ClassIdentity>::class(),
+                "IsTileCompatible",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPostProcessComponent as ::unity2::ClassIdentity>::NAME,
+                    "IsTileCompatible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_tile_compatible(
+        this: IPostProcessComponent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(IPostProcessComponent, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_tile_compatible::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
+pub trait IIPostProcessComponentMethods: IIPostProcessComponent {
+    #[doc = "`IsActive()` overload"]
+    fn is_active(self) -> bool {
+        unsafe {
+            let __receiver = <IPostProcessComponent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPostProcessComponent_unity2_raw::is_active(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`IsTileCompatible()` overload"]
-    #[method(name = "IsTileCompatible", args = 0)]
-    pub fn is_tile_compatible(self) -> bool;
+    fn is_tile_compatible(self) -> bool {
+        unsafe {
+            let __receiver = <IPostProcessComponent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPostProcessComponent_unity2_raw::is_tile_compatible(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
+impl<__T: IIPostProcessComponent> IIPostProcessComponentMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
+pub mod prelude {
+    pub use super::IIPostProcessComponent;
+    pub use super::IIPostProcessComponentMethods;
+    pub use super::IPostProcessComponent;
 }

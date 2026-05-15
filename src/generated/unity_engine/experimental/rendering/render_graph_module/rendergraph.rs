@@ -10,6 +10,25 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_ProfilingScopePassData.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraph.ProfilingScopePassData"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderGraph_ProfilingScopePassData {
+        #[rename(name = "sampler")]
+        pub sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_OnGraphRegisteredDelegate.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraph.OnGraphRegisteredDelegate"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RenderGraph_OnGraphRegisteredDelegate {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledResourceInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -40,45 +59,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraph"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraph {
-# [static_field] # [rename (name = "kMaxMRTCount")] pub k_max_mrt_count : i32 ,
-# [rename (name = "m_Resources")] pub m_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry ,
-# [rename (name = "m_RenderGraphPool")] pub m_render_graph_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool ,
-# [rename (name = "m_RenderPasses")] pub m_render_passes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass > ,
-# [rename (name = "m_RendererLists")] pub m_renderer_lists : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle > ,
-# [rename (name = "m_DebugParameters")] pub m_debug_parameters : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugparams :: RenderGraphDebugParams ,
-# [rename (name = "m_Logger")] pub m_logger : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger ,
-# [rename (name = "m_DefaultResources")] pub m_default_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources ,
-# [rename (name = "m_DefaultProfilingSamplers")] pub m_default_profiling_samplers : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler > ,
-# [rename (name = "m_ExecutionExceptionWasRaised")] pub m_execution_exception_was_raised : bool ,
-# [rename (name = "m_RenderGraphContext")] pub m_render_graph_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext ,
-# [rename (name = "m_PreviousCommandBuffer")] pub m_previous_command_buffer : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer ,
-# [rename (name = "m_CurrentImmediatePassIndex")] pub m_current_immediate_pass_index : i32 ,
-# [rename (name = "m_ImmediateModeResourceList")] pub m_immediate_mode_resource_list : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > ,
-# [rename (name = "m_CompiledResourcesInfos")] pub m_compiled_resources_infos : :: unity2 :: Array < crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > > ,
-# [rename (name = "m_CompiledPassInfos")] pub m_compiled_pass_infos : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > ,
-# [rename (name = "m_CullingStack")] pub m_culling_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
-# [rename (name = "m_ExecutionCount")] pub m_execution_count : i32 ,
-# [rename (name = "m_RenderGraphDebugData")] pub m_render_graph_debug_data : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData ,
-# [static_field] # [rename (name = "s_RegisteredGraphs")] pub s_registered_graphs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph > ,
-# [static_field] # [rename (name = "onGraphRegistered")] pub on_graph_registered : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate ,
-# [static_field] # [rename (name = "onGraphUnregistered")] pub on_graph_unregistered : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_OnGraphRegisteredDelegate.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraph.OnGraphRegisteredDelegate"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RenderGraph_OnGraphRegisteredDelegate {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledPassInfo.md"))]
     #[repr(C)]
@@ -118,402 +98,273 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_ProfilingScopePassData.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraph.ProfilingScopePassData"
+        name = "RenderGraph"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct RenderGraph_ProfilingScopePassData {
-        #[rename(name = "sampler")]
-        pub sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
+    pub struct RenderGraph {
+# [static_field] # [rename (name = "kMaxMRTCount")] pub k_max_mrt_count : i32 ,
+# [rename (name = "m_Resources")] pub m_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry ,
+# [rename (name = "m_RenderGraphPool")] pub m_render_graph_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool ,
+# [rename (name = "m_RenderPasses")] pub m_render_passes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass > ,
+# [rename (name = "m_RendererLists")] pub m_renderer_lists : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle > ,
+# [rename (name = "m_DebugParameters")] pub m_debug_parameters : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugparams :: RenderGraphDebugParams ,
+# [rename (name = "m_Logger")] pub m_logger : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger ,
+# [rename (name = "m_DefaultResources")] pub m_default_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources ,
+# [rename (name = "m_DefaultProfilingSamplers")] pub m_default_profiling_samplers : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler > ,
+# [rename (name = "m_ExecutionExceptionWasRaised")] pub m_execution_exception_was_raised : bool ,
+# [rename (name = "m_RenderGraphContext")] pub m_render_graph_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext ,
+# [rename (name = "m_PreviousCommandBuffer")] pub m_previous_command_buffer : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer ,
+# [rename (name = "m_CurrentImmediatePassIndex")] pub m_current_immediate_pass_index : i32 ,
+# [rename (name = "m_ImmediateModeResourceList")] pub m_immediate_mode_resource_list : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > ,
+# [rename (name = "m_CompiledResourcesInfos")] pub m_compiled_resources_infos : :: unity2 :: Array < crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > > ,
+# [rename (name = "m_CompiledPassInfos")] pub m_compiled_pass_infos : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > ,
+# [rename (name = "m_CullingStack")] pub m_culling_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
+# [rename (name = "m_ExecutionCount")] pub m_execution_count : i32 ,
+# [rename (name = "m_RenderGraphDebugData")] pub m_render_graph_debug_data : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData ,
+# [static_field] # [rename (name = "s_RegisteredGraphs")] pub s_registered_graphs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph > ,
+# [static_field] # [rename (name = "onGraphRegistered")] pub on_graph_registered : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate ,
+# [static_field] # [rename (name = "onGraphUnregistered")] pub on_graph_unregistered : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate ,
+}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[::unity2::methods(value)]
-impl RenderGraph_CompiledResourceInfo {
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_ProfilingScopePassData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderGraph_ProfilingScopePassData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph_ProfilingScopePassData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[::unity2::methods]
-impl RenderGraph {
-    #[doc = "`get_name()` overload"]
-    #[method(name = "get_name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_name(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_name", args = 1)]
-    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_requireDebugData()` overload"]
-    #[method(name = "get_requireDebugData", args = 0)]
-    pub fn get_require_debug_data() -> bool;
-
-    #[doc = "`set_requireDebugData(bool)` overload"]
-    #[method(name = "set_requireDebugData", args = 1)]
-    pub fn set_require_debug_data(value: bool) -> ();
-
-    #[doc = "`get_defaultResources()` overload"]
-    #[method(name = "get_defaultResources", args = 0)]
-    pub fn get_default_resources (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources ;
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup(self) -> ();
-
-    #[doc = "`GetDebugData()` overload"]
-    #[method(name = "GetDebugData", args = 0)]
-    pub fn get_debug_data (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData ;
-
-    #[doc = "`EndFrame()` overload"]
-    #[method(name = "EndFrame", args = 0)]
-    pub fn end_frame(self) -> ();
-
-    #[doc = "`ImportTexture(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    #[method(name = "ImportTexture", args = 1)]
-    pub fn import_texture (self , rt : crate :: unity_engine :: rendering :: rthandle :: RTHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`ImportBackbuffer(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "ImportBackbuffer", args = 1)]
-    pub fn import_backbuffer (self , rt : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`CreateTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc)` overload"]
-    #[method(name = "CreateTexture", args = 1)]
-    pub fn create_texture (self , desc : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`CreateTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "CreateTexture", args = 1)]
-    pub fn create_texture_2 (self , texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`CreateTextureIfInvalid(crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc, crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "CreateTextureIfInvalid", args = 2)]
-    pub fn create_texture_if_invalid(
-        self,
-        desc : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc,
-        texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`GetTextureDesc(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "GetTextureDesc", args = 1)]
-    pub fn get_texture_desc(
-        self,
-        texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc;
-
-    #[doc = "`CreateRendererList(crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]
-    #[method(name = "CreateRendererList", args = 1)]
-    pub fn create_renderer_list (self , desc : crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle ;
-
-    #[doc = "`ImportComputeBuffer(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
-    #[method(name = "ImportComputeBuffer", args = 1)]
-    pub fn import_compute_buffer (self , compute_buffer : crate :: unity_engine :: computebuffer :: ComputeBuffer) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`CreateComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferdesc::ComputeBufferDesc)` overload"]
-    #[method(name = "CreateComputeBuffer", args = 1)]
-    pub fn create_compute_buffer (self , desc : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`CreateComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]
-    #[method(name = "CreateComputeBuffer", args = 1)]
-    pub fn create_compute_buffer_2 (self , compute_buffer : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`GetComputeBufferDesc(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]
-    #[method(name = "GetComputeBufferDesc", args = 1)]
-    pub fn get_compute_buffer_desc (self , compute_buffer : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc ;
-
-    #[doc = "`Begin(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphparameters::RenderGraphParameters)` overload"]
-    #[method(name = "Begin", args = 1)]
-    pub fn begin(
-        self,
-        parameters : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters,
-    ) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`BeginProfilingSampler(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]
-    #[method(name = "BeginProfilingSampler", args = 1)]
-    pub fn begin_profiling_sampler(
-        self,
-        sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    ) -> ();
-
-    #[doc = "`EndProfilingSampler(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]
-    #[method(name = "EndProfilingSampler", args = 1)]
-    pub fn end_profiling_sampler(
-        self,
-        sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    ) -> ();
-
-    #[doc = "`GetRegisteredRenderGraphs()` overload"]
-    #[method(name = "GetRegisteredRenderGraphs", args = 0)]
-    pub fn get_registered_render_graphs() -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
-    >;
-
-    #[doc = "`GetCompiledPassInfos()` overload"]
-    #[method(name = "GetCompiledPassInfos", args = 0)]
-    pub fn get_compiled_pass_infos (self ,) -> crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > ;
-
-    #[doc = "`ClearCompiledGraph()` overload"]
-    #[method(name = "ClearCompiledGraph", args = 0)]
-    pub fn clear_compiled_graph(self) -> ();
-
-    #[doc = "`InvalidateContext()` overload"]
-    #[method(name = "InvalidateContext", args = 0)]
-    pub fn invalidate_context(self) -> ();
-
-    #[doc = "`OnPassAdded(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
-    #[method(name = "OnPassAdded", args = 1)]
-    pub fn on_pass_added(
-        self,
-        pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
-    ) -> ();
-
-    #[doc = "`add_onGraphRegistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
-    #[method(name = "add_onGraphRegistered", args = 1)]
-    pub fn add_on_graph_registered(
-        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
-    ) -> ();
-
-    #[doc = "`remove_onGraphRegistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
-    #[method(name = "remove_onGraphRegistered", args = 1)]
-    pub fn remove_on_graph_registered(
-        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
-    ) -> ();
-
-    #[doc = "`add_onGraphUnregistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
-    #[method(name = "add_onGraphUnregistered", args = 1)]
-    pub fn add_on_graph_unregistered(
-        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
-    ) -> ();
-
-    #[doc = "`remove_onGraphUnregistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
-    #[method(name = "remove_onGraphUnregistered", args = 1)]
-    pub fn remove_on_graph_unregistered(
-        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
-    ) -> ();
-
-    #[doc = "`InitResourceInfosData(crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo>, i32)` overload"]
-    #[method(name = "InitResourceInfosData", args = 2)]
-    pub fn init_resource_infos_data(
-        self,
-        resource_infos : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo >,
-        count: i32,
-    ) -> ();
-
-    #[doc = "`InitializeCompilationData()` overload"]
-    #[method(name = "InitializeCompilationData", args = 0)]
-    pub fn initialize_compilation_data(self) -> ();
-
-    #[doc = "`CountReferences()` overload"]
-    #[method(name = "CountReferences", args = 0)]
-    pub fn count_references(self) -> ();
-
-    #[doc = "`CullOutputlessPasses()` overload"]
-    #[method(name = "CullOutputlessPasses", args = 0)]
-    pub fn cull_outputless_passes(self) -> ();
-
-    #[doc = "`CullUnusedPasses()` overload"]
-    #[method(name = "CullUnusedPasses", args = 0)]
-    pub fn cull_unused_passes(self) -> ();
-
-    #[doc = "`UpdatePassSynchronization(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, i32, i32, i32)` overload"]
-    #[method(name = "UpdatePassSynchronization", args = 5)]
-    pub fn update_pass_synchronization(
-        self,
-        current_pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        producer_pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        current_pass_index: i32,
-        last_producer: i32,
-        int_last_sync_index: i32,
-    ) -> ();
-
-    #[doc = "`UpdateResourceSynchronization(i32, i32, i32, crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]
-    #[method(name = "UpdateResourceSynchronization", args = 4)]
-    pub fn update_resource_synchronization(
-        self,
-        last_graphics_pipe_sync: i32,
-        last_compute_pipe_sync: i32,
-        current_pass_index: i32,
-        resource : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
-    ) -> ();
-
-    #[doc = "`GetLatestProducerIndex(i32, crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]
-    #[method(name = "GetLatestProducerIndex", args = 2)]
-    pub fn get_latest_producer_index(
-        self,
-        pass_index: i32,
-        info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
-    ) -> i32;
-
-    #[doc = "`GetLatestValidReadIndex(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]
-    #[method(name = "GetLatestValidReadIndex", args = 1)]
-    pub fn get_latest_valid_read_index(
-        self,
-        info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
-    ) -> i32;
-
-    #[doc = "`GetFirstValidWriteIndex(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]
-    #[method(name = "GetFirstValidWriteIndex", args = 1)]
-    pub fn get_first_valid_write_index(
-        self,
-        info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
-    ) -> i32;
-
-    #[doc = "`GetLatestValidWriteIndex(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]
-    #[method(name = "GetLatestValidWriteIndex", args = 1)]
-    pub fn get_latest_valid_write_index(
-        self,
-        info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
-    ) -> i32;
-
-    #[doc = "`UpdateResourceAllocationAndSynchronization()` overload"]
-    #[method(name = "UpdateResourceAllocationAndSynchronization", args = 0)]
-    pub fn update_resource_allocation_and_synchronization(self) -> ();
-
-    #[doc = "`CompileRenderGraph()` overload"]
-    #[method(name = "CompileRenderGraph", args = 0)]
-    pub fn compile_render_graph(self) -> ();
-
-    #[doc = "`CompilePassImmediatly(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
-    #[method(name = "CompilePassImmediatly", args = 1)]
-    pub fn compile_pass_immediatly (self , pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo ;
-
-    #[doc = "`ExecutePassImmediatly(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
-    #[method(name = "ExecutePassImmediatly", args = 1)]
-    pub fn execute_pass_immediatly(
-        self,
-        pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
-    ) -> ();
-
-    #[doc = "`ExecuteCompiledPass(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, i32)` overload"]
-    #[method(name = "ExecuteCompiledPass", args = 2)]
-    pub fn execute_compiled_pass(
-        self,
-        pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        pass_index: i32,
-    ) -> ();
-
-    #[doc = "`ExecuteRenderGraph()` overload"]
-    #[method(name = "ExecuteRenderGraph", args = 0)]
-    pub fn execute_render_graph(self) -> ();
-
-    #[doc = "`PreRenderPassSetRenderTargets(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]
-    #[method(name = "PreRenderPassSetRenderTargets", args = 2)]
-    pub fn pre_render_pass_set_render_targets(
-        self,
-        pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
-    ) -> ();
-
-    #[doc = "`PreRenderPassExecute(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]
-    #[method(name = "PreRenderPassExecute", args = 2)]
-    pub fn pre_render_pass_execute(
-        self,
-        pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
-    ) -> ();
-
-    #[doc = "`PostRenderPassExecute(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]
-    #[method(name = "PostRenderPassExecute", args = 2)]
-    pub fn post_render_pass_execute(
-        self,
-        pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
-    ) -> ();
-
-    #[doc = "`ClearRenderPasses()` overload"]
-    #[method(name = "ClearRenderPasses", args = 0)]
-    pub fn clear_render_passes(self) -> ();
-
-    #[doc = "`ReleaseImmediateModeResources()` overload"]
-    #[method(name = "ReleaseImmediateModeResources", args = 0)]
-    pub fn release_immediate_mode_resources(self) -> ();
-
-    #[doc = "`LogFrameInformation()` overload"]
-    #[method(name = "LogFrameInformation", args = 0)]
-    pub fn log_frame_information(self) -> ();
-
-    #[doc = "`LogRendererListsCreation()` overload"]
-    #[method(name = "LogRendererListsCreation", args = 0)]
-    pub fn log_renderer_lists_creation(self) -> ();
-
-    #[doc = "`LogRenderPassBegin(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo)` overload"]
-    #[method(name = "LogRenderPassBegin", args = 1)]
-    pub fn log_render_pass_begin(
-        self,
-        pass_info : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
-    ) -> ();
-
-    #[doc = "`LogCulledPasses()` overload"]
-    #[method(name = "LogCulledPasses", args = 0)]
-    pub fn log_culled_passes(self) -> ();
-
-    #[doc = "`GetDefaultProfilingSampler(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetDefaultProfilingSampler", args = 1)]
-    pub fn get_default_profiling_sampler(
-        self,
-        name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler;
-
-    #[doc = "`UpdateImportedResourceLifeTime(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_ResourceDebugData, crate::system::collections::generic::list_1::List_1<i32>)` overload"]
-    #[method(name = "UpdateImportedResourceLifeTime", args = 2)]
-    pub fn update_imported_resource_life_time(
-        self,
-        data : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData,
-        pass_list: crate::system::collections::generic::list_1::List_1<i32>,
-    ) -> ();
-
-    #[doc = "`GenerateDebugData()` overload"]
-    #[method(name = "GenerateDebugData", args = 0)]
-    pub fn generate_debug_data(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+pub trait IRenderGraph_ProfilingScopePassDataMethods: IRenderGraph_ProfilingScopePassData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraph_ProfilingScopePassData as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraph_ProfilingScopePassData_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
+impl<__T: IRenderGraph_ProfilingScopePassData> IRenderGraph_ProfilingScopePassDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_ProfilingScopePassData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraph),
+                ::core::stringify!(RenderGraph_ProfilingScopePassData),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderGraphMethods>::ctor(this, name);
+        <Self as IRenderGraph_ProfilingScopePassDataMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[::unity2::methods]
-impl RenderGraph_OnGraphRegisteredDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_OnGraphRegisteredDelegate_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_OnGraphRegisteredDelegate as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_OnGraphRegisteredDelegate as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderGraph_OnGraphRegisteredDelegate,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph_OnGraphRegisteredDelegate,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_OnGraphRegisteredDelegate as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_OnGraphRegisteredDelegate as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RenderGraph_OnGraphRegisteredDelegate,
         graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph_OnGraphRegisteredDelegate , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_invoke :: get_offset () as isize) ,) ;
+        inner(this, graph, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+pub trait IRenderGraph_OnGraphRegisteredDelegateMethods:
+    IRenderGraph_OnGraphRegisteredDelegate
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RenderGraph_OnGraphRegisteredDelegate_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
+    fn invoke(
+        self,
+        graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RenderGraph_OnGraphRegisteredDelegate_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl<__T: IRenderGraph_OnGraphRegisteredDelegate> IRenderGraph_OnGraphRegisteredDelegateMethods
+    for __T
+{
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
@@ -533,40 +384,3813 @@ impl RenderGraph_OnGraphRegisteredDelegate {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_CompiledResourceInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph_CompiledResourceInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_CompiledResourceInfo {
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe {
+            __RenderGraph_CompiledResourceInfo_unity2_raw::reset(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_CompiledPassInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_allow_pass_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_CompiledPassInfo as ::unity2::ClassIdentity>::class(),
+                "get_allowPassCulling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_CompiledPassInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_allowPassCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_allow_pass_culling(
+        this: RenderGraph_CompiledPassInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RenderGraph_CompiledPassInfo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_allow_pass_culling::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_CompiledPassInfo as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph_CompiledPassInfo as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: RenderGraph_CompiledPassInfo,
+        pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_reset :: get_offset () as isize) ,) ;
+        inner(this, pass, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
 impl RenderGraph_CompiledPassInfo {
     #[doc = "`get_allowPassCulling()` overload"]
-    #[method(name = "get_allowPassCulling", args = 0)]
-    pub fn get_allow_pass_culling(self) -> bool;
-
+    pub fn get_allow_pass_culling(self) -> bool {
+        unsafe {
+            __RenderGraph_CompiledPassInfo_unity2_raw::get_allow_pass_culling(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Reset(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
-    #[method(name = "Reset", args = 1)]
     pub fn reset(
         self,
+        pass : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass >,
+    ) -> () {
+        unsafe {
+            __RenderGraph_CompiledPassInfo_unity2_raw::reset(
+                self,
+                ::core::convert::Into::into(pass),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "get_name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "get_name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "set_name",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "set_name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_name(
+        this: RenderGraph,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_name::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_require_debug_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "get_requireDebugData",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "get_requireDebugData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_require_debug_data(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_require_debug_data::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_require_debug_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "set_requireDebugData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "set_requireDebugData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_require_debug_data(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_require_debug_data::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "get_defaultResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "get_defaultResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_default_resources (this : RenderGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources{
+        let inner : extern "C" fn (RenderGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_resources :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderGraph,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cleanup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "Cleanup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "Cleanup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cleanup(this: RenderGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cleanup::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_debug_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetDebugData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetDebugData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_debug_data (this : RenderGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData{
+        let inner : extern "C" fn (RenderGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_debug_data :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "EndFrame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "EndFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_frame(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end_frame::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_import_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ImportTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ImportTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn import_texture (this : RenderGraph , rt : crate :: unity_engine :: rendering :: rthandle :: RTHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: rendering :: rthandle :: RTHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_import_texture :: get_offset () as isize) ,) ;
+        inner(this, rt, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_import_backbuffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ImportBackbuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ImportBackbuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn import_backbuffer (this : RenderGraph , rt : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_import_backbuffer :: get_offset () as isize) ,) ;
+        inner(this, rt, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_texture (this : RenderGraph , desc : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_texture :: get_offset () as isize) ,) ;
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_texture_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_texture_2 (this : RenderGraph , texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_texture_2 :: get_offset () as isize) ,) ;
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_texture_if_invalid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateTextureIfInvalid",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateTextureIfInvalid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_texture_if_invalid(
+        this: RenderGraph,
+        desc : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc,
+        texture : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_texture_if_invalid :: get_offset () as isize) ,) ;
+        inner(this, desc, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_texture_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetTextureDesc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetTextureDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_texture_desc(
+        this: RenderGraph,
+        texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc
+    {
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_texture_desc :: get_offset () as isize) ,) ;
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_renderer_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateRendererList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateRendererList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_renderer_list (this : RenderGraph , desc : * mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle{
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_renderer_list :: get_offset () as isize) ,) ;
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_import_compute_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ImportComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ImportComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn import_compute_buffer (this : RenderGraph , compute_buffer : crate :: unity_engine :: computebuffer :: ComputeBuffer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: computebuffer :: ComputeBuffer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_import_compute_buffer :: get_offset () as isize) ,) ;
+        inner(this, compute_buffer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_compute_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_compute_buffer (this : RenderGraph , desc : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_compute_buffer :: get_offset () as isize) ,) ;
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_compute_buffer_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CreateComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CreateComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_compute_buffer_2 (this : RenderGraph , compute_buffer : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_compute_buffer_2 :: get_offset () as isize) ,) ;
+        inner(this, compute_buffer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_compute_buffer_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetComputeBufferDesc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetComputeBufferDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_compute_buffer_desc (this : RenderGraph , compute_buffer : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc{
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_compute_buffer_desc :: get_offset () as isize) ,) ;
+        inner(this, compute_buffer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "Begin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "Begin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin(
+        this: RenderGraph,
+        parameters : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_begin :: get_offset () as isize) ,) ;
+        inner(this, parameters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(this: RenderGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_execute::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_profiling_sampler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "BeginProfilingSampler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "BeginProfilingSampler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_profiling_sampler(
+        this: RenderGraph,
+        sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph,
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_begin_profiling_sampler::get_offset() as isize),
+        );
+        inner(this, sampler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_profiling_sampler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "EndProfilingSampler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "EndProfilingSampler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_profiling_sampler(
+        this: RenderGraph,
+        sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderGraph,
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end_profiling_sampler::get_offset() as isize),
+        );
+        inner(this, sampler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_registered_render_graphs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetRegisteredRenderGraphs",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetRegisteredRenderGraphs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_registered_render_graphs(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
+    > {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_registered_render_graphs :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_compiled_pass_infos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetCompiledPassInfos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetCompiledPassInfos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_compiled_pass_infos (this : RenderGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo >{
+        let inner : extern "C" fn (RenderGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_compiled_pass_infos :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_compiled_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ClearCompiledGraph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ClearCompiledGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_compiled_graph(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_compiled_graph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invalidate_context {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "InvalidateContext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "InvalidateContext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invalidate_context(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invalidate_context::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_pass_added {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "OnPassAdded",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "OnPassAdded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_pass_added(
+        this: RenderGraph,
         pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_on_pass_added :: get_offset () as isize) ,) ;
+        inner(this, pass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_graph_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "add_onGraphRegistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "add_onGraphRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_graph_registered(
+        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_on_graph_registered :: get_offset () as isize) ,) ;
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_graph_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "remove_onGraphRegistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "remove_onGraphRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_graph_registered(
+        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_on_graph_registered :: get_offset () as isize) ,) ;
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_graph_unregistered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "add_onGraphUnregistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "add_onGraphUnregistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_graph_unregistered(
+        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_on_graph_unregistered :: get_offset () as isize) ,) ;
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_graph_unregistered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "remove_onGraphUnregistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "remove_onGraphUnregistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_graph_unregistered(
+        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_on_graph_unregistered :: get_offset () as isize) ,) ;
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_resource_infos_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "InitResourceInfosData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "InitResourceInfosData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_resource_infos_data(
+        this: RenderGraph,
+        resource_infos : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo >,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init_resource_infos_data :: get_offset () as isize) ,) ;
+        inner(this, resource_infos, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_compilation_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "InitializeCompilationData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "InitializeCompilationData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_compilation_data(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_initialize_compilation_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_count_references {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CountReferences",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CountReferences",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn count_references(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_count_references::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cull_outputless_passes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CullOutputlessPasses",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CullOutputlessPasses",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cull_outputless_passes(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cull_outputless_passes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cull_unused_passes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CullUnusedPasses",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CullUnusedPasses",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cull_unused_passes(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cull_unused_passes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_pass_synchronization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "UpdatePassSynchronization",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "UpdatePassSynchronization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_pass_synchronization(
+        this: RenderGraph,
+        current_pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        producer_pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        current_pass_index: i32,
+        last_producer: i32,
+        int_last_sync_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , i32 , i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_update_pass_synchronization :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            current_pass_info,
+            producer_pass_info,
+            current_pass_index,
+            last_producer,
+            int_last_sync_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_resource_synchronization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "UpdateResourceSynchronization",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "UpdateResourceSynchronization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_resource_synchronization(
+        this: RenderGraph,
+        last_graphics_pipe_sync: *mut i32,
+        last_compute_pipe_sync: *mut i32,
+        current_pass_index: i32,
+        resource : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut i32 , * mut i32 , i32 , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_update_resource_synchronization :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            last_graphics_pipe_sync,
+            last_compute_pipe_sync,
+            current_pass_index,
+            resource,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_latest_producer_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetLatestProducerIndex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetLatestProducerIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_latest_producer_index(
+        this: RenderGraph,
+        pass_index: i32,
+        info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (RenderGraph , i32 , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_latest_producer_index :: get_offset () as isize) ,) ;
+        inner(this, pass_index, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_latest_valid_read_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetLatestValidReadIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetLatestValidReadIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_latest_valid_read_index(
+        this: RenderGraph,
+        info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_latest_valid_read_index :: get_offset () as isize) ,) ;
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_first_valid_write_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetFirstValidWriteIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetFirstValidWriteIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_first_valid_write_index(
+        this: RenderGraph,
+        info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_first_valid_write_index :: get_offset () as isize) ,) ;
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_latest_valid_write_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetLatestValidWriteIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetLatestValidWriteIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_latest_valid_write_index(
+        this: RenderGraph,
+        info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_latest_valid_write_index :: get_offset () as isize) ,) ;
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_resource_allocation_and_synchronization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "UpdateResourceAllocationAndSynchronization",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "UpdateResourceAllocationAndSynchronization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_resource_allocation_and_synchronization(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_update_resource_allocation_and_synchronization::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile_render_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CompileRenderGraph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CompileRenderGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compile_render_graph(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compile_render_graph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile_pass_immediatly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "CompilePassImmediatly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "CompilePassImmediatly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn compile_pass_immediatly (this : RenderGraph , pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , :: unity2 :: OptionalMethod ,) -> * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compile_pass_immediatly :: get_offset () as isize) ,) ;
+        inner(this, pass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_pass_immediatly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ExecutePassImmediatly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ExecutePassImmediatly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_pass_immediatly(
+        this: RenderGraph,
+        pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_execute_pass_immediatly :: get_offset () as isize) ,) ;
+        inner(this, pass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_compiled_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ExecuteCompiledPass",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteCompiledPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_compiled_pass(
+        this: RenderGraph,
+        pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        pass_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_execute_compiled_pass :: get_offset () as isize) ,) ;
+        inner(this, pass_info, pass_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_render_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ExecuteRenderGraph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteRenderGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_render_graph(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_execute_render_graph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pre_render_pass_set_render_targets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "PreRenderPassSetRenderTargets",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "PreRenderPassSetRenderTargets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pre_render_pass_set_render_targets(
+        this: RenderGraph,
+        pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_pre_render_pass_set_render_targets :: get_offset () as isize) ,) ;
+        inner(this, pass_info, rg_context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pre_render_pass_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "PreRenderPassExecute",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "PreRenderPassExecute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pre_render_pass_execute(
+        this: RenderGraph,
+        pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_pre_render_pass_execute :: get_offset () as isize) ,) ;
+        inner(this, pass_info, rg_context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_render_pass_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "PostRenderPassExecute",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "PostRenderPassExecute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_render_pass_execute(
+        this: RenderGraph,
+        pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        rg_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_post_render_pass_execute :: get_offset () as isize) ,) ;
+        inner(this, pass_info, rg_context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_render_passes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ClearRenderPasses",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ClearRenderPasses",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_render_passes(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_render_passes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_immediate_mode_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "ReleaseImmediateModeResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "ReleaseImmediateModeResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release_immediate_mode_resources(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release_immediate_mode_resources::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_frame_information {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "LogFrameInformation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "LogFrameInformation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_frame_information(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_log_frame_information::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_renderer_lists_creation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "LogRendererListsCreation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "LogRendererListsCreation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_renderer_lists_creation(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_log_renderer_lists_creation::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_render_pass_begin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "LogRenderPassBegin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "LogRenderPassBegin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_render_pass_begin(
+        this: RenderGraph,
+        pass_info : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_log_render_pass_begin :: get_offset () as isize) ,) ;
+        inner(this, pass_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_culled_passes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "LogCulledPasses",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "LogCulledPasses",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_culled_passes(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_log_culled_passes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_profiling_sampler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GetDefaultProfilingSampler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GetDefaultProfilingSampler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_profiling_sampler(
+        this: RenderGraph,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
+        let inner : extern "C" fn (RenderGraph , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_profiling_sampler :: get_offset () as isize) ,) ;
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_imported_resource_life_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "UpdateImportedResourceLifeTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "UpdateImportedResourceLifeTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_imported_resource_life_time(
+        this: RenderGraph,
+        data : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData,
+        pass_list: crate::system::collections::generic::list_1::List_1<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraph , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_update_imported_resource_life_time :: get_offset () as isize) ,) ;
+        inner(this, data, pass_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_debug_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "GenerateDebugData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    "GenerateDebugData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_debug_data(
+        this: RenderGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_generate_debug_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[::unity2::methods]
-impl RenderGraph_ProfilingScopePassData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl RenderGraph {
+    #[doc = "`get_requireDebugData()` overload"]
+    pub fn get_require_debug_data() -> bool {
+        unsafe { __RenderGraph_unity2_raw::get_require_debug_data(::core::option::Option::None) }
+    }
+    #[doc = "`set_requireDebugData(bool)` overload"]
+    pub fn set_require_debug_data(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RenderGraph_unity2_raw::set_require_debug_data(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRegisteredRenderGraphs()` overload"]
+    pub fn get_registered_render_graphs() -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
+    > {
+        unsafe {
+            __RenderGraph_unity2_raw::get_registered_render_graphs(::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_onGraphRegistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
+    pub fn add_on_graph_registered(
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate >,
+    ) -> () {
+        unsafe {
+            __RenderGraph_unity2_raw::add_on_graph_registered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_onGraphRegistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
+    pub fn remove_on_graph_registered(
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate >,
+    ) -> () {
+        unsafe {
+            __RenderGraph_unity2_raw::remove_on_graph_registered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`add_onGraphUnregistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
+    pub fn add_on_graph_unregistered(
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate >,
+    ) -> () {
+        unsafe {
+            __RenderGraph_unity2_raw::add_on_graph_unregistered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_onGraphUnregistered(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate)` overload"]
+    pub fn remove_on_graph_unregistered(
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_OnGraphRegisteredDelegate >,
+    ) -> () {
+        unsafe {
+            __RenderGraph_unity2_raw::remove_on_graph_unregistered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RenderGraph_unity2_raw::cctor(::core::option::Option::None) }
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_ProfilingScopePassData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+pub trait IRenderGraphMethods: IRenderGraph {
+    #[doc = "`get_name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_name(::unity2::Il2CppString)` overload"]
+    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::set_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_defaultResources()` overload"]    fn get_default_resources (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_default_resources(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Cleanup()` overload"]
+    fn cleanup(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::cleanup(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDebugData()` overload"]    fn get_debug_data (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_debug_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndFrame()` overload"]
+    fn end_frame(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::end_frame(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ImportTexture(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]    fn import_texture (self , rt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rthandle :: RTHandle >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::import_texture(
+                __receiver,
+                ::core::convert::Into::into(rt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ImportBackbuffer(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]    fn import_backbuffer (self , rt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::import_backbuffer(
+                __receiver,
+                ::core::convert::Into::into(rt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateTexture(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc)` overload"]    fn create_texture (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::create_texture(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]    fn create_texture_2 (self , texture : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::create_texture_2(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateTextureIfInvalid(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc, *mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]    fn create_texture_if_invalid (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc > :: uninit () ;
+            let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            __RenderGraph_unity2_raw::create_texture_if_invalid(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetTextureDesc(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn get_texture_desc(
+        self,
+        texture : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc
+    {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_texture_desc(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRendererList(*mutcrate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]    fn create_renderer_list (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
+            >::uninit();
+            let __ret = {
+                __RenderGraph_unity2_raw::create_renderer_list(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ImportComputeBuffer(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]    fn import_compute_buffer (self , compute_buffer : impl :: core :: convert :: Into < crate :: unity_engine :: computebuffer :: ComputeBuffer >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::import_compute_buffer(
+                __receiver,
+                ::core::convert::Into::into(compute_buffer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferdesc::ComputeBufferDesc)` overload"]    fn create_compute_buffer (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::create_compute_buffer(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]    fn create_compute_buffer_2 (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::create_compute_buffer_2(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetComputeBufferDesc(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]    fn get_compute_buffer_desc (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::get_compute_buffer_desc(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }    pub fn add_render_pass < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , pass_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pass_data : impl :: core :: convert :: Into < * mut M0 > , sampler : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphbuilder :: RenderGraphBuilder{
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "AddRenderPass",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                "AddRenderPass",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f : extern "C" fn (RenderGraph , :: unity2 :: Il2CppString , * mut M0 , crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphbuilder :: RenderGraphBuilder = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(pass_name),
+                ::core::convert::Into::into(pass_data),
+                ::core::convert::Into::into(sampler),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }    pub fn add_render_pass_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , pass_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pass_data : impl :: core :: convert :: Into < * mut M0 >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphbuilder :: RenderGraphBuilder{
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <RenderGraph as ::unity2::ClassIdentity>::class(),
+                "AddRenderPass",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <RenderGraph as ::unity2::ClassIdentity>::NAME,
+                "AddRenderPass",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f : extern "C" fn (RenderGraph , :: unity2 :: Il2CppString , * mut M0 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphbuilder :: RenderGraphBuilder = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(pass_name),
+                ::core::convert::Into::into(pass_data),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`Begin(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraphparameters::RenderGraphParameters)` overload"]    fn begin (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphparameters :: RenderGraphParameters > :: uninit () ;
+            __RenderGraph_unity2_raw::begin(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Execute()` overload"]
+    fn execute(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::execute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BeginProfilingSampler(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]
+    fn begin_profiling_sampler(
+        self,
+        sampler: impl ::core::convert::Into<
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::begin_profiling_sampler(
+                __receiver,
+                ::core::convert::Into::into(sampler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndProfilingSampler(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]
+    fn end_profiling_sampler(
+        self,
+        sampler: impl ::core::convert::Into<
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::end_profiling_sampler(
+                __receiver,
+                ::core::convert::Into::into(sampler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCompiledPassInfos()` overload"]    fn get_compiled_pass_infos (self ,) -> crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo >{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_compiled_pass_infos(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearCompiledGraph()` overload"]
+    fn clear_compiled_graph(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::clear_compiled_graph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InvalidateContext()` overload"]
+    fn invalidate_context(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::invalidate_context(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnPassAdded(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
+    fn on_pass_added(
+        self,
+        pass : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::on_pass_added(
+                __receiver,
+                ::core::convert::Into::into(pass),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitResourceInfosData(crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo>, i32)` overload"]
+    fn init_resource_infos_data(
+        self,
+        resource_infos : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > >,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::init_resource_infos_data(
+                __receiver,
+                ::core::convert::Into::into(resource_infos),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeCompilationData()` overload"]
+    fn initialize_compilation_data(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::initialize_compilation_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CountReferences()` overload"]
+    fn count_references(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::count_references(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CullOutputlessPasses()` overload"]
+    fn cull_outputless_passes(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::cull_outputless_passes(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CullUnusedPasses()` overload"]
+    fn cull_unused_passes(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::cull_unused_passes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdatePassSynchronization(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, *mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, i32, i32, *muti32)` overload"]    fn update_pass_synchronization (self , current_pass_index : impl :: core :: convert :: Into < i32 > , last_producer : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo , i32){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __RenderGraph_unity2_raw::update_pass_synchronization(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(current_pass_index),
+                ::core::convert::Into::into(last_producer),
+                __out_2.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`UpdateResourceSynchronization(*muti32, *muti32, i32, *mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]    fn update_resource_synchronization (self , current_pass_index : impl :: core :: convert :: Into < i32 >) -> (i32 , i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::update_resource_synchronization(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(current_pass_index),
+                __out_2.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`GetLatestProducerIndex(i32, *mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]    fn get_latest_producer_index (self , pass_index : impl :: core :: convert :: Into < i32 >) -> (i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::get_latest_producer_index(
+                    __receiver,
+                    ::core::convert::Into::into(pass_index),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetLatestValidReadIndex(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]    fn get_latest_valid_read_index (self ,) -> (i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::get_latest_valid_read_index(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetFirstValidWriteIndex(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]    fn get_first_valid_write_index (self ,) -> (i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::get_first_valid_write_index(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetLatestValidWriteIndex(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo)` overload"]    fn get_latest_valid_write_index (self ,) -> (i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo){
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledResourceInfo > :: uninit () ;
+            let __ret = {
+                __RenderGraph_unity2_raw::get_latest_valid_write_index(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`UpdateResourceAllocationAndSynchronization()` overload"]
+    fn update_resource_allocation_and_synchronization(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::update_resource_allocation_and_synchronization(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompileRenderGraph()` overload"]
+    fn compile_render_graph(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::compile_render_graph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CompilePassImmediatly(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]    fn compile_pass_immediatly (self , pass : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass >) -> * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::compile_pass_immediatly(
+                __receiver,
+                ::core::convert::Into::into(pass),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecutePassImmediatly(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]
+    fn execute_pass_immediatly(
+        self,
+        pass : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::execute_pass_immediatly(
+                __receiver,
+                ::core::convert::Into::into(pass),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteCompiledPass(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, i32)` overload"]    fn execute_compiled_pass (self , pass_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::execute_compiled_pass(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(pass_index),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ExecuteRenderGraph()` overload"]
+    fn execute_render_graph(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::execute_render_graph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PreRenderPassSetRenderTargets(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]    fn pre_render_pass_set_render_targets (self , rg_context : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::pre_render_pass_set_render_targets(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(rg_context),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`PreRenderPassExecute(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]    fn pre_render_pass_execute (self , rg_context : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::pre_render_pass_execute(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(rg_context),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`PostRenderPassExecute(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]    fn post_render_pass_execute (self , rg_context : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::post_render_pass_execute(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(rg_context),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ClearRenderPasses()` overload"]
+    fn clear_render_passes(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::clear_render_passes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReleaseImmediateModeResources()` overload"]
+    fn release_immediate_mode_resources(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::release_immediate_mode_resources(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LogFrameInformation()` overload"]
+    fn log_frame_information(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::log_frame_information(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LogRendererListsCreation()` overload"]
+    fn log_renderer_lists_creation(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::log_renderer_lists_creation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LogRenderPassBegin(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo)` overload"]    fn log_render_pass_begin (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph_CompiledPassInfo > :: uninit () ;
+            __RenderGraph_unity2_raw::log_render_pass_begin(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`LogCulledPasses()` overload"]
+    fn log_culled_passes(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::log_culled_passes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDefaultProfilingSampler(::unity2::Il2CppString)` overload"]
+    fn get_default_profiling_sampler(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::get_default_profiling_sampler(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateImportedResourceLifeTime(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_ResourceDebugData, crate::system::collections::generic::list_1::List_1<i32>)` overload"]    fn update_imported_resource_life_time (self , pass_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > >) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData{
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData > :: uninit () ;
+            __RenderGraph_unity2_raw::update_imported_resource_life_time(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(pass_list),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GenerateDebugData()` overload"]
+    fn generate_debug_data(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_unity2_raw::generate_debug_data(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl<__T: IRenderGraph> IRenderGraphMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraph_ProfilingScopePassData),
+                ::core::stringify!(RenderGraph),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderGraph_ProfilingScopePassDataMethods>::ctor(this);
+        <Self as IRenderGraphMethods>::ctor(this, name);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+pub mod prelude {
+    pub use super::IRenderGraph;
+    pub use super::IRenderGraphMethods;
+    pub use super::IRenderGraph_OnGraphRegisteredDelegate;
+    pub use super::IRenderGraph_OnGraphRegisteredDelegateMethods;
+    pub use super::IRenderGraph_ProfilingScopePassData;
+    pub use super::IRenderGraph_ProfilingScopePassDataMethods;
+    pub use super::RenderGraph;
+    pub use super::RenderGraph_CompiledPassInfo;
+    pub use super::RenderGraph_CompiledResourceInfo;
+    pub use super::RenderGraph_OnGraphRegisteredDelegate;
+    pub use super::RenderGraph_ProfilingScopePassData;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

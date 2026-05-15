@@ -16,7 +16,7 @@ mod __types {
     use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin360.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin180.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -25,14 +25,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Image_Origin360 {
+    pub struct Image_Origin180 {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Image_Origin360 {
+    impl ::unity2::ClassIdentity for Image_Origin180 {
         const NAMESPACE: &'static str = "UnityEngine.UI";
 
-        const NAME: &'static str = "Image.Origin360";
+        const NAME: &'static str = "Image.Origin180";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Image_Origin360 {
+    impl ::unity2::IlType for Image_Origin180 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -50,12 +50,12 @@ mod __types {
         }
     }
 
-    impl Image_Origin360 {
+    impl Image_Origin180 {
         pub fn bottom() -> Self {
             Self { value: 0 }
         }
 
-        pub fn right() -> Self {
+        pub fn left() -> Self {
             Self { value: 1 }
         }
 
@@ -63,8 +63,52 @@ mod __types {
             Self { value: 2 }
         }
 
-        pub fn left() -> Self {
+        pub fn right() -> Self {
             Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_OriginHorizontal {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_OriginHorizontal {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.OriginHorizontal";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_OriginHorizontal {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_OriginHorizontal {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
         }
     }
 
@@ -123,198 +167,6 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Initialized")]
         pub s_initialized: bool,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_OriginVertical {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_OriginVertical {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.OriginVertical";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_OriginVertical {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_OriginVertical {
-        pub fn bottom() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn top() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_OriginHorizontal {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_OriginHorizontal {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.OriginHorizontal";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_OriginHorizontal {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_OriginHorizontal {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_Origin90 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_Origin90 {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.Origin90";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_Origin90 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_Origin90 {
-        pub fn bottom_left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn top_left() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn top_right() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn bottom_right() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin180.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_Origin180 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_Origin180 {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.Origin180";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_Origin180 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_Origin180 {
-        pub fn bottom() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn top() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
@@ -424,370 +276,4517 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin360.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_Origin360 {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_Origin360 {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.Origin360";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_Origin360 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_Origin360 {
+        pub fn bottom() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn top() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_Origin90 {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_Origin90 {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.Origin90";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_Origin90 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_Origin90 {
+        pub fn bottom_left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn top_left() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn top_right() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn bottom_right() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_OriginVertical {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_OriginVertical {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.OriginVertical";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_OriginVertical {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_OriginVertical {
+        pub fn bottom() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn top() -> Self {
+            Self { value: 1 }
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-image-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-image")]
-#[::unity2::methods]
-impl Image {
-    #[doc = "`get_sprite()` overload"]
-    #[method(name = "get_sprite", args = 0)]
-    pub fn get_sprite(self) -> crate::unity_engine::sprite::Sprite;
-
-    #[doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "set_sprite", args = 1)]
-    pub fn set_sprite(self, value: crate::unity_engine::sprite::Sprite) -> ();
-
-    #[doc = "`DisableSpriteOptimizations()` overload"]
-    #[method(name = "DisableSpriteOptimizations", args = 0)]
-    pub fn disable_sprite_optimizations(self) -> ();
-
-    #[doc = "`get_overrideSprite()` overload"]
-    #[method(name = "get_overrideSprite", args = 0)]
-    pub fn get_override_sprite(self) -> crate::unity_engine::sprite::Sprite;
-
-    #[doc = "`set_overrideSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "set_overrideSprite", args = 1)]
-    pub fn set_override_sprite(self, value: crate::unity_engine::sprite::Sprite) -> ();
-
-    #[doc = "`get_activeSprite()` overload"]
-    #[method(name = "get_activeSprite", args = 0)]
-    pub fn get_active_sprite(self) -> crate::unity_engine::sprite::Sprite;
-
-    #[doc = "`get_type()` overload"]
-    #[method(name = "get_type", args = 0)]
-    pub fn get_type(self) -> crate::unity_engine::ui::image::Image_Type;
-
-    #[doc = "`set_type(crate::unity_engine::ui::image::Image_Type)` overload"]
-    #[method(name = "set_type", args = 1)]
-    pub fn set_type(self, value: crate::unity_engine::ui::image::Image_Type) -> ();
-
-    #[doc = "`get_preserveAspect()` overload"]
-    #[method(name = "get_preserveAspect", args = 0)]
-    pub fn get_preserve_aspect(self) -> bool;
-
-    #[doc = "`set_preserveAspect(bool)` overload"]
-    #[method(name = "set_preserveAspect", args = 1)]
-    pub fn set_preserve_aspect(self, value: bool) -> ();
-
-    #[doc = "`get_fillCenter()` overload"]
-    #[method(name = "get_fillCenter", args = 0)]
-    pub fn get_fill_center(self) -> bool;
-
-    #[doc = "`set_fillCenter(bool)` overload"]
-    #[method(name = "set_fillCenter", args = 1)]
-    pub fn set_fill_center(self, value: bool) -> ();
-
-    #[doc = "`get_fillMethod()` overload"]
-    #[method(name = "get_fillMethod", args = 0)]
-    pub fn get_fill_method(self) -> crate::unity_engine::ui::image::Image_FillMethod;
-
-    #[doc = "`set_fillMethod(crate::unity_engine::ui::image::Image_FillMethod)` overload"]
-    #[method(name = "set_fillMethod", args = 1)]
-    pub fn set_fill_method(self, value: crate::unity_engine::ui::image::Image_FillMethod) -> ();
-
-    #[doc = "`get_fillAmount()` overload"]
-    #[method(name = "get_fillAmount", args = 0)]
-    pub fn get_fill_amount(self) -> f32;
-
-    #[doc = "`set_fillAmount(f32)` overload"]
-    #[method(name = "set_fillAmount", args = 1)]
-    pub fn set_fill_amount(self, value: f32) -> ();
-
-    #[doc = "`get_fillClockwise()` overload"]
-    #[method(name = "get_fillClockwise", args = 0)]
-    pub fn get_fill_clockwise(self) -> bool;
-
-    #[doc = "`set_fillClockwise(bool)` overload"]
-    #[method(name = "set_fillClockwise", args = 1)]
-    pub fn set_fill_clockwise(self, value: bool) -> ();
-
-    #[doc = "`get_fillOrigin()` overload"]
-    #[method(name = "get_fillOrigin", args = 0)]
-    pub fn get_fill_origin(self) -> i32;
-
-    #[doc = "`set_fillOrigin(i32)` overload"]
-    #[method(name = "set_fillOrigin", args = 1)]
-    pub fn set_fill_origin(self, value: i32) -> ();
-
-    #[doc = "`get_eventAlphaThreshold()` overload"]
-    #[method(name = "get_eventAlphaThreshold", args = 0)]
-    pub fn get_event_alpha_threshold(self) -> f32;
-
-    #[doc = "`set_eventAlphaThreshold(f32)` overload"]
-    #[method(name = "set_eventAlphaThreshold", args = 1)]
-    pub fn set_event_alpha_threshold(self, value: f32) -> ();
-
-    #[doc = "`get_alphaHitTestMinimumThreshold()` overload"]
-    #[method(name = "get_alphaHitTestMinimumThreshold", args = 0)]
-    pub fn get_alpha_hit_test_minimum_threshold(self) -> f32;
-
-    #[doc = "`set_alphaHitTestMinimumThreshold(f32)` overload"]
-    #[method(name = "set_alphaHitTestMinimumThreshold", args = 1)]
-    pub fn set_alpha_hit_test_minimum_threshold(self, value: f32) -> ();
-
-    #[doc = "`get_useSpriteMesh()` overload"]
-    #[method(name = "get_useSpriteMesh", args = 0)]
-    pub fn get_use_sprite_mesh(self) -> bool;
-
-    #[doc = "`set_useSpriteMesh(bool)` overload"]
-    #[method(name = "set_useSpriteMesh", args = 1)]
-    pub fn set_use_sprite_mesh(self, value: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_defaultETC1GraphicMaterial()` overload"]
-    #[method(name = "get_defaultETC1GraphicMaterial", args = 0)]
-    pub fn get_default_etc1_graphic_material() -> crate::unity_engine::material::Material;
-
-    #[doc = "`get_mainTexture()` overload"]
-    #[method(name = "get_mainTexture", args = 0)]
-    pub fn get_main_texture(self) -> crate::unity_engine::texture::Texture;
-
-    #[doc = "`get_hasBorder()` overload"]
-    #[method(name = "get_hasBorder", args = 0)]
-    pub fn get_has_border(self) -> bool;
-
-    #[doc = "`get_pixelsPerUnitMultiplier()` overload"]
-    #[method(name = "get_pixelsPerUnitMultiplier", args = 0)]
-    pub fn get_pixels_per_unit_multiplier(self) -> f32;
-
-    #[doc = "`set_pixelsPerUnitMultiplier(f32)` overload"]
-    #[method(name = "set_pixelsPerUnitMultiplier", args = 1)]
-    pub fn set_pixels_per_unit_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_pixelsPerUnit()` overload"]
-    #[method(name = "get_pixelsPerUnit", args = 0)]
-    pub fn get_pixels_per_unit(self) -> f32;
-
-    #[doc = "`get_multipliedPixelsPerUnit()` overload"]
-    #[method(name = "get_multipliedPixelsPerUnit", args = 0)]
-    pub fn get_multiplied_pixels_per_unit(self) -> f32;
-
-    #[doc = "`get_material()` overload"]
-    #[method(name = "get_material", args = 0)]
-    pub fn get_material(self) -> crate::unity_engine::material::Material;
-
-    #[doc = "`set_material(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "set_material", args = 1)]
-    pub fn set_material(self, value: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`OnBeforeSerialize()` overload"]
-    #[method(name = "OnBeforeSerialize", args = 0)]
-    pub fn on_before_serialize(self) -> ();
-
-    #[doc = "`OnAfterDeserialize()` overload"]
-    #[method(name = "OnAfterDeserialize", args = 0)]
-    pub fn on_after_deserialize(self) -> ();
-
-    #[doc = "`PreserveSpriteAspectRatio(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "PreserveSpriteAspectRatio", args = 2)]
-    pub fn preserve_sprite_aspect_ratio(
-        self,
-        rect: crate::unity_engine::rect::Rect,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Image_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_sprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_sprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_sprite",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_sprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite(
+        this: Image,
+        value: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_sprite_optimizations {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "DisableSpriteOptimizations",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "DisableSpriteOptimizations",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_sprite_optimizations(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_disable_sprite_optimizations::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_override_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_overrideSprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_overrideSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_override_sprite(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_override_sprite::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_override_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_overrideSprite",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_overrideSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_override_sprite(
+        this: Image,
+        value: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_override_sprite::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_activeSprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_activeSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active_sprite(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_active_sprite::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_type",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_type(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::image::Image_Type {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::image::Image_Type = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::image::Image_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_type",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_type(
+        this: Image,
+        value: crate::unity_engine::ui::image::Image_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::image::Image_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preserve_aspect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_preserveAspect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_preserveAspect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preserve_aspect(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preserve_aspect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_preserve_aspect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_preserveAspect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_preserveAspect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_preserve_aspect(
+        this: Image,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_preserve_aspect::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fill_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_fillCenter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_fillCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fill_center(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fill_center::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fill_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_fillCenter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_fillCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fill_center(
+        this: Image,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_fill_center::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fill_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_fillMethod",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_fillMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fill_method(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::image::Image_FillMethod {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::image::Image_FillMethod = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fill_method::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fill_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::image::Image_FillMethod as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_fillMethod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_fillMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fill_method(
+        this: Image,
+        value: crate::unity_engine::ui::image::Image_FillMethod,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::image::Image_FillMethod,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fill_method::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fill_amount {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_fillAmount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_fillAmount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fill_amount(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fill_amount::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fill_amount {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_fillAmount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_fillAmount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fill_amount(
+        this: Image,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_fill_amount::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fill_clockwise {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_fillClockwise",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_fillClockwise",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fill_clockwise(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fill_clockwise::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fill_clockwise {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_fillClockwise",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_fillClockwise",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fill_clockwise(
+        this: Image,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_fill_clockwise::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fill_origin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_fillOrigin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_fillOrigin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fill_origin(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fill_origin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fill_origin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_fillOrigin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_fillOrigin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fill_origin(
+        this: Image,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_fill_origin::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_alpha_threshold {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_eventAlphaThreshold",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_eventAlphaThreshold",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_alpha_threshold(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_alpha_threshold::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_event_alpha_threshold {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_eventAlphaThreshold",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_eventAlphaThreshold",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_event_alpha_threshold(
+        this: Image,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_event_alpha_threshold::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alpha_hit_test_minimum_threshold {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_alphaHitTestMinimumThreshold",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_alphaHitTestMinimumThreshold",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alpha_hit_test_minimum_threshold(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_alpha_hit_test_minimum_threshold::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha_hit_test_minimum_threshold {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_alphaHitTestMinimumThreshold",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_alphaHitTestMinimumThreshold",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha_hit_test_minimum_threshold(
+        this: Image,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha_hit_test_minimum_threshold::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_sprite_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_useSpriteMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_useSpriteMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_sprite_mesh(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_use_sprite_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_sprite_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_useSpriteMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_useSpriteMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_sprite_mesh(
+        this: Image,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_sprite_mesh::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Image, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_etc1_graphic_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_defaultETC1GraphicMaterial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_defaultETC1GraphicMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_etc1_graphic_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_default_etc1_graphic_material::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_main_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_mainTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_mainTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_main_texture(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_main_texture::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_hasBorder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_hasBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_border(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_has_border::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pixels_per_unit_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_pixelsPerUnitMultiplier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_pixelsPerUnitMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pixels_per_unit_multiplier(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pixels_per_unit_multiplier::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixels_per_unit_multiplier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_pixelsPerUnitMultiplier",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_pixelsPerUnitMultiplier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixels_per_unit_multiplier(
+        this: Image,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_pixels_per_unit_multiplier::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pixels_per_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_pixelsPerUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_pixelsPerUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pixels_per_unit(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pixels_per_unit::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_multiplied_pixels_per_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_multipliedPixelsPerUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_multipliedPixelsPerUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_multiplied_pixels_per_unit(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_multiplied_pixels_per_unit::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_material",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_material",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_material(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            Image,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "set_material",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "set_material",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_material(
+        this: Image,
+        value: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_material::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_before_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnBeforeSerialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnBeforeSerialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_before_serialize(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_before_serialize::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_after_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnAfterDeserialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnAfterDeserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_after_deserialize(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_after_deserialize::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_preserve_sprite_aspect_ratio {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "PreserveSpriteAspectRatio",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "PreserveSpriteAspectRatio",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn preserve_sprite_aspect_ratio(
+        this: Image,
+        rect: *mut crate::unity_engine::rect::Rect,
         sprite_size: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`GetDrawingDimensions(bool)` overload"]
-    #[method(name = "GetDrawingDimensions", args = 1)]
-    pub fn get_drawing_dimensions(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            *mut crate::unity_engine::rect::Rect,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_preserve_sprite_aspect_ratio::get_offset() as isize),
+        );
+        inner(this, rect, sprite_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_drawing_dimensions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GetDrawingDimensions",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GetDrawingDimensions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_drawing_dimensions(
+        this: Image,
         should_preserve_aspect: bool,
-    ) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`SetNativeSize()` overload"]
-    #[method(name = "SetNativeSize", args = 0)]
-    pub fn set_native_size(self) -> ();
-
-    #[doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    #[method(name = "OnPopulateMesh", args = 1)]
-    pub fn on_populate_mesh(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            Image,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_drawing_dimensions::get_offset() as isize),
+        );
+        inner(this, should_preserve_aspect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_native_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "SetNativeSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "SetNativeSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_native_size(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_native_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_populate_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnPopulateMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnPopulateMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_populate_mesh(
+        this: Image,
         to_fill: crate::unity_engine::ui::vertexhelper::VertexHelper,
-    ) -> ();
-
-    #[doc = "`TrackSprite()` overload"]
-    #[method(name = "TrackSprite", args = 0)]
-    pub fn track_sprite(self) -> ();
-
-    #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
-    #[doc = "`OnDisable()` overload"]
-    #[method(name = "OnDisable", args = 0)]
-    pub fn on_disable(self) -> ();
-
-    #[doc = "`UpdateMaterial()` overload"]
-    #[method(name = "UpdateMaterial", args = 0)]
-    pub fn update_material(self) -> ();
-
-    #[doc = "`OnCanvasHierarchyChanged()` overload"]
-    #[method(name = "OnCanvasHierarchyChanged", args = 0)]
-    pub fn on_canvas_hierarchy_changed(self) -> ();
-
-    #[doc = "`GenerateSimpleSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
-    #[method(name = "GenerateSimpleSprite", args = 2)]
-    pub fn generate_simple_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_populate_mesh::get_offset() as isize),
+        );
+        inner(this, to_fill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_track_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "TrackSprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "TrackSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn track_sprite(this: Image, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_track_sprite::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(this: Image, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnDisable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_disable(this: Image, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_disable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "UpdateMaterial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "UpdateMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_material(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_canvas_hierarchy_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnCanvasHierarchyChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnCanvasHierarchyChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_canvas_hierarchy_changed(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_canvas_hierarchy_changed::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_simple_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GenerateSimpleSprite",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GenerateSimpleSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_simple_sprite(
+        this: Image,
         vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
         l_preserve_aspect: bool,
-    ) -> ();
-
-    #[doc = "`GenerateSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
-    #[method(name = "GenerateSprite", args = 2)]
-    pub fn generate_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_simple_sprite::get_offset() as isize),
+        );
+        inner(this, vh, l_preserve_aspect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GenerateSprite",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GenerateSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_sprite(
+        this: Image,
         vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
         l_preserve_aspect: bool,
-    ) -> ();
-
-    #[doc = "`GenerateSlicedSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    #[method(name = "GenerateSlicedSprite", args = 1)]
-    pub fn generate_sliced_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_sprite::get_offset() as isize),
+        );
+        inner(this, vh, l_preserve_aspect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_sliced_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GenerateSlicedSprite",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GenerateSlicedSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_sliced_sprite(
+        this: Image,
         to_fill: crate::unity_engine::ui::vertexhelper::VertexHelper,
-    ) -> ();
-
-    #[doc = "`GenerateTiledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    #[method(name = "GenerateTiledSprite", args = 1)]
-    pub fn generate_tiled_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_sliced_sprite::get_offset() as isize),
+        );
+        inner(this, to_fill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_tiled_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GenerateTiledSprite",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GenerateTiledSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_tiled_sprite(
+        this: Image,
         to_fill: crate::unity_engine::ui::vertexhelper::VertexHelper,
-    ) -> ();
-
-    #[doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::Array<crate::unity_engine::vector3::Vector3>, crate::unity_engine::color32::Color32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "AddQuad", args = 4)]
-    pub fn add_quad(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_tiled_sprite::get_offset() as isize),
+        );
+        inner(this, to_fill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_quad {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: vertexhelper :: VertexHelper as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color32 :: Color32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "AddQuad",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "AddQuad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_quad(
         vertex_helper: crate::unity_engine::ui::vertexhelper::VertexHelper,
         quad_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         color: crate::unity_engine::color32::Color32,
         quad_u_vs: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::color32::Color32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "AddQuad", args = 6)]
-    pub fn add_quad_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            crate::unity_engine::color32::Color32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_quad::get_offset() as isize),
+        );
+        inner(
+            vertex_helper,
+            quad_positions,
+            color,
+            quad_u_vs,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_quad_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "AddQuad",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "AddQuad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_quad_2(
         vertex_helper: crate::unity_engine::ui::vertexhelper::VertexHelper,
         pos_min: crate::unity_engine::vector2::Vector2,
         pos_max: crate::unity_engine::vector2::Vector2,
         color: crate::unity_engine::color32::Color32,
         uv_min: crate::unity_engine::vector2::Vector2,
         uv_max: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`GetAdjustedBorders(crate::unity_engine::vector4::Vector4, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "GetAdjustedBorders", args = 2)]
-    pub fn get_adjusted_borders(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::color32::Color32,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_quad_2::get_offset() as isize),
+        );
+        inner(
+            vertex_helper,
+            pos_min,
+            pos_max,
+            color,
+            uv_min,
+            uv_max,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_adjusted_borders {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GetAdjustedBorders",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GetAdjustedBorders",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_adjusted_borders(
+        this: Image,
         border: crate::unity_engine::vector4::Vector4,
         adjusted_rect: crate::unity_engine::rect::Rect,
-    ) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`GenerateFilledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
-    #[method(name = "GenerateFilledSprite", args = 2)]
-    pub fn generate_filled_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_adjusted_borders::get_offset() as isize),
+        );
+        inner(this, border, adjusted_rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_filled_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "GenerateFilledSprite",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "GenerateFilledSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_filled_sprite(
+        this: Image,
         to_fill: crate::unity_engine::ui::vertexhelper::VertexHelper,
         preserve_aspect: bool,
-    ) -> ();
-
-    #[doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, bool, i32)` overload"]
-    #[method(name = "RadialCut", args = 5)]
-    pub fn radial_cut(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_filled_sprite::get_offset() as isize),
+        );
+        inner(this, to_fill, preserve_aspect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_radial_cut {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "RadialCut",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "RadialCut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn radial_cut(
         xy: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         uv: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         fill: f32,
         invert: bool,
         corner: i32,
-    ) -> bool;
-
-    #[doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, f32, bool, i32)` overload"]
-    #[method(name = "RadialCut", args = 5)]
-    pub fn radial_cut_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            f32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_radial_cut::get_offset() as isize),
+        );
+        inner(xy, uv, fill, invert, corner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_radial_cut_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "RadialCut",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "RadialCut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn radial_cut_2(
         xy: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         cos: f32,
         sin: f32,
         invert: bool,
         corner: i32,
-    ) -> ();
-
-    #[doc = "`CalculateLayoutInputHorizontal()` overload"]
-    #[method(name = "CalculateLayoutInputHorizontal", args = 0)]
-    pub fn calculate_layout_input_horizontal(self) -> ();
-
-    #[doc = "`CalculateLayoutInputVertical()` overload"]
-    #[method(name = "CalculateLayoutInputVertical", args = 0)]
-    pub fn calculate_layout_input_vertical(self) -> ();
-
-    #[doc = "`get_minWidth()` overload"]
-    #[method(name = "get_minWidth", args = 0)]
-    pub fn get_min_width(self) -> f32;
-
-    #[doc = "`get_preferredWidth()` overload"]
-    #[method(name = "get_preferredWidth", args = 0)]
-    pub fn get_preferred_width(self) -> f32;
-
-    #[doc = "`get_flexibleWidth()` overload"]
-    #[method(name = "get_flexibleWidth", args = 0)]
-    pub fn get_flexible_width(self) -> f32;
-
-    #[doc = "`get_minHeight()` overload"]
-    #[method(name = "get_minHeight", args = 0)]
-    pub fn get_min_height(self) -> f32;
-
-    #[doc = "`get_preferredHeight()` overload"]
-    #[method(name = "get_preferredHeight", args = 0)]
-    pub fn get_preferred_height(self) -> f32;
-
-    #[doc = "`get_flexibleHeight()` overload"]
-    #[method(name = "get_flexibleHeight", args = 0)]
-    pub fn get_flexible_height(self) -> f32;
-
-    #[doc = "`get_layoutPriority()` overload"]
-    #[method(name = "get_layoutPriority", args = 0)]
-    pub fn get_layout_priority(self) -> i32;
-
-    #[doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "IsRaycastLocationValid", args = 2)]
-    pub fn is_raycast_location_valid(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            f32,
+            f32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_radial_cut_2::get_offset() as isize),
+        );
+        inner(xy, cos, sin, invert, corner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_layout_input_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "CalculateLayoutInputHorizontal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "CalculateLayoutInputHorizontal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_layout_input_horizontal(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_layout_input_horizontal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_layout_input_vertical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "CalculateLayoutInputVertical",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "CalculateLayoutInputVertical",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_layout_input_vertical(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_layout_input_vertical::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_minWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_minWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_width(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_min_width::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_preferredWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_preferredWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_width(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_width::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_flexibleWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_flexibleWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_width(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flexible_width::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_minHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_minHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_height(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_min_height::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_preferredHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_preferredHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_height(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_height::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_flexibleHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_flexibleHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_height(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flexible_height::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layout_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "get_layoutPriority",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "get_layoutPriority",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layout_priority(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layout_priority::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_raycast_location_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "IsRaycastLocationValid",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "IsRaycastLocationValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_raycast_location_valid(
+        this: Image,
         screen_point: crate::unity_engine::vector2::Vector2,
         event_camera: crate::unity_engine::camera::Camera,
-    ) -> bool;
-
-    #[doc = "`MapCoordinate(crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "MapCoordinate", args = 2)]
-    pub fn map_coordinate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_raycast_location_valid::get_offset() as isize),
+        );
+        inner(this, screen_point, event_camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_coordinate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "MapCoordinate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "MapCoordinate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn map_coordinate(
+        this: Image,
         local: crate::unity_engine::vector2::Vector2,
         rect: crate::unity_engine::rect::Rect,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`RebuildImage(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
-    #[method(name = "RebuildImage", args = 1)]
-    pub fn rebuild_image(sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas) -> ();
-
-    #[doc = "`TrackImage(crate::unity_engine::ui::image::Image)` overload"]
-    #[method(name = "TrackImage", args = 1)]
-    pub fn track_image(g: crate::unity_engine::ui::image::Image) -> ();
-
-    #[doc = "`UnTrackImage(crate::unity_engine::ui::image::Image)` overload"]
-    #[method(name = "UnTrackImage", args = 1)]
-    pub fn un_track_image(g: crate::unity_engine::ui::image::Image) -> ();
-
-    #[doc = "`OnDidApplyAnimationProperties()` overload"]
-    #[method(name = "OnDidApplyAnimationProperties", args = 0)]
-    pub fn on_did_apply_animation_properties(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            Image,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_map_coordinate::get_offset() as isize),
+        );
+        inner(this, local, rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "RebuildImage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "RebuildImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebuild_image(
+        sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rebuild_image::get_offset() as isize),
+        );
+        inner(sprite_atlas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_track_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "TrackImage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "TrackImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn track_image(
+        g: crate::unity_engine::ui::image::Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::image::Image,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_track_image::get_offset() as isize),
+        );
+        inner(g, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_un_track_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "UnTrackImage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "UnTrackImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn un_track_image(
+        g: crate::unity_engine::ui::image::Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::image::Image,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_un_track_image::get_offset() as isize),
+        );
+        inner(g, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_did_apply_animation_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                "OnDidApplyAnimationProperties",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    "OnDidApplyAnimationProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_did_apply_animation_properties(
+        this: Image,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Image, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_did_apply_animation_properties::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Image as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Image as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-image")]
+impl Image {
+    #[doc = "`get_defaultETC1GraphicMaterial()` overload"]
+    pub fn get_default_etc1_graphic_material() -> crate::unity_engine::material::Material {
+        unsafe {
+            __Image_unity2_raw::get_default_etc1_graphic_material(::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::Array<crate::unity_engine::vector3::Vector3>, crate::unity_engine::color32::Color32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    pub fn add_quad(
+        vertex_helper: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+        quad_positions: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        quad_u_vs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            __Image_unity2_raw::add_quad(
+                ::core::convert::Into::into(vertex_helper),
+                ::core::convert::Into::into(quad_positions),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(quad_u_vs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::color32::Color32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn add_quad_2(
+        vertex_helper: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+        pos_min: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        pos_max: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        uv_min: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        uv_max: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            __Image_unity2_raw::add_quad_2(
+                ::core::convert::Into::into(vertex_helper),
+                ::core::convert::Into::into(pos_min),
+                ::core::convert::Into::into(pos_max),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv_min),
+                ::core::convert::Into::into(uv_max),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, bool, i32)` overload"]
+    pub fn radial_cut(
+        xy: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        uv: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        fill: impl ::core::convert::Into<f32>,
+        invert: impl ::core::convert::Into<bool>,
+        corner: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __Image_unity2_raw::radial_cut(
+                ::core::convert::Into::into(xy),
+                ::core::convert::Into::into(uv),
+                ::core::convert::Into::into(fill),
+                ::core::convert::Into::into(invert),
+                ::core::convert::Into::into(corner),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, f32, bool, i32)` overload"]
+    pub fn radial_cut_2(
+        xy: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        cos: impl ::core::convert::Into<f32>,
+        sin: impl ::core::convert::Into<f32>,
+        invert: impl ::core::convert::Into<bool>,
+        corner: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __Image_unity2_raw::radial_cut_2(
+                ::core::convert::Into::into(xy),
+                ::core::convert::Into::into(cos),
+                ::core::convert::Into::into(sin),
+                ::core::convert::Into::into(invert),
+                ::core::convert::Into::into(corner),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RebuildImage(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
+    pub fn rebuild_image(
+        sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+    ) -> () {
+        unsafe {
+            __Image_unity2_raw::rebuild_image(
+                ::core::convert::Into::into(sprite_atlas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrackImage(crate::unity_engine::ui::image::Image)` overload"]
+    pub fn track_image(g: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>) -> () {
+        unsafe {
+            __Image_unity2_raw::track_image(
+                ::core::convert::Into::into(g),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnTrackImage(crate::unity_engine::ui::image::Image)` overload"]
+    pub fn un_track_image(
+        g: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
+    ) -> () {
+        unsafe {
+            __Image_unity2_raw::un_track_image(
+                ::core::convert::Into::into(g),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __Image_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-image")]
+pub trait IImageMethods: IImage {
+    #[doc = "`get_sprite()` overload"]
+    fn get_sprite(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"]
+    fn set_sprite(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_sprite(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableSpriteOptimizations()` overload"]
+    fn disable_sprite_optimizations(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::disable_sprite_optimizations(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_overrideSprite()` overload"]
+    fn get_override_sprite(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_override_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_overrideSprite(crate::unity_engine::sprite::Sprite)` overload"]
+    fn set_override_sprite(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_override_sprite(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_activeSprite()` overload"]
+    fn get_active_sprite(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_active_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_type()` overload"]
+    fn get_type(self) -> crate::unity_engine::ui::image::Image_Type {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_type(crate::unity_engine::ui::image::Image_Type)` overload"]
+    fn set_type(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::image::Image_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_preserveAspect()` overload"]
+    fn get_preserve_aspect(self) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_preserve_aspect(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_preserveAspect(bool)` overload"]
+    fn set_preserve_aspect(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_preserve_aspect(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fillCenter()` overload"]
+    fn get_fill_center(self) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_fill_center(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fillCenter(bool)` overload"]
+    fn set_fill_center(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_fill_center(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fillMethod()` overload"]
+    fn get_fill_method(self) -> crate::unity_engine::ui::image::Image_FillMethod {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_fill_method(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fillMethod(crate::unity_engine::ui::image::Image_FillMethod)` overload"]
+    fn set_fill_method(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::image::Image_FillMethod>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_fill_method(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fillAmount()` overload"]
+    fn get_fill_amount(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_fill_amount(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fillAmount(f32)` overload"]
+    fn set_fill_amount(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_fill_amount(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fillClockwise()` overload"]
+    fn get_fill_clockwise(self) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_fill_clockwise(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fillClockwise(bool)` overload"]
+    fn set_fill_clockwise(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_fill_clockwise(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fillOrigin()` overload"]
+    fn get_fill_origin(self) -> i32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_fill_origin(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fillOrigin(i32)` overload"]
+    fn set_fill_origin(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_fill_origin(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_eventAlphaThreshold()` overload"]
+    fn get_event_alpha_threshold(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_event_alpha_threshold(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_eventAlphaThreshold(f32)` overload"]
+    fn set_event_alpha_threshold(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_event_alpha_threshold(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_alphaHitTestMinimumThreshold()` overload"]
+    fn get_alpha_hit_test_minimum_threshold(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_alpha_hit_test_minimum_threshold(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_alphaHitTestMinimumThreshold(f32)` overload"]
+    fn set_alpha_hit_test_minimum_threshold(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_alpha_hit_test_minimum_threshold(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_useSpriteMesh()` overload"]
+    fn get_use_sprite_mesh(self) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_use_sprite_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_useSpriteMesh(bool)` overload"]
+    fn set_use_sprite_mesh(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_use_sprite_mesh(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_mainTexture()` overload"]
+    fn get_main_texture(self) -> crate::unity_engine::texture::Texture {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_hasBorder()` overload"]
+    fn get_has_border(self) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_has_border(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_pixelsPerUnitMultiplier()` overload"]
+    fn get_pixels_per_unit_multiplier(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_pixels_per_unit_multiplier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_pixelsPerUnitMultiplier(f32)` overload"]
+    fn set_pixels_per_unit_multiplier(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_pixels_per_unit_multiplier(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_pixelsPerUnit()` overload"]
+    fn get_pixels_per_unit(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_pixels_per_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_multipliedPixelsPerUnit()` overload"]
+    fn get_multiplied_pixels_per_unit(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_multiplied_pixels_per_unit(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_material()` overload"]
+    fn get_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_material(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_material(crate::unity_engine::material::Material)` overload"]
+    fn set_material(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_material(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBeforeSerialize()` overload"]
+    fn on_before_serialize(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnAfterDeserialize()` overload"]
+    fn on_after_deserialize(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PreserveSpriteAspectRatio(*mutcrate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2)` overload"]
+    fn preserve_sprite_aspect_ratio(
+        self,
+        sprite_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            __Image_unity2_raw::preserve_sprite_aspect_ratio(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(sprite_size),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetDrawingDimensions(bool)` overload"]
+    fn get_drawing_dimensions(
+        self,
+        should_preserve_aspect: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_drawing_dimensions(
+                __receiver,
+                ::core::convert::Into::into(should_preserve_aspect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNativeSize()` overload"]
+    fn set_native_size(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::set_native_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
+    fn on_populate_mesh(
+        self,
+        to_fill: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_populate_mesh(
+                __receiver,
+                ::core::convert::Into::into(to_fill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrackSprite()` overload"]
+    fn track_sprite(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::track_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnEnable()` overload"]
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDisable()` overload"]
+    fn on_disable(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateMaterial()` overload"]
+    fn update_material(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::update_material(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCanvasHierarchyChanged()` overload"]
+    fn on_canvas_hierarchy_changed(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_canvas_hierarchy_changed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GenerateSimpleSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
+    fn generate_simple_sprite(
+        self,
+        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+        l_preserve_aspect: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::generate_simple_sprite(
+                __receiver,
+                ::core::convert::Into::into(vh),
+                ::core::convert::Into::into(l_preserve_aspect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GenerateSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
+    fn generate_sprite(
+        self,
+        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+        l_preserve_aspect: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::generate_sprite(
+                __receiver,
+                ::core::convert::Into::into(vh),
+                ::core::convert::Into::into(l_preserve_aspect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GenerateSlicedSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
+    fn generate_sliced_sprite(
+        self,
+        to_fill: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::generate_sliced_sprite(
+                __receiver,
+                ::core::convert::Into::into(to_fill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GenerateTiledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
+    fn generate_tiled_sprite(
+        self,
+        to_fill: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::generate_tiled_sprite(
+                __receiver,
+                ::core::convert::Into::into(to_fill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAdjustedBorders(crate::unity_engine::vector4::Vector4, crate::unity_engine::rect::Rect)` overload"]
+    fn get_adjusted_borders(
+        self,
+        border: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        adjusted_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_adjusted_borders(
+                __receiver,
+                ::core::convert::Into::into(border),
+                ::core::convert::Into::into(adjusted_rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GenerateFilledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]
+    fn generate_filled_sprite(
+        self,
+        to_fill: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+        preserve_aspect: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::generate_filled_sprite(
+                __receiver,
+                ::core::convert::Into::into(to_fill),
+                ::core::convert::Into::into(preserve_aspect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateLayoutInputHorizontal()` overload"]
+    fn calculate_layout_input_horizontal(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::calculate_layout_input_horizontal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateLayoutInputVertical()` overload"]
+    fn calculate_layout_input_vertical(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::calculate_layout_input_vertical(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_minWidth()` overload"]
+    fn get_min_width(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_preferredWidth()` overload"]
+    fn get_preferred_width(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_flexibleWidth()` overload"]
+    fn get_flexible_width(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_minHeight()` overload"]
+    fn get_min_height(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_preferredHeight()` overload"]
+    fn get_preferred_height(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_flexibleHeight()` overload"]
+    fn get_flexible_height(self) -> f32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_layoutPriority()` overload"]
+    fn get_layout_priority(self) -> i32 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
+    fn is_raycast_location_valid(
+        self,
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        event_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::is_raycast_location_valid(
+                __receiver,
+                ::core::convert::Into::into(screen_point),
+                ::core::convert::Into::into(event_camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MapCoordinate(crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect)` overload"]
+    fn map_coordinate(
+        self,
+        local: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::map_coordinate(
+                __receiver,
+                ::core::convert::Into::into(local),
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDidApplyAnimationProperties()` overload"]
+    fn on_did_apply_animation_properties(self) -> () {
+        unsafe {
+            let __receiver = <Image as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Image_unity2_raw::on_did_apply_animation_properties(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-image")]
+impl<__T: IImage> IImageMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-image")]
 impl Image {
@@ -803,4 +4802,48 @@ impl Image {
         <Self as IImageMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-image")]
+pub mod prelude {
+    pub use super::IImage;
+    pub use super::IImageMethods;
+    pub use super::Image;
+    pub use super::Image_FillMethod;
+    pub use super::Image_Origin180;
+    pub use super::Image_Origin360;
+    pub use super::Image_Origin90;
+    pub use super::Image_OriginHorizontal;
+    pub use super::Image_OriginVertical;
+    pub use super::Image_Type;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::ui::graphic::IGraphic;
+    #[cfg(feature = "unity_engine-ui-graphic")]
+    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+    #[cfg(feature = "unity_engine-ui-maskablegraphic")]
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
 }

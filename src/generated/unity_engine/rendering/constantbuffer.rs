@@ -7,6 +7,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering",
+        name = "ConstantBuffer.ConstantBufferBase"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ConstantBuffer_ConstantBufferBase {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering",
@@ -29,14 +37,6 @@ mod __types {
         pub m_gpu_constant_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering",
-        name = "ConstantBuffer.ConstantBufferBase"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ConstantBuffer_ConstantBufferBase {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
     #[parent(crate::system::object::Object)]
@@ -51,6 +51,156 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConstantBuffer_ConstantBufferBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer_ConstantBufferBase as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer_ConstantBufferBase as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: ConstantBuffer_ConstantBufferBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ConstantBuffer_ConstantBufferBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer_ConstantBufferBase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer_ConstantBufferBase as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ConstantBuffer_ConstantBufferBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ConstantBuffer_ConstantBufferBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+pub trait IConstantBuffer_ConstantBufferBaseMethods: IConstantBuffer_ConstantBufferBase {
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver =
+                <ConstantBuffer_ConstantBufferBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ConstantBuffer_ConstantBufferBase_unity2_raw::release(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ConstantBuffer_ConstantBufferBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ConstantBuffer_ConstantBufferBase_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl<__T: IConstantBuffer_ConstantBufferBase> IConstantBuffer_ConstantBufferBaseMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl ConstantBuffer_ConstantBufferBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConstantBuffer_ConstantBufferBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 #[::unity2::methods]
@@ -72,12 +222,12 @@ impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 
-    #[doc = "`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, T0)` overload"]
+    #[doc = "`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutT0)` overload"]
     #[method(name = "UpdateData", args = 2)]
     pub fn update_data(
         self,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        data: T0,
+        data: *mut T0,
     ) -> ();
 
     #[doc = "`SetGlobal(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
@@ -127,54 +277,626 @@ impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-#[::unity2::methods]
-impl ConstantBuffer_ConstantBufferBase {
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl ConstantBuffer_ConstantBufferBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConstantBuffer_ConstantBufferBase),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConstantBuffer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "ReleaseAll",
+                0,
+                param_types,
+                true,
             )
         });
-        <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                    "ReleaseAll",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release_all::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: constantbuffer :: ConstantBuffer_ConstantBufferBase as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "Register",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                    "Register",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register(
+        cb: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register::get_offset() as isize),
+        );
+        inner(cb, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: ConstantBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ConstantBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-#[::unity2::methods]
 impl ConstantBuffer {
+    pub fn push_global<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        data: impl ::core::convert::Into<*mut M0>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "PushGlobal",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "PushGlobal",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                *mut M0,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn push<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        data: impl ::core::convert::Into<*mut M0>,
+        cs: impl ::core::convert::Into<crate::unity_engine::computeshader::ComputeShader>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "Push",
+                4,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "Push",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                *mut M0,
+                crate::unity_engine::computeshader::ComputeShader,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(cs),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn push_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        data: impl ::core::convert::Into<*mut M0>,
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "Push",
+                4,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "Push",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                *mut M0,
+                crate::unity_engine::material::Material,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(mat),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn update_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        data: impl ::core::convert::Into<*mut M0>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "UpdateData",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "UpdateData",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                *mut M0,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_global<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "SetGlobal",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "SetGlobal",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set<M0: ::unity2::IlType + ::core::marker::Copy>(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        cs: impl ::core::convert::Into<crate::unity_engine::computeshader::ComputeShader>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "Set",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "Set",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                crate::unity_engine::computeshader::ComputeShader,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(cs),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        shader_id: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ConstantBuffer as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ConstantBuffer as ::unity2::ClassIdentity>::NAME,
+                "Set",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::material::Material,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(mat),
+                ::core::convert::Into::into(shader_id),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`ReleaseAll()` overload"]
-    #[method(name = "ReleaseAll", args = 0)]
-    pub fn release_all() -> ();
-
+    pub fn release_all() -> () {
+        unsafe { __ConstantBuffer_unity2_raw::release_all(::core::option::Option::None) }
+    }
     #[doc = "`Register(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)` overload"]
-    #[method(name = "Register", args = 1)]
     pub fn register(
-        cb: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
+        cb: impl ::core::convert::Into<
+            crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+        >,
+    ) -> () {
+        unsafe {
+            __ConstantBuffer_unity2_raw::register(
+                ::core::convert::Into::into(cb),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __ConstantBuffer_unity2_raw::cctor(::core::option::Option::None) }
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+pub trait IConstantBufferMethods: IConstantBuffer {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ConstantBuffer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConstantBuffer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl<__T: IConstantBuffer> IConstantBufferMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 impl ConstantBuffer {
@@ -190,4 +912,20 @@ impl ConstantBuffer {
         <Self as IConstantBufferMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+pub mod prelude {
+    pub use super::ConstantBuffer;
+    pub use super::ConstantBuffer_ConstantBufferBase;
+    pub use super::ConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer;
+    pub use super::IConstantBufferMethods;
+    pub use super::IConstantBuffer_ConstantBufferBase;
+    pub use super::IConstantBuffer_ConstantBufferBaseMethods;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

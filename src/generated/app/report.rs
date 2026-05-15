@@ -21,75 +21,839 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-report")]
-#[::unity2::methods]
-impl Report {
-    #[doc = "`MapStart()` overload"]
-    #[method(name = "MapStart", args = 0)]
-    pub fn map_start() -> ();
-
-    #[doc = "`MapComplete()` overload"]
-    #[method(name = "MapComplete", args = 0)]
-    pub fn map_complete() -> ();
-
-    #[doc = "`Kizuna()` overload"]
-    #[method(name = "Kizuna", args = 0)]
-    pub fn kizuna() -> ();
-
-    #[doc = "`AddBoughtItem(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "AddBoughtItem", args = 1)]
-    pub fn add_bought_item(item: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`AddRefineItem(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = "AddRefineItem", args = 2)]
-    pub fn add_refine_item(item: crate::app::itemdata::ItemData, level: i32) -> ();
-
-    #[doc = "`AddEvolveItem(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "AddEvolveItem", args = 2)]
-    pub fn add_evolve_item(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Report_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "MapStart",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "MapStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn map_start(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_map_start::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "MapComplete",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "MapComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn map_complete(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_map_complete::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kizuna {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "Kizuna",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "Kizuna",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn kizuna(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_kizuna::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_bought_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddBoughtItem",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddBoughtItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_bought_item(
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_bought_item::get_offset() as isize),
+            );
+        inner(item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_refine_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddRefineItem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddRefineItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_refine_item(
+        item: crate::app::itemdata::ItemData,
+        level: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_refine_item::get_offset() as isize),
+        );
+        inner(item, level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_evolve_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddEvolveItem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddEvolveItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_evolve_item(
         prev: crate::app::itemdata::ItemData,
         next: crate::app::itemdata::ItemData,
-    ) -> ();
-
-    #[doc = "`AddUseItem(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "AddUseItem", args = 1)]
-    pub fn add_use_item(item: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`AddPickupItem(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "AddPickupItem", args = 1)]
-    pub fn add_pickup_item(item: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`AddTalk(crate::app::persondata::PersonData)` overload"]
-    #[method(name = "AddTalk", args = 1)]
-    pub fn add_talk(person: crate::app::persondata::PersonData) -> ();
-
-    #[doc = "`AddEquipSkillPool(crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::Il2CppString)` overload"]
-    #[method(name = "AddEquipSkillPool", args = 3)]
-    pub fn add_equip_skill_pool(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_evolve_item::get_offset() as isize),
+        );
+        inner(prev, next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_use_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddUseItem",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddUseItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_use_item(
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_use_item::get_offset() as isize),
+            );
+        inner(item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_pickup_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddPickupItem",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddPickupItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_pickup_item(
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_pickup_item::get_offset() as isize),
+            );
+        inner(item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddTalk",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_talk(
+        person: crate::app::persondata::PersonData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::persondata::PersonData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_talk::get_offset() as isize),
+        );
+        inner(person, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_equip_skill_pool {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddEquipSkillPool",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddEquipSkillPool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_equip_skill_pool(
         unit: crate::app::unit::Unit,
         god: crate::app::godunit::GodUnit,
         skill_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`AddEngageFull(crate::app::unit::Unit)` overload"]
-    #[method(name = "AddEngageFull", args = 1)]
-    pub fn add_engage_full(unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`AddEngageStart(crate::app::unit::Unit)` overload"]
-    #[method(name = "AddEngageStart", args = 1)]
-    pub fn add_engage_start(unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`AddEngageAttack(crate::app::unit::Unit)` overload"]
-    #[method(name = "AddEngageAttack", args = 1)]
-    pub fn add_engage_attack(unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ClearRepoart()` overload"]
-    #[method(name = "ClearRepoart", args = 0)]
-    pub fn clear_repoart() -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_equip_skill_pool::get_offset() as isize),
+        );
+        inner(unit, god, skill_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_engage_full {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddEngageFull",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddEngageFull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_engage_full(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_engage_full::get_offset() as isize),
+            );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_engage_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddEngageStart",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddEngageStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_engage_start(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_engage_start::get_offset() as isize),
+            );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_engage_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "AddEngageAttack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "AddEngageAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_engage_attack(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_engage_attack::get_offset() as isize),
+            );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_repoart {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                "ClearRepoart",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    "ClearRepoart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_repoart(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_repoart::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Report as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Report as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Report, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Report, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-report")]
+impl Report {
+    #[doc = "`MapStart()` overload"]
+    pub fn map_start() -> () {
+        unsafe { __Report_unity2_raw::map_start(::core::option::Option::None) }
+    }
+    #[doc = "`MapComplete()` overload"]
+    pub fn map_complete() -> () {
+        unsafe { __Report_unity2_raw::map_complete(::core::option::Option::None) }
+    }
+    #[doc = "`Kizuna()` overload"]
+    pub fn kizuna() -> () {
+        unsafe { __Report_unity2_raw::kizuna(::core::option::Option::None) }
+    }
+    #[doc = "`AddBoughtItem(crate::app::itemdata::ItemData)` overload"]
+    pub fn add_bought_item(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_bought_item(
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddRefineItem(crate::app::itemdata::ItemData, i32)` overload"]
+    pub fn add_refine_item(
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        level: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __Report_unity2_raw::add_refine_item(
+                ::core::convert::Into::into(item),
+                ::core::convert::Into::into(level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEvolveItem(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
+    pub fn add_evolve_item(
+        prev: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        next: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> () {
+        unsafe {
+            __Report_unity2_raw::add_evolve_item(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddUseItem(crate::app::itemdata::ItemData)` overload"]
+    pub fn add_use_item(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_use_item(
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddPickupItem(crate::app::itemdata::ItemData)` overload"]
+    pub fn add_pickup_item(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_pickup_item(
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddTalk(crate::app::persondata::PersonData)` overload"]
+    pub fn add_talk(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_talk(
+                ::core::convert::Into::into(person),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEquipSkillPool(crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::Il2CppString)` overload"]
+    pub fn add_equip_skill_pool(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        skill_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __Report_unity2_raw::add_equip_skill_pool(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(skill_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEngageFull(crate::app::unit::Unit)` overload"]
+    pub fn add_engage_full(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_engage_full(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEngageStart(crate::app::unit::Unit)` overload"]
+    pub fn add_engage_start(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_engage_start(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEngageAttack(crate::app::unit::Unit)` overload"]
+    pub fn add_engage_attack(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            __Report_unity2_raw::add_engage_attack(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearRepoart()` overload"]
+    pub fn clear_repoart() -> () {
+        unsafe { __Report_unity2_raw::clear_repoart(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-report")]
+pub trait IReportMethods: IReport {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Report as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Report_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-report")]
+impl<__T: IReport> IReportMethods for __T {}
 
 #[cfg(feature = "app-report")]
 impl Report {
@@ -105,4 +869,14 @@ impl Report {
         <Self as IReportMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-report")]
+pub mod prelude {
+    pub use super::IReport;
+    pub use super::IReportMethods;
+    pub use super::Report;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

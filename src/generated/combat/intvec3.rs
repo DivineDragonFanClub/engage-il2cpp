@@ -17,13 +17,139 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-intvec3")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IntVec3_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_encode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntVec3 as ::unity2::ClassIdentity>::class(),
+                "Encode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntVec3 as ::unity2::ClassIdentity>::NAME,
+                    "Encode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn encode(
+        vector: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_encode::get_offset() as isize),
+        );
+        inner(vector, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntVec3 as ::unity2::ClassIdentity>::class(),
+                "Decode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntVec3 as ::unity2::ClassIdentity>::NAME,
+                    "Decode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decode(
+        int_value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decode::get_offset() as isize),
+        );
+        inner(int_value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-intvec3")]
 impl IntVec3 {
     #[doc = "`Encode(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Encode", args = 1)]
-    pub fn encode(vector: crate::unity_engine::vector3::Vector3) -> i32;
-
+    pub fn encode(
+        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> i32 {
+        unsafe {
+            __IntVec3_unity2_raw::encode(
+                ::core::convert::Into::into(vector),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Decode(i32)` overload"]
-    #[method(name = "Decode", args = 1)]
-    pub fn decode(int_value: i32) -> crate::unity_engine::vector3::Vector3;
+    pub fn decode(
+        int_value: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __IntVec3_unity2_raw::decode(
+                ::core::convert::Into::into(int_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-intvec3")]
+pub mod prelude {
+    pub use super::IIntVec3;
+    pub use super::IntVec3;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

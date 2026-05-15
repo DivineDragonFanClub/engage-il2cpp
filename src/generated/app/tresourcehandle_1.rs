@@ -93,3 +93,16 @@ impl<T0: ::unity2::ClassIdentity> TResourceHandle_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-tresourcehandle_1")]
+pub mod prelude {
+    pub use super::ITResourceHandle_1;
+    pub use super::ITResourceHandle_1Methods;
+    pub use super::TResourceHandle_1;
+    pub use crate::app::resourcehandle_2::IResourceHandle_2;
+    #[cfg(feature = "app-resourcehandle_2")]
+    pub use crate::app::resourcehandle_2::IResourceHandle_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -17,13 +17,137 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-misc")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Misc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Misc as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Misc as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        obj: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_immediate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Misc as ::unity2::ClassIdentity>::class(),
+                "DestroyImmediate",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Misc as ::unity2::ClassIdentity>::NAME,
+                    "DestroyImmediate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_immediate(
+        obj: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy_immediate::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-misc")]
 impl Misc {
     #[doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "Destroy", args = 1)]
-    pub fn destroy(obj: crate::unity_engine::object_2::Object_2) -> ();
-
+    pub fn destroy(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe {
+            __Misc_unity2_raw::destroy(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`DestroyImmediate(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "DestroyImmediate", args = 1)]
-    pub fn destroy_immediate(obj: crate::unity_engine::object_2::Object_2) -> ();
+    pub fn destroy_immediate(
+        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> () {
+        unsafe {
+            __Misc_unity2_raw::destroy_immediate(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-misc")]
+pub mod prelude {
+    pub use super::IMisc;
+    pub use super::Misc;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

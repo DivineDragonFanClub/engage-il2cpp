@@ -26,36 +26,436 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-sortieentruststockdata")]
-#[::unity2::methods]
-impl SortieEntrustStockData {
-    #[doc = "`.ctor(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, unit_item: crate::app::unititem::UnitItem, count: i32) -> ();
-
-    #[doc = "`Assigned()` overload"]
-    #[method(name = "Assigned", args = 0)]
-    pub fn assigned(self) -> ();
-
-    #[doc = "`AddStock(i32)` overload"]
-    #[method(name = "AddStock", args = 1)]
-    pub fn add_stock(self, count: i32) -> ();
-
-    #[doc = "`get_UnitItem()` overload"]
-    #[method(name = "get_UnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`get_ItemData()` overload"]
-    #[method(name = "get_ItemData", args = 0)]
-    pub fn get_item_data(self) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`get_StockCount()` overload"]
-    #[method(name = "get_StockCount", args = 0)]
-    pub fn get_stock_count(self) -> i32;
-
-    #[doc = "`get_AssignedCount()` overload"]
-    #[method(name = "get_AssignedCount", args = 0)]
-    pub fn get_assigned_count(self) -> i32;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieEntrustStockData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SortieEntrustStockData,
+        unit_item: crate::app::unititem::UnitItem,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieEntrustStockData,
+            crate::app::unititem::UnitItem,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, unit_item, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assigned {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "Assigned",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "Assigned",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn assigned(
+        this: SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieEntrustStockData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_assigned::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_stock {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "AddStock",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "AddStock",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_stock(
+        this: SortieEntrustStockData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieEntrustStockData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_stock::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "get_UnitItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "get_UnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit_item(
+        this: SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            SortieEntrustStockData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unit_item::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "get_ItemData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "get_ItemData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item_data(
+        this: SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(
+            SortieEntrustStockData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stock_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "get_StockCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "get_StockCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stock_count(
+        this: SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SortieEntrustStockData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_stock_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assigned_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustStockData as ::unity2::ClassIdentity>::class(),
+                "get_AssignedCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrustStockData as ::unity2::ClassIdentity>::NAME,
+                    "get_AssignedCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_assigned_count(
+        this: SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SortieEntrustStockData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_assigned_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-sortieentruststockdata")]
+pub trait ISortieEntrustStockDataMethods: ISortieEntrustStockData {
+    #[doc = "`.ctor(crate::app::unititem::UnitItem, i32)` overload"]
+    fn ctor(
+        self,
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Assigned()` overload"]
+    fn assigned(self) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::assigned(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddStock(i32)` overload"]
+    fn add_stock(self, count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::add_stock(
+                __receiver,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UnitItem()` overload"]
+    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::get_unit_item(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ItemData()` overload"]
+    fn get_item_data(self) -> crate::app::itemdata::ItemData {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::get_item_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_StockCount()` overload"]
+    fn get_stock_count(self) -> i32 {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::get_stock_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AssignedCount()` overload"]
+    fn get_assigned_count(self) -> i32 {
+        unsafe {
+            let __receiver = <SortieEntrustStockData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrustStockData_unity2_raw::get_assigned_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentruststockdata")]
+impl<__T: ISortieEntrustStockData> ISortieEntrustStockDataMethods for __T {}
 
 #[cfg(feature = "app-sortieentruststockdata")]
 impl SortieEntrustStockData {
@@ -71,4 +471,14 @@ impl SortieEntrustStockData {
         <Self as ISortieEntrustStockDataMethods>::ctor(this, unit_item, count);
         this
     }
+}
+
+#[cfg(feature = "app-sortieentruststockdata")]
+pub mod prelude {
+    pub use super::ISortieEntrustStockData;
+    pub use super::ISortieEntrustStockDataMethods;
+    pub use super::SortieEntrustStockData;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

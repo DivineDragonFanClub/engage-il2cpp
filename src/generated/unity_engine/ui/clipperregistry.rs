@@ -25,28 +25,298 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-clipperregistry")]
-#[::unity2::methods]
-impl ClipperRegistry {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::unity_engine::ui::clipperregistry::ClipperRegistry;
-
-    #[doc = "`Cull()` overload"]
-    #[method(name = "Cull", args = 0)]
-    pub fn cull(self) -> ();
-
-    #[doc = "`Register(crate::unity_engine::ui::iclipper::IClipper)` overload"]
-    #[method(name = "Register", args = 1)]
-    pub fn register(c: crate::unity_engine::ui::iclipper::IClipper) -> ();
-
-    #[doc = "`Unregister(crate::unity_engine::ui::iclipper::IClipper)` overload"]
-    #[method(name = "Unregister", args = 1)]
-    pub fn unregister(c: crate::unity_engine::ui::iclipper::IClipper) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ClipperRegistry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClipperRegistry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClipperRegistry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ClipperRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClipperRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClipperRegistry as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClipperRegistry as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::clipperregistry::ClipperRegistry {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::ui::clipperregistry::ClipperRegistry = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cull {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClipperRegistry as ::unity2::ClassIdentity>::class(),
+                "Cull",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClipperRegistry as ::unity2::ClassIdentity>::NAME,
+                    "Cull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cull(
+        this: ClipperRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClipperRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cull::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::iclipper::IClipper as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClipperRegistry as ::unity2::ClassIdentity>::class(),
+                "Register",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClipperRegistry as ::unity2::ClassIdentity>::NAME,
+                    "Register",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register(
+        c: crate::unity_engine::ui::iclipper::IClipper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::iclipper::IClipper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::iclipper::IClipper as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClipperRegistry as ::unity2::ClassIdentity>::class(),
+                "Unregister",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClipperRegistry as ::unity2::ClassIdentity>::NAME,
+                    "Unregister",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister(
+        c: crate::unity_engine::ui::iclipper::IClipper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::iclipper::IClipper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unregister::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-clipperregistry")]
+impl ClipperRegistry {
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance() -> crate::unity_engine::ui::clipperregistry::ClipperRegistry {
+        unsafe { __ClipperRegistry_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`Register(crate::unity_engine::ui::iclipper::IClipper)` overload"]
+    pub fn register(
+        c: impl ::core::convert::Into<crate::unity_engine::ui::iclipper::IClipper>,
+    ) -> () {
+        unsafe {
+            __ClipperRegistry_unity2_raw::register(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Unregister(crate::unity_engine::ui::iclipper::IClipper)` overload"]
+    pub fn unregister(
+        c: impl ::core::convert::Into<crate::unity_engine::ui::iclipper::IClipper>,
+    ) -> () {
+        unsafe {
+            __ClipperRegistry_unity2_raw::unregister(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-clipperregistry")]
+pub trait IClipperRegistryMethods: IClipperRegistry {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ClipperRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ClipperRegistry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Cull()` overload"]
+    fn cull(self) -> () {
+        unsafe {
+            let __receiver = <ClipperRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ClipperRegistry_unity2_raw::cull(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-clipperregistry")]
+impl<__T: IClipperRegistry> IClipperRegistryMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-clipperregistry")]
 impl ClipperRegistry {
@@ -62,4 +332,14 @@ impl ClipperRegistry {
         <Self as IClipperRegistryMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-clipperregistry")]
+pub mod prelude {
+    pub use super::ClipperRegistry;
+    pub use super::IClipperRegistry;
+    pub use super::IClipperRegistryMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

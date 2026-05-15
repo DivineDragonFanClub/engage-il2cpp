@@ -20,20 +20,215 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
-#[::unity2::methods]
-impl TilemapRenderer {
-    #[doc = "`RegisterSpriteAtlasRegistered()` overload"]
-    #[method(name = "RegisterSpriteAtlasRegistered", args = 0)]
-    pub fn register_sprite_atlas_registered(self) -> ();
-
-    #[doc = "`UnregisterSpriteAtlasRegistered()` overload"]
-    #[method(name = "UnregisterSpriteAtlasRegistered", args = 0)]
-    pub fn unregister_sprite_atlas_registered(self) -> ();
-
-    #[doc = "`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
-    #[method(name = "OnSpriteAtlasRegistered", args = 1)]
-    pub fn on_sprite_atlas_registered(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TilemapRenderer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_sprite_atlas_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TilemapRenderer as ::unity2::ClassIdentity>::class(),
+                "RegisterSpriteAtlasRegistered",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TilemapRenderer as ::unity2::ClassIdentity>::NAME,
+                    "RegisterSpriteAtlasRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_sprite_atlas_registered(
+        this: TilemapRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TilemapRenderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_register_sprite_atlas_registered::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister_sprite_atlas_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TilemapRenderer as ::unity2::ClassIdentity>::class(),
+                "UnregisterSpriteAtlasRegistered",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TilemapRenderer as ::unity2::ClassIdentity>::NAME,
+                    "UnregisterSpriteAtlasRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister_sprite_atlas_registered(
+        this: TilemapRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TilemapRenderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unregister_sprite_atlas_registered::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_sprite_atlas_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TilemapRenderer as ::unity2::ClassIdentity>::class(),
+                "OnSpriteAtlasRegistered",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TilemapRenderer as ::unity2::ClassIdentity>::NAME,
+                    "OnSpriteAtlasRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_sprite_atlas_registered(
+        this: TilemapRenderer,
         atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TilemapRenderer,
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_sprite_atlas_registered::get_offset() as isize),
+        );
+        inner(this, atlas, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+pub trait ITilemapRendererMethods: ITilemapRenderer {
+    #[doc = "`RegisterSpriteAtlasRegistered()` overload"]
+    fn register_sprite_atlas_registered(self) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TilemapRenderer_unity2_raw::register_sprite_atlas_registered(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnregisterSpriteAtlasRegistered()` overload"]
+    fn unregister_sprite_atlas_registered(self) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TilemapRenderer_unity2_raw::unregister_sprite_atlas_registered(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
+    fn on_sprite_atlas_registered(
+        self,
+        atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TilemapRenderer_unity2_raw::on_sprite_atlas_registered(
+                __receiver,
+                ::core::convert::Into::into(atlas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+impl<__T: ITilemapRenderer> ITilemapRendererMethods for __T {}
+
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+pub mod prelude {
+    pub use super::ITilemapRenderer;
+    pub use super::ITilemapRendererMethods;
+    pub use super::TilemapRenderer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::renderer::IRenderer;
+    #[cfg(feature = "unity_engine-renderer")]
+    pub use crate::unity_engine::renderer::IRendererMethods;
 }

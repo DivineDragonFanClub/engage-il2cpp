@@ -77,75 +77,749 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_defaultcontrols")]
-#[::unity2::methods]
-impl TMP_DefaultControls {
-    #[doc = "`CreateUIElementRoot(::unity2::Il2CppString, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "CreateUIElementRoot", args = 2)]
-    pub fn create_ui_element_root(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_DefaultControls_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_ui_element_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateUIElementRoot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateUIElementRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_ui_element_root(
         name: ::unity2::Il2CppString,
         size: crate::unity_engine::vector2::Vector2,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`CreateUIObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateUIObject", args = 2)]
-    pub fn create_ui_object(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_ui_element_root::get_offset() as isize),
+        );
+        inner(name, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_ui_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateUIObject",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateUIObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_ui_object(
         name: ::unity2::Il2CppString,
         parent: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetDefaultTextValues(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    #[method(name = "SetDefaultTextValues", args = 1)]
-    pub fn set_default_text_values(lbl: crate::tm_pro::tmp_text::TMP_Text) -> ();
-
-    #[doc = "`SetDefaultColorTransitionValues(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    #[method(name = "SetDefaultColorTransitionValues", args = 1)]
-    pub fn set_default_color_transition_values(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_ui_object::get_offset() as isize),
+        );
+        inner(name, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default_text_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "SetDefaultTextValues",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "SetDefaultTextValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_default_text_values(
+        lbl: crate::tm_pro::tmp_text::TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_text::TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_default_text_values::get_offset() as isize),
+        );
+        inner(lbl, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default_color_transition_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "SetDefaultColorTransitionValues",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "SetDefaultColorTransitionValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_default_color_transition_values(
         slider: crate::unity_engine::ui::selectable::Selectable,
-    ) -> ();
-
-    #[doc = "`SetParentAndAlign(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetParentAndAlign", args = 2)]
-    pub fn set_parent_and_align(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::selectable::Selectable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_default_color_transition_values::get_offset() as isize),
+        );
+        inner(slider, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parent_and_align {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "SetParentAndAlign",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "SetParentAndAlign",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parent_and_align(
         child: crate::unity_engine::gameobject::GameObject,
         parent: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_parent_and_align::get_offset() as isize),
+        );
+        inner(child, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_layer_recursively {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "SetLayerRecursively",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "SetLayerRecursively",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_layer_recursively(
+        go: crate::unity_engine::gameobject::GameObject,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_layer_recursively::get_offset() as isize),
+        );
+        inner(go, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_scrollbar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateScrollbar",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateScrollbar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_scrollbar(
+        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_scrollbar::get_offset() as isize),
+        );
+        inner(resources, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateButton",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateButton",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_button(
+        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_button::get_offset() as isize),
+        );
+        inner(resources, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateText",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_text(
+        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_text::get_offset() as isize),
+        );
+        inner(resources, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_input_field {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateInputField",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateInputField",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_input_field(
+        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_input_field::get_offset() as isize),
+        );
+        inner(resources, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_dropdown {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                "CreateDropdown",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    "CreateDropdown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_dropdown(
+        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_dropdown::get_offset() as isize),
+        );
+        inner(resources, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_DefaultControls as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_DefaultControls as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "tm_pro-tmp_defaultcontrols")]
+impl TMP_DefaultControls {
+    #[doc = "`CreateUIElementRoot(::unity2::Il2CppString, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn create_ui_element_root(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_ui_element_root(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateUIObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_ui_object(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_ui_object(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetDefaultTextValues(crate::tm_pro::tmp_text::TMP_Text)` overload"]
+    pub fn set_default_text_values(
+        lbl: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
+    ) -> () {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::set_default_text_values(
+                ::core::convert::Into::into(lbl),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetDefaultColorTransitionValues(crate::unity_engine::ui::selectable::Selectable)` overload"]
+    pub fn set_default_color_transition_values(
+        slider: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>,
+    ) -> () {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::set_default_color_transition_values(
+                ::core::convert::Into::into(slider),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParentAndAlign(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn set_parent_and_align(
+        child: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::set_parent_and_align(
+                ::core::convert::Into::into(child),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetLayerRecursively(crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "SetLayerRecursively", args = 2)]
-    pub fn set_layer_recursively(go: crate::unity_engine::gameobject::GameObject, layer: i32)
-        -> ();
-
+    pub fn set_layer_recursively(
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::set_layer_recursively(
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateScrollbar(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]
-    #[method(name = "CreateScrollbar", args = 1)]
     pub fn create_scrollbar(
-        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
+        resources: impl ::core::convert::Into<
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        >,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_scrollbar(
+                ::core::convert::Into::into(resources),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateButton(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]
-    #[method(name = "CreateButton", args = 1)]
     pub fn create_button(
-        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
+        resources: impl ::core::convert::Into<
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        >,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_button(
+                ::core::convert::Into::into(resources),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateText(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]
-    #[method(name = "CreateText", args = 1)]
     pub fn create_text(
-        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
+        resources: impl ::core::convert::Into<
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        >,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_text(
+                ::core::convert::Into::into(resources),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateInputField(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]
-    #[method(name = "CreateInputField", args = 1)]
     pub fn create_input_field(
-        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
+        resources: impl ::core::convert::Into<
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        >,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_input_field(
+                ::core::convert::Into::into(resources),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateDropdown(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]
-    #[method(name = "CreateDropdown", args = 1)]
     pub fn create_dropdown(
-        resources: crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
+        resources: impl ::core::convert::Into<
+            crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources,
+        >,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __TMP_DefaultControls_unity2_raw::create_dropdown(
+                ::core::convert::Into::into(resources),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __TMP_DefaultControls_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_defaultcontrols")]
+pub mod prelude {
+    pub use super::ITMP_DefaultControls;
+    pub use super::TMP_DefaultControls;
+    pub use super::TMP_DefaultControls_Resources;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

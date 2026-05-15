@@ -21,144 +21,1279 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-recttransformutility")]
-#[::unity2::methods]
-impl RectTransformUtility {
-    #[doc = "`PixelAdjustPoint(crate::unity_engine::vector2::Vector2, crate::unity_engine::transform::Transform, crate::unity_engine::canvas::Canvas)` overload"]
-    #[method(name = "PixelAdjustPoint", args = 3)]
-    pub fn pixel_adjust_point(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RectTransformUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pixel_adjust_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PixelAdjustPoint",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PixelAdjustPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pixel_adjust_point(
         point: crate::unity_engine::vector2::Vector2,
         element_transform: crate::unity_engine::transform::Transform,
         canvas: crate::unity_engine::canvas::Canvas,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`PixelAdjustRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"]
-    #[method(name = "PixelAdjustRect", args = 2)]
-    pub fn pixel_adjust_rect(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::canvas::Canvas,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pixel_adjust_point::get_offset() as isize),
+        );
+        inner(point, element_transform, canvas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pixel_adjust_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PixelAdjustRect",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PixelAdjustRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pixel_adjust_rect(
         rect_transform: crate::unity_engine::recttransform::RectTransform,
         canvas: crate::unity_engine::canvas::Canvas,
-    ) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`PointInRectangle(crate::unity_engine::vector2::Vector2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::camera::Camera, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "PointInRectangle", args = 4)]
-    pub fn point_in_rectangle(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::canvas::Canvas,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pixel_adjust_rect::get_offset() as isize),
+        );
+        inner(rect_transform, canvas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_point_in_rectangle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PointInRectangle",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PointInRectangle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn point_in_rectangle(
         screen_point: crate::unity_engine::vector2::Vector2,
         rect: crate::unity_engine::recttransform::RectTransform,
         cam: crate::unity_engine::camera::Camera,
         offset: crate::unity_engine::vector4::Vector4,
-    ) -> bool;
-
-    #[doc = "`RectangleContainsScreenPoint(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "RectangleContainsScreenPoint", args = 3)]
-    pub fn rectangle_contains_screen_point(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_point_in_rectangle::get_offset() as isize),
+        );
+        inner(screen_point, rect, cam, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rectangle_contains_screen_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "RectangleContainsScreenPoint",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "RectangleContainsScreenPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rectangle_contains_screen_point(
         rect: crate::unity_engine::recttransform::RectTransform,
         screen_point: crate::unity_engine::vector2::Vector2,
         cam: crate::unity_engine::camera::Camera,
-    ) -> bool;
-
-    #[doc = "`RectangleContainsScreenPoint(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "RectangleContainsScreenPoint", args = 4)]
-    pub fn rectangle_contains_screen_point_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rectangle_contains_screen_point::get_offset() as isize),
+        );
+        inner(rect, screen_point, cam, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rectangle_contains_screen_point_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "RectangleContainsScreenPoint",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "RectangleContainsScreenPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rectangle_contains_screen_point_2(
         rect: crate::unity_engine::recttransform::RectTransform,
         screen_point: crate::unity_engine::vector2::Vector2,
         cam: crate::unity_engine::camera::Camera,
         offset: crate::unity_engine::vector4::Vector4,
-    ) -> bool;
-
-    #[doc = "`ScreenPointToWorldPointInRectangle(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "ScreenPointToWorldPointInRectangle", args = 4)]
-    pub fn screen_point_to_world_point_in_rectangle(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rectangle_contains_screen_point_2::get_offset() as isize),
+        );
+        inner(rect, screen_point, cam, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_screen_point_to_world_point_in_rectangle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "ScreenPointToWorldPointInRectangle",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "ScreenPointToWorldPointInRectangle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn screen_point_to_world_point_in_rectangle(
         rect: crate::unity_engine::recttransform::RectTransform,
         screen_point: crate::unity_engine::vector2::Vector2,
         cam: crate::unity_engine::camera::Camera,
-        world_point: crate::unity_engine::vector3::Vector3,
-    ) -> bool;
-
-    #[doc = "`ScreenPointToLocalPointInRectangle(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "ScreenPointToLocalPointInRectangle", args = 4)]
-    pub fn screen_point_to_local_point_in_rectangle(
+        world_point: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::camera::Camera,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_screen_point_to_world_point_in_rectangle::get_offset() as isize),
+        );
+        inner(rect, screen_point, cam, world_point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_screen_point_to_local_point_in_rectangle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "ScreenPointToLocalPointInRectangle",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "ScreenPointToLocalPointInRectangle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn screen_point_to_local_point_in_rectangle(
         rect: crate::unity_engine::recttransform::RectTransform,
         screen_point: crate::unity_engine::vector2::Vector2,
         cam: crate::unity_engine::camera::Camera,
-        local_point: crate::unity_engine::vector2::Vector2,
-    ) -> bool;
-
-    #[doc = "`ScreenPointToRay(crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "ScreenPointToRay", args = 2)]
-    pub fn screen_point_to_ray(
+        local_point: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::camera::Camera,
+            *mut crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_screen_point_to_local_point_in_rectangle::get_offset() as isize),
+        );
+        inner(rect, screen_point, cam, local_point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_screen_point_to_ray {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "ScreenPointToRay",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "ScreenPointToRay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn screen_point_to_ray(
         cam: crate::unity_engine::camera::Camera,
         screen_pos: crate::unity_engine::vector2::Vector2,
-    ) -> crate::unity_engine::ray::Ray;
-
-    #[doc = "`WorldToScreenPoint(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "WorldToScreenPoint", args = 2)]
-    pub fn world_to_screen_point(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ray::Ray {
+        let inner: extern "C" fn(
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ray::Ray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_screen_point_to_ray::get_offset() as isize),
+        );
+        inner(cam, screen_pos, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_world_to_screen_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "WorldToScreenPoint",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "WorldToScreenPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn world_to_screen_point(
         cam: crate::unity_engine::camera::Camera,
         world_point: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`CalculateRelativeRectTransformBounds(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "CalculateRelativeRectTransformBounds", args = 2)]
-    pub fn calculate_relative_rect_transform_bounds(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_world_to_screen_point::get_offset() as isize),
+        );
+        inner(cam, world_point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_relative_rect_transform_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "CalculateRelativeRectTransformBounds",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalculateRelativeRectTransformBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_relative_rect_transform_bounds(
         root: crate::unity_engine::transform::Transform,
         child: crate::unity_engine::transform::Transform,
-    ) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`CalculateRelativeRectTransformBounds(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "CalculateRelativeRectTransformBounds", args = 1)]
-    pub fn calculate_relative_rect_transform_bounds_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_relative_rect_transform_bounds::get_offset() as isize),
+        );
+        inner(root, child, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_relative_rect_transform_bounds_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "CalculateRelativeRectTransformBounds",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalculateRelativeRectTransformBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_relative_rect_transform_bounds_2(
         trans: crate::unity_engine::transform::Transform,
-    ) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`FlipLayoutOnAxis(crate::unity_engine::recttransform::RectTransform, i32, bool, bool)` overload"]
-    #[method(name = "FlipLayoutOnAxis", args = 4)]
-    pub fn flip_layout_on_axis(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_relative_rect_transform_bounds_2::get_offset() as isize),
+        );
+        inner(trans, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_flip_layout_on_axis {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "FlipLayoutOnAxis",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "FlipLayoutOnAxis",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn flip_layout_on_axis(
         rect: crate::unity_engine::recttransform::RectTransform,
         axis: i32,
         keep_positioning: bool,
         recursive: bool,
-    ) -> ();
-
-    #[doc = "`FlipLayoutAxes(crate::unity_engine::recttransform::RectTransform, bool, bool)` overload"]
-    #[method(name = "FlipLayoutAxes", args = 3)]
-    pub fn flip_layout_axes(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            i32,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_flip_layout_on_axis::get_offset() as isize),
+        );
+        inner(
+            rect,
+            axis,
+            keep_positioning,
+            recursive,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_flip_layout_axes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "FlipLayoutAxes",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "FlipLayoutAxes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn flip_layout_axes(
         rect: crate::unity_engine::recttransform::RectTransform,
         keep_positioning: bool,
         recursive: bool,
-    ) -> ();
-
-    #[doc = "`GetTransposed(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "GetTransposed", args = 1)]
-    pub fn get_transposed(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_flip_layout_axes::get_offset() as isize),
+        );
+        inner(rect, keep_positioning, recursive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transposed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "GetTransposed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetTransposed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transposed(
         input: crate::unity_engine::vector2::Vector2,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`PixelAdjustPoint_Injected(crate::unity_engine::vector2::Vector2, crate::unity_engine::transform::Transform, crate::unity_engine::canvas::Canvas, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "PixelAdjustPoint_Injected", args = 4)]
-    pub fn pixel_adjust_point_injected(
-        point: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transposed::get_offset() as isize),
+        );
+        inner(input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pixel_adjust_point_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PixelAdjustPoint_Injected",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PixelAdjustPoint_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pixel_adjust_point_injected(
+        point: *mut crate::unity_engine::vector2::Vector2,
         element_transform: crate::unity_engine::transform::Transform,
         canvas: crate::unity_engine::canvas::Canvas,
-        ret: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`PixelAdjustRect_Injected(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "PixelAdjustRect_Injected", args = 3)]
-    pub fn pixel_adjust_rect_injected(
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::canvas::Canvas,
+            *mut crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pixel_adjust_point_injected::get_offset() as isize),
+        );
+        inner(point, element_transform, canvas, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pixel_adjust_rect_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PixelAdjustRect_Injected",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PixelAdjustRect_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pixel_adjust_rect_injected(
         rect_transform: crate::unity_engine::recttransform::RectTransform,
         canvas: crate::unity_engine::canvas::Canvas,
-        ret: crate::unity_engine::rect::Rect,
-    ) -> ();
-
-    #[doc = "`PointInRectangle_Injected(crate::unity_engine::vector2::Vector2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::camera::Camera, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "PointInRectangle_Injected", args = 4)]
-    pub fn point_in_rectangle_injected(
-        screen_point: crate::unity_engine::vector2::Vector2,
+        ret: *mut crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::canvas::Canvas,
+            *mut crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pixel_adjust_rect_injected::get_offset() as isize),
+        );
+        inner(rect_transform, canvas, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_point_in_rectangle_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransformUtility as ::unity2::ClassIdentity>::class(),
+                "PointInRectangle_Injected",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransformUtility as ::unity2::ClassIdentity>::NAME,
+                    "PointInRectangle_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn point_in_rectangle_injected(
+        screen_point: *mut crate::unity_engine::vector2::Vector2,
         rect: crate::unity_engine::recttransform::RectTransform,
         cam: crate::unity_engine::camera::Camera,
-        offset: crate::unity_engine::vector4::Vector4,
-    ) -> bool;
+        offset: *mut crate::unity_engine::vector4::Vector4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::camera::Camera,
+            *mut crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_point_in_rectangle_injected::get_offset() as isize),
+        );
+        inner(screen_point, rect, cam, offset, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransformutility")]
+impl RectTransformUtility {
+    #[doc = "`PixelAdjustPoint(crate::unity_engine::vector2::Vector2, crate::unity_engine::transform::Transform, crate::unity_engine::canvas::Canvas)` overload"]
+    pub fn pixel_adjust_point(
+        point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        element_transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __RectTransformUtility_unity2_raw::pixel_adjust_point(
+                ::core::convert::Into::into(point),
+                ::core::convert::Into::into(element_transform),
+                ::core::convert::Into::into(canvas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PixelAdjustRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"]
+    pub fn pixel_adjust_rect(
+        rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __RectTransformUtility_unity2_raw::pixel_adjust_rect(
+                ::core::convert::Into::into(rect_transform),
+                ::core::convert::Into::into(canvas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PointInRectangle(crate::unity_engine::vector2::Vector2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::camera::Camera, crate::unity_engine::vector4::Vector4)` overload"]
+    pub fn point_in_rectangle(
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        offset: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> bool {
+        unsafe {
+            __RectTransformUtility_unity2_raw::point_in_rectangle(
+                ::core::convert::Into::into(screen_point),
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(cam),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RectangleContainsScreenPoint(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
+    pub fn rectangle_contains_screen_point(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> bool {
+        unsafe {
+            __RectTransformUtility_unity2_raw::rectangle_contains_screen_point(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(screen_point),
+                ::core::convert::Into::into(cam),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RectangleContainsScreenPoint(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, crate::unity_engine::vector4::Vector4)` overload"]
+    pub fn rectangle_contains_screen_point_2(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        offset: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> bool {
+        unsafe {
+            __RectTransformUtility_unity2_raw::rectangle_contains_screen_point_2(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(screen_point),
+                ::core::convert::Into::into(cam),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScreenPointToWorldPointInRectangle(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn screen_point_to_world_point_in_rectangle(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> (bool, crate::unity_engine::vector3::Vector3) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __RectTransformUtility_unity2_raw::screen_point_to_world_point_in_rectangle(
+                    ::core::convert::Into::into(rect),
+                    ::core::convert::Into::into(screen_point),
+                    ::core::convert::Into::into(cam),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ScreenPointToLocalPointInRectangle(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, *mutcrate::unity_engine::vector2::Vector2)` overload"]
+    pub fn screen_point_to_local_point_in_rectangle(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        screen_point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> (bool, crate::unity_engine::vector2::Vector2) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let __ret = {
+                __RectTransformUtility_unity2_raw::screen_point_to_local_point_in_rectangle(
+                    ::core::convert::Into::into(rect),
+                    ::core::convert::Into::into(screen_point),
+                    ::core::convert::Into::into(cam),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ScreenPointToRay(crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn screen_point_to_ray(
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        screen_pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> crate::unity_engine::ray::Ray {
+        unsafe {
+            __RectTransformUtility_unity2_raw::screen_point_to_ray(
+                ::core::convert::Into::into(cam),
+                ::core::convert::Into::into(screen_pos),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WorldToScreenPoint(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn world_to_screen_point(
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        world_point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __RectTransformUtility_unity2_raw::world_to_screen_point(
+                ::core::convert::Into::into(cam),
+                ::core::convert::Into::into(world_point),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateRelativeRectTransformBounds(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]
+    pub fn calculate_relative_rect_transform_bounds(
+        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        child: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            __RectTransformUtility_unity2_raw::calculate_relative_rect_transform_bounds(
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(child),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateRelativeRectTransformBounds(crate::unity_engine::transform::Transform)` overload"]
+    pub fn calculate_relative_rect_transform_bounds_2(
+        trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            __RectTransformUtility_unity2_raw::calculate_relative_rect_transform_bounds_2(
+                ::core::convert::Into::into(trans),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FlipLayoutOnAxis(crate::unity_engine::recttransform::RectTransform, i32, bool, bool)` overload"]
+    pub fn flip_layout_on_axis(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        axis: impl ::core::convert::Into<i32>,
+        keep_positioning: impl ::core::convert::Into<bool>,
+        recursive: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __RectTransformUtility_unity2_raw::flip_layout_on_axis(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(keep_positioning),
+                ::core::convert::Into::into(recursive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FlipLayoutAxes(crate::unity_engine::recttransform::RectTransform, bool, bool)` overload"]
+    pub fn flip_layout_axes(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        keep_positioning: impl ::core::convert::Into<bool>,
+        recursive: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __RectTransformUtility_unity2_raw::flip_layout_axes(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(keep_positioning),
+                ::core::convert::Into::into(recursive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTransposed(crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn get_transposed(
+        input: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __RectTransformUtility_unity2_raw::get_transposed(
+                ::core::convert::Into::into(input),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RectTransformUtility_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`PixelAdjustPoint_Injected(*mutcrate::unity_engine::vector2::Vector2, crate::unity_engine::transform::Transform, crate::unity_engine::canvas::Canvas, *mutcrate::unity_engine::vector2::Vector2)` overload"]
+    pub fn pixel_adjust_point_injected(
+        element_transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> (
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector2::Vector2,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransformUtility_unity2_raw::pixel_adjust_point_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(element_transform),
+                ::core::convert::Into::into(canvas),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`PixelAdjustRect_Injected(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas, *mutcrate::unity_engine::rect::Rect)` overload"]
+    pub fn pixel_adjust_rect_injected(
+        rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            __RectTransformUtility_unity2_raw::pixel_adjust_rect_injected(
+                ::core::convert::Into::into(rect_transform),
+                ::core::convert::Into::into(canvas),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`PointInRectangle_Injected(*mutcrate::unity_engine::vector2::Vector2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::camera::Camera, *mutcrate::unity_engine::vector4::Vector4)` overload"]
+    pub fn point_in_rectangle_injected(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> (
+        bool,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector4::Vector4,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let __ret = {
+                __RectTransformUtility_unity2_raw::point_in_rectangle_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(rect),
+                    ::core::convert::Into::into(cam),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransformutility")]
+pub mod prelude {
+    pub use super::IRectTransformUtility;
+    pub use super::RectTransformUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

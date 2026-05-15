@@ -2,5 +2,18 @@
 
 #[cfg(any(feature = "tm_pro-sprite_asset_utilities-spriteassetimportformats-types"))]
 pub mod spriteassetimportformats;
+#[cfg(feature = "tm_pro-sprite_asset_utilities-spriteassetimportformats-types")]
+pub use spriteassetimportformats::SpriteAssetImportFormats;
 #[cfg(any(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray-types"))]
 pub mod texturepacker_jsonarray;
+#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray-types")]
+pub use texturepacker_jsonarray::{
+    ITexturePacker_JsonArray, ITexturePacker_JsonArray_SpriteDataObject, TexturePacker_JsonArray,
+    TexturePacker_JsonArray_Frame, TexturePacker_JsonArray_Meta,
+    TexturePacker_JsonArray_SpriteDataObject, TexturePacker_JsonArray_SpriteFrame,
+    TexturePacker_JsonArray_SpriteSize,
+};
+#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
+pub use texturepacker_jsonarray::{
+    ITexturePacker_JsonArrayMethods, ITexturePacker_JsonArray_SpriteDataObjectMethods,
+};

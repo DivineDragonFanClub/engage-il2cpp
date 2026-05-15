@@ -36,34 +36,201 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowrendering")]
-#[::unity2::methods]
-impl ShadowRendering {
-    #[doc = "`GetShadowMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, i32)` overload"]
-    #[method(name = "GetShadowMaterial", args = 2)]
-    pub fn get_shadow_material(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShadowRendering_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shadow_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowRendering as ::unity2::ClassIdentity>::class(),
+                "GetShadowMaterial",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShadowRendering as ::unity2::ClassIdentity>::NAME,
+                    "GetShadowMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shadow_material(
         renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
         index: i32,
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`GetRemoveSelfShadowMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, i32)` overload"]
-    #[method(name = "GetRemoveSelfShadowMaterial", args = 2)]
-    pub fn get_remove_self_shadow_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_shadow_material::get_offset() as isize),
+        );
+        inner(renderer_data, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_remove_self_shadow_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowRendering as ::unity2::ClassIdentity>::class(),
+                "GetRemoveSelfShadowMaterial",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShadowRendering as ::unity2::ClassIdentity>::NAME,
+                    "GetRemoveSelfShadowMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_remove_self_shadow_material(
         renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
         index: i32,
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`CreateShadowRenderTexture(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
-    #[method(name = "CreateShadowRenderTexture", args = 4)]
-    pub fn create_shadow_render_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_remove_self_shadow_material::get_offset() as isize),
+        );
+        inner(renderer_data, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_shadow_render_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowRendering as ::unity2::ClassIdentity>::class(),
+                "CreateShadowRenderTexture",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShadowRendering as ::unity2::ClassIdentity>::NAME,
+                    "CreateShadowRenderTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_shadow_render_texture(
         pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
         rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         blend_style_index: i32,
-    ) -> ();
-
-    #[doc = "`RenderShadows(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, f32, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "RenderShadows", args = 8)]
-    pub fn render_shadows(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_shadow_render_texture::get_offset() as isize),
+        );
+        inner(
+            pass,
+            rendering_data,
+            cmd,
+            blend_style_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_render_shadows {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowRendering as ::unity2::ClassIdentity>::class(),
+                "RenderShadows",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShadowRendering as ::unity2::ClassIdentity>::NAME,
+                    "RenderShadows",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn render_shadows(
         pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
         rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         cmd_buffer: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
@@ -72,9 +239,179 @@ impl ShadowRendering {
         shadow_intensity: f32,
         render_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
         depth_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            i32,
+            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+            f32,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_render_shadows::get_offset() as isize),
+        );
+        inner(
+            pass,
+            rendering_data,
+            cmd_buffer,
+            layer_to_render,
+            light,
+            shadow_intensity,
+            render_texture,
+            depth_texture,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowRendering as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShadowRendering as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowrendering")]
+impl ShadowRendering {
+    #[doc = "`GetShadowMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, i32)` overload"]
+    pub fn get_shadow_material(
+        renderer_data: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
+        >,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __ShadowRendering_unity2_raw::get_shadow_material(
+                ::core::convert::Into::into(renderer_data),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRemoveSelfShadowMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, i32)` overload"]
+    pub fn get_remove_self_shadow_material(
+        renderer_data: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
+        >,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __ShadowRendering_unity2_raw::get_remove_self_shadow_material(
+                ::core::convert::Into::into(renderer_data),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateShadowRenderTexture(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
+    pub fn create_shadow_render_texture(
+        pass: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        >,
+        rendering_data: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        >,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        blend_style_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __ShadowRendering_unity2_raw::create_shadow_render_texture(
+                ::core::convert::Into::into(pass),
+                ::core::convert::Into::into(rendering_data),
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(blend_style_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RenderShadows(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, f32, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    pub fn render_shadows(
+        pass: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        >,
+        rendering_data: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        >,
+        cmd_buffer: impl ::core::convert::Into<
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+        layer_to_render: impl ::core::convert::Into<i32>,
+        light: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        >,
+        shadow_intensity: impl ::core::convert::Into<f32>,
+        render_texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+        depth_texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> () {
+        unsafe {
+            __ShadowRendering_unity2_raw::render_shadows(
+                ::core::convert::Into::into(pass),
+                ::core::convert::Into::into(rendering_data),
+                ::core::convert::Into::into(cmd_buffer),
+                ::core::convert::Into::into(layer_to_render),
+                ::core::convert::Into::into(light),
+                ::core::convert::Into::into(shadow_intensity),
+                ::core::convert::Into::into(render_texture),
+                ::core::convert::Into::into(depth_texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __ShadowRendering_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowrendering")]
+pub mod prelude {
+    pub use super::IShadowRendering;
+    pub use super::ShadowRendering;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

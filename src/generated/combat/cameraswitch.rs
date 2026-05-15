@@ -30,77 +30,854 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-cameraswitch")]
-#[::unity2::methods]
-impl CameraSwitch {
-    #[doc = "`get_SourceCamera()` overload"]
-    #[method(name = "get_SourceCamera", args = 0)]
-    pub fn get_source_camera(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`set_SourceCamera(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "set_SourceCamera", args = 1)]
-    pub fn set_source_camera(self, value: crate::unity_engine::camera::Camera) -> ();
-
-    #[doc = "`get_CurrentCamera()` overload"]
-    #[method(name = "get_CurrentCamera", args = 0)]
-    pub fn get_current_camera(self) -> crate::combat::cameraposition::CameraPosition;
-
-    #[doc = "`set_CurrentCamera(crate::combat::cameraposition::CameraPosition)` overload"]
-    #[method(name = "set_CurrentCamera", args = 1)]
-    pub fn set_current_camera(self, value: crate::combat::cameraposition::CameraPosition) -> ();
-
-    #[doc = "`get_CurrentInterruptCamera()` overload"]
-    #[method(name = "get_CurrentInterruptCamera", args = 0)]
-    pub fn get_current_interrupt_camera(self) -> crate::combat::cameraposition::CameraPosition;
-
-    #[doc = "`set_CurrentInterruptCamera(crate::combat::cameraposition::CameraPosition)` overload"]
-    #[method(name = "set_CurrentInterruptCamera", args = 1)]
-    pub fn set_current_interrupt_camera(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraSwitch_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_source_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "get_SourceCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "get_SourceCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_source_camera(
+        this: CameraSwitch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_source_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_source_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "set_SourceCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "set_SourceCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_source_camera(
+        this: CameraSwitch,
+        value: crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_source_camera::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "get_CurrentCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "get_CurrentCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_camera(
+        this: CameraSwitch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_current_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "set_CurrentCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "set_CurrentCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_current_camera(
+        this: CameraSwitch,
         value: crate::combat::cameraposition::CameraPosition,
-    ) -> ();
-
-    #[doc = "`get_IsInterrupting()` overload"]
-    #[method(name = "get_IsInterrupting", args = 0)]
-    pub fn get_is_interrupting(self) -> bool;
-
-    #[doc = "`get_Item(crate::combat::cameraposition::CameraPosition)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::combat::cameraposition::CameraPosition,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_current_camera::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_interrupt_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "get_CurrentInterruptCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "get_CurrentInterruptCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_interrupt_camera(
+        this: CameraSwitch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_interrupt_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_current_interrupt_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "set_CurrentInterruptCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "set_CurrentInterruptCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_current_interrupt_camera(
+        this: CameraSwitch,
+        value: crate::combat::cameraposition::CameraPosition,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::combat::cameraposition::CameraPosition,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_current_interrupt_camera::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_interrupting {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "get_IsInterrupting",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "get_IsInterrupting",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_interrupting(
+        this: CameraSwitch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraSwitch, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_interrupting::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: CameraSwitch,
         pos: crate::combat::cameraposition::CameraPosition,
-    ) -> crate::combat::basecameracontroller::BaseCameraController;
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`LateUpdate()` overload"]
-    #[method(name = "LateUpdate", args = 0)]
-    pub fn late_update(self) -> ();
-
-    #[doc = "`SwitchCamera(crate::combat::cameraposition::CameraPosition, bool)` overload"]
-    #[method(name = "SwitchCamera", args = 2)]
-    pub fn switch_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::basecameracontroller::BaseCameraController {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::combat::cameraposition::CameraPosition,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::basecameracontroller::BaseCameraController = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, pos, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(this: CameraSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CameraSwitch, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(this: CameraSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CameraSwitch, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_late_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "LateUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "LateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn late_update(
+        this: CameraSwitch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraSwitch, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_late_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "SwitchCamera",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "SwitchCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_camera(
+        this: CameraSwitch,
         next_camera: crate::combat::cameraposition::CameraPosition,
         force: bool,
-    ) -> ();
-
-    #[doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]
-    #[method(name = "StartTransition", args = 1)]
-    pub fn start_transition(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::combat::cameraposition::CameraPosition,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_switch_camera::get_offset() as isize),
+        );
+        inner(this, next_camera, force, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_transition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: basecameracontroller :: BaseCameraController as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                "StartTransition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    "StartTransition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_transition(
+        this: CameraSwitch,
         next_camera: crate::combat::basecameracontroller::BaseCameraController,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraSwitch,
+            crate::combat::basecameracontroller::BaseCameraController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_start_transition::get_offset() as isize),
+        );
+        inner(this, next_camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraSwitch as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraSwitch as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: CameraSwitch, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CameraSwitch, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-cameraswitch")]
+pub trait ICameraSwitchMethods: ICameraSwitch {
+    #[doc = "`get_SourceCamera()` overload"]
+    fn get_source_camera(self) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::get_source_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SourceCamera(crate::unity_engine::camera::Camera)` overload"]
+    fn set_source_camera(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::set_source_camera(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CurrentCamera()` overload"]
+    fn get_current_camera(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::get_current_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_CurrentCamera(crate::combat::cameraposition::CameraPosition)` overload"]
+    fn set_current_camera(
+        self,
+        value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::set_current_camera(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CurrentInterruptCamera()` overload"]
+    fn get_current_interrupt_camera(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::get_current_interrupt_camera(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_CurrentInterruptCamera(crate::combat::cameraposition::CameraPosition)` overload"]
+    fn set_current_interrupt_camera(
+        self,
+        value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::set_current_interrupt_camera(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsInterrupting()` overload"]
+    fn get_is_interrupting(self) -> bool {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::get_is_interrupting(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(crate::combat::cameraposition::CameraPosition)` overload"]
+    fn get_item(
+        self,
+        pos: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
+    ) -> crate::combat::basecameracontroller::BaseCameraController {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(pos),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::late_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SwitchCamera(crate::combat::cameraposition::CameraPosition, bool)` overload"]
+    fn switch_camera(
+        self,
+        next_camera: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
+        force: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::switch_camera(
+                __receiver,
+                ::core::convert::Into::into(next_camera),
+                ::core::convert::Into::into(force),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]
+    fn start_transition(
+        self,
+        next_camera: impl ::core::convert::Into<
+            crate::combat::basecameracontroller::BaseCameraController,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::start_transition(
+                __receiver,
+                ::core::convert::Into::into(next_camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CameraSwitch as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraSwitch_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-cameraswitch")]
+impl<__T: ICameraSwitch> ICameraSwitchMethods for __T {}
 
 #[cfg(feature = "combat-cameraswitch")]
 impl CameraSwitch {
@@ -116,4 +893,26 @@ impl CameraSwitch {
         <Self as ICameraSwitchMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-cameraswitch")]
+pub mod prelude {
+    pub use super::CameraSwitch;
+    pub use super::ICameraSwitch;
+    pub use super::ICameraSwitchMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

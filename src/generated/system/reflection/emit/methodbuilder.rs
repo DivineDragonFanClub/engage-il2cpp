@@ -20,52 +20,580 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-methodbuilder")]
-#[::unity2::methods]
-impl MethodBuilder {
-    #[doc = "`get_Attributes()` overload"]
-    #[method(name = "get_Attributes", args = 0)]
-    pub fn get_attributes(self) -> crate::system::reflection::methodattributes::MethodAttributes;
-
-    #[doc = "`get_DeclaringType()` overload"]
-    #[method(name = "get_DeclaringType", args = 0)]
-    pub fn get_declaring_type(self) -> ::unity2::SystemType;
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetParameters()` overload"]
-    #[method(name = "GetParameters", args = 0)]
-    pub fn get_parameters(
-        self,
-    ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>;
-
-    #[doc = "`get_ReflectedType()` overload"]
-    #[method(name = "get_ReflectedType", args = 0)]
-    pub fn get_reflected_type(self) -> ::unity2::SystemType;
-
-    #[doc = "`GetCustomAttributes(bool)` overload"]
-    #[method(name = "GetCustomAttributes", args = 1)]
-    pub fn get_custom_attributes(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MethodBuilder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attributes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "get_Attributes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "get_Attributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_attributes(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodattributes::MethodAttributes {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::reflection::methodattributes::MethodAttributes =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_attributes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_declaring_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "get_DeclaringType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "get_DeclaringType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_declaring_type(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(MethodBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_declaring_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "get_Name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "get_Name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parameters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "GetParameters",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "GetParameters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parameters(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::reflection::parameterinfo::ParameterInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_parameters::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reflected_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "get_ReflectedType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "get_ReflectedType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_reflected_type(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(MethodBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_reflected_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_custom_attributes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "GetCustomAttributes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "GetCustomAttributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_custom_attributes(
+        this: MethodBuilder,
         inherit: bool,
-    ) -> ::unity2::Array<crate::system::object::Object>;
-
-    #[doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"]
-    #[method(name = "GetCustomAttributes", args = 2)]
-    pub fn get_custom_attributes_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::object::Object> {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_custom_attributes::get_offset() as isize),
+        );
+        inner(this, inherit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_custom_attributes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "GetCustomAttributes",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "GetCustomAttributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_custom_attributes_2(
+        this: MethodBuilder,
         attribute_type: ::unity2::SystemType,
         inherit: bool,
-    ) -> ::unity2::Array<crate::system::object::Object>;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::object::Object> {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_custom_attributes_2::get_offset() as isize),
+        );
+        inner(this, attribute_type, inherit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method_implementation_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "GetMethodImplementationFlags",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "GetMethodImplementationFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method_implementation_flags(
+        this: MethodBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
+        let inner : extern "C" fn (MethodBuilder , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_method_implementation_flags :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_defined {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MethodBuilder as ::unity2::ClassIdentity>::class(),
+                "IsDefined",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MethodBuilder as ::unity2::ClassIdentity>::NAME,
+                    "IsDefined",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_defined(
+        this: MethodBuilder,
+        attribute_type: ::unity2::SystemType,
+        inherit: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MethodBuilder,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_defined::get_offset() as isize),
+        );
+        inner(this, attribute_type, inherit, __unity2_method_info)
+    }
+}
 
-    #[doc = "`GetMethodImplementationFlags()` overload"]
-    #[method(name = "GetMethodImplementationFlags", args = 0)]
-    pub fn get_method_implementation_flags(
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+pub trait IMethodBuilderMethods: IMethodBuilder {
+    #[doc = "`get_Attributes()` overload"]
+    fn get_attributes(self) -> crate::system::reflection::methodattributes::MethodAttributes {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DeclaringType()` overload"]
+    fn get_declaring_type(self) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetParameters()` overload"]
+    fn get_parameters(
         self,
-    ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes;
-
+    ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ReflectedType()` overload"]
+    fn get_reflected_type(self) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCustomAttributes(bool)` overload"]
+    fn get_custom_attributes(
+        self,
+        inherit: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::system::object::Object> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_custom_attributes(
+                __receiver,
+                ::core::convert::Into::into(inherit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"]
+    fn get_custom_attributes_2(
+        self,
+        attribute_type: impl ::core::convert::Into<::unity2::SystemType>,
+        inherit: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::system::object::Object> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_custom_attributes_2(
+                __receiver,
+                ::core::convert::Into::into(attribute_type),
+                ::core::convert::Into::into(inherit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMethodImplementationFlags()` overload"]
+    fn get_method_implementation_flags(
+        self,
+    ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::get_method_implementation_flags(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsDefined(::unity2::SystemType, bool)` overload"]
-    #[method(name = "IsDefined", args = 2)]
-    pub fn is_defined(self, attribute_type: ::unity2::SystemType, inherit: bool) -> bool;
+    fn is_defined(
+        self,
+        attribute_type: impl ::core::convert::Into<::unity2::SystemType>,
+        inherit: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MethodBuilder_unity2_raw::is_defined(
+                __receiver,
+                ::core::convert::Into::into(attribute_type),
+                ::core::convert::Into::into(inherit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+impl<__T: IMethodBuilder> IMethodBuilderMethods for __T {}
+
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+pub mod prelude {
+    pub use super::IMethodBuilder;
+    pub use super::IMethodBuilderMethods;
+    pub use super::MethodBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    #[cfg(feature = "system-reflection-memberinfo")]
+    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    pub use crate::system::reflection::methodbase::IMethodBase;
+    #[cfg(feature = "system-reflection-methodbase")]
+    pub use crate::system::reflection::methodbase::IMethodBaseMethods;
+    pub use crate::system::reflection::methodinfo::IMethodInfo;
+    #[cfg(feature = "system-reflection-methodinfo")]
+    pub use crate::system::reflection::methodinfo::IMethodInfoMethods;
 }

@@ -18,29 +18,286 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_character")]
-#[::unity2::methods]
-impl TMP_Character {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, unicode: u32, glyph: crate::unity_engine::text_core::glyph::Glyph) -> ();
-
-    #[doc = "`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_3(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Character_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Character as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Character as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyph::Glyph as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Character as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Character as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: TMP_Character,
+        unicode: u32,
+        glyph: crate::unity_engine::text_core::glyph::Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Character,
+            u32,
+            crate::unity_engine::text_core::glyph::Glyph,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, unicode, glyph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyph::Glyph as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Character as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Character as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: TMP_Character,
         unicode: u32,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         glyph: crate::unity_engine::text_core::glyph::Glyph,
-    ) -> ();
-
-    #[doc = "`.ctor(u32, u32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_4(self, unicode: u32, glyph_index: u32) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Character,
+            u32,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            crate::unity_engine::text_core::glyph::Glyph,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, unicode, font_asset, glyph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Character as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Character as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: TMP_Character,
+        unicode: u32,
+        glyph_index: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Character, u32, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_4::get_offset() as isize),
+            );
+        inner(this, unicode, glyph_index, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_character")]
+pub trait ITMP_CharacterMethods: ITMP_Character {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Character_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` overload"]
+    fn ctor_2(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        glyph: impl ::core::convert::Into<crate::unity_engine::text_core::glyph::Glyph>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Character_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(glyph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` overload"]
+    fn ctor_3(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        glyph: impl ::core::convert::Into<crate::unity_engine::text_core::glyph::Glyph>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Character_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(font_asset),
+                ::core::convert::Into::into(glyph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(u32, u32)` overload"]
+    fn ctor_4(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        glyph_index: impl ::core::convert::Into<u32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Character_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(glyph_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_character")]
+impl<__T: ITMP_Character> ITMP_CharacterMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_character")]
 impl TMP_Character {
@@ -99,4 +356,17 @@ impl TMP_Character {
         <Self as ITMP_CharacterMethods>::ctor_4(this, unicode, glyph_index);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_character")]
+pub mod prelude {
+    pub use super::ITMP_Character;
+    pub use super::ITMP_CharacterMethods;
+    pub use super::TMP_Character;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::tm_pro::tmp_textelement::ITMP_TextElement;
+    #[cfg(feature = "tm_pro-tmp_textelement")]
+    pub use crate::tm_pro::tmp_textelement::ITMP_TextElementMethods;
 }

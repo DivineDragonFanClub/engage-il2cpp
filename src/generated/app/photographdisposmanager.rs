@@ -49,120 +49,1425 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-photographdisposmanager")]
-#[::unity2::methods]
-impl PhotographDisposManager {
-    #[doc = "`get_DisposInfoList()` overload"]
-    #[method(name = "get_DisposInfoList", args = 0)]
-    pub fn get_dispos_info_list(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographDisposManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dispos_info_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "get_DisposInfoList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "get_DisposInfoList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dispos_info_list(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::photographdisposinfo::PhotographDisposInfo,
-    >;
-
-    #[doc = "`get_CurrentDisposInfo()` overload"]
-    #[method(name = "get_CurrentDisposInfo", args = 0)]
-    pub fn get_current_dispos_info(self) -> crate::app::photographdisposinfo::PhotographDisposInfo;
-
-    #[doc = "`get_CurrentDisposIdx()` overload"]
-    #[method(name = "get_CurrentDisposIdx", args = 0)]
-    pub fn get_current_dispos_idx(self) -> i32;
-
-    #[doc = "`get_CurrentDisposEffect()` overload"]
-    #[method(name = "get_CurrentDisposEffect", args = 0)]
-    pub fn get_current_dispos_effect(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetUp(crate::app::photographspotdata::PhotographSpotData, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetUp", args = 2)]
-    pub fn set_up(
-        self,
+    > {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::photographdisposinfo::PhotographDisposInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dispos_info_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_dispos_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "get_CurrentDisposInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "get_CurrentDisposInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_dispos_info(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::photographdisposinfo::PhotographDisposInfo {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::photographdisposinfo::PhotographDisposInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_dispos_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_dispos_idx {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "get_CurrentDisposIdx",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "get_CurrentDisposIdx",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_dispos_idx(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_current_dispos_idx::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_dispos_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "get_CurrentDisposEffect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "get_CurrentDisposEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_dispos_effect(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_dispos_effect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::photographspotdata::PhotographSpotData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "SetUp",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "SetUp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_up(
+        this: PhotographDisposManager,
         select_spot: crate::app::photographspotdata::PhotographSpotData,
         current_spot: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`IsLoadingCharacter()` overload"]
-    #[method(name = "IsLoadingCharacter", args = 0)]
-    pub fn is_loading_character(self) -> bool;
-
-    #[doc = "`RandomDispos()` overload"]
-    #[method(name = "RandomDispos", args = 0)]
-    pub fn random_dispos(self) -> ();
-
-    #[doc = "`ChangeAcc(bool, bool)` overload"]
-    #[method(name = "ChangeAcc", args = 2)]
-    pub fn change_acc(self, is_body: bool, is_next: bool) -> ();
-
-    #[doc = "`ChangeAcc(crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "ChangeAcc", args = 2)]
-    pub fn change_acc_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            crate::app::photographspotdata::PhotographSpotData,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_up::get_offset() as isize),
+        );
+        inner(this, select_spot, current_spot, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "IsLoadingCharacter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_character(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loading_character::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_random_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "RandomDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "RandomDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn random_dispos(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_random_dispos::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_acc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "ChangeAcc",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "ChangeAcc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_acc(
+        this: PhotographDisposManager,
+        is_body: bool,
+        is_next: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_acc::get_offset() as isize),
+        );
+        inner(this, is_body, is_next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_acc_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "ChangeAcc",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "ChangeAcc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_acc_2(
+        this: PhotographDisposManager,
         body_acc: crate::app::accessorydata::AccessoryData,
         face_acc: crate::app::accessorydata::AccessoryData,
-    ) -> ();
-
-    #[doc = "`EditDispos(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::itemdata::ItemData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, bool)` overload"]
-    #[method(name = "EditDispos", args = 6)]
-    pub fn edit_dispos(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            crate::app::accessorydata::AccessoryData,
+            crate::app::accessorydata::AccessoryData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_acc_2::get_offset() as isize),
+        );
+        inner(this, body_acc, face_acc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_edit_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "EditDispos",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "EditDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn edit_dispos(
+        this: PhotographDisposManager,
         character_id: ::unity2::Il2CppString,
         pause_data: crate::app::photographpausedata::PhotographPauseData,
         weapon_data: crate::app::itemdata::ItemData,
         body_acc: crate::app::accessorydata::AccessoryData,
         face_acc: crate::app::accessorydata::AccessoryData,
         is_random: bool,
-    ) -> ();
-
-    #[doc = "`DecisionDispos()` overload"]
-    #[method(name = "DecisionDispos", args = 0)]
-    pub fn decision_dispos(self) -> ();
-
-    #[doc = "`CancelDispos()` overload"]
-    #[method(name = "CancelDispos", args = 0)]
-    pub fn cancel_dispos(self) -> ();
-
-    #[doc = "`DisposEffectFadeIn(bool)` overload"]
-    #[method(name = "DisposEffectFadeIn", args = 1)]
-    pub fn dispos_effect_fade_in(self, is_only_current_dispos: bool) -> ();
-
-    #[doc = "`DisposEffectFadeOut()` overload"]
-    #[method(name = "DisposEffectFadeOut", args = 0)]
-    pub fn dispos_effect_fade_out(self) -> ();
-
-    #[doc = "`ChangeDispos(bool, bool)` overload"]
-    #[method(name = "ChangeDispos", args = 2)]
-    pub fn change_dispos(self, is_trigger: bool, is_next: bool) -> ();
-
-    #[doc = "`ChangeIsLookAtCamera()` overload"]
-    #[method(name = "ChangeIsLookAtCamera", args = 0)]
-    pub fn change_is_look_at_camera(self) -> ();
-
-    #[doc = "`ResetLookAtRate()` overload"]
-    #[method(name = "ResetLookAtRate", args = 0)]
-    pub fn reset_look_at_rate(self) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`LoadResource()` overload"]
-    #[method(name = "LoadResource", args = 0)]
-    pub fn load_resource() -> ();
-
-    #[doc = "`IsLoadingResource()` overload"]
-    #[method(name = "IsLoadingResource", args = 0)]
-    pub fn is_loading_resource() -> bool;
-
-    #[doc = "`UnloadResource()` overload"]
-    #[method(name = "UnloadResource", args = 0)]
-    pub fn unload_resource() -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            ::unity2::Il2CppString,
+            crate::app::photographpausedata::PhotographPauseData,
+            crate::app::itemdata::ItemData,
+            crate::app::accessorydata::AccessoryData,
+            crate::app::accessorydata::AccessoryData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_edit_dispos::get_offset() as isize),
+        );
+        inner(
+            this,
+            character_id,
+            pause_data,
+            weapon_data,
+            body_acc,
+            face_acc,
+            is_random,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decision_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "DecisionDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "DecisionDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decision_dispos(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_decision_dispos::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cancel_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "CancelDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "CancelDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cancel_dispos(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cancel_dispos::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispos_effect_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "DisposEffectFadeIn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "DisposEffectFadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispos_effect_fade_in(
+        this: PhotographDisposManager,
+        is_only_current_dispos: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispos_effect_fade_in::get_offset() as isize),
+            );
+        inner(this, is_only_current_dispos, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispos_effect_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "DisposEffectFadeOut",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "DisposEffectFadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispos_effect_fade_out(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispos_effect_fade_out::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "ChangeDispos",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "ChangeDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_dispos(
+        this: PhotographDisposManager,
+        is_trigger: bool,
+        is_next: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographDisposManager,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_dispos::get_offset() as isize),
+        );
+        inner(this, is_trigger, is_next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_is_look_at_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "ChangeIsLookAtCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "ChangeIsLookAtCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_is_look_at_camera(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_is_look_at_camera::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_look_at_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "ResetLookAtRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "ResetLookAtRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_look_at_rate(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_look_at_rate::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "End",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "End",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_resource {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "LoadResource",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadResource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_resource(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_resource::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_resource {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "IsLoadingResource",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingResource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_resource(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading_resource::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_resource {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                "UnloadResource",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadResource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_resource(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_resource::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographDisposManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-photographdisposmanager")]
+impl PhotographDisposManager {
+    #[doc = "`LoadResource()` overload"]
+    pub fn load_resource() -> () {
+        unsafe { __PhotographDisposManager_unity2_raw::load_resource(::core::option::Option::None) }
+    }
+    #[doc = "`IsLoadingResource()` overload"]
+    pub fn is_loading_resource() -> bool {
+        unsafe {
+            __PhotographDisposManager_unity2_raw::is_loading_resource(::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadResource()` overload"]
+    pub fn unload_resource() -> () {
+        unsafe {
+            __PhotographDisposManager_unity2_raw::unload_resource(::core::option::Option::None)
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __PhotographDisposManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-photographdisposmanager")]
+pub trait IPhotographDisposManagerMethods: IPhotographDisposManager {
+    #[doc = "`get_DisposInfoList()` overload"]
+    fn get_dispos_info_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::photographdisposinfo::PhotographDisposInfo,
+    > {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::get_dispos_info_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CurrentDisposInfo()` overload"]
+    fn get_current_dispos_info(self) -> crate::app::photographdisposinfo::PhotographDisposInfo {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::get_current_dispos_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CurrentDisposIdx()` overload"]
+    fn get_current_dispos_idx(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::get_current_dispos_idx(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CurrentDisposEffect()` overload"]
+    fn get_current_dispos_effect(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::get_current_dispos_effect(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUp(crate::app::photographspotdata::PhotographSpotData, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_up(
+        self,
+        select_spot: impl ::core::convert::Into<crate::app::photographspotdata::PhotographSpotData>,
+        current_spot: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::set_up(
+                __receiver,
+                ::core::convert::Into::into(select_spot),
+                ::core::convert::Into::into(current_spot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoadingCharacter()` overload"]
+    fn is_loading_character(self) -> bool {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::is_loading_character(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RandomDispos()` overload"]
+    fn random_dispos(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::random_dispos(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeAcc(bool, bool)` overload"]
+    fn change_acc(
+        self,
+        is_body: impl ::core::convert::Into<bool>,
+        is_next: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::change_acc(
+                __receiver,
+                ::core::convert::Into::into(is_body),
+                ::core::convert::Into::into(is_next),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeAcc(crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData)` overload"]
+    fn change_acc_2(
+        self,
+        body_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        face_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::change_acc_2(
+                __receiver,
+                ::core::convert::Into::into(body_acc),
+                ::core::convert::Into::into(face_acc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EditDispos(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::itemdata::ItemData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, bool)` overload"]
+    fn edit_dispos(
+        self,
+        character_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pause_data: impl ::core::convert::Into<crate::app::photographpausedata::PhotographPauseData>,
+        weapon_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        body_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        face_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        is_random: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::edit_dispos(
+                __receiver,
+                ::core::convert::Into::into(character_id),
+                ::core::convert::Into::into(pause_data),
+                ::core::convert::Into::into(weapon_data),
+                ::core::convert::Into::into(body_acc),
+                ::core::convert::Into::into(face_acc),
+                ::core::convert::Into::into(is_random),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecisionDispos()` overload"]
+    fn decision_dispos(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::decision_dispos(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CancelDispos()` overload"]
+    fn cancel_dispos(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::cancel_dispos(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisposEffectFadeIn(bool)` overload"]
+    fn dispos_effect_fade_in(self, is_only_current_dispos: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::dispos_effect_fade_in(
+                __receiver,
+                ::core::convert::Into::into(is_only_current_dispos),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisposEffectFadeOut()` overload"]
+    fn dispos_effect_fade_out(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::dispos_effect_fade_out(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeDispos(bool, bool)` overload"]
+    fn change_dispos(
+        self,
+        is_trigger: impl ::core::convert::Into<bool>,
+        is_next: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::change_dispos(
+                __receiver,
+                ::core::convert::Into::into(is_trigger),
+                ::core::convert::Into::into(is_next),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeIsLookAtCamera()` overload"]
+    fn change_is_look_at_camera(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::change_is_look_at_camera(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetLookAtRate()` overload"]
+    fn reset_look_at_rate(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::reset_look_at_rate(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`End()` overload"]
+    fn end(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-photographdisposmanager")]
+impl<__T: IPhotographDisposManager> IPhotographDisposManagerMethods for __T {}
 
 #[cfg(feature = "app-photographdisposmanager")]
 impl PhotographDisposManager {
@@ -178,4 +1483,14 @@ impl PhotographDisposManager {
         <Self as IPhotographDisposManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-photographdisposmanager")]
+pub mod prelude {
+    pub use super::IPhotographDisposManager;
+    pub use super::IPhotographDisposManagerMethods;
+    pub use super::PhotographDisposManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

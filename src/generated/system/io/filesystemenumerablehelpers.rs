@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-io-filesystemenumerablehelpers-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-io-filesystemenumerablehelpers")]
+pub mod prelude {
+    pub use super::FileSystemEnumerableHelpers;
+    pub use super::IFileSystemEnumerableHelpers;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

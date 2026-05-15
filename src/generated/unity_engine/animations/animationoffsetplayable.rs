@@ -41,67 +41,615 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animationoffsetplayable")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationOffsetPlayable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "Create",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        input_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable {
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationoffsetplayable :: AnimationOffsetPlayable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(graph, position, rotation, input_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandle",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        input_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_handle::get_offset() as isize),
+            );
+        inner(graph, position, rotation, input_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AnimationOffsetPlayable,
+        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationOffsetPlayable,
+            crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "GetHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "GetHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle(
+        this: AnimationOffsetPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            AnimationOffsetPlayable,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_handle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationoffsetplayable :: AnimationOffsetPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        playable: crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_implicit::get_offset() as isize),
+        );
+        inner(playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationoffsetplayable :: AnimationOffsetPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: AnimationOffsetPlayable,
+        other: crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AnimationOffsetPlayable,
+            crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandleInternal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandleInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle_internal(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_handle_internal::get_offset() as isize),
+        );
+        inner(graph, position, rotation, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationOffsetPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandleInternal_Injected",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationOffsetPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandleInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle_internal_injected(
+        graph: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+        position: *mut crate::unity_engine::vector3::Vector3,
+        rotation: *mut crate::unity_engine::quaternion::Quaternion,
+        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_handle_internal_injected::get_offset() as isize),
+        );
+        inner(graph, position, rotation, handle, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-animations-animationoffsetplayable")]
 impl AnimationOffsetPlayable {
     #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, i32)` overload"]
-    #[method(name = "Create", args = 4)]
     pub fn create(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        input_count: i32,
-    ) -> crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable;
-
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        input_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::create(
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::convert::Into::into(input_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, i32)` overload"]
-    #[method(name = "CreateHandle", args = 4)]
     pub fn create_handle(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        input_count: i32,
-    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
-
-    #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, handle: crate::unity_engine::playables::playablehandle::PlayableHandle)
-        -> ();
-
-    #[doc = "`GetHandle()` overload"]
-    #[method(name = "GetHandle", args = 0)]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
-
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        input_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::create_handle(
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::convert::Into::into(input_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Implicit(crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
     pub fn op_implicit(
-        playable: crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
-    ) -> crate::unity_engine::playables::playable::Playable;
+        playable: impl ::core::convert::Into<
+            crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+        >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::op_implicit(
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn create_handle_internal(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> (
+        bool,
+        crate::unity_engine::playables::playablehandle::PlayableHandle,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablehandle::PlayableHandle,
+            >::uninit();
+            let __ret = {
+                __AnimationOffsetPlayable_unity2_raw::create_handle_internal(
+                    ::core::convert::Into::into(graph),
+                    ::core::convert::Into::into(position),
+                    ::core::convert::Into::into(rotation),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AnimationOffsetPlayable_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`CreateHandleInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn create_handle_internal_injected() -> (
+        bool,
+        crate::unity_engine::playables::playablegraph::PlayableGraph,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::quaternion::Quaternion,
+        crate::unity_engine::playables::playablehandle::PlayableHandle,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablegraph::PlayableGraph,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablehandle::PlayableHandle,
+            >::uninit();
+            let __ret = {
+                __AnimationOffsetPlayable_unity2_raw::create_handle_internal_injected(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+}
 
+#[cfg(feature = "unity_engine-animations-animationoffsetplayable")]
+impl AnimationOffsetPlayable {
+    #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn ctor(
+        self,
+        handle: impl ::core::convert::Into<
+            crate::unity_engine::playables::playablehandle::PlayableHandle,
+        >,
+    ) -> () {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHandle()` overload"]
+    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::get_handle(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`Equals(crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable)` overload"]
-    #[method(name = "Equals", args = 1)]
     pub fn equals(
         self,
-        other: crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
-    ) -> bool;
+        other: impl ::core::convert::Into<
+            crate::unity_engine::animations::animationoffsetplayable::AnimationOffsetPlayable,
+        >,
+    ) -> bool {
+        unsafe {
+            __AnimationOffsetPlayable_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = "CreateHandleInternal", args = 4)]
-    pub fn create_handle_internal(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-    ) -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`CreateHandleInternal_Injected(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = "CreateHandleInternal_Injected", args = 4)]
-    pub fn create_handle_internal_injected(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-    ) -> bool;
+#[cfg(feature = "unity_engine-animations-animationoffsetplayable")]
+pub mod prelude {
+    pub use super::AnimationOffsetPlayable;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -22,12 +22,92 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
-#[::unity2::methods]
-impl TypeBuilderInstantiation {
-    #[doc = "`MakeGenericType(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>)` overload"]
-    #[method(name = "MakeGenericType", args = 2)]
-    pub fn make_generic_type(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TypeBuilderInstantiation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_generic_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TypeBuilderInstantiation as ::unity2::ClassIdentity>::class(),
+                "MakeGenericType",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TypeBuilderInstantiation as ::unity2::ClassIdentity>::NAME,
+                    "MakeGenericType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_generic_type(
         r#type: ::unity2::SystemType,
         type_arguments: ::unity2::Array<::unity2::SystemType>,
-    ) -> ::unity2::SystemType;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::Array<::unity2::SystemType>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_generic_type::get_offset() as isize),
+        );
+        inner(r#type, type_arguments, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
+impl TypeBuilderInstantiation {
+    #[doc = "`MakeGenericType(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>)` overload"]
+    pub fn make_generic_type(
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        type_arguments: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
+    ) -> ::unity2::SystemType {
+        unsafe {
+            __TypeBuilderInstantiation_unity2_raw::make_generic_type(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(type_arguments),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
+pub mod prelude {
+    pub use super::ITypeBuilderInstantiation;
+    pub use super::TypeBuilderInstantiation;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    #[cfg(feature = "system-reflection-memberinfo")]
+    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    pub use crate::system::reflection::typeinfo::ITypeInfo;
+    #[cfg(feature = "system-reflection-typeinfo")]
+    pub use crate::system::reflection::typeinfo::ITypeInfoMethods;
 }

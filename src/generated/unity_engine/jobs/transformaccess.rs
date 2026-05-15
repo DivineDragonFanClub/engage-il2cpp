@@ -42,38 +42,396 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-jobs-transformaccess")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TransformAccess_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "get_position",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "get_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position(
+        this: TransformAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            TransformAccess,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "get_rotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "get_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation(
+        this: TransformAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            TransformAccess,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "set_localRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "set_localRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_rotation(
+        this: TransformAccess,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TransformAccess,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "GetPosition",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "GetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position_2(
+        access: *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+        p: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position_2::get_offset() as isize),
+        );
+        inner(access, p, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "GetRotation",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "GetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_2(
+        access: *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+        r: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_2::get_offset() as isize),
+        );
+        inner(access, r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_local_rotation_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAccess as ::unity2::ClassIdentity>::class(),
+                "SetLocalRotation",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TransformAccess as ::unity2::ClassIdentity>::NAME,
+                    "SetLocalRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_local_rotation_2(
+        access: *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+        r: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::jobs::transformaccess::TransformAccess,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_local_rotation_2::get_offset() as isize),
+        );
+        inner(access, r, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-jobs-transformaccess")]
+impl TransformAccess {
+    #[doc = "`GetPosition(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn get_position_2() -> (
+        crate::unity_engine::jobs::transformaccess::TransformAccess,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::jobs::transformaccess::TransformAccess,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __TransformAccess_unity2_raw::get_position_2(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn get_rotation_2() -> (
+        crate::unity_engine::jobs::transformaccess::TransformAccess,
+        crate::unity_engine::quaternion::Quaternion,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::jobs::transformaccess::TransformAccess,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __TransformAccess_unity2_raw::get_rotation_2(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`SetLocalRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn set_local_rotation_2() -> (
+        crate::unity_engine::jobs::transformaccess::TransformAccess,
+        crate::unity_engine::quaternion::Quaternion,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::jobs::transformaccess::TransformAccess,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __TransformAccess_unity2_raw::set_local_rotation_2(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-jobs-transformaccess")]
 impl TransformAccess {
     #[doc = "`get_position()` overload"]
-    #[method(name = "get_position", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
-
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __TransformAccess_unity2_raw::get_position(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_rotation()` overload"]
-    #[method(name = "get_rotation", args = 0)]
-    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
+    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe { __TransformAccess_unity2_raw::get_rotation(self, ::core::option::Option::None) }
+    }
     #[doc = "`set_localRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_localRotation", args = 1)]
-    pub fn set_local_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
+    pub fn set_local_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            __TransformAccess_unity2_raw::set_local_rotation(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`GetPosition(crate::unity_engine::jobs::transformaccess::TransformAccess, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetPosition", args = 2)]
-    pub fn get_position_2(
-        access: crate::unity_engine::jobs::transformaccess::TransformAccess,
-        p: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetRotation(crate::unity_engine::jobs::transformaccess::TransformAccess, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "GetRotation", args = 2)]
-    pub fn get_rotation_2(
-        access: crate::unity_engine::jobs::transformaccess::TransformAccess,
-        r: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`SetLocalRotation(crate::unity_engine::jobs::transformaccess::TransformAccess, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetLocalRotation", args = 2)]
-    pub fn set_local_rotation_2(
-        access: crate::unity_engine::jobs::transformaccess::TransformAccess,
-        r: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
+#[cfg(feature = "unity_engine-jobs-transformaccess")]
+pub mod prelude {
+    pub use super::TransformAccess;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

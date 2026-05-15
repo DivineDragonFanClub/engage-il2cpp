@@ -134,44 +134,380 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gameui")]
-#[::unity2::methods]
-impl GameUI {
-    #[doc = "`GetRoot()` overload"]
-    #[method(name = "GetRoot", args = 0)]
-    pub fn get_root() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetCanvas(crate::app::gameui::GameUI_Priority)` overload"]
-    #[method(name = "GetCanvas", args = 1)]
-    pub fn get_canvas(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUI_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                "GetRoot",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    "GetRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gameui::GameUI_Priority as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                "GetCanvas",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    "GetCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_canvas(
         priority: crate::app::gameui::GameUI_Priority,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetCanvas(::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]
-    #[method(name = "GetCanvas", args = 2)]
-    pub fn get_canvas_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::app::gameui::GameUI_Priority,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_canvas::get_offset() as isize),
+        );
+        inner(priority, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_canvas_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::gameui::GameUI_Priority as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                "GetCanvas",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    "GetCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_canvas_2(
         name: ::unity2::Il2CppString,
         priority: crate::app::gameui::GameUI_Priority,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`TryCreateCanvas(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]
-    #[method(name = "TryCreateCanvas", args = 3)]
-    pub fn try_create_canvas(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::gameui::GameUI_Priority,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_canvas_2::get_offset() as isize),
+        );
+        inner(name, priority, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::gameui::GameUI_Priority as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                "TryCreateCanvas",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    "TryCreateCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_create_canvas(
         parent: crate::unity_engine::gameobject::GameObject,
         name: ::unity2::Il2CppString,
         priority: crate::app::gameui::GameUI_Priority,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`TrySetSortOrder(crate::unity_engine::gameobject::GameObject, crate::app::gameui::GameUI_Priority)` overload"]
-    #[method(name = "TrySetSortOrder", args = 2)]
-    pub fn try_set_sort_order(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::app::gameui::GameUI_Priority,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_create_canvas::get_offset() as isize),
+        );
+        inner(parent, name, priority, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_sort_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::gameui::GameUI_Priority as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                "TrySetSortOrder",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    "TrySetSortOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_set_sort_order(
         go: crate::unity_engine::gameobject::GameObject,
         priority: crate::app::gameui::GameUI_Priority,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::gameui::GameUI_Priority,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_set_sort_order::get_offset() as isize),
+        );
+        inner(go, priority, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUI as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUI as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GameUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-gameui")]
+impl GameUI {
+    #[doc = "`GetRoot()` overload"]
+    pub fn get_root() -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __GameUI_unity2_raw::get_root(::core::option::Option::None) }
+    }
+    #[doc = "`GetCanvas(crate::app::gameui::GameUI_Priority)` overload"]
+    pub fn get_canvas(
+        priority: impl ::core::convert::Into<crate::app::gameui::GameUI_Priority>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameUI_unity2_raw::get_canvas(
+                ::core::convert::Into::into(priority),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCanvas(::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]
+    pub fn get_canvas_2(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        priority: impl ::core::convert::Into<crate::app::gameui::GameUI_Priority>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameUI_unity2_raw::get_canvas_2(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(priority),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryCreateCanvas(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]
+    pub fn try_create_canvas(
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        priority: impl ::core::convert::Into<crate::app::gameui::GameUI_Priority>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __GameUI_unity2_raw::try_create_canvas(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(priority),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrySetSortOrder(crate::unity_engine::gameobject::GameObject, crate::app::gameui::GameUI_Priority)` overload"]
+    pub fn try_set_sort_order(
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        priority: impl ::core::convert::Into<crate::app::gameui::GameUI_Priority>,
+    ) -> () {
+        unsafe {
+            __GameUI_unity2_raw::try_set_sort_order(
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(priority),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gameui")]
+pub trait IGameUIMethods: IGameUI {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameUI as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameui")]
+impl<__T: IGameUI> IGameUIMethods for __T {}
 
 #[cfg(feature = "app-gameui")]
 impl GameUI {
@@ -187,4 +523,36 @@ impl GameUI {
         <Self as IGameUIMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-gameui")]
+pub mod prelude {
+    pub use super::GameUI;
+    pub use super::GameUI_Priority;
+    pub use super::IGameUI;
+    pub use super::IGameUIMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

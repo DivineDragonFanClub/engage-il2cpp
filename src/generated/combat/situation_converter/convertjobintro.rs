@@ -75,21 +75,157 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
-#[::unity2::methods]
-impl ConvertJobIntro {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::combat::situation_converter::cameradataset::CameraDataSet)
-        -> ();
-
-    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Convert", args = 2)]
-    pub fn convert(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConvertJobIntro_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertJobIntro as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertJobIntro as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ConvertJobIntro,
+        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ConvertJobIntro,
+            crate::combat::situation_converter::cameradataset::CameraDataSet,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertJobIntro as ::unity2::ClassIdentity>::class(),
+                "Convert",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertJobIntro as ::unity2::ClassIdentity>::NAME,
+                    "Convert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert(
+        this: ConvertJobIntro,
         situation: crate::combat::camerasituation::CameraSituation,
         arg: ::unity2::Il2CppString,
-    ) -> crate::combat::cameraposition::CameraPosition;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let inner: extern "C" fn(
+            ConvertJobIntro,
+            crate::combat::camerasituation::CameraSituation,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert::get_offset() as isize),
+        );
+        inner(this, situation, arg, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-situation_converter-convertjobintro")]
+pub trait IConvertJobIntroMethods: IConvertJobIntro {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(
+        self,
+        data: impl ::core::convert::Into<
+            crate::combat::situation_converter::cameradataset::CameraDataSet,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ConvertJobIntro as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertJobIntro_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
+    fn convert(
+        self,
+        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertJobIntro as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertJobIntro_unity2_raw::convert(
+                __receiver,
+                ::core::convert::Into::into(situation),
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertjobintro")]
+impl<__T: IConvertJobIntro> IConvertJobIntroMethods for __T {}
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 impl ConvertJobIntro {
@@ -105,4 +241,24 @@ impl ConvertJobIntro {
         <Self as IConvertJobIntroMethods>::ctor(this, data);
         this
     }
+}
+
+#[cfg(feature = "combat-situation_converter-convertjobintro")]
+pub mod prelude {
+    pub use super::ConvertJobIntro;
+    pub use super::ConvertJobIntro_State;
+    pub use super::IConvertJobIntro;
+    pub use super::IConvertJobIntroMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

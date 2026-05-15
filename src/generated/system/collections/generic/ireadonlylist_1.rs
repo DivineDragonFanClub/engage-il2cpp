@@ -21,3 +21,10 @@ impl<T0: ::unity2::ClassIdentity> IReadOnlyList_1<T0> {
     #[method(name = "get_Item", args = 1)]
     pub fn get_item(self, index: i32) -> T0;
 }
+
+#[cfg(feature = "system-collections-generic-ireadonlylist_1")]
+pub mod prelude {
+    pub use super::IIReadOnlyList_1;
+    pub use super::IIReadOnlyList_1Methods;
+    pub use super::IReadOnlyList_1;
+}

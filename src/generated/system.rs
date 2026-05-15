@@ -2,44 +2,118 @@
 
 #[cfg(any(feature = "system-action-types"))]
 pub mod action;
+#[cfg(feature = "system-action")]
+pub use action::IActionMethods;
+#[cfg(feature = "system-action-types")]
+pub use action::{Action, IAction};
 #[cfg(any(feature = "system-action_1-types"))]
 pub mod action_1;
+#[cfg(feature = "system-action_1")]
+pub use action_1::IAction_1Methods;
+#[cfg(feature = "system-action_1-types")]
+pub use action_1::{Action_1, IAction_1};
 #[cfg(any(feature = "system-action_10-types"))]
 pub mod action_10;
+#[cfg(feature = "system-action_10")]
+pub use action_10::IAction_10Methods;
+#[cfg(feature = "system-action_10-types")]
+pub use action_10::{Action_10, IAction_10};
 #[cfg(any(feature = "system-action_11-types"))]
 pub mod action_11;
+#[cfg(feature = "system-action_11")]
+pub use action_11::IAction_11Methods;
+#[cfg(feature = "system-action_11-types")]
+pub use action_11::{Action_11, IAction_11};
 #[cfg(any(feature = "system-action_12-types"))]
 pub mod action_12;
+#[cfg(feature = "system-action_12")]
+pub use action_12::IAction_12Methods;
+#[cfg(feature = "system-action_12-types")]
+pub use action_12::{Action_12, IAction_12};
 #[cfg(any(feature = "system-action_13-types"))]
 pub mod action_13;
+#[cfg(feature = "system-action_13")]
+pub use action_13::IAction_13Methods;
+#[cfg(feature = "system-action_13-types")]
+pub use action_13::{Action_13, IAction_13};
 #[cfg(any(feature = "system-action_14-types"))]
 pub mod action_14;
+#[cfg(feature = "system-action_14")]
+pub use action_14::IAction_14Methods;
+#[cfg(feature = "system-action_14-types")]
+pub use action_14::{Action_14, IAction_14};
 #[cfg(any(feature = "system-action_15-types"))]
 pub mod action_15;
+#[cfg(feature = "system-action_15")]
+pub use action_15::IAction_15Methods;
+#[cfg(feature = "system-action_15-types")]
+pub use action_15::{Action_15, IAction_15};
 #[cfg(any(feature = "system-action_16-types"))]
 pub mod action_16;
+#[cfg(feature = "system-action_16")]
+pub use action_16::IAction_16Methods;
+#[cfg(feature = "system-action_16-types")]
+pub use action_16::{Action_16, IAction_16};
 #[cfg(any(feature = "system-action_2-types"))]
 pub mod action_2;
+#[cfg(feature = "system-action_2")]
+pub use action_2::IAction_2Methods;
+#[cfg(feature = "system-action_2-types")]
+pub use action_2::{Action_2, IAction_2};
 #[cfg(any(feature = "system-action_3-types"))]
 pub mod action_3;
+#[cfg(feature = "system-action_3")]
+pub use action_3::IAction_3Methods;
+#[cfg(feature = "system-action_3-types")]
+pub use action_3::{Action_3, IAction_3};
 #[cfg(any(feature = "system-action_4-types"))]
 pub mod action_4;
+#[cfg(feature = "system-action_4")]
+pub use action_4::IAction_4Methods;
+#[cfg(feature = "system-action_4-types")]
+pub use action_4::{Action_4, IAction_4};
 #[cfg(any(feature = "system-action_5-types"))]
 pub mod action_5;
+#[cfg(feature = "system-action_5")]
+pub use action_5::IAction_5Methods;
+#[cfg(feature = "system-action_5-types")]
+pub use action_5::{Action_5, IAction_5};
 #[cfg(any(feature = "system-action_6-types"))]
 pub mod action_6;
+#[cfg(feature = "system-action_6")]
+pub use action_6::IAction_6Methods;
+#[cfg(feature = "system-action_6-types")]
+pub use action_6::{Action_6, IAction_6};
 #[cfg(any(feature = "system-action_7-types"))]
 pub mod action_7;
+#[cfg(feature = "system-action_7")]
+pub use action_7::IAction_7Methods;
+#[cfg(feature = "system-action_7-types")]
+pub use action_7::{Action_7, IAction_7};
 #[cfg(any(feature = "system-action_8-types"))]
 pub mod action_8;
+#[cfg(feature = "system-action_8")]
+pub use action_8::IAction_8Methods;
+#[cfg(feature = "system-action_8-types")]
+pub use action_8::{Action_8, IAction_8};
 #[cfg(any(feature = "system-action_9-types"))]
 pub mod action_9;
+#[cfg(feature = "system-action_9")]
+pub use action_9::IAction_9Methods;
+#[cfg(feature = "system-action_9-types")]
+pub use action_9::{Action_9, IAction_9};
 #[cfg(any(feature = "system-boolean-types"))]
 pub mod boolean;
+#[cfg(feature = "system-boolean-types")]
+pub use boolean::Boolean;
 #[cfg(any(feature = "system-byte-types"))]
 pub mod byte;
+#[cfg(feature = "system-byte-types")]
+pub use byte::Byte;
 #[cfg(any(feature = "system-char-types"))]
 pub mod char;
+#[cfg(feature = "system-char-types")]
+pub use char::Char;
 #[cfg(any(
     feature = "system-collections-arraylist-types",
     feature = "system-collections-bitarray-types",
@@ -146,56 +220,146 @@ pub mod char;
 pub mod collections;
 #[cfg(any(feature = "system-comparison_1-types"))]
 pub mod comparison_1;
+#[cfg(feature = "system-comparison_1")]
+pub use comparison_1::IComparison_1Methods;
+#[cfg(feature = "system-comparison_1-types")]
+pub use comparison_1::{Comparison_1, IComparison_1};
 #[cfg(any(feature = "system-delegate-types"))]
 pub mod delegate;
+#[cfg(feature = "system-delegate")]
+pub use delegate::IDelegateMethods;
+#[cfg(feature = "system-delegate-types")]
+pub use delegate::{Delegate, IDelegate};
 #[cfg(any(feature = "system-double-types"))]
 pub mod double;
-#[cfg(any(feature = "system-enum-types"))]
-pub mod r#enum;
+#[cfg(feature = "system-double-types")]
+pub use double::Double;
 #[cfg(any(feature = "system-eventhandler-types"))]
 pub mod eventhandler;
+#[cfg(feature = "system-eventhandler")]
+pub use eventhandler::IEventHandlerMethods;
+#[cfg(feature = "system-eventhandler-types")]
+pub use eventhandler::{EventHandler, IEventHandler};
 #[cfg(any(feature = "system-eventhandler_1-types"))]
 pub mod eventhandler_1;
+#[cfg(feature = "system-eventhandler_1")]
+pub use eventhandler_1::IEventHandler_1Methods;
+#[cfg(feature = "system-eventhandler_1-types")]
+pub use eventhandler_1::{EventHandler_1, IEventHandler_1};
 #[cfg(any(feature = "system-func_1-types"))]
 pub mod func_1;
+#[cfg(feature = "system-func_1")]
+pub use func_1::IFunc_1Methods;
+#[cfg(feature = "system-func_1-types")]
+pub use func_1::{Func_1, IFunc_1};
 #[cfg(any(feature = "system-func_10-types"))]
 pub mod func_10;
+#[cfg(feature = "system-func_10")]
+pub use func_10::IFunc_10Methods;
+#[cfg(feature = "system-func_10-types")]
+pub use func_10::{Func_10, IFunc_10};
 #[cfg(any(feature = "system-func_11-types"))]
 pub mod func_11;
+#[cfg(feature = "system-func_11")]
+pub use func_11::IFunc_11Methods;
+#[cfg(feature = "system-func_11-types")]
+pub use func_11::{Func_11, IFunc_11};
 #[cfg(any(feature = "system-func_12-types"))]
 pub mod func_12;
+#[cfg(feature = "system-func_12")]
+pub use func_12::IFunc_12Methods;
+#[cfg(feature = "system-func_12-types")]
+pub use func_12::{Func_12, IFunc_12};
 #[cfg(any(feature = "system-func_13-types"))]
 pub mod func_13;
+#[cfg(feature = "system-func_13")]
+pub use func_13::IFunc_13Methods;
+#[cfg(feature = "system-func_13-types")]
+pub use func_13::{Func_13, IFunc_13};
 #[cfg(any(feature = "system-func_14-types"))]
 pub mod func_14;
+#[cfg(feature = "system-func_14")]
+pub use func_14::IFunc_14Methods;
+#[cfg(feature = "system-func_14-types")]
+pub use func_14::{Func_14, IFunc_14};
 #[cfg(any(feature = "system-func_15-types"))]
 pub mod func_15;
+#[cfg(feature = "system-func_15")]
+pub use func_15::IFunc_15Methods;
+#[cfg(feature = "system-func_15-types")]
+pub use func_15::{Func_15, IFunc_15};
 #[cfg(any(feature = "system-func_16-types"))]
 pub mod func_16;
+#[cfg(feature = "system-func_16")]
+pub use func_16::IFunc_16Methods;
+#[cfg(feature = "system-func_16-types")]
+pub use func_16::{Func_16, IFunc_16};
 #[cfg(any(feature = "system-func_17-types"))]
 pub mod func_17;
+#[cfg(feature = "system-func_17")]
+pub use func_17::IFunc_17Methods;
+#[cfg(feature = "system-func_17-types")]
+pub use func_17::{Func_17, IFunc_17};
 #[cfg(any(feature = "system-func_2-types"))]
 pub mod func_2;
+#[cfg(feature = "system-func_2")]
+pub use func_2::IFunc_2Methods;
+#[cfg(feature = "system-func_2-types")]
+pub use func_2::{Func_2, IFunc_2};
 #[cfg(any(feature = "system-func_3-types"))]
 pub mod func_3;
+#[cfg(feature = "system-func_3")]
+pub use func_3::IFunc_3Methods;
+#[cfg(feature = "system-func_3-types")]
+pub use func_3::{Func_3, IFunc_3};
 #[cfg(any(feature = "system-func_4-types"))]
 pub mod func_4;
+#[cfg(feature = "system-func_4")]
+pub use func_4::IFunc_4Methods;
+#[cfg(feature = "system-func_4-types")]
+pub use func_4::{Func_4, IFunc_4};
 #[cfg(any(feature = "system-func_5-types"))]
 pub mod func_5;
+#[cfg(feature = "system-func_5")]
+pub use func_5::IFunc_5Methods;
+#[cfg(feature = "system-func_5-types")]
+pub use func_5::{Func_5, IFunc_5};
 #[cfg(any(feature = "system-func_6-types"))]
 pub mod func_6;
+#[cfg(feature = "system-func_6")]
+pub use func_6::IFunc_6Methods;
+#[cfg(feature = "system-func_6-types")]
+pub use func_6::{Func_6, IFunc_6};
 #[cfg(any(feature = "system-func_7-types"))]
 pub mod func_7;
+#[cfg(feature = "system-func_7")]
+pub use func_7::IFunc_7Methods;
+#[cfg(feature = "system-func_7-types")]
+pub use func_7::{Func_7, IFunc_7};
 #[cfg(any(feature = "system-func_8-types"))]
 pub mod func_8;
+#[cfg(feature = "system-func_8")]
+pub use func_8::IFunc_8Methods;
+#[cfg(feature = "system-func_8-types")]
+pub use func_8::{Func_8, IFunc_8};
 #[cfg(any(feature = "system-func_9-types"))]
 pub mod func_9;
+#[cfg(feature = "system-func_9")]
+pub use func_9::IFunc_9Methods;
+#[cfg(feature = "system-func_9-types")]
+pub use func_9::{Func_9, IFunc_9};
 #[cfg(any(feature = "system-int16-types"))]
 pub mod int16;
+#[cfg(feature = "system-int16-types")]
+pub use int16::Int16;
 #[cfg(any(feature = "system-int32-types"))]
 pub mod int32;
+#[cfg(feature = "system-int32-types")]
+pub use int32::Int32;
 #[cfg(any(feature = "system-int64-types"))]
 pub mod int64;
+#[cfg(feature = "system-int64-types")]
+pub use int64::Int64;
 #[cfg(any(
     feature = "system-io-__error-types",
     feature = "system-io-binaryreader-types",
@@ -256,10 +420,28 @@ pub mod int64;
 pub mod io;
 #[cfg(any(feature = "system-multicastdelegate-types"))]
 pub mod multicastdelegate;
+#[cfg(feature = "system-multicastdelegate")]
+pub use multicastdelegate::IMulticastDelegateMethods;
+#[cfg(feature = "system-multicastdelegate-types")]
+pub use multicastdelegate::{IMulticastDelegate, MulticastDelegate};
 #[cfg(any(feature = "system-object-types"))]
 pub mod object;
+#[cfg(feature = "system-object")]
+pub use object::IObjectMethods;
+#[cfg(feature = "system-object-types")]
+pub use object::{IObject, Object};
 #[cfg(any(feature = "system-predicate_1-types"))]
 pub mod predicate_1;
+#[cfg(feature = "system-predicate_1")]
+pub use predicate_1::IPredicate_1Methods;
+#[cfg(feature = "system-predicate_1-types")]
+pub use predicate_1::{IPredicate_1, Predicate_1};
+#[cfg(any(feature = "system-enum-types"))]
+pub mod r#enum;
+#[cfg(feature = "system-enum")]
+pub use r#enum::IEnumMethods;
+#[cfg(feature = "system-enum-types")]
+pub use r#enum::{Enum, IEnum};
 #[cfg(any(
     feature = "system-reflection-ambiguousmatchexception-types",
     feature = "system-reflection-assembly-types",
@@ -372,19 +554,41 @@ pub mod predicate_1;
 pub mod reflection;
 #[cfg(any(feature = "system-runtimetype-types"))]
 pub mod runtimetype;
+#[cfg(feature = "system-runtimetype")]
+pub use runtimetype::IRuntimeTypeMethods;
+#[cfg(feature = "system-runtimetype-types")]
+pub use runtimetype::{IRuntimeType, RuntimeType};
 #[cfg(any(feature = "system-sbyte-types"))]
 pub mod sbyte;
+#[cfg(feature = "system-sbyte-types")]
+pub use sbyte::SByte;
 #[cfg(any(feature = "system-single-types"))]
 pub mod single;
+#[cfg(feature = "system-single-types")]
+pub use single::Single;
 #[cfg(any(feature = "system-uint16-types"))]
 pub mod uint16;
+#[cfg(feature = "system-uint16-types")]
+pub use uint16::UInt16;
 #[cfg(any(feature = "system-uint32-types"))]
 pub mod uint32;
+#[cfg(feature = "system-uint32-types")]
+pub use uint32::UInt32;
 #[cfg(any(feature = "system-uint64-types"))]
 pub mod uint64;
+#[cfg(feature = "system-uint64-types")]
+pub use uint64::UInt64;
 #[cfg(any(feature = "system-uintptr-types"))]
 pub mod uintptr;
+#[cfg(feature = "system-uintptr-types")]
+pub use uintptr::UIntPtr;
 #[cfg(any(feature = "system-valuetype-types"))]
 pub mod valuetype;
+#[cfg(feature = "system-valuetype")]
+pub use valuetype::IValueTypeMethods;
+#[cfg(feature = "system-valuetype-types")]
+pub use valuetype::{IValueType, ValueType};
 #[cfg(any(feature = "system-void-types"))]
 pub mod void;
+#[cfg(feature = "system-void-types")]
+pub use void::Void;

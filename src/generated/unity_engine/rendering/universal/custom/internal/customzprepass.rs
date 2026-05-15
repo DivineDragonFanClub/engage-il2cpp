@@ -52,52 +52,444 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
-#[::unity2::methods]
-impl CustomZPrePass {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CustomZPrePass_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CustomZPrePass,
         evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         layer_mask: crate::unity_engine::layermask::LayerMask,
         override_material: crate::unity_engine::material::Material,
-    ) -> ();
-
-    #[doc = "`SetOverrideEnabled(bool)` overload"]
-    #[method(name = "SetOverrideEnabled", args = 1)]
-    pub fn set_override_enabled(self, is_enabled: bool) -> ();
-
-    #[doc = "`SetSortingCriteria(crate::unity_engine::rendering::universal::zprepasssortingcriteria::ZPrepassSortingCriteria)` overload"]
-    #[method(name = "SetSortingCriteria", args = 1)]
-    pub fn set_sorting_criteria(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CustomZPrePass,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            crate::unity_engine::layermask::LayerMask,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            evt,
+            layer_mask,
+            override_material,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_override_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                "SetOverrideEnabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    "SetOverrideEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_override_enabled(
+        this: CustomZPrePass,
+        is_enabled: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CustomZPrePass, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_override_enabled::get_offset() as isize),
+            );
+        inner(this, is_enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sorting_criteria {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                "SetSortingCriteria",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    "SetSortingCriteria",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sorting_criteria(
+        this: CustomZPrePass,
         criteria : crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria,
-    ) -> ();
-
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "Execute", args = 2)]
-    pub fn execute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (CustomZPrePass , crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_sorting_criteria :: get_offset () as isize) ,) ;
+        inner(this, criteria, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: CustomZPrePass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`SetupCommonDrawSettings(crate::unity_engine::rendering::drawingsettings::DrawingSettings, i32)` overload"]
-    #[method(name = "SetupCommonDrawSettings", args = 2)]
-    pub fn setup_common_draw_settings(
-        self,
-        draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CustomZPrePass,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_common_draw_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                "SetupCommonDrawSettings",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    "SetupCommonDrawSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_common_draw_settings(
+        this: CustomZPrePass,
+        draw_settings: *mut crate::unity_engine::rendering::drawingsettings::DrawingSettings,
         shader_pass_index: i32,
-    ) -> i32;
-
-    #[doc = "`SetupCustomDepthDrawSettings(crate::unity_engine::rendering::drawingsettings::DrawingSettings, i32)` overload"]
-    #[method(name = "SetupCustomDepthDrawSettings", args = 2)]
-    pub fn setup_custom_depth_draw_settings(
-        self,
-        draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            CustomZPrePass,
+            *mut crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_common_draw_settings::get_offset() as isize),
+        );
+        inner(this, draw_settings, shader_pass_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_custom_depth_draw_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomZPrePass as ::unity2::ClassIdentity>::class(),
+                "SetupCustomDepthDrawSettings",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomZPrePass as ::unity2::ClassIdentity>::NAME,
+                    "SetupCustomDepthDrawSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_custom_depth_draw_settings(
+        this: CustomZPrePass,
+        draw_settings: *mut crate::unity_engine::rendering::drawingsettings::DrawingSettings,
         shader_pass_index: i32,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            CustomZPrePass,
+            *mut crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_custom_depth_draw_settings::get_offset() as isize),
+        );
+        inner(this, draw_settings, shader_pass_index, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+pub trait ICustomZPrePassMethods: ICustomZPrePass {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material)` overload"]
+    fn ctor(
+        self,
+        evt: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        >,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+        override_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CustomZPrePass_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(evt),
+                ::core::convert::Into::into(layer_mask),
+                ::core::convert::Into::into(override_material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetOverrideEnabled(bool)` overload"]
+    fn set_override_enabled(self, is_enabled: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CustomZPrePass_unity2_raw::set_override_enabled(
+                __receiver,
+                ::core::convert::Into::into(is_enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSortingCriteria(crate::unity_engine::rendering::universal::zprepasssortingcriteria::ZPrepassSortingCriteria)` overload"]
+    fn set_sorting_criteria(
+        self,
+        criteria : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CustomZPrePass_unity2_raw::set_sorting_criteria(
+                __receiver,
+                ::core::convert::Into::into(criteria),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn execute(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __CustomZPrePass_unity2_raw::execute(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetupCommonDrawSettings(*mutcrate::unity_engine::rendering::drawingsettings::DrawingSettings, i32)` overload"]
+    fn setup_common_draw_settings(
+        self,
+        shader_pass_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        i32,
+        crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+    ) {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+            >::uninit();
+            let __ret = {
+                __CustomZPrePass_unity2_raw::setup_common_draw_settings(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(shader_pass_index),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SetupCustomDepthDrawSettings(*mutcrate::unity_engine::rendering::drawingsettings::DrawingSettings, i32)` overload"]
+    fn setup_custom_depth_draw_settings(
+        self,
+        shader_pass_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        i32,
+        crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+    ) {
+        unsafe {
+            let __receiver = <CustomZPrePass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+            >::uninit();
+            let __ret = {
+                __CustomZPrePass_unity2_raw::setup_custom_depth_draw_settings(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(shader_pass_index),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+impl<__T: ICustomZPrePass> ICustomZPrePassMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
 impl CustomZPrePass {
@@ -117,4 +509,17 @@ impl CustomZPrePass {
         <Self as ICustomZPrePassMethods>::ctor(this, evt, layer_mask, override_material);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+pub mod prelude {
+    pub use super::CustomZPrePass;
+    pub use super::ICustomZPrePass;
+    pub use super::ICustomZPrePassMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
 }

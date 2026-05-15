@@ -16,7 +16,7 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -25,14 +25,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MapInfoCircle_Animes {
+    pub struct MapInfoCircle_MeshIndex {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
+    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MapInfoCircle.Animes";
+        const NAME: &'static str = "MapInfoCircle.MeshIndex";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapInfoCircle_Animes {
+    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -50,115 +50,22 @@ mod __types {
         }
     }
 
-    impl MapInfoCircle_Animes {
-        pub fn none() -> Self {
+    impl MapInfoCircle_MeshIndex {
+        pub fn normal() -> Self {
             Self { value: 0 }
         }
 
-        pub fn low_rotate() -> Self {
+        pub fn boss() -> Self {
             Self { value: 1 }
         }
 
-        pub fn high_rotate() -> Self {
+        pub fn last_boss() -> Self {
             Self { value: 2 }
         }
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfocircle/MapInfoCircle.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoCircle")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfocircle :: MapInfoCircle >)]
-    pub struct MapInfoCircle {
-        #[rename(name = "m_WarpUnitList")]
-        pub m_warp_unit_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_NormalCircle")]
-        pub m_normal_circle: crate::unity_engine::material::Material,
-        #[rename(name = "m_BossCircle")]
-        pub m_boss_circle: crate::unity_engine::material::Material,
-        #[rename(name = "m_LastBossCircle")]
-        pub m_last_boss_circle: crate::unity_engine::material::Material,
-        #[rename(name = "m_PlayerColor")]
-        pub m_player_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_PlayerFixedColor")]
-        pub m_player_fixed_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_EnemyColor")]
-        pub m_enemy_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_EnemyFixedColor")]
-        pub m_enemy_fixed_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AllyColor")]
-        pub m_ally_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AllyFixedColor")]
-        pub m_ally_fixed_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ThirdColor")]
-        pub m_third_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ThirdFixedColor")]
-        pub m_third_fixed_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_TimesSpeed")]
-        pub m_times_speed: f32,
-        #[rename(name = "m_RotateSpeed")]
-        pub m_rotate_speed: f32,
-        #[rename(name = "m_Anime")]
-        pub m_anime: crate::app::mapinfocircle::MapInfoCircle_Animes,
-        #[rename(name = "m_SubMeshCount")]
-        pub m_sub_mesh_count: i32,
-        #[rename(name = "m_Colors")]
-        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[rename(name = "m_FixedColors")]
-        pub m_fixed_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[rename(name = "m_ActiveUnit")]
-        pub m_active_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
-        #[rename(name = "m_Materials")]
-        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_State")]
-        pub m_state: crate::app::mapinfocircle::MapInfoCircle_CircleState,
-        #[rename(name = "m_PropertyID")]
-        pub m_property_id: i32,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_UvRotate")]
-        pub m_uv_rotate: f32,
-        #[rename(name = "m_IsActive")]
-        pub m_is_active: bool,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_RodImage")]
-        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[rename(name = "m_SupportForUnitImage")]
-        pub m_support_for_unit_image:
-            crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[rename(name = "m_ActionImage")]
-        pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
-        #[rename(name = "m_RangeImage")]
-        pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
-        #[rename(name = "m_OverlapImage")]
-        pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
-        #[rename(name = "m_DanceImage")]
-        pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
-        #[rename(name = "m_CannonImage")]
-        pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::app::map::Map_CellMesh,
-        #[rename(name = "m_Renderer")]
-        pub m_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-        #[rename(name = "m_DrawNormalCircle")]
-        pub m_draw_normal_circle: crate::app::mapfor::MapFor_UnitFunction,
-        #[rename(name = "m_DrawBossCircle")]
-        pub m_draw_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
-        #[rename(name = "m_DrawLastBossCircle")]
-        pub m_draw_last_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
-        #[rename(name = "m_ResistWarpUnit")]
-        pub m_resist_warp_unit: crate::app::mapfor::MapFor_UnitFunction,
-        #[rename(name = "m_ResistRewarpUnit")]
-        pub m_resist_rewarp_unit: crate::app::mapfor::MapFor_UnitFunction,
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleState.md"))]
@@ -261,7 +168,104 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfocircle/MapInfoCircle.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoCircle")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfocircle :: MapInfoCircle >)]
+    pub struct MapInfoCircle {
+        #[rename(name = "m_WarpUnitList")]
+        pub m_warp_unit_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[rename(name = "m_NormalCircle")]
+        pub m_normal_circle: crate::unity_engine::material::Material,
+        #[rename(name = "m_BossCircle")]
+        pub m_boss_circle: crate::unity_engine::material::Material,
+        #[rename(name = "m_LastBossCircle")]
+        pub m_last_boss_circle: crate::unity_engine::material::Material,
+        #[rename(name = "m_PlayerColor")]
+        pub m_player_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_PlayerFixedColor")]
+        pub m_player_fixed_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_EnemyColor")]
+        pub m_enemy_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_EnemyFixedColor")]
+        pub m_enemy_fixed_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AllyColor")]
+        pub m_ally_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AllyFixedColor")]
+        pub m_ally_fixed_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_ThirdColor")]
+        pub m_third_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_ThirdFixedColor")]
+        pub m_third_fixed_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_TimesSpeed")]
+        pub m_times_speed: f32,
+        #[rename(name = "m_RotateSpeed")]
+        pub m_rotate_speed: f32,
+        #[rename(name = "m_Anime")]
+        pub m_anime: crate::app::mapinfocircle::MapInfoCircle_Animes,
+        #[rename(name = "m_SubMeshCount")]
+        pub m_sub_mesh_count: i32,
+        #[rename(name = "m_Colors")]
+        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[rename(name = "m_FixedColors")]
+        pub m_fixed_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[rename(name = "m_ActiveUnit")]
+        pub m_active_unit: crate::app::unit::Unit,
+        #[rename(name = "m_Cells")]
+        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
+        #[rename(name = "m_Materials")]
+        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_State")]
+        pub m_state: crate::app::mapinfocircle::MapInfoCircle_CircleState,
+        #[rename(name = "m_PropertyID")]
+        pub m_property_id: i32,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_UvRotate")]
+        pub m_uv_rotate: f32,
+        #[rename(name = "m_IsActive")]
+        pub m_is_active: bool,
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_RodImage")]
+        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[rename(name = "m_SupportForUnitImage")]
+        pub m_support_for_unit_image:
+            crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image:
+            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[rename(name = "m_ActionImage")]
+        pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
+        #[rename(name = "m_RangeImage")]
+        pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
+        #[rename(name = "m_OverlapImage")]
+        pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
+        #[rename(name = "m_DanceImage")]
+        pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
+        #[rename(name = "m_CannonImage")]
+        pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::app::map::Map_CellMesh,
+        #[rename(name = "m_Renderer")]
+        pub m_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[rename(name = "m_DrawNormalCircle")]
+        pub m_draw_normal_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[rename(name = "m_DrawBossCircle")]
+        pub m_draw_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[rename(name = "m_DrawLastBossCircle")]
+        pub m_draw_last_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[rename(name = "m_ResistWarpUnit")]
+        pub m_resist_warp_unit: crate::app::mapfor::MapFor_UnitFunction,
+        #[rename(name = "m_ResistRewarpUnit")]
+        pub m_resist_rewarp_unit: crate::app::mapfor::MapFor_UnitFunction,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -270,14 +274,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MapInfoCircle_MeshIndex {
+    pub struct MapInfoCircle_Animes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
+    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MapInfoCircle.MeshIndex";
+        const NAME: &'static str = "MapInfoCircle.Animes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -286,7 +290,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
+    impl ::unity2::IlType for MapInfoCircle_Animes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -295,21 +299,17 @@ mod __types {
         }
     }
 
-    impl MapInfoCircle_MeshIndex {
-        pub fn normal() -> Self {
+    impl MapInfoCircle_Animes {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn boss() -> Self {
+        pub fn low_rotate() -> Self {
             Self { value: 1 }
         }
 
-        pub fn last_boss() -> Self {
+        pub fn high_rotate() -> Self {
             Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
         }
     }
 }
@@ -318,167 +318,1988 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-mapinfocircle")]
-#[::unity2::methods]
-impl MapInfoCircle {
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`GetMaterials()` overload"]
-    #[method(name = "GetMaterials", args = 0)]
-    pub fn get_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
-
-    #[doc = "`GetColor(crate::app::unit::Unit, bool)` overload"]
-    #[method(name = "GetColor", args = 2)]
-    pub fn get_color(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapInfoCircle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(this: MapInfoCircle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "GetMaterials",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "GetMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_materials(
+        this: MapInfoCircle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_materials::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "GetColor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "GetColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color(
+        this: MapInfoCircle,
         unit: crate::app::unit::Unit,
         is_check_fixed: bool,
-    ) -> crate::unity_engine::color::Color;
-
-    #[doc = "`CanTarget(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanTarget", args = 2)]
-    pub fn can_target(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanAttack", args = 2)]
-    pub fn can_attack(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`CanDance(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanDance", args = 2)]
-    pub fn can_dance(self, dancer: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`CanContract(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanContract", args = 2)]
-    pub fn can_contract(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color::get_offset() as isize),
+        );
+        inner(this, unit, is_check_fixed, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanTarget",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_target(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_target::get_offset() as isize),
+        );
+        inner(this, unit, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanAttack",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_attack(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_attack::get_offset() as isize),
+        );
+        inner(this, unit, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_dance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanDance",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanDance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_dance(
+        this: MapInfoCircle,
+        dancer: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_dance::get_offset() as isize),
+        );
+        inner(this, dancer, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_contract {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanContract",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanContract",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_contract(
+        this: MapInfoCircle,
         contractor: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`CanUseHealRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanUseHealRod", args = 2)]
-    pub fn can_use_heal_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_contract::get_offset() as isize),
+        );
+        inner(this, contractor, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_heal_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseHealRod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseHealRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_heal_rod(
+        this: MapInfoCircle,
         user: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`CanUseHealRod(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "CanUseHealRod", args = 3)]
-    pub fn can_use_heal_rod_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_heal_rod::get_offset() as isize),
+        );
+        inner(this, user, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_heal_rod_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseHealRod",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseHealRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_heal_rod_2(
+        this: MapInfoCircle,
         user: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> bool;
-
-    #[doc = "`CanUseSupportRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanUseSupportRod", args = 2)]
-    pub fn can_use_support_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_heal_rod_2::get_offset() as isize),
+        );
+        inner(this, user, target, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_support_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseSupportRod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseSupportRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_support_rod(
+        this: MapInfoCircle,
         user: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`CanUseSupportRod(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::itemdata::ItemData, bool)` overload"]
-    #[method(name = "CanUseSupportRod", args = 4)]
-    pub fn can_use_support_rod_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_support_rod::get_offset() as isize),
+        );
+        inner(this, user, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_support_rod_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseSupportRod",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseSupportRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_support_rod_2(
+        this: MapInfoCircle,
         user: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
         is_item_selected: bool,
-    ) -> bool;
-
-    #[doc = "`CanUseInterferenceRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanUseInterferenceRod", args = 2)]
-    pub fn can_use_interference_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_support_rod_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            user,
+            target,
+            item_data,
+            is_item_selected,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_interference_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseInterferenceRod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseInterferenceRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_interference_rod(
+        this: MapInfoCircle,
         user: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`CanUseEngageRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanUseEngageRod", args = 2)]
-    pub fn can_use_engage_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_interference_rod::get_offset() as isize),
+        );
+        inner(this, user, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_use_engage_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanUseEngageRod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanUseEngageRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_use_engage_rod(
+        this: MapInfoCircle,
         unit: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`CanEnchantItem(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CanEnchantItem", args = 2)]
-    pub fn can_enchant_item(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_use_engage_rod::get_offset() as isize),
+        );
+        inner(this, unit, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_enchant_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "CanEnchantItem",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "CanEnchantItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_enchant_item(
+        this: MapInfoCircle,
         unit: crate::app::unit::Unit,
         target: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`DrawCircle(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "DrawCircle", args = 2)]
-    pub fn draw_circle(self, unit: crate::app::unit::Unit, index: i32) -> ();
-
-    #[doc = "`DrawNormalCircle(crate::app::unit::Unit)` overload"]
-    #[method(name = "DrawNormalCircle", args = 1)]
-    pub fn draw_normal_circle(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`DrawBossCircle(crate::app::unit::Unit)` overload"]
-    #[method(name = "DrawBossCircle", args = 1)]
-    pub fn draw_boss_circle(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`DrawLastBossCircle(crate::app::unit::Unit)` overload"]
-    #[method(name = "DrawLastBossCircle", args = 1)]
-    pub fn draw_last_boss_circle(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`IsDrawLowRotateCircle(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsDrawLowRotateCircle", args = 1)]
-    pub fn is_draw_low_rotate_circle(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`IsDrawHighRotateCircle(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsDrawHighRotateCircle", args = 1)]
-    pub fn is_draw_high_rotate_circle(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`LateUpdate()` overload"]
-    #[method(name = "LateUpdate", args = 0)]
-    pub fn late_update(self) -> ();
-
-    #[doc = "`SetActive(bool)` overload"]
-    #[method(name = "SetActive", args = 1)]
-    pub fn set_active(self, active: bool) -> ();
-
-    #[doc = "`SetUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnit", args = 1)]
-    pub fn set_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetAnime(crate::app::mapinfocircle::MapInfoCircle_Animes)` overload"]
-    #[method(name = "SetAnime", args = 1)]
-    pub fn set_anime(self, anime: crate::app::mapinfocircle::MapInfoCircle_Animes) -> ();
-
-    #[doc = "`SetWarpUnit()` overload"]
-    #[method(name = "SetWarpUnit", args = 0)]
-    pub fn set_warp_unit(self) -> ();
-
-    #[doc = "`SetRewarpUnit()` overload"]
-    #[method(name = "SetRewarpUnit", args = 0)]
-    pub fn set_rewarp_unit(self) -> ();
-
-    #[doc = "`ResistWarpUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "ResistWarpUnit", args = 1)]
-    pub fn resist_warp_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ResistRewarpUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "ResistRewarpUnit", args = 1)]
-    pub fn resist_rewarp_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ClearWarpUnit()` overload"]
-    #[method(name = "ClearWarpUnit", args = 0)]
-    pub fn clear_warp_unit(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_enchant_item::get_offset() as isize),
+        );
+        inner(this, unit, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "DrawCircle",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "DrawCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_circle::get_offset() as isize),
+        );
+        inner(this, unit, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_normal_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "DrawNormalCircle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "DrawNormalCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_normal_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_normal_circle::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_boss_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "DrawBossCircle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "DrawBossCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_boss_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_boss_circle::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_last_boss_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "DrawLastBossCircle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "DrawLastBossCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_last_boss_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_last_boss_circle::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_draw_low_rotate_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "IsDrawLowRotateCircle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "IsDrawLowRotateCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_draw_low_rotate_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_draw_low_rotate_circle::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_draw_high_rotate_circle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "IsDrawHighRotateCircle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "IsDrawHighRotateCircle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_draw_high_rotate_circle(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_draw_high_rotate_circle::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_late_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "LateUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "LateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn late_update(
+        this: MapInfoCircle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_late_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "SetActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: MapInfoCircle,
+        active: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoCircle, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active::get_offset() as isize),
+            );
+        inner(this, active, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "SetUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "SetUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapinfocircle::MapInfoCircle_Animes as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "SetAnime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "SetAnime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_anime(
+        this: MapInfoCircle,
+        anime: crate::app::mapinfocircle::MapInfoCircle_Animes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::mapinfocircle::MapInfoCircle_Animes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_anime::get_offset() as isize),
+        );
+        inner(this, anime, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_warp_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "SetWarpUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "SetWarpUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_warp_unit(
+        this: MapInfoCircle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_warp_unit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rewarp_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "SetRewarpUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "SetRewarpUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rewarp_unit(
+        this: MapInfoCircle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rewarp_unit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resist_warp_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "ResistWarpUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "ResistWarpUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resist_warp_unit(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resist_warp_unit::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resist_rewarp_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "ResistRewarpUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "ResistRewarpUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resist_rewarp_unit(
+        this: MapInfoCircle,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoCircle,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resist_rewarp_unit::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_warp_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                "ClearWarpUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    "ClearWarpUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_warp_unit(
+        this: MapInfoCircle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_warp_unit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoCircle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoCircle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapInfoCircle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoCircle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapinfocircle")]
+pub trait IMapInfoCircleMethods: IMapInfoCircle {
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetMaterials()` overload"]
+    fn get_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::get_materials(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetColor(crate::app::unit::Unit, bool)` overload"]
+    fn get_color(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        is_check_fixed: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::get_color(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(is_check_fixed),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanTarget(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_target(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_target(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_attack(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_attack(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanDance(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_dance(
+        self,
+        dancer: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_dance(
+                __receiver,
+                ::core::convert::Into::into(dancer),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanContract(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_contract(
+        self,
+        contractor: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_contract(
+                __receiver,
+                ::core::convert::Into::into(contractor),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseHealRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_use_heal_rod(
+        self,
+        user: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_heal_rod(
+                __receiver,
+                ::core::convert::Into::into(user),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseHealRod(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    fn can_use_heal_rod_2(
+        self,
+        user: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_heal_rod_2(
+                __receiver,
+                ::core::convert::Into::into(user),
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseSupportRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_use_support_rod(
+        self,
+        user: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_support_rod(
+                __receiver,
+                ::core::convert::Into::into(user),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseSupportRod(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::itemdata::ItemData, bool)` overload"]
+    fn can_use_support_rod_2(
+        self,
+        user: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        is_item_selected: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_support_rod_2(
+                __receiver,
+                ::core::convert::Into::into(user),
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(is_item_selected),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseInterferenceRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_use_interference_rod(
+        self,
+        user: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_interference_rod(
+                __receiver,
+                ::core::convert::Into::into(user),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanUseEngageRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_use_engage_rod(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_use_engage_rod(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanEnchantItem(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn can_enchant_item(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::can_enchant_item(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawCircle(crate::app::unit::Unit, i32)` overload"]
+    fn draw_circle(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::draw_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawNormalCircle(crate::app::unit::Unit)` overload"]
+    fn draw_normal_circle(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::draw_normal_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawBossCircle(crate::app::unit::Unit)` overload"]
+    fn draw_boss_circle(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::draw_boss_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawLastBossCircle(crate::app::unit::Unit)` overload"]
+    fn draw_last_boss_circle(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::draw_last_boss_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDrawLowRotateCircle(crate::app::unit::Unit)` overload"]
+    fn is_draw_low_rotate_circle(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::is_draw_low_rotate_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDrawHighRotateCircle(crate::app::unit::Unit)` overload"]
+    fn is_draw_high_rotate_circle(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::is_draw_high_rotate_circle(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::late_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(self, active: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(active),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnit(crate::app::unit::Unit)` overload"]
+    fn set_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::set_unit(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAnime(crate::app::mapinfocircle::MapInfoCircle_Animes)` overload"]
+    fn set_anime(
+        self,
+        anime: impl ::core::convert::Into<crate::app::mapinfocircle::MapInfoCircle_Animes>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::set_anime(
+                __receiver,
+                ::core::convert::Into::into(anime),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWarpUnit()` overload"]
+    fn set_warp_unit(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::set_warp_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRewarpUnit()` overload"]
+    fn set_rewarp_unit(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::set_rewarp_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ResistWarpUnit(crate::app::unit::Unit)` overload"]
+    fn resist_warp_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::resist_warp_unit(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResistRewarpUnit(crate::app::unit::Unit)` overload"]
+    fn resist_rewarp_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::resist_rewarp_unit(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearWarpUnit()` overload"]
+    fn clear_warp_unit(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::clear_warp_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoCircle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoCircle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapinfocircle")]
+impl<__T: IMapInfoCircle> IMapInfoCircleMethods for __T {}
 
 #[cfg(feature = "app-mapinfocircle")]
 impl MapInfoCircle {
@@ -494,4 +2315,39 @@ impl MapInfoCircle {
         <Self as IMapInfoCircleMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mapinfocircle")]
+pub mod prelude {
+    pub use super::IMapInfoCircle;
+    pub use super::IMapInfoCircleMethods;
+    pub use super::MapInfoCircle;
+    pub use super::MapInfoCircle_Animes;
+    pub use super::MapInfoCircle_CircleColor;
+    pub use super::MapInfoCircle_CircleState;
+    pub use super::MapInfoCircle_MeshIndex;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

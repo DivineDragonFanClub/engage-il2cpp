@@ -24,60 +24,771 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-colorutils")]
-#[::unity2::methods]
-impl ColorUtils {
-    #[doc = "`get_lensImperfectionExposureScale()` overload"]
-    #[method(name = "get_lensImperfectionExposureScale", args = 0)]
-    pub fn get_lens_imperfection_exposure_scale() -> f32;
-
-    #[doc = "`StandardIlluminantY(f32)` overload"]
-    #[method(name = "StandardIlluminantY", args = 1)]
-    pub fn standard_illuminant_y(x: f32) -> f32;
-
-    #[doc = "`CIExyToLMS(f32, f32)` overload"]
-    #[method(name = "CIExyToLMS", args = 2)]
-    pub fn ci_exy_to_lms(x: f32, y: f32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`ColorBalanceToLMSCoeffs(f32, f32)` overload"]
-    #[method(name = "ColorBalanceToLMSCoeffs", args = 2)]
-    pub fn color_balance_to_lms_coeffs(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ColorUtils_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lens_imperfection_exposure_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "get_lensImperfectionExposureScale",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "get_lensImperfectionExposureScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lens_imperfection_exposure_scale(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_lens_imperfection_exposure_scale::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_standard_illuminant_y {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "StandardIlluminantY",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "StandardIlluminantY",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn standard_illuminant_y(
+        x: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_standard_illuminant_y::get_offset() as isize),
+        );
+        inner(x, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ci_exy_to_lms {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "CIExyToLMS",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "CIExyToLMS",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ci_exy_to_lms(
+        x: f32,
+        y: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ci_exy_to_lms::get_offset() as isize),
+        );
+        inner(x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_color_balance_to_lms_coeffs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ColorBalanceToLMSCoeffs",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ColorBalanceToLMSCoeffs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn color_balance_to_lms_coeffs(
         temperature: f32,
         tint: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_color_balance_to_lms_coeffs::get_offset() as isize),
+        );
+        inner(temperature, tint, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_luminance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "Luminance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "Luminance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn luminance(
+        color: *mut crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_luminance::get_offset() as isize),
+        );
+        inner(color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_ev100 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ComputeEV100",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ComputeEV100",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_ev100(
+        aperture: f32,
+        shutter_speed: f32,
+        iso: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compute_ev100::get_offset() as isize),
+            );
+        inner(aperture, shutter_speed, iso, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_ev100_to_exposure {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ConvertEV100ToExposure",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ConvertEV100ToExposure",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_ev100_to_exposure(
+        ev100: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_ev100_to_exposure::get_offset() as isize),
+        );
+        inner(ev100, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_exposure_to_ev100 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ConvertExposureToEV100",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ConvertExposureToEV100",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_exposure_to_ev100(
+        exposure: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_exposure_to_ev100::get_offset() as isize),
+        );
+        inner(exposure, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_ev100_from_avg_luminance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ComputeEV100FromAvgLuminance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ComputeEV100FromAvgLuminance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_ev100_from_avg_luminance(
+        avg_luminance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compute_ev100_from_avg_luminance::get_offset() as isize),
+        );
+        inner(avg_luminance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_iso {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ComputeISO",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ComputeISO",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_iso(
+        aperture: f32,
+        shutter_speed: f32,
+        target_ev100: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compute_iso::get_offset() as isize),
+            );
+        inner(aperture, shutter_speed, target_ev100, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_hex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ToHex",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ToHex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_hex(
+        c: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_hex::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_rgba {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                "ToRGBA",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    "ToRGBA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_rgba(
+        hex: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_rgba::get_offset() as isize),
+        );
+        inner(hex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUtils as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUtils as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
-    #[doc = "`Luminance(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "Luminance", args = 1)]
-    pub fn luminance(color: crate::unity_engine::color::Color) -> f32;
-
+#[cfg(feature = "unity_engine-rendering-colorutils")]
+impl ColorUtils {
+    #[doc = "`get_lensImperfectionExposureScale()` overload"]
+    pub fn get_lens_imperfection_exposure_scale() -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::get_lens_imperfection_exposure_scale(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StandardIlluminantY(f32)` overload"]
+    pub fn standard_illuminant_y(x: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::standard_illuminant_y(
+                ::core::convert::Into::into(x),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CIExyToLMS(f32, f32)` overload"]
+    pub fn ci_exy_to_lms(
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __ColorUtils_unity2_raw::ci_exy_to_lms(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ColorBalanceToLMSCoeffs(f32, f32)` overload"]
+    pub fn color_balance_to_lms_coeffs(
+        temperature: impl ::core::convert::Into<f32>,
+        tint: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __ColorUtils_unity2_raw::color_balance_to_lms_coeffs(
+                ::core::convert::Into::into(temperature),
+                ::core::convert::Into::into(tint),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Luminance(*mutcrate::unity_engine::color::Color)` overload"]
+    pub fn luminance() -> (f32, crate::unity_engine::color::Color) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            let __ret = {
+                __ColorUtils_unity2_raw::luminance(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
     #[doc = "`ComputeEV100(f32, f32, f32)` overload"]
-    #[method(name = "ComputeEV100", args = 3)]
-    pub fn compute_ev100(aperture: f32, shutter_speed: f32, iso: f32) -> f32;
-
+    pub fn compute_ev100(
+        aperture: impl ::core::convert::Into<f32>,
+        shutter_speed: impl ::core::convert::Into<f32>,
+        iso: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::compute_ev100(
+                ::core::convert::Into::into(aperture),
+                ::core::convert::Into::into(shutter_speed),
+                ::core::convert::Into::into(iso),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ConvertEV100ToExposure(f32)` overload"]
-    #[method(name = "ConvertEV100ToExposure", args = 1)]
-    pub fn convert_ev100_to_exposure(ev100: f32) -> f32;
-
+    pub fn convert_ev100_to_exposure(ev100: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::convert_ev100_to_exposure(
+                ::core::convert::Into::into(ev100),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ConvertExposureToEV100(f32)` overload"]
-    #[method(name = "ConvertExposureToEV100", args = 1)]
-    pub fn convert_exposure_to_ev100(exposure: f32) -> f32;
-
+    pub fn convert_exposure_to_ev100(exposure: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::convert_exposure_to_ev100(
+                ::core::convert::Into::into(exposure),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ComputeEV100FromAvgLuminance(f32)` overload"]
-    #[method(name = "ComputeEV100FromAvgLuminance", args = 1)]
-    pub fn compute_ev100_from_avg_luminance(avg_luminance: f32) -> f32;
-
+    pub fn compute_ev100_from_avg_luminance(avg_luminance: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::compute_ev100_from_avg_luminance(
+                ::core::convert::Into::into(avg_luminance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ComputeISO(f32, f32, f32)` overload"]
-    #[method(name = "ComputeISO", args = 3)]
-    pub fn compute_iso(aperture: f32, shutter_speed: f32, target_ev100: f32) -> f32;
-
+    pub fn compute_iso(
+        aperture: impl ::core::convert::Into<f32>,
+        shutter_speed: impl ::core::convert::Into<f32>,
+        target_ev100: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            __ColorUtils_unity2_raw::compute_iso(
+                ::core::convert::Into::into(aperture),
+                ::core::convert::Into::into(shutter_speed),
+                ::core::convert::Into::into(target_ev100),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ToHex(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "ToHex", args = 1)]
-    pub fn to_hex(c: crate::unity_engine::color::Color) -> u32;
-
+    pub fn to_hex(c: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> u32 {
+        unsafe {
+            __ColorUtils_unity2_raw::to_hex(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ToRGBA(u32)` overload"]
-    #[method(name = "ToRGBA", args = 1)]
-    pub fn to_rgba(hex: u32) -> crate::unity_engine::color::Color;
-
+    pub fn to_rgba(hex: impl ::core::convert::Into<u32>) -> crate::unity_engine::color::Color {
+        unsafe {
+            __ColorUtils_unity2_raw::to_rgba(
+                ::core::convert::Into::into(hex),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __ColorUtils_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-colorutils")]
+pub mod prelude {
+    pub use super::ColorUtils;
+    pub use super::IColorUtils;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

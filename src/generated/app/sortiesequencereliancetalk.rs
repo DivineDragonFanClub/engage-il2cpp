@@ -30,47 +30,490 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-sortiesequencereliancetalk")]
-#[::unity2::methods]
-impl SortieSequenceRelianceTalk {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieSequenceRelianceTalk_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         unit_a: crate::app::unit::Unit,
         unit_b: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> ();
-
-    #[doc = "`CreateMessFileName(bool)` overload"]
-    #[method(name = "CreateMessFileName", args = 1)]
-    pub fn create_mess_file_name(self, is_reverse: bool) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateMessFileName", args = 2)]
-    pub fn create_mess_file_name_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, unit_a, unit_b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SortieSequenceRelianceTalk,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSequenceRelianceTalk,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, unit_a, unit_b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_mess_file_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "CreateMessFileName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateMessFileName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_mess_file_name(
+        this: SortieSequenceRelianceTalk,
+        is_reverse: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SortieSequenceRelianceTalk,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_mess_file_name::get_offset() as isize),
+        );
+        inner(this, is_reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_mess_file_name_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "CreateMessFileName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateMessFileName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_mess_file_name_2(
+        this: SortieSequenceRelianceTalk,
         ascii_name_a: ::unity2::Il2CppString,
         ascii_name_b: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateMid()` overload"]
-    #[method(name = "CreateMid", args = 0)]
-    pub fn create_mid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetRelianceLevelText(crate::app::reliancedata::RelianceData_Level)` overload"]
-    #[method(name = "GetRelianceLevelText", args = 1)]
-    pub fn get_reliance_level_text(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SortieSequenceRelianceTalk,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_mess_file_name_2::get_offset() as isize),
+        );
+        inner(this, ascii_name_a, ascii_name_b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "CreateMid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "CreateMid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_mid(
+        this: SortieSequenceRelianceTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SortieSequenceRelianceTalk,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_mid::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reliance_level_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "GetRelianceLevelText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "GetRelianceLevelText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_reliance_level_text(
+        this: SortieSequenceRelianceTalk,
         reliance_level: crate::app::reliancedata::RelianceData_Level,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`LevelUp()` overload"]
-    #[method(name = "LevelUp", args = 0)]
-    pub fn level_up(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SortieSequenceRelianceTalk,
+            crate::app::reliancedata::RelianceData_Level,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_reliance_level_text::get_offset() as isize),
+        );
+        inner(this, reliance_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::class(),
+                "LevelUp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSequenceRelianceTalk as ::unity2::ClassIdentity>::NAME,
+                    "LevelUp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn level_up(
+        this: SortieSequenceRelianceTalk,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSequenceRelianceTalk, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_level_up::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+impl SortieSequenceRelianceTalk {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit_a: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_b: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __SortieSequenceRelianceTalk_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit_a),
+                ::core::convert::Into::into(unit_b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+pub trait ISortieSequenceRelianceTalkMethods: ISortieSequenceRelianceTalk {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn ctor(
+        self,
+        unit_a: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_b: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(unit_a),
+                ::core::convert::Into::into(unit_b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateMessFileName(bool)` overload"]
+    fn create_mess_file_name(
+        self,
+        is_reverse: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::create_mess_file_name(
+                __receiver,
+                ::core::convert::Into::into(is_reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn create_mess_file_name_2(
+        self,
+        ascii_name_a: impl ::core::convert::Into<::unity2::Il2CppString>,
+        ascii_name_b: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::create_mess_file_name_2(
+                __receiver,
+                ::core::convert::Into::into(ascii_name_a),
+                ::core::convert::Into::into(ascii_name_b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateMid()` overload"]
+    fn create_mid(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::create_mid(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRelianceLevelText(crate::app::reliancedata::RelianceData_Level)` overload"]
+    fn get_reliance_level_text(
+        self,
+        reliance_level: impl ::core::convert::Into<crate::app::reliancedata::RelianceData_Level>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::get_reliance_level_text(
+                __receiver,
+                ::core::convert::Into::into(reliance_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LevelUp()` overload"]
+    fn level_up(self) -> () {
+        unsafe {
+            let __receiver =
+                <SortieSequenceRelianceTalk as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SortieSequenceRelianceTalk_unity2_raw::level_up(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+impl<__T: ISortieSequenceRelianceTalk> ISortieSequenceRelianceTalkMethods for __T {}
 
 #[cfg(feature = "app-sortiesequencereliancetalk")]
 impl SortieSequenceRelianceTalk {
@@ -86,4 +529,20 @@ impl SortieSequenceRelianceTalk {
         <Self as ISortieSequenceRelianceTalkMethods>::ctor(this, unit_a, unit_b);
         this
     }
+}
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+pub mod prelude {
+    pub use super::ISortieSequenceRelianceTalk;
+    pub use super::ISortieSequenceRelianceTalkMethods;
+    pub use super::SortieSequenceRelianceTalk;
+    pub use crate::app::commonreliancetalksequence::ICommonRelianceTalkSequence;
+    #[cfg(feature = "app-commonreliancetalksequence")]
+    pub use crate::app::commonreliancetalksequence::ICommonRelianceTalkSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

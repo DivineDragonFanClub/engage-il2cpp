@@ -17,103 +17,1090 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-_androidjnihelper")]
-#[::unity2::methods]
-impl _AndroidJNIHelper {
-    #[doc = "`CreateJavaProxy(::unity2::IntPtr, crate::unity_engine::androidjavaproxy::AndroidJavaProxy)` overload"]
-    #[method(name = "CreateJavaProxy", args = 2)]
-    pub fn create_java_proxy(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod ___AndroidJNIHelper_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_java_proxy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: androidjavaproxy :: AndroidJavaProxy as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "CreateJavaProxy",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "CreateJavaProxy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_java_proxy(
         delegate_handle: ::unity2::IntPtr,
         proxy: crate::unity_engine::androidjavaproxy::AndroidJavaProxy,
-    ) -> ::unity2::IntPtr;
-
-    #[doc = "`CreateJavaRunnable(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` overload"]
-    #[method(name = "CreateJavaRunnable", args = 1)]
-    pub fn create_java_runnable(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            crate::unity_engine::androidjavaproxy::AndroidJavaProxy,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_java_proxy::get_offset() as isize),
+        );
+        inner(delegate_handle, proxy, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_java_runnable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "CreateJavaRunnable",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "CreateJavaRunnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_java_runnable(
         jrunnable: crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
-    ) -> ::unity2::IntPtr;
-
-    #[doc = "`InvokeJavaProxyMethod(crate::unity_engine::androidjavaproxy::AndroidJavaProxy, ::unity2::IntPtr, ::unity2::IntPtr)` overload"]
-    #[method(name = "InvokeJavaProxyMethod", args = 3)]
-    pub fn invoke_java_proxy_method(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_java_runnable::get_offset() as isize),
+        );
+        inner(jrunnable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_java_proxy_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavaproxy :: AndroidJavaProxy as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "InvokeJavaProxyMethod",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "InvokeJavaProxyMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_java_proxy_method(
         proxy: crate::unity_engine::androidjavaproxy::AndroidJavaProxy,
         jmethod_name: ::unity2::IntPtr,
         jargs: ::unity2::IntPtr,
-    ) -> ::unity2::IntPtr;
-
-    #[doc = "`CreateJNIArgArray(::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "CreateJNIArgArray", args = 1)]
-    pub fn create_jni_arg_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            crate::unity_engine::androidjavaproxy::AndroidJavaProxy,
+            ::unity2::IntPtr,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke_java_proxy_method::get_offset() as isize),
+        );
+        inner(proxy, jmethod_name, jargs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_jni_arg_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "CreateJNIArgArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "CreateJNIArgArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_jni_arg_array(
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ::unity2::Array<crate::unity_engine::jvalue::jvalue>;
-
-    #[doc = "`UnboxArray(crate::unity_engine::androidjavaobject::AndroidJavaObject)` overload"]
-    #[method(name = "UnboxArray", args = 1)]
-    pub fn unbox_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::jvalue::jvalue> {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::unity_engine::jvalue::jvalue> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_jni_arg_array::get_offset() as isize),
+        );
+        inner(args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unbox_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavaobject :: AndroidJavaObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "UnboxArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "UnboxArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unbox_array(
         obj: crate::unity_engine::androidjavaobject::AndroidJavaObject,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`Unbox(crate::unity_engine::androidjavaobject::AndroidJavaObject)` overload"]
-    #[method(name = "Unbox", args = 1)]
-    pub fn unbox(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::unity_engine::androidjavaobject::AndroidJavaObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unbox_array::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unbox {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavaobject :: AndroidJavaObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "Unbox",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "Unbox",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unbox(
         obj: crate::unity_engine::androidjavaobject::AndroidJavaObject,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`Box(crate::system::object::Object)` overload"]
-    #[method(name = "Box", args = 1)]
-    pub fn r#box(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::unity_engine::androidjavaobject::AndroidJavaObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unbox::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_box {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "Box",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "Box",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn r#box(
         obj: crate::system::object::Object,
-    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject;
-
-    #[doc = "`DeleteJNIArgArray(::unity2::Array<crate::system::object::Object>, ::unity2::Array<crate::unity_engine::jvalue::jvalue>)` overload"]
-    #[method(name = "DeleteJNIArgArray", args = 2)]
-    pub fn delete_jni_arg_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::androidjavaobject::AndroidJavaObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_box::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_jni_arg_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::jvalue::jvalue> as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "DeleteJNIArgArray",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "DeleteJNIArgArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_jni_arg_array(
         args: ::unity2::Array<crate::system::object::Object>,
         jni_args: ::unity2::Array<crate::unity_engine::jvalue::jvalue>,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::Array<crate::unity_engine::jvalue::jvalue>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_delete_jni_arg_array::get_offset() as isize),
+        );
+        inner(args, jni_args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_to_jni_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IlInstance as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "ConvertToJNIArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "ConvertToJNIArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_to_jni_array(
+        array: ::unity2::IlInstance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IlInstance,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_to_jni_array::get_offset() as isize),
+        );
+        inner(array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_constructor_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetConstructorID",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetConstructorID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_constructor_id(
+        jclass: ::unity2::IntPtr,
+        args: ::unity2::Array<crate::system::object::Object>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_constructor_id::get_offset() as isize),
+        );
+        inner(jclass, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_constructor_id_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetConstructorID",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetConstructorID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_constructor_id_2(
+        jclass: ::unity2::IntPtr,
+        signature: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_constructor_id_2::get_offset() as isize),
+        );
+        inner(jclass, signature, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method_id_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetMethodID",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetMethodID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method_id_2(
+        jclass: ::unity2::IntPtr,
+        method_name: ::unity2::Il2CppString,
+        signature: ::unity2::Il2CppString,
+        is_static: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_method_id_2::get_offset() as isize),
+        );
+        inner(
+            jclass,
+            method_name,
+            signature,
+            is_static,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method_id_fallback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetMethodIDFallback",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetMethodIDFallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method_id_fallback(
+        jclass: ::unity2::IntPtr,
+        method_name: ::unity2::Il2CppString,
+        signature: ::unity2::Il2CppString,
+        is_static: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_method_id_fallback::get_offset() as isize),
+        );
+        inner(
+            jclass,
+            method_name,
+            signature,
+            is_static,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_signature {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetSignature",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetSignature",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_signature(
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_signature::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_signature_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetSignature",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetSignature",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_signature_2(
+        args: ::unity2::Array<crate::system::object::Object>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_signature_2::get_offset() as isize),
+        );
+        inner(args, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-_androidjnihelper")]
+impl _AndroidJNIHelper {
+    #[doc = "`CreateJavaProxy(::unity2::IntPtr, crate::unity_engine::androidjavaproxy::AndroidJavaProxy)` overload"]
+    pub fn create_java_proxy(
+        delegate_handle: impl ::core::convert::Into<::unity2::IntPtr>,
+        proxy: impl ::core::convert::Into<crate::unity_engine::androidjavaproxy::AndroidJavaProxy>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::create_java_proxy(
+                ::core::convert::Into::into(delegate_handle),
+                ::core::convert::Into::into(proxy),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateJavaRunnable(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` overload"]
+    pub fn create_java_runnable(
+        jrunnable: impl ::core::convert::Into<
+            crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
+        >,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::create_java_runnable(
+                ::core::convert::Into::into(jrunnable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InvokeJavaProxyMethod(crate::unity_engine::androidjavaproxy::AndroidJavaProxy, ::unity2::IntPtr, ::unity2::IntPtr)` overload"]
+    pub fn invoke_java_proxy_method(
+        proxy: impl ::core::convert::Into<crate::unity_engine::androidjavaproxy::AndroidJavaProxy>,
+        jmethod_name: impl ::core::convert::Into<::unity2::IntPtr>,
+        jargs: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::invoke_java_proxy_method(
+                ::core::convert::Into::into(proxy),
+                ::core::convert::Into::into(jmethod_name),
+                ::core::convert::Into::into(jargs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateJNIArgArray(::unity2::Array<crate::system::object::Object>)` overload"]
+    pub fn create_jni_arg_array(
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> ::unity2::Array<crate::unity_engine::jvalue::jvalue> {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::create_jni_arg_array(
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnboxArray(crate::unity_engine::androidjavaobject::AndroidJavaObject)` overload"]
+    pub fn unbox_array(
+        obj: impl ::core::convert::Into<crate::unity_engine::androidjavaobject::AndroidJavaObject>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::unbox_array(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Unbox(crate::unity_engine::androidjavaobject::AndroidJavaObject)` overload"]
+    pub fn unbox(
+        obj: impl ::core::convert::Into<crate::unity_engine::androidjavaobject::AndroidJavaObject>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::unbox(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Box(crate::system::object::Object)` overload"]
+    pub fn r#box(
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::unity_engine::androidjavaobject::AndroidJavaObject {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::r#box(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteJNIArgArray(::unity2::Array<crate::system::object::Object>, ::unity2::Array<crate::unity_engine::jvalue::jvalue>)` overload"]
+    pub fn delete_jni_arg_array(
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+        jni_args: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::jvalue::jvalue>>,
+    ) -> () {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::delete_jni_arg_array(
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(jni_args),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ConvertToJNIArray(::unity2::IlInstance)` overload"]
-    #[method(name = "ConvertToJNIArray", args = 1)]
-    pub fn convert_to_jni_array(array: ::unity2::IlInstance) -> ::unity2::IntPtr;
-
+    pub fn convert_to_jni_array(
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::convert_to_jni_array(
+                ::core::convert::Into::into(array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn convert_from_jni_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+        array: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "ConvertFromJNIArray",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                "ConvertFromJNIArray",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(array),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`GetConstructorID(::unity2::IntPtr, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "GetConstructorID", args = 2)]
     pub fn get_constructor_id(
-        jclass: ::unity2::IntPtr,
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ::unity2::IntPtr;
-
+        jclass: impl ::core::convert::Into<::unity2::IntPtr>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_constructor_id(
+                ::core::convert::Into::into(jclass),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_method_id<M0: ::unity2::IlType + ::core::marker::Copy>(
+        jclass: impl ::core::convert::Into<::unity2::IntPtr>,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+        is_static: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::IntPtr {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::class(),
+                "GetMethodID",
+                4,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <_AndroidJNIHelper as ::unity2::ClassIdentity>::NAME,
+                "GetMethodID",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                ::unity2::IntPtr,
+                ::unity2::Il2CppString,
+                ::unity2::Array<crate::system::object::Object>,
+                bool,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::IntPtr = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(jclass),
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(is_static),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`GetConstructorID(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetConstructorID", args = 2)]
     pub fn get_constructor_id_2(
-        jclass: ::unity2::IntPtr,
-        signature: ::unity2::Il2CppString,
-    ) -> ::unity2::IntPtr;
-
+        jclass: impl ::core::convert::Into<::unity2::IntPtr>,
+        signature: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_constructor_id_2(
+                ::core::convert::Into::into(jclass),
+                ::core::convert::Into::into(signature),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetMethodID(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetMethodID", args = 4)]
-    pub fn get_method_id(
-        jclass: ::unity2::IntPtr,
-        method_name: ::unity2::Il2CppString,
-        signature: ::unity2::Il2CppString,
-        is_static: bool,
-    ) -> ::unity2::IntPtr;
-
+    pub fn get_method_id_2(
+        jclass: impl ::core::convert::Into<::unity2::IntPtr>,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        signature: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_static: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_method_id_2(
+                ::core::convert::Into::into(jclass),
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(signature),
+                ::core::convert::Into::into(is_static),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetMethodIDFallback(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetMethodIDFallback", args = 4)]
     pub fn get_method_id_fallback(
-        jclass: ::unity2::IntPtr,
-        method_name: ::unity2::Il2CppString,
-        signature: ::unity2::Il2CppString,
-        is_static: bool,
-    ) -> ::unity2::IntPtr;
-
+        jclass: impl ::core::convert::Into<::unity2::IntPtr>,
+        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        signature: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_static: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_method_id_fallback(
+                ::core::convert::Into::into(jclass),
+                ::core::convert::Into::into(method_name),
+                ::core::convert::Into::into(signature),
+                ::core::convert::Into::into(is_static),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetSignature(crate::system::object::Object)` overload"]
-    #[method(name = "GetSignature", args = 1)]
-    pub fn get_signature(obj: crate::system::object::Object) -> ::unity2::Il2CppString;
-
+    pub fn get_signature(
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_signature(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetSignature(::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "GetSignature", args = 1)]
     pub fn get_signature_2(
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ::unity2::Il2CppString;
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            ___AndroidJNIHelper_unity2_raw::get_signature_2(
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-_androidjnihelper")]
+pub mod prelude {
+    pub use super::I_AndroidJNIHelper;
+    pub use super::_AndroidJNIHelper;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

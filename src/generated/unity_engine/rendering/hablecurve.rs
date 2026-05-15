@@ -8,22 +8,12 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Segment")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Uniforms")]
     #[parent(crate::system::object::Object)]
-    pub struct HableCurve_Segment {
-        #[rename(name = "offsetX")]
-        pub offset_x: f32,
-        #[rename(name = "offsetY")]
-        pub offset_y: f32,
-        #[rename(name = "scaleX")]
-        pub scale_x: f32,
-        #[rename(name = "scaleY")]
-        pub scale_y: f32,
-        #[rename(name = "lnA")]
-        pub ln_a: f32,
-        #[rename(name = "B")]
-        pub b: f32,
+    pub struct HableCurve_Uniforms {
+        #[rename(name = "parent")]
+        pub parent: crate::unity_engine::rendering::hablecurve::HableCurve,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]
@@ -72,12 +62,22 @@ mod __types {
         pub uniforms: crate::unity_engine::rendering::hablecurve::HableCurve_Uniforms,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Uniforms")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Segment")]
     #[parent(crate::system::object::Object)]
-    pub struct HableCurve_Uniforms {
-        #[rename(name = "parent")]
-        pub parent: crate::unity_engine::rendering::hablecurve::HableCurve,
+    pub struct HableCurve_Segment {
+        #[rename(name = "offsetX")]
+        pub offset_x: f32,
+        #[rename(name = "offsetY")]
+        pub offset_y: f32,
+        #[rename(name = "scaleX")]
+        pub scale_x: f32,
+        #[rename(name = "scaleY")]
+        pub scale_y: f32,
+        #[rename(name = "lnA")]
+        pub ln_a: f32,
+        #[rename(name = "B")]
+        pub b: f32,
     }
 }
 
@@ -85,107 +85,1512 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
-#[::unity2::methods]
-impl HableCurve_Segment {
-    #[doc = "`Eval(f32)` overload"]
-    #[method(name = "Eval", args = 1)]
-    pub fn eval(self, x: f32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HableCurve_Uniforms_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: hablecurve :: HableCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HableCurve_Uniforms,
+        parent: crate::unity_engine::rendering::hablecurve::HableCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            crate::unity_engine::rendering::hablecurve::HableCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_curve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_curve",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_curve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_curve(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_curve::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_toe_segment_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_toeSegmentA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_toeSegmentA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_toe_segment_a(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_toe_segment_a::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_toe_segment_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_toeSegmentB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_toeSegmentB",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_toe_segment_b(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_toe_segment_b::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mid_segment_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_midSegmentA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_midSegmentA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mid_segment_a(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mid_segment_a::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mid_segment_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_midSegmentB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_midSegmentB",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mid_segment_b(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mid_segment_b::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sho_segment_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_shoSegmentA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_shoSegmentA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sho_segment_a(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sho_segment_a::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sho_segment_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Uniforms as ::unity2::ClassIdentity>::class(),
+                "get_shoSegmentB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Uniforms as ::unity2::ClassIdentity>::NAME,
+                    "get_shoSegmentB",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sho_segment_b(
+        this: HableCurve_Uniforms,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            HableCurve_Uniforms,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sho_segment_b::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Segment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+pub trait IHableCurve_UniformsMethods: IHableCurve_Uniforms {
+    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"]
+    fn ctor(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::rendering::hablecurve::HableCurve>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_curve()` overload"]
+    fn get_curve(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_curve(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_toeSegmentA()` overload"]
+    fn get_toe_segment_a(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_toe_segment_a(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_toeSegmentB()` overload"]
+    fn get_toe_segment_b(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_toe_segment_b(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_midSegmentA()` overload"]
+    fn get_mid_segment_a(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_mid_segment_a(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_midSegmentB()` overload"]
+    fn get_mid_segment_b(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_mid_segment_b(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_shoSegmentA()` overload"]
+    fn get_sho_segment_a(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_sho_segment_a(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_shoSegmentB()` overload"]
+    fn get_sho_segment_b(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <HableCurve_Uniforms as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Uniforms_unity2_raw::get_sho_segment_b(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl<__T: IHableCurve_Uniforms> IHableCurve_UniformsMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl HableCurve_Uniforms {
+    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"]
+    pub fn new(parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HableCurve_Segment),
+                ::core::stringify!(HableCurve_Uniforms),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHableCurve_SegmentMethods>::ctor(this);
+        <Self as IHableCurve_UniformsMethods>::ctor(this, parent);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
-#[::unity2::methods]
-impl HableCurve {
-    #[doc = "`get_whitePoint()` overload"]
-    #[method(name = "get_whitePoint", args = 0)]
-    pub fn get_white_point(self) -> f32;
-
-    #[doc = "`set_whitePoint(f32)` overload"]
-    #[method(name = "set_whitePoint", args = 1)]
-    pub fn set_white_point(self, value: f32) -> ();
-
-    #[doc = "`get_inverseWhitePoint()` overload"]
-    #[method(name = "get_inverseWhitePoint", args = 0)]
-    pub fn get_inverse_white_point(self) -> f32;
-
-    #[doc = "`set_inverseWhitePoint(f32)` overload"]
-    #[method(name = "set_inverseWhitePoint", args = 1)]
-    pub fn set_inverse_white_point(self, value: f32) -> ();
-
-    #[doc = "`get_x0()` overload"]
-    #[method(name = "get_x0", args = 0)]
-    pub fn get_x0(self) -> f32;
-
-    #[doc = "`set_x0(f32)` overload"]
-    #[method(name = "set_x0", args = 1)]
-    pub fn set_x0(self, value: f32) -> ();
-
-    #[doc = "`get_x1()` overload"]
-    #[method(name = "get_x1", args = 0)]
-    pub fn get_x1(self) -> f32;
-
-    #[doc = "`set_x1(f32)` overload"]
-    #[method(name = "set_x1", args = 1)]
-    pub fn set_x1(self, value: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Eval(f32)` overload"]
-    #[method(name = "Eval", args = 1)]
-    pub fn eval(self, x: f32) -> f32;
-
-    #[doc = "`Init(f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "Init", args = 6)]
-    pub fn init(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HableCurve_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_white_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "get_whitePoint",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "get_whitePoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_white_point(
+        this: HableCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HableCurve, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_white_point::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_white_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "set_whitePoint",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "set_whitePoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_white_point(
+        this: HableCurve,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HableCurve, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_white_point::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_inverse_white_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "get_inverseWhitePoint",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "get_inverseWhitePoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_inverse_white_point(
+        this: HableCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HableCurve, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_inverse_white_point::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_inverse_white_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "set_inverseWhitePoint",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "set_inverseWhitePoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_inverse_white_point(
+        this: HableCurve,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HableCurve, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_inverse_white_point::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x0 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "get_x0",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "get_x0",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_x0(this: HableCurve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(HableCurve, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_x0::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x0 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "set_x0",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "set_x0",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_x0(
+        this: HableCurve,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HableCurve, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_x0::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x1 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "get_x1",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "get_x1",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_x1(this: HableCurve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(HableCurve, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_x1::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x1 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "set_x1",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "set_x1",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_x1(
+        this: HableCurve,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HableCurve, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_x1::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: HableCurve, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HableCurve, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_eval {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "Eval",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "Eval",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn eval(
+        this: HableCurve,
+        x: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HableCurve, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_eval::get_offset() as isize),
+            );
+        inner(this, x, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "Init",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: HableCurve,
         toe_strength: f32,
         toe_length: f32,
         shoulder_strength: f32,
         shoulder_length: f32,
         shoulder_angle: f32,
         gamma: f32,
-    ) -> ();
-
-    #[doc = "`InitSegments(crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams)` overload"]
-    #[method(name = "InitSegments", args = 1)]
-    pub fn init_segments(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HableCurve,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init::get_offset() as isize),
+        );
+        inner(
+            this,
+            toe_strength,
+            toe_length,
+            shoulder_strength,
+            shoulder_length,
+            shoulder_angle,
+            gamma,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_segments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: hablecurve :: HableCurve_DirectParams as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "InitSegments",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "InitSegments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_segments(
+        this: HableCurve,
         src_params: crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams,
-    ) -> ();
-
-    #[doc = "`SolveAB(f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SolveAB", args = 5)]
-    pub fn solve_ab(self, ln_a: f32, b: f32, x0: f32, y0: f32, m: f32) -> ();
-
-    #[doc = "`AsSlopeIntercept(f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "AsSlopeIntercept", args = 6)]
-    pub fn as_slope_intercept(self, m: f32, b: f32, x0: f32, x1: f32, y0: f32, y1: f32) -> ();
-
-    #[doc = "`EvalDerivativeLinearGamma(f32, f32, f32, f32)` overload"]
-    #[method(name = "EvalDerivativeLinearGamma", args = 4)]
-    pub fn eval_derivative_linear_gamma(self, m: f32, b: f32, g: f32, x: f32) -> f32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HableCurve,
+            crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_segments::get_offset() as isize),
+        );
+        inner(this, src_params, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_solve_ab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "SolveAB",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "SolveAB",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn solve_ab(
+        this: HableCurve,
+        ln_a: *mut f32,
+        b: *mut f32,
+        x0: f32,
+        y0: f32,
+        m: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HableCurve,
+            *mut f32,
+            *mut f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_solve_ab::get_offset() as isize),
+        );
+        inner(this, ln_a, b, x0, y0, m, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_as_slope_intercept {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "AsSlopeIntercept",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "AsSlopeIntercept",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn as_slope_intercept(
+        this: HableCurve,
+        m: *mut f32,
+        b: *mut f32,
+        x0: f32,
+        x1: f32,
+        y0: f32,
+        y1: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HableCurve,
+            *mut f32,
+            *mut f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_as_slope_intercept::get_offset() as isize),
+        );
+        inner(this, m, b, x0, x1, y0, y1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_eval_derivative_linear_gamma {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve as ::unity2::ClassIdentity>::class(),
+                "EvalDerivativeLinearGamma",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve as ::unity2::ClassIdentity>::NAME,
+                    "EvalDerivativeLinearGamma",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn eval_derivative_linear_gamma(
+        this: HableCurve,
+        m: f32,
+        b: f32,
+        g: f32,
+        x: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HableCurve, f32, f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_eval_derivative_linear_gamma::get_offset() as isize),
+            );
+        inner(this, m, b, g, x, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+pub trait IHableCurveMethods: IHableCurve {
+    #[doc = "`get_whitePoint()` overload"]
+    fn get_white_point(self) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::get_white_point(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_whitePoint(f32)` overload"]
+    fn set_white_point(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::set_white_point(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_inverseWhitePoint()` overload"]
+    fn get_inverse_white_point(self) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::get_inverse_white_point(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_inverseWhitePoint(f32)` overload"]
+    fn set_inverse_white_point(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::set_inverse_white_point(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_x0()` overload"]
+    fn get_x0(self) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::get_x0(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_x0(f32)` overload"]
+    fn set_x0(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::set_x0(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_x1()` overload"]
+    fn get_x1(self) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::get_x1(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_x1(f32)` overload"]
+    fn set_x1(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::set_x1(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Eval(f32)` overload"]
+    fn eval(self, x: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::eval(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Init(f32, f32, f32, f32, f32, f32)` overload"]
+    fn init(
+        self,
+        toe_strength: impl ::core::convert::Into<f32>,
+        toe_length: impl ::core::convert::Into<f32>,
+        shoulder_strength: impl ::core::convert::Into<f32>,
+        shoulder_length: impl ::core::convert::Into<f32>,
+        shoulder_angle: impl ::core::convert::Into<f32>,
+        gamma: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::init(
+                __receiver,
+                ::core::convert::Into::into(toe_strength),
+                ::core::convert::Into::into(toe_length),
+                ::core::convert::Into::into(shoulder_strength),
+                ::core::convert::Into::into(shoulder_length),
+                ::core::convert::Into::into(shoulder_angle),
+                ::core::convert::Into::into(gamma),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitSegments(crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams)` overload"]
+    fn init_segments(
+        self,
+        src_params: impl ::core::convert::Into<
+            crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::init_segments(
+                __receiver,
+                ::core::convert::Into::into(src_params),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SolveAB(*mutf32, *mutf32, f32, f32, f32)` overload"]
+    fn solve_ab(
+        self,
+        x0: impl ::core::convert::Into<f32>,
+        y0: impl ::core::convert::Into<f32>,
+        m: impl ::core::convert::Into<f32>,
+    ) -> (f32, f32) {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
+            __HableCurve_unity2_raw::solve_ab(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(x0),
+                ::core::convert::Into::into(y0),
+                ::core::convert::Into::into(m),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`AsSlopeIntercept(*mutf32, *mutf32, f32, f32, f32, f32)` overload"]
+    fn as_slope_intercept(
+        self,
+        x0: impl ::core::convert::Into<f32>,
+        x1: impl ::core::convert::Into<f32>,
+        y0: impl ::core::convert::Into<f32>,
+        y1: impl ::core::convert::Into<f32>,
+    ) -> (f32, f32) {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
+            __HableCurve_unity2_raw::as_slope_intercept(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(x0),
+                ::core::convert::Into::into(x1),
+                ::core::convert::Into::into(y0),
+                ::core::convert::Into::into(y1),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`EvalDerivativeLinearGamma(f32, f32, f32, f32)` overload"]
+    fn eval_derivative_linear_gamma(
+        self,
+        m: impl ::core::convert::Into<f32>,
+        b: impl ::core::convert::Into<f32>,
+        g: impl ::core::convert::Into<f32>,
+        x: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_unity2_raw::eval_derivative_linear_gamma(
+                __receiver,
+                ::core::convert::Into::into(m),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(g),
+                ::core::convert::Into::into(x),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl<__T: IHableCurve> IHableCurveMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
 impl HableCurve {
@@ -204,53 +1609,165 @@ impl HableCurve {
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
-#[::unity2::methods]
-impl HableCurve_Uniforms {
-    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> ();
-
-    #[doc = "`get_curve()` overload"]
-    #[method(name = "get_curve", args = 0)]
-    pub fn get_curve(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_toeSegmentA()` overload"]
-    #[method(name = "get_toeSegmentA", args = 0)]
-    pub fn get_toe_segment_a(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_toeSegmentB()` overload"]
-    #[method(name = "get_toeSegmentB", args = 0)]
-    pub fn get_toe_segment_b(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_midSegmentA()` overload"]
-    #[method(name = "get_midSegmentA", args = 0)]
-    pub fn get_mid_segment_a(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_midSegmentB()` overload"]
-    #[method(name = "get_midSegmentB", args = 0)]
-    pub fn get_mid_segment_b(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_shoSegmentA()` overload"]
-    #[method(name = "get_shoSegmentA", args = 0)]
-    pub fn get_sho_segment_a(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_shoSegmentB()` overload"]
-    #[method(name = "get_shoSegmentB", args = 0)]
-    pub fn get_sho_segment_b(self) -> crate::unity_engine::vector4::Vector4;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HableCurve_Segment_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_eval {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Segment as ::unity2::ClassIdentity>::class(),
+                "Eval",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Segment as ::unity2::ClassIdentity>::NAME,
+                    "Eval",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn eval(
+        this: HableCurve_Segment,
+        x: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HableCurve_Segment, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_eval::get_offset() as isize),
+            );
+        inner(this, x, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HableCurve_Segment as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HableCurve_Segment as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HableCurve_Segment,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HableCurve_Segment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Uniforms {
-    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"]
-    pub fn new(parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> Self {
+pub trait IHableCurve_SegmentMethods: IHableCurve_Segment {
+    #[doc = "`Eval(f32)` overload"]
+    fn eval(self, x: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            let __receiver = <HableCurve_Segment as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Segment_unity2_raw::eval(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HableCurve_Segment as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HableCurve_Segment_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl<__T: IHableCurve_Segment> IHableCurve_SegmentMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl HableCurve_Segment {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HableCurve_Uniforms),
+                ::core::stringify!(HableCurve_Segment),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHableCurve_UniformsMethods>::ctor(this, parent);
+        <Self as IHableCurve_SegmentMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+pub mod prelude {
+    pub use super::HableCurve;
+    pub use super::HableCurve_DirectParams;
+    pub use super::HableCurve_Segment;
+    pub use super::HableCurve_Uniforms;
+    pub use super::IHableCurve;
+    pub use super::IHableCurveMethods;
+    pub use super::IHableCurve_Segment;
+    pub use super::IHableCurve_SegmentMethods;
+    pub use super::IHableCurve_Uniforms;
+    pub use super::IHableCurve_UniformsMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

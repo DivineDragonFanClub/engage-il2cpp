@@ -18,26 +18,194 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator")]
-#[::unity2::methods]
-impl IResourceLocator {
-    #[doc = "`get_LocatorId()` overload"]
-    #[method(name = "get_LocatorId", args = 0)]
-    pub fn get_locator_id(self) -> ::unity2::Il2CppString;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IResourceLocator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_locator_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IResourceLocator as ::unity2::ClassIdentity>::class(),
+                "get_LocatorId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IResourceLocator as ::unity2::ClassIdentity>::NAME,
+                    "get_LocatorId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_locator_id(
+        this: IResourceLocator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            IResourceLocator,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_locator_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_keys {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IResourceLocator as ::unity2::ClassIdentity>::class(),
+                "get_Keys",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IResourceLocator as ::unity2::ClassIdentity>::NAME,
+                    "get_Keys",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_keys(
+        this: IResourceLocator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::system::object::Object,
+    > {
+        let inner : extern "C" fn (IResourceLocator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: object :: Object > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_keys :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IResourceLocator as ::unity2::ClassIdentity>::class(),
+                "Locate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IResourceLocator as ::unity2::ClassIdentity>::NAME,
+                    "Locate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate(
+        this: IResourceLocator,
+        key: crate::system::object::Object,
+        r#type: ::unity2::SystemType,
+        locations : * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (IResourceLocator , crate :: system :: object :: Object , :: unity2 :: SystemType , * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_locate :: get_offset () as isize) ,) ;
+        inner(this, key, r#type, locations, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator")]
+pub trait IIResourceLocatorMethods: IIResourceLocator {
+    #[doc = "`get_LocatorId()` overload"]
+    fn get_locator_id(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <IResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IResourceLocator_unity2_raw::get_locator_id(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_Keys()` overload"]
-    #[method(name = "get_Keys", args = 0)]
-    pub fn get_keys(
+    fn get_keys(
         self,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::system::object::Object,
-    >;
+    > {
+        unsafe {
+            let __receiver = <IResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IResourceLocator_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]    fn locate (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> (bool , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >){
+        unsafe {
+            let __receiver = <IResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > :: uninit () ;
+            let __ret = {
+                __IResourceLocator_unity2_raw::locate(
+                    __receiver,
+                    ::core::convert::Into::into(key),
+                    ::core::convert::Into::into(r#type),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
 
-    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]
-    #[method(name = "Locate", args = 3)]
-    pub fn locate(
-        self,
-        key: crate::system::object::Object,
-        r#type: ::unity2::SystemType,
-        locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
-    ) -> bool;
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator")]
+impl<__T: IIResourceLocator> IIResourceLocatorMethods for __T {}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator")]
+pub mod prelude {
+    pub use super::IIResourceLocator;
+    pub use super::IIResourceLocatorMethods;
+    pub use super::IResourceLocator;
 }

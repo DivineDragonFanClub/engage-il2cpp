@@ -18,27 +18,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_LightSetupInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_WeightFader.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.WeightFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_WeightFader {
-        #[rename(name = "m_wgt")]
-        pub m_wgt: f32,
-        #[rename(name = "m_wgtFrom")]
-        pub m_wgt_from: f32,
-        #[rename(name = "m_wgtTo")]
-        pub m_wgt_to: f32,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence.md"))]
     #[::unity2::class(namespace = "App", name = "EventDemoSequence")]
     # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: eventdemosequence :: EventDemoSequence >)]
@@ -140,58 +119,94 @@ mod __types {
         pub m_picture_controller: crate::app::eventpicturecontroller::EventPictureController,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct EventDemoSequence_ClothType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for EventDemoSequence_ClothType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "EventDemoSequence.ClothType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EventDemoSequence_ClothType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl EventDemoSequence_ClothType {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn default_job() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn plain() -> Self {
-            Self { value: 2 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_CmdInfo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]
     #[::unity2::class(namespace = "App", name = "EventDemoSequence.CharacterWork")]
     #[parent(crate::system::object::Object)]
     pub struct EventDemoSequence_CharacterWork {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_EffectWork {
+        #[rename(name = "m_effectResourceObject")]
+        pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_WeightFader.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.WeightFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_WeightFader {
+        #[rename(name = "m_wgt")]
+        pub m_wgt: f32,
+        #[rename(name = "m_wgtFrom")]
+        pub m_wgt_from: f32,
+        #[rename(name = "m_wgtTo")]
+        pub m_wgt_to: f32,
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_ColorFader {
+        #[rename(name = "m_color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_colorFrom")]
+        pub m_color_from: crate::unity_engine::color::Color,
+        #[rename(name = "m_colorTo")]
+        pub m_color_to: crate::unity_engine::color::Color,
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.RotateFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_RotateFader {
+        #[rename(name = "m_rot")]
+        pub m_rot: f32,
+        #[rename(name = "m_rotFrom")]
+        pub m_rot_from: f32,
+        #[rename(name = "m_rotTo")]
+        pub m_rot_to: f32,
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventDemoSequence_SoundEnv {
+        #[rename(name = "m_EventNameDataList")]
+        pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
+        >,
+        #[rename(name = "m_EventNameDictionary")]
+        pub m_event_name_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            >,
+        #[rename(name = "m_SoundEventName")]
+        pub m_sound_event_name: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_LightSetupInfo {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]
     #[repr(C)]
@@ -241,25 +256,57 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_CmdInfo {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventDemoSequence_CmdFunc {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_ColorFader {
-        #[rename(name = "m_color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_colorFrom")]
-        pub m_color_from: crate::unity_engine::color::Color,
-        #[rename(name = "m_colorTo")]
-        pub m_color_to: crate::unity_engine::color::Color,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct EventDemoSequence_ClothType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for EventDemoSequence_ClothType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "EventDemoSequence.ClothType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EventDemoSequence_ClothType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl EventDemoSequence_ClothType {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn default_job() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn plain() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md"))]
@@ -318,56 +365,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_EffectWork {
-        #[rename(name = "m_effectResourceObject")]
-        pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SplitViewWork")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_SplitViewWork {
-        #[rename(name = "m_renderTextureHandle")]
-        pub m_render_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventDemoSequence_SoundEnv {
-        #[rename(name = "m_EventNameDataList")]
-        pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
-        >,
-        #[rename(name = "m_EventNameDictionary")]
-        pub m_event_name_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::Il2CppString,
-            >,
-        #[rename(name = "m_SoundEventName")]
-        pub m_sound_event_name: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.RotateFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_RotateFader {
-        #[rename(name = "m_rot")]
-        pub m_rot: f32,
-        #[rename(name = "m_rotFrom")]
-        pub m_rot_from: f32,
-        #[rename(name = "m_rotTo")]
-        pub m_rot_to: f32,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]
     #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv.EventNameData")]
     #[parent(crate::system::object::Object)]
@@ -378,796 +375,6508 @@ mod __types {
         pub m_event_name: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventDemoSequence_CmdFunc {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SplitViewWork")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_SplitViewWork {
+        #[rename(name = "m_renderTextureHandle")]
+        pub m_render_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    }
 }
 
 #[cfg(feature = "app-eventdemosequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_LightSetupInfo {
-    #[doc = "`get_LightName()` overload"]
-    #[method(name = "get_LightName", args = 0)]
-    pub fn get_light_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_LightName", args = 1)]
-    pub fn set_light_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_RotOffset()` overload"]
-    #[method(name = "get_RotOffset", args = 0)]
-    pub fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_RotOffset", args = 1)]
-    pub fn set_rot_offset(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_ParentCameraObject()` overload"]
-    #[method(name = "get_ParentCameraObject", args = 0)]
-    pub fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_ParentCameraObject", args = 1)]
-    pub fn set_parent_camera_object(self, value: crate::unity_engine::gameobject::GameObject)
-        -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_LightSetupInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_LightSetupInfo),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_analysis_cmd_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "AnalysisCmdText",
+                1,
+                param_types,
+                false,
             )
         });
-        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "AnalysisCmdText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_WeightFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`Set(f32, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, wgt: f32, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> f32;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_WeightFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_WeightFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_WeightFaderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence {
-    #[doc = "`AnalysisCmdText(::unity2::Il2CppString)` overload"]
-    #[method(name = "AnalysisCmdText", args = 1)]
-    pub fn analysis_cmd_text(
-        self,
+    pub unsafe fn analysis_cmd_text(
+        this: EventDemoSequence,
         cmd_texts: ::unity2::Il2CppString,
-    ) -> ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>;
-
-    #[doc = "`GetCmdInfoFromCmdLines(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetCmdInfoFromCmdLines", args = 1)]
-    pub fn get_cmd_info_from_cmd_lines(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_analysis_cmd_text::get_offset() as isize),
+        );
+        inner(this, cmd_texts, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cmd_info_from_cmd_lines {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCmdInfoFromCmdLines",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCmdInfoFromCmdLines",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cmd_info_from_cmd_lines(
+        this: EventDemoSequence,
         cmd_line: ::unity2::Il2CppString,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_CmdInfo;
-
-    #[doc = "`ExecEventCmd(::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>, i32)` overload"]
-    #[method(name = "ExecEventCmd", args = 2)]
-    pub fn exec_event_cmd(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_CmdInfo {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_CmdInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_cmd_info_from_cmd_lines::get_offset() as isize),
+        );
+        inner(this, cmd_line, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_event_cmd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "ExecEventCmd",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "ExecEventCmd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_event_cmd(
+        this: EventDemoSequence,
         cmd_infos: ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
         cmd_info_index: i32,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`ExecEventCmdImpl(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "ExecEventCmdImpl", args = 1)]
-    pub fn exec_event_cmd_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , :: unity2 :: Array < crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_exec_event_cmd :: get_offset () as isize) ,) ;
+        inner(this, cmd_infos, cmd_info_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_event_cmd_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "ExecEventCmdImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "ExecEventCmdImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exec_event_cmd_impl(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncLabel(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncLabel", args = 1)]
-    pub fn func_label(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_exec_event_cmd_impl :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncLabel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncLabel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_label(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncJump(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncJump", args = 1)]
-    pub fn func_jump(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_label :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_jump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncJump",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncJump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_jump(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncWait(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncWait", args = 1)]
-    pub fn func_wait(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_jump :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_wait {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncWait",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncWait",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_wait(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncVariant(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncVariant", args = 1)]
-    pub fn func_variant(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_wait :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_variant {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncVariant",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncVariant",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_variant(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetBackGround(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetBackGround", args = 1)]
-    pub fn set_back_ground(self, sky_box_material_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetSkyBoxMaterialNameAuto(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetSkyBoxMaterialNameAuto", args = 1)]
-    pub fn get_sky_box_material_name_auto(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_variant :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_back_ground {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetBackGround",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetBackGround",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_back_ground(
+        this: EventDemoSequence,
+        sky_box_material_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_back_ground::get_offset() as isize),
+        );
+        inner(this, sky_box_material_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sky_box_material_name_auto {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetSkyBoxMaterialNameAuto",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSkyBoxMaterialNameAuto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sky_box_material_name_auto(
+        this: EventDemoSequence,
         base_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FuncSetBackGround(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSetBackGround", args = 1)]
-    pub fn func_set_back_ground(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sky_box_material_name_auto::get_offset() as isize),
+        );
+        inner(this, base_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_set_back_ground {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSetBackGround",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSetBackGround",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_set_back_ground(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSetBackGroundAuto(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSetBackGroundAuto", args = 1)]
-    pub fn func_set_back_ground_auto(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_set_back_ground :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_set_back_ground_auto {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSetBackGroundAuto",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSetBackGroundAuto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_set_back_ground_auto(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`DisableCameras()` overload"]
-    #[method(name = "DisableCameras", args = 0)]
-    pub fn disable_cameras(self) -> ();
-
-    #[doc = "`CreateCurrentCamera(::unity2::Il2CppString, bool, bool)` overload"]
-    #[method(name = "CreateCurrentCamera", args = 3)]
-    pub fn create_current_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_set_back_ground_auto :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_cameras {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "DisableCameras",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "DisableCameras",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_cameras(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_cameras::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_current_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateCurrentCamera",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateCurrentCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_current_camera(
+        this: EventDemoSequence,
         src_camera_name: ::unity2::Il2CppString,
         is_chara_camera_target_hero_female: bool,
         is_split_view_camera: bool,
-    ) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`CreateCamera(::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool)` overload"]
-    #[method(name = "CreateCamera", args = 4)]
-    pub fn create_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_current_camera::get_offset() as isize),
+        );
+        inner(
+            this,
+            src_camera_name,
+            is_chara_camera_target_hero_female,
+            is_split_view_camera,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateCamera",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_camera(
+        this: EventDemoSequence,
         camera_name: ::unity2::Il2CppString,
         src_camera_name: ::unity2::Il2CppString,
         is_chara_camera_target_hero_female: bool,
         is_split_view_camera: bool,
-    ) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`GetSrcCamera(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetSrcCamera", args = 2)]
-    pub fn get_src_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_camera::get_offset() as isize),
+        );
+        inner(
+            this,
+            camera_name,
+            src_camera_name,
+            is_chara_camera_target_hero_female,
+            is_split_view_camera,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_src_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetSrcCamera",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSrcCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_src_camera(
+        this: EventDemoSequence,
         src_camera_name: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`CreateParentObjectOfCamera(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "CreateParentObjectOfCamera", args = 1)]
-    pub fn create_parent_object_of_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_src_camera::get_offset() as isize),
+        );
+        inner(this, src_camera_name, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_parent_object_of_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateParentObjectOfCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateParentObjectOfCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_parent_object_of_camera(
+        this: EventDemoSequence,
         camera: crate::unity_engine::camera::Camera,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetCameraForChara(crate::unity_engine::camera::Camera, crate::combat::character::Character)` overload"]
-    #[method(name = "SetCameraForChara", args = 2)]
-    pub fn set_camera_for_chara(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_parent_object_of_camera::get_offset() as isize),
+        );
+        inner(this, camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera_for_chara {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCameraForChara",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCameraForChara",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_camera_for_chara(
+        this: EventDemoSequence,
         camera: crate::unity_engine::camera::Camera,
         character: crate::combat::character::Character,
-    ) -> ();
-
-    #[doc = "`GetCharacterCameraAdjustObject(crate::combat::character::Character)` overload"]
-    #[method(name = "GetCharacterCameraAdjustObject", args = 1)]
-    pub fn get_character_camera_adjust_object(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::unity_engine::camera::Camera,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_camera_for_chara::get_offset() as isize),
+        );
+        inner(this, camera, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_camera_adjust_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharacterCameraAdjustObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterCameraAdjustObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_camera_adjust_object(
+        this: EventDemoSequence,
         character: crate::combat::character::Character,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`InitCharacterCameraAdjustTransform(crate::combat::character::Character)` overload"]
-    #[method(name = "InitCharacterCameraAdjustTransform", args = 1)]
-    pub fn init_character_camera_adjust_transform(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_camera_adjust_object::get_offset() as isize),
+        );
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_character_camera_adjust_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "InitCharacterCameraAdjustTransform",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "InitCharacterCameraAdjustTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_character_camera_adjust_transform(
+        this: EventDemoSequence,
         character: crate::combat::character::Character,
-    ) -> ();
-
-    #[doc = "`SetCameraForScene(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "SetCameraForScene", args = 1)]
-    pub fn set_camera_for_scene(self, camera: crate::unity_engine::camera::Camera) -> ();
-
-    #[doc = "`FuncCameraSetCharaCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCameraSetCharaCamera", args = 1)]
-    pub fn func_camera_set_chara_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_character_camera_adjust_transform::get_offset() as isize),
+        );
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera_for_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCameraForScene",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCameraForScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_camera_for_scene(
+        this: EventDemoSequence,
+        camera: crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_camera_for_scene::get_offset() as isize),
+        );
+        inner(this, camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_camera_set_chara_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCameraSetCharaCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCameraSetCharaCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_camera_set_chara_camera(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetCharaCameraNoDelay(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "SetCharaCameraNoDelay", args = 1)]
-    pub fn set_chara_camera_no_delay(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_camera_set_chara_camera :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_camera_no_delay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCharaCameraNoDelay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCharaCameraNoDelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_camera_no_delay(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCameraSetSceneCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCameraSetSceneCamera", args = 1)]
-    pub fn func_camera_set_scene_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_chara_camera_no_delay :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_camera_set_scene_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCameraSetSceneCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCameraSetSceneCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_camera_set_scene_camera(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetSceneCameraNoDelay(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "SetSceneCameraNoDelay", args = 1)]
-    pub fn set_scene_camera_no_delay(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_camera_set_scene_camera :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scene_camera_no_delay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetSceneCameraNoDelay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetSceneCameraNoDelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scene_camera_no_delay(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`GetSplitViewWork(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetSplitViewWork", args = 2)]
-    pub fn get_split_view_work(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_scene_camera_no_delay :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_split_view_work {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetSplitViewWork",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSplitViewWork",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_split_view_work(
+        this: EventDemoSequence,
         split_view_name: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_SplitViewWork;
-
-    #[doc = "`FuncSplitViewBeginSplitViewCameraOnly(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewBeginSplitViewCameraOnly", args = 1)]
-    pub fn func_split_view_begin_split_view_camera_only(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_SplitViewWork {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_SplitViewWork =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_split_view_work::get_offset() as isize),
+            );
+        inner(this, split_view_name, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_begin_split_view_camera_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewBeginSplitViewCameraOnly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewBeginSplitViewCameraOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_begin_split_view_camera_only(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewEndSplitViewCameraOnly(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewEndSplitViewCameraOnly", args = 1)]
-    pub fn func_split_view_end_split_view_camera_only(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_begin_split_view_camera_only :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_end_split_view_camera_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewEndSplitViewCameraOnly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewEndSplitViewCameraOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_end_split_view_camera_only(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewCreate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewCreate", args = 1)]
-    pub fn func_split_view_create(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_end_split_view_camera_only :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewCreate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_create(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewSetCharaCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewSetCharaCamera", args = 1)]
-    pub fn func_split_view_set_chara_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_create :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_set_chara_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewSetCharaCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewSetCharaCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_set_chara_camera(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewSetSceneCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewSetSceneCamera", args = 1)]
-    pub fn func_split_view_set_scene_camera(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_set_chara_camera :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_set_scene_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewSetSceneCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewSetSceneCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_set_scene_camera(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewSetActive(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewSetActive", args = 1)]
-    pub fn func_split_view_set_active(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_set_scene_camera :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewSetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewSetActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_set_active(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewPlayAnim(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewPlayAnim", args = 1)]
-    pub fn func_split_view_play_anim(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_set_active :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_play_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewPlayAnim",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewPlayAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_play_anim(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSplitViewWaitAnimEnd(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSplitViewWaitAnimEnd", args = 1)]
-    pub fn func_split_view_wait_anim_end(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_play_anim :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_split_view_wait_anim_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSplitViewWaitAnimEnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSplitViewWaitAnimEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_split_view_wait_anim_end(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`DisableLights()` overload"]
-    #[method(name = "DisableLights", args = 0)]
-    pub fn disable_lights(self) -> ();
-
-    #[doc = "`SetupLight(crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo)` overload"]
-    #[method(name = "SetupLight", args = 1)]
-    pub fn setup_light(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_split_view_wait_anim_end :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_lights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "DisableLights",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "DisableLights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_lights(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_lights::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_light {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_LightSetupInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetupLight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetupLight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_light(
+        this: EventDemoSequence,
         light_setup_info: crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo,
-    ) -> ();
-
-    #[doc = "`FuncLightSetup(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncLightSetup", args = 1)]
-    pub fn func_light_setup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_light::get_offset() as isize),
+        );
+        inner(this, light_setup_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_light_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncLightSetup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncLightSetup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_light_setup(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncLightSetupAuto(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncLightSetupAuto", args = 1)]
-    pub fn func_light_setup_auto(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_light_setup :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_light_setup_auto {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncLightSetupAuto",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncLightSetupAuto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_light_setup_auto(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetLightCommon(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLightCommon", args = 2)]
-    pub fn set_light_common(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_light_setup_auto :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_light_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetLightCommon",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetLightCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_light_common(
+        this: EventDemoSequence,
         light_name: ::unity2::Il2CppString,
         rot_offset: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`FuncFadeIn(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncFadeIn", args = 1)]
-    pub fn func_fade_in(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_light_common::get_offset() as isize),
+        );
+        inner(this, light_name, rot_offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncFadeIn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncFadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_fade_in(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncFadeOut(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncFadeOut", args = 1)]
-    pub fn func_fade_out(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_fade_in :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncFadeOut",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncFadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_fade_out(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncWhiteFadeIn(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncWhiteFadeIn", args = 1)]
-    pub fn func_white_fade_in(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_fade_out :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_white_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncWhiteFadeIn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncWhiteFadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_white_fade_in(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncWhiteFadeOut(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncWhiteFadeOut", args = 1)]
-    pub fn func_white_fade_out(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_white_fade_in :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_white_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncWhiteFadeOut",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncWhiteFadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_white_fade_out(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FadeInOutImpl(crate::app::eventdemosequence::EventDemoSequence_CmdInfo, crate::unity_engine::color::Color, bool)` overload"]
-    #[method(name = "FadeInOutImpl", args = 3)]
-    pub fn fade_in_out_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_white_fade_out :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in_out_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FadeInOutImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FadeInOutImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_in_out_impl(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
         color: crate::unity_engine::color::Color,
         is_fade_in: bool,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`GetCharacterWork(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetCharacterWork", args = 2)]
-    pub fn get_character_work(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , crate :: unity_engine :: color :: Color , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_fade_in_out_impl :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, color, is_fade_in, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_work {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharacterWork",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterWork",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_work(
+        this: EventDemoSequence,
         pid: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_CharacterWork;
-
-    #[doc = "`GetCharacterAppearance(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetCharacterAppearance", args = 2)]
-    pub fn get_character_appearance(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_CharacterWork {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_CharacterWork =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_character_work::get_offset() as isize),
+            );
+        inner(this, pid, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_appearance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharacterAppearance",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterAppearance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_appearance(
+        this: EventDemoSequence,
         pid: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`GetCharacterLocator(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetCharacterLocator", args = 2)]
-    pub fn get_character_locator(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_appearance::get_offset() as isize),
+        );
+        inner(this, pid, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharacterLocator",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterLocator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_locator(
+        this: EventDemoSequence,
         pid: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetCharacter(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetCharacter", args = 2)]
-    pub fn get_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_locator::get_offset() as isize),
+        );
+        inner(this, pid, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharacter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character(
+        this: EventDemoSequence,
         pid: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::combat::character::Character;
-
-    #[doc = "`FindCharacterLocator(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindCharacterLocator", args = 1)]
-    pub fn find_character_locator(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character::get_offset() as isize),
+        );
+        inner(this, pid, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_character_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FindCharacterLocator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FindCharacterLocator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_character_locator(
+        this: EventDemoSequence,
         pos_string: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`PlayCharacterAnim(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "PlayCharacterAnim", args = 4)]
-    pub fn play_character_anim(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_character_locator::get_offset() as isize),
+        );
+        inner(this, pos_string, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_character_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "PlayCharacterAnim",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "PlayCharacterAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_character_anim(
+        this: EventDemoSequence,
         character: crate::combat::character::Character,
         facial_anim_name: ::unity2::Il2CppString,
         body_anim_name: ::unity2::Il2CppString,
         transition_duration: f32,
-    ) -> ();
-
-    #[doc = "`GetAssetTable(::unity2::Il2CppString, crate::app::eventdemosequence::EventDemoSequence_ClothType)` overload"]
-    #[method(name = "GetAssetTable", args = 2)]
-    pub fn get_asset_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::combat::character::Character,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_character_anim::get_offset() as isize),
+        );
+        inner(
+            this,
+            character,
+            facial_anim_name,
+            body_anim_name,
+            transition_duration,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: eventdemosequence :: EventDemoSequence_ClothType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetAssetTable",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_table(
+        this: EventDemoSequence,
         pid: ::unity2::Il2CppString,
         cloth_type: crate::app::eventdemosequence::EventDemoSequence_ClothType,
-    ) -> crate::app::assettable::AssetTable_Result;
-
-    #[doc = "`FuncCharacterCreate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterCreate", args = 1)]
-    pub fn func_character_create(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::assettable::AssetTable_Result {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            crate::app::eventdemosequence::EventDemoSequence_ClothType,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::assettable::AssetTable_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_asset_table::get_offset() as isize),
+        );
+        inner(this, pid, cloth_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterCreate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_create(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterDelete(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterDelete", args = 1)]
-    pub fn func_character_delete(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_create :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterDelete",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterDelete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_delete(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterAdjustPos(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterAdjustPos", args = 1)]
-    pub fn func_character_adjust_pos(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_delete :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_adjust_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterAdjustPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterAdjustPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_adjust_pos(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterShowHide(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterShowHide", args = 1)]
-    pub fn func_character_show_hide(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_adjust_pos :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_show_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterShowHide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterShowHide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_show_hide(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterSetAnimator(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterSetAnimator", args = 1)]
-    pub fn func_character_set_animator(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_show_hide :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_set_animator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterSetAnimator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterSetAnimator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_set_animator(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterPlayMotion(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterPlayMotion", args = 1)]
-    pub fn func_character_play_motion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_set_animator :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_play_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterPlayMotion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterPlayMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_play_motion(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterWaitMotion(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterWaitMotion", args = 1)]
-    pub fn func_character_wait_motion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_play_motion :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_wait_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterWaitMotion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterWaitMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_wait_motion(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetCharacterAngle(crate::combat::character::Character, crate::combat::character::Character, crate::combat::character::Character)` overload"]
-    #[method(name = "SetCharacterAngle", args = 3)]
-    pub fn set_character_angle(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_wait_motion :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_angle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCharacterAngle",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCharacterAngle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_angle(
+        this: EventDemoSequence,
         character_self: crate::combat::character::Character,
         character_eye_target: crate::combat::character::Character,
         character_head_target: crate::combat::character::Character,
-    ) -> ();
-
-    #[doc = "`FuncCharacterSetAngle(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterSetAngle", args = 1)]
-    pub fn func_character_set_angle(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_character_angle::get_offset() as isize),
+        );
+        inner(
+            this,
+            character_self,
+            character_eye_target,
+            character_head_target,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_set_angle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterSetAngle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterSetAngle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_set_angle(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetCharacterAngle(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetCharacterAngle", args = 3)]
-    pub fn set_character_angle_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_set_angle :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_angle_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCharacterAngle",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCharacterAngle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_angle_2(
+        this: EventDemoSequence,
         self_pid: ::unity2::Il2CppString,
         eye_target_pid: ::unity2::Il2CppString,
         head_target_pid: ::unity2::Il2CppString,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterResetAngle(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterResetAngle", args = 1)]
-    pub fn func_character_reset_angle(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_character_angle_2 :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            self_pid,
+            eye_target_pid,
+            head_target_pid,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_reset_angle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterResetAngle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterResetAngle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_reset_angle(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterSetRotate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterSetRotate", args = 1)]
-    pub fn func_character_set_rotate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_reset_angle :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_set_rotate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterSetRotate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterSetRotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_set_rotate(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetCharacterRotate(crate::combat::character::Character, crate::app::eventdemosequence::EventDemoSequence_CharacterWork, f32, f32)` overload"]
-    #[method(name = "SetCharacterRotate", args = 4)]
-    pub fn set_character_rotate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_set_rotate :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_rotate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: app :: eventdemosequence :: EventDemoSequence_CharacterWork as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetCharacterRotate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetCharacterRotate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_rotate(
+        this: EventDemoSequence,
         character: crate::combat::character::Character,
         character_work: crate::app::eventdemosequence::EventDemoSequence_CharacterWork,
         rotate_y: f32,
         sec: f32,
-    ) -> ();
-
-    #[doc = "`FuncCharacterEquipWeapon(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterEquipWeapon", args = 1)]
-    pub fn func_character_equip_weapon(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            crate::combat::character::Character,
+            crate::app::eventdemosequence::EventDemoSequence_CharacterWork,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_character_rotate::get_offset() as isize),
+        );
+        inner(
+            this,
+            character,
+            character_work,
+            rotate_y,
+            sec,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_equip_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterEquipWeapon",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterEquipWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_equip_weapon(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterEquipNoWeapon(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterEquipNoWeapon", args = 1)]
-    pub fn func_character_equip_no_weapon(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_equip_weapon :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_equip_no_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterEquipNoWeapon",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterEquipNoWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_equip_no_weapon(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterEquipFishingRod(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterEquipFishingRod", args = 1)]
-    pub fn func_character_equip_fishing_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_equip_no_weapon :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_equip_fishing_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterEquipFishingRod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterEquipFishingRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_equip_fishing_rod(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncCharacterEquipNoFishingRod(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCharacterEquipNoFishingRod", args = 1)]
-    pub fn func_character_equip_no_fishing_rod(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_equip_fishing_rod :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_character_equip_no_fishing_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCharacterEquipNoFishingRod",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCharacterEquipNoFishingRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_character_equip_no_fishing_rod(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`GetEffectWork(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "GetEffectWork", args = 2)]
-    pub fn get_effect_work(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_character_equip_no_fishing_rod :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_effect_work {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetEffectWork",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetEffectWork",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_effect_work(
+        this: EventDemoSequence,
         effect_name: ::unity2::Il2CppString,
         is_warning: bool,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EffectWork;
-
-    #[doc = "`FuncCreateEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCreateEffect", args = 1)]
-    pub fn func_create_effect(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EffectWork {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_EffectWork = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_effect_work::get_offset() as isize),
+        );
+        inner(this, effect_name, is_warning, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_create_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCreateEffect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCreateEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_create_effect(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncDeleteEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncDeleteEffect", args = 1)]
-    pub fn func_delete_effect(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_create_effect :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_delete_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncDeleteEffect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncDeleteEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_delete_effect(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`DeleteTelopEffect()` overload"]
-    #[method(name = "DeleteTelopEffect", args = 0)]
-    pub fn delete_telop_effect(self) -> ();
-
-    #[doc = "`FuncCreateTelopEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncCreateTelopEffect", args = 1)]
-    pub fn func_create_telop_effect(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_delete_effect :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_telop_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "DeleteTelopEffect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "DeleteTelopEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_telop_effect(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_telop_effect::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_create_telop_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncCreateTelopEffect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncCreateTelopEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_create_telop_effect(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncDeleteTelopEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncDeleteTelopEffect", args = 1)]
-    pub fn func_delete_telop_effect(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_create_telop_effect :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_delete_telop_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncDeleteTelopEffect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncDeleteTelopEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_delete_telop_effect(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncPausePuppetTalk(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncPausePuppetTalk", args = 1)]
-    pub fn func_pause_puppet_talk(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_delete_telop_effect :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_pause_puppet_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncPausePuppetTalk",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncPausePuppetTalk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_pause_puppet_talk(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncMessageLoad(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncMessageLoad", args = 1)]
-    pub fn func_message_load(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_pause_puppet_talk :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_message_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncMessageLoad",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncMessageLoad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_message_load(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncTalkFaceBegin(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncTalkFaceBegin", args = 1)]
-    pub fn func_talk_face_begin(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_message_load :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_talk_face_begin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncTalkFaceBegin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncTalkFaceBegin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_talk_face_begin(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncPictureShow(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncPictureShow", args = 1)]
-    pub fn func_picture_show(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_talk_face_begin :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_picture_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncPictureShow",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncPictureShow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_picture_show(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncPictureHide(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncPictureHide", args = 1)]
-    pub fn func_picture_hide(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_picture_show :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_picture_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncPictureHide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncPictureHide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_picture_hide(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncChapterTitleShow(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncChapterTitleShow", args = 1)]
-    pub fn func_chapter_title_show(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_picture_hide :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_chapter_title_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncChapterTitleShow",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncChapterTitleShow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_chapter_title_show(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`FuncSoundEvent(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "FuncSoundEvent", args = 1)]
-    pub fn func_sound_event(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_chapter_title_show :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_sound_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FuncSoundEvent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FuncSoundEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_sound_event(
+        this: EventDemoSequence,
         cmd_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-
-    #[doc = "`SetupCommnads()` overload"]
-    #[method(name = "SetupCommnads", args = 0)]
-    pub fn setup_commnads(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_func_sound_event :: get_offset () as isize) ,) ;
+        inner(this, cmd_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_commnads {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "SetupCommnads",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetupCommnads",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_commnads(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup_commnads::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence,
         mess_file_name_without_ext: ::unity2::Il2CppString,
         demo_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`FindGameObject(::unity2::Il2CppString)` overload"]
-    #[method(name = "FindGameObject", args = 1)]
-    pub fn find_game_object(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            mess_file_name_without_ext,
+            demo_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "FindGameObject",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "FindGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_game_object(
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`IsSkip()` overload"]
-    #[method(name = "IsSkip", args = 0)]
-    pub fn is_skip(self) -> bool;
-
-    #[doc = "`IsHeroFemale()` overload"]
-    #[method(name = "IsHeroFemale", args = 0)]
-    pub fn is_hero_female(self) -> bool;
-
-    #[doc = "`IsPidHero(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsPidHero", args = 1)]
-    pub fn is_pid_hero(self, pid: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`PushFade()` overload"]
-    #[method(name = "PushFade", args = 0)]
-    pub fn push_fade(self) -> ();
-
-    #[doc = "`PopFade()` overload"]
-    #[method(name = "PopFade", args = 0)]
-    pub fn pop_fade(self) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`LoadEventCmd()` overload"]
-    #[method(name = "LoadEventCmd", args = 0)]
-    pub fn load_event_cmd(self) -> ();
-
-    #[doc = "`UnloadEventCmd()` overload"]
-    #[method(name = "UnloadEventCmd", args = 0)]
-    pub fn unload_event_cmd(self) -> ();
-
-    #[doc = "`LoadDemoScene()` overload"]
-    #[method(name = "LoadDemoScene", args = 0)]
-    pub fn load_demo_scene(self) -> ();
-
-    #[doc = "`UnloadDemoScene()` overload"]
-    #[method(name = "UnloadDemoScene", args = 0)]
-    pub fn unload_demo_scene(self) -> ();
-
-    #[doc = "`InitAfterLoadScene()` overload"]
-    #[method(name = "InitAfterLoadScene", args = 0)]
-    pub fn init_after_load_scene(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`TickImpl(::unity2::Il2CppString)` overload"]
-    #[method(name = "TickImpl", args = 1)]
-    pub fn tick_impl(self, label: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Persistent()` overload"]
-    #[method(name = "Persistent", args = 0)]
-    pub fn persistent(self) -> ();
-
-    #[doc = "`OnShutdown()` overload"]
-    #[method(name = "OnShutdown", args = 0)]
-    pub fn on_shutdown(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_game_object::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_skip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "IsSkip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsSkip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_skip(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_skip::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_hero_female {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "IsHeroFemale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsHeroFemale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_hero_female(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_hero_female::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_pid_hero {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "IsPidHero",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsPidHero",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_pid_hero(
+        this: EventDemoSequence,
+        pid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_pid_hero::get_offset() as isize),
+        );
+        inner(this, pid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "IsLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsLoading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loading::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push_fade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "PushFade",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "PushFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push_fade(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_push_fade::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop_fade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "PopFade",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "PopFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop_fade(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pop_fade::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "Init",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "End",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "End",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_event_cmd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "LoadEventCmd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "LoadEventCmd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_event_cmd(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_event_cmd::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_event_cmd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "UnloadEventCmd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "UnloadEventCmd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_event_cmd(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_event_cmd::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_demo_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "LoadDemoScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "LoadDemoScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_demo_scene(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_demo_scene::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_demo_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "UnloadDemoScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "UnloadDemoScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_demo_scene(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_demo_scene::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_after_load_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "InitAfterLoadScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "InitAfterLoadScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_after_load_scene(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_after_load_scene::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "TickImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "TickImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_impl(
+        this: EventDemoSequence,
+        label: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EventDemoSequence,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_impl::get_offset() as isize),
+        );
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_persistent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "Persistent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "Persistent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn persistent(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_persistent::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_shutdown {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "OnShutdown",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "OnShutdown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_shutdown(
+        this: EventDemoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_shutdown::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         mess_file_name_without_ext: ::unity2::Il2CppString,
         demo_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetGodRelianceMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetGodRelianceMessFileName", args = 2)]
-    pub fn get_god_reliance_mess_file_name(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            mess_file_name_without_ext,
+            demo_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_reliance_mess_file_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "GetGodRelianceMessFileName",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetGodRelianceMessFileName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_god_reliance_mess_file_name(
         mess_file_name_without_ext: ::unity2::Il2CppString,
         demo_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_god_reliance_mess_file_name::get_offset() as isize),
+        );
+        inner(mess_file_name_without_ext, demo_name, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence {
+    #[doc = "`FindGameObject(::unity2::Il2CppString)` overload"]
+    pub fn find_game_object(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __EventDemoSequence_unity2_raw::find_game_object(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn for_each_components<M0: ::unity2::IlType + ::core::marker::Copy>(
+        action: impl ::core::convert::Into<crate::system::action_1::Action_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <EventDemoSequence as ::unity2::ClassIdentity>::class(),
+                "ForEachComponents",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <EventDemoSequence as ::unity2::ClassIdentity>::NAME,
+                "ForEachComponents",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::action_1::Action_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(action),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mess_file_name_without_ext: impl ::core::convert::Into<::unity2::Il2CppString>,
+        demo_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __EventDemoSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mess_file_name_without_ext),
+                ::core::convert::Into::into(demo_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGodRelianceMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn get_god_reliance_mess_file_name(
+        mess_file_name_without_ext: impl ::core::convert::Into<::unity2::Il2CppString>,
+        demo_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __EventDemoSequence_unity2_raw::get_god_reliance_mess_file_name(
+                ::core::convert::Into::into(mess_file_name_without_ext),
+                ::core::convert::Into::into(demo_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequenceMethods: IEventDemoSequence {
+    #[doc = "`AnalysisCmdText(::unity2::Il2CppString)` overload"]
+    fn analysis_cmd_text(
+        self,
+        cmd_texts: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::analysis_cmd_text(
+                __receiver,
+                ::core::convert::Into::into(cmd_texts),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCmdInfoFromCmdLines(::unity2::Il2CppString)` overload"]
+    fn get_cmd_info_from_cmd_lines(
+        self,
+        cmd_line: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_CmdInfo {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_cmd_info_from_cmd_lines(
+                __receiver,
+                ::core::convert::Into::into(cmd_line),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecEventCmd(::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>, i32)` overload"]
+    fn exec_event_cmd(
+        self,
+        cmd_infos: impl ::core::convert::Into<
+            ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+        >,
+        cmd_info_index: impl ::core::convert::Into<i32>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::exec_event_cmd(
+                __receiver,
+                ::core::convert::Into::into(cmd_infos),
+                ::core::convert::Into::into(cmd_info_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecEventCmdImpl(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn exec_event_cmd_impl(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::exec_event_cmd_impl(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncLabel(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_label(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_label(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncJump(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_jump(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_jump(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncWait(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_wait(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_wait(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncVariant(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_variant(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_variant(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBackGround(::unity2::Il2CppString)` overload"]
+    fn set_back_ground(
+        self,
+        sky_box_material_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_back_ground(
+                __receiver,
+                ::core::convert::Into::into(sky_box_material_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSkyBoxMaterialNameAuto(::unity2::Il2CppString)` overload"]
+    fn get_sky_box_material_name_auto(
+        self,
+        base_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_sky_box_material_name_auto(
+                __receiver,
+                ::core::convert::Into::into(base_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSetBackGround(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_set_back_ground(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_set_back_ground(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSetBackGroundAuto(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_set_back_ground_auto(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_set_back_ground_auto(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableCameras()` overload"]
+    fn disable_cameras(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::disable_cameras(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateCurrentCamera(::unity2::Il2CppString, bool, bool)` overload"]
+    fn create_current_camera(
+        self,
+        src_camera_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_chara_camera_target_hero_female: impl ::core::convert::Into<bool>,
+        is_split_view_camera: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::create_current_camera(
+                __receiver,
+                ::core::convert::Into::into(src_camera_name),
+                ::core::convert::Into::into(is_chara_camera_target_hero_female),
+                ::core::convert::Into::into(is_split_view_camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateCamera(::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool)` overload"]
+    fn create_camera(
+        self,
+        camera_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        src_camera_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_chara_camera_target_hero_female: impl ::core::convert::Into<bool>,
+        is_split_view_camera: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::create_camera(
+                __receiver,
+                ::core::convert::Into::into(camera_name),
+                ::core::convert::Into::into(src_camera_name),
+                ::core::convert::Into::into(is_chara_camera_target_hero_female),
+                ::core::convert::Into::into(is_split_view_camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSrcCamera(::unity2::Il2CppString, bool)` overload"]
+    fn get_src_camera(
+        self,
+        src_camera_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_src_camera(
+                __receiver,
+                ::core::convert::Into::into(src_camera_name),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateParentObjectOfCamera(crate::unity_engine::camera::Camera)` overload"]
+    fn create_parent_object_of_camera(
+        self,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::create_parent_object_of_camera(
+                __receiver,
+                ::core::convert::Into::into(camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCameraForChara(crate::unity_engine::camera::Camera, crate::combat::character::Character)` overload"]
+    fn set_camera_for_chara(
+        self,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_camera_for_chara(
+                __receiver,
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacterCameraAdjustObject(crate::combat::character::Character)` overload"]
+    fn get_character_camera_adjust_object(
+        self,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_character_camera_adjust_object(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitCharacterCameraAdjustTransform(crate::combat::character::Character)` overload"]
+    fn init_character_camera_adjust_transform(
+        self,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::init_character_camera_adjust_transform(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCameraForScene(crate::unity_engine::camera::Camera)` overload"]
+    fn set_camera_for_scene(
+        self,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_camera_for_scene(
+                __receiver,
+                ::core::convert::Into::into(camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCameraSetCharaCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_camera_set_chara_camera(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_camera_set_chara_camera(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharaCameraNoDelay(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn set_chara_camera_no_delay(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_chara_camera_no_delay(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCameraSetSceneCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_camera_set_scene_camera(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_camera_set_scene_camera(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSceneCameraNoDelay(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn set_scene_camera_no_delay(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_scene_camera_no_delay(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSplitViewWork(::unity2::Il2CppString, bool)` overload"]
+    fn get_split_view_work(
+        self,
+        split_view_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_SplitViewWork {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_split_view_work(
+                __receiver,
+                ::core::convert::Into::into(split_view_name),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewBeginSplitViewCameraOnly(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_begin_split_view_camera_only(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_begin_split_view_camera_only(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewEndSplitViewCameraOnly(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_end_split_view_camera_only(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_end_split_view_camera_only(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewCreate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_create(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_create(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewSetCharaCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_set_chara_camera(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_set_chara_camera(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewSetSceneCamera(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_set_scene_camera(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_set_scene_camera(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewSetActive(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_set_active(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_set_active(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewPlayAnim(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_play_anim(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_play_anim(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSplitViewWaitAnimEnd(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_split_view_wait_anim_end(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_split_view_wait_anim_end(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableLights()` overload"]
+    fn disable_lights(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::disable_lights(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupLight(crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo)` overload"]
+    fn setup_light(
+        self,
+        light_setup_info: impl ::core::convert::Into<
+            crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::setup_light(
+                __receiver,
+                ::core::convert::Into::into(light_setup_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncLightSetup(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_light_setup(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_light_setup(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncLightSetupAuto(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_light_setup_auto(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_light_setup_auto(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLightCommon(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_light_common(
+        self,
+        light_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        rot_offset: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_light_common(
+                __receiver,
+                ::core::convert::Into::into(light_name),
+                ::core::convert::Into::into(rot_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncFadeIn(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_fade_in(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_fade_in(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncFadeOut(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_fade_out(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_fade_out(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncWhiteFadeIn(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_white_fade_in(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_white_fade_in(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncWhiteFadeOut(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_white_fade_out(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_white_fade_out(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FadeInOutImpl(crate::app::eventdemosequence::EventDemoSequence_CmdInfo, crate::unity_engine::color::Color, bool)` overload"]
+    fn fade_in_out_impl(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        is_fade_in: impl ::core::convert::Into<bool>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::fade_in_out_impl(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(is_fade_in),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacterWork(::unity2::Il2CppString, bool)` overload"]
+    fn get_character_work(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_CharacterWork {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_character_work(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacterAppearance(::unity2::Il2CppString, bool)` overload"]
+    fn get_character_appearance(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_character_appearance(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacterLocator(::unity2::Il2CppString, bool)` overload"]
+    fn get_character_locator(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_character_locator(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacter(::unity2::Il2CppString, bool)` overload"]
+    fn get_character(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_character(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindCharacterLocator(::unity2::Il2CppString)` overload"]
+    fn find_character_locator(
+        self,
+        pos_string: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::find_character_locator(
+                __receiver,
+                ::core::convert::Into::into(pos_string),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayCharacterAnim(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString, f32)` overload"]
+    fn play_character_anim(
+        self,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+        facial_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        body_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        transition_duration: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::play_character_anim(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(facial_anim_name),
+                ::core::convert::Into::into(body_anim_name),
+                ::core::convert::Into::into(transition_duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetTable(::unity2::Il2CppString, crate::app::eventdemosequence::EventDemoSequence_ClothType)` overload"]
+    fn get_asset_table(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cloth_type: impl ::core::convert::Into<
+            crate::app::eventdemosequence::EventDemoSequence_ClothType,
+        >,
+    ) -> crate::app::assettable::AssetTable_Result {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_asset_table(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(cloth_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterCreate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_create(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_create(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterDelete(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_delete(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_delete(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterAdjustPos(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_adjust_pos(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_adjust_pos(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterShowHide(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_show_hide(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_show_hide(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterSetAnimator(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_set_animator(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_set_animator(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterPlayMotion(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_play_motion(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_play_motion(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterWaitMotion(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_wait_motion(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_wait_motion(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharacterAngle(crate::combat::character::Character, crate::combat::character::Character, crate::combat::character::Character)` overload"]
+    fn set_character_angle(
+        self,
+        character_self: impl ::core::convert::Into<crate::combat::character::Character>,
+        character_eye_target: impl ::core::convert::Into<crate::combat::character::Character>,
+        character_head_target: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_character_angle(
+                __receiver,
+                ::core::convert::Into::into(character_self),
+                ::core::convert::Into::into(character_eye_target),
+                ::core::convert::Into::into(character_head_target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterSetAngle(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_set_angle(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_set_angle(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharacterAngle(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_character_angle_2(
+        self,
+        self_pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        eye_target_pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        head_target_pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_character_angle_2(
+                __receiver,
+                ::core::convert::Into::into(self_pid),
+                ::core::convert::Into::into(eye_target_pid),
+                ::core::convert::Into::into(head_target_pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterResetAngle(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_reset_angle(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_reset_angle(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterSetRotate(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_set_rotate(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_set_rotate(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharacterRotate(crate::combat::character::Character, crate::app::eventdemosequence::EventDemoSequence_CharacterWork, f32, f32)` overload"]
+    fn set_character_rotate(
+        self,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+        character_work: impl ::core::convert::Into<
+            crate::app::eventdemosequence::EventDemoSequence_CharacterWork,
+        >,
+        rotate_y: impl ::core::convert::Into<f32>,
+        sec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::set_character_rotate(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(character_work),
+                ::core::convert::Into::into(rotate_y),
+                ::core::convert::Into::into(sec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterEquipWeapon(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_equip_weapon(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_equip_weapon(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterEquipNoWeapon(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_equip_no_weapon(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_equip_no_weapon(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterEquipFishingRod(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_equip_fishing_rod(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_equip_fishing_rod(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCharacterEquipNoFishingRod(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_character_equip_no_fishing_rod(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_character_equip_no_fishing_rod(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEffectWork(::unity2::Il2CppString, bool)` overload"]
+    fn get_effect_work(
+        self,
+        effect_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_warning: impl ::core::convert::Into<bool>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EffectWork {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::get_effect_work(
+                __receiver,
+                ::core::convert::Into::into(effect_name),
+                ::core::convert::Into::into(is_warning),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCreateEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_create_effect(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_create_effect(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncDeleteEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_delete_effect(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_delete_effect(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteTelopEffect()` overload"]
+    fn delete_telop_effect(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::delete_telop_effect(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncCreateTelopEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_create_telop_effect(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_create_telop_effect(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncDeleteTelopEffect(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_delete_telop_effect(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_delete_telop_effect(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncPausePuppetTalk(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_pause_puppet_talk(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_pause_puppet_talk(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncMessageLoad(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_message_load(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_message_load(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncTalkFaceBegin(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_talk_face_begin(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_talk_face_begin(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncPictureShow(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_picture_show(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_picture_show(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncPictureHide(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_picture_hide(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_picture_hide(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncChapterTitleShow(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_chapter_title_show(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_chapter_title_show(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncSoundEvent(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn func_sound_event(
+        self,
+        cmd_info: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::func_sound_event(
+                __receiver,
+                ::core::convert::Into::into(cmd_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupCommnads()` overload"]
+    fn setup_commnads(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::setup_commnads(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        mess_file_name_without_ext: impl ::core::convert::Into<::unity2::Il2CppString>,
+        demo_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(mess_file_name_without_ext),
+                ::core::convert::Into::into(demo_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSkip()` overload"]
+    fn is_skip(self) -> bool {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::is_skip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsHeroFemale()` overload"]
+    fn is_hero_female(self) -> bool {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::is_hero_female(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsPidHero(::unity2::Il2CppString)` overload"]
+    fn is_pid_hero(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::is_pid_hero(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoading()` overload"]
+    fn is_loading(self) -> bool {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PushFade()` overload"]
+    fn push_fade(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::push_fade(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PopFade()` overload"]
+    fn pop_fade(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::pop_fade(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`End()` overload"]
+    fn end(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadEventCmd()` overload"]
+    fn load_event_cmd(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::load_event_cmd(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadEventCmd()` overload"]
+    fn unload_event_cmd(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::unload_event_cmd(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadDemoScene()` overload"]
+    fn load_demo_scene(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::load_demo_scene(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadDemoScene()` overload"]
+    fn unload_demo_scene(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::unload_demo_scene(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitAfterLoadScene()` overload"]
+    fn init_after_load_scene(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::init_after_load_scene(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TickImpl(::unity2::Il2CppString)` overload"]
+    fn tick_impl(self, label: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::tick_impl(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Persistent()` overload"]
+    fn persistent(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::persistent(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnShutdown()` overload"]
+    fn on_shutdown(self) -> () {
+        unsafe {
+            let __receiver = <EventDemoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventDemoSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence> IEventDemoSequenceMethods for __T {}
 
 #[cfg(feature = "app-eventdemosequence")]
 impl EventDemoSequence {
@@ -1189,130 +6898,2322 @@ impl EventDemoSequence {
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CharacterWork {
-    #[doc = "`get_Pid()` overload"]
-    #[method(name = "get_Pid", args = 0)]
-    pub fn get_pid(self) -> ::unity2::Il2CppString;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_CmdInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_func {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "get_Func",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_func(
+        this: EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_func::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_func {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdFunc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "set_Func",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_func(
+        this: EventDemoSequence_CmdInfo,
+        value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_func::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cmd_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "get_CmdName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_CmdName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cmd_name(
+        this: EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_cmd_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cmd_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "set_CmdName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_CmdName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cmd_name(
+        this: EventDemoSequence_CmdInfo,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_cmd_name::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "get_Args",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_Args",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_args(
+        this: EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_args::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "set_Args",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_Args",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_args(
+        this: EventDemoSequence_CmdInfo,
+        value: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_args::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_repeat_counter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "get_RepeatCounter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_RepeatCounter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_repeat_counter(
+        this: EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EventDemoSequence_CmdInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_repeat_counter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_repeat_counter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "set_RepeatCounter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_RepeatCounter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_repeat_counter(
+        this: EventDemoSequence_CmdInfo,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_CmdInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_repeat_counter::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdFunc as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_CmdInfo,
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdInfo,
+            crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+            ::unity2::Il2CppString,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, func, cmd_name, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inc_repet_counter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::class(),
+                "IncRepetCounter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdInfo as ::unity2::ClassIdentity>::NAME,
+                    "IncRepetCounter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inc_repet_counter(
+        this: EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_CmdInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_inc_repet_counter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Pid", args = 1)]
-    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_PidForCreate()` overload"]
-    #[method(name = "get_PidForCreate", args = 0)]
-    pub fn get_pid_for_create(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_PidForCreate(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_PidForCreate", args = 1)]
-    pub fn set_pid_for_create(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Character()` overload"]
-    #[method(name = "get_Character", args = 0)]
-    pub fn get_character(self) -> crate::combat::character::Character;
-
-    #[doc = "`set_Character(crate::combat::character::Character)` overload"]
-    #[method(name = "set_Character", args = 1)]
-    pub fn set_character(self, value: crate::combat::character::Character) -> ();
-
-    #[doc = "`get_Appearance()` overload"]
-    #[method(name = "get_Appearance", args = 0)]
-    pub fn get_appearance(self) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = "set_Appearance", args = 1)]
-    pub fn set_appearance(
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_CmdInfoMethods: IEventDemoSequence_CmdInfo {
+    #[doc = "`get_Func()` overload"]
+    fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::get_func(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
+    fn set_func(
         self,
+        value: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdFunc>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::set_func(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CmdName()` overload"]
+    fn get_cmd_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::get_cmd_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
+    fn set_cmd_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::set_cmd_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Args()` overload"]
+    fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::get_args(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn set_args(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::set_args(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RepeatCounter()` overload"]
+    fn get_repeat_counter(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::get_repeat_counter(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RepeatCounter(i32)` overload"]
+    fn set_repeat_counter(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::set_repeat_counter(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn ctor(
+        self,
+        func: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdFunc>,
+        cmd_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(cmd_name),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IncRepetCounter()` overload"]
+    fn inc_repet_counter(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdInfo_unity2_raw::inc_repet_counter(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_CmdInfo> IEventDemoSequence_CmdInfoMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_CmdInfo {
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CmdInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_CharacterWork_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_Pid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_Pid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pid(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pid::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_Pid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_Pid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pid(
+        this: EventDemoSequence_CharacterWork,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pid::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pid_for_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_PidForCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_PidForCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pid_for_create(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pid_for_create::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pid_for_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_PidForCreate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_PidForCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pid_for_create(
+        this: EventDemoSequence_CharacterWork,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pid_for_create::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_Character",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_Character",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::character::Character {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::character::Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_Character",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_Character",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character(
+        this: EventDemoSequence_CharacterWork,
+        value: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_character::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_appearance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_Appearance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_Appearance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_appearance(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_appearance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_appearance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_Appearance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_Appearance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_appearance(
+        this: EventDemoSequence_CharacterWork,
         value: crate::combat::characterappearance::CharacterAppearance,
-    ) -> ();
-
-    #[doc = "`get_PositionLocater()` overload"]
-    #[method(name = "get_PositionLocater", args = 0)]
-    pub fn get_position_locater(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_PositionLocater(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_PositionLocater", args = 1)]
-    pub fn set_position_locater(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_RotateFader()` overload"]
-    #[method(name = "get_RotateFader", args = 0)]
-    pub fn get_rotate_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_RotateFader;
-
-    #[doc = "`set_RotateFader(crate::app::eventdemosequence::EventDemoSequence_RotateFader)` overload"]
-    #[method(name = "set_RotateFader", args = 1)]
-    pub fn set_rotate_fader(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::combat::characterappearance::CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_appearance::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position_locater {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_PositionLocater",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_PositionLocater",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position_locater(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position_locater::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_locater {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_PositionLocater",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_PositionLocater",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_locater(
+        this: EventDemoSequence_CharacterWork,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_locater::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotate_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_RotateFader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_RotateFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotate_fader(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_RotateFader {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_RotateFader =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rotate_fader::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotate_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_RotateFader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_RotateFader",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_RotateFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotate_fader(
+        this: EventDemoSequence_CharacterWork,
         value: crate::app::eventdemosequence::EventDemoSequence_RotateFader,
-    ) -> ();
-
-    #[doc = "`get_RotateYTo()` overload"]
-    #[method(name = "get_RotateYTo", args = 0)]
-    pub fn get_rotate_y_to(self) -> f32;
-
-    #[doc = "`set_RotateYTo(f32)` overload"]
-    #[method(name = "set_RotateYTo", args = 1)]
-    pub fn set_rotate_y_to(self, value: f32) -> ();
-
-    #[doc = "`get_AnimStatehash()` overload"]
-    #[method(name = "get_AnimStatehash", args = 0)]
-    pub fn get_anim_statehash(self) -> i32;
-
-    #[doc = "`set_AnimStatehash(i32)` overload"]
-    #[method(name = "set_AnimStatehash", args = 1)]
-    pub fn set_anim_statehash(self, value: i32) -> ();
-
-    #[doc = "`get_EquipWeaponAsset()` overload"]
-    #[method(name = "get_EquipWeaponAsset", args = 0)]
-    pub fn get_equip_weapon_asset(self) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`set_EquipWeaponAsset(crate::combat::characterasset::CharacterAsset)` overload"]
-    #[method(name = "set_EquipWeaponAsset", args = 1)]
-    pub fn set_equip_weapon_asset(self, value: crate::combat::characterasset::CharacterAsset)
-        -> ();
-
-    #[doc = "`get_AnimatorResourceHandle()` overload"]
-    #[method(name = "get_AnimatorResourceHandle", args = 0)]
-    pub fn get_animator_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
-
-    #[doc = "`set_AnimatorResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    #[method(name = "set_AnimatorResourceHandle", args = 1)]
-    pub fn set_animator_resource_handle(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::app::eventdemosequence::EventDemoSequence_RotateFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotate_fader::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotate_y_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_RotateYTo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_RotateYTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotate_y_to(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(EventDemoSequence_CharacterWork, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rotate_y_to::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotate_y_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_RotateYTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_RotateYTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotate_y_to(
+        this: EventDemoSequence_CharacterWork,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotate_y_to::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anim_statehash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_AnimStatehash",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_AnimStatehash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_anim_statehash(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(EventDemoSequence_CharacterWork, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_anim_statehash::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anim_statehash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_AnimStatehash",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_AnimStatehash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_anim_statehash(
+        this: EventDemoSequence_CharacterWork,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_anim_statehash::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_equip_weapon_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_EquipWeaponAsset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_EquipWeaponAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_equip_weapon_asset(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_equip_weapon_asset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_equip_weapon_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::characterasset::CharacterAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_EquipWeaponAsset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_EquipWeaponAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_equip_weapon_asset(
+        this: EventDemoSequence_CharacterWork,
+        value: crate::combat::characterasset::CharacterAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::combat::characterasset::CharacterAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_equip_weapon_asset::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_resource_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_AnimatorResourceHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_AnimatorResourceHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_resource_handle(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourcehandle_2::ResourceHandle_2 {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourcehandle_2::ResourceHandle_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animator_resource_handle::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_animator_resource_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::resourcehandle_2::ResourceHandle_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_AnimatorResourceHandle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_AnimatorResourceHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_animator_resource_handle(
+        this: EventDemoSequence_CharacterWork,
         value: crate::app::resourcehandle_2::ResourceHandle_2,
-    ) -> ();
-
-    #[doc = "`get_FishingRodResourceHandle()` overload"]
-    #[method(name = "get_FishingRodResourceHandle", args = 0)]
-    pub fn get_fishing_rod_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
-
-    #[doc = "`set_FishingRodResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    #[method(name = "set_FishingRodResourceHandle", args = 1)]
-    pub fn set_fishing_rod_resource_handle(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::app::resourcehandle_2::ResourceHandle_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_animator_resource_handle::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fishing_rod_resource_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_FishingRodResourceHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_FishingRodResourceHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fishing_rod_resource_handle(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourcehandle_2::ResourceHandle_2 {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourcehandle_2::ResourceHandle_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fishing_rod_resource_handle::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fishing_rod_resource_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::resourcehandle_2::ResourceHandle_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_FishingRodResourceHandle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_FishingRodResourceHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fishing_rod_resource_handle(
+        this: EventDemoSequence_CharacterWork,
         value: crate::app::resourcehandle_2::ResourceHandle_2,
-    ) -> ();
-
-    #[doc = "`get_FishingRodObject()` overload"]
-    #[method(name = "get_FishingRodObject", args = 0)]
-    pub fn get_fishing_rod_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_FishingRodObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_FishingRodObject", args = 1)]
-    pub fn set_fishing_rod_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::app::resourcehandle_2::ResourceHandle_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fishing_rod_resource_handle::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fishing_rod_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "get_FishingRodObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "get_FishingRodObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fishing_rod_object(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fishing_rod_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fishing_rod_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "set_FishingRodObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "set_FishingRodObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fishing_rod_object(
+        this: EventDemoSequence_CharacterWork,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fishing_rod_object::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_CharacterWork,
         pid: ::unity2::Il2CppString,
         pid_for_create: ::unity2::Il2CppString,
         appearance: crate::combat::characterappearance::CharacterAppearance,
-    ) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CharacterWork,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::combat::characterappearance::CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, pid, pid_for_create, appearance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CharacterWork as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence_CharacterWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_CharacterWork, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_CharacterWorkMethods: IEventDemoSequence_CharacterWork {
+    #[doc = "`get_Pid()` overload"]
+    fn get_pid(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_pid(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
+    fn set_pid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_pid(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PidForCreate()` overload"]
+    fn get_pid_for_create(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_pid_for_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PidForCreate(::unity2::Il2CppString)` overload"]
+    fn set_pid_for_create(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_pid_for_create(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Character()` overload"]
+    fn get_character(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_character(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Character(crate::combat::character::Character)` overload"]
+    fn set_character(
+        self,
+        value: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_character(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Appearance()` overload"]
+    fn get_appearance(self) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_appearance(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]
+    fn set_appearance(
+        self,
+        value: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_appearance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PositionLocater()` overload"]
+    fn get_position_locater(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_position_locater(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PositionLocater(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_position_locater(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_position_locater(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RotateFader()` overload"]
+    fn get_rotate_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_RotateFader {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_rotate_fader(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RotateFader(crate::app::eventdemosequence::EventDemoSequence_RotateFader)` overload"]
+    fn set_rotate_fader(
+        self,
+        value: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_RotateFader>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_rotate_fader(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RotateYTo()` overload"]
+    fn get_rotate_y_to(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_rotate_y_to(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RotateYTo(f32)` overload"]
+    fn set_rotate_y_to(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_rotate_y_to(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AnimStatehash()` overload"]
+    fn get_anim_statehash(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_anim_statehash(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_AnimStatehash(i32)` overload"]
+    fn set_anim_statehash(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_anim_statehash(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_EquipWeaponAsset()` overload"]
+    fn get_equip_weapon_asset(self) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_equip_weapon_asset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_EquipWeaponAsset(crate::combat::characterasset::CharacterAsset)` overload"]
+    fn set_equip_weapon_asset(
+        self,
+        value: impl ::core::convert::Into<crate::combat::characterasset::CharacterAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_equip_weapon_asset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AnimatorResourceHandle()` overload"]
+    fn get_animator_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_animator_resource_handle(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_AnimatorResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
+    fn set_animator_resource_handle(
+        self,
+        value: impl ::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_animator_resource_handle(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_FishingRodResourceHandle()` overload"]
+    fn get_fishing_rod_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_fishing_rod_resource_handle(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_FishingRodResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
+    fn set_fishing_rod_resource_handle(
+        self,
+        value: impl ::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_fishing_rod_resource_handle(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_FishingRodObject()` overload"]
+    fn get_fishing_rod_object(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::get_fishing_rod_object(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_FishingRodObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_fishing_rod_object(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::set_fishing_rod_object(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]
+    fn ctor(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pid_for_create: impl ::core::convert::Into<::unity2::Il2CppString>,
+        appearance: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(pid_for_create),
+                ::core::convert::Into::into(appearance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CharacterWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CharacterWork_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_CharacterWork> IEventDemoSequence_CharacterWorkMethods for __T {}
 
 #[cfg(feature = "app-eventdemosequence")]
 impl EventDemoSequence_CharacterWork {
@@ -1340,143 +9241,285 @@ impl EventDemoSequence_CharacterWork {
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`get_Func()` overload"]
-    #[method(name = "get_Func", args = 0)]
-    pub fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
-
-    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
-    #[method(name = "set_Func", args = 1)]
-    pub fn set_func(self, value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc) -> ();
-
-    #[doc = "`get_CmdName()` overload"]
-    #[method(name = "get_CmdName", args = 0)]
-    pub fn get_cmd_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_CmdName", args = 1)]
-    pub fn set_cmd_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Args()` overload"]
-    #[method(name = "get_Args", args = 0)]
-    pub fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_Args", args = 1)]
-    pub fn set_args(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`get_RepeatCounter()` overload"]
-    #[method(name = "get_RepeatCounter", args = 0)]
-    pub fn get_repeat_counter(self) -> i32;
-
-    #[doc = "`set_RepeatCounter(i32)` overload"]
-    #[method(name = "set_RepeatCounter", args = 1)]
-    pub fn set_repeat_counter(self, value: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`IncRepetCounter()` overload"]
-    #[method(name = "IncRepetCounter", args = 0)]
-    pub fn inc_repet_counter(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CmdInfo),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_EffectWork_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
             )
         });
-        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_ColorFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, color: crate::unity_engine::color::Color, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> crate::unity_engine::color::Color;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_ColorFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_ColorFader),
-                ::core::stringify!(new),
+    pub unsafe fn ctor(
+        this: EventDemoSequence_EffectWork,
+        effect_path: ::unity2::Il2CppString,
+        parent_trans: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_EffectWork,
+            ::unity2::Il2CppString,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, effect_path, parent_trans, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::class(),
+                "LoadEffect",
+                2,
+                param_types,
+                false,
             )
         });
-        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::NAME,
+                    "LoadEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_EffectWork {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+    pub unsafe fn load_effect(
+        this: EventDemoSequence_EffectWork,
         effect_path: ::unity2::Il2CppString,
         parent_trans: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "LoadEffect", args = 2)]
-    pub fn load_effect(
-        self,
-        effect_path: ::unity2::Il2CppString,
-        parent_trans: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetupAfterLoad", args = 1)]
-    pub fn setup_after_load(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_EffectWork,
+            ::unity2::Il2CppString,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_effect::get_offset() as isize),
+        );
+        inner(this, effect_path, parent_trans, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_after_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::class(),
+                "SetupAfterLoad",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::NAME,
+                    "SetupAfterLoad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_after_load(
         effect_prefab_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`DeleteEffect()` overload"]
-    #[method(name = "DeleteEffect", args = 0)]
-    pub fn delete_effect(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_after_load::get_offset() as isize),
+        );
+        inner(effect_prefab_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::class(),
+                "DeleteEffect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_EffectWork as ::unity2::ClassIdentity>::NAME,
+                    "DeleteEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_effect(
+        this: EventDemoSequence_EffectWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_EffectWork, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_effect::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_EffectWork {
+    #[doc = "`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn setup_after_load(
+        effect_prefab_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            __EventDemoSequence_EffectWork_unity2_raw::setup_after_load(
+                ::core::convert::Into::into(effect_prefab_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_EffectWorkMethods: IEventDemoSequence_EffectWork {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
+    fn ctor(
+        self,
+        effect_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_EffectWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_EffectWork_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(effect_path),
+                ::core::convert::Into::into(parent_trans),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
+    fn load_effect(
+        self,
+        effect_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_EffectWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_EffectWork_unity2_raw::load_effect(
+                __receiver,
+                ::core::convert::Into::into(effect_path),
+                ::core::convert::Into::into(parent_trans),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteEffect()` overload"]
+    fn delete_effect(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_EffectWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_EffectWork_unity2_raw::delete_effect(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_EffectWork> IEventDemoSequence_EffectWorkMethods for __T {}
 
 #[cfg(feature = "app-eventdemosequence")]
 impl EventDemoSequence_EffectWork {
@@ -1498,112 +9541,3669 @@ impl EventDemoSequence_EffectWork {
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_SplitViewWork {
-    #[doc = "`get_IsInitialized()` overload"]
-    #[method(name = "get_IsInitialized", args = 0)]
-    pub fn get_is_initialized(self) -> bool;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_WeightFader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_WeightFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_WeightFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: EventDemoSequence_WeightFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_WeightFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: EventDemoSequence_WeightFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(EventDemoSequence_WeightFader, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: EventDemoSequence_WeightFader,
+        wgt: f32,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_WeightFader,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, wgt, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_WeightFader as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence_WeightFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(EventDemoSequence_WeightFader, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`set_IsInitialized(bool)` overload"]
-    #[method(name = "set_IsInitialized", args = 1)]
-    pub fn set_is_initialized(self, value: bool) -> ();
-
-    #[doc = "`get_IsUVRectForGpuBoostMode()` overload"]
-    #[method(name = "get_IsUVRectForGpuBoostMode", args = 0)]
-    pub fn get_is_uv_rect_for_gpu_boost_mode(self) -> bool;
-
-    #[doc = "`set_IsUVRectForGpuBoostMode(bool)` overload"]
-    #[method(name = "set_IsUVRectForGpuBoostMode", args = 1)]
-    pub fn set_is_uv_rect_for_gpu_boost_mode(self, value: bool) -> ();
-
-    #[doc = "`get_SplitViewName()` overload"]
-    #[method(name = "get_SplitViewName", args = 0)]
-    pub fn get_split_view_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_SplitViewName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_SplitViewName", args = 1)]
-    pub fn set_split_view_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_SplitViewImage()` overload"]
-    #[method(name = "get_SplitViewImage", args = 0)]
-    pub fn get_split_view_image(self) -> crate::unity_engine::ui::rawimage::RawImage;
-
-    #[doc = "`set_SplitViewImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]
-    #[method(name = "set_SplitViewImage", args = 1)]
-    pub fn set_split_view_image(self, value: crate::unity_engine::ui::rawimage::RawImage) -> ();
-
-    #[doc = "`get_RenderImage()` overload"]
-    #[method(name = "get_RenderImage", args = 0)]
-    pub fn get_render_image(self) -> crate::unity_engine::ui::rawimage::RawImage;
-
-    #[doc = "`set_RenderImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]
-    #[method(name = "set_RenderImage", args = 1)]
-    pub fn set_render_image(self, value: crate::unity_engine::ui::rawimage::RawImage) -> ();
-
-    #[doc = "`get_RenderTexture()` overload"]
-    #[method(name = "get_RenderTexture", args = 0)]
-    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
-
-    #[doc = "`set_RenderTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]
-    #[method(name = "set_RenderTexture", args = 1)]
-    pub fn set_render_texture(self, value: crate::unity_engine::rendertexture::RenderTexture)
-        -> ();
-
-    #[doc = "`get_Camera()` overload"]
-    #[method(name = "get_Camera", args = 0)]
-    pub fn get_camera(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`set_Camera(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "set_Camera", args = 1)]
-    pub fn set_camera(self, value: crate::unity_engine::camera::Camera) -> ();
-
-    #[doc = "`get_ColorFader()` overload"]
-    #[method(name = "get_ColorFader", args = 0)]
-    pub fn get_color_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_ColorFader;
-
-    #[doc = "`set_ColorFader(crate::app::eventdemosequence::EventDemoSequence_ColorFader)` overload"]
-    #[method(name = "set_ColorFader", args = 1)]
-    pub fn set_color_fader(
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_WeightFaderMethods: IEventDemoSequence_WeightFader {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_WeightFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_WeightFader_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_WeightFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_WeightFader_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_WeightFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_WeightFader_unity2_raw::get(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Set(f32, f32)` overload"]
+    fn set(
         self,
+        wgt: impl ::core::convert::Into<f32>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_WeightFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_WeightFader_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(wgt),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_WeightFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_WeightFader_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_WeightFader> IEventDemoSequence_WeightFaderMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_WeightFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_WeightFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_WeightFaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_ColorFader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_ColorFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_ColorFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: EventDemoSequence_ColorFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_ColorFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: EventDemoSequence_ColorFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            EventDemoSequence_ColorFader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: EventDemoSequence_ColorFader,
+        color: crate::unity_engine::color::Color,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_ColorFader,
+            crate::unity_engine::color::Color,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, color, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_ColorFader as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence_ColorFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            EventDemoSequence_ColorFader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_ColorFaderMethods: IEventDemoSequence_ColorFader {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_ColorFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_ColorFader_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_ColorFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_ColorFader_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_ColorFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_ColorFader_unity2_raw::get(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
+    fn set(
+        self,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_ColorFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_ColorFader_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_ColorFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_ColorFader_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_ColorFader> IEventDemoSequence_ColorFaderMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_ColorFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_ColorFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_RotateFader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_RotateFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_RotateFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: EventDemoSequence_RotateFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_RotateFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: EventDemoSequence_RotateFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(EventDemoSequence_RotateFader, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: EventDemoSequence_RotateFader,
+        rot: f32,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_RotateFader,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, rot, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_RotateFader as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence_RotateFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(EventDemoSequence_RotateFader, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_RotateFaderMethods: IEventDemoSequence_RotateFader {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_RotateFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_RotateFader_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_RotateFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_RotateFader_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_RotateFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_RotateFader_unity2_raw::get(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Set(f32, f32)` overload"]
+    fn set(
+        self,
+        rot: impl ::core::convert::Into<f32>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_RotateFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_RotateFader_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(rot),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_RotateFader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_RotateFader_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_RotateFader> IEventDemoSequence_RotateFaderMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_RotateFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_RotateFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_RotateFaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_SoundEnv_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(
+        this: EventDemoSequence_SoundEnv,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SoundEnv, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                "OnDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    "OnDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_destroy(
+        this: EventDemoSequence_SoundEnv,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SoundEnv, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                "GetEventName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    "GetEventName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_name(
+        this: EventDemoSequence_SoundEnv,
+        material_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_SoundEnv,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_name::get_offset() as isize),
+        );
+        inner(this, material_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_env {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                "PlayEnv",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    "PlayEnv",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_env(
+        this: EventDemoSequence_SoundEnv,
+        material_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SoundEnv,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_env::get_offset() as isize),
+        );
+        inner(this, material_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_current_env {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                "StopCurrentEnv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    "StopCurrentEnv",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_current_env(
+        this: EventDemoSequence_SoundEnv,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SoundEnv, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_stop_current_env::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_SoundEnv,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SoundEnv, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_SoundEnvMethods: IEventDemoSequence_SoundEnv {
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDestroy()` overload"]
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::on_destroy(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
+    fn get_event_name(
+        self,
+        material_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::get_event_name(
+                __receiver,
+                ::core::convert::Into::into(material_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
+    fn play_env(self, material_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::play_env(
+                __receiver,
+                ::core::convert::Into::into(material_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StopCurrentEnv()` overload"]
+    fn stop_current_env(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::stop_current_env(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SoundEnv as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SoundEnv_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_SoundEnv> IEventDemoSequence_SoundEnvMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_SoundEnv {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_SoundEnv),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_LightSetupInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_light_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "get_LightName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_LightName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_light_name(
+        this: EventDemoSequence_LightSetupInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_light_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_light_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "set_LightName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_LightName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_light_name(
+        this: EventDemoSequence_LightSetupInfo,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_light_name::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rot_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "get_RotOffset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_RotOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rot_offset(
+        this: EventDemoSequence_LightSetupInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rot_offset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rot_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "set_RotOffset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_RotOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rot_offset(
+        this: EventDemoSequence_LightSetupInfo,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rot_offset::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parent_camera_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "get_ParentCameraObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_ParentCameraObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parent_camera_object(
+        this: EventDemoSequence_LightSetupInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_parent_camera_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parent_camera_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                "set_ParentCameraObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_ParentCameraObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parent_camera_object(
+        this: EventDemoSequence_LightSetupInfo,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_LightSetupInfo,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_parent_camera_object::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_LightSetupInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_LightSetupInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_LightSetupInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_LightSetupInfoMethods: IEventDemoSequence_LightSetupInfo {
+    #[doc = "`get_LightName()` overload"]
+    fn get_light_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::get_light_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
+    fn set_light_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::set_light_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RotOffset()` overload"]
+    fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::get_rot_offset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_rot_offset(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::set_rot_offset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ParentCameraObject()` overload"]
+    fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::get_parent_camera_object(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_parent_camera_object(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::set_parent_camera_object(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_LightSetupInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_LightSetupInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_LightSetupInfo> IEventDemoSequence_LightSetupInfoMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_LightSetupInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_LightSetupInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_CmdFunc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdFunc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_CmdFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_CmdFunc,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_CmdFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_CmdFunc as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventDemoSequence_CmdFunc,
+        cmd_func_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        let inner : extern "C" fn (EventDemoSequence_CmdFunc , crate :: app :: eventdemosequence :: EventDemoSequence_CmdInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdemosequence :: EventDemoSequence_EventCmdResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_invoke :: get_offset () as isize) ,) ;
+        inner(this, cmd_func_info, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_CmdFuncMethods: IEventDemoSequence_CmdFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdFunc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    fn invoke(
+        self,
+        cmd_func_info: impl ::core::convert::Into<
+            crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
+        >,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_CmdFunc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_CmdFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(cmd_func_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_CmdFunc> IEventDemoSequence_CmdFuncMethods for __T {}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_CmdFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CmdFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CmdFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_SoundEnv_EventNameData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SoundEnv_EventNameData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SoundEnv_EventNameData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_SoundEnv_EventNameData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SoundEnv_EventNameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_SoundEnv_EventNameDataMethods:
+    IEventDemoSequence_SoundEnv_EventNameData
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < EventDemoSequence_SoundEnv_EventNameData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventDemoSequence_SoundEnv_EventNameData_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_SoundEnv_EventNameData>
+    IEventDemoSequence_SoundEnv_EventNameDataMethods for __T
+{
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_SoundEnv_EventNameData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventDemoSequence_SplitViewWork_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_initialized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_IsInitialized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_IsInitialized",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_initialized(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_initialized::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_initialized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_IsInitialized",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_IsInitialized",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_initialized(
+        this: EventDemoSequence_SplitViewWork,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_initialized::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_uv_rect_for_gpu_boost_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_IsUVRectForGpuBoostMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_IsUVRectForGpuBoostMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_uv_rect_for_gpu_boost_mode(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_uv_rect_for_gpu_boost_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_uv_rect_for_gpu_boost_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_IsUVRectForGpuBoostMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_IsUVRectForGpuBoostMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_uv_rect_for_gpu_boost_mode(
+        this: EventDemoSequence_SplitViewWork,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_uv_rect_for_gpu_boost_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_split_view_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_SplitViewName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_SplitViewName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_split_view_name(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_split_view_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_split_view_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_SplitViewName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_SplitViewName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_split_view_name(
+        this: EventDemoSequence_SplitViewWork,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_split_view_name::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_split_view_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_SplitViewImage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_SplitViewImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_split_view_image(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::rawimage::RawImage {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::rawimage::RawImage = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_split_view_image::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_split_view_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::rawimage::RawImage as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_SplitViewImage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_SplitViewImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_split_view_image(
+        this: EventDemoSequence_SplitViewWork,
+        value: crate::unity_engine::ui::rawimage::RawImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            crate::unity_engine::ui::rawimage::RawImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_split_view_image::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_RenderImage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_RenderImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_image(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::rawimage::RawImage {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::rawimage::RawImage = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_render_image::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::rawimage::RawImage as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_RenderImage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_RenderImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_image(
+        this: EventDemoSequence_SplitViewWork,
+        value: crate::unity_engine::ui::rawimage::RawImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            crate::unity_engine::ui::rawimage::RawImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_image::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_RenderTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_RenderTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_texture(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendertexture::RenderTexture {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendertexture::RenderTexture = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_render_texture::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_RenderTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_RenderTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_texture(
+        this: EventDemoSequence_SplitViewWork,
+        value: crate::unity_engine::rendertexture::RenderTexture,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            crate::unity_engine::rendertexture::RenderTexture,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_texture::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_Camera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_Camera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_camera(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_Camera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_Camera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_camera(
+        this: EventDemoSequence_SplitViewWork,
+        value: crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_camera::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "get_ColorFader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "get_ColorFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_fader(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_ColorFader {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::eventdemosequence::EventDemoSequence_ColorFader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color_fader::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventdemosequence :: EventDemoSequence_ColorFader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "set_ColorFader",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "set_ColorFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color_fader(
+        this: EventDemoSequence_SplitViewWork,
         value: crate::app::eventdemosequence::EventDemoSequence_ColorFader,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            crate::app::eventdemosequence::EventDemoSequence_ColorFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color_fader::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventDemoSequence_SplitViewWork,
         split_view_name: ::unity2::Il2CppString,
         render_texture_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`InitSplitViewImage(::unity2::Il2CppString)` overload"]
-    #[method(name = "InitSplitViewImage", args = 1)]
-    pub fn init_split_view_image(self, split_view_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`LoadRenderTexture(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadRenderTexture", args = 1)]
-    pub fn load_render_texture(self, render_texture_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetActive(bool)` overload"]
-    #[method(name = "SetActive", args = 1)]
-    pub fn set_active(self, is_active: bool) -> ();
-
-    #[doc = "`SetRenderImageUVRectWH(bool)` overload"]
-    #[method(name = "SetRenderImageUVRectWH", args = 1)]
-    pub fn set_render_image_uv_rect_wh(self, is_gpu_boost: bool) -> ();
-
-    #[doc = "`SetRenderImageUVRectWH(f32, f32)` overload"]
-    #[method(name = "SetRenderImageUVRectWH", args = 2)]
-    pub fn set_render_image_uv_rect_wh_2(self, width: f32, height: f32) -> ();
-
-    #[doc = "`DisableCamera()` overload"]
-    #[method(name = "DisableCamera", args = 0)]
-    pub fn disable_camera(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            split_view_name,
+            render_texture_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_split_view_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "InitSplitViewImage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "InitSplitViewImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_split_view_image(
+        this: EventDemoSequence_SplitViewWork,
+        split_view_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_split_view_image::get_offset() as isize),
+        );
+        inner(this, split_view_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_render_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "LoadRenderTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "LoadRenderTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_render_texture(
+        this: EventDemoSequence_SplitViewWork,
+        render_texture_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_render_texture::get_offset() as isize),
+        );
+        inner(this, render_texture_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "SetActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: EventDemoSequence_SplitViewWork,
+        is_active: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_active::get_offset() as isize),
+        );
+        inner(this, is_active, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_image_uv_rect_wh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "SetRenderImageUVRectWH",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "SetRenderImageUVRectWH",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_image_uv_rect_wh(
+        this: EventDemoSequence_SplitViewWork,
+        is_gpu_boost: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_image_uv_rect_wh::get_offset() as isize),
+        );
+        inner(this, is_gpu_boost, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_image_uv_rect_wh_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "SetRenderImageUVRectWH",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "SetRenderImageUVRectWH",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_image_uv_rect_wh_2(
+        this: EventDemoSequence_SplitViewWork,
+        width: f32,
+        height: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventDemoSequence_SplitViewWork,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_image_uv_rect_wh_2::get_offset() as isize),
+        );
+        inner(this, width, height, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "DisableCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "DisableCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_camera(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SplitViewWork, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_camera::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventDemoSequence_SplitViewWork as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventDemoSequence_SplitViewWork,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventDemoSequence_SplitViewWork, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventdemosequence")]
+pub trait IEventDemoSequence_SplitViewWorkMethods: IEventDemoSequence_SplitViewWork {
+    #[doc = "`get_IsInitialized()` overload"]
+    fn get_is_initialized(self) -> bool {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_is_initialized(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsInitialized(bool)` overload"]
+    fn set_is_initialized(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_is_initialized(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsUVRectForGpuBoostMode()` overload"]
+    fn get_is_uv_rect_for_gpu_boost_mode(self) -> bool {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_is_uv_rect_for_gpu_boost_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsUVRectForGpuBoostMode(bool)` overload"]
+    fn set_is_uv_rect_for_gpu_boost_mode(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_is_uv_rect_for_gpu_boost_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SplitViewName()` overload"]
+    fn get_split_view_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_split_view_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SplitViewName(::unity2::Il2CppString)` overload"]
+    fn set_split_view_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_split_view_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SplitViewImage()` overload"]
+    fn get_split_view_image(self) -> crate::unity_engine::ui::rawimage::RawImage {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_split_view_image(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SplitViewImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]
+    fn set_split_view_image(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_split_view_image(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RenderImage()` overload"]
+    fn get_render_image(self) -> crate::unity_engine::ui::rawimage::RawImage {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_render_image(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RenderImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]
+    fn set_render_image(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_render_image(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RenderTexture()` overload"]
+    fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_render_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RenderTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]
+    fn set_render_texture(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_render_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Camera()` overload"]
+    fn get_camera(self) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_camera(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Camera(crate::unity_engine::camera::Camera)` overload"]
+    fn set_camera(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_camera(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ColorFader()` overload"]
+    fn get_color_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_ColorFader {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::get_color_fader(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_ColorFader(crate::app::eventdemosequence::EventDemoSequence_ColorFader)` overload"]
+    fn set_color_fader(
+        self,
+        value: impl ::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_ColorFader>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_color_fader(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        split_view_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        render_texture_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(split_view_name),
+                ::core::convert::Into::into(render_texture_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitSplitViewImage(::unity2::Il2CppString)` overload"]
+    fn init_split_view_image(
+        self,
+        split_view_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::init_split_view_image(
+                __receiver,
+                ::core::convert::Into::into(split_view_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadRenderTexture(::unity2::Il2CppString)` overload"]
+    fn load_render_texture(
+        self,
+        render_texture_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::load_render_texture(
+                __receiver,
+                ::core::convert::Into::into(render_texture_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(self, is_active: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(is_active),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRenderImageUVRectWH(bool)` overload"]
+    fn set_render_image_uv_rect_wh(self, is_gpu_boost: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_render_image_uv_rect_wh(
+                __receiver,
+                ::core::convert::Into::into(is_gpu_boost),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRenderImageUVRectWH(f32, f32)` overload"]
+    fn set_render_image_uv_rect_wh_2(
+        self,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::set_render_image_uv_rect_wh_2(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableCamera()` overload"]
+    fn disable_camera(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::disable_camera(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventDemoSequence_SplitViewWork as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventDemoSequence_SplitViewWork_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl<__T: IEventDemoSequence_SplitViewWork> IEventDemoSequence_SplitViewWorkMethods for __T {}
 
 #[cfg(feature = "app-eventdemosequence")]
 impl EventDemoSequence_SplitViewWork {
@@ -1629,140 +13229,80 @@ impl EventDemoSequence_SplitViewWork {
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_SoundEnv {
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetEventName", args = 1)]
-    pub fn get_event_name(self, material_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayEnv", args = 1)]
-    pub fn play_env(self, material_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`StopCurrentEnv()` overload"]
-    #[method(name = "StopCurrentEnv", args = 0)]
-    pub fn stop_current_env(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_SoundEnv {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_SoundEnv),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_RotateFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`Set(f32, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, rot: f32, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> f32;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_RotateFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_RotateFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_RotateFaderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_SoundEnv_EventNameData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_SoundEnv_EventNameData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CmdFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        cmd_func_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CmdFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CmdFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_CmdFuncMethods>::ctor(this, object, method);
-        this
-    }
+pub mod prelude {
+    pub use super::EventDemoSequence;
+    pub use super::EventDemoSequence_CharacterWork;
+    pub use super::EventDemoSequence_ClothType;
+    pub use super::EventDemoSequence_CmdFunc;
+    pub use super::EventDemoSequence_CmdInfo;
+    pub use super::EventDemoSequence_ColorFader;
+    pub use super::EventDemoSequence_EffectWork;
+    pub use super::EventDemoSequence_EventCmdResult;
+    pub use super::EventDemoSequence_EventCmdSeq;
+    pub use super::EventDemoSequence_LightSetupInfo;
+    pub use super::EventDemoSequence_RotateFader;
+    pub use super::EventDemoSequence_SoundEnv;
+    pub use super::EventDemoSequence_SoundEnv_EventNameData;
+    pub use super::EventDemoSequence_SplitViewWork;
+    pub use super::EventDemoSequence_WeightFader;
+    pub use super::IEventDemoSequence;
+    pub use super::IEventDemoSequenceMethods;
+    pub use super::IEventDemoSequence_CharacterWork;
+    pub use super::IEventDemoSequence_CharacterWorkMethods;
+    pub use super::IEventDemoSequence_CmdFunc;
+    pub use super::IEventDemoSequence_CmdFuncMethods;
+    pub use super::IEventDemoSequence_CmdInfo;
+    pub use super::IEventDemoSequence_CmdInfoMethods;
+    pub use super::IEventDemoSequence_ColorFader;
+    pub use super::IEventDemoSequence_ColorFaderMethods;
+    pub use super::IEventDemoSequence_EffectWork;
+    pub use super::IEventDemoSequence_EffectWorkMethods;
+    pub use super::IEventDemoSequence_LightSetupInfo;
+    pub use super::IEventDemoSequence_LightSetupInfoMethods;
+    pub use super::IEventDemoSequence_RotateFader;
+    pub use super::IEventDemoSequence_RotateFaderMethods;
+    pub use super::IEventDemoSequence_SoundEnv;
+    pub use super::IEventDemoSequence_SoundEnvMethods;
+    pub use super::IEventDemoSequence_SoundEnv_EventNameData;
+    pub use super::IEventDemoSequence_SoundEnv_EventNameDataMethods;
+    pub use super::IEventDemoSequence_SplitViewWork;
+    pub use super::IEventDemoSequence_SplitViewWorkMethods;
+    pub use super::IEventDemoSequence_WeightFader;
+    pub use super::IEventDemoSequence_WeightFaderMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
+    #[cfg(feature = "app-procscenesequence_1")]
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

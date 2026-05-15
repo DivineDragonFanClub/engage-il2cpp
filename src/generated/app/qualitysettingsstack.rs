@@ -9,16 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))]
-    #[::unity2::class(namespace = "App", name = "QualitySettingsStack")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)]
-    pub struct QualitySettingsStack {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::qualitysettingsstack::QualitySettingsStack_Settings,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/qualitysettingsstack/QualitySettingsStack_Settings.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,34 +42,290 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))]
+    #[::unity2::class(namespace = "App", name = "QualitySettingsStack")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)]
+    pub struct QualitySettingsStack {
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::qualitysettingsstack::QualitySettingsStack_Settings,
+        >,
+    }
 }
 
 #[cfg(feature = "app-qualitysettingsstack-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-qualitysettingsstack")]
-#[::unity2::methods]
-impl QualitySettingsStack {
-    #[doc = "`PushImpl()` overload"]
-    #[method(name = "PushImpl", args = 0)]
-    pub fn push_impl(self) -> ();
-
-    #[doc = "`PopImpl()` overload"]
-    #[method(name = "PopImpl", args = 0)]
-    pub fn pop_impl(self) -> ();
-
-    #[doc = "`Push()` overload"]
-    #[method(name = "Push", args = 0)]
-    pub fn push() -> ();
-
-    #[doc = "`Pop()` overload"]
-    #[method(name = "Pop", args = 0)]
-    pub fn pop() -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __QualitySettingsStack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
+                "PushImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
+                    "PushImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push_impl(
+        this: QualitySettingsStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_push_impl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
+                "PopImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
+                    "PopImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop_impl(
+        this: QualitySettingsStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pop_impl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
+                "Push",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
+                    "Push",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_push::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
+                "Pop",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
+                    "Pop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pop::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <QualitySettingsStack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <QualitySettingsStack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: QualitySettingsStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(QualitySettingsStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-qualitysettingsstack")]
+impl QualitySettingsStack {
+    #[doc = "`Push()` overload"]
+    pub fn push() -> () {
+        unsafe { __QualitySettingsStack_unity2_raw::push(::core::option::Option::None) }
+    }
+    #[doc = "`Pop()` overload"]
+    pub fn pop() -> () {
+        unsafe { __QualitySettingsStack_unity2_raw::pop(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-qualitysettingsstack")]
+pub trait IQualitySettingsStackMethods: IQualitySettingsStack {
+    #[doc = "`PushImpl()` overload"]
+    fn push_impl(self) -> () {
+        unsafe {
+            let __receiver = <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __QualitySettingsStack_unity2_raw::push_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PopImpl()` overload"]
+    fn pop_impl(self) -> () {
+        unsafe {
+            let __receiver = <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __QualitySettingsStack_unity2_raw::pop_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <QualitySettingsStack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __QualitySettingsStack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-qualitysettingsstack")]
+impl<__T: IQualitySettingsStack> IQualitySettingsStackMethods for __T {}
 
 #[cfg(feature = "app-qualitysettingsstack")]
 impl QualitySettingsStack {
@@ -95,4 +341,21 @@ impl QualitySettingsStack {
         <Self as IQualitySettingsStackMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-qualitysettingsstack")]
+pub mod prelude {
+    pub use super::IQualitySettingsStack;
+    pub use super::IQualitySettingsStackMethods;
+    pub use super::QualitySettingsStack;
+    pub use super::QualitySettingsStack_Settings;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -107,236 +107,2925 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-characterappearance")]
-#[::unity2::methods]
-impl CharacterAppearance {
-    #[doc = "`op_Implicit(crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(a: crate::combat::characterappearance::CharacterAppearance) -> bool;
-
-    #[doc = "`get_AnimSet()` overload"]
-    #[method(name = "get_AnimSet", args = 0)]
-    pub fn get_anim_set(self) -> crate::combat::characteranimset::CharacterAnimset;
-
-    #[doc = "`set_AnimSet(crate::combat::characteranimset::CharacterAnimset)` overload"]
-    #[method(name = "set_AnimSet", args = 1)]
-    pub fn set_anim_set(self, value: crate::combat::characteranimset::CharacterAnimset) -> ();
-
-    #[doc = "`get_WeaponStyle()` overload"]
-    #[method(name = "get_WeaponStyle", args = 0)]
-    pub fn get_weapon_style(self) -> crate::combat::weaponstyle::WeaponStyle;
-
-    #[doc = "`set_WeaponStyle(crate::combat::weaponstyle::WeaponStyle)` overload"]
-    #[method(name = "set_WeaponStyle", args = 1)]
-    pub fn set_weapon_style(self, value: crate::combat::weaponstyle::WeaponStyle) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`get_Item(crate::combat::assettype::AssetType)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterAppearance_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        a: crate::combat::characterappearance::CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::characterappearance::CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_implicit::get_offset() as isize),
+        );
+        inner(a, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anim_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_AnimSet",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_AnimSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_anim_set(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characteranimset::CharacterAnimset {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characteranimset::CharacterAnimset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_anim_set::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anim_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::characteranimset::CharacterAnimset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "set_AnimSet",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "set_AnimSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_anim_set(
+        this: CharacterAppearance,
+        value: crate::combat::characteranimset::CharacterAnimset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::combat::characteranimset::CharacterAnimset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_anim_set::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_weapon_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_WeaponStyle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_WeaponStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_weapon_style(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::weaponstyle::WeaponStyle {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::weaponstyle::WeaponStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_weapon_style::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weapon_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "set_WeaponStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "set_WeaponStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weapon_style(
+        this: CharacterAppearance,
+        value: crate::combat::weaponstyle::WeaponStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::combat::weaponstyle::WeaponStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_weapon_style::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: CharacterAppearance,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::assettype::AssetType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item_2(
+        this: CharacterAppearance,
         r#type: crate::combat::assettype::AssetType,
-    ) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`get_AccTargets()` overload"]
-    #[method(name = "get_AccTargets", args = 0)]
-    pub fn get_acc_targets(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`get_Race()` overload"]
-    #[method(name = "get_Race", args = 0)]
-    pub fn get_race(self) -> crate::combat::animname::AnimName_Race;
-
-    #[doc = "`get_IsRide()` overload"]
-    #[method(name = "get_IsRide", args = 0)]
-    pub fn get_is_ride(self) -> bool;
-
-    #[doc = "`get_IsFlying()` overload"]
-    #[method(name = "get_IsFlying", args = 0)]
-    pub fn get_is_flying(self) -> bool;
-
-    #[doc = "`get_IsCorruptAnimal()` overload"]
-    #[method(name = "get_IsCorruptAnimal", args = 0)]
-    pub fn get_is_corrupt_animal(self) -> bool;
-
-    #[doc = "`get_IsBigDragon()` overload"]
-    #[method(name = "get_IsBigDragon", args = 0)]
-    pub fn get_is_big_dragon(self) -> bool;
-
-    #[doc = "`get_IsWyrm()` overload"]
-    #[method(name = "get_IsWyrm", args = 0)]
-    pub fn get_is_wyrm(self) -> bool;
-
-    #[doc = "`get_IsBrawl()` overload"]
-    #[method(name = "get_IsBrawl", args = 0)]
-    pub fn get_is_brawl(self) -> bool;
-
-    #[doc = "`get_HasRod()` overload"]
-    #[method(name = "get_HasRod", args = 0)]
-    pub fn get_has_rod(self) -> bool;
-
-    #[doc = "`get_MainHandModel()` overload"]
-    #[method(name = "get_MainHandModel", args = 0)]
-    pub fn get_main_hand_model(self) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`get_IsHighClass()` overload"]
-    #[method(name = "get_IsHighClass", args = 0)]
-    pub fn get_is_high_class(self) -> bool;
-
-    #[doc = "`get_Is異形()` overload"]
-    #[method(name = "get_Is異形", args = 0)]
-    pub fn get_is__(self) -> bool;
-
-    #[doc = "`get_IsLastBoss()` overload"]
-    #[method(name = "get_IsLastBoss", args = 0)]
-    pub fn get_is_last_boss(self) -> bool;
-
-    #[doc = "`get_BackwardCancelPosition()` overload"]
-    #[method(name = "get_BackwardCancelPosition", args = 0)]
-    pub fn get_backward_cancel_position(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::combat::characterappearance::CharacterAppearance, crate::combat::weaponstyle::WeaponStyle)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::combat::assettype::AssetType,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_acc_targets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_AccTargets",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_AccTargets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_acc_targets(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_acc_targets::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_race {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_Race",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_Race",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_race(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::animname::AnimName_Race {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::animname::AnimName_Race = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_race::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_ride {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsRide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsRide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_ride(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_ride::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsFlying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_flying(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_flying::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_corrupt_animal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsCorruptAnimal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsCorruptAnimal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_corrupt_animal(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_corrupt_animal::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_big_dragon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsBigDragon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsBigDragon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_big_dragon(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_big_dragon::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_wyrm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsWyrm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsWyrm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_wyrm(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_wyrm::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_brawl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsBrawl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsBrawl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_brawl(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_brawl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_HasRod",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_HasRod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_rod(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_rod::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_main_hand_model {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_MainHandModel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_MainHandModel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_main_hand_model(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_main_hand_model::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_high_class {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsHighClass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsHighClass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_high_class(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_high_class::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is異形 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_Is異形",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_Is異形",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is異形(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is異形::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_last_boss {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_IsLastBoss",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_IsLastBoss",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_last_boss(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_last_boss::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_backward_cancel_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "get_BackwardCancelPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "get_BackwardCancelPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_backward_cancel_position(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_backward_cancel_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < crate :: combat :: weaponstyle :: WeaponStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: CharacterAppearance,
         rhs: crate::combat::characterappearance::CharacterAppearance,
         weapon_style: crate::combat::weaponstyle::WeaponStyle,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`SetDefaultName()` overload"]
-    #[method(name = "SetDefaultName", args = 0)]
-    pub fn set_default_name(self) -> ();
-
-    #[doc = "`Dump()` overload"]
-    #[method(name = "Dump", args = 0)]
-    pub fn dump(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`LoadAsync()` overload"]
-    #[method(name = "LoadAsync", args = 0)]
-    pub fn load_async(self) -> ();
-
-    #[doc = "`LoadAnimSetAsync()` overload"]
-    #[method(name = "LoadAnimSetAsync", args = 0)]
-    pub fn load_anim_set_async(self) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`ReplaceBodyAnimForEditor(crate::combat::characterasset::CharacterAsset)` overload"]
-    #[method(name = "ReplaceBodyAnimForEditor", args = 1)]
-    pub fn replace_body_anim_for_editor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::combat::characterappearance::CharacterAppearance,
+            crate::combat::weaponstyle::WeaponStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, rhs, weapon_style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "Finalize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "SetDefaultName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "SetDefaultName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_default_name(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_default_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "Dump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dump::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "LoadAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_async(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_anim_set_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "LoadAnimSetAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "LoadAnimSetAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_anim_set_async(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_anim_set_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "IsLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "IsLoading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loading::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_body_anim_for_editor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::characterasset::CharacterAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "ReplaceBodyAnimForEditor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceBodyAnimForEditor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_body_anim_for_editor(
+        this: CharacterAppearance,
         a: crate::combat::characterasset::CharacterAsset,
-    ) -> ();
-
-    #[doc = "`CreateAnimSetForViewerPreview(i32)` overload"]
-    #[method(name = "CreateAnimSetForViewerPreview", args = 1)]
-    pub fn create_anim_set_for_viewer_preview(self, map_distance: i32) -> ();
-
-    #[doc = "`GetTall()` overload"]
-    #[method(name = "GetTall", args = 0)]
-    pub fn get_tall(self) -> f32;
-
-    #[doc = "`GetBodySize()` overload"]
-    #[method(name = "GetBodySize", args = 0)]
-    pub fn get_body_size(self) -> f32;
-
-    #[doc = "`ModifyColors(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "ModifyColors", args = 1)]
-    pub fn modify_colors(self, go: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`HasMaterialToModify(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    #[method(name = "HasMaterialToModify", args = 1)]
-    pub fn has_material_to_modify(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::combat::characterasset::CharacterAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_body_anim_for_editor::get_offset() as isize),
+        );
+        inner(this, a, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_anim_set_for_viewer_preview {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateAnimSetForViewerPreview",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateAnimSetForViewerPreview",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_anim_set_for_viewer_preview(
+        this: CharacterAppearance,
+        map_distance: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_anim_set_for_viewer_preview::get_offset() as isize),
+            );
+        inner(this, map_distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "GetTall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "GetTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tall(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tall::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "GetBodySize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "GetBodySize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_size(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_body_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_modify_colors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "ModifyColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "ModifyColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn modify_colors(
+        this: CharacterAppearance,
+        go: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_modify_colors::get_offset() as isize),
+        );
+        inner(this, go, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_material_to_modify {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::material::Material,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "HasMaterialToModify",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "HasMaterialToModify",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_material_to_modify(
+        this: CharacterAppearance,
         mats: ::unity2::Array<crate::unity_engine::material::Material>,
-    ) -> bool;
-
-    #[doc = "`DestroyInstancedMaterials()` overload"]
-    #[method(name = "DestroyInstancedMaterials", args = 0)]
-    pub fn destroy_instanced_materials(self) -> ();
-
-    #[doc = "`Verification(::unity2::Il2CppString)` overload"]
-    #[method(name = "Verification", args = 1)]
-    pub fn verification(self, title: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SerializeToString()` overload"]
-    #[method(name = "SerializeToString", args = 0)]
-    pub fn serialize_to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`DeserializeFromString(::unity2::Il2CppString)` overload"]
-    #[method(name = "DeserializeFromString", args = 1)]
-    pub fn deserialize_from_string(self, contents: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`CreateFromGameStatus(crate::combat::charactergamestatus::CharacterGameStatus, i32, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CreateFromGameStatus", args = 3)]
-    pub fn create_from_game_status(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_material_to_modify::get_offset() as isize),
+        );
+        inner(this, mats, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_instanced_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "DestroyInstancedMaterials",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "DestroyInstancedMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_instanced_materials(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_instanced_materials::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_verification {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "Verification",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "Verification",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn verification(
+        this: CharacterAppearance,
+        title: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_verification::get_offset() as isize),
+        );
+        inner(this, title, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "SerializeToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "SerializeToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize_to_string(
+        this: CharacterAppearance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize_from_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "DeserializeFromString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "DeserializeFromString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deserialize_from_string(
+        this: CharacterAppearance,
+        contents: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_deserialize_from_string::get_offset() as isize),
+        );
+        inner(this, contents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_from_game_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: charactergamestatus :: CharacterGameStatus as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateFromGameStatus",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateFromGameStatus",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_from_game_status(
         game_status: crate::combat::charactergamestatus::CharacterGameStatus,
         map_distance: i32,
         conditions: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`CreateForSound(crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateForSound", args = 1)]
-    pub fn create_for_sound(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            crate::combat::charactergamestatus::CharacterGameStatus,
+            i32,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_from_game_status::get_offset() as isize),
+        );
+        inner(game_status, map_distance, conditions, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_for_sound {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateForSound",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateForSound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_for_sound(
         unit: crate::app::unit::Unit,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`CreateFromGodUnit(crate::app::godunit::GodUnit, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CreateFromGodUnit", args = 2)]
-    pub fn create_from_god_unit(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_for_sound::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_from_god_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateFromGodUnit",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateFromGodUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_from_god_unit(
         gunit: crate::app::godunit::GodUnit,
         conditions: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`CreateFromPreset(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateFromPreset", args = 1)]
-    pub fn create_from_preset(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            crate::app::godunit::GodUnit,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_from_god_unit::get_offset() as isize),
+        );
+        inner(gunit, conditions, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_from_preset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateFromPreset",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateFromPreset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_from_preset(
         name: ::unity2::Il2CppString,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`GetConstions(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "GetConstions", args = 1)]
-    pub fn get_constions(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_from_preset::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_constions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "GetConstions",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "GetConstions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_constions(
         conditions: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`CreateFromResult(crate::app::assettable::AssetTable_Result, i32)` overload"]
-    #[method(name = "CreateFromResult", args = 2)]
-    pub fn create_from_result(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_constions::get_offset() as isize),
+        );
+        inner(conditions, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_from_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::assettable::AssetTable_Result as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CreateFromResult",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CreateFromResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_from_result(
         result: crate::app::assettable::AssetTable_Result,
         map_distance_1or2: i32,
-    ) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`CalcWeaponStyle(i32)` overload"]
-    #[method(name = "CalcWeaponStyle", args = 1)]
-    pub fn calc_weapon_style(self, map_distance: i32) -> crate::combat::weaponstyle::WeaponStyle;
-
-    #[doc = "`IsSameCharacter(crate::combat::characterappearance::CharacterAppearance, crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = "IsSameCharacter", args = 2)]
-    pub fn is_same_character(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        let inner: extern "C" fn(
+            crate::app::assettable::AssetTable_Result,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_from_result::get_offset() as isize),
+        );
+        inner(result, map_distance_1or2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_weapon_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "CalcWeaponStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "CalcWeaponStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_weapon_style(
+        this: CharacterAppearance,
+        map_distance: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::weaponstyle::WeaponStyle {
+        let inner: extern "C" fn(
+            CharacterAppearance,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::weaponstyle::WeaponStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_weapon_style::get_offset() as isize),
+        );
+        inner(this, map_distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_same_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                "IsSameCharacter",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    "IsSameCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_same_character(
         l: crate::combat::characterappearance::CharacterAppearance,
         r: crate::combat::characterappearance::CharacterAppearance,
-    ) -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::characterappearance::CharacterAppearance,
+            crate::combat::characterappearance::CharacterAppearance,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_same_character::get_offset() as isize),
+        );
+        inner(l, r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAppearance as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAppearance as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-characterappearance")]
+impl CharacterAppearance {
+    #[doc = "`op_Implicit(crate::combat::characterappearance::CharacterAppearance)` overload"]
+    pub fn op_implicit(
+        a: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+    ) -> bool {
+        unsafe {
+            __CharacterAppearance_unity2_raw::op_implicit(
+                ::core::convert::Into::into(a),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateFromGameStatus(crate::combat::charactergamestatus::CharacterGameStatus, i32, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    pub fn create_from_game_status(
+        game_status: impl ::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>,
+        map_distance: impl ::core::convert::Into<i32>,
+        conditions: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            __CharacterAppearance_unity2_raw::create_from_game_status(
+                ::core::convert::Into::into(game_status),
+                ::core::convert::Into::into(map_distance),
+                ::core::convert::Into::into(conditions),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateForSound(crate::app::unit::Unit)` overload"]
+    pub fn create_for_sound(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            __CharacterAppearance_unity2_raw::create_for_sound(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateFromGodUnit(crate::app::godunit::GodUnit, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    pub fn create_from_god_unit(
+        gunit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        conditions: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            __CharacterAppearance_unity2_raw::create_from_god_unit(
+                ::core::convert::Into::into(gunit),
+                ::core::convert::Into::into(conditions),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateFromPreset(::unity2::Il2CppString)` overload"]
+    pub fn create_from_preset(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            __CharacterAppearance_unity2_raw::create_from_preset(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetConstions(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    pub fn get_constions(
+        conditions: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __CharacterAppearance_unity2_raw::get_constions(
+                ::core::convert::Into::into(conditions),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateFromResult(crate::app::assettable::AssetTable_Result, i32)` overload"]
+    pub fn create_from_result(
+        result: impl ::core::convert::Into<crate::app::assettable::AssetTable_Result>,
+        map_distance_1or2: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::characterappearance::CharacterAppearance {
+        unsafe {
+            __CharacterAppearance_unity2_raw::create_from_result(
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(map_distance_1or2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSameCharacter(crate::combat::characterappearance::CharacterAppearance, crate::combat::characterappearance::CharacterAppearance)` overload"]
+    pub fn is_same_character(
+        l: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+        r: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+    ) -> bool {
+        unsafe {
+            __CharacterAppearance_unity2_raw::is_same_character(
+                ::core::convert::Into::into(l),
+                ::core::convert::Into::into(r),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __CharacterAppearance_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-characterappearance")]
+pub trait ICharacterAppearanceMethods: ICharacterAppearance {
+    #[doc = "`get_AnimSet()` overload"]
+    fn get_anim_set(self) -> crate::combat::characteranimset::CharacterAnimset {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_anim_set(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_AnimSet(crate::combat::characteranimset::CharacterAnimset)` overload"]
+    fn set_anim_set(
+        self,
+        value: impl ::core::convert::Into<crate::combat::characteranimset::CharacterAnimset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::set_anim_set(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_WeaponStyle()` overload"]
+    fn get_weapon_style(self) -> crate::combat::weaponstyle::WeaponStyle {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_weapon_style(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_WeaponStyle(crate::combat::weaponstyle::WeaponStyle)` overload"]
+    fn set_weapon_style(
+        self,
+        value: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::set_weapon_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Item(crate::combat::assettype::AssetType)` overload"]
+    fn get_item_2(
+        self,
+        r#type: impl ::core::convert::Into<crate::combat::assettype::AssetType>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_item_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AccTargets()` overload"]
+    fn get_acc_targets(self) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_acc_targets(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Race()` overload"]
+    fn get_race(self) -> crate::combat::animname::AnimName_Race {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_race(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsRide()` overload"]
+    fn get_is_ride(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_ride(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsFlying()` overload"]
+    fn get_is_flying(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_flying(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsCorruptAnimal()` overload"]
+    fn get_is_corrupt_animal(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_corrupt_animal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsBigDragon()` overload"]
+    fn get_is_big_dragon(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_big_dragon(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsWyrm()` overload"]
+    fn get_is_wyrm(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_wyrm(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsBrawl()` overload"]
+    fn get_is_brawl(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_brawl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_HasRod()` overload"]
+    fn get_has_rod(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_has_rod(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MainHandModel()` overload"]
+    fn get_main_hand_model(self) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_main_hand_model(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsHighClass()` overload"]
+    fn get_is_high_class(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_high_class(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Is異形()` overload"]
+    fn get_is異形(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is異形(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsLastBoss()` overload"]
+    fn get_is_last_boss(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_is_last_boss(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BackwardCancelPosition()` overload"]
+    fn get_backward_cancel_position(self) -> f32 {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_backward_cancel_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::combat::characterappearance::CharacterAppearance, crate::combat::weaponstyle::WeaponStyle)` overload"]
+    fn ctor_2(
+        self,
+        rhs: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+        weapon_style: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(rhs),
+                ::core::convert::Into::into(weapon_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetDefaultName()` overload"]
+    fn set_default_name(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::set_default_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dump()` overload"]
+    fn dump(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::dump(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadAsync()` overload"]
+    fn load_async(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::load_async(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadAnimSetAsync()` overload"]
+    fn load_anim_set_async(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::load_anim_set_async(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoading()` overload"]
+    fn is_loading(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReplaceBodyAnimForEditor(crate::combat::characterasset::CharacterAsset)` overload"]
+    fn replace_body_anim_for_editor(
+        self,
+        a: impl ::core::convert::Into<crate::combat::characterasset::CharacterAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::replace_body_anim_for_editor(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAnimSetForViewerPreview(i32)` overload"]
+    fn create_anim_set_for_viewer_preview(
+        self,
+        map_distance: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::create_anim_set_for_viewer_preview(
+                __receiver,
+                ::core::convert::Into::into(map_distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTall()` overload"]
+    fn get_tall(self) -> f32 {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_tall(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBodySize()` overload"]
+    fn get_body_size(self) -> f32 {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::get_body_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ModifyColors(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn modify_colors(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::modify_colors(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasMaterialToModify(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
+    fn has_material_to_modify(
+        self,
+        mats: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::has_material_to_modify(
+                __receiver,
+                ::core::convert::Into::into(mats),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyInstancedMaterials()` overload"]
+    fn destroy_instanced_materials(self) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::destroy_instanced_materials(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Verification(::unity2::Il2CppString)` overload"]
+    fn verification(self, title: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::verification(
+                __receiver,
+                ::core::convert::Into::into(title),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SerializeToString()` overload"]
+    fn serialize_to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::serialize_to_string(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeserializeFromString(::unity2::Il2CppString)` overload"]
+    fn deserialize_from_string(
+        self,
+        contents: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::deserialize_from_string(
+                __receiver,
+                ::core::convert::Into::into(contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcWeaponStyle(i32)` overload"]
+    fn calc_weapon_style(
+        self,
+        map_distance: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::weaponstyle::WeaponStyle {
+        unsafe {
+            let __receiver = <CharacterAppearance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAppearance_unity2_raw::calc_weapon_style(
+                __receiver,
+                ::core::convert::Into::into(map_distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-characterappearance")]
+impl<__T: ICharacterAppearance> ICharacterAppearanceMethods for __T {}
 
 #[cfg(feature = "combat-characterappearance")]
 impl CharacterAppearance {
@@ -368,4 +3057,14 @@ impl CharacterAppearance {
         <Self as ICharacterAppearanceMethods>::ctor_2(this, rhs, weapon_style);
         this
     }
+}
+
+#[cfg(feature = "combat-characterappearance")]
+pub mod prelude {
+    pub use super::CharacterAppearance;
+    pub use super::ICharacterAppearance;
+    pub use super::ICharacterAppearanceMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

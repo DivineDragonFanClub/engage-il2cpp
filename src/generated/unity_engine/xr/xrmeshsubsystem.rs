@@ -21,22 +21,156 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
-#[::unity2::methods]
-impl XRMeshSubsystem {
-    #[doc = "`InvokeMeshReadyDelegate(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult, crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>)` overload"]
-    #[method(name = "InvokeMeshReadyDelegate", args = 2)]
-    pub fn invoke_mesh_ready_delegate(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRMeshSubsystem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_mesh_ready_delegate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRMeshSubsystem as ::unity2::ClassIdentity>::class(),
+                "InvokeMeshReadyDelegate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <XRMeshSubsystem as ::unity2::ClassIdentity>::NAME,
+                    "InvokeMeshReadyDelegate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_mesh_ready_delegate(
+        this: XRMeshSubsystem,
         result: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
         on_mesh_generation_complete: crate::system::action_1::Action_1<
             crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            XRMeshSubsystem,
+            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+            crate::system::action_1::Action_1<
+                crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke_mesh_ready_delegate::get_offset() as isize),
+        );
+        inner(
+            this,
+            result,
+            on_mesh_generation_complete,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRMeshSubsystem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <XRMeshSubsystem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: XRMeshSubsystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(XRMeshSubsystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+pub trait IXRMeshSubsystemMethods: IXRMeshSubsystem {
+    #[doc = "`InvokeMeshReadyDelegate(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult, crate::system::action_1::Action_1<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>)` overload"]
+    fn invoke_mesh_ready_delegate(
+        self,
+        result: impl ::core::convert::Into<
+            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+        >,
+        on_mesh_generation_complete: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<
+                crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <XRMeshSubsystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __XRMeshSubsystem_unity2_raw::invoke_mesh_ready_delegate(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(on_mesh_generation_complete),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <XRMeshSubsystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __XRMeshSubsystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+impl<__T: IXRMeshSubsystem> IXRMeshSubsystemMethods for __T {}
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
 impl XRMeshSubsystem {
@@ -52,4 +186,22 @@ impl XRMeshSubsystem {
         <Self as IXRMeshSubsystemMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+pub mod prelude {
+    pub use super::IXRMeshSubsystem;
+    pub use super::IXRMeshSubsystemMethods;
+    pub use super::XRMeshSubsystem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+    #[cfg(feature = "unity_engine-integratedsubsystem")]
+    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
+    pub use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
+    #[cfg(feature = "unity_engine-integratedsubsystem_1")]
+    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
+    pub use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
 }

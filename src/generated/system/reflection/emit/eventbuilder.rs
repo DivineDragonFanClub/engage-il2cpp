@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-eventbuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-eventbuilder")]
+pub mod prelude {
+    pub use super::EventBuilder;
+    pub use super::IEventBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

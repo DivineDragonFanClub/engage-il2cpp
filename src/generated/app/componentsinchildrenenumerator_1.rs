@@ -85,3 +85,22 @@ impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-componentsinchildrenenumerator_1")]
+pub mod prelude {
+    pub use super::ComponentsInChildrenEnumerator_1;
+    pub use super::ComponentsInChildrenEnumerator_1_Func;
+    pub use super::IComponentsInChildrenEnumerator_1;
+    pub use super::IComponentsInChildrenEnumerator_1Methods;
+    pub use super::IComponentsInChildrenEnumerator_1_Func;
+    pub use super::IComponentsInChildrenEnumerator_1_FuncMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

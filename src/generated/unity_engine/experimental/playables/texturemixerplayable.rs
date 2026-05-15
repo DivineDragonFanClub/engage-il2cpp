@@ -41,16 +41,138 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-playables-texturemixerplayable")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextureMixerPlayable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureMixerPlayable as ::unity2::ClassIdentity>::class(),
+                "GetHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                    "GetHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle(
+        this: TextureMixerPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            TextureMixerPlayable,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_handle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: playables :: texturemixerplayable :: TextureMixerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureMixerPlayable as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: TextureMixerPlayable,
+        other : crate :: unity_engine :: experimental :: playables :: texturemixerplayable :: TextureMixerPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TextureMixerPlayable,
+            crate::unity_engine::experimental::playables::texturemixerplayable::TextureMixerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-playables-texturemixerplayable")]
 impl TextureMixerPlayable {
     #[doc = "`GetHandle()` overload"]
-    #[method(name = "GetHandle", args = 0)]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
-
+    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe { __TextureMixerPlayable_unity2_raw::get_handle(self, ::core::option::Option::None) }
+    }
     #[doc = "`Equals(crate::unity_engine::experimental::playables::texturemixerplayable::TextureMixerPlayable)` overload"]
-    #[method(name = "Equals", args = 1)]
     pub fn equals(
         self,
-        other : crate :: unity_engine :: experimental :: playables :: texturemixerplayable :: TextureMixerPlayable,
-    ) -> bool;
+        other : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: playables :: texturemixerplayable :: TextureMixerPlayable >,
+    ) -> bool {
+        unsafe {
+            __TextureMixerPlayable_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-playables-texturemixerplayable")]
+pub mod prelude {
+    pub use super::TextureMixerPlayable;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

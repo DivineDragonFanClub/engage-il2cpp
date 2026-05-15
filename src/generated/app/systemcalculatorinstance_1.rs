@@ -57,3 +57,22 @@ impl<T0: ::unity2::ClassIdentity> SystemCalculatorInstance_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-systemcalculatorinstance_1")]
+pub mod prelude {
+    pub use super::ISystemCalculatorInstance_1;
+    pub use super::ISystemCalculatorInstance_1Methods;
+    pub use super::SystemCalculatorInstance_1;
+    pub use crate::app::calculatormanager::ICalculatorManager;
+    #[cfg(feature = "app-calculatormanager")]
+    pub use crate::app::calculatormanager::ICalculatorManagerMethods;
+    pub use crate::app::calculatorutil::ICalculatorUtil;
+    #[cfg(feature = "app-calculatorutil")]
+    pub use crate::app::calculatorutil::ICalculatorUtilMethods;
+    pub use crate::app::systemcalculator::ISystemCalculator;
+    #[cfg(feature = "app-systemcalculator")]
+    pub use crate::app::systemcalculator::ISystemCalculatorMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

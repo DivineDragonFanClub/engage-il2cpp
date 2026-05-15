@@ -52,3 +52,16 @@ impl<T0: ::unity2::ClassIdentity> TProfilingSampler_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
+pub mod prelude {
+    pub use super::ITProfilingSampler_1;
+    pub use super::ITProfilingSampler_1Methods;
+    pub use super::TProfilingSampler_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::profilingsampler::IProfilingSampler;
+    #[cfg(feature = "unity_engine-rendering-profilingsampler")]
+    pub use crate::unity_engine::rendering::profilingsampler::IProfilingSamplerMethods;
+}

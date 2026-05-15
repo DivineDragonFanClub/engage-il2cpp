@@ -30,13 +30,95 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-controllersupport")]
-#[::unity2::methods]
-impl ControllerSupport {
-    #[doc = "`SetExplainText(crate::nn::hid::controllersupportarg::ControllerSupportArg, ::unity2::Il2CppString, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "SetExplainText", args = 3)]
-    pub fn set_explain_text(
-        p_out_controller_support_arg: crate::nn::hid::controllersupportarg::ControllerSupportArg,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ControllerSupport_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_explain_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: controllersupportarg :: ControllerSupportArg as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ControllerSupport as ::unity2::ClassIdentity>::class(),
+                "SetExplainText",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ControllerSupport as ::unity2::ClassIdentity>::NAME,
+                    "SetExplainText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_explain_text(
+        p_out_controller_support_arg : * mut crate :: nn :: hid :: controllersupportarg :: ControllerSupportArg,
         p_str: ::unity2::Il2CppString,
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::controllersupportarg::ControllerSupportArg,
+            ::unity2::Il2CppString,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_explain_text::get_offset() as isize),
+        );
+        inner(
+            p_out_controller_support_arg,
+            p_str,
+            npad_id,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "nn-hid-controllersupport")]
+impl ControllerSupport {
+    #[doc = "`SetExplainText(*mutcrate::nn::hid::controllersupportarg::ControllerSupportArg, ::unity2::Il2CppString, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn set_explain_text(
+        p_str: impl ::core::convert::Into<::unity2::Il2CppString>,
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> crate::nn::hid::controllersupportarg::ControllerSupportArg {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::controllersupportarg::ControllerSupportArg,
+            >::uninit();
+            __ControllerSupport_unity2_raw::set_explain_text(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(p_str),
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "nn-hid-controllersupport")]
+pub mod prelude {
+    pub use super::ControllerSupport;
+    pub use super::IControllerSupport;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -46,9 +46,72 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scriptingutility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptingUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_managed_code_working {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptingUtility as ::unity2::ClassIdentity>::class(),
+                "IsManagedCodeWorking",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptingUtility as ::unity2::ClassIdentity>::NAME,
+                    "IsManagedCodeWorking",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_managed_code_working(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_managed_code_working::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-scriptingutility")]
 impl ScriptingUtility {
     #[doc = "`IsManagedCodeWorking()` overload"]
-    #[method(name = "IsManagedCodeWorking", args = 0)]
-    pub fn is_managed_code_working() -> bool;
+    pub fn is_managed_code_working() -> bool {
+        unsafe {
+            __ScriptingUtility_unity2_raw::is_managed_code_working(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scriptingutility")]
+pub mod prelude {
+    pub use super::IScriptingUtility;
+    pub use super::ScriptingUtility;
+    pub use super::ScriptingUtility_TestClass;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

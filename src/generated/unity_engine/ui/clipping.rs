@@ -17,14 +17,99 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-clipping")]
-#[::unity2::methods]
-impl Clipping {
-    #[doc = "`FindCullAndClipWorldRect(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>, bool)` overload"]
-    #[method(name = "FindCullAndClipWorldRect", args = 2)]
-    pub fn find_cull_and_clip_world_rect(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Clipping_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_cull_and_clip_world_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::ui::rectmask2d::RectMask2D,
+                > as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Clipping as ::unity2::ClassIdentity>::class(),
+                "FindCullAndClipWorldRect",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Clipping as ::unity2::ClassIdentity>::NAME,
+                    "FindCullAndClipWorldRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_cull_and_clip_world_rect(
         rect_mask_parents: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::ui::rectmask2d::RectMask2D,
         >,
-        valid_rect: bool,
-    ) -> crate::unity_engine::rect::Rect;
+        valid_rect: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::ui::rectmask2d::RectMask2D,
+            >,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_cull_and_clip_world_rect::get_offset() as isize),
+        );
+        inner(rect_mask_parents, valid_rect, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-clipping")]
+impl Clipping {
+    #[doc = "`FindCullAndClipWorldRect(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>, *mutbool)` overload"]
+    pub fn find_cull_and_clip_world_rect(
+        rect_mask_parents: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::ui::rectmask2d::RectMask2D,
+            >,
+        >,
+    ) -> (crate::unity_engine::rect::Rect, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __Clipping_unity2_raw::find_cull_and_clip_world_rect(
+                    ::core::convert::Into::into(rect_mask_parents),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-clipping")]
+pub mod prelude {
+    pub use super::Clipping;
+    pub use super::IClipping;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -38,30 +38,265 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-#[::unity2::methods]
-impl LegacyResourcesProvider_InternalOp {
-    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Start", args = 1)]
-    pub fn start(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LegacyResourcesProvider_InternalOp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "Start",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: LegacyResourcesProvider_InternalOp,
         provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`AsyncOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "AsyncOperationCompleted", args = 1)]
-    pub fn async_operation_completed(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (LegacyResourcesProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_start :: get_offset () as isize) ,) ;
+        inner(this, provide_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_async_operation_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "AsyncOperationCompleted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "AsyncOperationCompleted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn async_operation_completed(
+        this: LegacyResourcesProvider_InternalOp,
         op: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`PercentComplete()` overload"]
-    #[method(name = "PercentComplete", args = 0)]
-    pub fn percent_complete(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LegacyResourcesProvider_InternalOp,
+            crate::unity_engine::asyncoperation::AsyncOperation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_async_operation_completed::get_offset() as isize),
+        );
+        inner(this, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_percent_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "PercentComplete",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "PercentComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn percent_complete(
+        this: LegacyResourcesProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            LegacyResourcesProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_percent_complete::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LegacyResourcesProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LegacyResourcesProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+pub trait ILegacyResourcesProvider_InternalOpMethods: ILegacyResourcesProvider_InternalOp {
+    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn start(
+        self,
+        provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_InternalOp_unity2_raw::start(
+                __receiver,
+                ::core::convert::Into::into(provide_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AsyncOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    fn async_operation_completed(
+        self,
+        op: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_InternalOp_unity2_raw::async_operation_completed(
+                __receiver,
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PercentComplete()` overload"]
+    fn percent_complete(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_InternalOp_unity2_raw::percent_complete(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_InternalOp_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+impl<__T: ILegacyResourcesProvider_InternalOp> ILegacyResourcesProvider_InternalOpMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
 impl LegacyResourcesProvider_InternalOp {
@@ -80,27 +315,192 @@ impl LegacyResourcesProvider_InternalOp {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-#[::unity2::methods]
-impl LegacyResourcesProvider {
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LegacyResourcesProvider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_provide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider as ::unity2::ClassIdentity>::class(),
+                "Provide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider as ::unity2::ClassIdentity>::NAME,
+                    "Provide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn provide(
+        this: LegacyResourcesProvider,
         pi : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (LegacyResourcesProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide :: get_offset () as isize) ,) ;
+        inner(this, pi, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider as ::unity2::ClassIdentity>::class(),
+                "Release",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: LegacyResourcesProvider,
         location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
         asset: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (LegacyResourcesProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_release :: get_offset () as isize) ,) ;
+        inner(this, location, asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LegacyResourcesProvider as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LegacyResourcesProvider as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LegacyResourcesProvider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LegacyResourcesProvider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+pub trait ILegacyResourcesProviderMethods: ILegacyResourcesProvider {
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn provide(
+        self,
+        pi : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_unity2_raw::provide(
+                __receiver,
+                ::core::convert::Into::into(pi),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
+    fn release(
+        self,
+        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        asset: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_unity2_raw::release(
+                __receiver,
+                ::core::convert::Into::into(location),
+                ::core::convert::Into::into(asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <LegacyResourcesProvider as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LegacyResourcesProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+impl<__T: ILegacyResourcesProvider> ILegacyResourcesProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
 impl LegacyResourcesProvider {
@@ -116,4 +516,22 @@ impl LegacyResourcesProvider {
         <Self as ILegacyResourcesProviderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+pub mod prelude {
+    pub use super::ILegacyResourcesProvider;
+    pub use super::ILegacyResourcesProviderMethods;
+    pub use super::ILegacyResourcesProvider_InternalOp;
+    pub use super::ILegacyResourcesProvider_InternalOpMethods;
+    pub use super::LegacyResourcesProvider;
+    pub use super::LegacyResourcesProvider_InternalOp;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+    #[cfg(
+        feature = "unity_engine-resource_management-resource_providers-resourceproviderbase"
+    )]
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
 }

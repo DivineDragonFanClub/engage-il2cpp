@@ -21,3 +21,10 @@ impl<T0: ::unity2::ClassIdentity> IComparer_1_Interface<T0> {
     #[method(name = "Compare", args = 2)]
     pub fn compare(self, x: T0, y: T0) -> i32;
 }
+
+#[cfg(feature = "system-collections-generic-icomparer_1_interface")]
+pub mod prelude {
+    pub use super::IComparer_1_Interface;
+    pub use super::IIComparer_1_Interface;
+    pub use super::IIComparer_1_InterfaceMethods;
+}

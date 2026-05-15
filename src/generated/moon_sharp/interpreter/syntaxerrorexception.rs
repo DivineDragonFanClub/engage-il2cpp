@@ -20,83 +20,859 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-#[::unity2::methods]
-impl SyntaxErrorException {
-    #[doc = "`get_Token()` overload"]
-    #[method(name = "get_Token", args = 0)]
-    pub fn get_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`set_Token(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    #[method(name = "set_Token", args = 1)]
-    pub fn set_token(self, value: crate::moon_sharp::interpreter::tree::token::Token) -> ();
-
-    #[doc = "`get_ToLine()` overload"]
-    #[method(name = "get_ToLine", args = 0)]
-    pub fn get_to_line(self) -> i32;
-
-    #[doc = "`get_FromLine()` overload"]
-    #[method(name = "get_FromLine", args = 0)]
-    pub fn get_from_line(self) -> i32;
-
-    #[doc = "`get_IsPrematureStreamTermination()` overload"]
-    #[method(name = "get_IsPrematureStreamTermination", args = 0)]
-    pub fn get_is_premature_stream_termination(self) -> bool;
-
-    #[doc = "`set_IsPrematureStreamTermination(bool)` overload"]
-    #[method(name = "set_IsPrematureStreamTermination", args = 1)]
-    pub fn set_is_premature_stream_termination(self, value: bool) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SyntaxErrorException_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "get_Token",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "get_Token",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_token(
+        this: SyntaxErrorException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_token::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "set_Token",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "set_Token",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_token(
+        this: SyntaxErrorException,
+        value: crate::moon_sharp::interpreter::tree::token::Token,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_token::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_to_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "get_ToLine",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "get_ToLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_to_line(
+        this: SyntaxErrorException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SyntaxErrorException, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_to_line::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_from_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "get_FromLine",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "get_FromLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_from_line(
+        this: SyntaxErrorException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SyntaxErrorException, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_from_line::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_premature_stream_termination {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "get_IsPrematureStreamTermination",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "get_IsPrematureStreamTermination",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_premature_stream_termination(
+        this: SyntaxErrorException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SyntaxErrorException, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_premature_stream_termination::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_premature_stream_termination {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "set_IsPrematureStreamTermination",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "set_IsPrematureStreamTermination",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_premature_stream_termination(
+        this: SyntaxErrorException,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SyntaxErrorException, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_premature_stream_termination::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SyntaxErrorException,
         t: crate::moon_sharp::interpreter::tree::token::Token,
         format: ::unity2::Il2CppString,
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, t, format, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: SyntaxErrorException,
         t: crate::moon_sharp::interpreter::tree::token::Token,
         message: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, t, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: SyntaxErrorException,
         script: crate::moon_sharp::interpreter::script::Script,
         sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         format: ::unity2::Il2CppString,
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, script, sref, format, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: SyntaxErrorException,
         script: crate::moon_sharp::interpreter::script::Script,
         sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         message: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(this, script, sref, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_5(
+        this: SyntaxErrorException,
         syntax_error_exception : crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException,
-    ) -> ();
-
-    #[doc = "`DecorateMessage(crate::moon_sharp::interpreter::script::Script)` overload"]
-    #[method(name = "DecorateMessage", args = 1)]
-    pub fn decorate_message(self, script: crate::moon_sharp::interpreter::script::Script) -> ();
-
-    #[doc = "`Rethrow()` overload"]
-    #[method(name = "Rethrow", args = 0)]
-    pub fn rethrow(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_5::get_offset() as isize),
+        );
+        inner(this, syntax_error_exception, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decorate_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "DecorateMessage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "DecorateMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decorate_message(
+        this: SyntaxErrorException,
+        script: crate::moon_sharp::interpreter::script::Script,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SyntaxErrorException,
+            crate::moon_sharp::interpreter::script::Script,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decorate_message::get_offset() as isize),
+        );
+        inner(this, script, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rethrow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SyntaxErrorException as ::unity2::ClassIdentity>::class(),
+                "Rethrow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SyntaxErrorException as ::unity2::ClassIdentity>::NAME,
+                    "Rethrow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rethrow(
+        this: SyntaxErrorException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SyntaxErrorException, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rethrow::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+pub trait ISyntaxErrorExceptionMethods: ISyntaxErrorException {
+    #[doc = "`get_Token()` overload"]
+    fn get_token(self) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::get_token(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Token(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
+    fn set_token(
+        self,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::set_token(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ToLine()` overload"]
+    fn get_to_line(self) -> i32 {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::get_to_line(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_FromLine()` overload"]
+    fn get_from_line(self) -> i32 {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::get_from_line(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsPrematureStreamTermination()` overload"]
+    fn get_is_premature_stream_termination(self) -> bool {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::get_is_premature_stream_termination(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsPrematureStreamTermination(bool)` overload"]
+    fn set_is_premature_stream_termination(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::set_is_premature_stream_termination(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    fn ctor(
+        self,
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"]
+    fn ctor_2(
+        self,
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    fn ctor_3(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        sref: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(sref),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` overload"]
+    fn ctor_4(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        sref: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(sref),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` overload"]
+    fn ctor_5(
+        self,
+        syntax_error_exception: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::ctor_5(
+                __receiver,
+                ::core::convert::Into::into(syntax_error_exception),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecorateMessage(crate::moon_sharp::interpreter::script::Script)` overload"]
+    fn decorate_message(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::decorate_message(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rethrow()` overload"]
+    fn rethrow(self) -> () {
+        unsafe {
+            let __receiver = <SyntaxErrorException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SyntaxErrorException_unity2_raw::rethrow(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+impl<__T: ISyntaxErrorException> ISyntaxErrorExceptionMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
 impl SyntaxErrorException {
@@ -182,4 +958,18 @@ impl SyntaxErrorException {
         <Self as ISyntaxErrorExceptionMethods>::ctor_5(this, syntax_error_exception);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+pub mod prelude {
+    pub use super::ISyntaxErrorException;
+    pub use super::ISyntaxErrorExceptionMethods;
+    pub use super::SyntaxErrorException;
+    pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterException;
+    #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
+    pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterExceptionMethods;
+    pub use crate::moon_sharp::interpreter::interpreterexception::InterpreterException;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

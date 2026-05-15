@@ -90,27 +90,283 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
-#[::unity2::methods]
-impl SerializationUtilities {
-    #[doc = "`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"]
-    #[method(name = "ReadInt32FromByteArray", args = 2)]
-    pub fn read_int32_from_byte_array(data: ::unity2::Array<u8>, offset: i32) -> i32;
-
-    #[doc = "`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
-    #[method(name = "WriteInt32ToByteArray", args = 3)]
-    pub fn write_int32_to_byte_array(data: ::unity2::Array<u8>, val: i32, offset: i32) -> i32;
-
-    #[doc = "`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"]
-    #[method(name = "ReadObjectFromByteArray", args = 2)]
-    pub fn read_object_from_byte_array(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SerializationUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_int32_from_byte_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SerializationUtilities as ::unity2::ClassIdentity>::class(),
+                "ReadInt32FromByteArray",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SerializationUtilities as ::unity2::ClassIdentity>::NAME,
+                    "ReadInt32FromByteArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_int32_from_byte_array(
+        data: ::unity2::Array<u8>,
+        offset: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::Array<u8>, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_read_int32_from_byte_array::get_offset() as isize),
+            );
+        inner(data, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_int32_to_byte_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SerializationUtilities as ::unity2::ClassIdentity>::class(),
+                "WriteInt32ToByteArray",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SerializationUtilities as ::unity2::ClassIdentity>::NAME,
+                    "WriteInt32ToByteArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_int32_to_byte_array(
+        data: ::unity2::Array<u8>,
+        val: i32,
+        offset: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_write_int32_to_byte_array::get_offset() as isize),
+            );
+        inner(data, val, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_object_from_byte_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SerializationUtilities as ::unity2::ClassIdentity>::class(),
+                "ReadObjectFromByteArray",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SerializationUtilities as ::unity2::ClassIdentity>::NAME,
+                    "ReadObjectFromByteArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_object_from_byte_array(
         key_data: ::unity2::Array<u8>,
         data_index: i32,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"]
-    #[method(name = "WriteObjectToByteList", args = 2)]
-    pub fn write_object_to_byte_list(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_object_from_byte_array::get_offset() as isize),
+        );
+        inner(key_data, data_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_object_to_byte_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SerializationUtilities as ::unity2::ClassIdentity>::class(),
+                "WriteObjectToByteList",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SerializationUtilities as ::unity2::ClassIdentity>::NAME,
+                    "WriteObjectToByteList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_object_to_byte_list(
         obj: crate::system::object::Object,
         buffer: crate::system::collections::generic::list_1::List_1<u8>,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            crate::system::collections::generic::list_1::List_1<u8>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_object_to_byte_list::get_offset() as isize),
+        );
+        inner(obj, buffer, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
+impl SerializationUtilities {
+    #[doc = "`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"]
+    pub fn read_int32_from_byte_array(
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __SerializationUtilities_unity2_raw::read_int32_from_byte_array(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
+    pub fn write_int32_to_byte_array(
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        val: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __SerializationUtilities_unity2_raw::write_int32_to_byte_array(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(val),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"]
+    pub fn read_object_from_byte_array(
+        key_data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        data_index: impl ::core::convert::Into<i32>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            __SerializationUtilities_unity2_raw::read_object_from_byte_array(
+                ::core::convert::Into::into(key_data),
+                ::core::convert::Into::into(data_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"]
+    pub fn write_object_to_byte_list(
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        buffer: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8>>,
+    ) -> i32 {
+        unsafe {
+            __SerializationUtilities_unity2_raw::write_object_to_byte_list(
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(buffer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
+pub mod prelude {
+    pub use super::ISerializationUtilities;
+    pub use super::SerializationUtilities;
+    pub use super::SerializationUtilities_ObjectType;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

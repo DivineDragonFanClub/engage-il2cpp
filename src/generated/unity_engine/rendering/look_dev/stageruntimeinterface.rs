@@ -30,32 +30,287 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
-#[::unity2::methods]
-impl StageRuntimeInterface {
-    #[doc = "`.ctor(crate::system::func_2::Func_2<bool,crate::unity_engine::gameobject::GameObject>, crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>, crate::system::func_1::Func_1<crate::unity_engine::light::Light>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StageRuntimeInterface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: func_2 :: Func_2 < bool , crate :: unity_engine :: gameobject :: GameObject > as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: light :: Light > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StageRuntimeInterface as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StageRuntimeInterface as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: StageRuntimeInterface,
         add_game_object: crate::system::func_2::Func_2<
             bool,
             crate::unity_engine::gameobject::GameObject,
         >,
         get_camera: crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
         get_sun_light: crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
-    ) -> ();
-
-    #[doc = "`AddGameObject(bool)` overload"]
-    #[method(name = "AddGameObject", args = 1)]
-    pub fn add_game_object(self, persistent: bool) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_camera()` overload"]
-    #[method(name = "get_camera", args = 0)]
-    pub fn get_camera(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`get_sunLight()` overload"]
-    #[method(name = "get_sunLight", args = 0)]
-    pub fn get_sun_light(self) -> crate::unity_engine::light::Light;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StageRuntimeInterface,
+            crate::system::func_2::Func_2<bool, crate::unity_engine::gameobject::GameObject>,
+            crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
+            crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            add_game_object,
+            get_camera,
+            get_sun_light,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StageRuntimeInterface as ::unity2::ClassIdentity>::class(),
+                "AddGameObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StageRuntimeInterface as ::unity2::ClassIdentity>::NAME,
+                    "AddGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_game_object(
+        this: StageRuntimeInterface,
+        persistent: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            StageRuntimeInterface,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_game_object::get_offset() as isize),
+        );
+        inner(this, persistent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StageRuntimeInterface as ::unity2::ClassIdentity>::class(),
+                "get_camera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StageRuntimeInterface as ::unity2::ClassIdentity>::NAME,
+                    "get_camera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_camera(
+        this: StageRuntimeInterface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            StageRuntimeInterface,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sun_light {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StageRuntimeInterface as ::unity2::ClassIdentity>::class(),
+                "get_sunLight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StageRuntimeInterface as ::unity2::ClassIdentity>::NAME,
+                    "get_sunLight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sun_light(
+        this: StageRuntimeInterface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::light::Light {
+        let inner: extern "C" fn(
+            StageRuntimeInterface,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::light::Light = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sun_light::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+pub trait IStageRuntimeInterfaceMethods: IStageRuntimeInterface {
+    #[doc = "`.ctor(crate::system::func_2::Func_2<bool,crate::unity_engine::gameobject::GameObject>, crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>, crate::system::func_1::Func_1<crate::unity_engine::light::Light>)` overload"]
+    fn ctor(
+        self,
+        add_game_object: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<bool, crate::unity_engine::gameobject::GameObject>,
+        >,
+        get_camera: impl ::core::convert::Into<
+            crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
+        >,
+        get_sun_light: impl ::core::convert::Into<
+            crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StageRuntimeInterface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StageRuntimeInterface_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(add_game_object),
+                ::core::convert::Into::into(get_camera),
+                ::core::convert::Into::into(get_sun_light),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGameObject(bool)` overload"]
+    fn add_game_object(
+        self,
+        persistent: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <StageRuntimeInterface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StageRuntimeInterface_unity2_raw::add_game_object(
+                __receiver,
+                ::core::convert::Into::into(persistent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_camera()` overload"]
+    fn get_camera(self) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <StageRuntimeInterface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StageRuntimeInterface_unity2_raw::get_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_sunLight()` overload"]
+    fn get_sun_light(self) -> crate::unity_engine::light::Light {
+        unsafe {
+            let __receiver = <StageRuntimeInterface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StageRuntimeInterface_unity2_raw::get_sun_light(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+impl<__T: IStageRuntimeInterface> IStageRuntimeInterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
 impl StageRuntimeInterface {
@@ -83,4 +338,14 @@ impl StageRuntimeInterface {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+pub mod prelude {
+    pub use super::IStageRuntimeInterface;
+    pub use super::IStageRuntimeInterfaceMethods;
+    pub use super::StageRuntimeInterface;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

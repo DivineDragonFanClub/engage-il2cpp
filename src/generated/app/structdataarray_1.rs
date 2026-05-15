@@ -141,3 +141,19 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-structdataarray_1")]
+pub mod prelude {
+    pub use super::IStructDataArray_1;
+    pub use super::IStructDataArray_1Methods;
+    pub use super::StructDataArray_1;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

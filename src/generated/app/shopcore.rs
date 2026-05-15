@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopCore")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopCore {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopcore/ShopCore_Result.md"))]
     #[repr(C)]
     #[derive(
@@ -60,190 +65,1911 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopCore")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopCore {}
 }
 
 #[cfg(feature = "app-shopcore-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-shopcore")]
-#[::unity2::methods]
-impl ShopCore {
-    #[doc = "`BuyOnWeaponShop(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "BuyOnWeaponShop", args = 2)]
-    pub fn buy_on_weapon_shop(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShopCore_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_buy_on_weapon_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "BuyOnWeaponShop",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "BuyOnWeaponShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn buy_on_weapon_shop(
         unit: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> bool;
-
-    #[doc = "`BuyOnItemShop(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "BuyOnItemShop", args = 2)]
-    pub fn buy_on_item_shop(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_buy_on_weapon_shop::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_buy_on_item_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "BuyOnItemShop",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "BuyOnItemShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn buy_on_item_shop(
         unit: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> bool;
-
-    #[doc = "`BuyOnFleaMarket(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "BuyOnFleaMarket", args = 2)]
-    pub fn buy_on_flea_market(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_buy_on_item_shop::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_buy_on_flea_market {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "BuyOnFleaMarket",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "BuyOnFleaMarket",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn buy_on_flea_market(
         unit: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> bool;
-
-    #[doc = "`BuyOnAccessoryShop(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "BuyOnAccessoryShop", args = 1)]
-    pub fn buy_on_accessory_shop(accessory_data: crate::app::accessorydata::AccessoryData) -> ();
-
-    #[doc = "`Sell(crate::app::unit::Unit, i32, bool)` overload"]
-    #[method(name = "Sell", args = 3)]
-    pub fn sell(unit: crate::app::unit::Unit, item_index: i32, closeup: bool) -> ();
-
-    #[doc = "`Refine(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "Refine", args = 3)]
-    pub fn refine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_buy_on_flea_market::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_buy_on_accessory_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "BuyOnAccessoryShop",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "BuyOnAccessoryShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn buy_on_accessory_shop(
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::accessorydata::AccessoryData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_buy_on_accessory_shop::get_offset() as isize),
+        );
+        inner(accessory_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "Sell",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "Sell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sell(
+        unit: crate::app::unit::Unit,
+        item_index: i32,
+        closeup: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sell::get_offset() as isize),
+        );
+        inner(unit, item_index, closeup, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "Refine",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "Refine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn refine(
         unit: crate::app::unit::Unit,
         item_index: i32,
         refine_level: i32,
-    ) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`GetNeededIronToRefine(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = "GetNeededIronToRefine", args = 2)]
-    pub fn get_needed_iron_to_refine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_refine::get_offset() as isize),
+        );
+        inner(unit, item_index, refine_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_needed_iron_to_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetNeededIronToRefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetNeededIronToRefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_needed_iron_to_refine(
         unit_item: crate::app::unititem::UnitItem,
         new_refine_level: i32,
-    ) -> i32;
-
-    #[doc = "`GetNeededSteelToRefine(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = "GetNeededSteelToRefine", args = 2)]
-    pub fn get_needed_steel_to_refine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_needed_iron_to_refine::get_offset() as isize),
+        );
+        inner(unit_item, new_refine_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_needed_steel_to_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetNeededSteelToRefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetNeededSteelToRefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_needed_steel_to_refine(
         unit_item: crate::app::unititem::UnitItem,
         new_refine_level: i32,
-    ) -> i32;
-
-    #[doc = "`GetNeededSilverToRefine(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = "GetNeededSilverToRefine", args = 2)]
-    pub fn get_needed_silver_to_refine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_needed_steel_to_refine::get_offset() as isize),
+        );
+        inner(unit_item, new_refine_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_needed_silver_to_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetNeededSilverToRefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetNeededSilverToRefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_needed_silver_to_refine(
         unit_item: crate::app::unititem::UnitItem,
         new_refine_level: i32,
-    ) -> i32;
-
-    #[doc = "`GetNeededMoneyToRefine(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = "GetNeededMoneyToRefine", args = 2)]
-    pub fn get_needed_money_to_refine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_needed_silver_to_refine::get_offset() as isize),
+        );
+        inner(unit_item, new_refine_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_needed_money_to_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetNeededMoneyToRefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetNeededMoneyToRefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_needed_money_to_refine(
         unit_item: crate::app::unititem::UnitItem,
         new_refine_level: i32,
-    ) -> i32;
-
-    #[doc = "`Evolve(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "Evolve", args = 3)]
-    pub fn evolve(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_needed_money_to_refine::get_offset() as isize),
+        );
+        inner(unit_item, new_refine_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evolve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "Evolve",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "Evolve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evolve(
         unit: crate::app::unit::Unit,
         item_index: i32,
         evolve_data_index: i32,
-    ) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`Engrave(crate::app::unit::Unit, i32, crate::app::goddata::GodData)` overload"]
-    #[method(name = "Engrave", args = 3)]
-    pub fn engrave(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evolve::get_offset() as isize),
+        );
+        inner(unit, item_index, evolve_data_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_engrave {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "Engrave",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "Engrave",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn engrave(
         unit: crate::app::unit::Unit,
         item_index: i32,
         god_data: crate::app::goddata::GodData,
-    ) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`GetEngraveCost(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "GetEngraveCost", args = 1)]
-    pub fn get_engrave_cost(item_data: crate::app::itemdata::ItemData) -> i32;
-
-    #[doc = "`Exchange(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32)` overload"]
-    #[method(name = "Exchange", args = 3)]
-    pub fn exchange(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_engrave::get_offset() as isize),
+        );
+        inner(unit, item_index, god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_engrave_cost {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetEngraveCost",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetEngraveCost",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_engrave_cost(
+        item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_engrave_cost::get_offset() as isize),
+            );
+        inner(item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exchange {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "Exchange",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "Exchange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exchange(
         source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
         target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
         source_material_count: i32,
-    ) -> i32;
-
-    #[doc = "`GetUnitItemEmptyCount(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetUnitItemEmptyCount", args = 1)]
-    pub fn get_unit_item_empty_count(unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`GetUnitItem(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "GetUnitItem", args = 2)]
-    pub fn get_unit_item(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_exchange::get_offset() as isize),
+        );
+        inner(
+            source_material_data,
+            target_material_data,
+            source_material_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_item_empty_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetUnitItemEmptyCount",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetUnitItemEmptyCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit_item_empty_count(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_unit_item_empty_count::get_offset() as isize),
+            );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetUnitItem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit_item(
         unit: crate::app::unit::Unit,
         item_index: i32,
-    ) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`IsPriceDown()` overload"]
-    #[method(name = "IsPriceDown", args = 0)]
-    pub fn is_price_down() -> bool;
-
-    #[doc = "`GetPrice(crate::app::itemdata::ItemData, bool)` overload"]
-    #[method(name = "GetPrice", args = 2)]
-    pub fn get_price(item_data: crate::app::itemdata::ItemData, is_discountable_shop: bool) -> i32;
-
-    #[doc = "`CanAdd(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "CanAdd", args = 2)]
-    pub fn can_add(unit: crate::app::unit::Unit, item_data: crate::app::itemdata::ItemData)
-        -> bool;
-
-    #[doc = "`CalcAdd(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "CalcAdd", args = 2)]
-    pub fn calc_add(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unit_item::get_offset() as isize),
+        );
+        inner(unit, item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_price_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "IsPriceDown",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "IsPriceDown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_price_down(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_price_down::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_price {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetPrice",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetPrice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_price(
+        item_data: crate::app::itemdata::ItemData,
+        is_discountable_shop: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_price::get_offset() as isize),
+        );
+        inner(item_data, is_discountable_shop, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "CanAdd",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "CanAdd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_add(
         unit: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> crate::app::shopcore::ShopCore_Result;
-
-    #[doc = "`IsInventoryMax(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "IsInventoryMax", args = 1)]
-    pub fn is_inventory_max(item_data: crate::app::itemdata::ItemData) -> bool;
-
-    #[doc = "`AddItem(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "AddItem", args = 2)]
-    pub fn add_item(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_add::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "CalcAdd",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "CalcAdd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_add(
         unit: crate::app::unit::Unit,
         item_data: crate::app::itemdata::ItemData,
-    ) -> crate::app::shopcore::ShopCore_Result;
-
-    #[doc = "`GetRefineMaterialCount(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
-    #[method(name = "GetRefineMaterialCount", args = 1)]
-    pub fn get_refine_material_count(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::shopcore::ShopCore_Result {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::shopcore::ShopCore_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_add::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_inventory_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "IsInventoryMax",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "IsInventoryMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_inventory_max(
+        item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_inventory_max::get_offset() as isize),
+            );
+        inner(item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "AddItem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "AddItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_item(
+        unit: crate::app::unit::Unit,
+        item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::shopcore::ShopCore_Result {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::shopcore::ShopCore_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_item::get_offset() as isize),
+        );
+        inner(unit, item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_refine_material_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetRefineMaterialCount",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetRefineMaterialCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_refine_material_count(
         material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-    ) -> i32;
-
-    #[doc = "`GetRefineMaterialMax(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
-    #[method(name = "GetRefineMaterialMax", args = 1)]
-    pub fn get_refine_material_max(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_refine_material_count::get_offset() as isize),
+        );
+        inner(material_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_refine_material_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetRefineMaterialMax",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetRefineMaterialMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_refine_material_max(
         material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-    ) -> i32;
-
-    #[doc = "`AddAchievementOnBuy(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = "AddAchievementOnBuy", args = 2)]
-    pub fn add_achievement_on_buy(item_data: crate::app::itemdata::ItemData, count: i32) -> ();
-
-    #[doc = "`AddAchievementOnSell(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = "AddAchievementOnSell", args = 2)]
-    pub fn add_achievement_on_sell(item_data: crate::app::itemdata::ItemData, count: i32) -> ();
-
-    #[doc = "`AddAchievementOnRefine(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = "AddAchievementOnRefine", args = 2)]
-    pub fn add_achievement_on_refine(item_data: crate::app::itemdata::ItemData, count: i32) -> ();
-
-    #[doc = "`AddAchievementOnBuyAccessory()` overload"]
-    #[method(name = "AddAchievementOnBuyAccessory", args = 0)]
-    pub fn add_achievement_on_buy_accessory() -> ();
-
-    #[doc = "`GetUnknownName(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "GetUnknownName", args = 1)]
-    pub fn get_unknown_name(unititem: crate::app::unititem::UnitItem) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_refine_material_max::get_offset() as isize),
+        );
+        inner(material_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_achievement_on_buy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "AddAchievementOnBuy",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "AddAchievementOnBuy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_achievement_on_buy(
+        item_data: crate::app::itemdata::ItemData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_achievement_on_buy::get_offset() as isize),
+        );
+        inner(item_data, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_achievement_on_sell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "AddAchievementOnSell",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "AddAchievementOnSell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_achievement_on_sell(
+        item_data: crate::app::itemdata::ItemData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_achievement_on_sell::get_offset() as isize),
+        );
+        inner(item_data, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_achievement_on_refine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "AddAchievementOnRefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "AddAchievementOnRefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_achievement_on_refine(
+        item_data: crate::app::itemdata::ItemData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::itemdata::ItemData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_achievement_on_refine::get_offset() as isize),
+        );
+        inner(item_data, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_achievement_on_buy_accessory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "AddAchievementOnBuyAccessory",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "AddAchievementOnBuyAccessory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_achievement_on_buy_accessory(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_achievement_on_buy_accessory::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unknown_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                "GetUnknownName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    "GetUnknownName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unknown_name(
+        unititem: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unknown_name::get_offset() as isize),
+        );
+        inner(unititem, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopCore as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopCore as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: ShopCore, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ShopCore, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-shopcore")]
+impl ShopCore {
+    #[doc = "`BuyOnWeaponShop(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn buy_on_weapon_shop(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __ShopCore_unity2_raw::buy_on_weapon_shop(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuyOnItemShop(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn buy_on_item_shop(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __ShopCore_unity2_raw::buy_on_item_shop(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuyOnFleaMarket(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn buy_on_flea_market(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __ShopCore_unity2_raw::buy_on_flea_market(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuyOnAccessoryShop(crate::app::accessorydata::AccessoryData)` overload"]
+    pub fn buy_on_accessory_shop(
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+    ) -> () {
+        unsafe {
+            __ShopCore_unity2_raw::buy_on_accessory_shop(
+                ::core::convert::Into::into(accessory_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Sell(crate::app::unit::Unit, i32, bool)` overload"]
+    pub fn sell(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_index: impl ::core::convert::Into<i32>,
+        closeup: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __ShopCore_unity2_raw::sell(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(closeup),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Refine(crate::app::unit::Unit, i32, i32)` overload"]
+    pub fn refine(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_index: impl ::core::convert::Into<i32>,
+        refine_level: impl ::core::convert::Into<i32>,
+    ) -> crate::app::unititem::UnitItem {
+        unsafe {
+            __ShopCore_unity2_raw::refine(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(refine_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNeededIronToRefine(crate::app::unititem::UnitItem, i32)` overload"]
+    pub fn get_needed_iron_to_refine(
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        new_refine_level: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_needed_iron_to_refine(
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(new_refine_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNeededSteelToRefine(crate::app::unititem::UnitItem, i32)` overload"]
+    pub fn get_needed_steel_to_refine(
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        new_refine_level: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_needed_steel_to_refine(
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(new_refine_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNeededSilverToRefine(crate::app::unititem::UnitItem, i32)` overload"]
+    pub fn get_needed_silver_to_refine(
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        new_refine_level: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_needed_silver_to_refine(
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(new_refine_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNeededMoneyToRefine(crate::app::unititem::UnitItem, i32)` overload"]
+    pub fn get_needed_money_to_refine(
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        new_refine_level: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_needed_money_to_refine(
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(new_refine_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Evolve(crate::app::unit::Unit, i32, i32)` overload"]
+    pub fn evolve(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_index: impl ::core::convert::Into<i32>,
+        evolve_data_index: impl ::core::convert::Into<i32>,
+    ) -> crate::app::unititem::UnitItem {
+        unsafe {
+            __ShopCore_unity2_raw::evolve(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(evolve_data_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Engrave(crate::app::unit::Unit, i32, crate::app::goddata::GodData)` overload"]
+    pub fn engrave(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_index: impl ::core::convert::Into<i32>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> crate::app::unititem::UnitItem {
+        unsafe {
+            __ShopCore_unity2_raw::engrave(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(god_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEngraveCost(crate::app::itemdata::ItemData)` overload"]
+    pub fn get_engrave_cost(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_engrave_cost(
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Exchange(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::itemrefineexchangedata::ItemRefineExchangeData, i32)` overload"]
+    pub fn exchange(
+        source_material_data: impl ::core::convert::Into<
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        >,
+        target_material_data: impl ::core::convert::Into<
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        >,
+        source_material_count: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::exchange(
+                ::core::convert::Into::into(source_material_data),
+                ::core::convert::Into::into(target_material_data),
+                ::core::convert::Into::into(source_material_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUnitItemEmptyCount(crate::app::unit::Unit)` overload"]
+    pub fn get_unit_item_empty_count(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_unit_item_empty_count(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUnitItem(crate::app::unit::Unit, i32)` overload"]
+    pub fn get_unit_item(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_index: impl ::core::convert::Into<i32>,
+    ) -> crate::app::unititem::UnitItem {
+        unsafe {
+            __ShopCore_unity2_raw::get_unit_item(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPriceDown()` overload"]
+    pub fn is_price_down() -> bool {
+        unsafe { __ShopCore_unity2_raw::is_price_down(::core::option::Option::None) }
+    }
+    #[doc = "`GetPrice(crate::app::itemdata::ItemData, bool)` overload"]
+    pub fn get_price(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        is_discountable_shop: impl ::core::convert::Into<bool>,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_price(
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(is_discountable_shop),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanAdd(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn can_add(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __ShopCore_unity2_raw::can_add(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAdd(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn calc_add(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> crate::app::shopcore::ShopCore_Result {
+        unsafe {
+            __ShopCore_unity2_raw::calc_add(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsInventoryMax(crate::app::itemdata::ItemData)` overload"]
+    pub fn is_inventory_max(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __ShopCore_unity2_raw::is_inventory_max(
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddItem(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn add_item(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> crate::app::shopcore::ShopCore_Result {
+        unsafe {
+            __ShopCore_unity2_raw::add_item(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRefineMaterialCount(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
+    pub fn get_refine_material_count(
+        material_data: impl ::core::convert::Into<
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        >,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_refine_material_count(
+                ::core::convert::Into::into(material_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRefineMaterialMax(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
+    pub fn get_refine_material_max(
+        material_data: impl ::core::convert::Into<
+            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        >,
+    ) -> i32 {
+        unsafe {
+            __ShopCore_unity2_raw::get_refine_material_max(
+                ::core::convert::Into::into(material_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddAchievementOnBuy(crate::app::itemdata::ItemData, i32)` overload"]
+    pub fn add_achievement_on_buy(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __ShopCore_unity2_raw::add_achievement_on_buy(
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddAchievementOnSell(crate::app::itemdata::ItemData, i32)` overload"]
+    pub fn add_achievement_on_sell(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __ShopCore_unity2_raw::add_achievement_on_sell(
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddAchievementOnRefine(crate::app::itemdata::ItemData, i32)` overload"]
+    pub fn add_achievement_on_refine(
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __ShopCore_unity2_raw::add_achievement_on_refine(
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddAchievementOnBuyAccessory()` overload"]
+    pub fn add_achievement_on_buy_accessory() -> () {
+        unsafe {
+            __ShopCore_unity2_raw::add_achievement_on_buy_accessory(::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnknownName(crate::app::unititem::UnitItem)` overload"]
+    pub fn get_unknown_name(
+        unititem: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __ShopCore_unity2_raw::get_unknown_name(
+                ::core::convert::Into::into(unititem),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-shopcore")]
+pub trait IShopCoreMethods: IShopCore {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ShopCore as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ShopCore_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-shopcore")]
+impl<__T: IShopCore> IShopCoreMethods for __T {}
 
 #[cfg(feature = "app-shopcore")]
 impl ShopCore {
@@ -259,4 +1985,21 @@ impl ShopCore {
         <Self as IShopCoreMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-shopcore")]
+pub mod prelude {
+    pub use super::IShopCore;
+    pub use super::IShopCoreMethods;
+    pub use super::ShopCore;
+    pub use super::ShopCore_Result;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

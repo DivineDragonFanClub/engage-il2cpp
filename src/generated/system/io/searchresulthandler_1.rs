@@ -47,3 +47,13 @@ impl<T0: ::unity2::ClassIdentity> SearchResultHandler_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-io-searchresulthandler_1")]
+pub mod prelude {
+    pub use super::ISearchResultHandler_1;
+    pub use super::ISearchResultHandler_1Methods;
+    pub use super::SearchResultHandler_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

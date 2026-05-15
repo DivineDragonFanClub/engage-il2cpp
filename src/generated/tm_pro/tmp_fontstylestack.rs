@@ -50,17 +50,198 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_FontStyleStack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: TMP_FontStyleStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontStyleStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: TMP_FontStyleStack,
+        style: crate::tm_pro::fontstyles::FontStyles,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u8 {
+        let inner: extern "C" fn(
+            TMP_FontStyleStack,
+            crate::tm_pro::fontstyles::FontStyles,
+            ::unity2::OptionalMethod,
+        ) -> u8 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontStyleStack as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontStyleStack as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: TMP_FontStyleStack,
+        style: crate::tm_pro::fontstyles::FontStyles,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u8 {
+        let inner: extern "C" fn(
+            TMP_FontStyleStack,
+            crate::tm_pro::fontstyles::FontStyles,
+            ::unity2::OptionalMethod,
+        ) -> u8 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, style, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontstylestack")]
 impl TMP_FontStyleStack {
     #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
+    pub fn clear(self) -> () {
+        unsafe { __TMP_FontStyleStack_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
     #[doc = "`Add(crate::tm_pro::fontstyles::FontStyles)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, style: crate::tm_pro::fontstyles::FontStyles) -> u8;
-
+    pub fn add(
+        self,
+        style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+    ) -> u8 {
+        unsafe {
+            __TMP_FontStyleStack_unity2_raw::add(
+                self,
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Remove(crate::tm_pro::fontstyles::FontStyles)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, style: crate::tm_pro::fontstyles::FontStyles) -> u8;
+    pub fn remove(
+        self,
+        style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+    ) -> u8 {
+        unsafe {
+            __TMP_FontStyleStack_unity2_raw::remove(
+                self,
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontstylestack")]
+pub mod prelude {
+    pub use super::TMP_FontStyleStack;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

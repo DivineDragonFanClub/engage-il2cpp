@@ -17,29 +17,259 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-cameradataset")]
-#[::unity2::methods]
-impl CameraDataSet {
-    #[doc = "`get_Record()` overload"]
-    #[method(name = "get_Record", args = 0)]
-    pub fn get_record(self) -> crate::combat::combatrecord::CombatRecord;
-
-    #[doc = "`get_Switch()` overload"]
-    #[method(name = "get_Switch", args = 0)]
-    pub fn get_switch(self) -> crate::combat::cameraswitch::CameraSwitch;
-
-    #[doc = "`get_PosData()` overload"]
-    #[method(name = "get_PosData", args = 0)]
-    pub fn get_pos_data(self) -> crate::combat::camerapositiondata::CameraPositionData;
-
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraDataSet_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraDataSet as ::unity2::ClassIdentity>::class(),
+                "get_Record",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraDataSet as ::unity2::ClassIdentity>::NAME,
+                    "get_Record",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_record(
+        this: CameraDataSet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::combatrecord::CombatRecord {
+        let inner: extern "C" fn(
+            CameraDataSet,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::combatrecord::CombatRecord = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_record::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_switch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraDataSet as ::unity2::ClassIdentity>::class(),
+                "get_Switch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraDataSet as ::unity2::ClassIdentity>::NAME,
+                    "get_Switch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_switch(
+        this: CameraDataSet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::cameraswitch::CameraSwitch {
+        let inner: extern "C" fn(
+            CameraDataSet,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::cameraswitch::CameraSwitch = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_switch::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pos_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraDataSet as ::unity2::ClassIdentity>::class(),
+                "get_PosData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraDataSet as ::unity2::ClassIdentity>::NAME,
+                    "get_PosData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pos_data(
+        this: CameraDataSet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::camerapositiondata::CameraPositionData {
+        let inner: extern "C" fn(
+            CameraDataSet,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::camerapositiondata::CameraPositionData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pos_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatrecord :: CombatRecord as :: unity2 :: IlType > :: il_type () , < crate :: combat :: cameraswitch :: CameraSwitch as :: unity2 :: IlType > :: il_type () , < crate :: combat :: camerapositiondata :: CameraPositionData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraDataSet as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraDataSet as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CameraDataSet,
         record: crate::combat::combatrecord::CombatRecord,
         swt: crate::combat::cameraswitch::CameraSwitch,
         pos_data: crate::combat::camerapositiondata::CameraPositionData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraDataSet,
+            crate::combat::combatrecord::CombatRecord,
+            crate::combat::cameraswitch::CameraSwitch,
+            crate::combat::camerapositiondata::CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, record, swt, pos_data, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-situation_converter-cameradataset")]
+pub trait ICameraDataSetMethods: ICameraDataSet {
+    #[doc = "`get_Record()` overload"]
+    fn get_record(self) -> crate::combat::combatrecord::CombatRecord {
+        unsafe {
+            let __receiver = <CameraDataSet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraDataSet_unity2_raw::get_record(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Switch()` overload"]
+    fn get_switch(self) -> crate::combat::cameraswitch::CameraSwitch {
+        unsafe {
+            let __receiver = <CameraDataSet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraDataSet_unity2_raw::get_switch(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_PosData()` overload"]
+    fn get_pos_data(self) -> crate::combat::camerapositiondata::CameraPositionData {
+        unsafe {
+            let __receiver = <CameraDataSet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraDataSet_unity2_raw::get_pos_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` overload"]
+    fn ctor(
+        self,
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+        swt: impl ::core::convert::Into<crate::combat::cameraswitch::CameraSwitch>,
+        pos_data: impl ::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraDataSet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraDataSet_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(record),
+                ::core::convert::Into::into(swt),
+                ::core::convert::Into::into(pos_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-cameradataset")]
+impl<__T: ICameraDataSet> ICameraDataSetMethods for __T {}
 
 #[cfg(feature = "combat-situation_converter-cameradataset")]
 impl CameraDataSet {
@@ -59,4 +289,14 @@ impl CameraDataSet {
         <Self as ICameraDataSetMethods>::ctor(this, record, swt, pos_data);
         this
     }
+}
+
+#[cfg(feature = "combat-situation_converter-cameradataset")]
+pub mod prelude {
+    pub use super::CameraDataSet;
+    pub use super::ICameraDataSet;
+    pub use super::ICameraDataSetMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

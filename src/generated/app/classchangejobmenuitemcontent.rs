@@ -44,33 +44,308 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
-#[::unity2::methods]
-impl ClassChangeJobMenuItemContent_WeaponLevelItem {
-    #[doc = "`SetActive(crate::app::itemdata::ItemData_Kinds, ::unity2::Il2CppString, bool, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "SetActive", args = 4)]
-    pub fn set_active(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent_WeaponLevelItem as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: ClassIdentity > :: NAME , "SetActive" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: ClassChangeJobMenuItemContent_WeaponLevelItem,
         item_kind: crate::app::itemdata::ItemData_Kinds,
         level: ::unity2::Il2CppString,
         is_up: bool,
         job_data: crate::app::jobdata::JobData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent_WeaponLevelItem,
+            crate::app::itemdata::ItemData_Kinds,
+            ::unity2::Il2CppString,
+            bool,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_active::get_offset() as isize),
+        );
+        inner(
+            this,
+            item_kind,
+            level,
+            is_up,
+            job_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unactive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent_WeaponLevelItem as ::unity2::ClassIdentity>::class(),
+                "SetUnactive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: ClassIdentity > :: NAME , "SetUnactive" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unactive(
+        this: ClassChangeJobMenuItemContent_WeaponLevelItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent_WeaponLevelItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unactive::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent_WeaponLevelItem as ::unity2::ClassIdentity>::class(),
+                "SetColorEnable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: ClassIdentity > :: NAME , "SetColorEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color_enable(
+        this: ClassChangeJobMenuItemContent_WeaponLevelItem,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent_WeaponLevelItem,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color_enable::get_offset() as isize),
+        );
+        inner(this, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent_WeaponLevelItem as ::unity2::ClassIdentity>::class(),
+                "SetColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: ClassIdentity > :: NAME , "SetColor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color(
+        this: ClassChangeJobMenuItemContent_WeaponLevelItem,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent_WeaponLevelItem,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color::get_offset() as isize),
+        );
+        inner(this, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent_WeaponLevelItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ClassChangeJobMenuItemContent_WeaponLevelItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent_WeaponLevelItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+pub trait IClassChangeJobMenuItemContent_WeaponLevelItemMethods:
+    IClassChangeJobMenuItemContent_WeaponLevelItem
+{
+    #[doc = "`SetActive(crate::app::itemdata::ItemData_Kinds, ::unity2::Il2CppString, bool, crate::app::jobdata::JobData)` overload"]
+    fn set_active(
+        self,
+        item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
+        level: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_up: impl ::core::convert::Into<bool>,
+        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(item_kind),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(is_up),
+                ::core::convert::Into::into(job_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetUnactive()` overload"]
-    #[method(name = "SetUnactive", args = 0)]
-    pub fn set_unactive(self) -> ();
-
+    fn set_unactive(self) -> () {
+        unsafe {
+            let __receiver = < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw::set_unactive(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetColorEnable(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "SetColorEnable", args = 1)]
-    pub fn set_color_enable(self, color: crate::unity_engine::color::Color) -> ();
-
+    fn set_color_enable(
+        self,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw::set_color_enable(
+                __receiver,
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetColor(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "SetColor", args = 1)]
-    pub fn set_color(self, color: crate::unity_engine::color::Color) -> ();
-
+    fn set_color(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            let __receiver = < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw::set_color(
+                __receiver,
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < ClassChangeJobMenuItemContent_WeaponLevelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ClassChangeJobMenuItemContent_WeaponLevelItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+impl<__T: IClassChangeJobMenuItemContent_WeaponLevelItem>
+    IClassChangeJobMenuItemContent_WeaponLevelItemMethods for __T
+{
 }
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
@@ -90,32 +365,323 @@ impl ClassChangeJobMenuItemContent_WeaponLevelItem {
 }
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
-#[::unity2::methods]
-impl ClassChangeJobMenuItemContent {
-    #[doc = "`BuildText()` overload"]
-    #[method(name = "BuildText", args = 0)]
-    pub fn build_text(self) -> ();
-
-    #[doc = "`BuildTextColor()` overload"]
-    #[method(name = "BuildTextColor", args = 0)]
-    pub fn build_text_color(self) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`SetJobText(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    #[method(name = "SetJobText", args = 2)]
-    pub fn set_job_text(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ClassChangeJobMenuItemContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::class(),
+                "BuildText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "BuildText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_text(
+        this: ClassChangeJobMenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClassChangeJobMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::class(),
+                "BuildTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "BuildTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_text_color(
+        this: ClassChangeJobMenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClassChangeJobMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build_text_color::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_color(
+        this: ClassChangeJobMenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClassChangeJobMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_text_color::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_job_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::classchange::ClassChange_ChangeJobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::class(),
+                "SetJobText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "SetJobText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_job_text(
+        this: ClassChangeJobMenuItemContent,
         unit: crate::app::unit::Unit,
         change_job_data: crate::app::classchange::ClassChange_ChangeJobData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ClassChangeJobMenuItemContent,
+            crate::app::unit::Unit,
+            crate::app::classchange::ClassChange_ChangeJobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_job_text::get_offset() as isize),
+        );
+        inner(this, unit, change_job_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ClassChangeJobMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ClassChangeJobMenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ClassChangeJobMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+pub trait IClassChangeJobMenuItemContentMethods: IClassChangeJobMenuItemContent {
+    #[doc = "`BuildText()` overload"]
+    fn build_text(self) -> () {
+        unsafe {
+            let __receiver =
+                <ClassChangeJobMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ClassChangeJobMenuItemContent_unity2_raw::build_text(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildTextColor()` overload"]
+    fn build_text_color(self) -> () {
+        unsafe {
+            let __receiver =
+                <ClassChangeJobMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ClassChangeJobMenuItemContent_unity2_raw::build_text_color(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextColor()` overload"]
+    fn update_text_color(self) -> () {
+        unsafe {
+            let __receiver =
+                <ClassChangeJobMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ClassChangeJobMenuItemContent_unity2_raw::update_text_color(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetJobText(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
+    fn set_job_text(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        change_job_data: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ClassChangeJobMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ClassChangeJobMenuItemContent_unity2_raw::set_job_text(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(change_job_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ClassChangeJobMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ClassChangeJobMenuItemContent_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+impl<__T: IClassChangeJobMenuItemContent> IClassChangeJobMenuItemContentMethods for __T {}
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
 impl ClassChangeJobMenuItemContent {
@@ -131,4 +697,32 @@ impl ClassChangeJobMenuItemContent {
         <Self as IClassChangeJobMenuItemContentMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+pub mod prelude {
+    pub use super::ClassChangeJobMenuItemContent;
+    pub use super::ClassChangeJobMenuItemContent_WeaponLevelItem;
+    pub use super::IClassChangeJobMenuItemContent;
+    pub use super::IClassChangeJobMenuItemContentMethods;
+    pub use super::IClassChangeJobMenuItemContent_WeaponLevelItem;
+    pub use super::IClassChangeJobMenuItemContent_WeaponLevelItemMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    #[cfg(feature = "app-basicmenuitemcontent")]
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

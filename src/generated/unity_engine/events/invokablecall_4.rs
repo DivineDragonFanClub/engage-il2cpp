@@ -116,3 +116,16 @@ impl<
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-invokablecall_4")]
+pub mod prelude {
+    pub use super::IInvokableCall_4;
+    pub use super::IInvokableCall_4Methods;
+    pub use super::InvokableCall_4;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCall;
+    #[cfg(feature = "unity_engine-events-baseinvokablecall")]
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
+}

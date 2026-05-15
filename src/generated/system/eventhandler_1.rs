@@ -47,3 +47,19 @@ impl<T0: ::unity2::ClassIdentity> EventHandler_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-eventhandler_1")]
+pub mod prelude {
+    pub use super::EventHandler_1;
+    pub use super::IEventHandler_1;
+    pub use super::IEventHandler_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

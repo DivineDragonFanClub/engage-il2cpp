@@ -2,3 +2,7 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-core_lib-string_lib-stringrange-types"))]
 pub mod stringrange;
+#[cfg(feature = "moon_sharp-interpreter-core_lib-string_lib-stringrange")]
+pub use stringrange::IStringRangeMethods;
+#[cfg(feature = "moon_sharp-interpreter-core_lib-string_lib-stringrange-types")]
+pub use stringrange::{IStringRange, StringRange};

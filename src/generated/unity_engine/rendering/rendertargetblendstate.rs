@@ -48,17 +48,84 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
-#[::unity2::methods(value)]
-impl RenderTargetBlendState {
-    #[doc = "`get_defaultValue()` overload"]
-    #[method(name = "get_defaultValue", args = 0)]
-    pub fn get_default_value(
-    ) -> crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState;
-
-    #[doc = "`.ctor(crate::unity_engine::rendering::colorwritemask::ColorWriteMask, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendop::BlendOp, crate::unity_engine::rendering::blendop::BlendOp)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderTargetBlendState_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderTargetBlendState as ::unity2::ClassIdentity>::class(),
+                "get_defaultValue",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderTargetBlendState as ::unity2::ClassIdentity>::NAME,
+                    "get_defaultValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_value(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_value :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: colorwritemask :: ColorWriteMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendmode :: BlendMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendmode :: BlendMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendmode :: BlendMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendmode :: BlendMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendop :: BlendOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: blendop :: BlendOp as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderTargetBlendState as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderTargetBlendState as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderTargetBlendState,
         write_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
         source_color_blend_mode: crate::unity_engine::rendering::blendmode::BlendMode,
         destination_color_blend_mode: crate::unity_engine::rendering::blendmode::BlendMode,
@@ -66,20 +133,273 @@ impl RenderTargetBlendState {
         destination_alpha_blend_mode: crate::unity_engine::rendering::blendmode::BlendMode,
         color_blend_operation: crate::unity_engine::rendering::blendop::BlendOp,
         alpha_blend_operation: crate::unity_engine::rendering::blendop::BlendOp,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RenderTargetBlendState,
+            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+            crate::unity_engine::rendering::blendmode::BlendMode,
+            crate::unity_engine::rendering::blendmode::BlendMode,
+            crate::unity_engine::rendering::blendmode::BlendMode,
+            crate::unity_engine::rendering::blendmode::BlendMode,
+            crate::unity_engine::rendering::blendop::BlendOp,
+            crate::unity_engine::rendering::blendop::BlendOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            write_mask,
+            source_color_blend_mode,
+            destination_color_blend_mode,
+            source_alpha_blend_mode,
+            destination_alpha_blend_mode,
+            color_blend_operation,
+            alpha_blend_operation,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderTargetBlendState as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderTargetBlendState as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: RenderTargetBlendState,
+        other: crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RenderTargetBlendState,
+            crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderTargetBlendState as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderTargetBlendState as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
+        this: RenderTargetBlendState,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RenderTargetBlendState,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderTargetBlendState as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderTargetBlendState as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: RenderTargetBlendState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(RenderTargetBlendState, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
+impl RenderTargetBlendState {
+    #[doc = "`get_defaultValue()` overload"]
+    pub fn get_default_value(
+    ) -> crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState {
+        unsafe {
+            __RenderTargetBlendState_unity2_raw::get_default_value(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
+impl RenderTargetBlendState {
+    #[doc = "`.ctor(crate::unity_engine::rendering::colorwritemask::ColorWriteMask, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendop::BlendOp, crate::unity_engine::rendering::blendop::BlendOp)` overload"]
+    pub fn ctor(
+        self,
+        write_mask: impl ::core::convert::Into<
+            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+        >,
+        source_color_blend_mode: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendmode::BlendMode,
+        >,
+        destination_color_blend_mode: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendmode::BlendMode,
+        >,
+        source_alpha_blend_mode: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendmode::BlendMode,
+        >,
+        destination_alpha_blend_mode: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendmode::BlendMode,
+        >,
+        color_blend_operation: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendop::BlendOp,
+        >,
+        alpha_blend_operation: impl ::core::convert::Into<
+            crate::unity_engine::rendering::blendop::BlendOp,
+        >,
+    ) -> () {
+        unsafe {
+            __RenderTargetBlendState_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(write_mask),
+                ::core::convert::Into::into(source_color_blend_mode),
+                ::core::convert::Into::into(destination_color_blend_mode),
+                ::core::convert::Into::into(source_alpha_blend_mode),
+                ::core::convert::Into::into(destination_alpha_blend_mode),
+                ::core::convert::Into::into(color_blend_operation),
+                ::core::convert::Into::into(alpha_blend_operation),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Equals(crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState)` overload"]
-    #[method(name = "Equals", args = 1)]
     pub fn equals(
         self,
-        other: crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
-    ) -> bool;
-
+        other: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+        >,
+    ) -> bool {
+        unsafe {
+            __RenderTargetBlendState_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
-
+    pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __RenderTargetBlendState_unity2_raw::equals_2(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
+    pub fn get_hash_code(self) -> i32 {
+        unsafe {
+            __RenderTargetBlendState_unity2_raw::get_hash_code(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
+pub mod prelude {
+    pub use super::RenderTargetBlendState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

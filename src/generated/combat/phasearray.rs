@@ -21,102 +21,1117 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-phasearray")]
-#[::unity2::methods]
-impl PhaseArray {
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::combat::phase::Phase;
-
-    #[doc = "`get_Last()` overload"]
-    #[method(name = "get_Last", args = 0)]
-    pub fn get_last(self) -> crate::combat::phase::Phase;
-
-    #[doc = "`get_AttackRight()` overload"]
-    #[method(name = "get_AttackRight", args = 0)]
-    pub fn get_attack_right(self) -> i32;
-
-    #[doc = "`set_AttackRight(i32)` overload"]
-    #[method(name = "set_AttackRight", args = 1)]
-    pub fn set_attack_right(self, value: i32) -> ();
-
-    #[doc = "`get_HasCounter()` overload"]
-    #[method(name = "get_HasCounter", args = 0)]
-    pub fn get_has_counter(self) -> bool;
-
-    #[doc = "`Add(crate::combat::phase::Phase)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, phase: crate::combat::phase::Phase) -> ();
-
-    #[doc = "`Next()` overload"]
-    #[method(name = "Next", args = 0)]
-    pub fn next(self) -> ();
-
-    #[doc = "`SetCurrentToLast()` overload"]
-    #[method(name = "SetCurrentToLast", args = 0)]
-    pub fn set_current_to_last(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`UpdateAttackRight()` overload"]
-    #[method(name = "UpdateAttackRight", args = 0)]
-    pub fn update_attack_right(self) -> ();
-
-    #[doc = "`PostProcess(crate::combat::combatstyle::CombatStyle, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "PostProcess", args = 4)]
-    pub fn post_process(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhaseArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "get_Current",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(
+            PhaseArray,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_last {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "get_Last",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "get_Last",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_last(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(
+            PhaseArray,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_last::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "get_AttackRight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "get_AttackRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_attack_right(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_attack_right::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "set_AttackRight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "set_AttackRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_attack_right(
+        this: PhaseArray,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhaseArray, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_attack_right::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_counter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "get_HasCounter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "get_HasCounter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_counter(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_counter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: PhaseArray,
+        phase: crate::combat::phase::Phase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhaseArray,
+            crate::combat::phase::Phase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, phase, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "Next",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "Next",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn next(this: PhaseArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_next::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_current_to_last {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "SetCurrentToLast",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "SetCurrentToLast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_current_to_last(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_current_to_last::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: PhaseArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: PhaseArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_attack_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "UpdateAttackRight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "UpdateAttackRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_attack_right(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_attack_right::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_process {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "PostProcess",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "PostProcess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_process(
+        this: PhaseArray,
         style: crate::combat::combatstyle::CombatStyle,
         game_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
         gs_chain_atk: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
         gs_dragonic: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`MarkFirstAndLastAttack()` overload"]
-    #[method(name = "MarkFirstAndLastAttack", args = 0)]
-    pub fn mark_first_and_last_attack(self) -> ();
-
-    #[doc = "`FindDetailFirst(crate::combat::phase::Phase_Detail)` overload"]
-    #[method(name = "FindDetailFirst", args = 1)]
-    pub fn find_detail_first(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhaseArray,
+            crate::combat::combatstyle::CombatStyle,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_post_process::get_offset() as isize),
+        );
+        inner(
+            this,
+            style,
+            game_status,
+            gs_chain_atk,
+            gs_dragonic,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_first_and_last_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "MarkFirstAndLastAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "MarkFirstAndLastAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_first_and_last_attack(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_mark_first_and_last_attack::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_detail_first {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "FindDetailFirst",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "FindDetailFirst",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_detail_first(
+        this: PhaseArray,
         detail: crate::combat::phase::Phase_Detail,
-    ) -> crate::combat::phase::Phase;
-
-    #[doc = "`DecideAnimationHash(crate::combat::combatstyle::CombatStyle, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "DecideAnimationHash", args = 3)]
-    pub fn decide_animation_hash(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(
+            PhaseArray,
+            crate::combat::phase::Phase_Detail,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_detail_first::get_offset() as isize),
+        );
+        inner(this, detail, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decide_animation_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: combatstyle :: CombatStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "DecideAnimationHash",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "DecideAnimationHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decide_animation_hash(
+        this: PhaseArray,
         style: crate::combat::combatstyle::CombatStyle,
         game_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
         gs_chain_atk: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`MarkUseAnims(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "MarkUseAnims", args = 3)]
-    pub fn mark_use_anims(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhaseArray,
+            crate::combat::combatstyle::CombatStyle,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decide_animation_hash::get_offset() as isize),
+        );
+        inner(this, style, game_status, gs_chain_atk, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_use_anims {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "MarkUseAnims",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "MarkUseAnims",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_use_anims(
+        this: PhaseArray,
         game_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
         gs_chain_atk: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
         gs_dragonic: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`RegisterPreloadAnim(crate::combat::preloadanims::PreloadAnims, crate::combat::charactergamestatus::CharacterGameStatus)` overload"]
-    #[method(name = "RegisterPreloadAnim", args = 2)]
-    pub fn register_preload_anim(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhaseArray,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_use_anims::get_offset() as isize),
+        );
+        inner(
+            this,
+            game_status,
+            gs_chain_atk,
+            gs_dragonic,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_preload_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: preloadanims :: PreloadAnims as :: unity2 :: IlType > :: il_type () , < crate :: combat :: charactergamestatus :: CharacterGameStatus as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "RegisterPreloadAnim",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "RegisterPreloadAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_preload_anim(
         r#use: crate::combat::preloadanims::PreloadAnims,
         gs: crate::combat::charactergamestatus::CharacterGameStatus,
-    ) -> ();
-
-    #[doc = "`GetBrokenSide()` overload"]
-    #[method(name = "GetBrokenSide", args = 0)]
-    pub fn get_broken_side(self) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::combat::preloadanims::PreloadAnims,
+            crate::combat::charactergamestatus::CharacterGameStatus,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register_preload_anim::get_offset() as isize),
+        );
+        inner(r#use, gs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_broken_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhaseArray as ::unity2::ClassIdentity>::class(),
+                "GetBrokenSide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhaseArray as ::unity2::ClassIdentity>::NAME,
+                    "GetBrokenSide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_broken_side(
+        this: PhaseArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhaseArray, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_broken_side::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-phasearray")]
+impl PhaseArray {
+    #[doc = "`RegisterPreloadAnim(crate::combat::preloadanims::PreloadAnims, crate::combat::charactergamestatus::CharacterGameStatus)` overload"]
+    pub fn register_preload_anim(
+        r#use: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+        gs: impl ::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>,
+    ) -> () {
+        unsafe {
+            __PhaseArray_unity2_raw::register_preload_anim(
+                ::core::convert::Into::into(r#use),
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-phasearray")]
+pub trait IPhaseArrayMethods: IPhaseArray {
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::combat::phase::Phase {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::get_current(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Last()` overload"]
+    fn get_last(self) -> crate::combat::phase::Phase {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::get_last(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_AttackRight()` overload"]
+    fn get_attack_right(self) -> i32 {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::get_attack_right(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_AttackRight(i32)` overload"]
+    fn set_attack_right(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::set_attack_right(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HasCounter()` overload"]
+    fn get_has_counter(self) -> bool {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::get_has_counter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::combat::phase::Phase)` overload"]
+    fn add(self, phase: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(phase),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Next()` overload"]
+    fn next(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetCurrentToLast()` overload"]
+    fn set_current_to_last(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::set_current_to_last(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateAttackRight()` overload"]
+    fn update_attack_right(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::update_attack_right(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostProcess(crate::combat::combatstyle::CombatStyle, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn post_process(
+        self,
+        style: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
+        game_status: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+        gs_chain_atk: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+        gs_dragonic: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::post_process(
+                __receiver,
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(game_status),
+                ::core::convert::Into::into(gs_chain_atk),
+                ::core::convert::Into::into(gs_dragonic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkFirstAndLastAttack()` overload"]
+    fn mark_first_and_last_attack(self) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::mark_first_and_last_attack(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindDetailFirst(crate::combat::phase::Phase_Detail)` overload"]
+    fn find_detail_first(
+        self,
+        detail: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+    ) -> crate::combat::phase::Phase {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::find_detail_first(
+                __receiver,
+                ::core::convert::Into::into(detail),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecideAnimationHash(crate::combat::combatstyle::CombatStyle, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn decide_animation_hash(
+        self,
+        style: impl ::core::convert::Into<crate::combat::combatstyle::CombatStyle>,
+        game_status: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+        gs_chain_atk: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::decide_animation_hash(
+                __receiver,
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(game_status),
+                ::core::convert::Into::into(gs_chain_atk),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkUseAnims(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn mark_use_anims(
+        self,
+        game_status: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+        gs_chain_atk: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+        gs_dragonic: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::mark_use_anims(
+                __receiver,
+                ::core::convert::Into::into(game_status),
+                ::core::convert::Into::into(gs_chain_atk),
+                ::core::convert::Into::into(gs_dragonic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBrokenSide()` overload"]
+    fn get_broken_side(self) -> i32 {
+        unsafe {
+            let __receiver = <PhaseArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhaseArray_unity2_raw::get_broken_side(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-phasearray")]
+impl<__T: IPhaseArray> IPhaseArrayMethods for __T {}
 
 #[cfg(feature = "combat-phasearray")]
 impl PhaseArray {
@@ -132,4 +1147,17 @@ impl PhaseArray {
         <Self as IPhaseArrayMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-phasearray")]
+pub mod prelude {
+    pub use super::IPhaseArray;
+    pub use super::IPhaseArrayMethods;
+    pub use super::PhaseArray;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

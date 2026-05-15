@@ -84,3 +84,16 @@ impl<T0: ::unity2::ClassIdentity> UnityEvent_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-unityevent_1")]
+pub mod prelude {
+    pub use super::IUnityEvent_1;
+    pub use super::IUnityEvent_1Methods;
+    pub use super::UnityEvent_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    #[cfg(feature = "unity_engine-events-unityeventbase")]
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
+}

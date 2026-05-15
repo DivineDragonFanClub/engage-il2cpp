@@ -19,337 +19,3631 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystemforcefield")]
-#[::unity2::methods]
-impl ParticleSystemForceField {
-    #[doc = "`get_shape()` overload"]
-    #[method(name = "get_shape", args = 0)]
-    pub fn get_shape(
-        self,
-    ) -> crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape;
-
-    #[doc = "`set_shape(crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape)` overload"]
-    #[method(name = "set_shape", args = 1)]
-    pub fn set_shape(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ParticleSystemForceField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shape {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_shape",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_shape",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shape(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystemforcefieldshape :: ParticleSystemForceFieldShape = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_shape :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shape {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystemforcefieldshape :: ParticleSystemForceFieldShape as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_shape",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_shape",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shape(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape,
-    ) -> ();
-
-    #[doc = "`get_startRange()` overload"]
-    #[method(name = "get_startRange", args = 0)]
-    pub fn get_start_range(self) -> f32;
-
-    #[doc = "`set_startRange(f32)` overload"]
-    #[method(name = "set_startRange", args = 1)]
-    pub fn set_start_range(self, value: f32) -> ();
-
-    #[doc = "`get_endRange()` overload"]
-    #[method(name = "get_endRange", args = 0)]
-    pub fn get_end_range(self) -> f32;
-
-    #[doc = "`set_endRange(f32)` overload"]
-    #[method(name = "set_endRange", args = 1)]
-    pub fn set_end_range(self, value: f32) -> ();
-
-    #[doc = "`get_length()` overload"]
-    #[method(name = "get_length", args = 0)]
-    pub fn get_length(self) -> f32;
-
-    #[doc = "`set_length(f32)` overload"]
-    #[method(name = "set_length", args = 1)]
-    pub fn set_length(self, value: f32) -> ();
-
-    #[doc = "`get_gravityFocus()` overload"]
-    #[method(name = "get_gravityFocus", args = 0)]
-    pub fn get_gravity_focus(self) -> f32;
-
-    #[doc = "`set_gravityFocus(f32)` overload"]
-    #[method(name = "set_gravityFocus", args = 1)]
-    pub fn set_gravity_focus(self, value: f32) -> ();
-
-    #[doc = "`get_rotationRandomness()` overload"]
-    #[method(name = "get_rotationRandomness", args = 0)]
-    pub fn get_rotation_randomness(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`set_rotationRandomness(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "set_rotationRandomness", args = 1)]
-    pub fn set_rotation_randomness(self, value: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`get_multiplyDragByParticleSize()` overload"]
-    #[method(name = "get_multiplyDragByParticleSize", args = 0)]
-    pub fn get_multiply_drag_by_particle_size(self) -> bool;
-
-    #[doc = "`set_multiplyDragByParticleSize(bool)` overload"]
-    #[method(name = "set_multiplyDragByParticleSize", args = 1)]
-    pub fn set_multiply_drag_by_particle_size(self, value: bool) -> ();
-
-    #[doc = "`get_multiplyDragByParticleVelocity()` overload"]
-    #[method(name = "get_multiplyDragByParticleVelocity", args = 0)]
-    pub fn get_multiply_drag_by_particle_velocity(self) -> bool;
-
-    #[doc = "`set_multiplyDragByParticleVelocity(bool)` overload"]
-    #[method(name = "set_multiplyDragByParticleVelocity", args = 1)]
-    pub fn set_multiply_drag_by_particle_velocity(self, value: bool) -> ();
-
-    #[doc = "`get_vectorField()` overload"]
-    #[method(name = "get_vectorField", args = 0)]
-    pub fn get_vector_field(self) -> crate::unity_engine::texture3d::Texture3D;
-
-    #[doc = "`set_vectorField(crate::unity_engine::texture3d::Texture3D)` overload"]
-    #[method(name = "set_vectorField", args = 1)]
-    pub fn set_vector_field(self, value: crate::unity_engine::texture3d::Texture3D) -> ();
-
-    #[doc = "`get_directionX()` overload"]
-    #[method(name = "get_directionX", args = 0)]
-    pub fn get_direction_x(self)
-        -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_directionX(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionX", args = 1)]
-    pub fn set_direction_x(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_directionY()` overload"]
-    #[method(name = "get_directionY", args = 0)]
-    pub fn get_direction_y(self)
-        -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_directionY(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionY", args = 1)]
-    pub fn set_direction_y(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_directionZ()` overload"]
-    #[method(name = "get_directionZ", args = 0)]
-    pub fn get_direction_z(self)
-        -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_directionZ(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionZ", args = 1)]
-    pub fn set_direction_z(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_gravity()` overload"]
-    #[method(name = "get_gravity", args = 0)]
-    pub fn get_gravity(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_gravity(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_gravity", args = 1)]
-    pub fn set_gravity(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rotationSpeed()` overload"]
-    #[method(name = "get_rotationSpeed", args = 0)]
-    pub fn get_rotation_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_rotationSpeed(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rotationSpeed", args = 1)]
-    pub fn set_rotation_speed(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rotationAttraction()` overload"]
-    #[method(name = "get_rotationAttraction", args = 0)]
-    pub fn get_rotation_attraction(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_rotationAttraction(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rotationAttraction", args = 1)]
-    pub fn set_rotation_attraction(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_drag()` overload"]
-    #[method(name = "get_drag", args = 0)]
-    pub fn get_drag(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_drag(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_drag", args = 1)]
-    pub fn set_drag(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_vectorFieldSpeed()` overload"]
-    #[method(name = "get_vectorFieldSpeed", args = 0)]
-    pub fn get_vector_field_speed(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_vectorFieldSpeed(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_vectorFieldSpeed", args = 1)]
-    pub fn set_vector_field_speed(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_vectorFieldAttraction()` overload"]
-    #[method(name = "get_vectorFieldAttraction", args = 0)]
-    pub fn get_vector_field_attraction(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-
-    #[doc = "`set_vectorFieldAttraction(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_vectorFieldAttraction", args = 1)]
-    pub fn set_vector_field_attraction(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_rotationRandomness_Injected(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "get_rotationRandomness_Injected", args = 1)]
-    pub fn get_rotation_randomness_injected(self, ret: crate::unity_engine::vector2::Vector2)
-        -> ();
-
-    #[doc = "`set_rotationRandomness_Injected(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "set_rotationRandomness_Injected", args = 1)]
-    pub fn set_rotation_randomness_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shape::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_startRange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_startRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_range(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_range::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_startRange",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_startRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_range(
+        this: ParticleSystemForceField,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_start_range::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_end_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_endRange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_endRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_end_range(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_end_range::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_end_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_endRange",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_endRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_end_range(
+        this: ParticleSystemForceField,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_end_range::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_length",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_length",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_length(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_length::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_length",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_length",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_length(
+        this: ParticleSystemForceField,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_length::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_focus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_gravityFocus",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_gravityFocus",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_focus(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_gravity_focus::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity_focus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_gravityFocus",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_gravityFocus",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity_focus(
+        this: ParticleSystemForceField,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_gravity_focus::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_randomness {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationRandomness",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationRandomness",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_randomness(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_randomness::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_randomness {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationRandomness",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationRandomness",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_randomness(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`get_directionX_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_directionX_Injected", args = 1)]
-    pub fn get_direction_x_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_directionX_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionX_Injected", args = 1)]
-    pub fn set_direction_x_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_randomness::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_multiply_drag_by_particle_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_multiplyDragByParticleSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_multiplyDragByParticleSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_multiply_drag_by_particle_size(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_multiply_drag_by_particle_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_multiply_drag_by_particle_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_multiplyDragByParticleSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_multiplyDragByParticleSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_multiply_drag_by_particle_size(
+        this: ParticleSystemForceField,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_multiply_drag_by_particle_size::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_multiply_drag_by_particle_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_multiplyDragByParticleVelocity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_multiplyDragByParticleVelocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_multiply_drag_by_particle_velocity(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_multiply_drag_by_particle_velocity::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_multiply_drag_by_particle_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_multiplyDragByParticleVelocity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_multiplyDragByParticleVelocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_multiply_drag_by_particle_velocity(
+        this: ParticleSystemForceField,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_multiply_drag_by_particle_velocity::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_field {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_vectorField",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_vectorField",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_field(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture3d::Texture3D {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture3d::Texture3D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vector_field::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_field {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::texture3d::Texture3D as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_vectorField",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_vectorField",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_field(
+        this: ParticleSystemForceField,
+        value: crate::unity_engine::texture3d::Texture3D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::texture3d::Texture3D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_field::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_x(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_direction_x :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_x(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_directionY_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_directionY_Injected", args = 1)]
-    pub fn get_direction_y_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_directionY_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionY_Injected", args = 1)]
-    pub fn set_direction_y_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_x::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_y {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionY",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionY",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_y(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_direction_y :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_y {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionY",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionY",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_y(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_directionZ_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_directionZ_Injected", args = 1)]
-    pub fn get_direction_z_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_directionZ_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_directionZ_Injected", args = 1)]
-    pub fn set_direction_z_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_y::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_z(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_direction_z :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_z(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_gravity_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_gravity_Injected", args = 1)]
-    pub fn get_gravity_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_gravity_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_gravity_Injected", args = 1)]
-    pub fn set_gravity_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_z::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_gravity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_gravity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_gravity :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_gravity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_gravity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rotationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_rotationSpeed_Injected", args = 1)]
-    pub fn get_rotation_speed_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_rotationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rotationSpeed_Injected", args = 1)]
-    pub fn set_rotation_speed_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_gravity::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_speed(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rotation_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_speed(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rotationAttraction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_rotationAttraction_Injected", args = 1)]
-    pub fn get_rotation_attraction_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_rotationAttraction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rotationAttraction_Injected", args = 1)]
-    pub fn set_rotation_attraction_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_speed::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_attraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationAttraction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationAttraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_attraction(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rotation_attraction :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_attraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationAttraction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationAttraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_attraction(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_drag_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_drag_Injected", args = 1)]
-    pub fn get_drag_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_drag_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_drag_Injected", args = 1)]
-    pub fn set_drag_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_attraction::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_drag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_drag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_drag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_drag(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_drag :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_drag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_drag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_drag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_drag(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_vectorFieldSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_vectorFieldSpeed_Injected", args = 1)]
-    pub fn get_vector_field_speed_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_vectorFieldSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_vectorFieldSpeed_Injected", args = 1)]
-    pub fn set_vector_field_speed_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_drag::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_field_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_vectorFieldSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_vectorFieldSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_field_speed(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vector_field_speed :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_field_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_vectorFieldSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_vectorFieldSpeed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_field_speed(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_vectorFieldAttraction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "get_vectorFieldAttraction_Injected", args = 1)]
-    pub fn get_vector_field_attraction_injected(
-        self,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`set_vectorFieldAttraction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_vectorFieldAttraction_Injected", args = 1)]
-    pub fn set_vector_field_attraction_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_field_speed::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_field_attraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_vectorFieldAttraction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_vectorFieldAttraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_field_attraction(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        let inner : extern "C" fn (ParticleSystemForceField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vector_field_attraction :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_field_attraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_vectorFieldAttraction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_vectorFieldAttraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_field_attraction(
+        this: ParticleSystemForceField,
         value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_field_attraction::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ParticleSystemForceField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ParticleSystemForceField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_randomness_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationRandomness_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationRandomness_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_randomness_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_randomness_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_randomness_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationRandomness_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationRandomness_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_randomness_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_randomness_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_x_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionX_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionX_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_x_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_direction_x_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_x_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionX_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionX_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_x_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_x_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_y_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionY_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionY_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_y_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_direction_y_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_y_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionY_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionY_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_y_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_y_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direction_z_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_directionZ_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_directionZ_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_direction_z_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_direction_z_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direction_z_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_directionZ_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_directionZ_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_direction_z_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_direction_z_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_gravity_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_gravity_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gravity_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_gravity_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_gravity_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_gravity_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_gravity_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_gravity_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationSpeed_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_speed_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_speed_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationSpeed_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_speed_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_speed_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation_attraction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_rotationAttraction_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_rotationAttraction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation_attraction_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation_attraction_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_attraction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_rotationAttraction_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_rotationAttraction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_attraction_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_attraction_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_drag_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_drag_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_drag_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_drag_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_drag_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_drag_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_drag_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_drag_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_drag_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_drag_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_field_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_vectorFieldSpeed_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_vectorFieldSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_field_speed_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vector_field_speed_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_field_speed_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_vectorFieldSpeed_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_vectorFieldSpeed_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_field_speed_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_field_speed_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_field_attraction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "get_vectorFieldAttraction_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "get_vectorFieldAttraction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_field_attraction_injected(
+        this: ParticleSystemForceField,
+        ret: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vector_field_attraction_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_field_attraction_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: particlesystem :: ParticleSystem_MinMaxCurve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ParticleSystemForceField as ::unity2::ClassIdentity>::class(),
+                "set_vectorFieldAttraction_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ParticleSystemForceField as ::unity2::ClassIdentity>::NAME,
+                    "set_vectorFieldAttraction_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_field_attraction_injected(
+        this: ParticleSystemForceField,
+        value: *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ParticleSystemForceField,
+            *mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_field_attraction_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-particlesystemforcefield")]
+pub trait IParticleSystemForceFieldMethods: IParticleSystemForceField {
+    #[doc = "`get_shape()` overload"]
+    fn get_shape(
+        self,
+    ) -> crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_shape(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_shape(crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape)` overload"]
+    fn set_shape(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystemforcefieldshape::ParticleSystemForceFieldShape,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_shape(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_startRange()` overload"]
+    fn get_start_range(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_start_range(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_startRange(f32)` overload"]
+    fn set_start_range(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_start_range(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_endRange()` overload"]
+    fn get_end_range(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_end_range(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_endRange(f32)` overload"]
+    fn set_end_range(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_end_range(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_length()` overload"]
+    fn get_length(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_length(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_length(f32)` overload"]
+    fn set_length(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_length(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_gravityFocus()` overload"]
+    fn get_gravity_focus(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_gravity_focus(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_gravityFocus(f32)` overload"]
+    fn set_gravity_focus(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_gravity_focus(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotationRandomness()` overload"]
+    fn get_rotation_randomness(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_rotation_randomness(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rotationRandomness(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_rotation_randomness(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_rotation_randomness(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_multiplyDragByParticleSize()` overload"]
+    fn get_multiply_drag_by_particle_size(self) -> bool {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_multiply_drag_by_particle_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_multiplyDragByParticleSize(bool)` overload"]
+    fn set_multiply_drag_by_particle_size(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_multiply_drag_by_particle_size(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_multiplyDragByParticleVelocity()` overload"]
+    fn get_multiply_drag_by_particle_velocity(self) -> bool {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_multiply_drag_by_particle_velocity(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_multiplyDragByParticleVelocity(bool)` overload"]
+    fn set_multiply_drag_by_particle_velocity(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_multiply_drag_by_particle_velocity(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vectorField()` overload"]
+    fn get_vector_field(self) -> crate::unity_engine::texture3d::Texture3D {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_vector_field(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_vectorField(crate::unity_engine::texture3d::Texture3D)` overload"]
+    fn set_vector_field(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::texture3d::Texture3D>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_vector_field(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_directionX()` overload"]
+    fn get_direction_x(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_direction_x(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_directionX(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_x(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_direction_x(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_directionY()` overload"]
+    fn get_direction_y(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_direction_y(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_directionY(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_y(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_direction_y(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_directionZ()` overload"]
+    fn get_direction_z(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_direction_z(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_directionZ(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_z(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_direction_z(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_gravity()` overload"]
+    fn get_gravity(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_gravity(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_gravity(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_gravity(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_gravity(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotationSpeed()` overload"]
+    fn get_rotation_speed(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_rotation_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rotationSpeed(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_rotation_speed(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_rotation_speed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotationAttraction()` overload"]
+    fn get_rotation_attraction(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_rotation_attraction(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_rotationAttraction(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_rotation_attraction(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_rotation_attraction(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_drag()` overload"]
+    fn get_drag(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_drag(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_drag(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_drag(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_drag(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vectorFieldSpeed()` overload"]
+    fn get_vector_field_speed(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_vector_field_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_vectorFieldSpeed(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_vector_field_speed(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_vector_field_speed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vectorFieldAttraction()` overload"]
+    fn get_vector_field_attraction(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::get_vector_field_attraction(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_vectorFieldAttraction(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_vector_field_attraction(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::set_vector_field_attraction(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ParticleSystemForceField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_rotationRandomness_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_rotation_randomness_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __ParticleSystemForceField_unity2_raw::get_rotation_randomness_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rotationRandomness_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_rotation_randomness_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __ParticleSystemForceField_unity2_raw::set_rotation_randomness_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_directionX_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_direction_x_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_direction_x_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_directionX_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_x_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_direction_x_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_directionY_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_direction_y_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_direction_y_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_directionY_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_y_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_direction_y_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_directionZ_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_direction_z_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_direction_z_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_directionZ_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_direction_z_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_direction_z_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_gravity_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_gravity_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_gravity_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_gravity_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_gravity_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_gravity_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_rotationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_rotation_speed_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_rotation_speed_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rotationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_rotation_speed_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_rotation_speed_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_rotationAttraction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_rotation_attraction_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_rotation_attraction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rotationAttraction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_rotation_attraction_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_rotation_attraction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_drag_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_drag_injected(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_drag_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_drag_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_drag_injected(self) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_drag_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_vectorFieldSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_vector_field_speed_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_vector_field_speed_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_vectorFieldSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_vector_field_speed_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_vector_field_speed_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_vectorFieldAttraction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn get_vector_field_attraction_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::get_vector_field_attraction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_vectorFieldAttraction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    fn set_vector_field_attraction_injected(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve {
+        unsafe {
+            let __receiver =
+                <ParticleSystemForceField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+            >::uninit();
+            __ParticleSystemForceField_unity2_raw::set_vector_field_attraction_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystemforcefield")]
+impl<__T: IParticleSystemForceField> IParticleSystemForceFieldMethods for __T {}
 
 #[cfg(feature = "unity_engine-particlesystemforcefield")]
 impl ParticleSystemForceField {
@@ -365,4 +3659,20 @@ impl ParticleSystemForceField {
         <Self as IParticleSystemForceFieldMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-particlesystemforcefield")]
+pub mod prelude {
+    pub use super::IParticleSystemForceField;
+    pub use super::IParticleSystemForceFieldMethods;
+    pub use super::ParticleSystemForceField;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

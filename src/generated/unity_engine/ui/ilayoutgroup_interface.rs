@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-ui-ilayoutgroup_interface-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-ui-ilayoutgroup_interface")]
+pub mod prelude {
+    pub use super::IILayoutGroup_Interface;
+    pub use super::ILayoutGroup_Interface;
+}

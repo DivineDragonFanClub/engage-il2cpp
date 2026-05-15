@@ -25,36 +25,421 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-basemesheffect")]
-#[::unity2::methods]
-impl BaseMeshEffect {
-    #[doc = "`get_graphic()` overload"]
-    #[method(name = "get_graphic", args = 0)]
-    pub fn get_graphic(self) -> crate::unity_engine::ui::graphic::Graphic;
-
-    #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
-    #[doc = "`OnDisable()` overload"]
-    #[method(name = "OnDisable", args = 0)]
-    pub fn on_disable(self) -> ();
-
-    #[doc = "`OnDidApplyAnimationProperties()` overload"]
-    #[method(name = "OnDidApplyAnimationProperties", args = 0)]
-    pub fn on_did_apply_animation_properties(self) -> ();
-
-    #[doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = "ModifyMesh", args = 1)]
-    pub fn modify_mesh(self, mesh: crate::unity_engine::mesh::Mesh) -> ();
-
-    #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    #[method(name = "ModifyMesh", args = 1)]
-    pub fn modify_mesh_2(self, vh: crate::unity_engine::ui::vertexhelper::VertexHelper) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BaseMeshEffect_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "get_graphic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "get_graphic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphic(
+        this: BaseMeshEffect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::graphic::Graphic {
+        let inner: extern "C" fn(
+            BaseMeshEffect,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::graphic::Graphic = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_graphic::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(
+        this: BaseMeshEffect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "OnDisable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "OnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_disable(
+        this: BaseMeshEffect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_disable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_did_apply_animation_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "OnDidApplyAnimationProperties",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "OnDidApplyAnimationProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_did_apply_animation_properties(
+        this: BaseMeshEffect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_did_apply_animation_properties::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_modify_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "ModifyMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "ModifyMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn modify_mesh(
+        this: BaseMeshEffect,
+        mesh: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseMeshEffect,
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_modify_mesh::get_offset() as isize),
+        );
+        inner(this, mesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_modify_mesh_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                "ModifyMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    "ModifyMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn modify_mesh_2(
+        this: BaseMeshEffect,
+        vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseMeshEffect,
+            crate::unity_engine::ui::vertexhelper::VertexHelper,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_modify_mesh_2::get_offset() as isize),
+        );
+        inner(this, vh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseMeshEffect as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseMeshEffect as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: BaseMeshEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-basemesheffect")]
+pub trait IBaseMeshEffectMethods: IBaseMeshEffect {
+    #[doc = "`get_graphic()` overload"]
+    fn get_graphic(self) -> crate::unity_engine::ui::graphic::Graphic {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::get_graphic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnEnable()` overload"]
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDisable()` overload"]
+    fn on_disable(self) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDidApplyAnimationProperties()` overload"]
+    fn on_did_apply_animation_properties(self) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::on_did_apply_animation_properties(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]
+    fn modify_mesh(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::modify_mesh(
+                __receiver,
+                ::core::convert::Into::into(mesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
+    fn modify_mesh_2(
+        self,
+        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::modify_mesh_2(
+                __receiver,
+                ::core::convert::Into::into(vh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BaseMeshEffect as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseMeshEffect_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-basemesheffect")]
+impl<__T: IBaseMeshEffect> IBaseMeshEffectMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-basemesheffect")]
 impl BaseMeshEffect {
@@ -70,4 +455,29 @@ impl BaseMeshEffect {
         <Self as IBaseMeshEffectMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-basemesheffect")]
+pub mod prelude {
+    pub use super::BaseMeshEffect;
+    pub use super::IBaseMeshEffect;
+    pub use super::IBaseMeshEffectMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -28,33 +28,272 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
-#[::unity2::methods]
-impl TMP_FontFeatureTable {
-    #[doc = "`get_glyphPairAdjustmentRecords()` overload"]
-    #[method(name = "get_glyphPairAdjustmentRecords", args = 0)]
-    pub fn get_glyph_pair_adjustment_records(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_FontFeatureTable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_pair_adjustment_records {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontFeatureTable as ::unity2::ClassIdentity>::class(),
+                "get_glyphPairAdjustmentRecords",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontFeatureTable as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphPairAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_pair_adjustment_records(
+        this: TMP_FontFeatureTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
-    >;
-
-    #[doc = "`set_glyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)` overload"]
-    #[method(name = "set_glyphPairAdjustmentRecords", args = 1)]
-    pub fn set_glyph_pair_adjustment_records(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontFeatureTable,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_glyph_pair_adjustment_records::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_glyph_pair_adjustment_records {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontFeatureTable as ::unity2::ClassIdentity>::class(),
+                "set_glyphPairAdjustmentRecords",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontFeatureTable as ::unity2::ClassIdentity>::NAME,
+                    "set_glyphPairAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_glyph_pair_adjustment_records(
+        this: TMP_FontFeatureTable,
         value: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SortGlyphPairAdjustmentRecords()` overload"]
-    #[method(name = "SortGlyphPairAdjustmentRecords", args = 0)]
-    pub fn sort_glyph_pair_adjustment_records(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontFeatureTable,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_glyph_pair_adjustment_records::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontFeatureTable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontFeatureTable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_FontFeatureTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontFeatureTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_glyph_pair_adjustment_records {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontFeatureTable as ::unity2::ClassIdentity>::class(),
+                "SortGlyphPairAdjustmentRecords",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontFeatureTable as ::unity2::ClassIdentity>::NAME,
+                    "SortGlyphPairAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_glyph_pair_adjustment_records(
+        this: TMP_FontFeatureTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontFeatureTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_glyph_pair_adjustment_records::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+pub trait ITMP_FontFeatureTableMethods: ITMP_FontFeatureTable {
+    #[doc = "`get_glyphPairAdjustmentRecords()` overload"]
+    fn get_glyph_pair_adjustment_records(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontFeatureTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontFeatureTable_unity2_raw::get_glyph_pair_adjustment_records(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_glyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)` overload"]
+    fn set_glyph_pair_adjustment_records(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontFeatureTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontFeatureTable_unity2_raw::set_glyph_pair_adjustment_records(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontFeatureTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontFeatureTable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SortGlyphPairAdjustmentRecords()` overload"]
+    fn sort_glyph_pair_adjustment_records(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontFeatureTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontFeatureTable_unity2_raw::sort_glyph_pair_adjustment_records(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+impl<__T: ITMP_FontFeatureTable> ITMP_FontFeatureTableMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
 impl TMP_FontFeatureTable {
@@ -70,4 +309,14 @@ impl TMP_FontFeatureTable {
         <Self as ITMP_FontFeatureTableMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+pub mod prelude {
+    pub use super::ITMP_FontFeatureTable;
+    pub use super::ITMP_FontFeatureTableMethods;
+    pub use super::TMP_FontFeatureTable;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

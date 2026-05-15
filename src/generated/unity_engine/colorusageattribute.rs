@@ -31,16 +31,146 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
-#[::unity2::methods]
-impl ColorUsageAttribute {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, show_alpha: bool) -> ();
-
-    #[doc = "`.ctor(bool, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, show_alpha: bool, hdr: bool) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ColorUsageAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUsageAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUsageAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ColorUsageAttribute,
+        show_alpha: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ColorUsageAttribute, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, show_alpha, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorUsageAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorUsageAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: ColorUsageAttribute,
+        show_alpha: bool,
+        hdr: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ColorUsageAttribute, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, show_alpha, hdr, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-colorusageattribute")]
+pub trait IColorUsageAttributeMethods: IColorUsageAttribute {
+    #[doc = "`.ctor(bool)` overload"]
+    fn ctor(self, show_alpha: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ColorUsageAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ColorUsageAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(show_alpha),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(bool, bool)` overload"]
+    fn ctor_2(
+        self,
+        show_alpha: impl ::core::convert::Into<bool>,
+        hdr: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ColorUsageAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ColorUsageAttribute_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(show_alpha),
+                ::core::convert::Into::into(hdr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-colorusageattribute")]
+impl<__T: IColorUsageAttribute> IColorUsageAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
 impl ColorUsageAttribute {
@@ -69,4 +199,17 @@ impl ColorUsageAttribute {
         <Self as IColorUsageAttributeMethods>::ctor_2(this, show_alpha, hdr);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-colorusageattribute")]
+pub mod prelude {
+    pub use super::ColorUsageAttribute;
+    pub use super::IColorUsageAttribute;
+    pub use super::IColorUsageAttributeMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

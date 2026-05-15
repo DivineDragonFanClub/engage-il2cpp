@@ -25,24 +25,276 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
-#[::unity2::methods]
-impl AssetReferenceUILabelRestriction {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, allowed_labels: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "ValidateAsset", args = 1)]
-    pub fn validate_asset(self, obj: crate::unity_engine::object_2::Object_2) -> bool;
-
-    #[doc = "`ValidateAsset(::unity2::Il2CppString)` overload"]
-    #[method(name = "ValidateAsset", args = 1)]
-    pub fn validate_asset_2(self, path: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetReferenceUILabelRestriction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AssetReferenceUILabelRestriction,
+        allowed_labels: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetReferenceUILabelRestriction,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, allowed_labels, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::class(),
+                "ValidateAsset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::NAME,
+                    "ValidateAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_asset(
+        this: AssetReferenceUILabelRestriction,
+        obj: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AssetReferenceUILabelRestriction,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_asset::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_asset_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::class(),
+                "ValidateAsset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::NAME,
+                    "ValidateAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_asset_2(
+        this: AssetReferenceUILabelRestriction,
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AssetReferenceUILabelRestriction,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_asset_2::get_offset() as isize),
+        );
+        inner(this, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReferenceUILabelRestriction as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: AssetReferenceUILabelRestriction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            AssetReferenceUILabelRestriction,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+pub trait IAssetReferenceUILabelRestrictionMethods: IAssetReferenceUILabelRestriction {
+    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn ctor(
+        self,
+        allowed_labels: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUILabelRestriction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssetReferenceUILabelRestriction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(allowed_labels),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]
+    fn validate_asset(
+        self,
+        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUILabelRestriction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssetReferenceUILabelRestriction_unity2_raw::validate_asset(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidateAsset(::unity2::Il2CppString)` overload"]
+    fn validate_asset_2(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUILabelRestriction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssetReferenceUILabelRestriction_unity2_raw::validate_asset_2(
+                __receiver,
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUILabelRestriction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssetReferenceUILabelRestriction_unity2_raw::to_string(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+impl<__T: IAssetReferenceUILabelRestriction> IAssetReferenceUILabelRestrictionMethods for __T {}
 
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
 impl AssetReferenceUILabelRestriction {
@@ -58,4 +310,17 @@ impl AssetReferenceUILabelRestriction {
         <Self as IAssetReferenceUILabelRestrictionMethods>::ctor(this, allowed_labels);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+pub mod prelude {
+    pub use super::AssetReferenceUILabelRestriction;
+    pub use super::IAssetReferenceUILabelRestriction;
+    pub use super::IAssetReferenceUILabelRestrictionMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::assetreferenceuirestriction::IAssetReferenceUIRestriction;
+    #[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+    pub use crate::unity_engine::assetreferenceuirestriction::IAssetReferenceUIRestrictionMethods;
 }

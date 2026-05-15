@@ -18,31 +18,307 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scriptableobject")]
-#[::unity2::methods]
-impl ScriptableObject {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CreateInstance(::unity2::SystemType)` overload"]
-    #[method(name = "CreateInstance", args = 1)]
-    pub fn create_instance(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableObject as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ScriptableObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ScriptableObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableObject as ::unity2::ClassIdentity>::class(),
+                "CreateInstance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateInstance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_instance(
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
-
-    #[doc = "`CreateScriptableObject(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
-    #[method(name = "CreateScriptableObject", args = 1)]
-    pub fn create_scriptable_object(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_instance::get_offset() as isize),
+        );
+        inner(r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_scriptable_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableObject as ::unity2::ClassIdentity>::class(),
+                "CreateScriptableObject",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateScriptableObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_scriptable_object(
         self_: crate::unity_engine::scriptableobject::ScriptableObject,
-    ) -> ();
-
-    #[doc = "`CreateScriptableObjectInstanceFromType(::unity2::SystemType, bool)` overload"]
-    #[method(name = "CreateScriptableObjectInstanceFromType", args = 2)]
-    pub fn create_scriptable_object_instance_from_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::scriptableobject::ScriptableObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_scriptable_object::get_offset() as isize),
+        );
+        inner(self_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_scriptable_object_instance_from_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableObject as ::unity2::ClassIdentity>::class(),
+                "CreateScriptableObjectInstanceFromType",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateScriptableObjectInstanceFromType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_scriptable_object_instance_from_type(
         r#type: ::unity2::SystemType,
         apply_defaults_and_reset: bool,
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_create_scriptable_object_instance_from_type::get_offset() as isize,
+                ),
+        );
+        inner(r#type, apply_defaults_and_reset, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+impl ScriptableObject {
+    #[doc = "`CreateInstance(::unity2::SystemType)` overload"]
+    pub fn create_instance(
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        unsafe {
+            __ScriptableObject_unity2_raw::create_instance(
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn create_instance_2<M0: ::unity2::IlType + ::core::marker::Copy>() -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ScriptableObject as ::unity2::ClassIdentity>::class(),
+                "CreateInstance",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ScriptableObject as ::unity2::ClassIdentity>::NAME,
+                "CreateInstance",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`CreateScriptableObject(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
+    pub fn create_scriptable_object(
+        self_: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
+    ) -> () {
+        unsafe {
+            __ScriptableObject_unity2_raw::create_scriptable_object(
+                ::core::convert::Into::into(self_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateScriptableObjectInstanceFromType(::unity2::SystemType, bool)` overload"]
+    pub fn create_scriptable_object_instance_from_type(
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        apply_defaults_and_reset: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        unsafe {
+            __ScriptableObject_unity2_raw::create_scriptable_object_instance_from_type(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(apply_defaults_and_reset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+pub trait IScriptableObjectMethods: IScriptableObject {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ScriptableObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ScriptableObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+impl<__T: IScriptableObject> IScriptableObjectMethods for __T {}
 
 #[cfg(feature = "unity_engine-scriptableobject")]
 impl ScriptableObject {
@@ -58,4 +334,17 @@ impl ScriptableObject {
         <Self as IScriptableObjectMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+pub mod prelude {
+    pub use super::IScriptableObject;
+    pub use super::IScriptableObjectMethods;
+    pub use super::ScriptableObject;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

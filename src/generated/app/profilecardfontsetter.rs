@@ -13,30 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfontsetter/ProfileCardFontSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardFontSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ProfileCardFontSetter {
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_TalkSDF")]
-        pub m_talk_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_TalkOutlineMaterial")]
-        pub m_talk_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_TalkProfileUserNameSDF")]
-        pub m_talk_profile_user_name_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_TalkProfileOutlineMaterial")]
-        pub m_talk_profile_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_SystemProfileCommentSDF")]
-        pub m_system_profile_comment_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_SystemOutlineMaterial")]
-        pub m_system_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_SystemCNOutlineMaterial")]
-        pub m_system_cn_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_FontType")]
-        pub m_font_type: crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardfontsetter/ProfileCardFontSetter_FontType.md"))]
     #[repr(C)]
     #[derive(
@@ -84,33 +60,301 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfontsetter/ProfileCardFontSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardFontSetter")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ProfileCardFontSetter {
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TalkSDF")]
+        pub m_talk_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_TalkOutlineMaterial")]
+        pub m_talk_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_TalkProfileUserNameSDF")]
+        pub m_talk_profile_user_name_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_TalkProfileOutlineMaterial")]
+        pub m_talk_profile_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_SystemProfileCommentSDF")]
+        pub m_system_profile_comment_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_SystemOutlineMaterial")]
+        pub m_system_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_SystemCNOutlineMaterial")]
+        pub m_system_cn_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_FontType")]
+        pub m_font_type: crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
+    }
 }
 
 #[cfg(feature = "app-profilecardfontsetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardfontsetter")]
-#[::unity2::methods]
-impl ProfileCardFontSetter {
-    #[doc = "`SetFontType(crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType)` overload"]
-    #[method(name = "SetFontType", args = 1)]
-    pub fn set_font_type(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardFontSetter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfontsetter :: ProfileCardFontSetter_FontType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFontSetter as ::unity2::ClassIdentity>::class(),
+                "SetFontType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardFontSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetFontType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_type(
+        this: ProfileCardFontSetter,
         font_type: crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
-    ) -> ();
-
-    #[doc = "`SetLanguage(crate::app::language::Language_Langs)` overload"]
-    #[method(name = "SetLanguage", args = 1)]
-    pub fn set_language(self, lang: crate::app::language::Language_Langs) -> ();
-
-    #[doc = "`SortFontFallbackPriority(crate::app::language::Language_Langs)` overload"]
-    #[method(name = "SortFontFallbackPriority", args = 1)]
-    pub fn sort_font_fallback_priority(self, lang: crate::app::language::Language_Langs) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFontSetter,
+            crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_type::get_offset() as isize),
+        );
+        inner(this, font_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_language {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::language::Language_Langs as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFontSetter as ::unity2::ClassIdentity>::class(),
+                "SetLanguage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardFontSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetLanguage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_language(
+        this: ProfileCardFontSetter,
+        lang: crate::app::language::Language_Langs,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFontSetter,
+            crate::app::language::Language_Langs,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_language::get_offset() as isize),
+        );
+        inner(this, lang, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_font_fallback_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::language::Language_Langs as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFontSetter as ::unity2::ClassIdentity>::class(),
+                "SortFontFallbackPriority",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardFontSetter as ::unity2::ClassIdentity>::NAME,
+                    "SortFontFallbackPriority",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_font_fallback_priority(
+        this: ProfileCardFontSetter,
+        lang: crate::app::language::Language_Langs,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFontSetter,
+            crate::app::language::Language_Langs,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sort_font_fallback_priority::get_offset() as isize),
+        );
+        inner(this, lang, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFontSetter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardFontSetter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardFontSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardFontSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-profilecardfontsetter")]
+pub trait IProfileCardFontSetterMethods: IProfileCardFontSetter {
+    #[doc = "`SetFontType(crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType)` overload"]
+    fn set_font_type(
+        self,
+        font_type: impl ::core::convert::Into<
+            crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardFontSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardFontSetter_unity2_raw::set_font_type(
+                __receiver,
+                ::core::convert::Into::into(font_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLanguage(crate::app::language::Language_Langs)` overload"]
+    fn set_language(
+        self,
+        lang: impl ::core::convert::Into<crate::app::language::Language_Langs>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardFontSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardFontSetter_unity2_raw::set_language(
+                __receiver,
+                ::core::convert::Into::into(lang),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortFontFallbackPriority(crate::app::language::Language_Langs)` overload"]
+    fn sort_font_fallback_priority(
+        self,
+        lang: impl ::core::convert::Into<crate::app::language::Language_Langs>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardFontSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardFontSetter_unity2_raw::sort_font_fallback_priority(
+                __receiver,
+                ::core::convert::Into::into(lang),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardFontSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardFontSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardfontsetter")]
+impl<__T: IProfileCardFontSetter> IProfileCardFontSetterMethods for __T {}
 
 #[cfg(feature = "app-profilecardfontsetter")]
 impl ProfileCardFontSetter {
@@ -126,4 +370,33 @@ impl ProfileCardFontSetter {
         <Self as IProfileCardFontSetterMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-profilecardfontsetter")]
+pub mod prelude {
+    pub use super::IProfileCardFontSetter;
+    pub use super::IProfileCardFontSetterMethods;
+    pub use super::ProfileCardFontSetter;
+    pub use super::ProfileCardFontSetter_FontType;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

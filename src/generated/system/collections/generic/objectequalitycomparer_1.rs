@@ -82,3 +82,16 @@ impl<T0: ::unity2::ClassIdentity> ObjectEqualityComparer_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-objectequalitycomparer_1")]
+pub mod prelude {
+    pub use super::IObjectEqualityComparer_1;
+    pub use super::IObjectEqualityComparer_1Methods;
+    pub use super::ObjectEqualityComparer_1;
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

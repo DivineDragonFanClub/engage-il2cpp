@@ -19,141 +19,1233 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-statemachinebehaviour")]
-#[::unity2::methods]
-impl StateMachineBehaviour {
-    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    #[method(name = "OnStateEnter", args = 3)]
-    pub fn on_state_enter(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StateMachineBehaviour_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateEnter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_enter(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-    ) -> ();
-
-    #[doc = "`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    #[method(name = "OnStateUpdate", args = 3)]
-    pub fn on_state_update(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_enter::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateUpdate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_update(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-    ) -> ();
-
-    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    #[method(name = "OnStateExit", args = 3)]
-    pub fn on_state_exit(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_update::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateExit",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_exit(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-    ) -> ();
-
-    #[doc = "`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    #[method(name = "OnStateMove", args = 3)]
-    pub fn on_state_move(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_exit::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMove",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_move(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-    ) -> ();
-
-    #[doc = "`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
-    #[method(name = "OnStateIK", args = 3)]
-    pub fn on_state_ik(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_move::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_ik {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateIK",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateIK",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_ik(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-    ) -> ();
-
-    #[doc = "`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32)` overload"]
-    #[method(name = "OnStateMachineEnter", args = 2)]
-    pub fn on_state_machine_enter(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_ik::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_machine_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMachineEnter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMachineEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_machine_enter(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_machine_path_hash: i32,
-    ) -> ();
-
-    #[doc = "`OnStateMachineExit(crate::unity_engine::animator::Animator, i32)` overload"]
-    #[method(name = "OnStateMachineExit", args = 2)]
-    pub fn on_state_machine_exit(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_machine_enter::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_machine_path_hash,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_machine_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMachineExit",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMachineExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_machine_exit(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_machine_path_hash: i32,
-    ) -> ();
-
-    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateEnter", args = 4)]
-    pub fn on_state_enter_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_machine_exit::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_machine_path_hash,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_enter_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateEnter",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_enter_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateUpdate", args = 4)]
-    pub fn on_state_update_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_enter_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_update_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateUpdate",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_update_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateExit", args = 4)]
-    pub fn on_state_exit_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_update_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_exit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateExit",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_exit_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateMove", args = 4)]
-    pub fn on_state_move_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_exit_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_move_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMove",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_move_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateIK", args = 4)]
-    pub fn on_state_ik_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_move_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_ik_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateIK",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateIK",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_ik_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateMachineEnter", args = 3)]
-    pub fn on_state_machine_enter_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_ik_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_info,
+            layer_index,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_machine_enter_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMachineEnter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMachineEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_machine_enter_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_machine_path_hash: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`OnStateMachineExit(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
-    #[method(name = "OnStateMachineExit", args = 3)]
-    pub fn on_state_machine_exit_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_machine_enter_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_machine_path_hash,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_state_machine_exit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                "OnStateMachineExit",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    "OnStateMachineExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_state_machine_exit_2(
+        this: StateMachineBehaviour,
         animator: crate::unity_engine::animator::Animator,
         state_machine_path_hash: i32,
         controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            StateMachineBehaviour,
+            crate::unity_engine::animator::Animator,
+            i32,
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_state_machine_exit_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            animator,
+            state_machine_path_hash,
+            controller,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StateMachineBehaviour as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StateMachineBehaviour as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: StateMachineBehaviour,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(StateMachineBehaviour, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-statemachinebehaviour")]
+pub trait IStateMachineBehaviourMethods: IStateMachineBehaviour {
+    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_enter(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_enter(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_update(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_update(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_exit(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_exit(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_move(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_move(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_ik(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_ik(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32)` overload"]
+    fn on_state_machine_enter(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_machine_path_hash: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_machine_enter(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_machine_path_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMachineExit(crate::unity_engine::animator::Animator, i32)` overload"]
+    fn on_state_machine_exit(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_machine_path_hash: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_machine_exit(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_machine_path_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_enter_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_enter_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_update_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_update_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_exit_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_exit_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_move_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_move_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_ik_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+        layer_index: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_ik_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_info),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_machine_enter_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_machine_path_hash: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_machine_enter_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_machine_path_hash),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnStateMachineExit(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]
+    fn on_state_machine_exit_2(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_machine_path_hash: impl ::core::convert::Into<i32>,
+        controller: impl ::core::convert::Into<
+            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::on_state_machine_exit_2(
+                __receiver,
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_machine_path_hash),
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <StateMachineBehaviour as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StateMachineBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-statemachinebehaviour")]
+impl<__T: IStateMachineBehaviour> IStateMachineBehaviourMethods for __T {}
 
 #[cfg(feature = "unity_engine-statemachinebehaviour")]
 impl StateMachineBehaviour {
@@ -169,4 +1261,20 @@ impl StateMachineBehaviour {
         <Self as IStateMachineBehaviourMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-statemachinebehaviour")]
+pub mod prelude {
+    pub use super::IStateMachineBehaviour;
+    pub use super::IStateMachineBehaviourMethods;
+    pub use super::StateMachineBehaviour;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

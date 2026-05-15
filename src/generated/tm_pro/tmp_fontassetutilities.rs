@@ -27,41 +27,286 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontassetutilities")]
-#[::unity2::methods]
-impl TMP_FontAssetUtilities {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities;
-
-    #[doc = "`GetCharacterFromFontAsset(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, bool)` overload"]
-    #[method(name = "GetCharacterFromFontAsset", args = 6)]
-    pub fn get_character_from_font_asset(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_FontAssetUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_instance::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_from_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "GetCharacterFromFontAsset",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterFromFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_from_font_asset(
         unicode: u32,
         source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         include_fallbacks: bool,
         font_style: crate::tm_pro::fontstyles::FontStyles,
         font_weight: crate::tm_pro::fontweight::FontWeight,
-        is_alternative_typeface: bool,
-    ) -> crate::tm_pro::tmp_character::TMP_Character;
-
-    #[doc = "`GetCharacterFromFontAsset_Internal(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, bool)` overload"]
-    #[method(name = "GetCharacterFromFontAsset_Internal", args = 6)]
-    pub fn get_character_from_font_asset_internal(
+        is_alternative_typeface: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_character::TMP_Character {
+        let inner: extern "C" fn(
+            u32,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            bool,
+            crate::tm_pro::fontstyles::FontStyles,
+            crate::tm_pro::fontweight::FontWeight,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_character::TMP_Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_from_font_asset::get_offset() as isize),
+        );
+        inner(
+            unicode,
+            source_font_asset,
+            include_fallbacks,
+            font_style,
+            font_weight,
+            is_alternative_typeface,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_from_font_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "GetCharacterFromFontAsset_Internal",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterFromFontAsset_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_from_font_asset_internal(
         unicode: u32,
         source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         include_fallbacks: bool,
         font_style: crate::tm_pro::fontstyles::FontStyles,
         font_weight: crate::tm_pro::fontweight::FontWeight,
-        is_alternative_typeface: bool,
-    ) -> crate::tm_pro::tmp_character::TMP_Character;
-
-    #[doc = "`GetCharacterFromFontAssets(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, bool)` overload"]
-    #[method(name = "GetCharacterFromFontAssets", args = 7)]
-    pub fn get_character_from_font_assets(
+        is_alternative_typeface: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_character::TMP_Character {
+        let inner: extern "C" fn(
+            u32,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            bool,
+            crate::tm_pro::fontstyles::FontStyles,
+            crate::tm_pro::fontweight::FontWeight,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_character::TMP_Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_from_font_asset_internal::get_offset() as isize),
+        );
+        inner(
+            unicode,
+            source_font_asset,
+            include_fallbacks,
+            font_style,
+            font_weight,
+            is_alternative_typeface,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_from_font_assets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "GetCharacterFromFontAssets",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterFromFontAssets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_from_font_assets(
         unicode: u32,
         source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         font_assets: crate::system::collections::generic::list_1::List_1<
@@ -70,29 +315,342 @@ impl TMP_FontAssetUtilities {
         include_fallbacks: bool,
         font_style: crate::tm_pro::fontstyles::FontStyles,
         font_weight: crate::tm_pro::fontweight::FontWeight,
-        is_alternative_typeface: bool,
-    ) -> crate::tm_pro::tmp_character::TMP_Character;
-
-    #[doc = "`GetSpriteCharacterFromSpriteAsset(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, bool)` overload"]
-    #[method(name = "GetSpriteCharacterFromSpriteAsset", args = 3)]
-    pub fn get_sprite_character_from_sprite_asset(
+        is_alternative_typeface: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_character::TMP_Character {
+        let inner: extern "C" fn(
+            u32,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            bool,
+            crate::tm_pro::fontstyles::FontStyles,
+            crate::tm_pro::fontweight::FontWeight,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_character::TMP_Character = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_from_font_assets::get_offset() as isize),
+        );
+        inner(
+            unicode,
+            source_font_asset,
+            font_assets,
+            include_fallbacks,
+            font_style,
+            font_weight,
+            is_alternative_typeface,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_character_from_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "GetSpriteCharacterFromSpriteAsset",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetSpriteCharacterFromSpriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_character_from_sprite_asset(
         unicode: u32,
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         include_fallbacks: bool,
-    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter;
-
-    #[doc = "`GetSpriteCharacterFromSpriteAsset_Internal(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, bool)` overload"]
-    #[method(name = "GetSpriteCharacterFromSpriteAsset_Internal", args = 3)]
-    pub fn get_sprite_character_from_sprite_asset_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter {
+        let inner: extern "C" fn(
+            u32,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_character_from_sprite_asset::get_offset() as isize),
+        );
+        inner(
+            unicode,
+            sprite_asset,
+            include_fallbacks,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_character_from_sprite_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                "GetSpriteCharacterFromSpriteAsset_Internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetSpriteCharacterFromSpriteAsset_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_character_from_sprite_asset_internal(
         unicode: u32,
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         include_fallbacks: bool,
-    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter {
+        let inner: extern "C" fn(
+            u32,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            bool,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_sprite_character_from_sprite_asset_internal::get_offset() as isize,
+                ),
+        );
+        inner(
+            unicode,
+            sprite_asset,
+            include_fallbacks,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_FontAssetUtilities,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAssetUtilities, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+impl TMP_FontAssetUtilities {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __TMP_FontAssetUtilities_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance() -> crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities {
+        unsafe { __TMP_FontAssetUtilities_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`GetCharacterFromFontAsset(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, *mutbool)` overload"]
+    pub fn get_character_from_font_asset(
+        unicode: impl ::core::convert::Into<u32>,
+        source_font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+        font_style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+        font_weight: impl ::core::convert::Into<crate::tm_pro::fontweight::FontWeight>,
+    ) -> (crate::tm_pro::tmp_character::TMP_Character, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __TMP_FontAssetUtilities_unity2_raw::get_character_from_font_asset(
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(source_font_asset),
+                    ::core::convert::Into::into(include_fallbacks),
+                    ::core::convert::Into::into(font_style),
+                    ::core::convert::Into::into(font_weight),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetCharacterFromFontAsset_Internal(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, *mutbool)` overload"]
+    pub fn get_character_from_font_asset_internal(
+        unicode: impl ::core::convert::Into<u32>,
+        source_font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+        font_style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+        font_weight: impl ::core::convert::Into<crate::tm_pro::fontweight::FontWeight>,
+    ) -> (crate::tm_pro::tmp_character::TMP_Character, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __TMP_FontAssetUtilities_unity2_raw::get_character_from_font_asset_internal(
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(source_font_asset),
+                    ::core::convert::Into::into(include_fallbacks),
+                    ::core::convert::Into::into(font_style),
+                    ::core::convert::Into::into(font_weight),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetCharacterFromFontAssets(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, bool, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, *mutbool)` overload"]
+    pub fn get_character_from_font_assets(
+        unicode: impl ::core::convert::Into<u32>,
+        source_font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        font_assets: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+        >,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+        font_style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+        font_weight: impl ::core::convert::Into<crate::tm_pro::fontweight::FontWeight>,
+    ) -> (crate::tm_pro::tmp_character::TMP_Character, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __TMP_FontAssetUtilities_unity2_raw::get_character_from_font_assets(
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(source_font_asset),
+                    ::core::convert::Into::into(font_assets),
+                    ::core::convert::Into::into(include_fallbacks),
+                    ::core::convert::Into::into(font_style),
+                    ::core::convert::Into::into(font_weight),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetSpriteCharacterFromSpriteAsset(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, bool)` overload"]
+    pub fn get_sprite_character_from_sprite_asset(
+        unicode: impl ::core::convert::Into<u32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter {
+        unsafe {
+            __TMP_FontAssetUtilities_unity2_raw::get_sprite_character_from_sprite_asset(
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::convert::Into::into(include_fallbacks),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSpriteCharacterFromSpriteAsset_Internal(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, bool)` overload"]
+    pub fn get_sprite_character_from_sprite_asset_internal(
+        unicode: impl ::core::convert::Into<u32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter {
+        unsafe {
+            __TMP_FontAssetUtilities_unity2_raw::get_sprite_character_from_sprite_asset_internal(
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::convert::Into::into(include_fallbacks),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+pub trait ITMP_FontAssetUtilitiesMethods: ITMP_FontAssetUtilities {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAssetUtilities as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAssetUtilities_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+impl<__T: ITMP_FontAssetUtilities> ITMP_FontAssetUtilitiesMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_fontassetutilities")]
 impl TMP_FontAssetUtilities {
@@ -108,4 +666,14 @@ impl TMP_FontAssetUtilities {
         <Self as ITMP_FontAssetUtilitiesMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+pub mod prelude {
+    pub use super::ITMP_FontAssetUtilities;
+    pub use super::ITMP_FontAssetUtilitiesMethods;
+    pub use super::TMP_FontAssetUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

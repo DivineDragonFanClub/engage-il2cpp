@@ -18,3 +18,12 @@ mod __types {
 
 #[cfg(feature = "system-collections-concurrent-idictionarydebugview_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-concurrent-idictionarydebugview_2")]
+pub mod prelude {
+    pub use super::IDictionaryDebugView_2;
+    pub use super::IIDictionaryDebugView_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

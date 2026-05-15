@@ -18,3 +18,12 @@ mod __types {
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6")]
+pub mod prelude {
+    pub use super::INamespaceDoc_6;
+    pub use super::NamespaceDoc_6;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

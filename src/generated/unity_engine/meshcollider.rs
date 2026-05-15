@@ -20,65 +20,768 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-meshcollider")]
-#[::unity2::methods]
-impl MeshCollider {
-    #[doc = "`get_sharedMesh()` overload"]
-    #[method(name = "get_sharedMesh", args = 0)]
-    pub fn get_shared_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`set_sharedMesh(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = "set_sharedMesh", args = 1)]
-    pub fn set_shared_mesh(self, value: crate::unity_engine::mesh::Mesh) -> ();
-
-    #[doc = "`get_convex()` overload"]
-    #[method(name = "get_convex", args = 0)]
-    pub fn get_convex(self) -> bool;
-
-    #[doc = "`set_convex(bool)` overload"]
-    #[method(name = "set_convex", args = 1)]
-    pub fn set_convex(self, value: bool) -> ();
-
-    #[doc = "`get_inflateMesh()` overload"]
-    #[method(name = "get_inflateMesh", args = 0)]
-    pub fn get_inflate_mesh(self) -> bool;
-
-    #[doc = "`set_inflateMesh(bool)` overload"]
-    #[method(name = "set_inflateMesh", args = 1)]
-    pub fn set_inflate_mesh(self, value: bool) -> ();
-
-    #[doc = "`get_cookingOptions()` overload"]
-    #[method(name = "get_cookingOptions", args = 0)]
-    pub fn get_cooking_options(
-        self,
-    ) -> crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions;
-
-    #[doc = "`set_cookingOptions(crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions)` overload"]
-    #[method(name = "set_cookingOptions", args = 1)]
-    pub fn set_cooking_options(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MeshCollider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shared_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_sharedMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_sharedMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shared_mesh(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            MeshCollider,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_shared_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shared_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_sharedMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_sharedMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shared_mesh(
+        this: MeshCollider,
+        value: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshCollider,
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shared_mesh::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_convex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_convex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_convex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_convex(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MeshCollider, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_convex::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_convex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_convex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_convex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_convex(
+        this: MeshCollider,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MeshCollider, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_convex::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_inflate_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_inflateMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_inflateMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_inflate_mesh(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MeshCollider, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_inflate_mesh::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_inflate_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_inflateMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_inflateMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_inflate_mesh(
+        this: MeshCollider,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MeshCollider, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_inflate_mesh::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cooking_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_cookingOptions",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_cookingOptions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cooking_options(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions {
+        let inner : extern "C" fn (MeshCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshcollidercookingoptions :: MeshColliderCookingOptions = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_cooking_options :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cooking_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: meshcollidercookingoptions :: MeshColliderCookingOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_cookingOptions",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_cookingOptions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cooking_options(
+        this: MeshCollider,
         value: crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions,
-    ) -> ();
-
-    #[doc = "`get_skinWidth()` overload"]
-    #[method(name = "get_skinWidth", args = 0)]
-    pub fn get_skin_width(self) -> f32;
-
-    #[doc = "`set_skinWidth(f32)` overload"]
-    #[method(name = "set_skinWidth", args = 1)]
-    pub fn set_skin_width(self, value: f32) -> ();
-
-    #[doc = "`get_smoothSphereCollisions()` overload"]
-    #[method(name = "get_smoothSphereCollisions", args = 0)]
-    pub fn get_smooth_sphere_collisions(self) -> bool;
-
-    #[doc = "`set_smoothSphereCollisions(bool)` overload"]
-    #[method(name = "set_smoothSphereCollisions", args = 1)]
-    pub fn set_smooth_sphere_collisions(self, value: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshCollider,
+            crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_cooking_options::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skin_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_skinWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_skinWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skin_width(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MeshCollider, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_skin_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skin_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_skinWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_skinWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skin_width(
+        this: MeshCollider,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MeshCollider, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_skin_width::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_smooth_sphere_collisions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "get_smoothSphereCollisions",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "get_smoothSphereCollisions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_smooth_sphere_collisions(
+        this: MeshCollider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MeshCollider, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_smooth_sphere_collisions::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_smooth_sphere_collisions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                "set_smoothSphereCollisions",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    "set_smoothSphereCollisions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_smooth_sphere_collisions(
+        this: MeshCollider,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MeshCollider, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_smooth_sphere_collisions::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshCollider as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshCollider as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MeshCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshCollider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-meshcollider")]
+pub trait IMeshColliderMethods: IMeshCollider {
+    #[doc = "`get_sharedMesh()` overload"]
+    fn get_shared_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_shared_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_sharedMesh(crate::unity_engine::mesh::Mesh)` overload"]
+    fn set_shared_mesh(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_shared_mesh(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_convex()` overload"]
+    fn get_convex(self) -> bool {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_convex(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_convex(bool)` overload"]
+    fn set_convex(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_convex(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_inflateMesh()` overload"]
+    fn get_inflate_mesh(self) -> bool {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_inflate_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_inflateMesh(bool)` overload"]
+    fn set_inflate_mesh(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_inflate_mesh(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_cookingOptions()` overload"]
+    fn get_cooking_options(
+        self,
+    ) -> crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_cooking_options(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_cookingOptions(crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions)` overload"]
+    fn set_cooking_options(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_cooking_options(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_skinWidth()` overload"]
+    fn get_skin_width(self) -> f32 {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_skin_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_skinWidth(f32)` overload"]
+    fn set_skin_width(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_skin_width(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_smoothSphereCollisions()` overload"]
+    fn get_smooth_sphere_collisions(self) -> bool {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::get_smooth_sphere_collisions(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_smoothSphereCollisions(bool)` overload"]
+    fn set_smooth_sphere_collisions(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::set_smooth_sphere_collisions(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MeshCollider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MeshCollider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-meshcollider")]
+impl<__T: IMeshCollider> IMeshColliderMethods for __T {}
 
 #[cfg(feature = "unity_engine-meshcollider")]
 impl MeshCollider {
@@ -94,4 +797,23 @@ impl MeshCollider {
         <Self as IMeshColliderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-meshcollider")]
+pub mod prelude {
+    pub use super::IMeshCollider;
+    pub use super::IMeshColliderMethods;
+    pub use super::MeshCollider;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::collider::ICollider;
+    #[cfg(feature = "unity_engine-collider")]
+    pub use crate::unity_engine::collider::IColliderMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -9,14 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_Scope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUI.Scope")]
-    #[parent(crate::system::object::Object)]
-    pub struct GUI_Scope {
-        #[rename(name = "m_Disposed")]
-        pub m_disposed: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUI")]
     #[parent(crate::system::object::Object)]
@@ -59,6 +51,14 @@ mod __types {
         pub s_tool_tip_rect: crate::unity_engine::rect::Rect,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_Scope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUI.Scope")]
+    #[parent(crate::system::object::Object)]
+    pub struct GUI_Scope {
+        #[rename(name = "m_Disposed")]
+        pub m_disposed: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_WindowFunction.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUI.WindowFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -69,108 +69,674 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-gui")]
-#[::unity2::methods]
-impl GUI_Scope {
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose(self, disposing: bool) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose_2(self) -> ();
-
-    #[doc = "`CloseScope()` overload"]
-    #[method(name = "CloseScope", args = 0)]
-    pub fn close_scope(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-gui")]
-impl GUI_Scope {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUI_Scope),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUI_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_color",
+                0,
+                param_types,
+                true,
             )
         });
-        <Self as IGUI_ScopeMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "unity_engine-gui")]
-#[::unity2::methods]
-impl GUI {
-    #[doc = "`get_color()` overload"]
-    #[method(name = "get_color", args = 0)]
-    pub fn get_color() -> crate::unity_engine::color::Color;
-
-    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_color", args = 1)]
-    pub fn set_color(value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`set_backgroundColor(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_backgroundColor", args = 1)]
-    pub fn set_background_color(value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`set_changed(bool)` overload"]
-    #[method(name = "set_changed", args = 1)]
-    pub fn set_changed(value: bool) -> ();
-
-    #[doc = "`set_depth(i32)` overload"]
-    #[method(name = "set_depth", args = 1)]
-    pub fn set_depth(value: i32) -> ();
-
-    #[doc = "`get_usePageScrollbars()` overload"]
-    #[method(name = "get_usePageScrollbars", args = 0)]
-    pub fn get_use_page_scrollbars() -> bool;
-
-    #[doc = "`get_blendMaterial()` overload"]
-    #[method(name = "get_blendMaterial", args = 0)]
-    pub fn get_blend_material() -> crate::unity_engine::material::Material;
-
-    #[doc = "`get_blitMaterial()` overload"]
-    #[method(name = "get_blitMaterial", args = 0)]
-    pub fn get_blit_material() -> crate::unity_engine::material::Material;
-
-    #[doc = "`get_roundedRectMaterial()` overload"]
-    #[method(name = "get_roundedRectMaterial", args = 0)]
-    pub fn get_rounded_rect_material() -> crate::unity_engine::material::Material;
-
-    #[doc = "`get_roundedRectWithColorPerBorderMaterial()` overload"]
-    #[method(name = "get_roundedRectWithColorPerBorderMaterial", args = 0)]
-    pub fn get_rounded_rect_with_color_per_border_material(
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`GrabMouseControl(i32)` overload"]
-    #[method(name = "GrabMouseControl", args = 1)]
-    pub fn grab_mouse_control(id: i32) -> ();
-
-    #[doc = "`HasMouseControl(i32)` overload"]
-    #[method(name = "HasMouseControl", args = 1)]
-    pub fn has_mouse_control(id: i32) -> bool;
-
-    #[doc = "`ReleaseMouseControl()` overload"]
-    #[method(name = "ReleaseMouseControl", args = 0)]
-    pub fn release_mouse_control() -> ();
-
-    #[doc = "`InternalRepaintEditorWindow()` overload"]
-    #[method(name = "InternalRepaintEditorWindow", args = 0)]
-    pub fn internal_repaint_editor_window() -> ();
-
-    #[doc = "`Internal_DoWindow(i32, i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::system::object::Object, bool)` overload"]
-    #[method(name = "Internal_DoWindow", args = 8)]
-    pub fn internal_do_window(
+    pub unsafe fn get_color(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_color::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_color",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color(
+        value: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_background_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_backgroundColor",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_backgroundColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_background_color(
+        value: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_background_color::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_changed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_changed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_changed(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_changed::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_depth {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_depth",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_depth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_depth(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_depth::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_page_scrollbars {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_usePageScrollbars",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_usePageScrollbars",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_page_scrollbars(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_use_page_scrollbars::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_blendMaterial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_blendMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_blend_material::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blit_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_blitMaterial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_blitMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blit_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_blit_material::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rounded_rect_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_roundedRectMaterial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_roundedRectMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rounded_rect_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rounded_rect_material::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rounded_rect_with_color_per_border_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_roundedRectWithColorPerBorderMaterial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_roundedRectWithColorPerBorderMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rounded_rect_with_color_per_border_material(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_rounded_rect_with_color_per_border_material::get_offset() as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_grab_mouse_control {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "GrabMouseControl",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "GrabMouseControl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn grab_mouse_control(
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_grab_mouse_control::get_offset() as isize),
+        );
+        inner(id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_mouse_control {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "HasMouseControl",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "HasMouseControl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_mouse_control(
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_mouse_control::get_offset() as isize),
+        );
+        inner(id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_mouse_control {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "ReleaseMouseControl",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "ReleaseMouseControl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release_mouse_control(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release_mouse_control::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_repaint_editor_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "InternalRepaintEditorWindow",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "InternalRepaintEditorWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_repaint_editor_window(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_repaint_editor_window::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_do_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Internal_DoWindow",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Internal_DoWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_do_window(
         id: i32,
         instance_id: i32,
         client_rect: crate::unity_engine::rect::Rect,
@@ -179,89 +745,743 @@ impl GUI {
         style: crate::unity_engine::guistyle::GUIStyle,
         skin: crate::system::object::Object,
         force_rect_on_layout: bool,
-    ) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`get_scrollTroughSide()` overload"]
-    #[method(name = "get_scrollTroughSide", args = 0)]
-    pub fn get_scroll_trough_side() -> i32;
-
-    #[doc = "`set_scrollTroughSide(i32)` overload"]
-    #[method(name = "set_scrollTroughSide", args = 1)]
-    pub fn set_scroll_trough_side(value: i32) -> ();
-
-    #[doc = "`set_skin(crate::unity_engine::guiskin::GUISkin)` overload"]
-    #[method(name = "set_skin", args = 1)]
-    pub fn set_skin(value: crate::unity_engine::guiskin::GUISkin) -> ();
-
-    #[doc = "`get_skin()` overload"]
-    #[method(name = "get_skin", args = 0)]
-    pub fn get_skin() -> crate::unity_engine::guiskin::GUISkin;
-
-    #[doc = "`DoSetSkin(crate::unity_engine::guiskin::GUISkin)` overload"]
-    #[method(name = "DoSetSkin", args = 1)]
-    pub fn do_set_skin(new_skin: crate::unity_engine::guiskin::GUISkin) -> ();
-
-    #[doc = "`set_matrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "set_matrix", args = 1)]
-    pub fn set_matrix(value: crate::unity_engine::matrix4x4::Matrix4x4) -> ();
-
-    #[doc = "`Label(crate::unity_engine::rect::Rect, ::unity2::Il2CppString, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Label", args = 3)]
-    pub fn label(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::system::object::Object,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_do_window::get_offset() as isize),
+        );
+        inner(
+            id,
+            instance_id,
+            client_rect,
+            func,
+            title,
+            style,
+            skin,
+            force_rect_on_layout,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scroll_trough_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_scrollTroughSide",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_scrollTroughSide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scroll_trough_side(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scroll_trough_side::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scroll_trough_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_scrollTroughSide",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_scrollTroughSide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scroll_trough_side(
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scroll_trough_side::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::guiskin::GUISkin as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_skin",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_skin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skin(
+        value: crate::unity_engine::guiskin::GUISkin,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::guiskin::GUISkin,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skin::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_skin",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_skin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skin(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::guiskin::GUISkin {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::guiskin::GUISkin = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_skin::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_set_skin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::guiskin::GUISkin as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoSetSkin",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoSetSkin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_set_skin(
+        new_skin: crate::unity_engine::guiskin::GUISkin,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::guiskin::GUISkin,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_set_skin::get_offset() as isize),
+        );
+        inner(new_skin, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_matrix",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_matrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_matrix(
+        value: crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_matrix::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Label",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Label",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn label(
         position: crate::unity_engine::rect::Rect,
         text: ::unity2::Il2CppString,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`Label(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Label", args = 3)]
-    pub fn label_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            ::unity2::Il2CppString,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_label::get_offset() as isize),
+        );
+        inner(position, text, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_label_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Label",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Label",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn label_2(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture)` overload"]
-    #[method(name = "DrawTexture", args = 2)]
-    pub fn draw_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_label_2::get_offset() as isize),
+        );
+        inner(position, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode)` overload"]
-    #[method(name = "DrawTexture", args = 3)]
-    pub fn draw_texture_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture::get_offset() as isize),
+        );
+        inner(position, image, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_2(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool)` overload"]
-    #[method(name = "DrawTexture", args = 4)]
-    pub fn draw_texture_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_2::get_offset() as isize),
+        );
+        inner(position, image, scale_mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_3(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
         alpha_blend: bool,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32)` overload"]
-    #[method(name = "DrawTexture", args = 5)]
-    pub fn draw_texture_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_3::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_4(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
         alpha_blend: bool,
         image_aspect: f32,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, f32, f32)` overload"]
-    #[method(name = "DrawTexture", args = 8)]
-    pub fn draw_texture_5(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_4::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_5(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
@@ -270,11 +1490,78 @@ impl GUI {
         color: crate::unity_engine::color::Color,
         border_width: f32,
         border_radius: f32,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, f32)` overload"]
-    #[method(name = "DrawTexture", args = 8)]
-    pub fn draw_texture_6(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            crate::unity_engine::color::Color,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_5::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            color,
+            border_width,
+            border_radius,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_6(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
@@ -283,11 +1570,78 @@ impl GUI {
         color: crate::unity_engine::color::Color,
         border_widths: crate::unity_engine::vector4::Vector4,
         border_radius: f32,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "DrawTexture", args = 8)]
-    pub fn draw_texture_7(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector4::Vector4,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_6::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            color,
+            border_widths,
+            border_radius,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_7(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
@@ -296,11 +1650,79 @@ impl GUI {
         color: crate::unity_engine::color::Color,
         border_widths: crate::unity_engine::vector4::Vector4,
         border_radiuses: crate::unity_engine::vector4::Vector4,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, bool)` overload"]
-    #[method(name = "DrawTexture", args = 9)]
-    pub fn draw_texture_8(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_7::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            color,
+            border_widths,
+            border_radiuses,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                9,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_8(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
@@ -310,11 +1732,84 @@ impl GUI {
         border_widths: crate::unity_engine::vector4::Vector4,
         border_radiuses: crate::unity_engine::vector4::Vector4,
         draw_smooth_corners: bool,
-    ) -> ();
-
-    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, bool)` overload"]
-    #[method(name = "DrawTexture", args = 12)]
-    pub fn draw_texture_9(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_8::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            color,
+            border_widths,
+            border_radiuses,
+            draw_smooth_corners,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_texture_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DrawTexture",
+                12,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_texture_9(
         position: crate::unity_engine::rect::Rect,
         image: crate::unity_engine::texture::Texture,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
@@ -327,98 +1822,691 @@ impl GUI {
         border_widths: crate::unity_engine::vector4::Vector4,
         border_radiuses: crate::unity_engine::vector4::Vector4,
         draw_smooth_corners: bool,
-    ) -> ();
-
-    #[doc = "`CalculateScaledTextureRects(crate::unity_engine::rect::Rect, crate::unity_engine::scalemode::ScaleMode, f32, crate::unity_engine::rect::Rect, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "CalculateScaledTextureRects", args = 5)]
-    pub fn calculate_scaled_texture_rects(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::texture::Texture,
+            crate::unity_engine::scalemode::ScaleMode,
+            bool,
+            f32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_texture_9::get_offset() as isize),
+        );
+        inner(
+            position,
+            image,
+            scale_mode,
+            alpha_blend,
+            image_aspect,
+            left_color,
+            top_color,
+            right_color,
+            bottom_color,
+            border_widths,
+            border_radiuses,
+            draw_smooth_corners,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_scaled_texture_rects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scalemode::ScaleMode as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "CalculateScaledTextureRects",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "CalculateScaledTextureRects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_scaled_texture_rects(
         position: crate::unity_engine::rect::Rect,
         scale_mode: crate::unity_engine::scalemode::ScaleMode,
         image_aspect: f32,
-        out_screen_rect: crate::unity_engine::rect::Rect,
-        out_source_rect: crate::unity_engine::rect::Rect,
-    ) -> bool;
-
-    #[doc = "`Box(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Box", args = 3)]
-    pub fn r#box(
+        out_screen_rect: *mut crate::unity_engine::rect::Rect,
+        out_source_rect: *mut crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::scalemode::ScaleMode,
+            f32,
+            *mut crate::unity_engine::rect::Rect,
+            *mut crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_scaled_texture_rects::get_offset() as isize),
+        );
+        inner(
+            position,
+            scale_mode,
+            image_aspect,
+            out_screen_rect,
+            out_source_rect,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_box {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Box",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Box",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn r#box(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`Button(crate::unity_engine::rect::Rect, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Button", args = 2)]
-    pub fn button(position: crate::unity_engine::rect::Rect, text: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Button(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Button", args = 3)]
-    pub fn button_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_box::get_offset() as isize),
+        );
+        inner(position, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Button",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Button",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn button(
+        position: crate::unity_engine::rect::Rect,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_button::get_offset() as isize),
+        );
+        inner(position, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_button_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Button",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Button",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn button_2(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> bool;
-
-    #[doc = "`Button(crate::unity_engine::rect::Rect, i32, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Button", args = 4)]
-    pub fn button_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_button_2::get_offset() as isize),
+        );
+        inner(position, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_button_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Button",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Button",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn button_3(
         position: crate::unity_engine::rect::Rect,
         id: i32,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> bool;
-
-    #[doc = "`DoRepeatButton(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::focustype::FocusType)` overload"]
-    #[method(name = "DoRepeatButton", args = 4)]
-    pub fn do_repeat_button(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            i32,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_button_3::get_offset() as isize),
+        );
+        inner(position, id, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_repeat_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::focustype::FocusType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoRepeatButton",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoRepeatButton",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_repeat_button(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
         focus_type: crate::unity_engine::focustype::FocusType,
-    ) -> bool;
-
-    #[doc = "`DoControl(crate::unity_engine::rect::Rect, i32, bool, bool, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "DoControl", args = 6)]
-    pub fn do_control(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::focustype::FocusType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_repeat_button::get_offset() as isize),
+        );
+        inner(position, content, style, focus_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_control {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoControl",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoControl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_control(
         position: crate::unity_engine::rect::Rect,
         id: i32,
         on: bool,
         hover: bool,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> bool;
-
-    #[doc = "`DoLabel(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "DoLabel", args = 3)]
-    pub fn do_label(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            i32,
+            bool,
+            bool,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_control::get_offset() as isize),
+        );
+        inner(
+            position,
+            id,
+            on,
+            hover,
+            content,
+            style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoLabel",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoLabel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_label(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`DoButton(crate::unity_engine::rect::Rect, i32, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "DoButton", args = 4)]
-    pub fn do_button(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_label::get_offset() as isize),
+        );
+        inner(position, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoButton",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoButton",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_button(
         position: crate::unity_engine::rect::Rect,
         id: i32,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> bool;
-
-    #[doc = "`HorizontalSlider(crate::unity_engine::rect::Rect, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "HorizontalSlider", args = 6)]
-    pub fn horizontal_slider(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            i32,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_button::get_offset() as isize),
+        );
+        inner(position, id, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_horizontal_slider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "HorizontalSlider",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "HorizontalSlider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn horizontal_slider(
         position: crate::unity_engine::rect::Rect,
         value: f32,
         left_value: f32,
         right_value: f32,
         slider: crate::unity_engine::guistyle::GUIStyle,
         thumb: crate::unity_engine::guistyle::GUIStyle,
-    ) -> f32;
-
-    #[doc = "`Slider(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool, i32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Slider", args = 10)]
-    pub fn slider(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_horizontal_slider::get_offset() as isize),
+        );
+        inner(
+            position,
+            value,
+            left_value,
+            right_value,
+            slider,
+            thumb,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_slider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Slider",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Slider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn slider(
         position: crate::unity_engine::rect::Rect,
         value: f32,
         size: f32,
@@ -429,41 +2517,283 @@ impl GUI {
         horiz: bool,
         id: i32,
         thumb_extent: crate::unity_engine::guistyle::GUIStyle,
-    ) -> f32;
-
-    #[doc = "`HorizontalScrollbar(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "HorizontalScrollbar", args = 6)]
-    pub fn horizontal_scrollbar(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            bool,
+            i32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_slider::get_offset() as isize),
+        );
+        inner(
+            position,
+            value,
+            size,
+            start,
+            end,
+            slider,
+            thumb,
+            horiz,
+            id,
+            thumb_extent,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_horizontal_scrollbar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "HorizontalScrollbar",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "HorizontalScrollbar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn horizontal_scrollbar(
         position: crate::unity_engine::rect::Rect,
         value: f32,
         size: f32,
         left_value: f32,
         right_value: f32,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> f32;
-
-    #[doc = "`ScrollerRepeatButton(i32, crate::unity_engine::rect::Rect, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "ScrollerRepeatButton", args = 3)]
-    pub fn scroller_repeat_button(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_horizontal_scrollbar::get_offset() as isize),
+        );
+        inner(
+            position,
+            value,
+            size,
+            left_value,
+            right_value,
+            style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scroller_repeat_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "ScrollerRepeatButton",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "ScrollerRepeatButton",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scroller_repeat_button(
         scroller_id: i32,
         rect: crate::unity_engine::rect::Rect,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> bool;
-
-    #[doc = "`VerticalScrollbar(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "VerticalScrollbar", args = 6)]
-    pub fn vertical_scrollbar(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scroller_repeat_button::get_offset() as isize),
+        );
+        inner(scroller_id, rect, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_vertical_scrollbar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "VerticalScrollbar",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "VerticalScrollbar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn vertical_scrollbar(
         position: crate::unity_engine::rect::Rect,
         value: f32,
         size: f32,
         top_value: f32,
         bottom_value: f32,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> f32;
-
-    #[doc = "`Scroller(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool)` overload"]
-    #[method(name = "Scroller", args = 10)]
-    pub fn scroller(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_vertical_scrollbar::get_offset() as isize),
+        );
+        inner(
+            position,
+            value,
+            size,
+            top_value,
+            bottom_value,
+            style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scroller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Scroller",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Scroller",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scroller(
         position: crate::unity_engine::rect::Rect,
         value: f32,
         size: f32,
@@ -474,40 +2804,329 @@ impl GUI {
         left_button: crate::unity_engine::guistyle::GUIStyle,
         right_button: crate::unity_engine::guistyle::GUIStyle,
         horiz: bool,
-    ) -> f32;
-
-    #[doc = "`BeginGroup(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "BeginGroup", args = 3)]
-    pub fn begin_group(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scroller::get_offset() as isize),
+        );
+        inner(
+            position,
+            value,
+            size,
+            left_value,
+            right_value,
+            slider,
+            thumb,
+            left_button,
+            right_button,
+            horiz,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "BeginGroup",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "BeginGroup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_group(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`BeginGroup(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "BeginGroup", args = 4)]
-    pub fn begin_group_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_begin_group::get_offset() as isize),
+        );
+        inner(position, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_group_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "BeginGroup",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "BeginGroup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_group_2(
         position: crate::unity_engine::rect::Rect,
         content: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
         scroll_offset: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`EndGroup()` overload"]
-    #[method(name = "EndGroup", args = 0)]
-    pub fn end_group() -> ();
-
-    #[doc = "`BeginClip(crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "BeginClip", args = 1)]
-    pub fn begin_clip(position: crate::unity_engine::rect::Rect) -> ();
-
-    #[doc = "`EndClip()` overload"]
-    #[method(name = "EndClip", args = 0)]
-    pub fn end_clip() -> ();
-
-    #[doc = "`BeginScrollView(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect, bool, bool, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "BeginScrollView", args = 8)]
-    pub fn begin_scroll_view(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_begin_group_2::get_offset() as isize),
+        );
+        inner(
+            position,
+            content,
+            style,
+            scroll_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "EndGroup",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "EndGroup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_group(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end_group::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "BeginClip",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "BeginClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_clip(
+        position: crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_begin_clip::get_offset() as isize),
+            );
+        inner(position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "EndClip",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "EndClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_clip(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end_clip::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_scroll_view {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "BeginScrollView",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "BeginScrollView",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin_scroll_view(
         position: crate::unity_engine::rect::Rect,
         scroll_position: crate::unity_engine::vector2::Vector2,
         view_rect: crate::unity_engine::rect::Rect,
@@ -516,25 +3135,183 @@ impl GUI {
         horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
         vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
         background: crate::unity_engine::guistyle::GUIStyle,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`EndScrollView(bool)` overload"]
-    #[method(name = "EndScrollView", args = 1)]
-    pub fn end_scroll_view(handle_scroll_wheel: bool) -> ();
-
-    #[doc = "`Window(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "Window", args = 5)]
-    pub fn window(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::rect::Rect,
+            bool,
+            bool,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_begin_scroll_view::get_offset() as isize),
+        );
+        inner(
+            position,
+            scroll_position,
+            view_rect,
+            always_show_horizontal,
+            always_show_vertical,
+            horizontal_scrollbar,
+            vertical_scrollbar,
+            background,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_scroll_view {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "EndScrollView",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "EndScrollView",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_scroll_view(
+        handle_scroll_wheel: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end_scroll_view::get_offset() as isize),
+        );
+        inner(handle_scroll_wheel, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Window",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Window",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn window(
         id: i32,
         client_rect: crate::unity_engine::rect::Rect,
         func: crate::unity_engine::gui::GUI_WindowFunction,
         title: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`DoWindow(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guiskin::GUISkin, bool)` overload"]
-    #[method(name = "DoWindow", args = 7)]
-    pub fn do_window(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_window::get_offset() as isize),
+        );
+        inner(id, client_rect, func, title, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guiskin::GUISkin as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "DoWindow",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "DoWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_window(
         id: i32,
         client_rect: crate::unity_engine::rect::Rect,
         func: crate::unity_engine::gui::GUI_WindowFunction,
@@ -542,11 +3319,76 @@ impl GUI {
         style: crate::unity_engine::guistyle::GUIStyle,
         skin: crate::unity_engine::guiskin::GUISkin,
         force_rect_on_layout: bool,
-    ) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`CallWindowDelegate(crate::unity_engine::gui::GUI_WindowFunction, i32, i32, crate::unity_engine::guiskin::GUISkin, i32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "CallWindowDelegate", args = 8)]
-    pub fn call_window_delegate(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guiskin::GUISkin,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_window::get_offset() as isize),
+        );
+        inner(
+            id,
+            client_rect,
+            func,
+            title,
+            style,
+            skin,
+            force_rect_on_layout,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_window_delegate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guiskin::GUISkin as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "CallWindowDelegate",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "CallWindowDelegate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn call_window_delegate(
         func: crate::unity_engine::gui::GUI_WindowFunction,
         id: i32,
         instance_id: i32,
@@ -555,38 +3397,1235 @@ impl GUI {
         width: f32,
         height: f32,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_color_Injected(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "get_color_Injected", args = 1)]
-    pub fn get_color_injected(ret: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`set_color_Injected(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_color_Injected", args = 1)]
-    pub fn set_color_injected(value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`set_backgroundColor_Injected(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_backgroundColor_Injected", args = 1)]
-    pub fn set_background_color_injected(value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`Internal_DoWindow_Injected(i32, i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::system::object::Object, bool, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "Internal_DoWindow_Injected", args = 9)]
-    pub fn internal_do_window_injected(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gui::GUI_WindowFunction,
+            i32,
+            i32,
+            crate::unity_engine::guiskin::GUISkin,
+            i32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_call_window_delegate::get_offset() as isize),
+        );
+        inner(
+            func,
+            id,
+            instance_id,
+            skin,
+            force_rect,
+            width,
+            height,
+            style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "get_color_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "get_color_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_injected(
+        ret: *mut crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color_injected::get_offset() as isize),
+        );
+        inner(ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_color_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_color_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color_injected(
+        value: *mut crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color_injected::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_background_color_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "set_backgroundColor_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "set_backgroundColor_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_background_color_injected(
+        value: *mut crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_background_color_injected::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_do_window_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI as ::unity2::ClassIdentity>::class(),
+                "Internal_DoWindow_Injected",
+                9,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI as ::unity2::ClassIdentity>::NAME,
+                    "Internal_DoWindow_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_do_window_injected(
         id: i32,
         instance_id: i32,
-        client_rect: crate::unity_engine::rect::Rect,
+        client_rect: *mut crate::unity_engine::rect::Rect,
         func: crate::unity_engine::gui::GUI_WindowFunction,
         title: crate::unity_engine::guicontent::GUIContent,
         style: crate::unity_engine::guistyle::GUIStyle,
         skin: crate::system::object::Object,
         force_rect_on_layout: bool,
-        ret: crate::unity_engine::rect::Rect,
-    ) -> ();
+        ret: *mut crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            *mut crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::system::object::Object,
+            bool,
+            *mut crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_do_window_injected::get_offset() as isize),
+        );
+        inner(
+            id,
+            instance_id,
+            client_rect,
+            func,
+            title,
+            style,
+            skin,
+            force_rect_on_layout,
+            ret,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "unity_engine-gui")]
+impl GUI {
+    #[doc = "`get_color()` overload"]
+    pub fn get_color() -> crate::unity_engine::color::Color {
+        unsafe { __GUI_unity2_raw::get_color(::core::option::Option::None) }
+    }
+    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
+    pub fn set_color(value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_color(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_backgroundColor(crate::unity_engine::color::Color)` overload"]
+    pub fn set_background_color(
+        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_background_color(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_changed(bool)` overload"]
+    pub fn set_changed(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_changed(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_depth(i32)` overload"]
+    pub fn set_depth(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_depth(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_usePageScrollbars()` overload"]
+    pub fn get_use_page_scrollbars() -> bool {
+        unsafe { __GUI_unity2_raw::get_use_page_scrollbars(::core::option::Option::None) }
+    }
+    #[doc = "`get_blendMaterial()` overload"]
+    pub fn get_blend_material() -> crate::unity_engine::material::Material {
+        unsafe { __GUI_unity2_raw::get_blend_material(::core::option::Option::None) }
+    }
+    #[doc = "`get_blitMaterial()` overload"]
+    pub fn get_blit_material() -> crate::unity_engine::material::Material {
+        unsafe { __GUI_unity2_raw::get_blit_material(::core::option::Option::None) }
+    }
+    #[doc = "`get_roundedRectMaterial()` overload"]
+    pub fn get_rounded_rect_material() -> crate::unity_engine::material::Material {
+        unsafe { __GUI_unity2_raw::get_rounded_rect_material(::core::option::Option::None) }
+    }
+    #[doc = "`get_roundedRectWithColorPerBorderMaterial()` overload"]
+    pub fn get_rounded_rect_with_color_per_border_material(
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __GUI_unity2_raw::get_rounded_rect_with_color_per_border_material(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GrabMouseControl(i32)` overload"]
+    pub fn grab_mouse_control(id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __GUI_unity2_raw::grab_mouse_control(
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasMouseControl(i32)` overload"]
+    pub fn has_mouse_control(id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __GUI_unity2_raw::has_mouse_control(
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReleaseMouseControl()` overload"]
+    pub fn release_mouse_control() -> () {
+        unsafe { __GUI_unity2_raw::release_mouse_control(::core::option::Option::None) }
+    }
+    #[doc = "`InternalRepaintEditorWindow()` overload"]
+    pub fn internal_repaint_editor_window() -> () {
+        unsafe { __GUI_unity2_raw::internal_repaint_editor_window(::core::option::Option::None) }
+    }
+    #[doc = "`Internal_DoWindow(i32, i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::system::object::Object, bool)` overload"]
+    pub fn internal_do_window(
+        id: impl ::core::convert::Into<i32>,
+        instance_id: impl ::core::convert::Into<i32>,
+        client_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        title: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        skin: impl ::core::convert::Into<crate::system::object::Object>,
+        force_rect_on_layout: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __GUI_unity2_raw::internal_do_window(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(instance_id),
+                ::core::convert::Into::into(client_rect),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(skin),
+                ::core::convert::Into::into(force_rect_on_layout),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __GUI_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`get_scrollTroughSide()` overload"]
+    pub fn get_scroll_trough_side() -> i32 {
+        unsafe { __GUI_unity2_raw::get_scroll_trough_side(::core::option::Option::None) }
+    }
+    #[doc = "`set_scrollTroughSide(i32)` overload"]
+    pub fn set_scroll_trough_side(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_scroll_trough_side(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_skin(crate::unity_engine::guiskin::GUISkin)` overload"]
+    pub fn set_skin(
+        value: impl ::core::convert::Into<crate::unity_engine::guiskin::GUISkin>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_skin(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_skin()` overload"]
+    pub fn get_skin() -> crate::unity_engine::guiskin::GUISkin {
+        unsafe { __GUI_unity2_raw::get_skin(::core::option::Option::None) }
+    }
+    #[doc = "`DoSetSkin(crate::unity_engine::guiskin::GUISkin)` overload"]
+    pub fn do_set_skin(
+        new_skin: impl ::core::convert::Into<crate::unity_engine::guiskin::GUISkin>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::do_set_skin(
+                ::core::convert::Into::into(new_skin),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_matrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
+    pub fn set_matrix(
+        value: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::set_matrix(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Label(crate::unity_engine::rect::Rect, ::unity2::Il2CppString, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn label(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::label(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Label(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn label_2(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::label_2(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture)` overload"]
+    pub fn draw_texture(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode)` overload"]
+    pub fn draw_texture_2(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_2(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool)` overload"]
+    pub fn draw_texture_3(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_3(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32)` overload"]
+    pub fn draw_texture_4(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_4(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, f32, f32)` overload"]
+    pub fn draw_texture_5(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        border_width: impl ::core::convert::Into<f32>,
+        border_radius: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_5(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(border_width),
+                ::core::convert::Into::into(border_radius),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, f32)` overload"]
+    pub fn draw_texture_6(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        border_widths: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        border_radius: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_6(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(border_widths),
+                ::core::convert::Into::into(border_radius),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4)` overload"]
+    pub fn draw_texture_7(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        border_widths: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        border_radiuses: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_7(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(border_widths),
+                ::core::convert::Into::into(border_radiuses),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, bool)` overload"]
+    pub fn draw_texture_8(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        border_widths: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        border_radiuses: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        draw_smooth_corners: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_8(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(border_widths),
+                ::core::convert::Into::into(border_radiuses),
+                ::core::convert::Into::into(draw_smooth_corners),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawTexture(crate::unity_engine::rect::Rect, crate::unity_engine::texture::Texture, crate::unity_engine::scalemode::ScaleMode, bool, f32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, bool)` overload"]
+    pub fn draw_texture_9(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        image: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        alpha_blend: impl ::core::convert::Into<bool>,
+        image_aspect: impl ::core::convert::Into<f32>,
+        left_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        top_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        right_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        bottom_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        border_widths: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        border_radiuses: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        draw_smooth_corners: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::draw_texture_9(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(scale_mode),
+                ::core::convert::Into::into(alpha_blend),
+                ::core::convert::Into::into(image_aspect),
+                ::core::convert::Into::into(left_color),
+                ::core::convert::Into::into(top_color),
+                ::core::convert::Into::into(right_color),
+                ::core::convert::Into::into(bottom_color),
+                ::core::convert::Into::into(border_widths),
+                ::core::convert::Into::into(border_radiuses),
+                ::core::convert::Into::into(draw_smooth_corners),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateScaledTextureRects(crate::unity_engine::rect::Rect, crate::unity_engine::scalemode::ScaleMode, f32, *mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::rect::Rect)` overload"]
+    pub fn calculate_scaled_texture_rects(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        scale_mode: impl ::core::convert::Into<crate::unity_engine::scalemode::ScaleMode>,
+        image_aspect: impl ::core::convert::Into<f32>,
+    ) -> (
+        bool,
+        crate::unity_engine::rect::Rect,
+        crate::unity_engine::rect::Rect,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            let __ret = {
+                __GUI_unity2_raw::calculate_scaled_texture_rects(
+                    ::core::convert::Into::into(position),
+                    ::core::convert::Into::into(scale_mode),
+                    ::core::convert::Into::into(image_aspect),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Box(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn r#box(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::r#box(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Button(crate::unity_engine::rect::Rect, ::unity2::Il2CppString)` overload"]
+    pub fn button(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::button(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Button(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn button_2(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::button_2(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Button(crate::unity_engine::rect::Rect, i32, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn button_3(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        id: impl ::core::convert::Into<i32>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::button_3(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DoRepeatButton(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::focustype::FocusType)` overload"]
+    pub fn do_repeat_button(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        focus_type: impl ::core::convert::Into<crate::unity_engine::focustype::FocusType>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::do_repeat_button(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(focus_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DoControl(crate::unity_engine::rect::Rect, i32, bool, bool, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn do_control(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        id: impl ::core::convert::Into<i32>,
+        on: impl ::core::convert::Into<bool>,
+        hover: impl ::core::convert::Into<bool>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::do_control(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(on),
+                ::core::convert::Into::into(hover),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DoLabel(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn do_label(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::do_label(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DoButton(crate::unity_engine::rect::Rect, i32, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn do_button(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        id: impl ::core::convert::Into<i32>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::do_button(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HorizontalSlider(crate::unity_engine::rect::Rect, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn horizontal_slider(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        value: impl ::core::convert::Into<f32>,
+        left_value: impl ::core::convert::Into<f32>,
+        right_value: impl ::core::convert::Into<f32>,
+        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> f32 {
+        unsafe {
+            __GUI_unity2_raw::horizontal_slider(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(left_value),
+                ::core::convert::Into::into(right_value),
+                ::core::convert::Into::into(slider),
+                ::core::convert::Into::into(thumb),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Slider(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool, i32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn slider(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        value: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+        start: impl ::core::convert::Into<f32>,
+        end: impl ::core::convert::Into<f32>,
+        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        horiz: impl ::core::convert::Into<bool>,
+        id: impl ::core::convert::Into<i32>,
+        thumb_extent: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> f32 {
+        unsafe {
+            __GUI_unity2_raw::slider(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(end),
+                ::core::convert::Into::into(slider),
+                ::core::convert::Into::into(thumb),
+                ::core::convert::Into::into(horiz),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(thumb_extent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HorizontalScrollbar(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn horizontal_scrollbar(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        value: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+        left_value: impl ::core::convert::Into<f32>,
+        right_value: impl ::core::convert::Into<f32>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> f32 {
+        unsafe {
+            __GUI_unity2_raw::horizontal_scrollbar(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(left_value),
+                ::core::convert::Into::into(right_value),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScrollerRepeatButton(i32, crate::unity_engine::rect::Rect, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn scroller_repeat_button(
+        scroller_id: impl ::core::convert::Into<i32>,
+        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> bool {
+        unsafe {
+            __GUI_unity2_raw::scroller_repeat_button(
+                ::core::convert::Into::into(scroller_id),
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`VerticalScrollbar(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn vertical_scrollbar(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        value: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+        top_value: impl ::core::convert::Into<f32>,
+        bottom_value: impl ::core::convert::Into<f32>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> f32 {
+        unsafe {
+            __GUI_unity2_raw::vertical_scrollbar(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(top_value),
+                ::core::convert::Into::into(bottom_value),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Scroller(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool)` overload"]
+    pub fn scroller(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        value: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+        left_value: impl ::core::convert::Into<f32>,
+        right_value: impl ::core::convert::Into<f32>,
+        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        left_button: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        right_button: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        horiz: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            __GUI_unity2_raw::scroller(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(left_value),
+                ::core::convert::Into::into(right_value),
+                ::core::convert::Into::into(slider),
+                ::core::convert::Into::into(thumb),
+                ::core::convert::Into::into(left_button),
+                ::core::convert::Into::into(right_button),
+                ::core::convert::Into::into(horiz),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BeginGroup(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn begin_group(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::begin_group(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BeginGroup(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn begin_group_2(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        scroll_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::begin_group_2(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(scroll_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndGroup()` overload"]
+    pub fn end_group() -> () {
+        unsafe { __GUI_unity2_raw::end_group(::core::option::Option::None) }
+    }
+    #[doc = "`BeginClip(crate::unity_engine::rect::Rect)` overload"]
+    pub fn begin_clip(position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
+        unsafe {
+            __GUI_unity2_raw::begin_clip(
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndClip()` overload"]
+    pub fn end_clip() -> () {
+        unsafe { __GUI_unity2_raw::end_clip(::core::option::Option::None) }
+    }
+    #[doc = "`BeginScrollView(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect, bool, bool, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn begin_scroll_view(
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        view_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        always_show_horizontal: impl ::core::convert::Into<bool>,
+        always_show_vertical: impl ::core::convert::Into<bool>,
+        horizontal_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        vertical_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        background: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __GUI_unity2_raw::begin_scroll_view(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(scroll_position),
+                ::core::convert::Into::into(view_rect),
+                ::core::convert::Into::into(always_show_horizontal),
+                ::core::convert::Into::into(always_show_vertical),
+                ::core::convert::Into::into(horizontal_scrollbar),
+                ::core::convert::Into::into(vertical_scrollbar),
+                ::core::convert::Into::into(background),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndScrollView(bool)` overload"]
+    pub fn end_scroll_view(handle_scroll_wheel: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __GUI_unity2_raw::end_scroll_view(
+                ::core::convert::Into::into(handle_scroll_wheel),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Window(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn window(
+        id: impl ::core::convert::Into<i32>,
+        client_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        title: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __GUI_unity2_raw::window(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(client_rect),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DoWindow(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guiskin::GUISkin, bool)` overload"]
+    pub fn do_window(
+        id: impl ::core::convert::Into<i32>,
+        client_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        title: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        skin: impl ::core::convert::Into<crate::unity_engine::guiskin::GUISkin>,
+        force_rect_on_layout: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __GUI_unity2_raw::do_window(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(client_rect),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(skin),
+                ::core::convert::Into::into(force_rect_on_layout),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CallWindowDelegate(crate::unity_engine::gui::GUI_WindowFunction, i32, i32, crate::unity_engine::guiskin::GUISkin, i32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn call_window_delegate(
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        id: impl ::core::convert::Into<i32>,
+        instance_id: impl ::core::convert::Into<i32>,
+        skin: impl ::core::convert::Into<crate::unity_engine::guiskin::GUISkin>,
+        force_rect: impl ::core::convert::Into<i32>,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUI_unity2_raw::call_window_delegate(
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(instance_id),
+                ::core::convert::Into::into(skin),
+                ::core::convert::Into::into(force_rect),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_color_Injected(*mutcrate::unity_engine::color::Color)` overload"]
+    pub fn get_color_injected() -> crate::unity_engine::color::Color {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __GUI_unity2_raw::get_color_injected(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_color_Injected(*mutcrate::unity_engine::color::Color)` overload"]
+    pub fn set_color_injected() -> crate::unity_engine::color::Color {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __GUI_unity2_raw::set_color_injected(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_backgroundColor_Injected(*mutcrate::unity_engine::color::Color)` overload"]
+    pub fn set_background_color_injected() -> crate::unity_engine::color::Color {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __GUI_unity2_raw::set_background_color_injected(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Internal_DoWindow_Injected(i32, i32, *mutcrate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, crate::system::object::Object, bool, *mutcrate::unity_engine::rect::Rect)` overload"]
+    pub fn internal_do_window_injected(
+        id: impl ::core::convert::Into<i32>,
+        instance_id: impl ::core::convert::Into<i32>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        title: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        skin: impl ::core::convert::Into<crate::system::object::Object>,
+        force_rect_on_layout: impl ::core::convert::Into<bool>,
+    ) -> (
+        crate::unity_engine::rect::Rect,
+        crate::unity_engine::rect::Rect,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            __GUI_unity2_raw::internal_do_window_injected(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(instance_id),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(skin),
+                ::core::convert::Into::into(force_rect_on_layout),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+pub trait IGUIMethods: IGUI {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GUI as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+impl<__T: IGUI> IGUIMethods for __T {}
 
 #[cfg(feature = "unity_engine-gui")]
 impl GUI {
@@ -605,16 +4644,447 @@ impl GUI {
 }
 
 #[cfg(feature = "unity_engine-gui")]
-#[::unity2::methods]
-impl GUI_WindowFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, id: i32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUI_Scope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_Scope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_Scope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: GUI_Scope,
+        disposing: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUI_Scope, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, disposing, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_Scope as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_Scope as ::unity2::ClassIdentity>::NAME,
+                    "Finalize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(this: GUI_Scope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUI_Scope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_Scope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_Scope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose_2(this: GUI_Scope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUI_Scope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_scope {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_Scope as ::unity2::ClassIdentity>::class(),
+                "CloseScope",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_Scope as ::unity2::ClassIdentity>::NAME,
+                    "CloseScope",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_scope(
+        this: GUI_Scope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUI_Scope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_scope::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_Scope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_Scope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GUI_Scope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUI_Scope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-gui")]
+pub trait IGUI_ScopeMethods: IGUI_Scope {
+    #[doc = "`Dispose(bool)` overload"]
+    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <GUI_Scope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_Scope_unity2_raw::dispose(
+                __receiver,
+                ::core::convert::Into::into(disposing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <GUI_Scope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_Scope_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose_2(self) -> () {
+        unsafe {
+            let __receiver = <GUI_Scope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_Scope_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseScope()` overload"]
+    fn close_scope(self) -> () {
+        unsafe {
+            let __receiver = <GUI_Scope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_Scope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GUI_Scope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_Scope_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+impl<__T: IGUI_Scope> IGUI_ScopeMethods for __T {}
+
+#[cfg(feature = "unity_engine-gui")]
+impl GUI_Scope {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUI_Scope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUI_ScopeMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUI_WindowFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_WindowFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_WindowFunction as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GUI_WindowFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUI_WindowFunction,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUI_WindowFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUI_WindowFunction as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: GUI_WindowFunction,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUI_WindowFunction, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+pub trait IGUI_WindowFunctionMethods: IGUI_WindowFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUI_WindowFunction as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_WindowFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32)` overload"]
+    fn invoke(self, id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <GUI_WindowFunction as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUI_WindowFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+impl<__T: IGUI_WindowFunction> IGUI_WindowFunctionMethods for __T {}
 
 #[cfg(feature = "unity_engine-gui")]
 impl GUI_WindowFunction {
@@ -630,4 +5100,26 @@ impl GUI_WindowFunction {
         <Self as IGUI_WindowFunctionMethods>::ctor(this, object, method);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-gui")]
+pub mod prelude {
+    pub use super::GUI_Scope;
+    pub use super::GUI_WindowFunction;
+    pub use super::IGUIMethods;
+    pub use super::IGUI_Scope;
+    pub use super::IGUI_ScopeMethods;
+    pub use super::IGUI_WindowFunction;
+    pub use super::IGUI_WindowFunctionMethods;
+    pub use super::GUI;
+    pub use super::IGUI;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

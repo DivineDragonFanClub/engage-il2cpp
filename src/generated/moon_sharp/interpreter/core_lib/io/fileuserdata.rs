@@ -22,3 +22,21 @@ mod __types {
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata")]
+pub mod prelude {
+    pub use super::FileUserData;
+    pub use super::IFileUserData;
+    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBase;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")]
+    pub use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::IFileUserDataBaseMethods;
+    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBase;
+    #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")]
+    pub use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::IStreamFileUserDataBaseMethods;
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    #[cfg(feature = "moon_sharp-interpreter-refidobject")]
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -37,120 +37,1257 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-#[::unity2::methods]
-impl BaseInputModule {
-    #[doc = "`get_input()` overload"]
-    #[method(name = "get_input", args = 0)]
-    pub fn get_input(self) -> crate::unity_engine::event_systems::baseinput::BaseInput;
-
-    #[doc = "`get_inputOverride()` overload"]
-    #[method(name = "get_inputOverride", args = 0)]
-    pub fn get_input_override(self) -> crate::unity_engine::event_systems::baseinput::BaseInput;
-
-    #[doc = "`set_inputOverride(crate::unity_engine::event_systems::baseinput::BaseInput)` overload"]
-    #[method(name = "set_inputOverride", args = 1)]
-    pub fn set_input_override(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BaseInputModule_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_input {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "get_input",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "get_input",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_input(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::baseinput::BaseInput {
+        let inner: extern "C" fn(
+            BaseInputModule,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::event_systems::baseinput::BaseInput = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_input::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_input_override {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "get_inputOverride",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "get_inputOverride",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_input_override(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::baseinput::BaseInput {
+        let inner: extern "C" fn(
+            BaseInputModule,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::event_systems::baseinput::BaseInput = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_input_override::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_input_override {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseinput :: BaseInput as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "set_inputOverride",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "set_inputOverride",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_input_override(
+        this: BaseInputModule,
         value: crate::unity_engine::event_systems::baseinput::BaseInput,
-    ) -> ();
-
-    #[doc = "`get_eventSystem()` overload"]
-    #[method(name = "get_eventSystem", args = 0)]
-    pub fn get_event_system(self) -> crate::unity_engine::event_systems::eventsystem::EventSystem;
-
-    #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
-    #[doc = "`OnDisable()` overload"]
-    #[method(name = "OnDisable", args = 0)]
-    pub fn on_disable(self) -> ();
-
-    #[doc = "`Process()` overload"]
-    #[method(name = "Process", args = 0)]
-    pub fn process(self) -> ();
-
-    #[doc = "`FindFirstRaycast(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]
-    #[method(name = "FindFirstRaycast", args = 1)]
-    pub fn find_first_raycast(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseInputModule,
+            crate::unity_engine::event_systems::baseinput::BaseInput,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_input_override::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_system {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "get_eventSystem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "get_eventSystem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_system(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::eventsystem::EventSystem {
+        let inner: extern "C" fn(
+            BaseInputModule,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::event_systems::eventsystem::EventSystem =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_event_system::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "OnDisable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "OnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_disable(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_disable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "Process",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "Process",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_process::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_first_raycast {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::event_systems::raycastresult::RaycastResult,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "FindFirstRaycast",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "FindFirstRaycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_first_raycast(
         candidates: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::event_systems::raycastresult::RaycastResult,
         >,
-    ) -> crate::unity_engine::event_systems::raycastresult::RaycastResult;
-
-    #[doc = "`DetermineMoveDirection(f32, f32)` overload"]
-    #[method(name = "DetermineMoveDirection", args = 2)]
-    pub fn determine_move_direction(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::raycastresult::RaycastResult {
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_find_first_raycast :: get_offset () as isize) ,) ;
+        inner(candidates, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_determine_move_direction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "DetermineMoveDirection",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "DetermineMoveDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn determine_move_direction(
         x: f32,
         y: f32,
-    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection;
-
-    #[doc = "`DetermineMoveDirection(f32, f32, f32)` overload"]
-    #[method(name = "DetermineMoveDirection", args = 3)]
-    pub fn determine_move_direction_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        let inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_determine_move_direction :: get_offset () as isize) ,) ;
+        inner(x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_determine_move_direction_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "DetermineMoveDirection",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "DetermineMoveDirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn determine_move_direction_2(
         x: f32,
         y: f32,
         dead_zone: f32,
-    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection;
-
-    #[doc = "`FindCommonRoot(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindCommonRoot", args = 2)]
-    pub fn find_common_root(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        let inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_determine_move_direction_2 :: get_offset () as isize) ,) ;
+        inner(x, y, dead_zone, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_common_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "FindCommonRoot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "FindCommonRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_common_root(
         g1: crate::unity_engine::gameobject::GameObject,
         g2: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`HandlePointerExitAndEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "HandlePointerExitAndEnter", args = 2)]
-    pub fn handle_pointer_exit_and_enter(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_common_root::get_offset() as isize),
+        );
+        inner(g1, g2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_handle_pointer_exit_and_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "HandlePointerExitAndEnter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "HandlePointerExitAndEnter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn handle_pointer_exit_and_enter(
+        this: BaseInputModule,
         current_pointer_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData,
         new_enter_target: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`GetAxisEventData(f32, f32, f32)` overload"]
-    #[method(name = "GetAxisEventData", args = 3)]
-    pub fn get_axis_event_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseInputModule,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_handle_pointer_exit_and_enter::get_offset() as isize),
+        );
+        inner(
+            this,
+            current_pointer_data,
+            new_enter_target,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_axis_event_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "GetAxisEventData",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "GetAxisEventData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_axis_event_data(
+        this: BaseInputModule,
         x: f32,
         y: f32,
         move_dead_zone: f32,
-    ) -> crate::unity_engine::event_systems::axiseventdata::AxisEventData;
-
-    #[doc = "`GetBaseEventData()` overload"]
-    #[method(name = "GetBaseEventData", args = 0)]
-    pub fn get_base_event_data(
-        self,
-    ) -> crate::unity_engine::event_systems::baseeventdata::BaseEventData;
-
-    #[doc = "`IsPointerOverGameObject(i32)` overload"]
-    #[method(name = "IsPointerOverGameObject", args = 1)]
-    pub fn is_pointer_over_game_object(self, pointer_id: i32) -> bool;
-
-    #[doc = "`ShouldActivateModule()` overload"]
-    #[method(name = "ShouldActivateModule", args = 0)]
-    pub fn should_activate_module(self) -> bool;
-
-    #[doc = "`DeactivateModule()` overload"]
-    #[method(name = "DeactivateModule", args = 0)]
-    pub fn deactivate_module(self) -> ();
-
-    #[doc = "`ActivateModule()` overload"]
-    #[method(name = "ActivateModule", args = 0)]
-    pub fn activate_module(self) -> ();
-
-    #[doc = "`UpdateModule()` overload"]
-    #[method(name = "UpdateModule", args = 0)]
-    pub fn update_module(self) -> ();
-
-    #[doc = "`IsModuleSupported()` overload"]
-    #[method(name = "IsModuleSupported", args = 0)]
-    pub fn is_module_supported(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::axiseventdata::AxisEventData {
+        let inner : extern "C" fn (BaseInputModule , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_axis_event_data :: get_offset () as isize) ,) ;
+        inner(this, x, y, move_dead_zone, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_event_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "GetBaseEventData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "GetBaseEventData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_event_data(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::baseeventdata::BaseEventData {
+        let inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_base_event_data :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_pointer_over_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "IsPointerOverGameObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "IsPointerOverGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_pointer_over_game_object(
+        this: BaseInputModule,
+        pointer_id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseInputModule, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_pointer_over_game_object::get_offset() as isize),
+            );
+        inner(this, pointer_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_should_activate_module {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "ShouldActivateModule",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "ShouldActivateModule",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn should_activate_module(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_should_activate_module::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deactivate_module {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "DeactivateModule",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "DeactivateModule",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deactivate_module(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_deactivate_module::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_activate_module {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "ActivateModule",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "ActivateModule",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn activate_module(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_activate_module::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_module {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "UpdateModule",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "UpdateModule",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_module(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_module::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_module_supported {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                "IsModuleSupported",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    "IsModuleSupported",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_module_supported(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_module_supported::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseInputModule as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInputModule as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BaseInputModule,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseInputModule, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
+impl BaseInputModule {
+    #[doc = "`FindFirstRaycast(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]
+    pub fn find_first_raycast(
+        candidates: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::event_systems::raycastresult::RaycastResult,
+            >,
+        >,
+    ) -> crate::unity_engine::event_systems::raycastresult::RaycastResult {
+        unsafe {
+            __BaseInputModule_unity2_raw::find_first_raycast(
+                ::core::convert::Into::into(candidates),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DetermineMoveDirection(f32, f32)` overload"]
+    pub fn determine_move_direction(
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        unsafe {
+            __BaseInputModule_unity2_raw::determine_move_direction(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DetermineMoveDirection(f32, f32, f32)` overload"]
+    pub fn determine_move_direction_2(
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        dead_zone: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        unsafe {
+            __BaseInputModule_unity2_raw::determine_move_direction_2(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(dead_zone),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindCommonRoot(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_common_root(
+        g1: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        g2: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __BaseInputModule_unity2_raw::find_common_root(
+                ::core::convert::Into::into(g1),
+                ::core::convert::Into::into(g2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
+pub trait IBaseInputModuleMethods: IBaseInputModule {
+    #[doc = "`get_input()` overload"]
+    fn get_input(self) -> crate::unity_engine::event_systems::baseinput::BaseInput {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::get_input(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_inputOverride()` overload"]
+    fn get_input_override(self) -> crate::unity_engine::event_systems::baseinput::BaseInput {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::get_input_override(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_inputOverride(crate::unity_engine::event_systems::baseinput::BaseInput)` overload"]
+    fn set_input_override(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::event_systems::baseinput::BaseInput>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::set_input_override(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_eventSystem()` overload"]
+    fn get_event_system(self) -> crate::unity_engine::event_systems::eventsystem::EventSystem {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::get_event_system(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnEnable()` overload"]
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDisable()` overload"]
+    fn on_disable(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Process()` overload"]
+    fn process(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HandlePointerExitAndEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn handle_pointer_exit_and_enter(
+        self,
+        current_pointer_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+        new_enter_target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::handle_pointer_exit_and_enter(
+                __receiver,
+                ::core::convert::Into::into(current_pointer_data),
+                ::core::convert::Into::into(new_enter_target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAxisEventData(f32, f32, f32)` overload"]
+    fn get_axis_event_data(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        move_dead_zone: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::event_systems::axiseventdata::AxisEventData {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::get_axis_event_data(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(move_dead_zone),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBaseEventData()` overload"]
+    fn get_base_event_data(
+        self,
+    ) -> crate::unity_engine::event_systems::baseeventdata::BaseEventData {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::get_base_event_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPointerOverGameObject(i32)` overload"]
+    fn is_pointer_over_game_object(self, pointer_id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::is_pointer_over_game_object(
+                __receiver,
+                ::core::convert::Into::into(pointer_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ShouldActivateModule()` overload"]
+    fn should_activate_module(self) -> bool {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::should_activate_module(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeactivateModule()` overload"]
+    fn deactivate_module(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::deactivate_module(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ActivateModule()` overload"]
+    fn activate_module(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::activate_module(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateModule()` overload"]
+    fn update_module(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::update_module(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsModuleSupported()` overload"]
+    fn is_module_supported(self) -> bool {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::is_module_supported(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BaseInputModule as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseInputModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
+impl<__T: IBaseInputModule> IBaseInputModuleMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
 impl BaseInputModule {
@@ -166,4 +1303,29 @@ impl BaseInputModule {
         <Self as IBaseInputModuleMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
+pub mod prelude {
+    pub use super::BaseInputModule;
+    pub use super::IBaseInputModule;
+    pub use super::IBaseInputModuleMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

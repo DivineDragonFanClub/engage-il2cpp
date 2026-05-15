@@ -17,28 +17,300 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-#[::unity2::methods]
-impl SizeTagInfo {
-    #[doc = "`get_Tag()` overload"]
-    #[method(name = "get_Tag", args = 0)]
-    pub fn get_tag(self) -> u16;
-
-    #[doc = "`get_TagGroup()` overload"]
-    #[method(name = "get_TagGroup", args = 0)]
-    pub fn get_tag_group(self) -> u16;
-
-    #[doc = "`get_Size()` overload"]
-    #[method(name = "get_Size", args = 0)]
-    pub fn get_size(self) -> u16;
-
-    #[doc = "`set_Size(u16)` overload"]
-    #[method(name = "set_Size", args = 1)]
-    pub fn set_size(self, value: u16) -> ();
-
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, param: ::unity2::Array<u8>) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SizeTagInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
+                "get_Tag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_Tag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tag(
+        this: SizeTagInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tag::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tag_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
+                "get_TagGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_TagGroup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tag_group(
+        this: SizeTagInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tag_group::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
+                "get_Size",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_Size",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_size(
+        this: SizeTagInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(SizeTagInfo, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
+                "set_Size",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_Size",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_size(
+        this: SizeTagInfo,
+        value: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SizeTagInfo, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_size::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SizeTagInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SizeTagInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SizeTagInfo,
+        param: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SizeTagInfo, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, param, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
+pub trait ISizeTagInfoMethods: ISizeTagInfo {
+    #[doc = "`get_Tag()` overload"]
+    fn get_tag(self) -> u16 {
+        unsafe {
+            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SizeTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_TagGroup()` overload"]
+    fn get_tag_group(self) -> u16 {
+        unsafe {
+            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SizeTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Size()` overload"]
+    fn get_size(self) -> u16 {
+        unsafe {
+            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SizeTagInfo_unity2_raw::get_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Size(u16)` overload"]
+    fn set_size(self, value: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SizeTagInfo_unity2_raw::set_size(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
+    fn ctor(self, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
+        unsafe {
+            let __receiver = <SizeTagInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SizeTagInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
+impl<__T: ISizeTagInfo> ISizeTagInfoMethods for __T {}
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
 impl SizeTagInfo {
@@ -54,4 +326,14 @@ impl SizeTagInfo {
         <Self as ISizeTagInfoMethods>::ctor(this, param);
         this
     }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
+pub mod prelude {
+    pub use super::ISizeTagInfo;
+    pub use super::ISizeTagInfoMethods;
+    pub use super::SizeTagInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

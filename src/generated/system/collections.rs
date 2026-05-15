@@ -2,18 +2,57 @@
 
 #[cfg(any(feature = "system-collections-arraylist-types"))]
 pub mod arraylist;
+#[cfg(feature = "system-collections-arraylist-types")]
+pub use arraylist::{
+    ArrayList, ArrayList_ArrayListDebugView, ArrayList_ArrayListEnumeratorSimple,
+    ArrayList_ReadOnlyArrayList, IArrayList, IArrayList_ArrayListDebugView,
+    IArrayList_ArrayListEnumeratorSimple, IArrayList_ReadOnlyArrayList,
+};
+#[cfg(feature = "system-collections-arraylist")]
+pub use arraylist::{
+    IArrayListMethods, IArrayList_ArrayListEnumeratorSimpleMethods,
+    IArrayList_ReadOnlyArrayListMethods,
+};
 #[cfg(any(feature = "system-collections-bitarray-types"))]
 pub mod bitarray;
+#[cfg(feature = "system-collections-bitarray-types")]
+pub use bitarray::{
+    BitArray, BitArray_BitArrayEnumeratorSimple, IBitArray, IBitArray_BitArrayEnumeratorSimple,
+};
+#[cfg(feature = "system-collections-bitarray")]
+pub use bitarray::{IBitArrayMethods, IBitArray_BitArrayEnumeratorSimpleMethods};
 #[cfg(any(feature = "system-collections-caseinsensitivecomparer-types"))]
 pub mod caseinsensitivecomparer;
+#[cfg(feature = "system-collections-caseinsensitivecomparer")]
+pub use caseinsensitivecomparer::ICaseInsensitiveComparerMethods;
+#[cfg(feature = "system-collections-caseinsensitivecomparer-types")]
+pub use caseinsensitivecomparer::{CaseInsensitiveComparer, ICaseInsensitiveComparer};
 #[cfg(any(feature = "system-collections-caseinsensitivehashcodeprovider-types"))]
 pub mod caseinsensitivehashcodeprovider;
+#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
+pub use caseinsensitivehashcodeprovider::ICaseInsensitiveHashCodeProviderMethods;
+#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
+pub use caseinsensitivehashcodeprovider::{
+    CaseInsensitiveHashCodeProvider, ICaseInsensitiveHashCodeProvider,
+};
 #[cfg(any(feature = "system-collections-collectionbase-types"))]
 pub mod collectionbase;
+#[cfg(feature = "system-collections-collectionbase")]
+pub use collectionbase::ICollectionBaseMethods;
+#[cfg(feature = "system-collections-collectionbase-types")]
+pub use collectionbase::{CollectionBase, ICollectionBase};
 #[cfg(any(feature = "system-collections-comparer-types"))]
 pub mod comparer;
+#[cfg(feature = "system-collections-comparer")]
+pub use comparer::IComparerMethods;
+#[cfg(feature = "system-collections-comparer-types")]
+pub use comparer::{Comparer, IComparer};
 #[cfg(any(feature = "system-collections-compatiblecomparer-types"))]
 pub mod compatiblecomparer;
+#[cfg(feature = "system-collections-compatiblecomparer")]
+pub use compatiblecomparer::ICompatibleComparerMethods;
+#[cfg(feature = "system-collections-compatiblecomparer-types")]
+pub use compatiblecomparer::{CompatibleComparer, ICompatibleComparer};
 #[cfg(any(
     feature = "system-collections-concurrent-cdscollectionetwbclprovider-types",
     feature = "system-collections-concurrent-concurrentdictionary_2-types",
@@ -22,8 +61,19 @@ pub mod compatiblecomparer;
 pub mod concurrent;
 #[cfg(any(feature = "system-collections-dictionaryentry-types"))]
 pub mod dictionaryentry;
+#[cfg(feature = "system-collections-dictionaryentry-types")]
+pub use dictionaryentry::DictionaryEntry;
 #[cfg(any(feature = "system-collections-emptyreadonlydictionaryinternal-types"))]
 pub mod emptyreadonlydictionaryinternal;
+#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal-types")]
+pub use emptyreadonlydictionaryinternal::{
+    EmptyReadOnlyDictionaryInternal, EmptyReadOnlyDictionaryInternal_NodeEnumerator,
+    IEmptyReadOnlyDictionaryInternal, IEmptyReadOnlyDictionaryInternal_NodeEnumerator,
+};
+#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
+pub use emptyreadonlydictionaryinternal::{
+    IEmptyReadOnlyDictionaryInternalMethods, IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods,
+};
 #[cfg(any(
     feature = "system-collections-generic-arraybuilder_1-types",
     feature = "system-collections-generic-arraysorthelper_1-types",
@@ -88,34 +138,112 @@ pub mod emptyreadonlydictionaryinternal;
 pub mod generic;
 #[cfg(any(feature = "system-collections-hashhelpers-types"))]
 pub mod hashhelpers;
+#[cfg(feature = "system-collections-hashhelpers-types")]
+pub use hashhelpers::{HashHelpers, IHashHelpers};
 #[cfg(any(feature = "system-collections-hashtable-types"))]
 pub mod hashtable;
+#[cfg(feature = "system-collections-hashtable-types")]
+pub use hashtable::{
+    Hashtable, Hashtable_HashtableDebugView, Hashtable_HashtableEnumerator,
+    Hashtable_KeyCollection, Hashtable_SyncHashtable, Hashtable_ValueCollection, Hashtable_bucket,
+    IHashtable, IHashtable_HashtableDebugView, IHashtable_HashtableEnumerator,
+    IHashtable_KeyCollection, IHashtable_SyncHashtable, IHashtable_ValueCollection,
+};
+#[cfg(feature = "system-collections-hashtable")]
+pub use hashtable::{
+    IHashtableMethods, IHashtable_HashtableEnumeratorMethods, IHashtable_KeyCollectionMethods,
+    IHashtable_SyncHashtableMethods, IHashtable_ValueCollectionMethods,
+};
 #[cfg(any(feature = "system-collections-icollection-types"))]
 pub mod icollection;
+#[cfg(feature = "system-collections-icollection")]
+pub use icollection::IICollectionMethods;
+#[cfg(feature = "system-collections-icollection-types")]
+pub use icollection::{ICollection, IICollection};
 #[cfg(any(feature = "system-collections-icomparer_interface-types"))]
 pub mod icomparer_interface;
+#[cfg(feature = "system-collections-icomparer_interface")]
+pub use icomparer_interface::IIComparer_InterfaceMethods;
+#[cfg(feature = "system-collections-icomparer_interface-types")]
+pub use icomparer_interface::{IComparer_Interface, IIComparer_Interface};
 #[cfg(any(feature = "system-collections-idictionary-types"))]
 pub mod idictionary;
+#[cfg(feature = "system-collections-idictionary")]
+pub use idictionary::IIDictionaryMethods;
+#[cfg(feature = "system-collections-idictionary-types")]
+pub use idictionary::{IDictionary, IIDictionary};
 #[cfg(any(feature = "system-collections-idictionaryenumerator-types"))]
 pub mod idictionaryenumerator;
+#[cfg(feature = "system-collections-idictionaryenumerator")]
+pub use idictionaryenumerator::IIDictionaryEnumeratorMethods;
+#[cfg(feature = "system-collections-idictionaryenumerator-types")]
+pub use idictionaryenumerator::{IDictionaryEnumerator, IIDictionaryEnumerator};
 #[cfg(any(feature = "system-collections-ienumerable-types"))]
 pub mod ienumerable;
+#[cfg(feature = "system-collections-ienumerable")]
+pub use ienumerable::IIEnumerableMethods;
+#[cfg(feature = "system-collections-ienumerable-types")]
+pub use ienumerable::{IEnumerable, IIEnumerable};
 #[cfg(any(feature = "system-collections-ienumerator-types"))]
 pub mod ienumerator;
+#[cfg(feature = "system-collections-ienumerator")]
+pub use ienumerator::IIEnumeratorMethods;
+#[cfg(feature = "system-collections-ienumerator-types")]
+pub use ienumerator::{IEnumerator, IIEnumerator};
 #[cfg(any(feature = "system-collections-iequalitycomparer-types"))]
 pub mod iequalitycomparer;
+#[cfg(feature = "system-collections-iequalitycomparer")]
+pub use iequalitycomparer::IIEqualityComparerMethods;
+#[cfg(feature = "system-collections-iequalitycomparer-types")]
+pub use iequalitycomparer::{IEqualityComparer, IIEqualityComparer};
 #[cfg(any(feature = "system-collections-ihashcodeprovider-types"))]
 pub mod ihashcodeprovider;
+#[cfg(feature = "system-collections-ihashcodeprovider")]
+pub use ihashcodeprovider::IIHashCodeProviderMethods;
+#[cfg(feature = "system-collections-ihashcodeprovider-types")]
+pub use ihashcodeprovider::{IHashCodeProvider, IIHashCodeProvider};
 #[cfg(any(feature = "system-collections-ilist-types"))]
 pub mod ilist;
+#[cfg(feature = "system-collections-ilist")]
+pub use ilist::IIListMethods;
+#[cfg(feature = "system-collections-ilist-types")]
+pub use ilist::{IIList, IList};
 #[cfg(any(feature = "system-collections-istructuralcomparable-types"))]
 pub mod istructuralcomparable;
+#[cfg(feature = "system-collections-istructuralcomparable")]
+pub use istructuralcomparable::IIStructuralComparableMethods;
+#[cfg(feature = "system-collections-istructuralcomparable-types")]
+pub use istructuralcomparable::{IIStructuralComparable, IStructuralComparable};
 #[cfg(any(feature = "system-collections-istructuralequatable-types"))]
 pub mod istructuralequatable;
+#[cfg(feature = "system-collections-istructuralequatable")]
+pub use istructuralequatable::IIStructuralEquatableMethods;
+#[cfg(feature = "system-collections-istructuralequatable-types")]
+pub use istructuralequatable::{IIStructuralEquatable, IStructuralEquatable};
 #[cfg(any(feature = "system-collections-listdictionaryinternal-types"))]
 pub mod listdictionaryinternal;
+#[cfg(feature = "system-collections-listdictionaryinternal-types")]
+pub use listdictionaryinternal::{
+    IListDictionaryInternal, IListDictionaryInternal_DictionaryNode,
+    IListDictionaryInternal_NodeEnumerator, IListDictionaryInternal_NodeKeyValueCollection,
+    IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator, ListDictionaryInternal,
+    ListDictionaryInternal_DictionaryNode, ListDictionaryInternal_NodeEnumerator,
+    ListDictionaryInternal_NodeKeyValueCollection,
+    ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,
+};
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+pub use listdictionaryinternal::{
+    IListDictionaryInternalMethods, IListDictionaryInternal_DictionaryNodeMethods,
+    IListDictionaryInternal_NodeEnumeratorMethods,
+    IListDictionaryInternal_NodeKeyValueCollectionMethods,
+    IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,
+};
 #[cfg(any(feature = "system-collections-lowlevelcomparer-types"))]
 pub mod lowlevelcomparer;
+#[cfg(feature = "system-collections-lowlevelcomparer")]
+pub use lowlevelcomparer::ILowLevelComparerMethods;
+#[cfg(feature = "system-collections-lowlevelcomparer-types")]
+pub use lowlevelcomparer::{ILowLevelComparer, LowLevelComparer};
 #[cfg(any(
     feature = "system-collections-object_model-collection_1-types",
     feature = "system-collections-object_model-readonlycollection_1-types"
@@ -123,10 +251,33 @@ pub mod lowlevelcomparer;
 pub mod object_model;
 #[cfg(any(feature = "system-collections-queue-types"))]
 pub mod queue;
+#[cfg(feature = "system-collections-queue-types")]
+pub use queue::{
+    IQueue, IQueue_QueueDebugView, IQueue_QueueEnumerator, Queue, Queue_QueueDebugView,
+    Queue_QueueEnumerator,
+};
+#[cfg(feature = "system-collections-queue")]
+pub use queue::{IQueueMethods, IQueue_QueueEnumeratorMethods};
 #[cfg(any(feature = "system-collections-readonlycollectionbase-types"))]
 pub mod readonlycollectionbase;
+#[cfg(feature = "system-collections-readonlycollectionbase")]
+pub use readonlycollectionbase::IReadOnlyCollectionBaseMethods;
+#[cfg(feature = "system-collections-readonlycollectionbase-types")]
+pub use readonlycollectionbase::{IReadOnlyCollectionBase, ReadOnlyCollectionBase};
 #[cfg(any(feature = "system-collections-sortedlist-types"))]
 pub mod sortedlist;
+#[cfg(feature = "system-collections-sortedlist-types")]
+pub use sortedlist::{
+    ISortedList, ISortedList_KeyList, ISortedList_SortedListDebugView,
+    ISortedList_SortedListEnumerator, ISortedList_SyncSortedList, ISortedList_ValueList,
+    SortedList, SortedList_KeyList, SortedList_SortedListDebugView,
+    SortedList_SortedListEnumerator, SortedList_SyncSortedList, SortedList_ValueList,
+};
+#[cfg(feature = "system-collections-sortedlist")]
+pub use sortedlist::{
+    ISortedListMethods, ISortedList_KeyListMethods, ISortedList_SortedListEnumeratorMethods,
+    ISortedList_SyncSortedListMethods, ISortedList_ValueListMethods,
+};
 #[cfg(any(
     feature = "system-collections-specialized-casesensitivestringdictionary-types",
     feature = "system-collections-specialized-compatiblecomparer_2-types",
@@ -141,3 +292,10 @@ pub mod sortedlist;
 pub mod specialized;
 #[cfg(any(feature = "system-collections-stack-types"))]
 pub mod stack;
+#[cfg(feature = "system-collections-stack-types")]
+pub use stack::{
+    IStack, IStack_StackDebugView, IStack_StackEnumerator, Stack, Stack_StackDebugView,
+    Stack_StackEnumerator,
+};
+#[cfg(feature = "system-collections-stack")]
+pub use stack::{IStackMethods, IStack_StackEnumeratorMethods};

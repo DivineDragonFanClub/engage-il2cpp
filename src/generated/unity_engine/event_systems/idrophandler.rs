@@ -15,12 +15,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-idrophandler")]
-#[::unity2::methods]
-impl IDropHandler {
-    #[doc = "`OnDrop(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "OnDrop", args = 1)]
-    pub fn on_drop(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IDropHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_drop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IDropHandler as ::unity2::ClassIdentity>::class(),
+                "OnDrop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IDropHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnDrop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_drop(
+        this: IDropHandler,
         event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IDropHandler,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_drop::get_offset() as isize),
+        );
+        inner(this, event_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-idrophandler")]
+pub trait IIDropHandlerMethods: IIDropHandler {
+    #[doc = "`OnDrop(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    fn on_drop(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <IDropHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IDropHandler_unity2_raw::on_drop(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-idrophandler")]
+impl<__T: IIDropHandler> IIDropHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-idrophandler")]
+pub mod prelude {
+    pub use super::IDropHandler;
+    pub use super::IIDropHandler;
+    pub use super::IIDropHandlerMethods;
 }

@@ -20,7 +20,14 @@ pub use __types::*;
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]
 #[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IReadOnlyDictionary_2<T0, T1> {
-    #[doc = "`TryGetValue(T0, T1)` overload"]
+    #[doc = "`TryGetValue(T0, *mutT1)` overload"]
     #[method(name = "TryGetValue", args = 2)]
-    pub fn try_get_value(self, key: T0, value: T1) -> bool;
+    pub fn try_get_value(self, key: T0, value: *mut T1) -> bool;
+}
+
+#[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]
+pub mod prelude {
+    pub use super::IIReadOnlyDictionary_2;
+    pub use super::IIReadOnlyDictionary_2Methods;
+    pub use super::IReadOnlyDictionary_2;
 }

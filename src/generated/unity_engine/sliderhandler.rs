@@ -50,12 +50,56 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-sliderhandler")]
-#[::unity2::methods(value)]
-impl SliderHandler {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool, i32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = ".ctor", args = 10)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SliderHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                10,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SliderHandler,
         position: crate::unity_engine::rect::Rect,
         current_value: f32,
         size: f32,
@@ -66,113 +110,1469 @@ impl SliderHandler {
         horiz: bool,
         id: i32,
         thumb_extent: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SliderHandler,
+            crate::unity_engine::rect::Rect,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            bool,
+            i32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            position,
+            current_value,
+            size,
+            start,
+            end,
+            slider,
+            thumb,
+            horiz,
+            id,
+            thumb_extent,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "Handle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "Handle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn handle(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_handle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_mouse_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "OnMouseDown",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnMouseDown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_mouse_down(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_mouse_down::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_mouse_drag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "OnMouseDrag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnMouseDrag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_mouse_drag(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_mouse_drag::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_mouse_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "OnMouseUp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnMouseUp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_mouse_up(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_mouse_up::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_repaint {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "OnRepaint",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnRepaint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_repaint(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_repaint::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_current_event_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "CurrentEventType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "CurrentEventType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn current_event_type(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::eventtype::EventType {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::eventtype::EventType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_current_event_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_current_scroll_trough_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "CurrentScrollTroughSide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "CurrentScrollTroughSide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn current_scroll_trough_side(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_current_scroll_trough_side::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_empty_slider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "IsEmptySlider",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "IsEmptySlider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_empty_slider(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_empty_slider::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_page_movements {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "SupportsPageMovements",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "SupportsPageMovements",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_page_movements(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_supports_page_movements::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_page_movement_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "PageMovementValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "PageMovementValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn page_movement_value(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_page_movement_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_page_up_movement_bound {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "PageUpMovementBound",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "PageUpMovementBound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn page_up_movement_bound(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_page_up_movement_bound::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_current_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "CurrentEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "CurrentEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn current_event(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event::Event {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event::Event = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_current_event::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_value_for_current_mouse_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ValueForCurrentMousePosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ValueForCurrentMousePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn value_for_current_mouse_position(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_value_for_current_mouse_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "Clamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "Clamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamp(
+        this: SliderHandler,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clamp::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_thumb_selection_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ThumbSelectionRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ThumbSelectionRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn thumb_selection_rect(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_thumb_selection_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_dragging_with_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "StartDraggingWithValue",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "StartDraggingWithValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_dragging_with_value(
+        this: SliderHandler,
+        drag_start_value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SliderHandler, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start_dragging_with_value::get_offset() as isize),
+            );
+        inner(this, drag_start_value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_slider_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "SliderState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "SliderState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn slider_state(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sliderstate::SliderState {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sliderstate::SliderState = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_slider_state::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_thumb_ext_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ThumbExtRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ThumbExtRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn thumb_ext_rect(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_thumb_ext_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_thumb_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ThumbRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ThumbRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn thumb_rect(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_thumb_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_vertical_thumb_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "VerticalThumbRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "VerticalThumbRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn vertical_thumb_rect(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_vertical_thumb_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_horizontal_thumb_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "HorizontalThumbRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "HorizontalThumbRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn horizontal_thumb_rect(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            SliderHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_horizontal_thumb_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamped_current_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ClampedCurrentValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ClampedCurrentValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamped_current_value(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clamped_current_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mouse_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "MousePosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "MousePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mouse_position(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_mouse_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_values_per_pixel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ValuesPerPixel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ValuesPerPixel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn values_per_pixel(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_values_per_pixel::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_thumb_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "ThumbSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "ThumbSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn thumb_size(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_thumb_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_max_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "MaxValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "MaxValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn max_value(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_max_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_min_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SliderHandler as ::unity2::ClassIdentity>::class(),
+                "MinValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SliderHandler as ::unity2::ClassIdentity>::NAME,
+                    "MinValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn min_value(
+        this: SliderHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SliderHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_min_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-sliderhandler")]
+impl SliderHandler {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, bool, i32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn ctor(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        current_value: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+        start: impl ::core::convert::Into<f32>,
+        end: impl ::core::convert::Into<f32>,
+        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        horiz: impl ::core::convert::Into<bool>,
+        id: impl ::core::convert::Into<i32>,
+        thumb_extent: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __SliderHandler_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(current_value),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(end),
+                ::core::convert::Into::into(slider),
+                ::core::convert::Into::into(thumb),
+                ::core::convert::Into::into(horiz),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(thumb_extent),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Handle()` overload"]
-    #[method(name = "Handle", args = 0)]
-    pub fn handle(self) -> f32;
-
+    pub fn handle(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::handle(self, ::core::option::Option::None) }
+    }
     #[doc = "`OnMouseDown()` overload"]
-    #[method(name = "OnMouseDown", args = 0)]
-    pub fn on_mouse_down(self) -> f32;
-
+    pub fn on_mouse_down(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::on_mouse_down(self, ::core::option::Option::None) }
+    }
     #[doc = "`OnMouseDrag()` overload"]
-    #[method(name = "OnMouseDrag", args = 0)]
-    pub fn on_mouse_drag(self) -> f32;
-
+    pub fn on_mouse_drag(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::on_mouse_drag(self, ::core::option::Option::None) }
+    }
     #[doc = "`OnMouseUp()` overload"]
-    #[method(name = "OnMouseUp", args = 0)]
-    pub fn on_mouse_up(self) -> f32;
-
+    pub fn on_mouse_up(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::on_mouse_up(self, ::core::option::Option::None) }
+    }
     #[doc = "`OnRepaint()` overload"]
-    #[method(name = "OnRepaint", args = 0)]
-    pub fn on_repaint(self) -> f32;
-
+    pub fn on_repaint(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::on_repaint(self, ::core::option::Option::None) }
+    }
     #[doc = "`CurrentEventType()` overload"]
-    #[method(name = "CurrentEventType", args = 0)]
-    pub fn current_event_type(self) -> crate::unity_engine::eventtype::EventType;
-
+    pub fn current_event_type(self) -> crate::unity_engine::eventtype::EventType {
+        unsafe {
+            __SliderHandler_unity2_raw::current_event_type(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`CurrentScrollTroughSide()` overload"]
-    #[method(name = "CurrentScrollTroughSide", args = 0)]
-    pub fn current_scroll_trough_side(self) -> i32;
-
+    pub fn current_scroll_trough_side(self) -> i32 {
+        unsafe {
+            __SliderHandler_unity2_raw::current_scroll_trough_side(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsEmptySlider()` overload"]
-    #[method(name = "IsEmptySlider", args = 0)]
-    pub fn is_empty_slider(self) -> bool;
-
+    pub fn is_empty_slider(self) -> bool {
+        unsafe { __SliderHandler_unity2_raw::is_empty_slider(self, ::core::option::Option::None) }
+    }
     #[doc = "`SupportsPageMovements()` overload"]
-    #[method(name = "SupportsPageMovements", args = 0)]
-    pub fn supports_page_movements(self) -> bool;
-
+    pub fn supports_page_movements(self) -> bool {
+        unsafe {
+            __SliderHandler_unity2_raw::supports_page_movements(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`PageMovementValue()` overload"]
-    #[method(name = "PageMovementValue", args = 0)]
-    pub fn page_movement_value(self) -> f32;
-
+    pub fn page_movement_value(self) -> f32 {
+        unsafe {
+            __SliderHandler_unity2_raw::page_movement_value(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`PageUpMovementBound()` overload"]
-    #[method(name = "PageUpMovementBound", args = 0)]
-    pub fn page_up_movement_bound(self) -> f32;
-
+    pub fn page_up_movement_bound(self) -> f32 {
+        unsafe {
+            __SliderHandler_unity2_raw::page_up_movement_bound(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`CurrentEvent()` overload"]
-    #[method(name = "CurrentEvent", args = 0)]
-    pub fn current_event(self) -> crate::unity_engine::event::Event;
-
+    pub fn current_event(self) -> crate::unity_engine::event::Event {
+        unsafe { __SliderHandler_unity2_raw::current_event(self, ::core::option::Option::None) }
+    }
     #[doc = "`ValueForCurrentMousePosition()` overload"]
-    #[method(name = "ValueForCurrentMousePosition", args = 0)]
-    pub fn value_for_current_mouse_position(self) -> f32;
-
+    pub fn value_for_current_mouse_position(self) -> f32 {
+        unsafe {
+            __SliderHandler_unity2_raw::value_for_current_mouse_position(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Clamp(f32)` overload"]
-    #[method(name = "Clamp", args = 1)]
-    pub fn clamp(self, value: f32) -> f32;
-
+    pub fn clamp(self, value: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __SliderHandler_unity2_raw::clamp(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ThumbSelectionRect()` overload"]
-    #[method(name = "ThumbSelectionRect", args = 0)]
-    pub fn thumb_selection_rect(self) -> crate::unity_engine::rect::Rect;
-
+    pub fn thumb_selection_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __SliderHandler_unity2_raw::thumb_selection_rect(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`StartDraggingWithValue(f32)` overload"]
-    #[method(name = "StartDraggingWithValue", args = 1)]
-    pub fn start_dragging_with_value(self, drag_start_value: f32) -> ();
-
+    pub fn start_dragging_with_value(
+        self,
+        drag_start_value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __SliderHandler_unity2_raw::start_dragging_with_value(
+                self,
+                ::core::convert::Into::into(drag_start_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SliderState()` overload"]
-    #[method(name = "SliderState", args = 0)]
-    pub fn slider_state(self) -> crate::unity_engine::sliderstate::SliderState;
-
+    pub fn slider_state(self) -> crate::unity_engine::sliderstate::SliderState {
+        unsafe { __SliderHandler_unity2_raw::slider_state(self, ::core::option::Option::None) }
+    }
     #[doc = "`ThumbExtRect()` overload"]
-    #[method(name = "ThumbExtRect", args = 0)]
-    pub fn thumb_ext_rect(self) -> crate::unity_engine::rect::Rect;
-
+    pub fn thumb_ext_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe { __SliderHandler_unity2_raw::thumb_ext_rect(self, ::core::option::Option::None) }
+    }
     #[doc = "`ThumbRect()` overload"]
-    #[method(name = "ThumbRect", args = 0)]
-    pub fn thumb_rect(self) -> crate::unity_engine::rect::Rect;
-
+    pub fn thumb_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe { __SliderHandler_unity2_raw::thumb_rect(self, ::core::option::Option::None) }
+    }
     #[doc = "`VerticalThumbRect()` overload"]
-    #[method(name = "VerticalThumbRect", args = 0)]
-    pub fn vertical_thumb_rect(self) -> crate::unity_engine::rect::Rect;
-
+    pub fn vertical_thumb_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __SliderHandler_unity2_raw::vertical_thumb_rect(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`HorizontalThumbRect()` overload"]
-    #[method(name = "HorizontalThumbRect", args = 0)]
-    pub fn horizontal_thumb_rect(self) -> crate::unity_engine::rect::Rect;
-
+    pub fn horizontal_thumb_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __SliderHandler_unity2_raw::horizontal_thumb_rect(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`ClampedCurrentValue()` overload"]
-    #[method(name = "ClampedCurrentValue", args = 0)]
-    pub fn clamped_current_value(self) -> f32;
-
+    pub fn clamped_current_value(self) -> f32 {
+        unsafe {
+            __SliderHandler_unity2_raw::clamped_current_value(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`MousePosition()` overload"]
-    #[method(name = "MousePosition", args = 0)]
-    pub fn mouse_position(self) -> f32;
-
+    pub fn mouse_position(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::mouse_position(self, ::core::option::Option::None) }
+    }
     #[doc = "`ValuesPerPixel()` overload"]
-    #[method(name = "ValuesPerPixel", args = 0)]
-    pub fn values_per_pixel(self) -> f32;
-
+    pub fn values_per_pixel(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::values_per_pixel(self, ::core::option::Option::None) }
+    }
     #[doc = "`ThumbSize()` overload"]
-    #[method(name = "ThumbSize", args = 0)]
-    pub fn thumb_size(self) -> f32;
-
+    pub fn thumb_size(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::thumb_size(self, ::core::option::Option::None) }
+    }
     #[doc = "`MaxValue()` overload"]
-    #[method(name = "MaxValue", args = 0)]
-    pub fn max_value(self) -> f32;
-
+    pub fn max_value(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::max_value(self, ::core::option::Option::None) }
+    }
     #[doc = "`MinValue()` overload"]
-    #[method(name = "MinValue", args = 0)]
-    pub fn min_value(self) -> f32;
+    pub fn min_value(self) -> f32 {
+        unsafe { __SliderHandler_unity2_raw::min_value(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-sliderhandler")]
+pub mod prelude {
+    pub use super::SliderHandler;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

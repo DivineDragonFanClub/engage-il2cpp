@@ -18,13 +18,93 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
-#[::unity2::methods]
-impl IClosureBuilder {
-    #[doc = "`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]
-    #[method(name = "CreateUpvalue", args = 2)]
-    pub fn create_upvalue(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IClosureBuilder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_upvalue {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IClosureBuilder as ::unity2::ClassIdentity>::class(),
+                "CreateUpvalue",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IClosureBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CreateUpvalue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_upvalue(
+        this: IClosureBuilder,
         scope: crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,
         symbol: crate::moon_sharp::interpreter::symbolref::SymbolRef,
-    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+        let inner: extern "C" fn(
+            IClosureBuilder,
+            crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,
+            crate::moon_sharp::interpreter::symbolref::SymbolRef,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_upvalue::get_offset() as isize),
+        );
+        inner(this, scope, symbol, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
+pub trait IIClosureBuilderMethods: IIClosureBuilder {
+    #[doc = "`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]
+    fn create_upvalue(
+        self,
+        scope: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,
+        >,
+        symbol: impl ::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+        unsafe {
+            let __receiver = <IClosureBuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IClosureBuilder_unity2_raw::create_upvalue(
+                __receiver,
+                ::core::convert::Into::into(scope),
+                ::core::convert::Into::into(symbol),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
+impl<__T: IIClosureBuilder> IIClosureBuilderMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
+pub mod prelude {
+    pub use super::IClosureBuilder;
+    pub use super::IIClosureBuilder;
+    pub use super::IIClosureBuilderMethods;
 }

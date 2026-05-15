@@ -4,17 +4,18 @@
 mod __types {
     use super::*;
 
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
-    };
-    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDebug")]
+    pub struct MapPanelDebug {
+        #[rename(name = "m_Entitys")]
+        pub m_entitys: crate::system::collections::generic::list_1::List_1<
+            crate::app::mappaneldebug::MapPanelDebug_Entity,
+        >,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]
     #[repr(C)]
@@ -45,32 +46,149 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDebug")]
-    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)]
-    pub struct MapPanelDebug {
-        #[rename(name = "m_Entitys")]
-        pub m_entitys: crate::system::collections::generic::list_1::List_1<
-            crate::app::mappaneldebug::MapPanelDebug_Entity,
-        >,
-    }
 }
 
 #[cfg(feature = "app-mappaneldebug-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mappaneldebug")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapPanelDebug_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelDebug as ::unity2::ClassIdentity>::class(),
+                "Draw",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelDebug as ::unity2::ClassIdentity>::NAME,
+                    "Draw",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw(
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw::get_offset() as isize),
+        );
+        inner(x, z, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelDebug as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelDebug as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapPanelDebug, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapPanelDebug, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mappaneldebug")]
 impl MapPanelDebug {
     #[doc = "`Draw(i32, i32, crate::unity_engine::color::Color)` overload"]
-    #[method(name = "Draw", args = 3)]
-    pub fn draw(x: i32, z: i32, color: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn draw(
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            __MapPanelDebug_unity2_raw::draw(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-mappaneldebug")]
+pub trait IMapPanelDebugMethods: IMapPanelDebug {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapPanelDebug as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapPanelDebug_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mappaneldebug")]
+impl<__T: IMapPanelDebug> IMapPanelDebugMethods for __T {}
 
 #[cfg(feature = "app-mappaneldebug")]
 impl MapPanelDebug {
@@ -86,4 +204,18 @@ impl MapPanelDebug {
         <Self as IMapPanelDebugMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mappaneldebug")]
+pub mod prelude {
+    pub use super::IMapPanelDebug;
+    pub use super::IMapPanelDebugMethods;
+    pub use super::MapPanelDebug;
+    pub use super::MapPanelDebug_Entity;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

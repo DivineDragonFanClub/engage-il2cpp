@@ -17,13 +17,141 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-excombatcameratype")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExCombatCameraType_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_interrupt {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExCombatCameraType as ::unity2::ClassIdentity>::class(),
+                "IsInterrupt",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExCombatCameraType as ::unity2::ClassIdentity>::NAME,
+                    "IsInterrupt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_interrupt(
+        style: crate::combat::camerasituation::CameraSituation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::camerasituation::CameraSituation,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_interrupt::get_offset() as isize),
+        );
+        inner(style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_dead {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExCombatCameraType as ::unity2::ClassIdentity>::class(),
+                "IsDead",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExCombatCameraType as ::unity2::ClassIdentity>::NAME,
+                    "IsDead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_dead(
+        style: crate::combat::camerasituation::CameraSituation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::camerasituation::CameraSituation,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_dead::get_offset() as isize),
+        );
+        inner(style, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-excombatcameratype")]
 impl ExCombatCameraType {
     #[doc = "`IsInterrupt(crate::combat::camerasituation::CameraSituation)` overload"]
-    #[method(name = "IsInterrupt", args = 1)]
-    pub fn is_interrupt(style: crate::combat::camerasituation::CameraSituation) -> bool;
-
+    pub fn is_interrupt(
+        style: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+    ) -> bool {
+        unsafe {
+            __ExCombatCameraType_unity2_raw::is_interrupt(
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsDead(crate::combat::camerasituation::CameraSituation)` overload"]
-    #[method(name = "IsDead", args = 1)]
-    pub fn is_dead(style: crate::combat::camerasituation::CameraSituation) -> bool;
+    pub fn is_dead(
+        style: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+    ) -> bool {
+        unsafe {
+            __ExCombatCameraType_unity2_raw::is_dead(
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-excombatcameratype")]
+pub mod prelude {
+    pub use super::ExCombatCameraType;
+    pub use super::IExCombatCameraType;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

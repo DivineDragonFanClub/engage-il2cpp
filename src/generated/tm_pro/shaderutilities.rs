@@ -222,51 +222,536 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-shaderutilities")]
-#[::unity2::methods]
-impl ShaderUtilities {
-    #[doc = "`get_ShaderRef_MobileSDF()` overload"]
-    #[method(name = "get_ShaderRef_MobileSDF", args = 0)]
-    pub fn get_shader_ref_mobile_sdf() -> crate::unity_engine::shader::Shader;
-
-    #[doc = "`get_ShaderRef_MobileBitmap()` overload"]
-    #[method(name = "get_ShaderRef_MobileBitmap", args = 0)]
-    pub fn get_shader_ref_mobile_bitmap() -> crate::unity_engine::shader::Shader;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`GetShaderPropertyIDs()` overload"]
-    #[method(name = "GetShaderPropertyIDs", args = 0)]
-    pub fn get_shader_property_i_ds() -> ();
-
-    #[doc = "`UpdateShaderRatios(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "UpdateShaderRatios", args = 1)]
-    pub fn update_shader_ratios(mat: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`GetFontExtent(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "GetFontExtent", args = 1)]
-    pub fn get_font_extent(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShaderUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shader_ref_mobile_sdf {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "get_ShaderRef_MobileSDF",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "get_ShaderRef_MobileSDF",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shader_ref_mobile_sdf(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::shader::Shader {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_shader_ref_mobile_sdf::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shader_ref_mobile_bitmap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "get_ShaderRef_MobileBitmap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "get_ShaderRef_MobileBitmap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shader_ref_mobile_bitmap(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::shader::Shader {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_shader_ref_mobile_bitmap::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shader_property_i_ds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "GetShaderPropertyIDs",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetShaderPropertyIDs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shader_property_i_ds(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_shader_property_i_ds::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_shader_ratios {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "UpdateShaderRatios",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "UpdateShaderRatios",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_shader_ratios(
+        mat: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_shader_ratios::get_offset() as isize),
+        );
+        inner(mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_extent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "GetFontExtent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetFontExtent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_extent(
         material: crate::unity_engine::material::Material,
-    ) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`IsMaskingEnabled(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "IsMaskingEnabled", args = 1)]
-    pub fn is_masking_enabled(material: crate::unity_engine::material::Material) -> bool;
-
-    #[doc = "`GetPadding(crate::unity_engine::material::Material, bool, bool)` overload"]
-    #[method(name = "GetPadding", args = 3)]
-    pub fn get_padding(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_extent::get_offset() as isize),
+        );
+        inner(material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_masking_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "IsMaskingEnabled",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "IsMaskingEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_masking_enabled(
+        material: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_masking_enabled::get_offset() as isize),
+        );
+        inner(material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "GetPadding",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_padding(
         material: crate::unity_engine::material::Material,
         enable_extra_padding: bool,
         is_bold: bool,
-    ) -> f32;
-
-    #[doc = "`GetPadding(::unity2::Array<crate::unity_engine::material::Material>, bool, bool)` overload"]
-    #[method(name = "GetPadding", args = 3)]
-    pub fn get_padding_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_padding::get_offset() as isize),
+        );
+        inner(
+            material,
+            enable_extra_padding,
+            is_bold,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_padding_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: material :: Material > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShaderUtilities as ::unity2::ClassIdentity>::class(),
+                "GetPadding",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GetPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_padding_2(
         materials: ::unity2::Array<crate::unity_engine::material::Material>,
         enable_extra_padding: bool,
         is_bold: bool,
-    ) -> f32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_padding_2::get_offset() as isize),
+        );
+        inner(
+            materials,
+            enable_extra_padding,
+            is_bold,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "tm_pro-shaderutilities")]
+impl ShaderUtilities {
+    #[doc = "`get_ShaderRef_MobileSDF()` overload"]
+    pub fn get_shader_ref_mobile_sdf() -> crate::unity_engine::shader::Shader {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_shader_ref_mobile_sdf(::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ShaderRef_MobileBitmap()` overload"]
+    pub fn get_shader_ref_mobile_bitmap() -> crate::unity_engine::shader::Shader {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_shader_ref_mobile_bitmap(::core::option::Option::None)
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ShaderUtilities_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`GetShaderPropertyIDs()` overload"]
+    pub fn get_shader_property_i_ds() -> () {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_shader_property_i_ds(::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateShaderRatios(crate::unity_engine::material::Material)` overload"]
+    pub fn update_shader_ratios(
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            __ShaderUtilities_unity2_raw::update_shader_ratios(
+                ::core::convert::Into::into(mat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFontExtent(crate::unity_engine::material::Material)` overload"]
+    pub fn get_font_extent(
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_font_extent(
+                ::core::convert::Into::into(material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsMaskingEnabled(crate::unity_engine::material::Material)` overload"]
+    pub fn is_masking_enabled(
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> bool {
+        unsafe {
+            __ShaderUtilities_unity2_raw::is_masking_enabled(
+                ::core::convert::Into::into(material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPadding(crate::unity_engine::material::Material, bool, bool)` overload"]
+    pub fn get_padding(
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        enable_extra_padding: impl ::core::convert::Into<bool>,
+        is_bold: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_padding(
+                ::core::convert::Into::into(material),
+                ::core::convert::Into::into(enable_extra_padding),
+                ::core::convert::Into::into(is_bold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPadding(::unity2::Array<crate::unity_engine::material::Material>, bool, bool)` overload"]
+    pub fn get_padding_2(
+        materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+        enable_extra_padding: impl ::core::convert::Into<bool>,
+        is_bold: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            __ShaderUtilities_unity2_raw::get_padding_2(
+                ::core::convert::Into::into(materials),
+                ::core::convert::Into::into(enable_extra_padding),
+                ::core::convert::Into::into(is_bold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-shaderutilities")]
+pub mod prelude {
+    pub use super::IShaderUtilities;
+    pub use super::ShaderUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

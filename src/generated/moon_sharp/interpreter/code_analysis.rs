@@ -2,3 +2,7 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-code_analysis-astnode-types"))]
 pub mod astnode;
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+pub use astnode::IAstNodeMethods;
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode-types")]
+pub use astnode::{AstNode, IAstNode};

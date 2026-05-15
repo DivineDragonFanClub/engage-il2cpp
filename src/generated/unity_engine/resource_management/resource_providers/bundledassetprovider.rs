@@ -10,14 +10,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "BundledAssetProvider"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-    pub struct BundledAssetProvider {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider_InternalOp.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.ResourceManagement.ResourceProviders",
@@ -30,6 +22,14 @@ mod __types {
 # [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
 # [rename (name = "subObjectName")] pub sub_object_name : :: unity2 :: Il2CppString ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+        name = "BundledAssetProvider"
+    )]
+    # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+    pub struct BundledAssetProvider {}
 }
 
 #[cfg(
@@ -38,19 +38,846 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
-#[::unity2::methods]
-impl BundledAssetProvider {
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BundledAssetProvider_InternalOp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_bundle_from_dependecies {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::system::object::Object,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "LoadBundleFromDependecies",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "LoadBundleFromDependecies",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn load_bundle_from_dependecies (results : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: iassetbundleresource_interface :: IAssetBundleResource_Interface{
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: iassetbundleresource_interface :: IAssetBundleResource_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_bundle_from_dependecies :: get_offset () as isize) ,) ;
+        inner(results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "Start",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: BundledAssetProvider_InternalOp,
         provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (BundledAssetProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_start :: get_offset () as isize) ,) ;
+        inner(this, provide_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_for_completion_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "WaitForCompletionHandler",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "WaitForCompletionHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_for_completion_handler(
+        this: BundledAssetProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_for_completion_handler::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_action_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "ActionComplete",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "ActionComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn action_complete(
+        this: BundledAssetProvider_InternalOp,
+        obj: crate::unity_engine::asyncoperation::AsyncOperation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            crate::unity_engine::asyncoperation::AsyncOperation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_action_complete::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_array_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::object_2::Object_2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetArrayResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetArrayResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_array_result(
+        this: BundledAssetProvider_InternalOp,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_array_result::get_offset() as isize),
+        );
+        inner(this, all_assets, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_list_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::object_2::Object_2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetListResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetListResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_list_result(
+        this: BundledAssetProvider_InternalOp,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_list_result::get_offset() as isize),
+        );
+        inner(this, all_assets, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetAssetResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_result(
+        this: BundledAssetProvider_InternalOp,
+        asset: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_asset_result::get_offset() as isize),
+        );
+        inner(this, asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_sub_object_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::object_2::Object_2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetAssetSubObjectResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetSubObjectResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_sub_object_result(
+        this: BundledAssetProvider_InternalOp,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BundledAssetProvider_InternalOp,
+            ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_asset_sub_object_result::get_offset() as isize),
+        );
+        inner(this, all_assets, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_complete_operation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "CompleteOperation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "CompleteOperation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn complete_operation(
+        this: BundledAssetProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BundledAssetProvider_InternalOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_complete_operation::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_progress_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "ProgressCallback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "ProgressCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn progress_callback(
+        this: BundledAssetProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BundledAssetProvider_InternalOp, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_progress_callback::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BundledAssetProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BundledAssetProvider_InternalOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl BundledAssetProvider_InternalOp {
+    #[doc = "`LoadBundleFromDependecies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"]    pub fn load_bundle_from_dependecies (results : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > >) -> crate :: unity_engine :: resource_management :: resource_providers :: iassetbundleresource_interface :: IAssetBundleResource_Interface{
+        unsafe {
+            __BundledAssetProvider_InternalOp_unity2_raw::load_bundle_from_dependecies(
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+pub trait IBundledAssetProvider_InternalOpMethods: IBundledAssetProvider_InternalOp {
+    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn start(
+        self,
+        provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::start(
+                __receiver,
+                ::core::convert::Into::into(provide_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitForCompletionHandler()` overload"]
+    fn wait_for_completion_handler(self) -> bool {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::wait_for_completion_handler(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ActionComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    fn action_complete(
+        self,
+        obj: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::action_complete(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetArrayResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
+    fn get_array_result(
+        self,
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::get_array_result(
+                __receiver,
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetListResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
+    fn get_list_result(
+        self,
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::get_list_result(
+                __receiver,
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetResult(crate::unity_engine::object_2::Object_2)` overload"]
+    fn get_asset_result(
+        self,
+        asset: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::get_asset_result(
+                __receiver,
+                ::core::convert::Into::into(asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetSubObjectResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
+    fn get_asset_sub_object_result(
+        self,
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::get_asset_sub_object_result(
+                __receiver,
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompleteOperation()` overload"]
+    fn complete_operation(self) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::complete_operation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProgressCallback()` overload"]
+    fn progress_callback(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::progress_callback(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BundledAssetProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BundledAssetProvider_InternalOp_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl<__T: IBundledAssetProvider_InternalOp> IBundledAssetProvider_InternalOpMethods for __T {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl BundledAssetProvider_InternalOp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BundledAssetProvider_InternalOp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBundledAssetProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BundledAssetProvider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_provide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider as ::unity2::ClassIdentity>::class(),
+                "Provide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider as ::unity2::ClassIdentity>::NAME,
+                    "Provide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn provide(
+        this: BundledAssetProvider,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (BundledAssetProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide :: get_offset () as isize) ,) ;
+        inner(this, provide_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BundledAssetProvider as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BundledAssetProvider as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BundledAssetProvider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BundledAssetProvider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+pub trait IBundledAssetProviderMethods: IBundledAssetProvider {
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn provide(
+        self,
+        provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BundledAssetProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BundledAssetProvider_unity2_raw::provide(
+                __receiver,
+                ::core::convert::Into::into(provide_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BundledAssetProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BundledAssetProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl<__T: IBundledAssetProvider> IBundledAssetProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
 impl BundledAssetProvider {
@@ -69,77 +896,19 @@ impl BundledAssetProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
-#[::unity2::methods]
-impl BundledAssetProvider_InternalOp {
-    #[doc = "`LoadBundleFromDependecies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"]
-    #[method(name = "LoadBundleFromDependecies", args = 1)]
-    pub fn load_bundle_from_dependecies (results : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: resource_providers :: iassetbundleresource_interface :: IAssetBundleResource_Interface ;
-
-    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Start", args = 1)]
-    pub fn start(
-        self,
-        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`WaitForCompletionHandler()` overload"]
-    #[method(name = "WaitForCompletionHandler", args = 0)]
-    pub fn wait_for_completion_handler(self) -> bool;
-
-    #[doc = "`ActionComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "ActionComplete", args = 1)]
-    pub fn action_complete(self, obj: crate::unity_engine::asyncoperation::AsyncOperation) -> ();
-
-    #[doc = "`GetArrayResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
-    #[method(name = "GetArrayResult", args = 1)]
-    pub fn get_array_result(
-        self,
-        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    ) -> ();
-
-    #[doc = "`GetListResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
-    #[method(name = "GetListResult", args = 1)]
-    pub fn get_list_result(
-        self,
-        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    ) -> ();
-
-    #[doc = "`GetAssetResult(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "GetAssetResult", args = 1)]
-    pub fn get_asset_result(self, asset: crate::unity_engine::object_2::Object_2) -> ();
-
-    #[doc = "`GetAssetSubObjectResult(::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
-    #[method(name = "GetAssetSubObjectResult", args = 1)]
-    pub fn get_asset_sub_object_result(
-        self,
-        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    ) -> ();
-
-    #[doc = "`CompleteOperation()` overload"]
-    #[method(name = "CompleteOperation", args = 0)]
-    pub fn complete_operation(self) -> ();
-
-    #[doc = "`ProgressCallback()` overload"]
-    #[method(name = "ProgressCallback", args = 0)]
-    pub fn progress_callback(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
-impl BundledAssetProvider_InternalOp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BundledAssetProvider_InternalOp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBundledAssetProvider_InternalOpMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::BundledAssetProvider;
+    pub use super::BundledAssetProvider_InternalOp;
+    pub use super::IBundledAssetProvider;
+    pub use super::IBundledAssetProviderMethods;
+    pub use super::IBundledAssetProvider_InternalOp;
+    pub use super::IBundledAssetProvider_InternalOpMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+    #[cfg(
+        feature = "unity_engine-resource_management-resource_providers-resourceproviderbase"
+    )]
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
 }

@@ -87,32 +87,289 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
-#[::unity2::methods]
-impl ScriptToClrConversions {
-    #[doc = "`DynValueToObject(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "DynValueToObject", args = 1)]
-    pub fn dyn_value_to_object(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptToClrConversions_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dyn_value_to_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptToClrConversions as ::unity2::ClassIdentity>::class(),
+                "DynValueToObject",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptToClrConversions as ::unity2::ClassIdentity>::NAME,
+                    "DynValueToObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dyn_value_to_object(
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`DynValueToObjectOfType(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, crate::system::object::Object, bool)` overload"]
-    #[method(name = "DynValueToObjectOfType", args = 4)]
-    pub fn dyn_value_to_object_of_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dyn_value_to_object::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dyn_value_to_object_of_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptToClrConversions as ::unity2::ClassIdentity>::class(),
+                "DynValueToObjectOfType",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptToClrConversions as ::unity2::ClassIdentity>::NAME,
+                    "DynValueToObjectOfType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dyn_value_to_object_of_type(
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         desired_type: ::unity2::SystemType,
         default_value: crate::system::object::Object,
         is_optional: bool,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`DynValueToObjectOfTypeWeight(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, bool)` overload"]
-    #[method(name = "DynValueToObjectOfTypeWeight", args = 3)]
-    pub fn dyn_value_to_object_of_type_weight(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::SystemType,
+            crate::system::object::Object,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dyn_value_to_object_of_type::get_offset() as isize),
+        );
+        inner(
+            value,
+            desired_type,
+            default_value,
+            is_optional,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dyn_value_to_object_of_type_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptToClrConversions as ::unity2::ClassIdentity>::class(),
+                "DynValueToObjectOfTypeWeight",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptToClrConversions as ::unity2::ClassIdentity>::NAME,
+                    "DynValueToObjectOfTypeWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dyn_value_to_object_of_type_weight(
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         desired_type: ::unity2::SystemType,
         is_optional: bool,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dyn_value_to_object_of_type_weight::get_offset() as isize),
+        );
+        inner(value, desired_type, is_optional, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_numeric_type_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptToClrConversions as ::unity2::ClassIdentity>::class(),
+                "GetNumericTypeWeight",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptToClrConversions as ::unity2::ClassIdentity>::NAME,
+                    "GetNumericTypeWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_numeric_type_weight(
+        desired_type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_numeric_type_weight::get_offset() as isize),
+            );
+        inner(desired_type, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
+impl ScriptToClrConversions {
+    #[doc = "`DynValueToObject(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    pub fn dyn_value_to_object(
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            __ScriptToClrConversions_unity2_raw::dyn_value_to_object(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DynValueToObjectOfType(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, crate::system::object::Object, bool)` overload"]
+    pub fn dyn_value_to_object_of_type(
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        desired_type: impl ::core::convert::Into<::unity2::SystemType>,
+        default_value: impl ::core::convert::Into<crate::system::object::Object>,
+        is_optional: impl ::core::convert::Into<bool>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            __ScriptToClrConversions_unity2_raw::dyn_value_to_object_of_type(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(desired_type),
+                ::core::convert::Into::into(default_value),
+                ::core::convert::Into::into(is_optional),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DynValueToObjectOfTypeWeight(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, bool)` overload"]
+    pub fn dyn_value_to_object_of_type_weight(
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        desired_type: impl ::core::convert::Into<::unity2::SystemType>,
+        is_optional: impl ::core::convert::Into<bool>,
+    ) -> i32 {
+        unsafe {
+            __ScriptToClrConversions_unity2_raw::dyn_value_to_object_of_type_weight(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(desired_type),
+                ::core::convert::Into::into(is_optional),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNumericTypeWeight(::unity2::SystemType)` overload"]
-    #[method(name = "GetNumericTypeWeight", args = 1)]
-    pub fn get_numeric_type_weight(desired_type: ::unity2::SystemType) -> i32;
+    pub fn get_numeric_type_weight(
+        desired_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> i32 {
+        unsafe {
+            __ScriptToClrConversions_unity2_raw::get_numeric_type_weight(
+                ::core::convert::Into::into(desired_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
+pub mod prelude {
+    pub use super::IScriptToClrConversions;
+    pub use super::ScriptToClrConversions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -17,41 +17,329 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-commandbufferextensions")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CommandBufferExtensions_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_switch_into_fast_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fastmemoryflags :: FastMemoryFlags as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommandBufferExtensions as ::unity2::ClassIdentity>::class(),
+                "Internal_SwitchIntoFastMemory",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommandBufferExtensions as ::unity2::ClassIdentity>::NAME,
+                    "Internal_SwitchIntoFastMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_switch_into_fast_memory(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rt: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        fast_memory_flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+        residency: f32,
+        copy_contents: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_switch_into_fast_memory::get_offset() as isize),
+        );
+        inner(
+            cmd,
+            rt,
+            fast_memory_flags,
+            residency,
+            copy_contents,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_switch_out_of_fast_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommandBufferExtensions as ::unity2::ClassIdentity>::class(),
+                "Internal_SwitchOutOfFastMemory",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommandBufferExtensions as ::unity2::ClassIdentity>::NAME,
+                    "Internal_SwitchOutOfFastMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_switch_out_of_fast_memory(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rt: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        copy_contents: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_switch_out_of_fast_memory::get_offset() as isize),
+        );
+        inner(cmd, rt, copy_contents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_into_fast_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fastmemoryflags :: FastMemoryFlags as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommandBufferExtensions as ::unity2::ClassIdentity>::class(),
+                "SwitchIntoFastMemory",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommandBufferExtensions as ::unity2::ClassIdentity>::NAME,
+                    "SwitchIntoFastMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_into_fast_memory(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rid: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        fast_memory_flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+        residency: f32,
+        copy_contents: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_switch_into_fast_memory::get_offset() as isize),
+        );
+        inner(
+            cmd,
+            rid,
+            fast_memory_flags,
+            residency,
+            copy_contents,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_out_of_fast_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommandBufferExtensions as ::unity2::ClassIdentity>::class(),
+                "SwitchOutOfFastMemory",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommandBufferExtensions as ::unity2::ClassIdentity>::NAME,
+                    "SwitchOutOfFastMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_out_of_fast_memory(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rid: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        copy_contents: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_switch_out_of_fast_memory::get_offset() as isize),
+        );
+        inner(cmd, rid, copy_contents, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-commandbufferextensions")]
 impl CommandBufferExtensions {
-    #[doc = "`Internal_SwitchIntoFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags, f32, bool)` overload"]
-    #[method(name = "Internal_SwitchIntoFastMemory", args = 5)]
+    #[doc = "`Internal_SwitchIntoFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags, f32, bool)` overload"]
     pub fn internal_switch_into_fast_memory(
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        fast_memory_flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
-        residency: f32,
-        copy_contents: bool,
-    ) -> ();
-
-    #[doc = "`Internal_SwitchOutOfFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, bool)` overload"]
-    #[method(name = "Internal_SwitchOutOfFastMemory", args = 3)]
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        fast_memory_flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+        >,
+        residency: impl ::core::convert::Into<f32>,
+        copy_contents: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            >::uninit();
+            __CommandBufferExtensions_unity2_raw::internal_switch_into_fast_memory(
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(fast_memory_flags),
+                ::core::convert::Into::into(residency),
+                ::core::convert::Into::into(copy_contents),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Internal_SwitchOutOfFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, bool)` overload"]
     pub fn internal_switch_out_of_fast_memory(
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        copy_contents: bool,
-    ) -> ();
-
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        copy_contents: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            >::uninit();
+            __CommandBufferExtensions_unity2_raw::internal_switch_out_of_fast_memory(
+                ::core::convert::Into::into(cmd),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(copy_contents),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
     #[doc = "`SwitchIntoFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags, f32, bool)` overload"]
-    #[method(name = "SwitchIntoFastMemory", args = 5)]
     pub fn switch_into_fast_memory(
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rid: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        fast_memory_flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
-        residency: f32,
-        copy_contents: bool,
-    ) -> ();
-
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        rid: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+        fast_memory_flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+        >,
+        residency: impl ::core::convert::Into<f32>,
+        copy_contents: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __CommandBufferExtensions_unity2_raw::switch_into_fast_memory(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(rid),
+                ::core::convert::Into::into(fast_memory_flags),
+                ::core::convert::Into::into(residency),
+                ::core::convert::Into::into(copy_contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SwitchOutOfFastMemory(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, bool)` overload"]
-    #[method(name = "SwitchOutOfFastMemory", args = 3)]
     pub fn switch_out_of_fast_memory(
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rid: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        copy_contents: bool,
-    ) -> ();
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        rid: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+        copy_contents: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __CommandBufferExtensions_unity2_raw::switch_out_of_fast_memory(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(rid),
+                ::core::convert::Into::into(copy_contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-commandbufferextensions")]
+pub mod prelude {
+    pub use super::CommandBufferExtensions;
+    pub use super::ICommandBufferExtensions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -96,3 +96,19 @@ impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-procscenesequence_1")]
+pub mod prelude {
+    pub use super::IProcSceneSequence_1;
+    pub use super::IProcSceneSequence_1Methods;
+    pub use super::ProcSceneSequence_1;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -69,3 +69,13 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNodeCache_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-resource_management-util-linkedlistnodecache_1")]
+pub mod prelude {
+    pub use super::ILinkedListNodeCache_1;
+    pub use super::ILinkedListNodeCache_1Methods;
+    pub use super::LinkedListNodeCache_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

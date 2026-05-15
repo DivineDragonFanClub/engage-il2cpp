@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
+    #[::unity2::class(namespace = "Combat", name = "AssetName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetName {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assetname/AssetName_SplitMode.md"))]
     #[repr(C)]
     #[derive(
@@ -56,37 +61,284 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AssetName")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetName {}
 }
 
 #[cfg(feature = "combat-assetname-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-assetname")]
-#[::unity2::methods]
-impl AssetName {
-    #[doc = "`MakeAddressablesPath(::unity2::Il2CppString)` overload"]
-    #[method(name = "MakeAddressablesPath", args = 1)]
-    pub fn make_addressables_path(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`Tokenize(::unity2::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]
-    #[method(name = "Tokenize", args = 4)]
-    pub fn tokenize(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetName_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_addressables_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetName as ::unity2::ClassIdentity>::class(),
+                "MakeAddressablesPath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetName as ::unity2::ClassIdentity>::NAME,
+                    "MakeAddressablesPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_addressables_path(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_addressables_path::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tokenize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::combat::assetname::AssetName_SplitMode as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetName as ::unity2::ClassIdentity>::class(),
+                "Tokenize",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetName as ::unity2::ClassIdentity>::NAME,
+                    "Tokenize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tokenize(
         name: ::unity2::Il2CppString,
         split_mode: crate::combat::assetname::AssetName_SplitMode,
         start_index: i32,
         end_index: i32,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::combat::assetname::AssetName_SplitMode,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tokenize::get_offset() as isize),
+        );
+        inner(
+            name,
+            split_mode,
+            start_index,
+            end_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_high_class {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetName as ::unity2::ClassIdentity>::class(),
+                "IsHighClass",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetName as ::unity2::ClassIdentity>::NAME,
+                    "IsHighClass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_high_class(
+        dress_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_high_class::get_offset() as isize),
+            );
+        inner(dress_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is異形 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetName as ::unity2::ClassIdentity>::class(),
+                "Is異形",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetName as ::unity2::ClassIdentity>::NAME,
+                    "Is異形",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is異形(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is異形::get_offset() as isize),
+            );
+        inner(name, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "combat-assetname")]
+impl AssetName {
+    #[doc = "`MakeAddressablesPath(::unity2::Il2CppString)` overload"]
+    pub fn make_addressables_path(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AssetName_unity2_raw::make_addressables_path(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tokenize(::unity2::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]
+    pub fn tokenize(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        split_mode: impl ::core::convert::Into<crate::combat::assetname::AssetName_SplitMode>,
+        start_index: impl ::core::convert::Into<i32>,
+        end_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AssetName_unity2_raw::tokenize(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(split_mode),
+                ::core::convert::Into::into(start_index),
+                ::core::convert::Into::into(end_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsHighClass(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsHighClass", args = 1)]
-    pub fn is_high_class(dress_name: ::unity2::Il2CppString) -> bool;
-
+    pub fn is_high_class(dress_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __AssetName_unity2_raw::is_high_class(
+                ::core::convert::Into::into(dress_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Is異形(::unity2::Il2CppString)` overload"]
-    #[method(name = "Is異形", args = 1)]
-    pub fn is__(name: ::unity2::Il2CppString) -> bool;
+    pub fn is異形(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __AssetName_unity2_raw::is異形(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-assetname")]
+pub mod prelude {
+    pub use super::AssetName;
+    pub use super::AssetName_SplitMode;
+    pub use super::IAssetName;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

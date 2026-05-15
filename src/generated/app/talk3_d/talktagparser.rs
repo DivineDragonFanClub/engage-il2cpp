@@ -33,42 +33,430 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-talktagparser")]
-#[::unity2::methods]
-impl TalkTagParser {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Parse(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "Parse", args = 1)]
-    pub fn parse(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkTagParser_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TalkTagParser, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkTagParser, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_parse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::talk3_d::talkptr::TalkPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                "Parse",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    "Parse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn parse(
+        this: TalkTagParser,
         talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
-    ) -> crate::app::talk3_d::talktag::TalkTag;
-
-    #[doc = "`GetAddLetterTagForReplace(u16)` overload"]
-    #[method(name = "GetAddLetterTagForReplace", args = 1)]
-    pub fn get_add_letter_tag_for_replace(self, chr: u16) -> crate::app::talk3_d::talktag::TalkTag;
-
-    #[doc = "`ResetLineFeedEnable()` overload"]
-    #[method(name = "ResetLineFeedEnable", args = 0)]
-    pub fn reset_line_feed_enable(self) -> ();
-
-    #[doc = "`GetHeadText(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetHeadText", args = 2)]
-    pub fn get_head_text(mid: ::unity2::Il2CppString, num: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`AddCharToHeadText(u16, ::unity2::Il2CppString, i32, bool, bool, bool)` overload"]
-    #[method(name = "AddCharToHeadText", args = 6)]
-    pub fn add_char_to_head_text(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::talk3_d::talktag::TalkTag {
+        let inner: extern "C" fn(
+            TalkTagParser,
+            crate::app::talk3_d::talkptr::TalkPtr,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::talk3_d::talktag::TalkTag = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_parse::get_offset() as isize),
+        );
+        inner(this, talk_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_add_letter_tag_for_replace {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                "GetAddLetterTagForReplace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    "GetAddLetterTagForReplace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_add_letter_tag_for_replace(
+        this: TalkTagParser,
         chr: u16,
-        head: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::talk3_d::talktag::TalkTag {
+        let inner: extern "C" fn(
+            TalkTagParser,
+            u16,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::talk3_d::talktag::TalkTag = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_add_letter_tag_for_replace::get_offset() as isize),
+        );
+        inner(this, chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_line_feed_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                "ResetLineFeedEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    "ResetLineFeedEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_line_feed_enable(
+        this: TalkTagParser,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkTagParser, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_line_feed_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_head_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                "GetHeadText",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    "GetHeadText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_head_text(
+        mid: ::unity2::Il2CppString,
         num: i32,
-        str_to_lower_trigger: bool,
-        is_latest_str_patchim1: bool,
-        is_latest_str_patchim2: bool,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_head_text::get_offset() as isize),
+        );
+        inner(mid, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_char_to_head_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkTagParser as ::unity2::ClassIdentity>::class(),
+                "AddCharToHeadText",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkTagParser as ::unity2::ClassIdentity>::NAME,
+                    "AddCharToHeadText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_char_to_head_text(
+        chr: u16,
+        head: *mut ::unity2::Il2CppString,
+        num: *mut i32,
+        str_to_lower_trigger: *mut bool,
+        is_latest_str_patchim1: *mut bool,
+        is_latest_str_patchim2: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            u16,
+            *mut ::unity2::Il2CppString,
+            *mut i32,
+            *mut bool,
+            *mut bool,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_char_to_head_text::get_offset() as isize),
+        );
+        inner(
+            chr,
+            head,
+            num,
+            str_to_lower_trigger,
+            is_latest_str_patchim1,
+            is_latest_str_patchim2,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+impl TalkTagParser {
+    #[doc = "`GetHeadText(::unity2::Il2CppString, i32)` overload"]
+    pub fn get_head_text(
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __TalkTagParser_unity2_raw::get_head_text(
+                ::core::convert::Into::into(mid),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCharToHeadText(u16, *mut::unity2::Il2CppString, *muti32, *mutbool, *mutbool, *mutbool)` overload"]
+    pub fn add_char_to_head_text(
+        chr: impl ::core::convert::Into<u16>,
+    ) -> (bool, ::unity2::Il2CppString, i32, bool, bool, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __TalkTagParser_unity2_raw::add_char_to_head_text(
+                    ::core::convert::Into::into(chr),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    __out_4.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+                __out_4.assume_init(),
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+pub trait ITalkTagParserMethods: ITalkTagParser {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TalkTagParser as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkTagParser_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Parse(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
+    fn parse(
+        self,
+        talk_ptr: impl ::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>,
+    ) -> crate::app::talk3_d::talktag::TalkTag {
+        unsafe {
+            let __receiver = <TalkTagParser as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkTagParser_unity2_raw::parse(
+                __receiver,
+                ::core::convert::Into::into(talk_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAddLetterTagForReplace(u16)` overload"]
+    fn get_add_letter_tag_for_replace(
+        self,
+        chr: impl ::core::convert::Into<u16>,
+    ) -> crate::app::talk3_d::talktag::TalkTag {
+        unsafe {
+            let __receiver = <TalkTagParser as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkTagParser_unity2_raw::get_add_letter_tag_for_replace(
+                __receiver,
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetLineFeedEnable()` overload"]
+    fn reset_line_feed_enable(self) -> () {
+        unsafe {
+            let __receiver = <TalkTagParser as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkTagParser_unity2_raw::reset_line_feed_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+impl<__T: ITalkTagParser> ITalkTagParserMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talktagparser")]
 impl TalkTagParser {
@@ -84,4 +472,14 @@ impl TalkTagParser {
         <Self as ITalkTagParserMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+pub mod prelude {
+    pub use super::ITalkTagParser;
+    pub use super::ITalkTagParserMethods;
+    pub use super::TalkTagParser;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -10,34 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProcSceneManager {
-        #[static_field]
-        #[rename(name = "Empty")]
-        pub empty: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_Handles")]
-        pub s_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
-        #[static_field]
-        #[rename(name = "s_Releases")]
-        pub s_releases: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        #[rename(name = "m_Empty")]
-        pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -77,81 +49,797 @@ mod __types {
             Self { value: 0 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
+    #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ProcSceneManager {
+        #[static_field]
+        #[rename(name = "Empty")]
+        pub empty: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_Handles")]
+        pub s_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::resourcehandle_2::ResourceHandle_2,
+        >,
+        #[static_field]
+        #[rename(name = "s_Releases")]
+        pub s_releases: crate::system::collections::generic::list_1::List_1<
+            crate::app::resourcehandle_2::ResourceHandle_2,
+        >,
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        #[rename(name = "m_Empty")]
+        pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    }
 }
 
 #[cfg(feature = "app-procscenemanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-procscenemanager")]
-#[::unity2::methods]
-impl ProcSceneManager {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProcSceneManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProcSceneManager,
         name: ::unity2::Il2CppString,
         mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
-
-    #[doc = "`HasEmptyScene()` overload"]
-    #[method(name = "HasEmptyScene", args = 0)]
-    pub fn has_empty_scene() -> bool;
-
-    #[doc = "`UnloadBranch()` overload"]
-    #[method(name = "UnloadBranch", args = 0)]
-    pub fn unload_branch(self) -> ();
-
-    #[doc = "`UnloadAsync()` overload"]
-    #[method(name = "UnloadAsync", args = 0)]
-    pub fn unload_async(self) -> ();
-
-    #[doc = "`WaitAsync()` overload"]
-    #[method(name = "WaitAsync", args = 0)]
-    pub fn wait_async(self) -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`LoadAsync()` overload"]
-    #[method(name = "LoadAsync", args = 0)]
-    pub fn load_async(self) -> ();
-
-    #[doc = "`DoneAsync()` overload"]
-    #[method(name = "DoneAsync", args = 0)]
-    pub fn done_async(self) -> ();
-
-    #[doc = "`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = "LoadBind", args = 3)]
-    pub fn load_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProcSceneManager,
+            ::unity2::Il2CppString,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_empty_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "HasEmptyScene",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "HasEmptyScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_empty_scene(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_empty_scene::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_branch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "UnloadBranch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadBranch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_branch(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_branch::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "UnloadAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_async(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "WaitAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "WaitAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_async(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_wait_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "LoadAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_async(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_done_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "DoneAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "DoneAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn done_async(
+        this: ProcSceneManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProcSceneManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_done_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "LoadBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_bind(
         super_: crate::app::procinst::ProcInst,
         name: ::unity2::Il2CppString,
         mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
-
-    #[doc = "`UnloadBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "UnloadBind", args = 1)]
-    pub fn unload_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "UnloadBind", args = 2)]
-    pub fn unload_bind_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_bind::get_offset() as isize),
+        );
+        inner(super_, name, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "UnloadBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "UnloadBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_bind_2(
         super_: crate::app::procinst::ProcInst,
         name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = "UnloadBindImpl", args = 3)]
-    pub fn unload_bind_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_bind_2::get_offset() as isize),
+        );
+        inner(super_, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                "UnloadBindImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadBindImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_bind_impl(
         super_: crate::app::procinst::ProcInst,
         name: ::unity2::Il2CppString,
         mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_bind_impl::get_offset() as isize),
+        );
+        inner(super_, name, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcSceneManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcSceneManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-procscenemanager")]
+impl ProcSceneManager {
+    #[doc = "`HasEmptyScene()` overload"]
+    pub fn has_empty_scene() -> bool {
+        unsafe { __ProcSceneManager_unity2_raw::has_empty_scene(::core::option::Option::None) }
+    }
+    #[doc = "`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
+    pub fn load_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        >,
+    ) -> () {
+        unsafe {
+            __ProcSceneManager_unity2_raw::load_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn unload_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __ProcSceneManager_unity2_raw::unload_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    pub fn unload_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __ProcSceneManager_unity2_raw::unload_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
+    pub fn unload_bind_impl(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        >,
+    ) -> () {
+        unsafe {
+            __ProcSceneManager_unity2_raw::unload_bind_impl(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ProcSceneManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-procscenemanager")]
+pub trait IProcSceneManagerMethods: IProcSceneManager {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
+    fn ctor(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnloadBranch()` overload"]
+    fn unload_branch(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::unload_branch(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadAsync()` overload"]
+    fn unload_async(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::unload_async(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitAsync()` overload"]
+    fn wait_async(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::wait_async(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::release(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadAsync()` overload"]
+    fn load_async(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::load_async(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DoneAsync()` overload"]
+    fn done_async(self) -> () {
+        unsafe {
+            let __receiver = <ProcSceneManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcSceneManager_unity2_raw::done_async(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-procscenemanager")]
+impl<__T: IProcSceneManager> IProcSceneManagerMethods for __T {}
 
 #[cfg(feature = "app-procscenemanager")]
 impl ProcSceneManager {
@@ -170,4 +858,24 @@ impl ProcSceneManager {
         <Self as IProcSceneManagerMethods>::ctor(this, name, mode);
         this
     }
+}
+
+#[cfg(feature = "app-procscenemanager")]
+pub mod prelude {
+    pub use super::IProcSceneManager;
+    pub use super::IProcSceneManagerMethods;
+    pub use super::ProcSceneManager;
+    pub use super::ProcSceneManager_Label;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

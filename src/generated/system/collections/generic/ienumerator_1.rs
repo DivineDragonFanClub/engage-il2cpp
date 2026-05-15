@@ -21,3 +21,10 @@ impl<T0: ::unity2::ClassIdentity> IEnumerator_1<T0> {
     #[method(name = "get_Current", args = 0)]
     pub fn get_current(self) -> T0;
 }
+
+#[cfg(feature = "system-collections-generic-ienumerator_1")]
+pub mod prelude {
+    pub use super::IEnumerator_1;
+    pub use super::IIEnumerator_1;
+    pub use super::IIEnumerator_1Methods;
+}

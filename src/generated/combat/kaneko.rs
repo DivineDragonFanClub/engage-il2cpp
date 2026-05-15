@@ -7,6 +7,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
+    #[parent(crate::system::object::Object)]
+    pub struct Kaneko_DummyDisposable {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))]
     #[::unity2::class(namespace = "Combat", name = "Kaneko.GUIFitScope")]
     #[parent(crate::system::object::Object)]
@@ -35,27 +40,270 @@ mod __types {
         #[rename(name = "s_DummyDisposable")]
         pub s_dummy_disposable: crate::combat::kaneko::Kaneko_DummyDisposable,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
-    #[parent(crate::system::object::Object)]
-    pub struct Kaneko_DummyDisposable {}
 }
 
 #[cfg(feature = "combat-kaneko-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_GUIFitScope {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Kaneko_DummyDisposable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko_DummyDisposable as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko_DummyDisposable as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: Kaneko_DummyDisposable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Kaneko_DummyDisposable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko_DummyDisposable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko_DummyDisposable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Kaneko_DummyDisposable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Kaneko_DummyDisposable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-kaneko")]
+pub trait IKaneko_DummyDisposableMethods: IKaneko_DummyDisposable {
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <Kaneko_DummyDisposable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Kaneko_DummyDisposable_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Kaneko_DummyDisposable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Kaneko_DummyDisposable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl<__T: IKaneko_DummyDisposable> IKaneko_DummyDisposableMethods for __T {}
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_DummyDisposable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Kaneko_DummyDisposable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Kaneko_GUIFitScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko_GUIFitScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko_GUIFitScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Kaneko_GUIFitScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Kaneko_GUIFitScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko_GUIFitScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko_GUIFitScope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: Kaneko_GUIFitScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Kaneko_GUIFitScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+pub trait IKaneko_GUIFitScopeMethods: IKaneko_GUIFitScope {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Kaneko_GUIFitScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Kaneko_GUIFitScope_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <Kaneko_GUIFitScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Kaneko_GUIFitScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl<__T: IKaneko_GUIFitScope> IKaneko_GUIFitScopeMethods for __T {}
 
 #[cfg(feature = "combat-kaneko")]
 impl Kaneko_GUIFitScope {
@@ -74,274 +322,3018 @@ impl Kaneko_GUIFitScope {
 }
 
 #[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_Screen {
-    #[doc = "`get_WH()` overload"]
-    #[method(name = "get_WH", args = 0)]
-    pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Kaneko_Screen_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_wh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko_Screen as ::unity2::ClassIdentity>::class(),
+                "get_WH",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko_Screen as ::unity2::ClassIdentity>::NAME,
+                    "get_WH",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_wh(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_wh::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
 
 #[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko {
-    #[doc = "`FindInChildren(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FindInChildren", args = 2)]
-    pub fn find_in_children(
+impl Kaneko_Screen {
+    #[doc = "`get_WH()` overload"]
+    pub fn get_wh() -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __Kaneko_Screen_unity2_raw::get_wh(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Kaneko_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_in_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "FindInChildren",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "FindInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_in_children(
         self_: crate::unity_engine::transform::Transform,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`FindWordInChildren(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FindWordInChildren", args = 2)]
-    pub fn find_word_in_children(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_in_children::get_offset() as isize),
+        );
+        inner(self_, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_word_in_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "FindWordInChildren",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "FindWordInChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_word_in_children(
         self_: crate::unity_engine::transform::Transform,
         keyword: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`SetPositionAndForward(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetPositionAndForward", args = 3)]
-    pub fn set_position_and_forward(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_word_in_children::get_offset() as isize),
+        );
+        inner(self_, keyword, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_and_forward {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "SetPositionAndForward",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "SetPositionAndForward",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_and_forward(
         t: crate::unity_engine::transform::Transform,
         position: crate::unity_engine::vector3::Vector3,
         forward: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`Ancestor(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Ancestor", args = 1)]
-    pub fn ancestor(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_and_forward::get_offset() as isize),
+        );
+        inner(t, position, forward, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ancestor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Ancestor",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Ancestor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ancestor(
         t: crate::unity_engine::transform::Transform,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`Startup()` overload"]
-    #[method(name = "Startup", args = 0)]
-    pub fn startup() -> ();
-
-    #[doc = "`Shutdown()` overload"]
-    #[method(name = "Shutdown", args = 0)]
-    pub fn shutdown() -> ();
-
-    #[doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "Destroy", args = 1)]
-    pub fn destroy(obj: crate::unity_engine::object_2::Object_2) -> ();
-
-    #[doc = "`DestroyComponent(crate::unity_engine::component::Component)` overload"]
-    #[method(name = "DestroyComponent", args = 1)]
-    pub fn destroy_component(obj: crate::unity_engine::component::Component) -> ();
-
-    #[doc = "`IsDestroyed(crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "IsDestroyed", args = 1)]
-    pub fn is_destroyed(obj: crate::unity_engine::object_2::Object_2) -> bool;
-
-    #[doc = "`SelectOne(::unity2::Il2CppString)` overload"]
-    #[method(name = "SelectOne", args = 1)]
-    pub fn select_one(arg: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`InBetween(::unity2::Il2CppString, u16, u16)` overload"]
-    #[method(name = "InBetween", args = 3)]
-    pub fn in_between(s: ::unity2::Il2CppString, lc: u16, rc: u16) -> ::unity2::Il2CppString;
-
-    #[doc = "`LineToList(::unity2::Il2CppString)` overload"]
-    #[method(name = "LineToList", args = 1)]
-    pub fn line_to_list(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ancestor::get_offset() as isize),
+        );
+        inner(t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_startup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Startup",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Startup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn startup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_startup::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_shutdown {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Shutdown",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Shutdown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn shutdown(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_shutdown::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        obj: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "DestroyComponent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "DestroyComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_component(
+        obj: crate::unity_engine::component::Component,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::component::Component,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy_component::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_destroyed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsDestroyed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "IsDestroyed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_destroyed(
+        obj: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_destroyed::get_offset() as isize),
+        );
+        inner(obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_one_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "SelectOne",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "SelectOne",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_one_3(
+        arg: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_select_one_3::get_offset() as isize),
+        );
+        inner(arg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_in_between {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "InBetween",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "InBetween",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn in_between(
+        s: ::unity2::Il2CppString,
+        lc: u16,
+        rc: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            u16,
+            u16,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_in_between::get_offset() as isize),
+        );
+        inner(s, lc, rc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_line_to_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "LineToList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "LineToList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn line_to_list(
         line: ::unity2::Il2CppString,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
-
-    #[doc = "`ListToLine(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "ListToLine", args = 1)]
-    pub fn list_to_line(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            ::unity2::Il2CppString,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_line_to_list::get_offset() as isize),
+        );
+        inner(line, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_list_to_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    ::unity2::Il2CppString,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "ListToLine",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "ListToLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn list_to_line(
         list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`EachChildren(crate::unity_engine::transform::Transform, crate::system::func_2::Func_2<crate::unity_engine::transform::Transform,bool>)` overload"]
-    #[method(name = "EachChildren", args = 2)]
-    pub fn each_children(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_list_to_line::get_offset() as isize),
+        );
+        inner(list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_each_children {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: transform :: Transform , bool > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "EachChildren",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "EachChildren",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn each_children(
         self_: crate::unity_engine::transform::Transform,
         callback: crate::system::func_2::Func_2<crate::unity_engine::transform::Transform, bool>,
-    ) -> ();
-
-    #[doc = "`Hermite(f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "Hermite", args = 5)]
-    pub fn hermite(v0: f32, t0: f32, v1: f32, t1: f32, s: f32) -> f32;
-
-    #[doc = "`Hermite(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Hermite", args = 5)]
-    pub fn hermite_2(
-        v0: crate::unity_engine::vector3::Vector3,
-        t0: crate::unity_engine::vector3::Vector3,
-        v1: crate::unity_engine::vector3::Vector3,
-        t1: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            crate::system::func_2::Func_2<crate::unity_engine::transform::Transform, bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_each_children::get_offset() as isize),
+        );
+        inner(self_, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hermite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Hermite",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Hermite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hermite(
+        v0: f32,
+        t0: f32,
+        v1: f32,
+        t1: f32,
         s: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Lerp", args = 5)]
-    pub fn lerp(
-        v0: crate::unity_engine::vector3::Vector3,
-        t0: crate::unity_engine::vector3::Vector3,
-        v1: crate::unity_engine::vector3::Vector3,
-        t1: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hermite::get_offset() as isize),
+            );
+        inner(v0, t0, v1, t1, s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hermite_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Hermite",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Hermite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hermite_2(
+        v0: *mut crate::unity_engine::vector3::Vector3,
+        t0: *mut crate::unity_engine::vector3::Vector3,
+        v1: *mut crate::unity_engine::vector3::Vector3,
+        t1: *mut crate::unity_engine::vector3::Vector3,
         s: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CatmullRom(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "CatmullRom", args = 5)]
-    pub fn catmull_rom(
-        p0: crate::unity_engine::vector3::Vector3,
-        p1: crate::unity_engine::vector3::Vector3,
-        p2: crate::unity_engine::vector3::Vector3,
-        p3: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hermite_2::get_offset() as isize),
+        );
+        inner(v0, t0, v1, t1, s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Lerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Lerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp(
+        v0: *mut crate::unity_engine::vector3::Vector3,
+        t0: *mut crate::unity_engine::vector3::Vector3,
+        v1: *mut crate::unity_engine::vector3::Vector3,
+        t1: *mut crate::unity_engine::vector3::Vector3,
         s: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Sigmoid(f32, f32)` overload"]
-    #[method(name = "Sigmoid", args = 2)]
-    pub fn sigmoid(x: f32, a: f32) -> f32;
-
-    #[doc = "`QuaternionFromNormal(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "QuaternionFromNormal", args = 1)]
-    pub fn quaternion_from_normal(
-        yaxis: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`fixedTime(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
-    #[method(name = "fixedTime", args = 1)]
-    pub fn fixed_time(state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo)
-        -> f32;
-
-    #[doc = "`fixedLength(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
-    #[method(name = "fixedLength", args = 1)]
-    pub fn fixed_length(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lerp::get_offset() as isize),
+        );
+        inner(v0, t0, v1, t1, s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_catmull_rom {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "CatmullRom",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "CatmullRom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn catmull_rom(
+        p0: *mut crate::unity_engine::vector3::Vector3,
+        p1: *mut crate::unity_engine::vector3::Vector3,
+        p2: *mut crate::unity_engine::vector3::Vector3,
+        p3: *mut crate::unity_engine::vector3::Vector3,
+        s: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_catmull_rom::get_offset() as isize),
+        );
+        inner(p0, p1, p2, p3, s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sigmoid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Sigmoid",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Sigmoid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sigmoid(x: f32, a: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sigmoid::get_offset() as isize),
+            );
+        inner(x, a, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_quaternion_from_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "QuaternionFromNormal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "QuaternionFromNormal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn quaternion_from_normal(
+        yaxis: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_quaternion_from_normal::get_offset() as isize),
+        );
+        inner(yaxis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fixed_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "fixedTime",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "fixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fixed_time(
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-    ) -> f32;
-
-    #[doc = "`timeLength(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
-    #[method(name = "timeLength", args = 1)]
-    pub fn time_length(c: crate::unity_engine::animationcurve::AnimationCurve) -> f32;
-
-    #[doc = "`IsNull(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsNull", args = 1)]
-    pub fn is_null(s: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsNotNull(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsNotNull", args = 1)]
-    pub fn is_not_null(s: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`GetOnlyOne(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "GetOnlyOne", args = 1)]
-    pub fn get_only_one(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fixed_time::get_offset() as isize),
+        );
+        inner(state_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fixed_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "fixedLength",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "fixedLength",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fixed_length(
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fixed_length::get_offset() as isize),
+        );
+        inner(state_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_time_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "timeLength",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "timeLength",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn time_length(
+        c: crate::unity_engine::animationcurve::AnimationCurve,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationcurve::AnimationCurve,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_time_length::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsNull",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "IsNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_null(
+        s: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_null::get_offset() as isize),
+            );
+        inner(s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_not_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsNotNull",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "IsNotNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_not_null(
+        s: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_not_null::get_offset() as isize),
+            );
+        inner(s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_only_one {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    ::unity2::Il2CppString,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GetOnlyOne",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "GetOnlyOne",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_only_one(
         l: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsZero(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "IsZero", args = 1)]
-    pub fn is_zero(v: crate::unity_engine::vector3::Vector3) -> bool;
-
-    #[doc = "`IsNotZero(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "IsNotZero", args = 1)]
-    pub fn is_not_zero(v: crate::unity_engine::vector3::Vector3) -> bool;
-
-    #[doc = "`CallEditorStaticFunction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "CallEditorStaticFunction", args = 3)]
-    pub fn call_editor_static_function(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_only_one::get_offset() as isize),
+        );
+        inner(l, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_zero {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsZero",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "IsZero",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_zero(
+        v: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_zero::get_offset() as isize),
+        );
+        inner(v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_not_zero {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsNotZero",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "IsNotZero",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_not_zero(
+        v: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_not_zero::get_offset() as isize),
+        );
+        inner(v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_editor_static_function {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "CallEditorStaticFunction",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "CallEditorStaticFunction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn call_editor_static_function(
         class_name: ::unity2::Il2CppString,
         func_name: ::unity2::Il2CppString,
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`GetManhattanDistance(i32, i32, i32, i32)` overload"]
-    #[method(name = "GetManhattanDistance", args = 4)]
-    pub fn get_manhattan_distance(x0: i32, y0: i32, x1: i32, y1: i32) -> i32;
-
-    #[doc = "`SetSpeed(crate::root::simpleanimation::SimpleAnimation, f32)` overload"]
-    #[method(name = "SetSpeed", args = 2)]
-    pub fn set_speed(ani: crate::root::simpleanimation::SimpleAnimation, speed: f32) -> ();
-
-    #[doc = "`GetFixedTime(crate::root::simpleanimation::SimpleAnimation)` overload"]
-    #[method(name = "GetFixedTime", args = 1)]
-    pub fn get_fixed_time(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
-
-    #[doc = "`GetNormalizedTime(crate::root::simpleanimation::SimpleAnimation)` overload"]
-    #[method(name = "GetNormalizedTime", args = 1)]
-    pub fn get_normalized_time(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
-
-    #[doc = "`GetLength(crate::root::simpleanimation::SimpleAnimation)` overload"]
-    #[method(name = "GetLength", args = 1)]
-    pub fn get_length(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
-
-    #[doc = "`RoundupTime(f32)` overload"]
-    #[method(name = "RoundupTime", args = 1)]
-    pub fn roundup_time(time: f32) -> f32;
-
-    #[doc = "`RounddownTime(f32)` overload"]
-    #[method(name = "RounddownTime", args = 1)]
-    pub fn rounddown_time(time: f32) -> f32;
-
-    #[doc = "`Assert(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Assert", args = 5)]
-    pub fn assert(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_call_editor_static_function::get_offset() as isize),
+        );
+        inner(class_name, func_name, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_manhattan_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GetManhattanDistance",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "GetManhattanDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_manhattan_distance(
+        x0: i32,
+        y0: i32,
+        x1: i32,
+        y1: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_manhattan_distance::get_offset() as isize),
+            );
+        inner(x0, y0, x1, y1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_roundup_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "RoundupTime",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "RoundupTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn roundup_time(time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_roundup_time::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rounddown_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "RounddownTime",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "RounddownTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rounddown_time(time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rounddown_time::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Assert",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Assert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn assert(
         exp: bool,
         msg: ::unity2::Il2CppString,
         filename: ::unity2::Il2CppString,
         line: i32,
         funcname: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Assert(::unity2::Il2CppString, ::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Assert", args = 4)]
-    pub fn assert_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            bool,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_assert::get_offset() as isize),
+        );
+        inner(exp, msg, filename, line, funcname, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assert_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "Assert",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "Assert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn assert_2(
         msg: ::unity2::Il2CppString,
         filename: ::unity2::Il2CppString,
         line: i32,
         funcname: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`LimitGroundNormal(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "LimitGroundNormal", args = 1)]
-    pub fn limit_ground_normal(
-        nrm: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GUIFitToScreen()` overload"]
-    #[method(name = "GUIFitToScreen", args = 0)]
-    pub fn gui_fit_to_screen() -> ();
-
-    #[doc = "`GUIReset()` overload"]
-    #[method(name = "GUIReset", args = 0)]
-    pub fn gui_reset() -> ();
-
-    #[doc = "`GetFov(crate::unity_engine::component::Component)` overload"]
-    #[method(name = "GetFov", args = 1)]
-    pub fn get_fov(cam: crate::unity_engine::component::Component) -> f32;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_DummyDisposable {
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_DummyDisposable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Kaneko_DummyDisposable),
-                ::core::stringify!(new),
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_assert_2::get_offset() as isize),
+        );
+        inner(msg, filename, line, funcname, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_limit_ground_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "LimitGroundNormal",
+                1,
+                param_types,
+                true,
             )
         });
-        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "LimitGroundNormal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
+    pub unsafe fn limit_ground_normal(
+        nrm: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_limit_ground_normal::get_offset() as isize),
+        );
+        inner(nrm, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_gui_fit_to_screen {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GUIFitToScreen",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "GUIFitToScreen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn gui_fit_to_screen(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_gui_fit_to_screen::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_gui_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GUIReset",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "GUIReset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn gui_reset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_gui_reset::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fov {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GetFov",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    "GetFov",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fov(
+        cam: crate::unity_engine::component::Component,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::component::Component,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fov::get_offset() as isize),
+        );
+        inner(cam, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Kaneko as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko {
+    #[doc = "`FindInChildren(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
+    pub fn find_in_children(
+        self_: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            __Kaneko_unity2_raw::find_in_children(
+                ::core::convert::Into::into(self_),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindWordInChildren(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
+    pub fn find_word_in_children(
+        self_: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        keyword: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            __Kaneko_unity2_raw::find_word_in_children(
+                ::core::convert::Into::into(self_),
+                ::core::convert::Into::into(keyword),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPositionAndForward(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_position_and_forward(
+        t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        forward: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::set_position_and_forward(
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(forward),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Ancestor(crate::unity_engine::transform::Transform)` overload"]
+    pub fn ancestor(
+        t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            __Kaneko_unity2_raw::ancestor(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Startup()` overload"]
+    pub fn startup() -> () {
+        unsafe { __Kaneko_unity2_raw::startup(::core::option::Option::None) }
+    }
+    #[doc = "`Shutdown()` overload"]
+    pub fn shutdown() -> () {
+        unsafe { __Kaneko_unity2_raw::shutdown(::core::option::Option::None) }
+    }
+    #[doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn destroy(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::destroy(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyComponent(crate::unity_engine::component::Component)` overload"]
+    pub fn destroy_component(
+        obj: impl ::core::convert::Into<crate::unity_engine::component::Component>,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::destroy_component(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDestroyed(crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn is_destroyed(
+        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> bool {
+        unsafe {
+            __Kaneko_unity2_raw::is_destroyed(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn select_one<M0: ::unity2::IlType + ::core::marker::Copy>(
+        args: impl ::core::convert::Into<::unity2::Array<M0>>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "SelectOne",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "SelectOne",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::Array<M0>, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(args),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn select_one_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        rand: impl ::core::convert::Into<crate::app::random_2::Random_2>,
+        args: impl ::core::convert::Into<::unity2::Array<M0>>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "SelectOne",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "SelectOne",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::app::random_2::Random_2,
+                ::unity2::Array<M0>,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(rand),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn select_another_one<M0: ::unity2::IlType + ::core::marker::Copy>(
+        last: impl ::core::convert::Into<M0>,
+        args: impl ::core::convert::Into<::unity2::Array<M0>>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "SelectAnotherOne",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "SelectAnotherOne",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(M0, ::unity2::Array<M0>, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(last),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`SelectOne(::unity2::Il2CppString)` overload"]
+    pub fn select_one_3(
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Kaneko_unity2_raw::select_one_3(
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InBetween(::unity2::Il2CppString, u16, u16)` overload"]
+    pub fn in_between(
+        s: impl ::core::convert::Into<::unity2::Il2CppString>,
+        lc: impl ::core::convert::Into<u16>,
+        rc: impl ::core::convert::Into<u16>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Kaneko_unity2_raw::in_between(
+                ::core::convert::Into::into(s),
+                ::core::convert::Into::into(lc),
+                ::core::convert::Into::into(rc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn shuffle_self<M0: ::unity2::IlType + ::core::marker::Copy>(
+        array: impl ::core::convert::Into<::unity2::Array<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "ShuffleSelf",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "ShuffleSelf",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::Array<M0>, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(array),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn shuffle_self_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "ShuffleSelf",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "ShuffleSelf",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(list),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`LineToList(::unity2::Il2CppString)` overload"]
+    pub fn line_to_list(
+        line: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe {
+            __Kaneko_unity2_raw::line_to_list(
+                ::core::convert::Into::into(line),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ListToLine(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
+    pub fn list_to_line(
+        list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Kaneko_unity2_raw::list_to_line(
+                ::core::convert::Into::into(list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EachChildren(crate::unity_engine::transform::Transform, crate::system::func_2::Func_2<crate::unity_engine::transform::Transform,bool>)` overload"]
+    pub fn each_children(
+        self_: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        callback: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<crate::unity_engine::transform::Transform, bool>,
+        >,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::each_children(
+                ::core::convert::Into::into(self_),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hermite(f32, f32, f32, f32, f32)` overload"]
+    pub fn hermite(
+        v0: impl ::core::convert::Into<f32>,
+        t0: impl ::core::convert::Into<f32>,
+        v1: impl ::core::convert::Into<f32>,
+        t1: impl ::core::convert::Into<f32>,
+        s: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::hermite(
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(t0),
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(t1),
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hermite(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn hermite_2(
+        s: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::hermite_2(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::convert::Into::into(s),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`Lerp(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn lerp(
+        s: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::lerp(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::convert::Into::into(s),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`CatmullRom(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn catmull_rom(
+        s: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::catmull_rom(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::convert::Into::into(s),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`Sigmoid(f32, f32)` overload"]
+    pub fn sigmoid(x: impl ::core::convert::Into<f32>, a: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::sigmoid(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(a),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`QuaternionFromNormal(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn quaternion_from_normal() -> (
+        crate::unity_engine::quaternion::Quaternion,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::quaternion_from_normal(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`fixedTime(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
+    pub fn fixed_time(
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+    ) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::fixed_time(
+                ::core::convert::Into::into(state_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`fixedLength(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
+    pub fn fixed_length(
+        state_info: impl ::core::convert::Into<
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        >,
+    ) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::fixed_length(
+                ::core::convert::Into::into(state_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`timeLength(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
+    pub fn time_length(
+        c: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
+    ) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::time_length(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNull(::unity2::Il2CppString)` overload"]
+    pub fn is_null(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __Kaneko_unity2_raw::is_null(
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNotNull(::unity2::Il2CppString)` overload"]
+    pub fn is_not_null(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __Kaneko_unity2_raw::is_not_null(
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn is_null_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        c: impl ::core::convert::Into<
+            crate::system::collections::generic::ireadonlycollection_1::IReadOnlyCollection_1<M0>,
+        >,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsNull",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "IsNull",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::ireadonlycollection_1::IReadOnlyCollection_1<
+                    M0,
+                >,
+                ::unity2::OptionalMethod,
+            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn is_not_null_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        l: impl ::core::convert::Into<
+            crate::system::collections::generic::ireadonlycollection_1::IReadOnlyCollection_1<M0>,
+        >,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "IsNotNull",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "IsNotNull",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::ireadonlycollection_1::IReadOnlyCollection_1<
+                    M0,
+                >,
+                ::unity2::OptionalMethod,
+            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(l),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetOnlyOne(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
+    pub fn get_only_one(
+        l: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Kaneko_unity2_raw::get_only_one(
+                ::core::convert::Into::into(l),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsZero(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn is_zero() -> (bool, crate::unity_engine::vector3::Vector3) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::is_zero(__out_0.as_mut_ptr(), ::core::option::Option::None)
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`IsNotZero(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn is_not_zero() -> (bool, crate::unity_engine::vector3::Vector3) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __Kaneko_unity2_raw::is_not_zero(__out_0.as_mut_ptr(), ::core::option::Option::None)
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CallEditorStaticFunction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    pub fn call_editor_static_function(
+        class_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::call_editor_static_function(
+                ::core::convert::Into::into(class_name),
+                ::core::convert::Into::into(func_name),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_or_add_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+        t: impl ::core::convert::Into<crate::unity_engine::component::Component>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GetOrAddComponent",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "GetOrAddComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::component::Component,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_or_add_component_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        t: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Kaneko as ::unity2::ClassIdentity>::class(),
+                "GetOrAddComponent",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Kaneko as ::unity2::ClassIdentity>::NAME,
+                "GetOrAddComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::gameobject::GameObject,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetManhattanDistance(i32, i32, i32, i32)` overload"]
+    pub fn get_manhattan_distance(
+        x0: impl ::core::convert::Into<i32>,
+        y0: impl ::core::convert::Into<i32>,
+        x1: impl ::core::convert::Into<i32>,
+        y1: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __Kaneko_unity2_raw::get_manhattan_distance(
+                ::core::convert::Into::into(x0),
+                ::core::convert::Into::into(y0),
+                ::core::convert::Into::into(x1),
+                ::core::convert::Into::into(y1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RoundupTime(f32)` overload"]
+    pub fn roundup_time(time: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::roundup_time(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RounddownTime(f32)` overload"]
+    pub fn rounddown_time(time: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::rounddown_time(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Assert(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"]
+    pub fn assert(
+        exp: impl ::core::convert::Into<bool>,
+        msg: impl ::core::convert::Into<::unity2::Il2CppString>,
+        filename: impl ::core::convert::Into<::unity2::Il2CppString>,
+        line: impl ::core::convert::Into<i32>,
+        funcname: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::assert(
+                ::core::convert::Into::into(exp),
+                ::core::convert::Into::into(msg),
+                ::core::convert::Into::into(filename),
+                ::core::convert::Into::into(line),
+                ::core::convert::Into::into(funcname),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Assert(::unity2::Il2CppString, ::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"]
+    pub fn assert_2(
+        msg: impl ::core::convert::Into<::unity2::Il2CppString>,
+        filename: impl ::core::convert::Into<::unity2::Il2CppString>,
+        line: impl ::core::convert::Into<i32>,
+        funcname: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __Kaneko_unity2_raw::assert_2(
+                ::core::convert::Into::into(msg),
+                ::core::convert::Into::into(filename),
+                ::core::convert::Into::into(line),
+                ::core::convert::Into::into(funcname),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LimitGroundNormal(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn limit_ground_normal(
+        nrm: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Kaneko_unity2_raw::limit_ground_normal(
+                ::core::convert::Into::into(nrm),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GUIFitToScreen()` overload"]
+    pub fn gui_fit_to_screen() -> () {
+        unsafe { __Kaneko_unity2_raw::gui_fit_to_screen(::core::option::Option::None) }
+    }
+    #[doc = "`GUIReset()` overload"]
+    pub fn gui_reset() -> () {
+        unsafe { __Kaneko_unity2_raw::gui_reset(::core::option::Option::None) }
+    }
+    #[doc = "`GetFov(crate::unity_engine::component::Component)` overload"]
+    pub fn get_fov(
+        cam: impl ::core::convert::Into<crate::unity_engine::component::Component>,
+    ) -> f32 {
+        unsafe {
+            __Kaneko_unity2_raw::get_fov(
+                ::core::convert::Into::into(cam),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __Kaneko_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-kaneko")]
+pub mod prelude {
+    pub use super::IKaneko;
+    pub use super::IKaneko_DummyDisposable;
+    pub use super::IKaneko_DummyDisposableMethods;
+    pub use super::IKaneko_GUIFitScope;
+    pub use super::IKaneko_GUIFitScopeMethods;
+    pub use super::IKaneko_Screen;
+    pub use super::Kaneko;
+    pub use super::Kaneko_DummyDisposable;
+    pub use super::Kaneko_GUIFitScope;
+    pub use super::Kaneko_Screen;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

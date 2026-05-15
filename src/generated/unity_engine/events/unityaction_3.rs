@@ -55,3 +55,19 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-unityaction_3")]
+pub mod prelude {
+    pub use super::IUnityAction_3;
+    pub use super::IUnityAction_3Methods;
+    pub use super::UnityAction_3;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

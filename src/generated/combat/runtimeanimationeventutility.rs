@@ -17,12 +17,85 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-runtimeanimationeventutility")]
-#[::unity2::methods]
-impl RuntimeAnimationEventUtility {
-    #[doc = "`FindByName(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FindByName", args = 2)]
-    pub fn find_by_name(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RuntimeAnimationEventUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: animationevent :: AnimationEvent > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimationEventUtility as ::unity2::ClassIdentity>::class(),
+                "FindByName",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimationEventUtility as ::unity2::ClassIdentity>::NAME,
+                    "FindByName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_name(
         events: ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::animationevent::AnimationEvent;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationevent::AnimationEvent {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationevent::AnimationEvent = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_name::get_offset() as isize),
+        );
+        inner(events, name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-runtimeanimationeventutility")]
+impl RuntimeAnimationEventUtility {
+    #[doc = "`FindByName(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>, ::unity2::Il2CppString)` overload"]
+    pub fn find_by_name(
+        events: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::animationevent::AnimationEvent {
+        unsafe {
+            __RuntimeAnimationEventUtility_unity2_raw::find_by_name(
+                ::core::convert::Into::into(events),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-runtimeanimationeventutility")]
+pub mod prelude {
+    pub use super::IRuntimeAnimationEventUtility;
+    pub use super::RuntimeAnimationEventUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

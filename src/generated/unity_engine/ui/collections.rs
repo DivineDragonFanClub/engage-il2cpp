@@ -2,3 +2,7 @@
 
 #[cfg(any(feature = "unity_engine-ui-collections-indexedset_1-types"))]
 pub mod indexedset_1;
+#[cfg(feature = "unity_engine-ui-collections-indexedset_1")]
+pub use indexedset_1::IIndexedSet_1Methods;
+#[cfg(feature = "unity_engine-ui-collections-indexedset_1-types")]
+pub use indexedset_1::{IIndexedSet_1, IndexedSet_1};

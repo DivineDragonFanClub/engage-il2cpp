@@ -33,70 +33,691 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_updateregistry")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_UpdateRegistry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_UpdateRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_UpdateRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_canvas_element_for_layout_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "RegisterCanvasElementForLayoutRebuild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "RegisterCanvasElementForLayoutRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_canvas_element_for_layout_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register_canvas_element_for_layout_rebuild::get_offset() as isize),
+        );
+        inner(element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_register_canvas_element_for_layout_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "InternalRegisterCanvasElementForLayoutRebuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "InternalRegisterCanvasElementForLayoutRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_register_canvas_element_for_layout_rebuild(
+        this: TMP_UpdateRegistry,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_UpdateRegistry,
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_register_canvas_element_for_layout_rebuild::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_canvas_element_for_graphic_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "RegisterCanvasElementForGraphicRebuild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "RegisterCanvasElementForGraphicRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_canvas_element_for_graphic_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_register_canvas_element_for_graphic_rebuild::get_offset() as isize,
+                ),
+        );
+        inner(element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_register_canvas_element_for_graphic_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "InternalRegisterCanvasElementForGraphicRebuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "InternalRegisterCanvasElementForGraphicRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_register_canvas_element_for_graphic_rebuild(
+        this: TMP_UpdateRegistry,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_UpdateRegistry,
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_register_canvas_element_for_graphic_rebuild::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_perform_update_for_canvas_renderer_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "PerformUpdateForCanvasRendererObjects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "PerformUpdateForCanvasRendererObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn perform_update_for_canvas_renderer_objects(
+        this: TMP_UpdateRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_UpdateRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_perform_update_for_canvas_renderer_objects::get_offset() as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_perform_update_for_mesh_renderer_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "PerformUpdateForMeshRendererObjects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "PerformUpdateForMeshRendererObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn perform_update_for_mesh_renderer_objects(
+        this: TMP_UpdateRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_UpdateRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_perform_update_for_mesh_renderer_objects::get_offset() as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_un_register_canvas_element_for_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "UnRegisterCanvasElementForRebuild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "UnRegisterCanvasElementForRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn un_register_canvas_element_for_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_un_register_canvas_element_for_rebuild::get_offset() as isize),
+        );
+        inner(element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_un_register_canvas_element_for_layout_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "InternalUnRegisterCanvasElementForLayoutRebuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "InternalUnRegisterCanvasElementForLayoutRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_un_register_canvas_element_for_layout_rebuild(
+        this: TMP_UpdateRegistry,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_UpdateRegistry,
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_un_register_canvas_element_for_layout_rebuild::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_un_register_canvas_element_for_graphic_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_UpdateRegistry as ::unity2::ClassIdentity>::class(),
+                "InternalUnRegisterCanvasElementForGraphicRebuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_UpdateRegistry as ::unity2::ClassIdentity>::NAME,
+                    "InternalUnRegisterCanvasElementForGraphicRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_un_register_canvas_element_for_graphic_rebuild(
+        this: TMP_UpdateRegistry,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_UpdateRegistry,
+            crate::unity_engine::ui::icanvaselement::ICanvasElement,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_un_register_canvas_element_for_graphic_rebuild::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, element, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_updateregistry")]
 impl TMP_UpdateRegistry {
     #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
+    pub fn get_instance() -> crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry {
+        unsafe { __TMP_UpdateRegistry_unity2_raw::get_instance(::core::option::Option::None) }
+    }
     #[doc = "`RegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "RegisterCanvasElementForLayoutRebuild", args = 1)]
     pub fn register_canvas_element_for_layout_rebuild(
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> ();
-
-    #[doc = "`InternalRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "InternalRegisterCanvasElementForLayoutRebuild", args = 1)]
-    pub fn internal_register_canvas_element_for_layout_rebuild(
-        self,
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> bool;
-
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> () {
+        unsafe {
+            __TMP_UpdateRegistry_unity2_raw::register_canvas_element_for_layout_rebuild(
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`RegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "RegisterCanvasElementForGraphicRebuild", args = 1)]
     pub fn register_canvas_element_for_graphic_rebuild(
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> ();
-
-    #[doc = "`InternalRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "InternalRegisterCanvasElementForGraphicRebuild", args = 1)]
-    pub fn internal_register_canvas_element_for_graphic_rebuild(
-        self,
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> bool;
-
-    #[doc = "`PerformUpdateForCanvasRendererObjects()` overload"]
-    #[method(name = "PerformUpdateForCanvasRendererObjects", args = 0)]
-    pub fn perform_update_for_canvas_renderer_objects(self) -> ();
-
-    #[doc = "`PerformUpdateForMeshRendererObjects()` overload"]
-    #[method(name = "PerformUpdateForMeshRendererObjects", args = 0)]
-    pub fn perform_update_for_mesh_renderer_objects(self) -> ();
-
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> () {
+        unsafe {
+            __TMP_UpdateRegistry_unity2_raw::register_canvas_element_for_graphic_rebuild(
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`UnRegisterCanvasElementForRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "UnRegisterCanvasElementForRebuild", args = 1)]
     pub fn un_register_canvas_element_for_rebuild(
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> ();
-
-    #[doc = "`InternalUnRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "InternalUnRegisterCanvasElementForLayoutRebuild", args = 1)]
-    pub fn internal_un_register_canvas_element_for_layout_rebuild(
-        self,
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> ();
-
-    #[doc = "`InternalUnRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
-    #[method(name = "InternalUnRegisterCanvasElementForGraphicRebuild", args = 1)]
-    pub fn internal_un_register_canvas_element_for_graphic_rebuild(
-        self,
-        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
-    ) -> ();
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> () {
+        unsafe {
+            __TMP_UpdateRegistry_unity2_raw::un_register_canvas_element_for_rebuild(
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_updateregistry")]
+pub trait ITMP_UpdateRegistryMethods: ITMP_UpdateRegistry {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InternalRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
+    fn internal_register_canvas_element_for_layout_rebuild(
+        self,
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::internal_register_canvas_element_for_layout_rebuild(
+                __receiver,
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
+    fn internal_register_canvas_element_for_graphic_rebuild(
+        self,
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::internal_register_canvas_element_for_graphic_rebuild(
+                __receiver,
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PerformUpdateForCanvasRendererObjects()` overload"]
+    fn perform_update_for_canvas_renderer_objects(self) -> () {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::perform_update_for_canvas_renderer_objects(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PerformUpdateForMeshRendererObjects()` overload"]
+    fn perform_update_for_mesh_renderer_objects(self) -> () {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::perform_update_for_mesh_renderer_objects(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalUnRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
+    fn internal_un_register_canvas_element_for_layout_rebuild(
+        self,
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::internal_un_register_canvas_element_for_layout_rebuild(
+                __receiver,
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalUnRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]
+    fn internal_un_register_canvas_element_for_graphic_rebuild(
+        self,
+        element: impl ::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_UpdateRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_UpdateRegistry_unity2_raw::internal_un_register_canvas_element_for_graphic_rebuild(
+                __receiver,
+                ::core::convert::Into::into(element),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_updateregistry")]
+impl<__T: ITMP_UpdateRegistry> ITMP_UpdateRegistryMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_updateregistry")]
 impl TMP_UpdateRegistry {
@@ -112,4 +733,14 @@ impl TMP_UpdateRegistry {
         <Self as ITMP_UpdateRegistryMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_updateregistry")]
+pub mod prelude {
+    pub use super::ITMP_UpdateRegistry;
+    pub use super::ITMP_UpdateRegistryMethods;
+    pub use super::TMP_UpdateRegistry;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

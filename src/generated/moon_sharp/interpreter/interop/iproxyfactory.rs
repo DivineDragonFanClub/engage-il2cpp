@@ -15,20 +15,196 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
-#[::unity2::methods]
-impl IProxyFactory {
-    #[doc = "`CreateProxyObject(crate::system::object::Object)` overload"]
-    #[method(name = "CreateProxyObject", args = 1)]
-    pub fn create_proxy_object(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IProxyFactory_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_proxy_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IProxyFactory as ::unity2::ClassIdentity>::class(),
+                "CreateProxyObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IProxyFactory as ::unity2::ClassIdentity>::NAME,
+                    "CreateProxyObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_proxy_object(
+        this: IProxyFactory,
         o: crate::system::object::Object,
-    ) -> crate::system::object::Object;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            IProxyFactory,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_proxy_object::get_offset() as isize),
+        );
+        inner(this, o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IProxyFactory as ::unity2::ClassIdentity>::class(),
+                "get_TargetType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IProxyFactory as ::unity2::ClassIdentity>::NAME,
+                    "get_TargetType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_type(
+        this: IProxyFactory,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(IProxyFactory, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_target_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_proxy_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IProxyFactory as ::unity2::ClassIdentity>::class(),
+                "get_ProxyType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IProxyFactory as ::unity2::ClassIdentity>::NAME,
+                    "get_ProxyType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_proxy_type(
+        this: IProxyFactory,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(IProxyFactory, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_proxy_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
+pub trait IIProxyFactoryMethods: IIProxyFactory {
+    #[doc = "`CreateProxyObject(crate::system::object::Object)` overload"]
+    fn create_proxy_object(
+        self,
+        o: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <IProxyFactory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IProxyFactory_unity2_raw::create_proxy_object(
+                __receiver,
+                ::core::convert::Into::into(o),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_TargetType()` overload"]
-    #[method(name = "get_TargetType", args = 0)]
-    pub fn get_target_type(self) -> ::unity2::SystemType;
-
+    fn get_target_type(self) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <IProxyFactory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IProxyFactory_unity2_raw::get_target_type(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_ProxyType()` overload"]
-    #[method(name = "get_ProxyType", args = 0)]
-    pub fn get_proxy_type(self) -> ::unity2::SystemType;
+    fn get_proxy_type(self) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver = <IProxyFactory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IProxyFactory_unity2_raw::get_proxy_type(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
+impl<__T: IIProxyFactory> IIProxyFactoryMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
+pub mod prelude {
+    pub use super::IIProxyFactory;
+    pub use super::IIProxyFactoryMethods;
+    pub use super::IProxyFactory;
 }

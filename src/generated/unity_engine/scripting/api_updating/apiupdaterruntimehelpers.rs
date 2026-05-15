@@ -20,23 +20,203 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
-#[::unity2::methods]
-impl APIUpdaterRuntimeHelpers {
-    #[doc = "`GetMovedFromAttributeDataForType(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetMovedFromAttributeDataForType", args = 4)]
-    pub fn get_moved_from_attribute_data_for_type(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __APIUpdaterRuntimeHelpers_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_moved_from_attribute_data_for_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::class(),
+                "GetMovedFromAttributeDataForType",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
+                    "GetMovedFromAttributeDataForType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_moved_from_attribute_data_for_type(
         source_type: ::unity2::SystemType,
-        assembly: ::unity2::Il2CppString,
-        nsp: ::unity2::Il2CppString,
-        klass: ::unity2::Il2CppString,
-    ) -> bool;
+        assembly: *mut ::unity2::Il2CppString,
+        nsp: *mut ::unity2::Il2CppString,
+        klass: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_moved_from_attribute_data_for_type::get_offset() as isize),
+        );
+        inner(source_type, assembly, nsp, klass, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_obsolete_type_redirection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::class(),
+                "GetObsoleteTypeRedirection",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
+                    "GetObsoleteTypeRedirection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_obsolete_type_redirection(
+        source_type: ::unity2::SystemType,
+        assembly_name: *mut ::unity2::Il2CppString,
+        nsp: *mut ::unity2::Il2CppString,
+        class_name: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_obsolete_type_redirection::get_offset() as isize),
+        );
+        inner(
+            source_type,
+            assembly_name,
+            nsp,
+            class_name,
+            __unity2_method_info,
+        )
+    }
+}
 
-    #[doc = "`GetObsoleteTypeRedirection(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetObsoleteTypeRedirection", args = 4)]
+#[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
+impl APIUpdaterRuntimeHelpers {
+    #[doc = "`GetMovedFromAttributeDataForType(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
+    pub fn get_moved_from_attribute_data_for_type(
+        source_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> (
+        bool,
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __APIUpdaterRuntimeHelpers_unity2_raw::get_moved_from_attribute_data_for_type(
+                    ::core::convert::Into::into(source_type),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`GetObsoleteTypeRedirection(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
     pub fn get_obsolete_type_redirection(
-        source_type: ::unity2::SystemType,
-        assembly_name: ::unity2::Il2CppString,
-        nsp: ::unity2::Il2CppString,
-        class_name: ::unity2::Il2CppString,
-    ) -> bool;
+        source_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> (
+        bool,
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __APIUpdaterRuntimeHelpers_unity2_raw::get_obsolete_type_redirection(
+                    ::core::convert::Into::into(source_type),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
+pub mod prelude {
+    pub use super::APIUpdaterRuntimeHelpers;
+    pub use super::IAPIUpdaterRuntimeHelpers;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

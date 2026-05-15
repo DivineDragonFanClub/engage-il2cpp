@@ -40,73 +40,698 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
-#[::unity2::methods]
-impl CustomConvertersCollection {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SetScriptToClrCustomConversion(crate::moon_sharp::interpreter::datatype::DataType, ::unity2::SystemType, crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue,crate::system::object::Object>)` overload"]
-    #[method(name = "SetScriptToClrCustomConversion", args = 3)]
-    pub fn set_script_to_clr_custom_conversion(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CustomConvertersCollection_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CustomConvertersCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CustomConvertersCollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_script_to_clr_custom_conversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::datatype::DataType as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                    crate::system::object::Object,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "SetScriptToClrCustomConversion",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "SetScriptToClrCustomConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_script_to_clr_custom_conversion(
+        this: CustomConvertersCollection,
         script_data_type: crate::moon_sharp::interpreter::datatype::DataType,
         clr_data_type: ::unity2::SystemType,
         converter: crate::system::func_2::Func_2<
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             crate::system::object::Object,
         >,
-    ) -> ();
-
-    #[doc = "`GetScriptToClrCustomConversion(crate::moon_sharp::interpreter::datatype::DataType, ::unity2::SystemType)` overload"]
-    #[method(name = "GetScriptToClrCustomConversion", args = 2)]
-    pub fn get_script_to_clr_custom_conversion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CustomConvertersCollection,
+            crate::moon_sharp::interpreter::datatype::DataType,
+            ::unity2::SystemType,
+            crate::system::func_2::Func_2<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+                crate::system::object::Object,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_script_to_clr_custom_conversion::get_offset() as isize),
+        );
+        inner(
+            this,
+            script_data_type,
+            clr_data_type,
+            converter,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_script_to_clr_custom_conversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::datatype::DataType as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "GetScriptToClrCustomConversion",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "GetScriptToClrCustomConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_script_to_clr_custom_conversion(
+        this: CustomConvertersCollection,
         script_data_type: crate::moon_sharp::interpreter::datatype::DataType,
         clr_data_type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::func_2::Func_2<
         crate::moon_sharp::interpreter::dynvalue::DynValue,
         crate::system::object::Object,
-    >;
-
-    #[doc = "`SetClrToScriptCustomConversion(::unity2::SystemType, crate::system::func_3::Func_3<crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "SetClrToScriptCustomConversion", args = 2)]
-    pub fn set_clr_to_script_custom_conversion(
-        self,
+    > {
+        let inner: extern "C" fn(
+            CustomConvertersCollection,
+            crate::moon_sharp::interpreter::datatype::DataType,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::func_2::Func_2<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::system::object::Object,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_script_to_clr_custom_conversion::get_offset() as isize),
+        );
+        inner(this, script_data_type, clr_data_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_clr_to_script_custom_conversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<
+                    crate::moon_sharp::interpreter::script::Script,
+                    crate::system::object::Object,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "SetClrToScriptCustomConversion",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "SetClrToScriptCustomConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_clr_to_script_custom_conversion(
+        this: CustomConvertersCollection,
         clr_data_type: ::unity2::SystemType,
         converter: crate::system::func_3::Func_3<
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
-    ) -> ();
-
-    #[doc = "`GetClrToScriptCustomConversion(::unity2::SystemType)` overload"]
-    #[method(name = "GetClrToScriptCustomConversion", args = 1)]
-    pub fn get_clr_to_script_custom_conversion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CustomConvertersCollection,
+            ::unity2::SystemType,
+            crate::system::func_3::Func_3<
+                crate::moon_sharp::interpreter::script::Script,
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_clr_to_script_custom_conversion::get_offset() as isize),
+        );
+        inner(this, clr_data_type, converter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clr_to_script_custom_conversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "GetClrToScriptCustomConversion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "GetClrToScriptCustomConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_clr_to_script_custom_conversion(
+        this: CustomConvertersCollection,
         clr_data_type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::func_3::Func_3<
         crate::moon_sharp::interpreter::script::Script,
         crate::system::object::Object,
         crate::moon_sharp::interpreter::dynvalue::DynValue,
-    >;
-
-    #[doc = "`SetClrToScriptCustomConversion(::unity2::SystemType, crate::system::func_2::Func_2<crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "SetClrToScriptCustomConversion", args = 2)]
-    pub fn set_clr_to_script_custom_conversion_2(
-        self,
+    > {
+        let inner: extern "C" fn(
+            CustomConvertersCollection,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::func_3::Func_3<
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_clr_to_script_custom_conversion::get_offset() as isize),
+        );
+        inner(this, clr_data_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_clr_to_script_custom_conversion_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<
+                    crate::system::object::Object,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "SetClrToScriptCustomConversion",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "SetClrToScriptCustomConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_clr_to_script_custom_conversion_3(
+        this: CustomConvertersCollection,
         clr_data_type: ::unity2::SystemType,
         converter: crate::system::func_2::Func_2<
             crate::system::object::Object,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CustomConvertersCollection,
+            ::unity2::SystemType,
+            crate::system::func_2::Func_2<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_clr_to_script_custom_conversion_3::get_offset() as isize),
+        );
+        inner(this, clr_data_type, converter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: CustomConvertersCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CustomConvertersCollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+pub trait ICustomConvertersCollectionMethods: ICustomConvertersCollection {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetScriptToClrCustomConversion(crate::moon_sharp::interpreter::datatype::DataType, ::unity2::SystemType, crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue,crate::system::object::Object>)` overload"]
+    fn set_script_to_clr_custom_conversion(
+        self,
+        script_data_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>,
+        clr_data_type: impl ::core::convert::Into<::unity2::SystemType>,
+        converter: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+                crate::system::object::Object,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::set_script_to_clr_custom_conversion(
+                __receiver,
+                ::core::convert::Into::into(script_data_type),
+                ::core::convert::Into::into(clr_data_type),
+                ::core::convert::Into::into(converter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetScriptToClrCustomConversion(crate::moon_sharp::interpreter::datatype::DataType, ::unity2::SystemType)` overload"]
+    fn get_script_to_clr_custom_conversion(
+        self,
+        script_data_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>,
+        clr_data_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::system::func_2::Func_2<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+        crate::system::object::Object,
+    > {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::get_script_to_clr_custom_conversion(
+                __receiver,
+                ::core::convert::Into::into(script_data_type),
+                ::core::convert::Into::into(clr_data_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetClrToScriptCustomConversion(::unity2::SystemType, crate::system::func_3::Func_3<crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn set_clr_to_script_custom_conversion(
+        self,
+        clr_data_type: impl ::core::convert::Into<::unity2::SystemType>,
+        converter: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                crate::moon_sharp::interpreter::script::Script,
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::set_clr_to_script_custom_conversion(
+                __receiver,
+                ::core::convert::Into::into(clr_data_type),
+                ::core::convert::Into::into(converter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_clr_to_script_custom_conversion_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        converter: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                crate::moon_sharp::interpreter::script::Script,
+                M0,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "SetClrToScriptCustomConversion",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                "SetClrToScriptCustomConversion",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let __f: extern "C" fn(
+                CustomConvertersCollection,
+                crate::system::func_3::Func_3<
+                    crate::moon_sharp::interpreter::script::Script,
+                    M0,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                >,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(converter),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetClrToScriptCustomConversion(::unity2::SystemType)` overload"]
+    fn get_clr_to_script_custom_conversion(
+        self,
+        clr_data_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::system::func_3::Func_3<
+        crate::moon_sharp::interpreter::script::Script,
+        crate::system::object::Object,
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    > {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::get_clr_to_script_custom_conversion(
+                __receiver,
+                ::core::convert::Into::into(clr_data_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetClrToScriptCustomConversion(::unity2::SystemType, crate::system::func_2::Func_2<crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn set_clr_to_script_custom_conversion_3(
+        self,
+        clr_data_type: impl ::core::convert::Into<::unity2::SystemType>,
+        converter: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::set_clr_to_script_custom_conversion_3(
+                __receiver,
+                ::core::convert::Into::into(clr_data_type),
+                ::core::convert::Into::into(converter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_clr_to_script_custom_conversion_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        converter: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<M0, crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::class(),
+                "SetClrToScriptCustomConversion",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <CustomConvertersCollection as ::unity2::ClassIdentity>::NAME,
+                "SetClrToScriptCustomConversion",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let __f: extern "C" fn(
+                CustomConvertersCollection,
+                crate::system::func_2::Func_2<
+                    M0,
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                >,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(converter),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <CustomConvertersCollection as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CustomConvertersCollection_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+impl<__T: ICustomConvertersCollection> ICustomConvertersCollectionMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
 impl CustomConvertersCollection {
@@ -122,4 +747,14 @@ impl CustomConvertersCollection {
         <Self as ICustomConvertersCollectionMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+pub mod prelude {
+    pub use super::CustomConvertersCollection;
+    pub use super::ICustomConvertersCollection;
+    pub use super::ICustomConvertersCollectionMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

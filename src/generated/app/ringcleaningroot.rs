@@ -31,45 +31,432 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-ringcleaningroot")]
-#[::unity2::methods]
-impl RingCleaningRoot {
-    #[doc = "`get_GaugeController()` overload"]
-    #[method(name = "get_GaugeController", args = 0)]
-    pub fn get_gauge_controller(
-        self,
-    ) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController;
-
-    #[doc = "`get_ConditionIcon()` overload"]
-    #[method(name = "get_ConditionIcon", args = 0)]
-    pub fn get_condition_icon(
-        self,
-    ) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon;
-
-    #[doc = "`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"]
-    #[method(name = "Init", args = 3)]
-    pub fn init(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingCleaningRoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gauge_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "get_GaugeController",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "get_GaugeController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gauge_controller(
+        this: RingCleaningRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController {
+        let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_gauge_controller :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_condition_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "get_ConditionIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "get_ConditionIcon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_condition_icon(
+        this: RingCleaningRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon {
+        let inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_condition_icon :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningringcontroller :: RingCleaningRingController as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "Init",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: RingCleaningRoot,
         god: crate::app::godunit::GodUnit,
         unit: crate::app::unit::Unit,
         ring_controller: crate::app::ringcleaningringcontroller::RingCleaningRingController,
-    ) -> ();
-
-    #[doc = "`UpdateDirty(i32)` overload"]
-    #[method(name = "UpdateDirty", args = 1)]
-    pub fn update_dirty(self, new_dirty: i32) -> ();
-
-    #[doc = "`IsFinishCleaning()` overload"]
-    #[method(name = "IsFinishCleaning", args = 0)]
-    pub fn is_finish_cleaning(self) -> bool;
-
-    #[doc = "`GetTextureDirty(i32)` overload"]
-    #[method(name = "GetTextureDirty", args = 1)]
-    pub fn get_texture_dirty(self, dirty: i32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingCleaningRoot,
+            crate::app::godunit::GodUnit,
+            crate::app::unit::Unit,
+            crate::app::ringcleaningringcontroller::RingCleaningRingController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init::get_offset() as isize),
+        );
+        inner(this, god, unit, ring_controller, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_dirty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateDirty",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateDirty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_dirty(
+        this: RingCleaningRoot,
+        new_dirty: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingCleaningRoot, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_dirty::get_offset() as isize),
+            );
+        inner(this, new_dirty, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_finish_cleaning {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "IsFinishCleaning",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsFinishCleaning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_finish_cleaning(
+        this: RingCleaningRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_finish_cleaning::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_texture_dirty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                "GetTextureDirty",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetTextureDirty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_texture_dirty(
+        this: RingCleaningRoot,
+        dirty: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(RingCleaningRoot, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_texture_dirty::get_offset() as isize),
+            );
+        inner(this, dirty, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningRoot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingCleaningRoot as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingCleaningRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingCleaningRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-ringcleaningroot")]
+pub trait IRingCleaningRootMethods: IRingCleaningRoot {
+    #[doc = "`get_GaugeController()` overload"]
+    fn get_gauge_controller(
+        self,
+    ) -> crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::get_gauge_controller(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ConditionIcon()` overload"]
+    fn get_condition_icon(
+        self,
+    ) -> crate::app::ringcleaningconditionicon::RingCleaningConditionIcon {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::get_condition_icon(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"]
+    fn init(
+        self,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        ring_controller: impl ::core::convert::Into<
+            crate::app::ringcleaningringcontroller::RingCleaningRingController,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::init(
+                __receiver,
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(ring_controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateDirty(i32)` overload"]
+    fn update_dirty(self, new_dirty: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::update_dirty(
+                __receiver,
+                ::core::convert::Into::into(new_dirty),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsFinishCleaning()` overload"]
+    fn is_finish_cleaning(self) -> bool {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::is_finish_cleaning(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTextureDirty(i32)` overload"]
+    fn get_texture_dirty(self, dirty: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::get_texture_dirty(
+                __receiver,
+                ::core::convert::Into::into(dirty),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingCleaningRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringcleaningroot")]
+impl<__T: IRingCleaningRoot> IRingCleaningRootMethods for __T {}
 
 #[cfg(feature = "app-ringcleaningroot")]
 impl RingCleaningRoot {
@@ -85,4 +472,26 @@ impl RingCleaningRoot {
         <Self as IRingCleaningRootMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-ringcleaningroot")]
+pub mod prelude {
+    pub use super::IRingCleaningRoot;
+    pub use super::IRingCleaningRootMethods;
+    pub use super::RingCleaningRoot;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

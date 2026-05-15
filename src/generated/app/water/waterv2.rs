@@ -107,66 +107,650 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-water-waterv2")]
-#[::unity2::methods]
-impl WaterV2 {
-    #[doc = "`OnWillRenderObject()` overload"]
-    #[method(name = "OnWillRenderObject", args = 0)]
-    pub fn on_will_render_object(self) -> ();
-
-    #[doc = "`OnDisable()` overload"]
-    #[method(name = "OnDisable", args = 0)]
-    pub fn on_disable(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`UpdateCameraModes(crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "UpdateCameraModes", args = 2)]
-    pub fn update_camera_modes(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WaterV2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_will_render_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "OnWillRenderObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "OnWillRenderObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_will_render_object(
+        this: WaterV2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(WaterV2, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_will_render_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "OnDisable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "OnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_disable(this: WaterV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WaterV2, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_disable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(this: WaterV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WaterV2, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_camera_modes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "UpdateCameraModes",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCameraModes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_camera_modes(
+        this: WaterV2,
         src: crate::unity_engine::camera::Camera,
         dest: crate::unity_engine::camera::Camera,
-    ) -> ();
-
-    #[doc = "`CreateWaterObjects(crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "CreateWaterObjects", args = 3)]
-    pub fn create_water_objects(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WaterV2,
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_camera_modes::get_offset() as isize),
+        );
+        inner(this, src, dest, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_water_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "CreateWaterObjects",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "CreateWaterObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_water_objects(
+        this: WaterV2,
         current_camera: crate::unity_engine::camera::Camera,
-        reflection_camera: crate::unity_engine::camera::Camera,
-        refraction_camera: crate::unity_engine::camera::Camera,
-    ) -> ();
-
-    #[doc = "`GetWaterMode()` overload"]
-    #[method(name = "GetWaterMode", args = 0)]
-    pub fn get_water_mode(self) -> crate::app::water::waterv2::WaterV2_WaterMode;
-
-    #[doc = "`FindHardwareWaterSupport()` overload"]
-    #[method(name = "FindHardwareWaterSupport", args = 0)]
-    pub fn find_hardware_water_support(self) -> crate::app::water::waterv2::WaterV2_WaterMode;
-
-    #[doc = "`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "CameraSpacePlane", args = 4)]
-    pub fn camera_space_plane(
-        self,
+        reflection_camera: *mut crate::unity_engine::camera::Camera,
+        refraction_camera: *mut crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WaterV2,
+            crate::unity_engine::camera::Camera,
+            *mut crate::unity_engine::camera::Camera,
+            *mut crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_water_objects::get_offset() as isize),
+        );
+        inner(
+            this,
+            current_camera,
+            reflection_camera,
+            refraction_camera,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_water_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "GetWaterMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "GetWaterMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_water_mode(
+        this: WaterV2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::water::waterv2::WaterV2_WaterMode {
+        let inner: extern "C" fn(
+            WaterV2,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::water::waterv2::WaterV2_WaterMode = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_water_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_hardware_water_support {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "FindHardwareWaterSupport",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "FindHardwareWaterSupport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_hardware_water_support(
+        this: WaterV2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::water::waterv2::WaterV2_WaterMode {
+        let inner: extern "C" fn(
+            WaterV2,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::water::waterv2::WaterV2_WaterMode = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_hardware_water_support::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_camera_space_plane {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "CameraSpacePlane",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "CameraSpacePlane",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn camera_space_plane(
+        this: WaterV2,
         cam: crate::unity_engine::camera::Camera,
         pos: crate::unity_engine::vector3::Vector3,
         normal: crate::unity_engine::vector3::Vector3,
         side_sign: f32,
-    ) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`CalculateReflectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "CalculateReflectionMatrix", args = 2)]
-    pub fn calculate_reflection_matrix(
-        reflection_mat: crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            WaterV2,
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_camera_space_plane::get_offset() as isize),
+        );
+        inner(this, cam, pos, normal, side_sign, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_reflection_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                "CalculateReflectionMatrix",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    "CalculateReflectionMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_reflection_matrix(
+        reflection_mat: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         plane: crate::unity_engine::vector4::Vector4,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_reflection_matrix::get_offset() as isize),
+        );
+        inner(reflection_mat, plane, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WaterV2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WaterV2 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: WaterV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WaterV2, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-water-waterv2")]
+impl WaterV2 {
+    #[doc = "`CalculateReflectionMatrix(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]
+    pub fn calculate_reflection_matrix(
+        plane: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __WaterV2_unity2_raw::calculate_reflection_matrix(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(plane),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-water-waterv2")]
+pub trait IWaterV2Methods: IWaterV2 {
+    #[doc = "`OnWillRenderObject()` overload"]
+    fn on_will_render_object(self) -> () {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::on_will_render_object(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDisable()` overload"]
+    fn on_disable(self) -> () {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateCameraModes(crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera)` overload"]
+    fn update_camera_modes(
+        self,
+        src: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        dest: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> () {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::update_camera_modes(
+                __receiver,
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(dest),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateWaterObjects(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera)` overload"]
+    fn create_water_objects(
+        self,
+        current_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> (
+        crate::unity_engine::camera::Camera,
+        crate::unity_engine::camera::Camera,
+    ) {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::camera::Camera>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::camera::Camera>::uninit();
+            __WaterV2_unity2_raw::create_water_objects(
+                __receiver,
+                ::core::convert::Into::into(current_camera),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetWaterMode()` overload"]
+    fn get_water_mode(self) -> crate::app::water::waterv2::WaterV2_WaterMode {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::get_water_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FindHardwareWaterSupport()` overload"]
+    fn find_hardware_water_support(self) -> crate::app::water::waterv2::WaterV2_WaterMode {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::find_hardware_water_support(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn camera_space_plane(
+        self,
+        cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        normal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        side_sign: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::camera_space_plane(
+                __receiver,
+                ::core::convert::Into::into(cam),
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(normal),
+                ::core::convert::Into::into(side_sign),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <WaterV2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WaterV2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-water-waterv2")]
+impl<__T: IWaterV2> IWaterV2Methods for __T {}
 
 #[cfg(feature = "app-water-waterv2")]
 impl WaterV2 {
@@ -182,4 +766,33 @@ impl WaterV2 {
         <Self as IWaterV2Methods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-water-waterv2")]
+pub mod prelude {
+    pub use super::IWaterV2;
+    pub use super::IWaterV2Methods;
+    pub use super::WaterV2;
+    pub use super::WaterV2_WaterMode;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

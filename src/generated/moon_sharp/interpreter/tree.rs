@@ -2,6 +2,10 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-tree-expression-types"))]
 pub mod expression;
+#[cfg(feature = "moon_sharp-interpreter-tree-expression")]
+pub use expression::IExpressionMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-expression-types")]
+pub use expression::{Expression, IExpression};
 #[cfg(any(
     feature = "moon_sharp-interpreter-tree-expressions-adjustmentexpression-types",
     feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression-types",
@@ -20,18 +24,44 @@ pub mod expressions;
 pub mod fast_interface;
 #[cfg(any(feature = "moon_sharp-interpreter-tree-ivariable-types"))]
 pub mod ivariable;
+#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
+pub use ivariable::IIVariableMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-ivariable-types")]
+pub use ivariable::{IIVariable, IVariable};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-lexer-types"))]
 pub mod lexer;
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+pub use lexer::ILexerMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer-types")]
+pub use lexer::{ILexer, Lexer};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-lexerutils-types"))]
 pub mod lexerutils;
-#[cfg(any(feature = "moon_sharp-interpreter-tree-loop-types"))]
-pub mod r#loop;
+#[cfg(feature = "moon_sharp-interpreter-tree-lexerutils-types")]
+pub use lexerutils::{ILexerUtils, LexerUtils};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-loopboundary-types"))]
 pub mod loopboundary;
+#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
+pub use loopboundary::ILoopBoundaryMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary-types")]
+pub use loopboundary::{ILoopBoundary, LoopBoundary};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-nodebase-types"))]
 pub mod nodebase;
+#[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+pub use nodebase::INodeBaseMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-nodebase-types")]
+pub use nodebase::{INodeBase, NodeBase};
+#[cfg(any(feature = "moon_sharp-interpreter-tree-loop-types"))]
+pub mod r#loop;
+#[cfg(feature = "moon_sharp-interpreter-tree-loop")]
+pub use r#loop::ILoopMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-loop-types")]
+pub use r#loop::{ILoop, Loop};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-statement-types"))]
 pub mod statement;
+#[cfg(feature = "moon_sharp-interpreter-tree-statement")]
+pub use statement::IStatementMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-statement-types")]
+pub use statement::{IStatement, Statement};
 #[cfg(any(
     feature = "moon_sharp-interpreter-tree-statements-assignmentstatement-types",
     feature = "moon_sharp-interpreter-tree-statements-breakstatement-types",
@@ -53,5 +83,11 @@ pub mod statement;
 pub mod statements;
 #[cfg(any(feature = "moon_sharp-interpreter-tree-token-types"))]
 pub mod token;
+#[cfg(feature = "moon_sharp-interpreter-tree-token")]
+pub use token::ITokenMethods;
+#[cfg(feature = "moon_sharp-interpreter-tree-token-types")]
+pub use token::{IToken, Token};
 #[cfg(any(feature = "moon_sharp-interpreter-tree-tokentype-types"))]
 pub mod tokentype;
+#[cfg(feature = "moon_sharp-interpreter-tree-tokentype-types")]
+pub use tokentype::TokenType;

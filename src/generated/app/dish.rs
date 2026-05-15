@@ -9,6 +9,42 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Dish_RelianceResult {
+        pub hero_unit_a: i32,
+        pub hero_unit_b: i32,
+        pub unit_a_unit_b: i32,
+        pub hero_unit_a_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub hero_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub unit_a_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub hero: crate::app::unit::Unit,
+        pub unit_a: crate::app::unit::Unit,
+        pub unit_b: crate::app::unit::Unit,
+    }
+
+    impl ::unity2::ClassIdentity for Dish_RelianceResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Dish.RelianceResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Dish_RelianceResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult_TryResult.md"))]
     #[repr(C)]
     #[derive(
@@ -124,166 +160,1420 @@ mod __types {
         #[rename(name = "m_FoodData")]
         pub m_food_data: crate::app::fooddata::FoodData,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Dish_RelianceResult {
-        pub hero_unit_a: i32,
-        pub hero_unit_b: i32,
-        pub unit_a_unit_b: i32,
-        pub hero_unit_a_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub hero_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub unit_a_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub hero: crate::app::unit::Unit,
-        pub unit_a: crate::app::unit::Unit,
-        pub unit_b: crate::app::unit::Unit,
-    }
-
-    impl ::unity2::ClassIdentity for Dish_RelianceResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Dish.RelianceResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Dish_RelianceResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-dish-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dish")]
-#[::unity2::methods]
-impl Dish {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Enhance()` overload"]
-    #[method(name = "get_Enhance", args = 0)]
-    pub fn get_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
-
-    #[doc = "`set_Enhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
-    #[method(name = "set_Enhance", args = 1)]
-    pub fn set_enhance(self, value: crate::app::unitenhancevalues::UnitEnhanceValues) -> ();
-
-    #[doc = "`get_BonusEnhance()` overload"]
-    #[method(name = "get_BonusEnhance", args = 0)]
-    pub fn get_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
-
-    #[doc = "`set_BonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
-    #[method(name = "set_BonusEnhance", args = 1)]
-    pub fn set_bonus_enhance(self, value: crate::app::unitenhancevalues::UnitEnhanceValues) -> ();
-
-    #[doc = "`get_TotalBonusEnhance()` overload"]
-    #[method(name = "get_TotalBonusEnhance", args = 0)]
-    pub fn get_total_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
-
-    #[doc = "`set_TotalBonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
-    #[method(name = "set_TotalBonusEnhance", args = 1)]
-    pub fn set_total_bonus_enhance(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Dish_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_Name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_Name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_Enhance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_Enhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enhance(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        let inner: extern "C" fn(
+            Dish,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unitenhancevalues::UnitEnhanceValues = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enhance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "set_Enhance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "set_Enhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enhance(
+        this: Dish,
         value: crate::app::unitenhancevalues::UnitEnhanceValues,
-    ) -> ();
-
-    #[doc = "`get_RaiseReliance()` overload"]
-    #[method(name = "get_RaiseReliance", args = 0)]
-    pub fn get_raise_reliance(self) -> bool;
-
-    #[doc = "`set_RaiseReliance(bool)` overload"]
-    #[method(name = "set_RaiseReliance", args = 1)]
-    pub fn set_raise_reliance(self, value: bool) -> ();
-
-    #[doc = "`get_Taste()` overload"]
-    #[method(name = "get_Taste", args = 0)]
-    pub fn get_taste(self) -> crate::app::tastedata::TasteData;
-
-    #[doc = "`set_Taste(crate::app::tastedata::TasteData)` overload"]
-    #[method(name = "set_Taste", args = 1)]
-    pub fn set_taste(self, value: crate::app::tastedata::TasteData) -> ();
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unitenhancevalues::UnitEnhanceValues,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enhance::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bonus_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_BonusEnhance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_BonusEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bonus_enhance(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        let inner: extern "C" fn(
+            Dish,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unitenhancevalues::UnitEnhanceValues = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bonus_enhance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bonus_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "set_BonusEnhance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "set_BonusEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bonus_enhance(
+        this: Dish,
+        value: crate::app::unitenhancevalues::UnitEnhanceValues,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unitenhancevalues::UnitEnhanceValues,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bonus_enhance::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_total_bonus_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_TotalBonusEnhance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_TotalBonusEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_total_bonus_enhance(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        let inner: extern "C" fn(
+            Dish,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unitenhancevalues::UnitEnhanceValues = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_total_bonus_enhance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_total_bonus_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitenhancevalues::UnitEnhanceValues as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "set_TotalBonusEnhance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "set_TotalBonusEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_total_bonus_enhance(
+        this: Dish,
+        value: crate::app::unitenhancevalues::UnitEnhanceValues,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unitenhancevalues::UnitEnhanceValues,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_total_bonus_enhance::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_raise_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_RaiseReliance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_RaiseReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_raise_reliance(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_raise_reliance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_raise_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "set_RaiseReliance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "set_RaiseReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_raise_reliance(
+        this: Dish,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Dish, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_raise_reliance::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_taste {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_Taste",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_Taste",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_taste(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::tastedata::TasteData {
+        let inner: extern "C" fn(
+            Dish,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::tastedata::TasteData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_taste::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_taste {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::tastedata::TasteData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "set_Taste",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "set_Taste",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_taste(
+        this: Dish,
+        value: crate::app::tastedata::TasteData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::tastedata::TasteData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_taste::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::fooddata::FoodData as ::unity2::IlType>::il_type(),
+                <crate::app::tastedata::TasteData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Dish,
         unit: crate::app::unit::Unit,
         food_data: crate::app::fooddata::FoodData,
         taste_data: crate::app::tastedata::TasteData,
         raise_reliance: bool,
-    ) -> ();
-
-    #[doc = "`get_Food()` overload"]
-    #[method(name = "get_Food", args = 0)]
-    pub fn get_food(self) -> crate::app::fooddata::FoodData;
-
-    #[doc = "`GetFoodName()` overload"]
-    #[method(name = "GetFoodName", args = 0)]
-    pub fn get_food_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ApplyEnhance(crate::app::unit::Unit)` overload"]
-    #[method(name = "ApplyEnhance", args = 1)]
-    pub fn apply_enhance(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ApplyReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]
-    #[method(name = "ApplyReliance", args = 4)]
-    pub fn apply_reliance(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unit::Unit,
+            crate::app::fooddata::FoodData,
+            crate::app::tastedata::TasteData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            unit,
+            food_data,
+            taste_data,
+            raise_reliance,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_food {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "get_Food",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "get_Food",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_food(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fooddata::FoodData {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> crate::app::fooddata::FoodData =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_food::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_food_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "GetFoodName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "GetFoodName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_food_name(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_food_name::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "ApplyEnhance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "ApplyEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_enhance(
+        this: Dish,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Dish, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_enhance::get_offset() as isize),
+            );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::cooking::Cooking_ConversationType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "ApplyReliance",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "ApplyReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_reliance(
+        this: Dish,
         hero_unit: crate::app::unit::Unit,
         unit_a: crate::app::unit::Unit,
         unit_b: crate::app::unit::Unit,
         r#type: crate::app::cooking::Cooking_ConversationType,
-    ) -> crate::app::dish::Dish_RelianceResult;
-
-    #[doc = "`CalculateRelianceRiseValue(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]
-    #[method(name = "CalculateRelianceRiseValue", args = 3)]
-    pub fn calculate_reliance_rise_value(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::dish::Dish_RelianceResult {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            crate::app::cooking::Cooking_ConversationType,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::dish::Dish_RelianceResult = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_reliance::get_offset() as isize),
+        );
+        inner(
+            this,
+            hero_unit,
+            unit_a,
+            unit_b,
+            r#type,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_reliance_rise_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::cooking::Cooking_ConversationType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "CalculateRelianceRiseValue",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "CalculateRelianceRiseValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_reliance_rise_value(
+        this: Dish,
         unit_a: crate::app::unit::Unit,
         unit_b: crate::app::unit::Unit,
         r#type: crate::app::cooking::Cooking_ConversationType,
-    ) -> i32;
-
-    #[doc = "`MakeBento()` overload"]
-    #[method(name = "MakeBento", args = 0)]
-    pub fn make_bento(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`SetEnhance(crate::app::fooddata::FoodData, crate::app::tastedata::TasteData)` overload"]
-    #[method(name = "SetEnhance", args = 2)]
-    pub fn set_enhance_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            crate::app::cooking::Cooking_ConversationType,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_reliance_rise_value::get_offset() as isize),
+        );
+        inner(this, unit_a, unit_b, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_bento {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "MakeBento",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "MakeBento",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_bento(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_make_bento::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enhance_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fooddata::FoodData as ::unity2::IlType>::il_type(),
+                <crate::app::tastedata::TasteData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "SetEnhance",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "SetEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enhance_2(
+        this: Dish,
         food_data: crate::app::fooddata::FoodData,
         taste_data: crate::app::tastedata::TasteData,
-    ) -> ();
-
-    #[doc = "`CalculateEnhance(crate::app::capabilitysbyte::CapabilitySbyte, crate::app::tastedata::TasteData)` overload"]
-    #[method(name = "CalculateEnhance", args = 2)]
-    pub fn calculate_enhance(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::fooddata::FoodData,
+            crate::app::tastedata::TasteData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enhance_2::get_offset() as isize),
+        );
+        inner(this, food_data, taste_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_enhance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::capabilitysbyte::CapabilitySbyte as ::unity2::IlType>::il_type(),
+                <crate::app::tastedata::TasteData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "CalculateEnhance",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "CalculateEnhance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_enhance(
+        this: Dish,
         enhance: crate::app::capabilitysbyte::CapabilitySbyte,
         taste_data: crate::app::tastedata::TasteData,
-    ) -> crate::app::unitenhancevalues::UnitEnhanceValues;
-
-    #[doc = "`GetLiking(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetLiking", args = 1)]
-    pub fn get_liking(self, unit: crate::app::unit::Unit) -> crate::app::dish::Dish_Liking;
-
-    #[doc = "`GetCondDescription()` overload"]
-    #[method(name = "GetCondDescription", args = 0)]
-    pub fn get_cond_description(self) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::capabilitysbyte::CapabilitySbyte,
+            crate::app::tastedata::TasteData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unitenhancevalues::UnitEnhanceValues = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_enhance::get_offset() as isize),
+        );
+        inner(this, enhance, taste_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_liking {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "GetLiking",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "GetLiking",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_liking(
+        this: Dish,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::dish::Dish_Liking {
+        let inner: extern "C" fn(
+            Dish,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::dish::Dish_Liking = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_liking::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cond_description {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dish as ::unity2::ClassIdentity>::class(),
+                "GetCondDescription",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dish as ::unity2::ClassIdentity>::NAME,
+                    "GetCondDescription",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cond_description(
+        this: Dish,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Dish, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_cond_description::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-dish")]
+pub trait IDishMethods: IDish {
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Enhance()` overload"]
+    fn get_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_enhance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Enhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
+    fn set_enhance(
+        self,
+        value: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_enhance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BonusEnhance()` overload"]
+    fn get_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_bonus_enhance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_BonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
+    fn set_bonus_enhance(
+        self,
+        value: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_bonus_enhance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TotalBonusEnhance()` overload"]
+    fn get_total_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_total_bonus_enhance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_TotalBonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]
+    fn set_total_bonus_enhance(
+        self,
+        value: impl ::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_total_bonus_enhance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RaiseReliance()` overload"]
+    fn get_raise_reliance(self) -> bool {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_raise_reliance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RaiseReliance(bool)` overload"]
+    fn set_raise_reliance(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_raise_reliance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Taste()` overload"]
+    fn get_taste(self) -> crate::app::tastedata::TasteData {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_taste(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Taste(crate::app::tastedata::TasteData)` overload"]
+    fn set_taste(self, value: impl ::core::convert::Into<crate::app::tastedata::TasteData>) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_taste(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` overload"]
+    fn ctor(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
+        taste_data: impl ::core::convert::Into<crate::app::tastedata::TasteData>,
+        raise_reliance: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(food_data),
+                ::core::convert::Into::into(taste_data),
+                ::core::convert::Into::into(raise_reliance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Food()` overload"]
+    fn get_food(self) -> crate::app::fooddata::FoodData {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_food(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetFoodName()` overload"]
+    fn get_food_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_food_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ApplyEnhance(crate::app::unit::Unit)` overload"]
+    fn apply_enhance(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::apply_enhance(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]
+    fn apply_reliance(
+        self,
+        hero_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_a: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_b: impl ::core::convert::Into<crate::app::unit::Unit>,
+        r#type: impl ::core::convert::Into<crate::app::cooking::Cooking_ConversationType>,
+    ) -> crate::app::dish::Dish_RelianceResult {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::apply_reliance(
+                __receiver,
+                ::core::convert::Into::into(hero_unit),
+                ::core::convert::Into::into(unit_a),
+                ::core::convert::Into::into(unit_b),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateRelianceRiseValue(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]
+    fn calculate_reliance_rise_value(
+        self,
+        unit_a: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_b: impl ::core::convert::Into<crate::app::unit::Unit>,
+        r#type: impl ::core::convert::Into<crate::app::cooking::Cooking_ConversationType>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::calculate_reliance_rise_value(
+                __receiver,
+                ::core::convert::Into::into(unit_a),
+                ::core::convert::Into::into(unit_b),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MakeBento()` overload"]
+    fn make_bento(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::make_bento(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetEnhance(crate::app::fooddata::FoodData, crate::app::tastedata::TasteData)` overload"]
+    fn set_enhance_2(
+        self,
+        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
+        taste_data: impl ::core::convert::Into<crate::app::tastedata::TasteData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::set_enhance_2(
+                __receiver,
+                ::core::convert::Into::into(food_data),
+                ::core::convert::Into::into(taste_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateEnhance(crate::app::capabilitysbyte::CapabilitySbyte, crate::app::tastedata::TasteData)` overload"]
+    fn calculate_enhance(
+        self,
+        enhance: impl ::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>,
+        taste_data: impl ::core::convert::Into<crate::app::tastedata::TasteData>,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::calculate_enhance(
+                __receiver,
+                ::core::convert::Into::into(enhance),
+                ::core::convert::Into::into(taste_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLiking(crate::app::unit::Unit)` overload"]
+    fn get_liking(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::dish::Dish_Liking {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_liking(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCondDescription()` overload"]
+    fn get_cond_description(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Dish as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dish_unity2_raw::get_cond_description(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dish")]
+impl<__T: IDish> IDishMethods for __T {}
 
 #[cfg(feature = "app-dish")]
 impl Dish {
@@ -304,4 +1594,23 @@ impl Dish {
         <Self as IDishMethods>::ctor(this, unit, food_data, taste_data, raise_reliance);
         this
     }
+}
+
+#[cfg(feature = "app-dish")]
+pub mod prelude {
+    pub use super::Dish;
+    pub use super::Dish_Liking;
+    pub use super::Dish_RelianceResult;
+    pub use super::Dish_RelianceResult_TryResult;
+    pub use super::IDish;
+    pub use super::IDishMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

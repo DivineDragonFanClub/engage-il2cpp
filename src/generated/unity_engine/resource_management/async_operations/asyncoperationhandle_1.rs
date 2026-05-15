@@ -224,3 +224,14 @@ impl<T0: ::unity2::ClassIdentity> AsyncOperationHandle_1<T0> {
     #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
     pub fn system_collections_i_enumerator_reset(self) -> ();
 }
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle_1")]
+pub mod prelude {
+    pub use super::AsyncOperationHandle_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

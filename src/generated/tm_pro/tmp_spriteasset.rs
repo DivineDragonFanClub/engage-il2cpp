@@ -66,179 +66,1850 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_spriteasset")]
-#[::unity2::methods]
-impl TMP_SpriteAsset {
-    #[doc = "`get_version()` overload"]
-    #[method(name = "get_version", args = 0)]
-    pub fn get_version(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_version(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_version", args = 1)]
-    pub fn set_version(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_faceInfo()` overload"]
-    #[method(name = "get_faceInfo", args = 0)]
-    pub fn get_face_info(self) -> crate::unity_engine::text_core::faceinfo::FaceInfo;
-
-    #[doc = "`set_faceInfo(crate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
-    #[method(name = "set_faceInfo", args = 1)]
-    pub fn set_face_info(self, value: crate::unity_engine::text_core::faceinfo::FaceInfo) -> ();
-
-    #[doc = "`get_spriteCharacterTable()` overload"]
-    #[method(name = "get_spriteCharacterTable", args = 0)]
-    pub fn get_sprite_character_table(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_SpriteAsset_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "get_version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_version::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "set_version",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_version(
+        this: TMP_SpriteAsset,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_version::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_face_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "get_faceInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_faceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_face_info(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::faceinfo::FaceInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_face_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::text_core::faceinfo::FaceInfo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "set_faceInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_faceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_face_info(
+        this: TMP_SpriteAsset,
+        value: crate::unity_engine::text_core::faceinfo::FaceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            crate::unity_engine::text_core::faceinfo::FaceInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_face_info::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "get_spriteCharacterTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_spriteCharacterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_character_table(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
-    >;
-
-    #[doc = "`set_spriteCharacterTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>)` overload"]
-    #[method(name = "set_spriteCharacterTable", args = 1)]
-    pub fn set_sprite_character_table(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_character_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "set_spriteCharacterTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_spriteCharacterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite_character_table(
+        this: TMP_SpriteAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
         >,
-    ) -> ();
-
-    #[doc = "`get_spriteCharacterLookupTable()` overload"]
-    #[method(name = "get_spriteCharacterLookupTable", args = 0)]
-    pub fn get_sprite_character_lookup_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite_character_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_character_lookup_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "get_spriteCharacterLookupTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_spriteCharacterLookupTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_character_lookup_table(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         u32,
         crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
-    >;
-
-    #[doc = "`set_spriteCharacterLookupTable(crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>)` overload"]
-    #[method(name = "set_spriteCharacterLookupTable", args = 1)]
-    pub fn set_sprite_character_lookup_table(
-        self,
+    > {
+        let inner : extern "C" fn (TMP_SpriteAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: tm_pro :: tmp_spritecharacter :: TMP_SpriteCharacter > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_sprite_character_lookup_table :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite_character_lookup_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<
+                    u32,
+                    crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "set_spriteCharacterLookupTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_spriteCharacterLookupTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite_character_lookup_table(
+        this: TMP_SpriteAsset,
         value: crate::system::collections::generic::dictionary_2::Dictionary_2<
             u32,
             crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
         >,
-    ) -> ();
-
-    #[doc = "`get_spriteGlyphTable()` overload"]
-    #[method(name = "get_spriteGlyphTable", args = 0)]
-    pub fn get_sprite_glyph_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                u32,
+                crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite_character_lookup_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "get_spriteGlyphTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_spriteGlyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_glyph_table(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
-    >;
-
-    #[doc = "`set_spriteGlyphTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>)` overload"]
-    #[method(name = "set_spriteGlyphTable", args = 1)]
-    pub fn set_sprite_glyph_table(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_glyph_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "set_spriteGlyphTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_spriteGlyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite_glyph_table(
+        this: TMP_SpriteAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
         >,
-    ) -> ();
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`GetDefaultSpriteMaterial()` overload"]
-    #[method(name = "GetDefaultSpriteMaterial", args = 0)]
-    pub fn get_default_sprite_material(self) -> crate::unity_engine::material::Material;
-
-    #[doc = "`UpdateLookupTables()` overload"]
-    #[method(name = "UpdateLookupTables", args = 0)]
-    pub fn update_lookup_tables(self) -> ();
-
-    #[doc = "`GetSpriteIndexFromHashcode(i32)` overload"]
-    #[method(name = "GetSpriteIndexFromHashcode", args = 1)]
-    pub fn get_sprite_index_from_hashcode(self, hash_code: i32) -> i32;
-
-    #[doc = "`GetSpriteIndexFromUnicode(u32)` overload"]
-    #[method(name = "GetSpriteIndexFromUnicode", args = 1)]
-    pub fn get_sprite_index_from_unicode(self, unicode: u32) -> i32;
-
-    #[doc = "`GetSpriteIndexFromName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetSpriteIndexFromName", args = 1)]
-    pub fn get_sprite_index_from_name(self, name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`SearchForSpriteByUnicode(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, u32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByUnicode", args = 4)]
-    pub fn search_for_sprite_by_unicode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite_glyph_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_sprite_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "GetDefaultSpriteMaterial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetDefaultSpriteMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_sprite_material(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_default_sprite_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_lookup_tables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateLookupTables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateLookupTables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_lookup_tables(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_lookup_tables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_index_from_hashcode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "GetSpriteIndexFromHashcode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetSpriteIndexFromHashcode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_index_from_hashcode(
+        this: TMP_SpriteAsset,
+        hash_code: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_SpriteAsset, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sprite_index_from_hashcode::get_offset() as isize),
+            );
+        inner(this, hash_code, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_index_from_unicode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "GetSpriteIndexFromUnicode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetSpriteIndexFromUnicode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_index_from_unicode(
+        this: TMP_SpriteAsset,
+        unicode: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_SpriteAsset, u32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sprite_index_from_unicode::get_offset() as isize),
+            );
+        inner(this, unicode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_index_from_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "GetSpriteIndexFromName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetSpriteIndexFromName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_index_from_name(
+        this: TMP_SpriteAsset,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_SpriteAsset,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_index_from_name::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_unicode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByUnicode",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByUnicode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_unicode(
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         unicode: u32,
         include_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SearchForSpriteByUnicodeInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>, u32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByUnicodeInternal", args = 4)]
-    pub fn search_for_sprite_by_unicode_internal(
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            u32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_unicode::get_offset() as isize),
+        );
+        inner(
+            sprite_asset,
+            unicode,
+            include_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_unicode_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+                > as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByUnicodeInternal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByUnicodeInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_unicode_internal(
         sprite_assets: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         >,
         unicode: u32,
         include_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SearchForSpriteByUnicodeInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, u32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByUnicodeInternal", args = 4)]
-    pub fn search_for_sprite_by_unicode_internal_2(
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+            u32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_unicode_internal::get_offset() as isize),
+        );
+        inner(
+            sprite_assets,
+            unicode,
+            include_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_unicode_internal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByUnicodeInternal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByUnicodeInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_unicode_internal_2(
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         unicode: u32,
         include_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SearchForSpriteByHashCode(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByHashCode", args = 4)]
-    pub fn search_for_sprite_by_hash_code(
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            u32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_unicode_internal_2::get_offset() as isize),
+        );
+        inner(
+            sprite_asset,
+            unicode,
+            include_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByHashCode",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_hash_code(
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         hash_code: i32,
         include_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SearchForSpriteByHashCodeInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>, i32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByHashCodeInternal", args = 4)]
-    pub fn search_for_sprite_by_hash_code_internal(
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            i32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_hash_code::get_offset() as isize),
+        );
+        inner(
+            sprite_asset,
+            hash_code,
+            include_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_hash_code_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByHashCodeInternal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByHashCodeInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_hash_code_internal(
         sprite_assets: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         >,
         hash_code: i32,
         search_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SearchForSpriteByHashCodeInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, bool, i32)` overload"]
-    #[method(name = "SearchForSpriteByHashCodeInternal", args = 4)]
-    pub fn search_for_sprite_by_hash_code_internal_2(
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+            i32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_hash_code_internal::get_offset() as isize),
+        );
+        inner(
+            sprite_assets,
+            hash_code,
+            search_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_sprite_by_hash_code_internal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SearchForSpriteByHashCodeInternal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SearchForSpriteByHashCodeInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_sprite_by_hash_code_internal_2(
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         hash_code: i32,
         search_fallbacks: bool,
-        sprite_index: i32,
-    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`SortGlyphTable()` overload"]
-    #[method(name = "SortGlyphTable", args = 0)]
-    pub fn sort_glyph_table(self) -> ();
-
-    #[doc = "`SortCharacterTable()` overload"]
-    #[method(name = "SortCharacterTable", args = 0)]
-    pub fn sort_character_table(self) -> ();
-
-    #[doc = "`SortGlyphAndCharacterTables()` overload"]
-    #[method(name = "SortGlyphAndCharacterTables", args = 0)]
-    pub fn sort_glyph_and_character_tables(self) -> ();
-
-    #[doc = "`UpgradeSpriteAsset()` overload"]
-    #[method(name = "UpgradeSpriteAsset", args = 0)]
-    pub fn upgrade_sprite_asset(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        sprite_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            i32,
+            bool,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_sprite_by_hash_code_internal_2::get_offset() as isize),
+        );
+        inner(
+            sprite_asset,
+            hash_code,
+            search_fallbacks,
+            sprite_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SortGlyphTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortGlyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_glyph_table(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_glyph_table::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SortCharacterTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortCharacterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_character_table(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_character_table::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_glyph_and_character_tables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "SortGlyphAndCharacterTables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortGlyphAndCharacterTables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_glyph_and_character_tables(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_glyph_and_character_tables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upgrade_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                "UpgradeSpriteAsset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpgradeSpriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upgrade_sprite_asset(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upgrade_sprite_asset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_SpriteAsset as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_SpriteAsset as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_spriteasset")]
+impl TMP_SpriteAsset {
+    #[doc = "`SearchForSpriteByUnicode(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, u32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_unicode(
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        unicode: impl ::core::convert::Into<u32>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_unicode(
+                    ::core::convert::Into::into(sprite_asset),
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(include_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForSpriteByUnicodeInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>, u32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_unicode_internal(
+        sprite_assets: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+        >,
+        unicode: impl ::core::convert::Into<u32>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_unicode_internal(
+                    ::core::convert::Into::into(sprite_assets),
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(include_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForSpriteByUnicodeInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, u32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_unicode_internal_2(
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        unicode: impl ::core::convert::Into<u32>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_unicode_internal_2(
+                    ::core::convert::Into::into(sprite_asset),
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(include_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForSpriteByHashCode(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_hash_code(
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        hash_code: impl ::core::convert::Into<i32>,
+        include_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_hash_code(
+                    ::core::convert::Into::into(sprite_asset),
+                    ::core::convert::Into::into(hash_code),
+                    ::core::convert::Into::into(include_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForSpriteByHashCodeInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>, i32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_hash_code_internal(
+        sprite_assets: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+        >,
+        hash_code: impl ::core::convert::Into<i32>,
+        search_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_hash_code_internal(
+                    ::core::convert::Into::into(sprite_assets),
+                    ::core::convert::Into::into(hash_code),
+                    ::core::convert::Into::into(search_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForSpriteByHashCodeInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, bool, *muti32)` overload"]
+    pub fn search_for_sprite_by_hash_code_internal_2(
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        hash_code: impl ::core::convert::Into<i32>,
+        search_fallbacks: impl ::core::convert::Into<bool>,
+    ) -> (crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_SpriteAsset_unity2_raw::search_for_sprite_by_hash_code_internal_2(
+                    ::core::convert::Into::into(sprite_asset),
+                    ::core::convert::Into::into(hash_code),
+                    ::core::convert::Into::into(search_fallbacks),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteasset")]
+pub trait ITMP_SpriteAssetMethods: ITMP_SpriteAsset {
+    #[doc = "`get_version()` overload"]
+    fn get_version(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_version(::unity2::Il2CppString)` overload"]
+    fn set_version(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::set_version(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_faceInfo()` overload"]
+    fn get_face_info(self) -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_face_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_faceInfo(crate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
+    fn set_face_info(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::text_core::faceinfo::FaceInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::set_face_info(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_spriteCharacterTable()` overload"]
+    fn get_sprite_character_table(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+    > {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_character_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_spriteCharacterTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>)` overload"]
+    fn set_sprite_character_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::set_sprite_character_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_spriteCharacterLookupTable()` overload"]
+    fn get_sprite_character_lookup_table(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        u32,
+        crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+    > {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_character_lookup_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_spriteCharacterLookupTable(crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>)` overload"]
+    fn set_sprite_character_lookup_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                u32,
+                crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::set_sprite_character_lookup_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_spriteGlyphTable()` overload"]
+    fn get_sprite_glyph_table(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
+    > {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_glyph_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_spriteGlyphTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>)` overload"]
+    fn set_sprite_glyph_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::set_sprite_glyph_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDefaultSpriteMaterial()` overload"]
+    fn get_default_sprite_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_default_sprite_material(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateLookupTables()` overload"]
+    fn update_lookup_tables(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::update_lookup_tables(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSpriteIndexFromHashcode(i32)` overload"]
+    fn get_sprite_index_from_hashcode(self, hash_code: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_index_from_hashcode(
+                __receiver,
+                ::core::convert::Into::into(hash_code),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSpriteIndexFromUnicode(u32)` overload"]
+    fn get_sprite_index_from_unicode(self, unicode: impl ::core::convert::Into<u32>) -> i32 {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_index_from_unicode(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSpriteIndexFromName(::unity2::Il2CppString)` overload"]
+    fn get_sprite_index_from_name(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::get_sprite_index_from_name(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortGlyphTable()` overload"]
+    fn sort_glyph_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::sort_glyph_table(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SortCharacterTable()` overload"]
+    fn sort_character_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::sort_character_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortGlyphAndCharacterTables()` overload"]
+    fn sort_glyph_and_character_tables(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::sort_glyph_and_character_tables(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpgradeSpriteAsset()` overload"]
+    fn upgrade_sprite_asset(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::upgrade_sprite_asset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_SpriteAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_SpriteAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteasset")]
+impl<__T: ITMP_SpriteAsset> ITMP_SpriteAssetMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_spriteasset")]
 impl TMP_SpriteAsset {
@@ -254,4 +1925,23 @@ impl TMP_SpriteAsset {
         <Self as ITMP_SpriteAssetMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteasset")]
+pub mod prelude {
+    pub use super::ITMP_SpriteAsset;
+    pub use super::ITMP_SpriteAssetMethods;
+    pub use super::TMP_SpriteAsset;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::tm_pro::tmp_asset::ITMP_Asset;
+    #[cfg(feature = "tm_pro-tmp_asset")]
+    pub use crate::tm_pro::tmp_asset::ITMP_AssetMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

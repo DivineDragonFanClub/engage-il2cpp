@@ -29,6 +29,12 @@ mod __types {
         >,
         #[rename(name = "Items")]
         pub items: crate::system::collections::generic::list_1::List_1<T1>,
+        #[rename(name = "MinItem")]
+        pub min_item_field: T2,
+        #[rename(name = "MaxItem")]
+        pub max_item_field: T2,
+        #[rename(name = "ChgItem")]
+        pub chg_item_field: T2,
     }
 }
 
@@ -137,4 +143,20 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
         <Self as IBaseData_3Methods<T0, T1, T2>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-struct_object-basedata_3")]
+pub mod prelude {
+    pub use super::BaseData_3;
+    pub use super::IBaseData_3;
+    pub use super::IBaseData_3Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

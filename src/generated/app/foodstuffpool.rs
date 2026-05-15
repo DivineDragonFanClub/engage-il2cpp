@@ -27,96 +27,1123 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-foodstuffpool")]
-#[::unity2::methods]
-impl FoodstuffPool {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FoodstuffPool_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_foodstuffs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetFoodstuffs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetFoodstuffs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_foodstuffs(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_foodstuffs::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_foodstuffs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetNormalFoodstuffs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalFoodstuffs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_foodstuffs(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normal_foodstuffs::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_foodstuff_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetNormalFoodstuffCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalFoodstuffCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_foodstuff_count(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_normal_foodstuff_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rare_foodstuff {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetRareFoodstuff",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetRareFoodstuff",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rare_foodstuff(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::foodstuffdata::FoodstuffData {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::foodstuffdata::FoodstuffData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rare_foodstuff::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: FoodstuffPool,
+        food: crate::app::fooddata::FoodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::fooddata::FoodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, food, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "get_TypeCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "get_TypeCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_type_count(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_type_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_include_raise_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "IsIncludeRaiseReliance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "IsIncludeRaiseReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_include_raise_reliance(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_include_raise_reliance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "Count",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn count(
+        this: FoodstuffPool,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_count::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_count_except_for_raise_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "CountExceptForRaiseReliance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "CountExceptForRaiseReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn count_except_for_raise_reliance(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_count_except_for_raise_reliance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_add_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "CanAddItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "CanAddItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_add_item(
+        this: FoodstuffPool,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_add_item::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "TryAddItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "TryAddItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_item(
+        this: FoodstuffPool,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_item::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_remove_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "TryRemoveItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "TryRemoveItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_remove_item(
+        this: FoodstuffPool,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_remove_item::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_remove_last_normal_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "TryRemoveLastNormalItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "TryRemoveLastNormalItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_remove_last_normal_item(
+        this: FoodstuffPool,
+        removed_data: *mut crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            *mut crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_remove_last_normal_item::get_offset() as isize),
+        );
+        inner(this, removed_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_remove_rare_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "TryRemoveRareItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "TryRemoveRareItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_remove_rare_item(
+        this: FoodstuffPool,
+        removed_data: *mut crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            *mut crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_remove_rare_item::get_offset() as isize),
+        );
+        inner(this, removed_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_foodstuff_and_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetNormalFoodstuffAndCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalFoodstuffAndCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_foodstuff_and_count(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::foodstuffdata::FoodstuffData,
+        i32,
+    > {
+        let inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: foodstuffdata :: FoodstuffData , i32 > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_normal_foodstuff_and_count :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_foodstuff_most_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "GetNormalFoodstuffMostCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalFoodstuffMostCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_foodstuff_most_count(
+        this: FoodstuffPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_normal_foodstuff_most_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_accept {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type(),
+                <*mut crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                "IsAccept",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    "IsAccept",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_accept(
+        this: FoodstuffPool,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        accept_data: *mut crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            FoodstuffPool,
+            crate::app::foodstuffdata::FoodstuffData,
+            *mut crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_accept::get_offset() as isize),
+        );
+        inner(this, data, accept_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffPool as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffPool as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: FoodstuffPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FoodstuffPool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-foodstuffpool")]
+pub trait IFoodstuffPoolMethods: IFoodstuffPool {
     #[doc = "`GetFoodstuffs()` overload"]
-    #[method(name = "GetFoodstuffs", args = 0)]
-    pub fn get_foodstuffs(self) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>;
-
+    fn get_foodstuffs(self) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_foodstuffs(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`GetNormalFoodstuffs()` overload"]
-    #[method(name = "GetNormalFoodstuffs", args = 0)]
-    pub fn get_normal_foodstuffs(self)
-        -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>;
-
+    fn get_normal_foodstuffs(self) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_normal_foodstuffs(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNormalFoodstuffCount()` overload"]
-    #[method(name = "GetNormalFoodstuffCount", args = 0)]
-    pub fn get_normal_foodstuff_count(self) -> i32;
-
+    fn get_normal_foodstuff_count(self) -> i32 {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_normal_foodstuff_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetRareFoodstuff()` overload"]
-    #[method(name = "GetRareFoodstuff", args = 0)]
-    pub fn get_rare_foodstuff(self) -> crate::app::foodstuffdata::FoodstuffData;
-
+    fn get_rare_foodstuff(self) -> crate::app::foodstuffdata::FoodstuffData {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_rare_foodstuff(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`Reset(crate::app::fooddata::FoodData)` overload"]
-    #[method(name = "Reset", args = 1)]
-    pub fn reset(self, food: crate::app::fooddata::FoodData) -> ();
-
+    fn reset(self, food: impl ::core::convert::Into<crate::app::fooddata::FoodData>) -> () {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::reset(
+                __receiver,
+                ::core::convert::Into::into(food),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_TypeCount()` overload"]
-    #[method(name = "get_TypeCount", args = 0)]
-    pub fn get_type_count(self) -> i32;
-
+    fn get_type_count(self) -> i32 {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_type_count(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`IsIncludeRaiseReliance()` overload"]
-    #[method(name = "IsIncludeRaiseReliance", args = 0)]
-    pub fn is_include_raise_reliance(self) -> bool;
-
+    fn is_include_raise_reliance(self) -> bool {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::is_include_raise_reliance(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Count(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "Count", args = 1)]
-    pub fn count(self, data: crate::app::foodstuffdata::FoodstuffData) -> i32;
-
+    fn count(
+        self,
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::count(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CountExceptForRaiseReliance()` overload"]
-    #[method(name = "CountExceptForRaiseReliance", args = 0)]
-    pub fn count_except_for_raise_reliance(self) -> i32;
-
+    fn count_except_for_raise_reliance(self) -> i32 {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::count_except_for_raise_reliance(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CanAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "CanAddItem", args = 1)]
-    pub fn can_add_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
-
+    fn can_add_item(
+        self,
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::can_add_item(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`TryAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "TryAddItem", args = 1)]
-    pub fn try_add_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
-
+    fn try_add_item(
+        self,
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::try_add_item(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`TryRemoveItem(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "TryRemoveItem", args = 1)]
-    pub fn try_remove_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
-
-    #[doc = "`TryRemoveLastNormalItem(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "TryRemoveLastNormalItem", args = 1)]
-    pub fn try_remove_last_normal_item(
+    fn try_remove_item(
         self,
-        removed_data: crate::app::foodstuffdata::FoodstuffData,
-    ) -> bool;
-
-    #[doc = "`TryRemoveRareItem(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "TryRemoveRareItem", args = 1)]
-    pub fn try_remove_rare_item(
-        self,
-        removed_data: crate::app::foodstuffdata::FoodstuffData,
-    ) -> bool;
-
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::try_remove_item(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryRemoveLastNormalItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"]
+    fn try_remove_last_normal_item(self) -> (bool, crate::app::foodstuffdata::FoodstuffData) {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::app::foodstuffdata::FoodstuffData>::uninit();
+            let __ret = {
+                __FoodstuffPool_unity2_raw::try_remove_last_normal_item(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryRemoveRareItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"]
+    fn try_remove_rare_item(self) -> (bool, crate::app::foodstuffdata::FoodstuffData) {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::app::foodstuffdata::FoodstuffData>::uninit();
+            let __ret = {
+                __FoodstuffPool_unity2_raw::try_remove_rare_item(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
     #[doc = "`GetNormalFoodstuffAndCount()` overload"]
-    #[method(name = "GetNormalFoodstuffAndCount", args = 0)]
-    pub fn get_normal_foodstuff_and_count(
+    fn get_normal_foodstuff_and_count(
         self,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         crate::app::foodstuffdata::FoodstuffData,
         i32,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_normal_foodstuff_and_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNormalFoodstuffMostCount()` overload"]
-    #[method(name = "GetNormalFoodstuffMostCount", args = 0)]
-    pub fn get_normal_foodstuff_most_count(self) -> i32;
-
-    #[doc = "`IsAccept(crate::app::foodstuffdata::FoodstuffData, crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "IsAccept", args = 2)]
-    pub fn is_accept(
+    fn get_normal_foodstuff_most_count(self) -> i32 {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::get_normal_foodstuff_most_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsAccept(crate::app::foodstuffdata::FoodstuffData, *mutcrate::app::foodstuffdata::FoodstuffData)` overload"]
+    fn is_accept(
         self,
-        data: crate::app::foodstuffdata::FoodstuffData,
-        accept_data: crate::app::foodstuffdata::FoodstuffData,
-    ) -> bool;
-
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> (bool, crate::app::foodstuffdata::FoodstuffData) {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::app::foodstuffdata::FoodstuffData>::uninit();
+            let __ret = {
+                __FoodstuffPool_unity2_raw::is_accept(
+                    __receiver,
+                    ::core::convert::Into::into(data),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FoodstuffPool as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "app-foodstuffpool")]
+impl<__T: IFoodstuffPool> IFoodstuffPoolMethods for __T {}
 
 #[cfg(feature = "app-foodstuffpool")]
 impl FoodstuffPool {
@@ -132,4 +1159,17 @@ impl FoodstuffPool {
         <Self as IFoodstuffPoolMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-foodstuffpool")]
+pub mod prelude {
+    pub use super::FoodstuffPool;
+    pub use super::IFoodstuffPool;
+    pub use super::IFoodstuffPoolMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

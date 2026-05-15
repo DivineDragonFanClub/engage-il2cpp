@@ -17,9 +17,78 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-animassetex")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimAssetEx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::animasset::AnimAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimAssetEx as ::unity2::ClassIdentity>::class(),
+                "Exists",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimAssetEx as ::unity2::ClassIdentity>::NAME,
+                    "Exists",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exists(
+        aa: crate::combat::animasset::AnimAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::animasset::AnimAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_exists::get_offset() as isize),
+        );
+        inner(aa, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-animassetex")]
 impl AnimAssetEx {
     #[doc = "`Exists(crate::combat::animasset::AnimAsset)` overload"]
-    #[method(name = "Exists", args = 1)]
-    pub fn exists(aa: crate::combat::animasset::AnimAsset) -> bool;
+    pub fn exists(aa: impl ::core::convert::Into<crate::combat::animasset::AnimAsset>) -> bool {
+        unsafe {
+            __AnimAssetEx_unity2_raw::exists(
+                ::core::convert::Into::into(aa),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-animassetex")]
+pub mod prelude {
+    pub use super::AnimAssetEx;
+    pub use super::IAnimAssetEx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

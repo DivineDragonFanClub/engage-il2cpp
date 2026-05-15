@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Quantizer")]
-    #[parent(crate::system::object::Object)]
-    pub struct Quantizer {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer_MajorAxis.md"))]
     #[repr(C)]
     #[derive(
@@ -65,23 +60,214 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Quantizer")]
+    #[parent(crate::system::object::Object)]
+    pub struct Quantizer {}
 }
 
 #[cfg(feature = "combat-quantizer-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-quantizer")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Quantizer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_f_ito_vec3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Quantizer as ::unity2::ClassIdentity>::class(),
+                "FItoVec3",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Quantizer as ::unity2::ClassIdentity>::NAME,
+                    "FItoVec3",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn f_ito_vec3(
+        f: f32,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_f_ito_vec3::get_offset() as isize),
+        );
+        inner(f, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fx_zto_i {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Quantizer as ::unity2::ClassIdentity>::class(),
+                "FXZtoI",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Quantizer as ::unity2::ClassIdentity>::NAME,
+                    "FXZtoI",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fx_zto_i(
+        xz: crate::combat::fxz::FXZ,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fx_zto_i::get_offset() as isize),
+            );
+        inner(xz, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ito_fxz {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Quantizer as ::unity2::ClassIdentity>::class(),
+                "ItoFXZ",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Quantizer as ::unity2::ClassIdentity>::NAME,
+                    "ItoFXZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ito_fxz(
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ito_fxz::get_offset() as isize),
+            );
+        inner(i, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-quantizer")]
 impl Quantizer {
     #[doc = "`FItoVec3(f32, i32)` overload"]
-    #[method(name = "FItoVec3", args = 2)]
-    pub fn f_ito_vec3(f: f32, i: i32) -> crate::unity_engine::vector3::Vector3;
-
+    pub fn f_ito_vec3(
+        f: impl ::core::convert::Into<f32>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Quantizer_unity2_raw::f_ito_vec3(
+                ::core::convert::Into::into(f),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`FXZtoI(crate::combat::fxz::FXZ)` overload"]
-    #[method(name = "FXZtoI", args = 1)]
-    pub fn fx_zto_i(xz: crate::combat::fxz::FXZ) -> i32;
-
+    pub fn fx_zto_i(xz: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> i32 {
+        unsafe {
+            __Quantizer_unity2_raw::fx_zto_i(
+                ::core::convert::Into::into(xz),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ItoFXZ(i32)` overload"]
-    #[method(name = "ItoFXZ", args = 1)]
-    pub fn ito_fxz(i: i32) -> crate::combat::fxz::FXZ;
+    pub fn ito_fxz(i: impl ::core::convert::Into<i32>) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __Quantizer_unity2_raw::ito_fxz(
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-quantizer")]
+pub mod prelude {
+    pub use super::IQuantizer;
+    pub use super::Quantizer;
+    pub use super::Quantizer_MajorAxis;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -18,67 +18,677 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-graphicssettings")]
-#[::unity2::methods]
-impl GraphicsSettings {
-    #[doc = "`get_lightsUseLinearIntensity()` overload"]
-    #[method(name = "get_lightsUseLinearIntensity", args = 0)]
-    pub fn get_lights_use_linear_intensity() -> bool;
-
-    #[doc = "`set_lightsUseLinearIntensity(bool)` overload"]
-    #[method(name = "set_lightsUseLinearIntensity", args = 1)]
-    pub fn set_lights_use_linear_intensity(value: bool) -> ();
-
-    #[doc = "`set_useScriptableRenderPipelineBatching(bool)` overload"]
-    #[method(name = "set_useScriptableRenderPipelineBatching", args = 1)]
-    pub fn set_use_scriptable_render_pipeline_batching(value: bool) -> ();
-
-    #[doc = "`HasShaderDefine(crate::unity_engine::rendering::graphicstier::GraphicsTier, crate::unity_engine::rendering::builtinshaderdefine::BuiltinShaderDefine)` overload"]
-    #[method(name = "HasShaderDefine", args = 2)]
-    pub fn has_shader_define(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GraphicsSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lights_use_linear_intensity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_lightsUseLinearIntensity",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_lightsUseLinearIntensity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lights_use_linear_intensity(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_lights_use_linear_intensity::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_lights_use_linear_intensity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "set_lightsUseLinearIntensity",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_lightsUseLinearIntensity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_lights_use_linear_intensity(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_lights_use_linear_intensity::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_scriptable_render_pipeline_batching {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "set_useScriptableRenderPipelineBatching",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_useScriptableRenderPipelineBatching",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_scriptable_render_pipeline_batching(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_set_use_scriptable_render_pipeline_batching::get_offset() as isize,
+                ),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_shader_define {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: builtinshaderdefine :: BuiltinShaderDefine as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "HasShaderDefine",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "HasShaderDefine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_shader_define(
         tier: crate::unity_engine::rendering::graphicstier::GraphicsTier,
         define_hash: crate::unity_engine::rendering::builtinshaderdefine::BuiltinShaderDefine,
-    ) -> bool;
-
-    #[doc = "`get_INTERNAL_currentRenderPipeline()` overload"]
-    #[method(name = "get_INTERNAL_currentRenderPipeline", args = 0)]
-    pub fn get_internal_current_render_pipeline(
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
-
-    #[doc = "`get_currentRenderPipeline()` overload"]
-    #[method(name = "get_currentRenderPipeline", args = 0)]
-    pub fn get_current_render_pipeline(
-    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset;
-
-    #[doc = "`get_renderPipelineAsset()` overload"]
-    #[method(name = "get_renderPipelineAsset", args = 0)]
-    pub fn get_render_pipeline_asset(
-    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset;
-
-    #[doc = "`set_renderPipelineAsset(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)` overload"]
-    #[method(name = "set_renderPipelineAsset", args = 1)]
-    pub fn set_render_pipeline_asset(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::graphicstier::GraphicsTier,
+            crate::unity_engine::rendering::builtinshaderdefine::BuiltinShaderDefine,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_shader_define::get_offset() as isize),
+        );
+        inner(tier, define_hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_internal_current_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_INTERNAL_currentRenderPipeline",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_INTERNAL_currentRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_internal_current_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_internal_current_render_pipeline::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_currentRenderPipeline",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_currentRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_current_render_pipeline :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_pipeline_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_renderPipelineAsset",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_renderPipelineAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_pipeline_asset(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_render_pipeline_asset :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_pipeline_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "set_renderPipelineAsset",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_renderPipelineAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_pipeline_asset(
         value: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
-    ) -> ();
-
-    #[doc = "`get_INTERNAL_defaultRenderPipeline()` overload"]
-    #[method(name = "get_INTERNAL_defaultRenderPipeline", args = 0)]
-    pub fn get_internal_default_render_pipeline(
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
-
-    #[doc = "`set_INTERNAL_defaultRenderPipeline(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
-    #[method(name = "set_INTERNAL_defaultRenderPipeline", args = 1)]
-    pub fn set_internal_default_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_pipeline_asset::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_internal_default_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_INTERNAL_defaultRenderPipeline",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_INTERNAL_defaultRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_internal_default_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_internal_default_render_pipeline::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_internal_default_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "set_INTERNAL_defaultRenderPipeline",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_INTERNAL_defaultRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_internal_default_render_pipeline(
         value: crate::unity_engine::scriptableobject::ScriptableObject,
-    ) -> ();
-
-    #[doc = "`get_defaultRenderPipeline()` overload"]
-    #[method(name = "get_defaultRenderPipeline", args = 0)]
-    pub fn get_default_render_pipeline(
-    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset;
-
-    #[doc = "`set_defaultRenderPipeline(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)` overload"]
-    #[method(name = "set_defaultRenderPipeline", args = 1)]
-    pub fn set_default_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::scriptableobject::ScriptableObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_internal_default_render_pipeline::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "get_defaultRenderPipeline",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_defaultRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_render_pipeline(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_render_pipeline :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default_render_pipeline {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsSettings as ::unity2::ClassIdentity>::class(),
+                "set_defaultRenderPipeline",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_defaultRenderPipeline",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_default_render_pipeline(
         value: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_default_render_pipeline::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-graphicssettings")]
+impl GraphicsSettings {
+    #[doc = "`get_lightsUseLinearIntensity()` overload"]
+    pub fn get_lights_use_linear_intensity() -> bool {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_lights_use_linear_intensity(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_lightsUseLinearIntensity(bool)` overload"]
+    pub fn set_lights_use_linear_intensity(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __GraphicsSettings_unity2_raw::set_lights_use_linear_intensity(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_useScriptableRenderPipelineBatching(bool)` overload"]
+    pub fn set_use_scriptable_render_pipeline_batching(
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GraphicsSettings_unity2_raw::set_use_scriptable_render_pipeline_batching(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasShaderDefine(crate::unity_engine::rendering::graphicstier::GraphicsTier, crate::unity_engine::rendering::builtinshaderdefine::BuiltinShaderDefine)` overload"]
+    pub fn has_shader_define(
+        tier: impl ::core::convert::Into<crate::unity_engine::rendering::graphicstier::GraphicsTier>,
+        define_hash: impl ::core::convert::Into<
+            crate::unity_engine::rendering::builtinshaderdefine::BuiltinShaderDefine,
+        >,
+    ) -> bool {
+        unsafe {
+            __GraphicsSettings_unity2_raw::has_shader_define(
+                ::core::convert::Into::into(tier),
+                ::core::convert::Into::into(define_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_INTERNAL_currentRenderPipeline()` overload"]
+    pub fn get_internal_current_render_pipeline(
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_internal_current_render_pipeline(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_currentRenderPipeline()` overload"]
+    pub fn get_current_render_pipeline(
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_current_render_pipeline(::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderPipelineAsset()` overload"]
+    pub fn get_render_pipeline_asset(
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_render_pipeline_asset(::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_renderPipelineAsset(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)` overload"]
+    pub fn set_render_pipeline_asset(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+        >,
+    ) -> () {
+        unsafe {
+            __GraphicsSettings_unity2_raw::set_render_pipeline_asset(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_INTERNAL_defaultRenderPipeline()` overload"]
+    pub fn get_internal_default_render_pipeline(
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_internal_default_render_pipeline(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_INTERNAL_defaultRenderPipeline(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
+    pub fn set_internal_default_render_pipeline(
+        value: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
+    ) -> () {
+        unsafe {
+            __GraphicsSettings_unity2_raw::set_internal_default_render_pipeline(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_defaultRenderPipeline()` overload"]
+    pub fn get_default_render_pipeline(
+    ) -> crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset {
+        unsafe {
+            __GraphicsSettings_unity2_raw::get_default_render_pipeline(::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_defaultRenderPipeline(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)` overload"]
+    pub fn set_default_render_pipeline(
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+        >,
+    ) -> () {
+        unsafe {
+            __GraphicsSettings_unity2_raw::set_default_render_pipeline(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-graphicssettings")]
+pub mod prelude {
+    pub use super::GraphicsSettings;
+    pub use super::IGraphicsSettings;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

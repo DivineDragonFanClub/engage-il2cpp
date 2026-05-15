@@ -39,42 +39,447 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MeshGenerationResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "get_MeshId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "get_MeshId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh_id(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::xr::meshid::MeshId {
+        let inner: extern "C" fn(
+            MeshGenerationResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::xr::meshid::MeshId = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "get_Mesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "get_Mesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            MeshGenerationResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh_collider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "get_MeshCollider",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "get_MeshCollider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh_collider(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshcollider::MeshCollider {
+        let inner: extern "C" fn(
+            MeshGenerationResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::meshcollider::MeshCollider = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh_collider::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "get_Status",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "get_Status",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_status(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus {
+        let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_status :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attributes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "get_Attributes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "get_Attributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_attributes(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes {
+        let inner : extern "C" fn (MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_attributes :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: MeshGenerationResult,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MeshGenerationResult,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
+        this: MeshGenerationResult,
+        other: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MeshGenerationResult,
+            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshGenerationResult as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MeshGenerationResult as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: MeshGenerationResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MeshGenerationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
 impl MeshGenerationResult {
     #[doc = "`get_MeshId()` overload"]
-    #[method(name = "get_MeshId", args = 0)]
-    pub fn get_mesh_id(self) -> crate::unity_engine::xr::meshid::MeshId;
-
+    pub fn get_mesh_id(self) -> crate::unity_engine::xr::meshid::MeshId {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::get_mesh_id(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_Mesh()` overload"]
-    #[method(name = "get_Mesh", args = 0)]
-    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
+    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe { __MeshGenerationResult_unity2_raw::get_mesh(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_MeshCollider()` overload"]
-    #[method(name = "get_MeshCollider", args = 0)]
-    pub fn get_mesh_collider(self) -> crate::unity_engine::meshcollider::MeshCollider;
-
+    pub fn get_mesh_collider(self) -> crate::unity_engine::meshcollider::MeshCollider {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::get_mesh_collider(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_Status()` overload"]
-    #[method(name = "get_Status", args = 0)]
-    pub fn get_status(self) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus;
-
+    pub fn get_status(self) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus {
+        unsafe { __MeshGenerationResult_unity2_raw::get_status(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_Attributes()` overload"]
-    #[method(name = "get_Attributes", args = 0)]
     pub fn get_attributes(
         self,
-    ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes;
-
+    ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::get_attributes(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, obj: crate::system::object::Object) -> bool;
-
+    pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Equals(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)` overload"]
-    #[method(name = "Equals", args = 1)]
     pub fn equals_2(
         self,
-        other: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
-    ) -> bool;
-
+        other: impl ::core::convert::Into<
+            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+        >,
+    ) -> bool {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::equals_2(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
+    pub fn get_hash_code(self) -> i32 {
+        unsafe {
+            __MeshGenerationResult_unity2_raw::get_hash_code(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
+pub mod prelude {
+    pub use super::MeshGenerationResult;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

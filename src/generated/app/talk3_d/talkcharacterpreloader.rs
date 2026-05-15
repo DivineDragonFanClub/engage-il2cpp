@@ -17,20 +17,190 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkCharacterPreLoader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pre_load_all_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterPreLoader as ::unity2::ClassIdentity>::class(),
+                "PreLoadAllCharacter",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkCharacterPreLoader as ::unity2::ClassIdentity>::NAME,
+                    "PreLoadAllCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pre_load_all_character(
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pre_load_all_character::get_offset() as isize),
+            );
+        inner(mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pre_load_all_charactor_direct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::talk3_d::talkptr::TalkPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterPreLoader as ::unity2::ClassIdentity>::class(),
+                "PreLoadAllCharactorDirect",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkCharacterPreLoader as ::unity2::ClassIdentity>::NAME,
+                    "PreLoadAllCharactorDirect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pre_load_all_charactor_direct(
+        talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::talk3_d::talkptr::TalkPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pre_load_all_charactor_direct::get_offset() as isize),
+        );
+        inner(talk_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterPreLoader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkCharacterPreLoader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkCharacterPreLoader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkCharacterPreLoader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
 impl TalkCharacterPreLoader {
     #[doc = "`PreLoadAllCharacter(::unity2::Il2CppString)` overload"]
-    #[method(name = "PreLoadAllCharacter", args = 1)]
-    pub fn pre_load_all_character(mid: ::unity2::Il2CppString) -> ();
-
+    pub fn pre_load_all_character(mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __TalkCharacterPreLoader_unity2_raw::pre_load_all_character(
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`PreLoadAllCharactorDirect(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "PreLoadAllCharactorDirect", args = 1)]
-    pub fn pre_load_all_charactor_direct(talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn pre_load_all_charactor_direct(
+        talk_ptr: impl ::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>,
+    ) -> () {
+        unsafe {
+            __TalkCharacterPreLoader_unity2_raw::pre_load_all_charactor_direct(
+                ::core::convert::Into::into(talk_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+pub trait ITalkCharacterPreLoaderMethods: ITalkCharacterPreLoader {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TalkCharacterPreLoader as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterPreLoader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+impl<__T: ITalkCharacterPreLoader> ITalkCharacterPreLoaderMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
 impl TalkCharacterPreLoader {
@@ -46,4 +216,14 @@ impl TalkCharacterPreLoader {
         <Self as ITalkCharacterPreLoaderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+pub mod prelude {
+    pub use super::ITalkCharacterPreLoader;
+    pub use super::ITalkCharacterPreLoaderMethods;
+    pub use super::TalkCharacterPreLoader;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

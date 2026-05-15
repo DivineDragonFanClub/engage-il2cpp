@@ -27,115 +27,1252 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-layoutrebuilder")]
-#[::unity2::methods]
-impl LayoutRebuilder {
-    #[doc = "`Initialize(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, controller: crate::unity_engine::recttransform::RectTransform) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`ReapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "ReapplyDrivenProperties", args = 1)]
-    pub fn reapply_driven_properties(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LayoutRebuilder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(
+        this: LayoutRebuilder,
+        controller: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(this, controller, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reapply_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "ReapplyDrivenProperties",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "ReapplyDrivenProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reapply_driven_properties(
         driven: crate::unity_engine::recttransform::RectTransform,
-    ) -> ();
-
-    #[doc = "`get_transform()` overload"]
-    #[method(name = "get_transform", args = 0)]
-    pub fn get_transform(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`IsDestroyed()` overload"]
-    #[method(name = "IsDestroyed", args = 0)]
-    pub fn is_destroyed(self) -> bool;
-
-    #[doc = "`StripDisabledBehavioursFromList(crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
-    #[method(name = "StripDisabledBehavioursFromList", args = 1)]
-    pub fn strip_disabled_behaviours_from_list(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reapply_driven_properties::get_offset() as isize),
+        );
+        inner(driven, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "get_transform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "get_transform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transform(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_destroyed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "IsDestroyed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "IsDestroyed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_destroyed(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_destroyed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_strip_disabled_behaviours_from_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::component::Component,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "StripDisabledBehavioursFromList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "StripDisabledBehavioursFromList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn strip_disabled_behaviours_from_list(
         components: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::component::Component,
         >,
-    ) -> ();
-
-    #[doc = "`ForceRebuildLayoutImmediate(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "ForceRebuildLayoutImmediate", args = 1)]
-    pub fn force_rebuild_layout_immediate(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_strip_disabled_behaviours_from_list::get_offset() as isize),
+        );
+        inner(components, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_force_rebuild_layout_immediate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "ForceRebuildLayoutImmediate",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "ForceRebuildLayoutImmediate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn force_rebuild_layout_immediate(
         layout_root: crate::unity_engine::recttransform::RectTransform,
-    ) -> ();
-
-    #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    #[method(name = "Rebuild", args = 1)]
-    pub fn rebuild(self, executing: crate::unity_engine::ui::canvasupdate::CanvasUpdate) -> ();
-
-    #[doc = "`PerformLayoutControl(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)` overload"]
-    #[method(name = "PerformLayoutControl", args = 2)]
-    pub fn perform_layout_control(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_force_rebuild_layout_immediate::get_offset() as isize),
+        );
+        inner(layout_root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "Rebuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "Rebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebuild(
+        this: LayoutRebuilder,
+        executing: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            crate::unity_engine::ui::canvasupdate::CanvasUpdate,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rebuild::get_offset() as isize),
+        );
+        inner(this, executing, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_perform_layout_control {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::events::unityaction_1::UnityAction_1<
+                    crate::unity_engine::component::Component,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "PerformLayoutControl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "PerformLayoutControl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn perform_layout_control(
+        this: LayoutRebuilder,
         rect: crate::unity_engine::recttransform::RectTransform,
         action: crate::unity_engine::events::unityaction_1::UnityAction_1<
             crate::unity_engine::component::Component,
         >,
-    ) -> ();
-
-    #[doc = "`PerformLayoutCalculation(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)` overload"]
-    #[method(name = "PerformLayoutCalculation", args = 2)]
-    pub fn perform_layout_calculation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::events::unityaction_1::UnityAction_1<
+                crate::unity_engine::component::Component,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_perform_layout_control::get_offset() as isize),
+        );
+        inner(this, rect, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_perform_layout_calculation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::events::unityaction_1::UnityAction_1<
+                    crate::unity_engine::component::Component,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "PerformLayoutCalculation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "PerformLayoutCalculation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn perform_layout_calculation(
+        this: LayoutRebuilder,
         rect: crate::unity_engine::recttransform::RectTransform,
         action: crate::unity_engine::events::unityaction_1::UnityAction_1<
             crate::unity_engine::component::Component,
         >,
-    ) -> ();
-
-    #[doc = "`MarkLayoutForRebuild(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "MarkLayoutForRebuild", args = 1)]
-    pub fn mark_layout_for_rebuild(rect: crate::unity_engine::recttransform::RectTransform) -> ();
-
-    #[doc = "`ValidController(crate::unity_engine::recttransform::RectTransform, crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
-    #[method(name = "ValidController", args = 2)]
-    pub fn valid_controller(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::events::unityaction_1::UnityAction_1<
+                crate::unity_engine::component::Component,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_perform_layout_calculation::get_offset() as isize),
+        );
+        inner(this, rect, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_layout_for_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "MarkLayoutForRebuild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "MarkLayoutForRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_layout_for_rebuild(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_layout_for_rebuild::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_valid_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::component::Component,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "ValidController",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "ValidController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn valid_controller(
         layout_root: crate::unity_engine::recttransform::RectTransform,
         comps: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::component::Component,
         >,
-    ) -> bool;
-
-    #[doc = "`MarkLayoutRootForRebuild(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "MarkLayoutRootForRebuild", args = 1)]
-    pub fn mark_layout_root_for_rebuild(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_valid_controller::get_offset() as isize),
+        );
+        inner(layout_root, comps, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_layout_root_for_rebuild {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "MarkLayoutRootForRebuild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "MarkLayoutRootForRebuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_layout_root_for_rebuild(
         controller: crate::unity_engine::recttransform::RectTransform,
-    ) -> ();
-
-    #[doc = "`LayoutComplete()` overload"]
-    #[method(name = "LayoutComplete", args = 0)]
-    pub fn layout_complete(self) -> ();
-
-    #[doc = "`GraphicUpdateComplete()` overload"]
-    #[method(name = "GraphicUpdateComplete", args = 0)]
-    pub fn graphic_update_complete(self) -> ();
-
-    #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, obj: crate::system::object::Object) -> bool;
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_layout_root_for_rebuild::get_offset() as isize),
+        );
+        inner(controller, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_layout_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "LayoutComplete",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "LayoutComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn layout_complete(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_layout_complete::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_graphic_update_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "GraphicUpdateComplete",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "GraphicUpdateComplete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn graphic_update_complete(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_graphic_update_complete::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: LayoutRebuilder,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            LayoutRebuilder,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutRebuilder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutRebuilder as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LayoutRebuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-layoutrebuilder")]
+impl LayoutRebuilder {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __LayoutRebuilder_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`ReapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform)` overload"]
+    pub fn reapply_driven_properties(
+        driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::reapply_driven_properties(
+                ::core::convert::Into::into(driven),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StripDisabledBehavioursFromList(crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
+    pub fn strip_disabled_behaviours_from_list(
+        components: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::strip_disabled_behaviours_from_list(
+                ::core::convert::Into::into(components),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ForceRebuildLayoutImmediate(crate::unity_engine::recttransform::RectTransform)` overload"]
+    pub fn force_rebuild_layout_immediate(
+        layout_root: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::force_rebuild_layout_immediate(
+                ::core::convert::Into::into(layout_root),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkLayoutForRebuild(crate::unity_engine::recttransform::RectTransform)` overload"]
+    pub fn mark_layout_for_rebuild(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::mark_layout_for_rebuild(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidController(crate::unity_engine::recttransform::RectTransform, crate::system::collections::generic::list_1::List_1<crate::unity_engine::component::Component>)` overload"]
+    pub fn valid_controller(
+        layout_root: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        comps: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::component::Component,
+            >,
+        >,
+    ) -> bool {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::valid_controller(
+                ::core::convert::Into::into(layout_root),
+                ::core::convert::Into::into(comps),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkLayoutRootForRebuild(crate::unity_engine::recttransform::RectTransform)` overload"]
+    pub fn mark_layout_root_for_rebuild(
+        controller: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            __LayoutRebuilder_unity2_raw::mark_layout_root_for_rebuild(
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-layoutrebuilder")]
+pub trait ILayoutRebuilderMethods: ILayoutRebuilder {
+    #[doc = "`Initialize(crate::unity_engine::recttransform::RectTransform)` overload"]
+    fn initialize(
+        self,
+        controller: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::initialize(
+                __receiver,
+                ::core::convert::Into::into(controller),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_transform()` overload"]
+    fn get_transform(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::get_transform(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsDestroyed()` overload"]
+    fn is_destroyed(self) -> bool {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::is_destroyed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
+    fn rebuild(
+        self,
+        executing: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>,
+    ) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::rebuild(
+                __receiver,
+                ::core::convert::Into::into(executing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PerformLayoutControl(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)` overload"]
+    fn perform_layout_control(
+        self,
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        action: impl ::core::convert::Into<
+            crate::unity_engine::events::unityaction_1::UnityAction_1<
+                crate::unity_engine::component::Component,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::perform_layout_control(
+                __receiver,
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PerformLayoutCalculation(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)` overload"]
+    fn perform_layout_calculation(
+        self,
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        action: impl ::core::convert::Into<
+            crate::unity_engine::events::unityaction_1::UnityAction_1<
+                crate::unity_engine::component::Component,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::perform_layout_calculation(
+                __receiver,
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LayoutComplete()` overload"]
+    fn layout_complete(self) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GraphicUpdateComplete()` overload"]
+    fn graphic_update_complete(self) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::graphic_update_complete(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHashCode()` overload"]
+    fn get_hash_code(self) -> i32 {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::equals(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::to_string(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <LayoutRebuilder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayoutRebuilder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-layoutrebuilder")]
+impl<__T: ILayoutRebuilder> ILayoutRebuilderMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-layoutrebuilder")]
 impl LayoutRebuilder {
@@ -151,4 +1288,14 @@ impl LayoutRebuilder {
         <Self as ILayoutRebuilderMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-layoutrebuilder")]
+pub mod prelude {
+    pub use super::ILayoutRebuilder;
+    pub use super::ILayoutRebuilderMethods;
+    pub use super::LayoutRebuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

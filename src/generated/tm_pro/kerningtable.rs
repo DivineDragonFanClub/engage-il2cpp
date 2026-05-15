@@ -22,42 +22,465 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-kerningtable")]
-#[::unity2::methods]
-impl KerningTable {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`AddKerningPair()` overload"]
-    #[method(name = "AddKerningPair", args = 0)]
-    pub fn add_kerning_pair(self) -> ();
-
-    #[doc = "`AddKerningPair(u32, u32, f32)` overload"]
-    #[method(name = "AddKerningPair", args = 3)]
-    pub fn add_kerning_pair_2(self, first: u32, second: u32, offset: f32) -> i32;
-
-    #[doc = "`AddGlyphPairAdjustmentRecord(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
-    #[method(name = "AddGlyphPairAdjustmentRecord", args = 4)]
-    pub fn add_glyph_pair_adjustment_record(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __KerningTable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: KerningTable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(KerningTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_kerning_pair {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "AddKerningPair",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "AddKerningPair",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_kerning_pair(
+        this: KerningTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_kerning_pair::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_kerning_pair_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "AddKerningPair",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "AddKerningPair",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_kerning_pair_2(
+        this: KerningTable,
+        first: u32,
+        second: u32,
+        offset: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(KerningTable, u32, u32, f32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_kerning_pair_2::get_offset() as isize),
+            );
+        inner(this, first, second, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_glyph_pair_adjustment_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "AddGlyphPairAdjustmentRecord",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "AddGlyphPairAdjustmentRecord",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_glyph_pair_adjustment_record(
+        this: KerningTable,
         first: u32,
         first_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
         second: u32,
         second_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-    ) -> i32;
-
-    #[doc = "`RemoveKerningPair(i32, i32)` overload"]
-    #[method(name = "RemoveKerningPair", args = 2)]
-    pub fn remove_kerning_pair(self, left: i32, right: i32) -> ();
-
-    #[doc = "`RemoveKerningPair(i32)` overload"]
-    #[method(name = "RemoveKerningPair", args = 1)]
-    pub fn remove_kerning_pair_2(self, index: i32) -> ();
-
-    #[doc = "`SortKerningPairs()` overload"]
-    #[method(name = "SortKerningPairs", args = 0)]
-    pub fn sort_kerning_pairs(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            KerningTable,
+            u32,
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+            u32,
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_glyph_pair_adjustment_record::get_offset() as isize),
+        );
+        inner(
+            this,
+            first,
+            first_adjustments,
+            second,
+            second_adjustments,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_kerning_pair {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "RemoveKerningPair",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "RemoveKerningPair",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_kerning_pair(
+        this: KerningTable,
+        left: i32,
+        right: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningTable, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_kerning_pair::get_offset() as isize),
+            );
+        inner(this, left, right, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_kerning_pair_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "RemoveKerningPair",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "RemoveKerningPair",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_kerning_pair_2(
+        this: KerningTable,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningTable, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_kerning_pair_2::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_kerning_pairs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <KerningTable as ::unity2::ClassIdentity>::class(),
+                "SortKerningPairs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <KerningTable as ::unity2::ClassIdentity>::NAME,
+                    "SortKerningPairs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_kerning_pairs(
+        this: KerningTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(KerningTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_kerning_pairs::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-kerningtable")]
+pub trait IKerningTableMethods: IKerningTable {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddKerningPair()` overload"]
+    fn add_kerning_pair(self) -> () {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::add_kerning_pair(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddKerningPair(u32, u32, f32)` overload"]
+    fn add_kerning_pair_2(
+        self,
+        first: impl ::core::convert::Into<u32>,
+        second: impl ::core::convert::Into<u32>,
+        offset: impl ::core::convert::Into<f32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::add_kerning_pair_2(
+                __receiver,
+                ::core::convert::Into::into(first),
+                ::core::convert::Into::into(second),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGlyphPairAdjustmentRecord(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
+    fn add_glyph_pair_adjustment_record(
+        self,
+        first: impl ::core::convert::Into<u32>,
+        first_adjustments: impl ::core::convert::Into<
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        >,
+        second: impl ::core::convert::Into<u32>,
+        second_adjustments: impl ::core::convert::Into<
+            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::add_glyph_pair_adjustment_record(
+                __receiver,
+                ::core::convert::Into::into(first),
+                ::core::convert::Into::into(first_adjustments),
+                ::core::convert::Into::into(second),
+                ::core::convert::Into::into(second_adjustments),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RemoveKerningPair(i32, i32)` overload"]
+    fn remove_kerning_pair(
+        self,
+        left: impl ::core::convert::Into<i32>,
+        right: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::remove_kerning_pair(
+                __receiver,
+                ::core::convert::Into::into(left),
+                ::core::convert::Into::into(right),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RemoveKerningPair(i32)` overload"]
+    fn remove_kerning_pair_2(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::remove_kerning_pair_2(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortKerningPairs()` overload"]
+    fn sort_kerning_pairs(self) -> () {
+        unsafe {
+            let __receiver = <KerningTable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __KerningTable_unity2_raw::sort_kerning_pairs(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-kerningtable")]
+impl<__T: IKerningTable> IKerningTableMethods for __T {}
 
 #[cfg(feature = "tm_pro-kerningtable")]
 impl KerningTable {
@@ -73,4 +496,14 @@ impl KerningTable {
         <Self as IKerningTableMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-kerningtable")]
+pub mod prelude {
+    pub use super::IKerningTable;
+    pub use super::IKerningTableMethods;
+    pub use super::KerningTable;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

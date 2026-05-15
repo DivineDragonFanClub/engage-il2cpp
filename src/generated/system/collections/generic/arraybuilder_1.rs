@@ -79,3 +79,14 @@ impl<T0: ::unity2::ClassIdentity> ArrayBuilder_1<T0> {
     #[method(name = "EnsureCapacity", args = 1)]
     pub fn ensure_capacity(self, minimum: i32) -> ();
 }
+
+#[cfg(feature = "system-collections-generic-arraybuilder_1")]
+pub mod prelude {
+    pub use super::ArrayBuilder_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

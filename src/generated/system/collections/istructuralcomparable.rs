@@ -15,13 +15,93 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-istructuralcomparable")]
-#[::unity2::methods]
-impl IStructuralComparable {
-    #[doc = "`CompareTo(crate::system::object::Object, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "CompareTo", args = 2)]
-    pub fn compare_to(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IStructuralComparable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IStructuralComparable as ::unity2::ClassIdentity>::class(),
+                "CompareTo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IStructuralComparable as ::unity2::ClassIdentity>::NAME,
+                    "CompareTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_to(
+        this: IStructuralComparable,
         other: crate::system::object::Object,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            IStructuralComparable,
+            crate::system::object::Object,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_to::get_offset() as isize),
+        );
+        inner(this, other, comparer, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-istructuralcomparable")]
+pub trait IIStructuralComparableMethods: IIStructuralComparable {
+    #[doc = "`CompareTo(crate::system::object::Object, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    fn compare_to(
+        self,
+        other: impl ::core::convert::Into<crate::system::object::Object>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <IStructuralComparable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IStructuralComparable_unity2_raw::compare_to(
+                __receiver,
+                ::core::convert::Into::into(other),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-istructuralcomparable")]
+impl<__T: IIStructuralComparable> IIStructuralComparableMethods for __T {}
+
+#[cfg(feature = "system-collections-istructuralcomparable")]
+pub mod prelude {
+    pub use super::IIStructuralComparable;
+    pub use super::IIStructuralComparableMethods;
+    pub use super::IStructuralComparable;
 }

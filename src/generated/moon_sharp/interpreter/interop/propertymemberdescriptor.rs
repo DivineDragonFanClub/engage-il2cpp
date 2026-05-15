@@ -35,132 +35,1330 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
-#[::unity2::methods]
-impl PropertyMemberDescriptor {
-    #[doc = "`get_PropertyInfo()` overload"]
-    #[method(name = "get_PropertyInfo", args = 0)]
-    pub fn get_property_info(self) -> crate::system::reflection::propertyinfo::PropertyInfo;
-
-    #[doc = "`set_PropertyInfo(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    #[method(name = "set_PropertyInfo", args = 1)]
-    pub fn set_property_info(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PropertyMemberDescriptor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_property_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_PropertyInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_PropertyInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_property_info(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::propertyinfo::PropertyInfo {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::propertyinfo::PropertyInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_property_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_property_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "set_PropertyInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "set_PropertyInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_property_info(
+        this: PropertyMemberDescriptor,
         value: crate::system::reflection::propertyinfo::PropertyInfo,
-    ) -> ();
-
-    #[doc = "`get_AccessMode()` overload"]
-    #[method(name = "get_AccessMode", args = 0)]
-    pub fn get_access_mode(
-        self,
-    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode;
-
-    #[doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    #[method(name = "set_AccessMode", args = 1)]
-    pub fn set_access_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_property_info::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_access_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_AccessMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_AccessMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_access_mode(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
+        let inner : extern "C" fn (PropertyMemberDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_access_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_access_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "set_AccessMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "set_AccessMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_access_mode(
+        this: PropertyMemberDescriptor,
         value: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    ) -> ();
-
-    #[doc = "`get_IsStatic()` overload"]
-    #[method(name = "get_IsStatic", args = 0)]
-    pub fn get_is_static(self) -> bool;
-
-    #[doc = "`set_IsStatic(bool)` overload"]
-    #[method(name = "set_IsStatic", args = 1)]
-    pub fn set_is_static(self, value: bool) -> ();
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Name", args = 1)]
-    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_CanRead()` overload"]
-    #[method(name = "get_CanRead", args = 0)]
-    pub fn get_can_read(self) -> bool;
-
-    #[doc = "`get_CanWrite()` overload"]
-    #[method(name = "get_CanWrite", args = 0)]
-    pub fn get_can_write(self) -> bool;
-
-    #[doc = "`TryCreateIfVisible(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    #[method(name = "TryCreateIfVisible", args = 2)]
-    pub fn try_create_if_visible(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_access_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_IsStatic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_IsStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_static(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PropertyMemberDescriptor, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_static::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "set_IsStatic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "set_IsStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_static(
+        this: PropertyMemberDescriptor,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PropertyMemberDescriptor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_static::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_Name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_Name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "set_Name",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "set_Name",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_name(
+        this: PropertyMemberDescriptor,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_name::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_CanRead",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_CanRead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_read(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PropertyMemberDescriptor, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_can_read::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_write {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_CanWrite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_CanWrite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_write(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PropertyMemberDescriptor, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_can_write::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_if_visible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "TryCreateIfVisible",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "TryCreateIfVisible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_create_if_visible(
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor;
-
-    #[doc = "`TryCreate(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]
-    #[method(name = "TryCreate", args = 4)]
-    pub fn try_create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor
+    {
+        let inner : extern "C" fn (crate :: system :: reflection :: propertyinfo :: PropertyInfo , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: propertymemberdescriptor :: PropertyMemberDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_create_if_visible :: get_offset () as isize) ,) ;
+        inner(pi, access_mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: methodinfo :: MethodInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: methodinfo :: MethodInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "TryCreate",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "TryCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_create(
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         getter: crate::system::reflection::methodinfo::MethodInfo,
         setter: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor;
-
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor
+    {
+        let inner : extern "C" fn (crate :: system :: reflection :: propertyinfo :: PropertyInfo , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , crate :: system :: reflection :: methodinfo :: MethodInfo , crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: propertymemberdescriptor :: PropertyMemberDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_create :: get_offset () as isize) ,) ;
+        inner(pi, access_mode, getter, setter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PropertyMemberDescriptor,
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, pi, access_mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: methodinfo :: MethodInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: methodinfo :: MethodInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: PropertyMemberDescriptor,
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         getter: crate::system::reflection::methodinfo::MethodInfo,
         setter: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> ();
-
-    #[doc = "`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
-    #[method(name = "GetValue", args = 2)]
-    pub fn get_value(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            crate::system::reflection::methodinfo::MethodInfo,
+            crate::system::reflection::methodinfo::MethodInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, pi, access_mode, getter, setter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "GetValue",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "GetValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: PropertyMemberDescriptor,
         script: crate::moon_sharp::interpreter::script::Script,
         obj: crate::system::object::Object,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`OptimizeGetter()` overload"]
-    #[method(name = "OptimizeGetter", args = 0)]
-    pub fn optimize_getter(self) -> ();
-
-    #[doc = "`OptimizeSetter()` overload"]
-    #[method(name = "OptimizeSetter", args = 0)]
-    pub fn optimize_setter(self) -> ();
-
-    #[doc = "`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "SetValue", args = 3)]
-    pub fn set_value(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_value::get_offset() as isize),
+        );
+        inner(this, script, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_getter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "OptimizeGetter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeGetter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_getter(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PropertyMemberDescriptor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_optimize_getter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_setter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "OptimizeSetter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeSetter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_setter(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PropertyMemberDescriptor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_optimize_setter::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "SetValue",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "SetValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_value(
+        this: PropertyMemberDescriptor,
         script: crate::moon_sharp::interpreter::script::Script,
         obj: crate::system::object::Object,
         v: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> ();
-
-    #[doc = "`get_MemberAccess()` overload"]
-    #[method(name = "get_MemberAccess", args = 0)]
-    pub fn get_member_access (self ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess ;
-
-    #[doc = "`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]
-    #[method(
-        name = "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",
-        args = 0
-    )]
-    pub fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
-        self,
-    ) -> ();
-
-    #[doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]
-    #[method(name = "PrepareForWiring", args = 1)]
-    pub fn prepare_for_wiring(self, t: crate::moon_sharp::interpreter::table::Table) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_value::get_offset() as isize),
+        );
+        inner(this, script, obj, v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_member_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "get_MemberAccess",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "get_MemberAccess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_member_access (this : PropertyMemberDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess{
+        let inner : extern "C" fn (PropertyMemberDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_member_access :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PropertyMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
+        this: PropertyMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (PropertyMemberDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare_for_wiring {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PropertyMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "PrepareForWiring",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PropertyMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "PrepareForWiring",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare_for_wiring(
+        this: PropertyMemberDescriptor,
+        t: crate::moon_sharp::interpreter::table::Table,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PropertyMemberDescriptor,
+            crate::moon_sharp::interpreter::table::Table,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_prepare_for_wiring::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
+impl PropertyMemberDescriptor {
+    #[doc = "`TryCreateIfVisible(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
+    pub fn try_create_if_visible(
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        access_mode: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        >,
+    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor
+    {
+        unsafe {
+            __PropertyMemberDescriptor_unity2_raw::try_create_if_visible(
+                ::core::convert::Into::into(pi),
+                ::core::convert::Into::into(access_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryCreate(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]
+    pub fn try_create(
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        access_mode: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        >,
+        getter: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
+        setter: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
+    ) -> crate::moon_sharp::interpreter::interop::propertymemberdescriptor::PropertyMemberDescriptor
+    {
+        unsafe {
+            __PropertyMemberDescriptor_unity2_raw::try_create(
+                ::core::convert::Into::into(pi),
+                ::core::convert::Into::into(access_mode),
+                ::core::convert::Into::into(getter),
+                ::core::convert::Into::into(setter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
+pub trait IPropertyMemberDescriptorMethods: IPropertyMemberDescriptor {
+    #[doc = "`get_PropertyInfo()` overload"]
+    fn get_property_info(self) -> crate::system::reflection::propertyinfo::PropertyInfo {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_property_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PropertyInfo(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    fn set_property_info(
+        self,
+        value: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::set_property_info(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AccessMode()` overload"]
+    fn get_access_mode(
+        self,
+    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_access_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
+    fn set_access_mode(
+        self,
+        value: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::set_access_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsStatic()` overload"]
+    fn get_is_static(self) -> bool {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_is_static(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsStatic(bool)` overload"]
+    fn set_is_static(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::set_is_static(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
+    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::set_name(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CanRead()` overload"]
+    fn get_can_read(self) -> bool {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_can_read(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CanWrite()` overload"]
+    fn get_can_write(self) -> bool {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_can_write(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
+    fn ctor(
+        self,
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        access_mode: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(pi),
+                ::core::convert::Into::into(access_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]
+    fn ctor_2(
+        self,
+        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        access_mode: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        >,
+        getter: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
+        setter: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(pi),
+                ::core::convert::Into::into(access_mode),
+                ::core::convert::Into::into(getter),
+                ::core::convert::Into::into(setter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
+    fn get_value(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_value(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OptimizeGetter()` overload"]
+    fn optimize_getter(self) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::optimize_getter(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OptimizeSetter()` overload"]
+    fn optimize_setter(self) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::optimize_setter(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    fn set_value(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        v: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::set_value(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(v),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_MemberAccess()` overload"]    fn get_member_access (self ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess{
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::get_member_access(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]
+    fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
+        self,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw :: moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]
+    fn prepare_for_wiring(
+        self,
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PropertyMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PropertyMemberDescriptor_unity2_raw::prepare_for_wiring(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
+impl<__T: IPropertyMemberDescriptor> IPropertyMemberDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
 impl PropertyMemberDescriptor {
@@ -197,4 +1395,14 @@ impl PropertyMemberDescriptor {
         <Self as IPropertyMemberDescriptorMethods>::ctor_2(this, pi, access_mode, getter, setter);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
+pub mod prelude {
+    pub use super::IPropertyMemberDescriptor;
+    pub use super::IPropertyMemberDescriptorMethods;
+    pub use super::PropertyMemberDescriptor;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

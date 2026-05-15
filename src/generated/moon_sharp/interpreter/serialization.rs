@@ -7,5 +7,9 @@
 pub mod json;
 #[cfg(any(feature = "moon_sharp-interpreter-serialization-objectvalueconverter-types"))]
 pub mod objectvalueconverter;
+#[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter-types")]
+pub use objectvalueconverter::{IObjectValueConverter, ObjectValueConverter};
 #[cfg(any(feature = "moon_sharp-interpreter-serialization-serializationextensions-types"))]
 pub mod serializationextensions;
+#[cfg(feature = "moon_sharp-interpreter-serialization-serializationextensions-types")]
+pub use serializationextensions::{ISerializationExtensions, SerializationExtensions};

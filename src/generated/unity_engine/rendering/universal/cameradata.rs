@@ -74,47 +74,488 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-cameradata")]
-#[::unity2::methods(value)]
-impl CameraData {
-    #[doc = "`SetViewAndProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "SetViewAndProjectionMatrix", args = 2)]
-    pub fn set_view_and_projection_matrix(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_view_and_projection_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "SetViewAndProjectionMatrix",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "SetViewAndProjectionMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_view_and_projection_matrix(
+        this: CameraData,
         view_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
         projection_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraData,
+            crate::unity_engine::matrix4x4::Matrix4x4,
+            crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_view_and_projection_matrix::get_offset() as isize),
+        );
+        inner(this, view_matrix, projection_matrix, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_view_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "GetViewMatrix",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "GetViewMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_view_matrix(
+        this: CameraData,
+        view_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            CameraData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_view_matrix::get_offset() as isize),
+        );
+        inner(this, view_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_projection_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "GetProjectionMatrix",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "GetProjectionMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_projection_matrix(
+        this: CameraData,
+        view_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            CameraData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_projection_matrix::get_offset() as isize),
+        );
+        inner(this, view_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gpu_projection_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "GetGPUProjectionMatrix",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "GetGPUProjectionMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gpu_projection_matrix(
+        this: CameraData,
+        view_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            CameraData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gpu_projection_matrix::get_offset() as isize),
+        );
+        inner(this, view_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_require_srgb_conversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "get_requireSrgbConversion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "get_requireSrgbConversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_require_srgb_conversion(
+        this: CameraData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_require_srgb_conversion::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_scene_view_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "get_isSceneViewCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "get_isSceneViewCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_scene_view_camera(
+        this: CameraData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_scene_view_camera::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_preview_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "get_isPreviewCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "get_isPreviewCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_preview_camera(
+        this: CameraData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_preview_camera::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_camera_projection_matrix_flipped {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraData as ::unity2::ClassIdentity>::class(),
+                "IsCameraProjectionMatrixFlipped",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraData as ::unity2::ClassIdentity>::NAME,
+                    "IsCameraProjectionMatrixFlipped",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_camera_projection_matrix_flipped(
+        this: CameraData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_camera_projection_matrix_flipped::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-rendering-universal-cameradata")]
+impl CameraData {
+    #[doc = "`SetViewAndProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
+    pub fn set_view_and_projection_matrix(
+        self,
+        view_matrix: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
+        projection_matrix: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
+    ) -> () {
+        unsafe {
+            __CameraData_unity2_raw::set_view_and_projection_matrix(
+                self,
+                ::core::convert::Into::into(view_matrix),
+                ::core::convert::Into::into(projection_matrix),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetViewMatrix(i32)` overload"]
-    #[method(name = "GetViewMatrix", args = 1)]
-    pub fn get_view_matrix(self, view_index: i32) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
+    pub fn get_view_matrix(
+        self,
+        view_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            __CameraData_unity2_raw::get_view_matrix(
+                self,
+                ::core::convert::Into::into(view_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetProjectionMatrix(i32)` overload"]
-    #[method(name = "GetProjectionMatrix", args = 1)]
     pub fn get_projection_matrix(
         self,
-        view_index: i32,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
+        view_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            __CameraData_unity2_raw::get_projection_matrix(
+                self,
+                ::core::convert::Into::into(view_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetGPUProjectionMatrix(i32)` overload"]
-    #[method(name = "GetGPUProjectionMatrix", args = 1)]
     pub fn get_gpu_projection_matrix(
         self,
-        view_index: i32,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
+        view_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            __CameraData_unity2_raw::get_gpu_projection_matrix(
+                self,
+                ::core::convert::Into::into(view_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_requireSrgbConversion()` overload"]
-    #[method(name = "get_requireSrgbConversion", args = 0)]
-    pub fn get_require_srgb_conversion(self) -> bool;
-
+    pub fn get_require_srgb_conversion(self) -> bool {
+        unsafe {
+            __CameraData_unity2_raw::get_require_srgb_conversion(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_isSceneViewCamera()` overload"]
-    #[method(name = "get_isSceneViewCamera", args = 0)]
-    pub fn get_is_scene_view_camera(self) -> bool;
-
+    pub fn get_is_scene_view_camera(self) -> bool {
+        unsafe {
+            __CameraData_unity2_raw::get_is_scene_view_camera(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_isPreviewCamera()` overload"]
-    #[method(name = "get_isPreviewCamera", args = 0)]
-    pub fn get_is_preview_camera(self) -> bool;
-
+    pub fn get_is_preview_camera(self) -> bool {
+        unsafe {
+            __CameraData_unity2_raw::get_is_preview_camera(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`IsCameraProjectionMatrixFlipped()` overload"]
-    #[method(name = "IsCameraProjectionMatrixFlipped", args = 0)]
-    pub fn is_camera_projection_matrix_flipped(self) -> bool;
+    pub fn is_camera_projection_matrix_flipped(self) -> bool {
+        unsafe {
+            __CameraData_unity2_raw::is_camera_projection_matrix_flipped(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-cameradata")]
+pub mod prelude {
+    pub use super::CameraData;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

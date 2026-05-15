@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))]
+    #[::unity2::class(namespace = "App", name = "MapActor")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapActor {
+        #[static_field]
+        #[rename(name = "MoveTime")]
+        pub move_time: f32,
+        #[static_field]
+        #[rename(name = "StickMargin")]
+        pub stick_margin: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
     #[repr(C)]
     #[derive(
@@ -56,53 +68,412 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))]
-    #[::unity2::class(namespace = "App", name = "MapActor")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapActor {
-        #[static_field]
-        #[rename(name = "MoveTime")]
-        pub move_time: f32,
-        #[static_field]
-        #[rename(name = "StickMargin")]
-        pub stick_margin: f32,
-    }
 }
 
 #[cfg(feature = "app-mapactor-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapactor")]
-#[::unity2::methods]
-impl MapActor {
-    #[doc = "`IsInvasion(i32, i32, i32, i32)` overload"]
-    #[method(name = "IsInvasion", args = 4)]
-    pub fn is_invasion(ox: i32, oz: i32, nx: i32, nz: i32) -> bool;
-
-    #[doc = "`IsDiagonallyDir(i32, i32, i32, i32)` overload"]
-    #[method(name = "IsDiagonallyDir", args = 4)]
-    pub fn is_diagonally_dir(ox: i32, oz: i32, nx: i32, nz: i32) -> bool;
-
-    #[doc = "`IsConnect(i32, i32, crate::app::dir_2::Dir_Type)` overload"]
-    #[method(name = "IsConnect", args = 3)]
-    pub fn is_connect(x: i32, z: i32, dir: crate::app::dir_2::Dir_Type) -> bool;
-
-    #[doc = "`Extrusion(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Extrusion", args = 2)]
-    pub fn extrusion(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapActor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_invasion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                "IsInvasion",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    "IsInvasion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_invasion(
+        ox: i32,
+        oz: i32,
+        nx: i32,
+        nz: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_invasion::get_offset() as isize),
+            );
+        inner(ox, oz, nx, nz, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_diagonally_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                "IsDiagonallyDir",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    "IsDiagonallyDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_diagonally_dir(
+        ox: i32,
+        oz: i32,
+        nx: i32,
+        nz: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_diagonally_dir::get_offset() as isize),
+            );
+        inner(ox, oz, nx, nz, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_connect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                "IsConnect",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    "IsConnect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_connect(
+        x: i32,
+        z: i32,
+        dir: crate::app::dir_2::Dir_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            crate::app::dir_2::Dir_Type,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_connect::get_offset() as isize),
+        );
+        inner(x, z, dir, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_extrusion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                "Extrusion",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    "Extrusion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn extrusion(
         pos: crate::unity_engine::vector3::Vector3,
         radius: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TickMove(crate::app::unit::Unit)` overload"]
-    #[method(name = "TickMove", args = 1)]
-    pub fn tick_move(unit: crate::app::unit::Unit) -> crate::app::mapactor::MapActor_MoveResult;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_extrusion::get_offset() as isize),
+        );
+        inner(pos, radius, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                "TickMove",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    "TickMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_move(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapactor::MapActor_MoveResult {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::mapactor::MapActor_MoveResult = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_move::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapActor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapActor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapActor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapActor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapactor")]
+impl MapActor {
+    #[doc = "`IsInvasion(i32, i32, i32, i32)` overload"]
+    pub fn is_invasion(
+        ox: impl ::core::convert::Into<i32>,
+        oz: impl ::core::convert::Into<i32>,
+        nx: impl ::core::convert::Into<i32>,
+        nz: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __MapActor_unity2_raw::is_invasion(
+                ::core::convert::Into::into(ox),
+                ::core::convert::Into::into(oz),
+                ::core::convert::Into::into(nx),
+                ::core::convert::Into::into(nz),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDiagonallyDir(i32, i32, i32, i32)` overload"]
+    pub fn is_diagonally_dir(
+        ox: impl ::core::convert::Into<i32>,
+        oz: impl ::core::convert::Into<i32>,
+        nx: impl ::core::convert::Into<i32>,
+        nz: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __MapActor_unity2_raw::is_diagonally_dir(
+                ::core::convert::Into::into(ox),
+                ::core::convert::Into::into(oz),
+                ::core::convert::Into::into(nx),
+                ::core::convert::Into::into(nz),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsConnect(i32, i32, crate::app::dir_2::Dir_Type)` overload"]
+    pub fn is_connect(
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
+    ) -> bool {
+        unsafe {
+            __MapActor_unity2_raw::is_connect(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(dir),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Extrusion(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn extrusion(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        radius: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __MapActor_unity2_raw::extrusion(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(radius),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TickMove(crate::app::unit::Unit)` overload"]
+    pub fn tick_move(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::mapactor::MapActor_MoveResult {
+        unsafe {
+            __MapActor_unity2_raw::tick_move(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapactor")]
+pub trait IMapActorMethods: IMapActor {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapActor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapActor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapactor")]
+impl<__T: IMapActor> IMapActorMethods for __T {}
 
 #[cfg(feature = "app-mapactor")]
 impl MapActor {
@@ -118,4 +489,21 @@ impl MapActor {
         <Self as IMapActorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mapactor")]
+pub mod prelude {
+    pub use super::IMapActor;
+    pub use super::IMapActorMethods;
+    pub use super::MapActor;
+    pub use super::MapActor_MoveResult;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

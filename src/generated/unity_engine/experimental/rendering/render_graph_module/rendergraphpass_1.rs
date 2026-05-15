@@ -79,3 +79,16 @@ impl<T0: ::unity2::ClassIdentity> RenderGraphPass_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]
+pub mod prelude {
+    pub use super::IRenderGraphPass_1;
+    pub use super::IRenderGraphPass_1Methods;
+    pub use super::RenderGraphPass_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::IRenderGraphPass;
+    #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]
+    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::IRenderGraphPassMethods;
+}

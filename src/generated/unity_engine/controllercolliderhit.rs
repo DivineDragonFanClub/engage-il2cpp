@@ -30,3 +30,12 @@ mod __types {
 
 #[cfg(feature = "unity_engine-controllercolliderhit-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-controllercolliderhit")]
+pub mod prelude {
+    pub use super::ControllerColliderHit;
+    pub use super::IControllerColliderHit;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

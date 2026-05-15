@@ -18,3 +18,21 @@ mod __types {
 
 #[cfg(feature = "unity_engine-charactercontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-charactercontroller")]
+pub mod prelude {
+    pub use super::CharacterController;
+    pub use super::ICharacterController;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::collider::ICollider;
+    #[cfg(feature = "unity_engine-collider")]
+    pub use crate::unity_engine::collider::IColliderMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+}

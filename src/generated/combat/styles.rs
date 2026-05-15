@@ -17,13 +17,125 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-styles")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Styles_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Styles as ::unity2::ClassIdentity>::class(),
+                "get_Scale",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Styles as ::unity2::ClassIdentity>::NAME,
+                    "get_Scale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scale(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scale::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fit_to_screen {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Styles as ::unity2::ClassIdentity>::class(),
+                "FitToScreen",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Styles as ::unity2::ClassIdentity>::NAME,
+                    "FitToScreen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fit_to_screen(
+        style: crate::unity_engine::guistyle::GUIStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fit_to_screen::get_offset() as isize),
+        );
+        inner(style, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-styles")]
 impl Styles {
     #[doc = "`get_Scale()` overload"]
-    #[method(name = "get_Scale", args = 0)]
-    pub fn get_scale() -> f32;
-
+    pub fn get_scale() -> f32 {
+        unsafe { __Styles_unity2_raw::get_scale(::core::option::Option::None) }
+    }
     #[doc = "`FitToScreen(crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "FitToScreen", args = 1)]
-    pub fn fit_to_screen(style: crate::unity_engine::guistyle::GUIStyle) -> ();
+    pub fn fit_to_screen(
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __Styles_unity2_raw::fit_to_screen(
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-styles")]
+pub mod prelude {
+    pub use super::IStyles;
+    pub use super::Styles;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

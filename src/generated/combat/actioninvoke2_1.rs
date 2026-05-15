@@ -54,3 +54,16 @@ impl<T0: ::unity2::ClassIdentity> ActionInvoke2_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "combat-actioninvoke2_1")]
+pub mod prelude {
+    pub use super::ActionInvoke2_1;
+    pub use super::IActionInvoke2_1;
+    pub use super::IActionInvoke2_1Methods;
+    pub use crate::combat::state::IState;
+    #[cfg(feature = "combat-state")]
+    pub use crate::combat::state::IStateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -2,5 +2,11 @@
 
 #[cfg(any(feature = "unity_engine-profiling-memory-experimental-memoryprofiler-types"))]
 pub mod memoryprofiler;
+#[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler-types")]
+pub use memoryprofiler::{IMemoryProfiler, MemoryProfiler};
 #[cfg(any(feature = "unity_engine-profiling-memory-experimental-metadata-types"))]
 pub mod metadata;
+#[cfg(feature = "unity_engine-profiling-memory-experimental-metadata")]
+pub use metadata::IMetaDataMethods;
+#[cfg(feature = "unity_engine-profiling-memory-experimental-metadata-types")]
+pub use metadata::{IMetaData, MetaData};

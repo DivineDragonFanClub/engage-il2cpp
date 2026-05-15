@@ -4,11 +4,25 @@
     feature = "unity_engine-resource_management-resource_locations-ilocationsizedata-types"
 ))]
 pub mod ilocationsizedata;
+#[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
+pub use ilocationsizedata::IILocationSizeDataMethods;
+#[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata-types")]
+pub use ilocationsizedata::{IILocationSizeData, ILocationSizeData};
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_locations-iresourcelocation-types"
 ))]
 pub mod iresourcelocation;
+#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
+pub use iresourcelocation::IIResourceLocationMethods;
+#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation-types")]
+pub use iresourcelocation::{IIResourceLocation, IResourceLocation};
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_locations-resourcelocationbase-types"
 ))]
 pub mod resourcelocationbase;
+#[cfg(feature = "unity_engine-resource_management-resource_locations-resourcelocationbase")]
+pub use resourcelocationbase::IResourceLocationBaseMethods;
+#[cfg(
+    feature = "unity_engine-resource_management-resource_locations-resourcelocationbase-types"
+)]
+pub use resourcelocationbase::{IResourceLocationBase, ResourceLocationBase};

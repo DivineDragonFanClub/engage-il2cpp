@@ -27,10 +27,10 @@ impl<T0: ::unity2::ClassIdentity> UnsafeGenericPool_1<T0> {
     #[method(name = "Get", args = 0)]
     pub fn get() -> T0;
 
-    #[doc = "`Get(T0)` overload"]
+    #[doc = "`Get(*mutT0)` overload"]
     #[method(name = "Get", args = 1)]
     pub fn get_2(
-        value: T0,
+        value: *mut T0,
     ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
 
     #[doc = "`Release(T0)` overload"]
@@ -40,4 +40,13 @@ impl<T0: ::unity2::ClassIdentity> UnsafeGenericPool_1<T0> {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-unsafegenericpool_1")]
+pub mod prelude {
+    pub use super::IUnsafeGenericPool_1;
+    pub use super::UnsafeGenericPool_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -17,63 +17,555 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-exmethods")]
-#[::unity2::methods]
-impl ExMethods {
-    #[doc = "`Any(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
-    #[method(name = "Any", args = 2)]
-    pub fn any(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExMethods_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_any {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "Any",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "Any",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn any(
         lhs: crate::combat::phase::Phase_HitType,
         rhs: crate::combat::phase::Phase_HitType,
-    ) -> bool;
-
-    #[doc = "`NoneOf(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
-    #[method(name = "NoneOf", args = 2)]
-    pub fn none_of(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_HitType,
+            crate::combat::phase::Phase_HitType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_any::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_none_of {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "NoneOf",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "NoneOf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn none_of(
         lhs: crate::combat::phase::Phase_HitType,
         rhs: crate::combat::phase::Phase_HitType,
-    ) -> bool;
-
-    #[doc = "`All(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
-    #[method(name = "All", args = 2)]
-    pub fn all(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_HitType,
+            crate::combat::phase::Phase_HitType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_none_of::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "All",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "All",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn all(
         lhs: crate::combat::phase::Phase_HitType,
         rhs: crate::combat::phase::Phase_HitType,
-    ) -> bool;
-
-    #[doc = "`Change(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
-    #[method(name = "Change", args = 3)]
-    pub fn change(
-        self_: crate::combat::phase::Phase_HitType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_HitType,
+            crate::combat::phase::Phase_HitType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_all::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "Change",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "Change",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change(
+        self_: *mut crate::combat::phase::Phase_HitType,
         src: crate::combat::phase::Phase_HitType,
         dst: crate::combat::phase::Phase_HitType,
-    ) -> ();
-
-    #[doc = "`Any(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
-    #[method(name = "Any", args = 2)]
-    pub fn any_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::combat::phase::Phase_HitType,
+            crate::combat::phase::Phase_HitType,
+            crate::combat::phase::Phase_HitType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change::get_offset() as isize),
+        );
+        inner(self_, src, dst, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_any_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "Any",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "Any",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn any_2(
         lhs: crate::combat::phase::Phase_Detail,
         rhs: crate::combat::phase::Phase_Detail,
-    ) -> bool;
-
-    #[doc = "`NoneOf(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
-    #[method(name = "NoneOf", args = 2)]
-    pub fn none_of_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_Detail,
+            crate::combat::phase::Phase_Detail,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_any_2::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_none_of_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "NoneOf",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "NoneOf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn none_of_2(
         lhs: crate::combat::phase::Phase_Detail,
         rhs: crate::combat::phase::Phase_Detail,
-    ) -> bool;
-
-    #[doc = "`All(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
-    #[method(name = "All", args = 2)]
-    pub fn all_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_Detail,
+            crate::combat::phase::Phase_Detail,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_none_of_2::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_all_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "All",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "All",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn all_2(
         lhs: crate::combat::phase::Phase_Detail,
         rhs: crate::combat::phase::Phase_Detail,
-    ) -> bool;
-
-    #[doc = "`Change(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
-    #[method(name = "Change", args = 3)]
-    pub fn change_2(
-        self_: crate::combat::phase::Phase_Detail,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::phase::Phase_Detail,
+            crate::combat::phase::Phase_Detail,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_all_2::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExMethods as ::unity2::ClassIdentity>::class(),
+                "Change",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExMethods as ::unity2::ClassIdentity>::NAME,
+                    "Change",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_2(
+        self_: *mut crate::combat::phase::Phase_Detail,
         src: crate::combat::phase::Phase_Detail,
         dst: crate::combat::phase::Phase_Detail,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::combat::phase::Phase_Detail,
+            crate::combat::phase::Phase_Detail,
+            crate::combat::phase::Phase_Detail,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_2::get_offset() as isize),
+        );
+        inner(self_, src, dst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-exmethods")]
+impl ExMethods {
+    #[doc = "`Any(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
+    pub fn any(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::any(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`NoneOf(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
+    pub fn none_of(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::none_of(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`All(crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
+    pub fn all(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::all(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Change(*mutcrate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType, crate::combat::phase::Phase_HitType)` overload"]
+    pub fn change(
+        src: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+        dst: impl ::core::convert::Into<crate::combat::phase::Phase_HitType>,
+    ) -> crate::combat::phase::Phase_HitType {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::combat::phase::Phase_HitType>::uninit();
+            __ExMethods_unity2_raw::change(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(dst),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Any(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
+    pub fn any_2(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::any_2(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`NoneOf(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
+    pub fn none_of_2(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::none_of_2(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`All(crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
+    pub fn all_2(
+        lhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+        rhs: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+    ) -> bool {
+        unsafe {
+            __ExMethods_unity2_raw::all_2(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Change(*mutcrate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail, crate::combat::phase::Phase_Detail)` overload"]
+    pub fn change_2(
+        src: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+        dst: impl ::core::convert::Into<crate::combat::phase::Phase_Detail>,
+    ) -> crate::combat::phase::Phase_Detail {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::combat::phase::Phase_Detail>::uninit();
+            __ExMethods_unity2_raw::change_2(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(dst),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "combat-exmethods")]
+pub mod prelude {
+    pub use super::ExMethods;
+    pub use super::IExMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

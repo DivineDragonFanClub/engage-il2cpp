@@ -22,101 +22,1258 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-playreportcommon")]
-#[::unity2::methods]
-impl PlayReportCommon {
-    #[doc = "`GetBufferSizeImpl()` overload"]
-    #[method(name = "GetBufferSizeImpl", args = 0)]
-    pub fn get_buffer_size_impl(self) -> i64;
-
-    #[doc = "`ReportChapterClear()` overload"]
-    #[method(name = "ReportChapterClear", args = 0)]
-    pub fn report_chapter_clear(self) -> ();
-
-    #[doc = "`ReportSortie()` overload"]
-    #[method(name = "ReportSortie", args = 0)]
-    pub fn report_sortie(self) -> ();
-
-    #[doc = "`SendCommon(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "SendCommon", args = 2)]
-    pub fn send_common(self, send_type: ::unity2::Il2CppString, is_send_hubs: bool) -> ();
-
-    #[doc = "`ReportBasic()` overload"]
-    #[method(name = "ReportBasic", args = 0)]
-    pub fn report_basic(self) -> ();
-
-    #[doc = "`GetProgress()` overload"]
-    #[method(name = "GetProgress", args = 0)]
-    pub fn get_progress(self) -> i32;
-
-    #[doc = "`IsGodCleared(i32)` overload"]
-    #[method(name = "IsGodCleared", args = 1)]
-    pub fn is_god_cleared(self, idx: i32) -> bool;
-
-    #[doc = "`GetEvilProgress()` overload"]
-    #[method(name = "GetEvilProgress", args = 0)]
-    pub fn get_evil_progress(self) -> i32;
-
-    #[doc = "`GetChapterType()` overload"]
-    #[method(name = "GetChapterType", args = 0)]
-    pub fn get_chapter_type(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReportForce()` overload"]
-    #[method(name = "ReportForce", args = 0)]
-    pub fn report_force(self) -> ();
-
-    #[doc = "`ReportConfig()` overload"]
-    #[method(name = "ReportConfig", args = 0)]
-    pub fn report_config(self) -> ();
-
-    #[doc = "`ReportUnit()` overload"]
-    #[method(name = "ReportUnit", args = 0)]
-    pub fn report_unit(self) -> ();
-
-    #[doc = "`GetForceMask()` overload"]
-    #[method(name = "GetForceMask", args = 0)]
-    pub fn get_force_mask(self) -> u32;
-
-    #[doc = "`ReportUnitImpl(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "ReportUnitImpl", args = 3)]
-    pub fn report_unit_impl(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PlayReportCommon_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_buffer_size_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GetBufferSizeImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GetBufferSizeImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_buffer_size_impl(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_buffer_size_impl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_chapter_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportChapterClear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportChapterClear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_chapter_clear(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_chapter_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_sortie {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportSortie",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportSortie",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_sortie(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_sortie::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "SendCommon",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "SendCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_common(
+        this: PlayReportCommon,
+        send_type: ::unity2::Il2CppString,
+        is_send_hubs: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_common::get_offset() as isize),
+        );
+        inner(this, send_type, is_send_hubs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_basic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportBasic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportBasic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_basic(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_basic::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_progress {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GetProgress",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GetProgress",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_progress(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_progress::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_god_cleared {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "IsGodCleared",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "IsGodCleared",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_god_cleared(
+        this: PlayReportCommon,
+        idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PlayReportCommon, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_god_cleared::get_offset() as isize),
+            );
+        inner(this, idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_evil_progress {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GetEvilProgress",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GetEvilProgress",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_evil_progress(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_evil_progress::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chapter_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GetChapterType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GetChapterType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chapter_type(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chapter_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_force {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportForce",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportForce",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_force(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_force::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_config {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportConfig",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportConfig",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_config(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_config::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_unit(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_unit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_force_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GetForceMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GetForceMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_force_mask(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_force_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_unit_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportUnitImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportUnitImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_unit_impl(
+        this: PlayReportCommon,
         unit: crate::app::unit::Unit,
         use_report_no: i32,
         in_report_count: i32,
-    ) -> ();
-
-    #[doc = "`IsPlayerUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsPlayerUnit", args = 1)]
-    pub fn is_player_unit(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`IsPlayerGodPool(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "IsPlayerGodPool", args = 1)]
-    pub fn is_player_god_pool(self, god_unit: crate::app::godunit::GodUnit) -> bool;
-
-    #[doc = "`GodPoolLevel(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GodPoolLevel", args = 2)]
-    pub fn god_pool_level(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_report_unit_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            unit,
+            use_report_no,
+            in_report_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_player_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "IsPlayerUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "IsPlayerUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_player_unit(
+        this: PlayReportCommon,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_player_unit::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_player_god_pool {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "IsPlayerGodPool",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "IsPlayerGodPool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_player_god_pool(
+        this: PlayReportCommon,
+        god_unit: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_player_god_pool::get_offset() as isize),
+        );
+        inner(this, god_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_god_pool_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "GodPoolLevel",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "GodPoolLevel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn god_pool_level(
+        this: PlayReportCommon,
         unit: crate::app::unit::Unit,
         god_name: ::unity2::Il2CppString,
-    ) -> i32;
-
-    #[doc = "`ReportReliance()` overload"]
-    #[method(name = "ReportReliance", args = 0)]
-    pub fn report_reliance(self) -> ();
-
-    #[doc = "`ReportHub()` overload"]
-    #[method(name = "ReportHub", args = 0)]
-    pub fn report_hub(self) -> ();
-
-    #[doc = "`ReportOther()` overload"]
-    #[method(name = "ReportOther", args = 0)]
-    pub fn report_other(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PlayReportCommon,
+            crate::app::unit::Unit,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_god_pool_level::get_offset() as isize),
+        );
+        inner(this, unit, god_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_reliance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportReliance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportReliance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_reliance(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_reliance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_hub {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportHub",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportHub",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_hub(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_hub::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_other {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                "ReportOther",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    "ReportOther",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_other(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_other::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayReportCommon as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportCommon as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PlayReportCommon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-playreportcommon")]
+pub trait IPlayReportCommonMethods: IPlayReportCommon {
+    #[doc = "`GetBufferSizeImpl()` overload"]
+    fn get_buffer_size_impl(self) -> i64 {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::get_buffer_size_impl(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportChapterClear()` overload"]
+    fn report_chapter_clear(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_chapter_clear(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportSortie()` overload"]
+    fn report_sortie(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_sortie(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SendCommon(::unity2::Il2CppString, bool)` overload"]
+    fn send_common(
+        self,
+        send_type: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_send_hubs: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::send_common(
+                __receiver,
+                ::core::convert::Into::into(send_type),
+                ::core::convert::Into::into(is_send_hubs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportBasic()` overload"]
+    fn report_basic(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_basic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetProgress()` overload"]
+    fn get_progress(self) -> i32 {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGodCleared(i32)` overload"]
+    fn is_god_cleared(self, idx: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::is_god_cleared(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEvilProgress()` overload"]
+    fn get_evil_progress(self) -> i32 {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::get_evil_progress(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetChapterType()` overload"]
+    fn get_chapter_type(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::get_chapter_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportForce()` overload"]
+    fn report_force(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_force(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReportConfig()` overload"]
+    fn report_config(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_config(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReportUnit()` overload"]
+    fn report_unit(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetForceMask()` overload"]
+    fn get_force_mask(self) -> u32 {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::get_force_mask(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReportUnitImpl(crate::app::unit::Unit, i32, i32)` overload"]
+    fn report_unit_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        use_report_no: impl ::core::convert::Into<i32>,
+        in_report_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_unit_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(use_report_no),
+                ::core::convert::Into::into(in_report_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPlayerUnit(crate::app::unit::Unit)` overload"]
+    fn is_player_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::is_player_unit(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPlayerGodPool(crate::app::godunit::GodUnit)` overload"]
+    fn is_player_god_pool(
+        self,
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::is_player_god_pool(
+                __receiver,
+                ::core::convert::Into::into(god_unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GodPoolLevel(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
+    fn god_pool_level(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::god_pool_level(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(god_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportReliance()` overload"]
+    fn report_reliance(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_reliance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReportHub()` overload"]
+    fn report_hub(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_hub(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReportOther()` overload"]
+    fn report_other(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::report_other(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PlayReportCommon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PlayReportCommon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-playreportcommon")]
+impl<__T: IPlayReportCommon> IPlayReportCommonMethods for __T {}
 
 #[cfg(feature = "app-playreportcommon")]
 impl PlayReportCommon {
@@ -132,4 +1289,17 @@ impl PlayReportCommon {
         <Self as IPlayReportCommonMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-playreportcommon")]
+pub mod prelude {
+    pub use super::IPlayReportCommon;
+    pub use super::IPlayReportCommonMethods;
+    pub use super::PlayReportCommon;
+    pub use crate::app::playreportsendbase::IPlayReportSendBase;
+    #[cfg(feature = "app-playreportsendbase")]
+    pub use crate::app::playreportsendbase::IPlayReportSendBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

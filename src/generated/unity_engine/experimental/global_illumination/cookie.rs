@@ -41,3 +41,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-cookie-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-cookie")]
+pub mod prelude {
+    pub use super::Cookie;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

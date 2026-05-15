@@ -107,3 +107,19 @@ impl<
         this
     }
 }
+
+#[cfg(feature = "system-func_13")]
+pub mod prelude {
+    pub use super::Func_13;
+    pub use super::IFunc_13;
+    pub use super::IFunc_13Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

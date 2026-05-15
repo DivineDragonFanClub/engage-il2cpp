@@ -20,16 +20,153 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
-#[::unity2::methods]
-impl TrackClipTypeAttribute {
-    #[doc = "`.ctor(::unity2::SystemType)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, clip_class: ::unity2::SystemType) -> ();
-
-    #[doc = "`.ctor(::unity2::SystemType, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, clip_class: ::unity2::SystemType, allow_auto_create: bool) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrackClipTypeAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackClipTypeAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackClipTypeAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TrackClipTypeAttribute,
+        clip_class: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrackClipTypeAttribute,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, clip_class, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackClipTypeAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackClipTypeAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: TrackClipTypeAttribute,
+        clip_class: ::unity2::SystemType,
+        allow_auto_create: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrackClipTypeAttribute,
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, clip_class, allow_auto_create, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
+pub trait ITrackClipTypeAttributeMethods: ITrackClipTypeAttribute {
+    #[doc = "`.ctor(::unity2::SystemType)` overload"]
+    fn ctor(self, clip_class: impl ::core::convert::Into<::unity2::SystemType>) -> () {
+        unsafe {
+            let __receiver = <TrackClipTypeAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrackClipTypeAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(clip_class),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::SystemType, bool)` overload"]
+    fn ctor_2(
+        self,
+        clip_class: impl ::core::convert::Into<::unity2::SystemType>,
+        allow_auto_create: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TrackClipTypeAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrackClipTypeAttribute_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(clip_class),
+                ::core::convert::Into::into(allow_auto_create),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
+impl<__T: ITrackClipTypeAttribute> ITrackClipTypeAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
 impl TrackClipTypeAttribute {
@@ -58,4 +195,11 @@ impl TrackClipTypeAttribute {
         <Self as ITrackClipTypeAttributeMethods>::ctor_2(this, clip_class, allow_auto_create);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
+pub mod prelude {
+    pub use super::ITrackClipTypeAttribute;
+    pub use super::ITrackClipTypeAttributeMethods;
+    pub use super::TrackClipTypeAttribute;
 }

@@ -2,5 +2,13 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock-types"))]
 pub mod buildtimescopeblock;
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
+pub use buildtimescopeblock::IBuildTimeScopeBlockMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock-types")]
+pub use buildtimescopeblock::{BuildTimeScopeBlock, IBuildTimeScopeBlock};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe-types"))]
 pub mod buildtimescopeframe;
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe")]
+pub use buildtimescopeframe::IBuildTimeScopeFrameMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe-types")]
+pub use buildtimescopeframe::{BuildTimeScopeFrame, IBuildTimeScopeFrame};

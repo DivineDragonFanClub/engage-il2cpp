@@ -81,87 +81,909 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-texturexr")]
-#[::unity2::methods]
-impl TextureXR {
-    #[doc = "`set_maxViews(i32)` overload"]
-    #[method(name = "set_maxViews", args = 1)]
-    pub fn set_max_views(value: i32) -> ();
-
-    #[doc = "`get_slices()` overload"]
-    #[method(name = "get_slices", args = 0)]
-    pub fn get_slices() -> i32;
-
-    #[doc = "`get_useTexArray()` overload"]
-    #[method(name = "get_useTexArray", args = 0)]
-    pub fn get_use_tex_array() -> bool;
-
-    #[doc = "`get_dimension()` overload"]
-    #[method(name = "get_dimension", args = 0)]
-    pub fn get_dimension() -> crate::unity_engine::rendering::texturedimension::TextureDimension;
-
-    #[doc = "`GetBlackUIntTexture()` overload"]
-    #[method(name = "GetBlackUIntTexture", args = 0)]
-    pub fn get_black_u_int_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetClearTexture()` overload"]
-    #[method(name = "GetClearTexture", args = 0)]
-    pub fn get_clear_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetMagentaTexture()` overload"]
-    #[method(name = "GetMagentaTexture", args = 0)]
-    pub fn get_magenta_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetBlackTexture()` overload"]
-    #[method(name = "GetBlackTexture", args = 0)]
-    pub fn get_black_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetBlackTextureArray()` overload"]
-    #[method(name = "GetBlackTextureArray", args = 0)]
-    pub fn get_black_texture_array() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetBlackTexture3D()` overload"]
-    #[method(name = "GetBlackTexture3D", args = 0)]
-    pub fn get_black_texture3_d() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`GetWhiteTexture()` overload"]
-    #[method(name = "GetWhiteTexture", args = 0)]
-    pub fn get_white_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Initialize(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
-    #[method(name = "Initialize", args = 2)]
-    pub fn initialize(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextureXR_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_views {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "set_maxViews",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "set_maxViews",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_views(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_max_views::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_slices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "get_slices",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "get_slices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_slices(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_slices::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_tex_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "get_useTexArray",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "get_useTexArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_tex_array(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_use_tex_array::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dimension {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "get_dimension",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "get_dimension",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dimension(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::texturedimension::TextureDimension {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: texturedimension :: TextureDimension = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dimension :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_u_int_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetBlackUIntTexture",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetBlackUIntTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_black_u_int_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_black_u_int_texture::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clear_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetClearTexture",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetClearTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_clear_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_clear_texture::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_magenta_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetMagentaTexture",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetMagentaTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_magenta_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_magenta_texture::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetBlackTexture",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetBlackTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_black_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_black_texture::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetBlackTextureArray",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetBlackTextureArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_black_texture_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_black_texture_array::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetBlackTexture3D",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetBlackTexture3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_black_texture3_d(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_black_texture3_d::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_white_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "GetWhiteTexture",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "GetWhiteTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_white_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_white_texture::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computeshader :: ComputeShader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
-    ) -> ();
-
-    #[doc = "`CreateTexture2DArrayFromTexture2D(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateTexture2DArrayFromTexture2D", args = 2)]
-    pub fn create_texture2_d_array_from_texture2_d(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::computeshader::ComputeShader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(cmd, clear_r32_u_int_shader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_texture2_d_array_from_texture2_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "CreateTexture2DArrayFromTexture2D",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "CreateTexture2DArrayFromTexture2D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_texture2_d_array_from_texture2_d(
         source: crate::unity_engine::texture2d::Texture2D,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::texture2darray::Texture2DArray;
-
-    #[doc = "`CreateBlackUIntTextureArray(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
-    #[method(name = "CreateBlackUIntTextureArray", args = 2)]
-    pub fn create_black_u_int_texture_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture2darray::Texture2DArray {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture2d::Texture2D,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture2darray::Texture2DArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_texture2_d_array_from_texture2_d::get_offset() as isize),
+        );
+        inner(source, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_black_u_int_texture_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computeshader :: ComputeShader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "CreateBlackUIntTextureArray",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "CreateBlackUIntTextureArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_black_u_int_texture_array(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
-    ) -> crate::unity_engine::texture::Texture;
-
-    #[doc = "`CreateBlackUintTexture(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
-    #[method(name = "CreateBlackUintTexture", args = 2)]
-    pub fn create_black_uint_texture(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::computeshader::ComputeShader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_black_u_int_texture_array::get_offset() as isize),
+        );
+        inner(cmd, clear_r32_u_int_shader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_black_uint_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computeshader :: ComputeShader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "CreateBlackUintTexture",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "CreateBlackUintTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_black_uint_texture(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
-    ) -> crate::unity_engine::texture::Texture;
-
-    #[doc = "`CreateBlackTexture3D(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBlackTexture3D", args = 1)]
-    pub fn create_black_texture3_d(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::computeshader::ComputeShader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_black_uint_texture::get_offset() as isize),
+        );
+        inner(cmd, clear_r32_u_int_shader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_black_texture3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                "CreateBlackTexture3D",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    "CreateBlackTexture3D",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_black_texture3_d(
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::texture3d::Texture3D;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture3d::Texture3D {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture3d::Texture3D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_black_texture3_d::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureXR as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureXR as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-rendering-texturexr")]
+impl TextureXR {
+    #[doc = "`set_maxViews(i32)` overload"]
+    pub fn set_max_views(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __TextureXR_unity2_raw::set_max_views(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_slices()` overload"]
+    pub fn get_slices() -> i32 {
+        unsafe { __TextureXR_unity2_raw::get_slices(::core::option::Option::None) }
+    }
+    #[doc = "`get_useTexArray()` overload"]
+    pub fn get_use_tex_array() -> bool {
+        unsafe { __TextureXR_unity2_raw::get_use_tex_array(::core::option::Option::None) }
+    }
+    #[doc = "`get_dimension()` overload"]
+    pub fn get_dimension() -> crate::unity_engine::rendering::texturedimension::TextureDimension {
+        unsafe { __TextureXR_unity2_raw::get_dimension(::core::option::Option::None) }
+    }
+    #[doc = "`GetBlackUIntTexture()` overload"]
+    pub fn get_black_u_int_texture() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_black_u_int_texture(::core::option::Option::None) }
+    }
+    #[doc = "`GetClearTexture()` overload"]
+    pub fn get_clear_texture() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_clear_texture(::core::option::Option::None) }
+    }
+    #[doc = "`GetMagentaTexture()` overload"]
+    pub fn get_magenta_texture() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_magenta_texture(::core::option::Option::None) }
+    }
+    #[doc = "`GetBlackTexture()` overload"]
+    pub fn get_black_texture() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_black_texture(::core::option::Option::None) }
+    }
+    #[doc = "`GetBlackTextureArray()` overload"]
+    pub fn get_black_texture_array() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_black_texture_array(::core::option::Option::None) }
+    }
+    #[doc = "`GetBlackTexture3D()` overload"]
+    pub fn get_black_texture3_d() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_black_texture3_d(::core::option::Option::None) }
+    }
+    #[doc = "`GetWhiteTexture()` overload"]
+    pub fn get_white_texture() -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe { __TextureXR_unity2_raw::get_white_texture(::core::option::Option::None) }
+    }
+    #[doc = "`Initialize(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
+    pub fn initialize(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        clear_r32_u_int_shader: impl ::core::convert::Into<
+            crate::unity_engine::computeshader::ComputeShader,
+        >,
+    ) -> () {
+        unsafe {
+            __TextureXR_unity2_raw::initialize(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(clear_r32_u_int_shader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateTexture2DArrayFromTexture2D(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"]
+    pub fn create_texture2_d_array_from_texture2_d(
+        source: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::texture2darray::Texture2DArray {
+        unsafe {
+            __TextureXR_unity2_raw::create_texture2_d_array_from_texture2_d(
+                ::core::convert::Into::into(source),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBlackUIntTextureArray(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
+    pub fn create_black_u_int_texture_array(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        clear_r32_u_int_shader: impl ::core::convert::Into<
+            crate::unity_engine::computeshader::ComputeShader,
+        >,
+    ) -> crate::unity_engine::texture::Texture {
+        unsafe {
+            __TextureXR_unity2_raw::create_black_u_int_texture_array(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(clear_r32_u_int_shader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBlackUintTexture(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader)` overload"]
+    pub fn create_black_uint_texture(
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        clear_r32_u_int_shader: impl ::core::convert::Into<
+            crate::unity_engine::computeshader::ComputeShader,
+        >,
+    ) -> crate::unity_engine::texture::Texture {
+        unsafe {
+            __TextureXR_unity2_raw::create_black_uint_texture(
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(clear_r32_u_int_shader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBlackTexture3D(::unity2::Il2CppString)` overload"]
+    pub fn create_black_texture3_d(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::texture3d::Texture3D {
+        unsafe {
+            __TextureXR_unity2_raw::create_black_texture3_d(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __TextureXR_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-texturexr")]
+pub mod prelude {
+    pub use super::ITextureXR;
+    pub use super::TextureXR;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

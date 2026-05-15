@@ -39,99 +39,1085 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-unitinfoweaponmodelpool")]
-#[::unity2::methods]
-impl UnitInfoWeaponModelPool {
-    #[doc = "`GetAndLoadWeapon(crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::combat::assettype::AssetType)` overload"]
-    #[method(name = "GetAndLoadWeapon", args = 3)]
-    pub fn get_and_load_weapon(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitInfoWeaponModelPool_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_and_load_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::combat::assettype::AssetType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "GetAndLoadWeapon",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "GetAndLoadWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_and_load_weapon(
+        this: UnitInfoWeaponModelPool,
         unit: crate::app::unit::Unit,
         equipped: crate::app::unititem::UnitItem,
         asset_type: crate::combat::assettype::AssetType,
-    ) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`GetAndLoadWeaponShop(crate::app::unititem::UnitItem, crate::combat::assettype::AssetType)` overload"]
-    #[method(name = "GetAndLoadWeaponShop", args = 2)]
-    pub fn get_and_load_weapon_shop(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            crate::combat::assettype::AssetType,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_and_load_weapon::get_offset() as isize),
+        );
+        inner(this, unit, equipped, asset_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_and_load_weapon_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::combat::assettype::AssetType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "GetAndLoadWeaponShop",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "GetAndLoadWeaponShop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_and_load_weapon_shop(
+        this: UnitInfoWeaponModelPool,
         equipped: crate::app::unititem::UnitItem,
         asset_type: crate::combat::assettype::AssetType,
-    ) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`AddLeft(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "AddLeft", args = 2)]
-    pub fn add_left(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            crate::combat::assettype::AssetType,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::characterasset::CharacterAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_and_load_weapon_shop::get_offset() as isize),
+        );
+        inner(this, equipped, asset_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "AddLeft",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "AddLeft",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_left(
+        this: UnitInfoWeaponModelPool,
         unit: crate::app::unit::Unit,
         equipped: crate::app::unititem::UnitItem,
-    ) -> ();
-
-    #[doc = "`AddRight(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "AddRight", args = 2)]
-    pub fn add_right(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_left::get_offset() as isize),
+        );
+        inner(this, unit, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "AddRight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "AddRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_right(
+        this: UnitInfoWeaponModelPool,
         unit: crate::app::unit::Unit,
         equipped: crate::app::unititem::UnitItem,
-    ) -> ();
-
-    #[doc = "`TryGetLeft(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "TryGetLeft", args = 1)]
-    pub fn try_get_left(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_right::get_offset() as isize),
+        );
+        inner(this, unit, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "TryGetLeft",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "TryGetLeft",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_left(
+        this: UnitInfoWeaponModelPool,
         equipped: crate::app::unititem::UnitItem,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`TryGetRight(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "TryGetRight", args = 1)]
-    pub fn try_get_right(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_left::get_offset() as isize),
+        );
+        inner(this, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "TryGetRight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "TryGetRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_right(
+        this: UnitInfoWeaponModelPool,
         equipped: crate::app::unititem::UnitItem,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`TryActiveLeft(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "TryActiveLeft", args = 1)]
-    pub fn try_active_left(self, equipped: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`TryActiveRight(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "TryActiveRight", args = 1)]
-    pub fn try_active_right(self, equipped: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`SetShopWeapon(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "SetShopWeapon", args = 1)]
-    pub fn set_shop_weapon(self, equipped: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`ClearShopWeapon()` overload"]
-    #[method(name = "ClearShopWeapon", args = 0)]
-    pub fn clear_shop_weapon() -> ();
-
-    #[doc = "`IsShopWeapon()` overload"]
-    #[method(name = "IsShopWeapon", args = 0)]
-    pub fn is_shop_weapon() -> bool;
-
-    #[doc = "`LoadAsync(crate::system::action::Action)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, callback: crate::system::action::Action) -> ();
-
-    #[doc = "`WaitLoaded()` overload"]
-    #[method(name = "WaitLoaded", args = 0)]
-    pub fn wait_loaded(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`IsLoaded()` overload"]
-    #[method(name = "IsLoaded", args = 0)]
-    pub fn is_loaded(self) -> bool;
-
-    #[doc = "`Delete()` overload"]
-    #[method(name = "Delete", args = 0)]
-    pub fn delete(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_right::get_offset() as isize),
+        );
+        inner(this, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_active_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "TryActiveLeft",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "TryActiveLeft",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_active_left(
+        this: UnitInfoWeaponModelPool,
+        equipped: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_active_left::get_offset() as isize),
+        );
+        inner(this, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_active_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "TryActiveRight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "TryActiveRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_active_right(
+        this: UnitInfoWeaponModelPool,
+        equipped: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_active_right::get_offset() as isize),
+        );
+        inner(this, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shop_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "SetShopWeapon",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "SetShopWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shop_weapon(
+        this: UnitInfoWeaponModelPool,
+        equipped: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shop_weapon::get_offset() as isize),
+        );
+        inner(this, equipped, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_shop_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "ClearShopWeapon",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "ClearShopWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_shop_weapon(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_shop_weapon::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_shop_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "IsShopWeapon",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "IsShopWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_shop_weapon(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_shop_weapon::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "LoadAsync",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_async(
+        this: UnitInfoWeaponModelPool,
+        callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_async::get_offset() as isize),
+        );
+        inner(this, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_loaded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "WaitLoaded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "WaitLoaded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_loaded(
+        this: UnitInfoWeaponModelPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            UnitInfoWeaponModelPool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_loaded::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loaded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "IsLoaded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "IsLoaded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loaded(
+        this: UnitInfoWeaponModelPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(UnitInfoWeaponModelPool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_loaded::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                "Delete",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    "Delete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete(
+        this: UnitInfoWeaponModelPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitInfoWeaponModelPool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitInfoWeaponModelPool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitInfoWeaponModelPool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWeaponModelPool as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-unitinfoweaponmodelpool")]
+impl UnitInfoWeaponModelPool {
+    #[doc = "`ClearShopWeapon()` overload"]
+    pub fn clear_shop_weapon() -> () {
+        unsafe {
+            __UnitInfoWeaponModelPool_unity2_raw::clear_shop_weapon(::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsShopWeapon()` overload"]
+    pub fn is_shop_weapon() -> bool {
+        unsafe {
+            __UnitInfoWeaponModelPool_unity2_raw::is_shop_weapon(::core::option::Option::None)
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __UnitInfoWeaponModelPool_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-unitinfoweaponmodelpool")]
+pub trait IUnitInfoWeaponModelPoolMethods: IUnitInfoWeaponModelPool {
+    #[doc = "`GetAndLoadWeapon(crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::combat::assettype::AssetType)` overload"]
+    fn get_and_load_weapon(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        asset_type: impl ::core::convert::Into<crate::combat::assettype::AssetType>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::get_and_load_weapon(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(equipped),
+                ::core::convert::Into::into(asset_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAndLoadWeaponShop(crate::app::unititem::UnitItem, crate::combat::assettype::AssetType)` overload"]
+    fn get_and_load_weapon_shop(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        asset_type: impl ::core::convert::Into<crate::combat::assettype::AssetType>,
+    ) -> crate::combat::characterasset::CharacterAsset {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::get_and_load_weapon_shop(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::convert::Into::into(asset_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddLeft(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    fn add_left(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::add_left(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddRight(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    fn add_right(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::add_right(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetLeft(crate::app::unititem::UnitItem)` overload"]
+    fn try_get_left(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::try_get_left(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetRight(crate::app::unititem::UnitItem)` overload"]
+    fn try_get_right(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::try_get_right(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryActiveLeft(crate::app::unititem::UnitItem)` overload"]
+    fn try_active_left(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::try_active_left(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryActiveRight(crate::app::unititem::UnitItem)` overload"]
+    fn try_active_right(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::try_active_right(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetShopWeapon(crate::app::unititem::UnitItem)` overload"]
+    fn set_shop_weapon(
+        self,
+        equipped: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::set_shop_weapon(
+                __receiver,
+                ::core::convert::Into::into(equipped),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAsync(crate::system::action::Action)` overload"]
+    fn load_async(self, callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::load_async(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitLoaded()` overload"]
+    fn wait_loaded(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::wait_loaded(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoaded()` overload"]
+    fn is_loaded(self) -> bool {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::is_loaded(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Delete()` overload"]
+    fn delete(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::delete(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoWeaponModelPool as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoWeaponModelPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitinfoweaponmodelpool")]
+impl<__T: IUnitInfoWeaponModelPool> IUnitInfoWeaponModelPoolMethods for __T {}
 
 #[cfg(feature = "app-unitinfoweaponmodelpool")]
 impl UnitInfoWeaponModelPool {
@@ -147,4 +1133,14 @@ impl UnitInfoWeaponModelPool {
         <Self as IUnitInfoWeaponModelPoolMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-unitinfoweaponmodelpool")]
+pub mod prelude {
+    pub use super::IUnitInfoWeaponModelPool;
+    pub use super::IUnitInfoWeaponModelPoolMethods;
+    pub use super::UnitInfoWeaponModelPool;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

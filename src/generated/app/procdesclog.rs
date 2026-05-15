@@ -22,16 +22,144 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-procdesclog")]
-#[::unity2::methods]
-impl ProcDescLog {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, log: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "ExecuteImpl", args = 1)]
-    pub fn execute_impl(self, inst: crate::app::procinst::ProcInst) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProcDescLog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcDescLog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcDescLog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProcDescLog,
+        log: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProcDescLog,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, log, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcDescLog as ::unity2::ClassIdentity>::class(),
+                "ExecuteImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcDescLog as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_impl(
+        this: ProcDescLog,
+        inst: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProcDescLog,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_impl::get_offset() as isize),
+        );
+        inner(this, inst, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-procdesclog")]
+pub trait IProcDescLogMethods: IProcDescLog {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, log: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProcDescLog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcDescLog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(log),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
+    fn execute_impl(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            let __receiver = <ProcDescLog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcDescLog_unity2_raw::execute_impl(
+                __receiver,
+                ::core::convert::Into::into(inst),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-procdesclog")]
+impl<__T: IProcDescLog> IProcDescLogMethods for __T {}
 
 #[cfg(feature = "app-procdesclog")]
 impl ProcDescLog {
@@ -47,4 +175,20 @@ impl ProcDescLog {
         <Self as IProcDescLogMethods>::ctor(this, log);
         this
     }
+}
+
+#[cfg(feature = "app-procdesclog")]
+pub mod prelude {
+    pub use super::IProcDescLog;
+    pub use super::IProcDescLogMethods;
+    pub use super::ProcDescLog;
+    pub use crate::app::procdesc::IProcDesc;
+    #[cfg(feature = "app-procdesc")]
+    pub use crate::app::procdesc::IProcDescMethods;
+    pub use crate::app::procdesccallbase::IProcDescCallBase;
+    #[cfg(feature = "app-procdesccallbase")]
+    pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

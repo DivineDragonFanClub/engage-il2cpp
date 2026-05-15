@@ -30,121 +30,1194 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-www")]
-#[::unity2::methods]
-impl WWW {
-    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "LoadFromCacheOrDownload", args = 2)]
-    pub fn load_from_cache_or_download(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WWW_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_cache_or_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "LoadFromCacheOrDownload",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromCacheOrDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_cache_or_download(
         url: ::unity2::Il2CppString,
         version: i32,
-    ) -> crate::unity_engine::www::WWW;
-
-    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, i32, u32)` overload"]
-    #[method(name = "LoadFromCacheOrDownload", args = 3)]
-    pub fn load_from_cache_or_download_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::www::WWW {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::www::WWW = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_cache_or_download::get_offset() as isize),
+        );
+        inner(url, version, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_cache_or_download_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "LoadFromCacheOrDownload",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromCacheOrDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_cache_or_download_2(
         url: ::unity2::Il2CppString,
         version: i32,
         crc: u32,
-    ) -> crate::unity_engine::www::WWW;
-
-    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128)` overload"]
-    #[method(name = "LoadFromCacheOrDownload", args = 2)]
-    pub fn load_from_cache_or_download_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::www::WWW {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i32,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::www::WWW = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_cache_or_download_2::get_offset() as isize),
+        );
+        inner(url, version, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_cache_or_download_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "LoadFromCacheOrDownload",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromCacheOrDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_cache_or_download_3(
         url: ::unity2::Il2CppString,
         hash: crate::unity_engine::hash128::Hash128,
-    ) -> crate::unity_engine::www::WWW;
-
-    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128, u32)` overload"]
-    #[method(name = "LoadFromCacheOrDownload", args = 3)]
-    pub fn load_from_cache_or_download_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::www::WWW {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::hash128::Hash128,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::www::WWW = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_cache_or_download_3::get_offset() as isize),
+        );
+        inner(url, hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_cache_or_download_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "LoadFromCacheOrDownload",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromCacheOrDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_cache_or_download_4(
         url: ::unity2::Il2CppString,
         hash: crate::unity_engine::hash128::Hash128,
         crc: u32,
-    ) -> crate::unity_engine::www::WWW;
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::wwwform::WWWForm)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::www::WWW {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::hash128::Hash128,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::www::WWW = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_cache_or_download_4::get_offset() as isize),
+        );
+        inner(url, hash, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::wwwform::WWWForm as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WWW,
         url: ::unity2::Il2CppString,
         form: crate::unity_engine::wwwform::WWWForm,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, url: ::unity2::Il2CppString, post_data: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<u8>, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WWW,
+            ::unity2::Il2CppString,
+            crate::unity_engine::wwwform::WWWForm,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, url, form, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: WWW,
+        url: ::unity2::Il2CppString,
+        post_data: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WWW,
+            ::unity2::Il2CppString,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, url, post_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<
+                    ::unity2::Il2CppString,
+                    ::unity2::Il2CppString,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: WWW,
         url: ::unity2::Il2CppString,
         post_data: ::unity2::Array<u8>,
         headers: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::hash128::Hash128, u32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WWW,
+            ::unity2::Il2CppString,
+            ::unity2::Array<u8>,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, url, post_data, headers, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: WWW,
         url: ::unity2::Il2CppString,
         name: ::unity2::Il2CppString,
         hash: crate::unity_engine::hash128::Hash128,
         crc: u32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WWW,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::unity_engine::hash128::Hash128,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(this, url, name, hash, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_bundle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_assetBundle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_assetBundle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_bundle(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        let inner: extern "C" fn(
+            WWW,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_asset_bundle::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bytes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_bytes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_bytes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bytes(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bytes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_error",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_error",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_error(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_error::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_done {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_isDone",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_isDone",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_done(this: WWW, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_done::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_progress {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_progress",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_progress",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_progress(this: WWW, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_progress::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_response_headers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_responseHeaders",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_responseHeaders",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_response_headers(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    > {
+        let inner : extern "C" fn (WWW , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_response_headers :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_text",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_url {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_url",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_url",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_url(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_url::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_keep_waiting {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "get_keepWaiting",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "get_keepWaiting",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_keep_waiting(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_keep_waiting::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(this: WWW, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_until_done_if_possible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWW as ::unity2::ClassIdentity>::class(),
+                "WaitUntilDoneIfPossible",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWW as ::unity2::ClassIdentity>::NAME,
+                    "WaitUntilDoneIfPossible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_until_done_if_possible(
+        this: WWW,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(WWW, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_until_done_if_possible::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-www")]
+impl WWW {
+    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, i32)` overload"]
+    pub fn load_from_cache_or_download(
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        version: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::www::WWW {
+        unsafe {
+            __WWW_unity2_raw::load_from_cache_or_download(
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, i32, u32)` overload"]
+    pub fn load_from_cache_or_download_2(
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        version: impl ::core::convert::Into<i32>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::www::WWW {
+        unsafe {
+            __WWW_unity2_raw::load_from_cache_or_download_2(
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(version),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128)` overload"]
+    pub fn load_from_cache_or_download_3(
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        hash: impl ::core::convert::Into<crate::unity_engine::hash128::Hash128>,
+    ) -> crate::unity_engine::www::WWW {
+        unsafe {
+            __WWW_unity2_raw::load_from_cache_or_download_3(
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromCacheOrDownload(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128, u32)` overload"]
+    pub fn load_from_cache_or_download_4(
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        hash: impl ::core::convert::Into<crate::unity_engine::hash128::Hash128>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::www::WWW {
+        unsafe {
+            __WWW_unity2_raw::load_from_cache_or_download_4(
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(hash),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-www")]
+pub trait IWWWMethods: IWWW {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::wwwform::WWWForm)` overload"]
+    fn ctor(
+        self,
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        form: impl ::core::convert::Into<crate::unity_engine::wwwform::WWWForm>,
+    ) -> () {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(form),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
+    fn ctor_2(
+        self,
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        post_data: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(post_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<u8>, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
+    fn ctor_3(
+        self,
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        post_data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        headers: impl ::core::convert::Into<
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(post_data),
+                ::core::convert::Into::into(headers),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::hash128::Hash128, u32)` overload"]
+    fn ctor_4(
+        self,
+        url: impl ::core::convert::Into<::unity2::Il2CppString>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        hash: impl ::core::convert::Into<crate::unity_engine::hash128::Hash128>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(url),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(hash),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_assetBundle()` overload"]
-    #[method(name = "get_assetBundle", args = 0)]
-    pub fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle;
-
+    fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_asset_bundle(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_bytes()` overload"]
-    #[method(name = "get_bytes", args = 0)]
-    pub fn get_bytes(self) -> ::unity2::Array<u8>;
-
+    fn get_bytes(self) -> ::unity2::Array<u8> {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_bytes(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_error()` overload"]
-    #[method(name = "get_error", args = 0)]
-    pub fn get_error(self) -> ::unity2::Il2CppString;
-
+    fn get_error(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_error(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_isDone()` overload"]
-    #[method(name = "get_isDone", args = 0)]
-    pub fn get_is_done(self) -> bool;
-
+    fn get_is_done(self) -> bool {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_is_done(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_progress()` overload"]
-    #[method(name = "get_progress", args = 0)]
-    pub fn get_progress(self) -> f32;
-
+    fn get_progress(self) -> f32 {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_responseHeaders()` overload"]
-    #[method(name = "get_responseHeaders", args = 0)]
-    pub fn get_response_headers(
+    fn get_response_headers(
         self,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         ::unity2::Il2CppString,
         ::unity2::Il2CppString,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_response_headers(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_text()` overload"]
-    #[method(name = "get_text", args = 0)]
-    pub fn get_text(self) -> ::unity2::Il2CppString;
-
+    fn get_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_text(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_url()` overload"]
-    #[method(name = "get_url", args = 0)]
-    pub fn get_url(self) -> ::unity2::Il2CppString;
-
+    fn get_url(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_url(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_keepWaiting()` overload"]
-    #[method(name = "get_keepWaiting", args = 0)]
-    pub fn get_keep_waiting(self) -> bool;
-
+    fn get_keep_waiting(self) -> bool {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::get_keep_waiting(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`WaitUntilDoneIfPossible()` overload"]
-    #[method(name = "WaitUntilDoneIfPossible", args = 0)]
-    pub fn wait_until_done_if_possible(self) -> bool;
+    fn wait_until_done_if_possible(self) -> bool {
+        unsafe {
+            let __receiver = <WWW as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WWW_unity2_raw::wait_until_done_if_possible(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-www")]
+impl<__T: IWWW> IWWWMethods for __T {}
 
 #[cfg(feature = "unity_engine-www")]
 impl WWW {
@@ -211,4 +1284,17 @@ impl WWW {
         <Self as IWWWMethods>::ctor_4(this, url, name, hash, crc);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-www")]
+pub mod prelude {
+    pub use super::IWWWMethods;
+    pub use super::IWWW;
+    pub use super::WWW;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::customyieldinstruction::ICustomYieldInstruction;
+    #[cfg(feature = "unity_engine-customyieldinstruction")]
+    pub use crate::unity_engine::customyieldinstruction::ICustomYieldInstructionMethods;
 }

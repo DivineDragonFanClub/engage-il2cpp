@@ -17,45 +17,394 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-vibration")]
-#[::unity2::methods]
-impl Vibration {
-    #[doc = "`GetDeviceHandles(::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    #[method(name = "GetDeviceHandles", args = 4)]
-    pub fn get_device_handles(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Vibration_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_device_handles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadstyle :: NpadStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "GetDeviceHandles",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "GetDeviceHandles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_device_handles(
         p_out_values: ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
         count: i32,
         npad_id: crate::nn::hid::npadid::NpadId,
         npad_style: crate::nn::hid::npadstyle::NpadStyle,
-    ) -> i32;
-
-    #[doc = "`GetDeviceInfo(crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
-    #[method(name = "GetDeviceInfo", args = 2)]
-    pub fn get_device_info(
-        p_out_value: crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+            i32,
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadstyle::NpadStyle,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_device_handles::get_offset() as isize),
+        );
+        inner(
+            p_out_values,
+            count,
+            npad_id,
+            npad_style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_device_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: vibrationdeviceinfo :: VibrationDeviceInfo as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "GetDeviceInfo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "GetDeviceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_device_info(
+        p_out_value: *mut crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo,
         handle: crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
-    ) -> ();
-
-    #[doc = "`InitializeDevice(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
-    #[method(name = "InitializeDevice", args = 1)]
-    pub fn initialize_device(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo,
+            crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_device_info::get_offset() as isize),
+        );
+        inner(p_out_value, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_device {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "InitializeDevice",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "InitializeDevice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_device(
         handle: crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
-    ) -> ();
-
-    #[doc = "`SendValue(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle, crate::nn::hid::vibrationvalue::VibrationValue)` overload"]
-    #[method(name = "SendValue", args = 2)]
-    pub fn send_value(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize_device::get_offset() as isize),
+        );
+        inner(handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvalue :: VibrationValue as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "SendValue",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "SendValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_value(
         handle: crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
         value: crate::nn::hid::vibrationvalue::VibrationValue,
-    ) -> ();
-
-    #[doc = "`GetActualValue(crate::nn::hid::vibrationvalue::VibrationValue, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
-    #[method(name = "GetActualValue", args = 2)]
-    pub fn get_actual_value(
-        p_out_value: crate::nn::hid::vibrationvalue::VibrationValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
+            crate::nn::hid::vibrationvalue::VibrationValue,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_value::get_offset() as isize),
+        );
+        inner(handle, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_actual_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: vibrationvalue :: VibrationValue as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "GetActualValue",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "GetActualValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_actual_value(
+        p_out_value: *mut crate::nn::hid::vibrationvalue::VibrationValue,
         handle: crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::vibrationvalue::VibrationValue,
+            crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_actual_value::get_offset() as isize),
+        );
+        inner(p_out_value, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_permitted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vibration as ::unity2::ClassIdentity>::class(),
+                "IsPermitted",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vibration as ::unity2::ClassIdentity>::NAME,
+                    "IsPermitted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_permitted(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_permitted::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "nn-hid-vibration")]
+impl Vibration {
+    #[doc = "`GetDeviceHandles(::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
+    pub fn get_device_handles(
+        p_out_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+        >,
+        count: impl ::core::convert::Into<i32>,
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
+    ) -> i32 {
+        unsafe {
+            __Vibration_unity2_raw::get_device_handles(
+                ::core::convert::Into::into(p_out_values),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(npad_id),
+                ::core::convert::Into::into(npad_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDeviceInfo(*mutcrate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
+    pub fn get_device_info(
+        handle: impl ::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+    ) -> crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo,
+            >::uninit();
+            __Vibration_unity2_raw::get_device_info(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`InitializeDevice(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
+    pub fn initialize_device(
+        handle: impl ::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+    ) -> () {
+        unsafe {
+            __Vibration_unity2_raw::initialize_device(
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendValue(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle, crate::nn::hid::vibrationvalue::VibrationValue)` overload"]
+    pub fn send_value(
+        handle: impl ::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+        value: impl ::core::convert::Into<crate::nn::hid::vibrationvalue::VibrationValue>,
+    ) -> () {
+        unsafe {
+            __Vibration_unity2_raw::send_value(
+                ::core::convert::Into::into(handle),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetActualValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]
+    pub fn get_actual_value(
+        handle: impl ::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+    ) -> crate::nn::hid::vibrationvalue::VibrationValue {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::vibrationvalue::VibrationValue,
+            >::uninit();
+            __Vibration_unity2_raw::get_actual_value(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
     #[doc = "`IsPermitted()` overload"]
-    #[method(name = "IsPermitted", args = 0)]
-    pub fn is_permitted() -> bool;
+    pub fn is_permitted() -> bool {
+        unsafe { __Vibration_unity2_raw::is_permitted(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "nn-hid-vibration")]
+pub mod prelude {
+    pub use super::IVibration;
+    pub use super::Vibration;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

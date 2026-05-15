@@ -10,6 +10,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcDead.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcDead")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcDead {
+        #[static_field]
+        #[rename(name = "FadeTime")]
+        pub fade_time: f32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcUnitAction.md"))]
     #[::unity2::class(namespace = "App", name = "MapAction.ProcUnitAction")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -28,14 +37,121 @@ mod __types {
         pub m_time: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcDead.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcDead")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapAction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBounce.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcBounce")]
     #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcDead {
+    pub struct MapAction_ProcBounce {
+        #[rename(name = "m_impacted")]
+        pub m_impacted: bool,
+        #[rename(name = "m_Hit")]
+        pub m_hit: crate::unity_engine::vector3::Vector3,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcTranslation.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcTranslation")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcTranslation {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcRouteMove")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapAction_ProcRouteMove {
+        #[static_field]
+        #[rename(name = "SmokeCount")]
+        pub smoke_count: i32,
+        #[static_field]
+        #[rename(name = "MoveSpeed")]
+        pub move_speed: f32,
+        #[rename(name = "m_Actor")]
+        pub m_actor: crate::app::unitactor::UnitActor,
+        #[rename(name = "m_MoveFlag")]
+        pub m_move_flag: crate::app::mapmoveflag::MapMoveFlag,
+        #[rename(name = "m_Routes")]
+        pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+        #[rename(name = "m_RouteCount")]
+        pub m_route_count: i32,
+        #[rename(name = "m_Position")]
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_FromX")]
+        pub m_from_x: i32,
+        #[rename(name = "m_FromZ")]
+        pub m_from_z: i32,
+        #[rename(name = "m_ToX")]
+        pub m_to_x: i32,
+        #[rename(name = "m_ToZ")]
+        pub m_to_z: i32,
+        #[rename(name = "m_Spline")]
+        pub m_spline: crate::app::mapaction::MapAction_ProcRouteMove_Spline,
+        #[rename(name = "m_Fraction")]
+        pub m_fraction: f32,
+        #[rename(name = "m_Distance")]
+        pub m_distance: f32,
+        #[rename(name = "m_IsPass")]
+        pub m_is_pass: bool,
+        #[rename(name = "m_IsStay")]
+        pub m_is_stay: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcWarp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcWarp")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcWarp {
         #[static_field]
         #[rename(name = "FadeTime")]
         pub fade_time: f32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove_Spline.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcRouteMove.Spline")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapAction_ProcRouteMove_Spline {
+        #[static_field]
+        #[rename(name = "CurveMax")]
+        pub curve_max: i32,
+        #[rename(name = "From")]
+        pub from: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "To")]
+        pub to: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "Curves")]
+        pub curves: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcSyncSkyCastle.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcSyncSkyCastle")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcSyncSkyCastle {
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBlow.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcBlow")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcBlow {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcChangePos.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcChangePos")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcChangePos {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRevive.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcRevive")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcRevive {
+        #[static_field]
+        #[rename(name = "FadeTime")]
+        pub fade_time: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcJump.md"))]
+    #[::unity2::class(namespace = "App", name = "MapAction.ProcJump")]
+    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
+    pub struct MapAction_ProcJump {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapaction/MapAction_ProcRouteMove_Result.md"))]
     #[repr(C)]
@@ -84,172 +200,863 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRevive.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcRevive")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcRevive {
-        #[static_field]
-        #[rename(name = "FadeTime")]
-        pub fade_time: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcWarp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcWarp")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcWarp {
-        #[static_field]
-        #[rename(name = "FadeTime")]
-        pub fade_time: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcRouteMove")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapAction_ProcRouteMove {
-        #[static_field]
-        #[rename(name = "SmokeCount")]
-        pub smoke_count: i32,
-        #[static_field]
-        #[rename(name = "MoveSpeed")]
-        pub move_speed: f32,
-        #[rename(name = "m_Actor")]
-        pub m_actor: crate::app::unitactor::UnitActor,
-        #[rename(name = "m_MoveFlag")]
-        pub m_move_flag: crate::app::mapmoveflag::MapMoveFlag,
-        #[rename(name = "m_Routes")]
-        pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
-        #[rename(name = "m_RouteCount")]
-        pub m_route_count: i32,
-        #[rename(name = "m_Position")]
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_FromX")]
-        pub m_from_x: i32,
-        #[rename(name = "m_FromZ")]
-        pub m_from_z: i32,
-        #[rename(name = "m_ToX")]
-        pub m_to_x: i32,
-        #[rename(name = "m_ToZ")]
-        pub m_to_z: i32,
-        #[rename(name = "m_Spline")]
-        pub m_spline: crate::app::mapaction::MapAction_ProcRouteMove_Spline,
-        #[rename(name = "m_Fraction")]
-        pub m_fraction: f32,
-        #[rename(name = "m_Distance")]
-        pub m_distance: f32,
-        #[rename(name = "m_IsPass")]
-        pub m_is_pass: bool,
-        #[rename(name = "m_IsStay")]
-        pub m_is_stay: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcChangePos.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcChangePos")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcChangePos {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcTranslation.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcTranslation")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcTranslation {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBounce.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcBounce")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcBounce {
-        #[rename(name = "m_impacted")]
-        pub m_impacted: bool,
-        #[rename(name = "m_Hit")]
-        pub m_hit: crate::unity_engine::vector3::Vector3,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBlow.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcBlow")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcBlow {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapAction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove_Spline.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcRouteMove.Spline")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapAction_ProcRouteMove_Spline {
-        #[static_field]
-        #[rename(name = "CurveMax")]
-        pub curve_max: i32,
-        #[rename(name = "From")]
-        pub from: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "To")]
-        pub to: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "Curves")]
-        pub curves: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcJump.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcJump")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcJump {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcSyncSkyCastle.md"))]
-    #[::unity2::class(namespace = "App", name = "MapAction.ProcSyncSkyCastle")]
-    #[parent(crate::app::mapaction::MapAction_ProcUnitAction)]
-    pub struct MapAction_ProcSyncSkyCastle {
-        #[rename(name = "m_MovingSkyCastle")]
-        pub m_moving_sky_castle: crate::root::skycastle::SkyCastle_MovingSkyCastle,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-    }
 }
 
 #[cfg(feature = "app-mapaction-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcUnitAction {
-    #[doc = "`get_CanWaitSkip()` overload"]
-    #[method(name = "get_CanWaitSkip", args = 0)]
-    pub fn get_can_wait_skip(self) -> bool;
-
-    #[doc = "`get_Speed()` overload"]
-    #[method(name = "get_Speed", args = 0)]
-    pub fn get_speed(self) -> f32;
-
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor) -> ();
-
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(self, actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> ();
-
-    #[doc = "`CalcRange(f32, f32)` overload"]
-    #[method(name = "CalcRange", args = 2)]
-    pub fn calc_range(self, dx: f32, dz: f32) -> ();
-
-    #[doc = "`AddTime()` overload"]
-    #[method(name = "AddTime", args = 0)]
-    pub fn add_time(self) -> bool;
-
-    #[doc = "`GetRatio()` overload"]
-    #[method(name = "GetRatio", args = 0)]
-    pub fn get_ratio(self) -> f32;
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcDead_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcDead as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcDead as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcDead,
+        actor: crate::app::unitactor::UnitActor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcDead,
+            crate::app::unitactor::UnitActor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_executed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcDead as ::unity2::ClassIdentity>::class(),
+                "Executed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcDead as ::unity2::ClassIdentity>::NAME,
+                    "Executed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn executed(
+        this: MapAction_ProcDead,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcDead, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_executed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcDead as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcDead as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcDead {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcDead_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcDeadMethods: IMapAction_ProcDead {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
+    fn ctor(self, actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcDead as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcDead_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Executed()` overload"]
+    fn executed(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcDead as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcDead_unity2_raw::executed(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcDead> IMapAction_ProcDeadMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcDead {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcDead),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcDeadMethods>::ctor(this, actor);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcUnitAction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_wait_skip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "get_CanWaitSkip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "get_CanWaitSkip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_wait_skip(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_can_wait_skip::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "get_Speed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "get_Speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_speed(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcUnitAction,
+        actor: crate::app::unitactor::UnitActor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcUnitAction,
+            crate::app::unitactor::UnitActor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: MapAction_ProcUnitAction,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcUnitAction,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "CalcRange",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "CalcRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_range(
+        this: MapAction_ProcUnitAction,
+        dx: f32,
+        dz: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcUnitAction,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_range::get_offset() as isize),
+        );
+        inner(this, dx, dz, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "AddTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "AddTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_time(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ratio {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "GetRatio",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "GetRatio",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ratio(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_ratio::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcUnitAction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::class(),
+                "get_Unit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcUnitAction as ::unity2::ClassIdentity>::NAME,
+                    "get_Unit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit(
+        this: MapAction_ProcUnitAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            MapAction_ProcUnitAction,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unit::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcUnitActionMethods: IMapAction_ProcUnitAction {
+    #[doc = "`get_CanWaitSkip()` overload"]
+    fn get_can_wait_skip(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::get_can_wait_skip(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Speed()` overload"]
+    fn get_speed(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::get_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
+    fn ctor(self, actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    fn ctor_2(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcRange(f32, f32)` overload"]
+    fn calc_range(
+        self,
+        dx: impl ::core::convert::Into<f32>,
+        dz: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::calc_range(
+                __receiver,
+                ::core::convert::Into::into(dx),
+                ::core::convert::Into::into(dz),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddTime()` overload"]
+    fn add_time(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::add_time(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRatio()` overload"]
+    fn get_ratio(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::get_ratio(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Unit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcUnitAction as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcUnitAction_unity2_raw::get_unit(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcUnitAction> IMapAction_ProcUnitActionMethods for __T {}
 
 #[cfg(feature = "app-mapaction")]
 impl MapAction_ProcUnitAction {
@@ -281,224 +1088,2297 @@ impl MapAction_ProcUnitAction {
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcDead {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor) -> ();
-
-    #[doc = "`Executed()` overload"]
-    #[method(name = "Executed", args = 0)]
-    pub fn executed(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcDead {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcDead),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_pos_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "ChangePosBind",
+                4,
+                param_types,
+                true,
             )
         });
-        <Self as IMapAction_ProcDeadMethods>::ctor(this, actor);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "ChangePosBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_pos_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_pos_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "WarpBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "WarpBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_in_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "WarpInBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "WarpInBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_in_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_in_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_out_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "WarpOutBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "WarpOutBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_out_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_out_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dead_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "DeadBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "DeadBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dead_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dead_bind::get_offset() as isize),
+        );
+        inner(actor, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_revive_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "ReviveBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "ReviveBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn revive_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_revive_bind::get_offset() as isize),
+        );
+        inner(actor, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blow_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "BlowBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "BlowBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blow_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_blow_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bounce_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "BounceBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "BounceBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bounce_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        dx: i32,
+        dz: i32,
+        distance: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bounce_bind::get_offset() as isize),
+        );
+        inner(actor, super_, dx, dz, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "JumpCreate",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "JumpCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_create(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        range: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_create::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, range, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translation_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction as ::unity2::ClassIdentity>::class(),
+                "TranslationBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction as ::unity2::ClassIdentity>::NAME,
+                    "TranslationBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translation_bind(
+        actor: crate::app::unitactor::UnitActor,
+        super_: crate::app::procinst::ProcInst,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unitactor::UnitActor,
+            crate::app::procinst::ProcInst,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_translation_bind::get_offset() as isize),
+        );
+        inner(actor, super_, to_x, to_z, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcRevive {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor) -> ();
-
-    #[doc = "`Executed()` overload"]
-    #[method(name = "Executed", args = 0)]
-    pub fn executed(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRevive {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcRevive),
-                ::core::stringify!(new),
+impl MapAction {
+    #[doc = "`ChangePosBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
+    pub fn change_pos_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::change_pos_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
             )
-        });
-        <Self as IMapAction_ProcReviveMethods>::ctor(this, actor);
-        this
+        }
     }
-}
-
-#[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcWarp {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> ();
-
-    #[doc = "`GetWarpOutEffect(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetWarpOutEffect", args = 1)]
-    pub fn get_warp_out_effect(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetWarpInEffect(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetWarpInEffect", args = 1)]
-    pub fn get_warp_in_effect(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
-
-    #[doc = "`WarpOut()` overload"]
-    #[method(name = "WarpOut", args = 0)]
-    pub fn warp_out(self) -> ();
-
-    #[doc = "`WarpIn()` overload"]
-    #[method(name = "WarpIn", args = 0)]
-    pub fn warp_in(self) -> ();
-
-    #[doc = "`FadeOut()` overload"]
-    #[method(name = "FadeOut", args = 0)]
-    pub fn fade_out(self) -> ();
-
-    #[doc = "`FadeIn()` overload"]
-    #[method(name = "FadeIn", args = 0)]
-    pub fn fade_in(self) -> ();
-
-    #[doc = "`WaitTick()` overload"]
-    #[method(name = "WaitTick", args = 0)]
-    pub fn wait_tick(self) -> ();
-
-    #[doc = "`WarpBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "WarpBind", args = 4)]
+    #[doc = "`WarpBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
     pub fn warp_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`WarpInBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "WarpInBind", args = 4)]
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::warp_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpInBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
     pub fn warp_in_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`WarpOutBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "WarpOutBind", args = 4)]
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::warp_in_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpOutBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
     pub fn warp_out_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::warp_out_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeadBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]
+    pub fn dead_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::dead_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReviveBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]
+    pub fn revive_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::revive_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlowBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
+    pub fn blow_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::blow_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BounceBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, i32)` overload"]
+    pub fn bounce_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        dx: impl ::core::convert::Into<i32>,
+        dz: impl ::core::convert::Into<i32>,
+        distance: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::bounce_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(dx),
+                ::core::convert::Into::into(dz),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`JumpCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, f32)` overload"]
+    pub fn jump_create(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::jump_create(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::convert::Into::into(range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TranslationBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
+    pub fn translation_bind(
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_unity2_raw::translation_bind(
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "app-mapaction")]
-impl MapAction_ProcWarp {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcBounce_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBounce as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBounce as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcBounce,
+        actor: crate::app::unitactor::UnitActor,
+        dx: i32,
+        dz: i32,
+        distance: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcBounce,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, dx, dz, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBounce as ::unity2::ClassIdentity>::class(),
+                "get_Speed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBounce as ::unity2::ClassIdentity>::NAME,
+                    "get_Speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_speed(
+        this: MapAction_ProcBounce,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapAction_ProcBounce, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBounce as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBounce as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcBounce,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcBounce, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBounce as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBounce as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        dx: i32,
+        dz: i32,
+        distance: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, dx, dz, distance, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcBounce {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        dx: impl ::core::convert::Into<i32>,
+        dz: impl ::core::convert::Into<i32>,
+        distance: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcBounce_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(dx),
+                ::core::convert::Into::into(dz),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcBounceMethods: IMapAction_ProcBounce {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        dx: impl ::core::convert::Into<i32>,
+        dz: impl ::core::convert::Into<i32>,
+        distance: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcBounce as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBounce_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(dx),
+                ::core::convert::Into::into(dz),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Speed()` overload"]
+    fn get_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <MapAction_ProcBounce as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBounce_unity2_raw::get_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcBounce as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBounce_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcBounce> IMapAction_ProcBounceMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcBounce {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor, dx: i32, dz: i32, distance: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcBounce),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcBounceMethods>::ctor(this, actor, dx, dz, distance);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcTranslation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcTranslation,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcTranslation,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                "get_Speed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    "get_Speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_speed(
+        this: MapAction_ProcTranslation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapAction_ProcTranslation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapAction_ProcTranslation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcTranslation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: MapAction_ProcTranslation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcTranslation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcTranslation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcTranslation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcTranslation as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcTranslation as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcTranslation {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcTranslation_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcTranslationMethods: IMapAction_ProcTranslation {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcTranslation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcTranslation_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Speed()` overload"]
+    fn get_speed(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcTranslation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcTranslation_unity2_raw::get_speed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcTranslation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcTranslation_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcTranslation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcTranslation_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcTranslation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcTranslation_unity2_raw::on_tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcTranslation> IMapAction_ProcTranslationMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcTranslation {
     #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
     pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcWarp),
+                ::core::stringify!(MapAction_ProcTranslation),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapAction_ProcWarpMethods>::ctor(this, actor, to_x, to_z);
+        <Self as IMapAction_ProcTranslationMethods>::ctor(this, actor, to_x, to_z);
         this
     }
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcRouteMove {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcRouteMove_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::dir_2::Dir_Type> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::mapmoveflag::MapMoveFlag as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcRouteMove,
         actor: crate::app::unitactor::UnitActor,
         routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
         from_x: i32,
         from_z: i32,
         move_flag: crate::app::mapmoveflag::MapMoveFlag,
-    ) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`GetTimeScale()` overload"]
-    #[method(name = "GetTimeScale", args = 0)]
-    pub fn get_time_scale(self) -> i32;
-
-    #[doc = "`IsPass(i32, i32, ::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]
-    #[method(name = "IsPass", args = 3)]
-    pub fn is_pass(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcRouteMove,
+            crate::app::unitactor::UnitActor,
+            ::unity2::Array<crate::app::dir_2::Dir_Type>,
+            i32,
+            i32,
+            crate::app::mapmoveflag::MapMoveFlag,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            actor,
+            routes,
+            from_x,
+            from_z,
+            move_flag,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "GetTimeScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "GetTimeScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_time_scale(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_time_scale::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::dir_2::Dir_Type> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "IsPass",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "IsPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_pass(
+        this: MapAction_ProcRouteMove,
         x: i32,
         z: i32,
         routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
-    ) -> bool;
-
-    #[doc = "`IsStay()` overload"]
-    #[method(name = "IsStay", args = 0)]
-    pub fn is_stay(self) -> bool;
-
-    #[doc = "`InitRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]
-    #[method(name = "InitRoute", args = 1)]
-    pub fn init_route(self, routes: ::unity2::Array<crate::app::dir_2::Dir_Type>) -> ();
-
-    #[doc = "`InitPosition()` overload"]
-    #[method(name = "InitPosition", args = 0)]
-    pub fn init_position(self) -> ();
-
-    #[doc = "`CalcPosition()` overload"]
-    #[method(name = "CalcPosition", args = 0)]
-    pub fn calc_position(self) -> bool;
-
-    #[doc = "`MoveRoute(f32)` overload"]
-    #[method(name = "MoveRoute", args = 1)]
-    pub fn move_route(self, speed: f32) -> crate::app::mapaction::MapAction_ProcRouteMove_Result;
-
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]
-    #[method(name = "Create", args = 6)]
-    pub fn create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapAction_ProcRouteMove,
+            i32,
+            i32,
+            ::unity2::Array<crate::app::dir_2::Dir_Type>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_pass::get_offset() as isize),
+        );
+        inner(this, x, z, routes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_stay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "IsStay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "IsStay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_stay(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_stay::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_route {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::app::dir_2::Dir_Type> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "InitRoute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "InitRoute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_route(
+        this: MapAction_ProcRouteMove,
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcRouteMove,
+            ::unity2::Array<crate::app::dir_2::Dir_Type>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_route::get_offset() as isize),
+        );
+        inner(this, routes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "InitPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "InitPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_position(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "CalcPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "CalcPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_position(
+        this: MapAction_ProcRouteMove,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapAction_ProcRouteMove, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_route {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "MoveRoute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "MoveRoute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_route(
+        this: MapAction_ProcRouteMove,
+        speed: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapaction::MapAction_ProcRouteMove_Result {
+        let inner: extern "C" fn(
+            MapAction_ProcRouteMove,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::mapaction::MapAction_ProcRouteMove_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_route::get_offset() as isize),
+        );
+        inner(this, speed, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::dir_2::Dir_Type> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::mapmoveflag::MapMoveFlag as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::class(),
+                "Create",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
         actor: crate::app::unitactor::UnitActor,
         routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
         from_x: i32,
         from_z: i32,
         move_flag: crate::app::mapmoveflag::MapMoveFlag,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            ::unity2::Array<crate::app::dir_2::Dir_Type>,
+            i32,
+            i32,
+            crate::app::mapmoveflag::MapMoveFlag,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(
+            super_,
+            actor,
+            routes,
+            from_x,
+            from_z,
+            move_flag,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcRouteMove {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        routes: impl ::core::convert::Into<::unity2::Array<crate::app::dir_2::Dir_Type>>,
+        from_x: impl ::core::convert::Into<i32>,
+        from_z: impl ::core::convert::Into<i32>,
+        move_flag: impl ::core::convert::Into<crate::app::mapmoveflag::MapMoveFlag>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcRouteMove_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(routes),
+                ::core::convert::Into::into(from_x),
+                ::core::convert::Into::into(from_z),
+                ::core::convert::Into::into(move_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcRouteMoveMethods: IMapAction_ProcRouteMove {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        routes: impl ::core::convert::Into<::unity2::Array<crate::app::dir_2::Dir_Type>>,
+        from_x: impl ::core::convert::Into<i32>,
+        from_z: impl ::core::convert::Into<i32>,
+        move_flag: impl ::core::convert::Into<crate::app::mapmoveflag::MapMoveFlag>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(routes),
+                ::core::convert::Into::into(from_x),
+                ::core::convert::Into::into(from_z),
+                ::core::convert::Into::into(move_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetTimeScale()` overload"]
+    fn get_time_scale(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::get_time_scale(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPass(i32, i32, ::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]
+    fn is_pass(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        routes: impl ::core::convert::Into<::unity2::Array<crate::app::dir_2::Dir_Type>>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::is_pass(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(routes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStay()` overload"]
+    fn is_stay(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::is_stay(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]
+    fn init_route(
+        self,
+        routes: impl ::core::convert::Into<::unity2::Array<crate::app::dir_2::Dir_Type>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::init_route(
+                __receiver,
+                ::core::convert::Into::into(routes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitPosition()` overload"]
+    fn init_position(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::init_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcPosition()` overload"]
+    fn calc_position(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::calc_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveRoute(f32)` overload"]
+    fn move_route(
+        self,
+        speed: impl ::core::convert::Into<f32>,
+    ) -> crate::app::mapaction::MapAction_ProcRouteMove_Result {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_unity2_raw::move_route(
+                __receiver,
+                ::core::convert::Into::into(speed),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcRouteMove> IMapAction_ProcRouteMoveMethods for __T {}
 
 #[cfg(feature = "app-mapaction")]
 impl MapAction_ProcRouteMove {
@@ -525,293 +3405,800 @@ impl MapAction_ProcRouteMove {
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcChangePos {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcWarp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcWarp,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcWarp,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_out_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "GetWarpOutEffect",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "GetWarpOutEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_warp_out_effect(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_warp_out_effect::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_in_effect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "GetWarpInEffect",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "GetWarpInEffect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_warp_in_effect(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_warp_in_effect::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WarpOut",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WarpOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_out(
+        this: MapAction_ProcWarp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcWarp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_warp_out::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WarpIn",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WarpIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_in(
+        this: MapAction_ProcWarp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcWarp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_warp_in::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "FadeOut",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "FadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_out(
+        this: MapAction_ProcWarp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcWarp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_out::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "FadeIn",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "FadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_in(
+        this: MapAction_ProcWarp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcWarp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_in::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WaitTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WaitTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_tick(
+        this: MapAction_ProcWarp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcWarp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_wait_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WarpBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WarpBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn warp_bind(
         super_: crate::app::procinst::ProcInst,
         actor: crate::app::unitactor::UnitActor,
         to_x: i32,
         to_z: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcChangePos {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcChangePos),
-                ::core::stringify!(new),
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_in_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WarpInBind",
+                4,
+                param_types,
+                true,
             )
         });
-        <Self as IMapAction_ProcChangePosMethods>::ctor(this, actor, to_x, to_z);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WarpInBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcTranslation {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> ();
-
-    #[doc = "`get_Speed()` overload"]
-    #[method(name = "get_Speed", args = 0)]
-    pub fn get_speed(self) -> f32;
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
+    pub unsafe fn warp_in_bind(
         super_: crate::app::procinst::ProcInst,
         actor: crate::app::unitactor::UnitActor,
         to_x: i32,
         to_z: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcTranslation {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcTranslation),
-                ::core::stringify!(new),
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_in_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warp_out_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcWarp as ::unity2::ClassIdentity>::class(),
+                "WarpOutBind",
+                4,
+                param_types,
+                true,
             )
         });
-        <Self as IMapAction_ProcTranslationMethods>::ctor(this, actor, to_x, to_z);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcWarp as ::unity2::ClassIdentity>::NAME,
+                    "WarpOutBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcBounce {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        actor: crate::app::unitactor::UnitActor,
-        dx: i32,
-        dz: i32,
-        distance: i32,
-    ) -> ();
-
-    #[doc = "`get_Speed()` overload"]
-    #[method(name = "get_Speed", args = 0)]
-    pub fn get_speed(self) -> f32;
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-        dx: i32,
-        dz: i32,
-        distance: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBounce {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor, dx: i32, dz: i32, distance: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcBounce),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapAction_ProcBounceMethods>::ctor(this, actor, dx, dz, distance);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcBlow {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> ();
-
-    #[doc = "`get_Speed()` overload"]
-    #[method(name = "get_Speed", args = 0)]
-    pub fn get_speed(self) -> f32;
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
+    pub unsafe fn warp_out_bind(
         super_: crate::app::procinst::ProcInst,
         actor: crate::app::unitactor::UnitActor,
         to_x: i32,
         to_z: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBlow {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
-    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcBlow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapAction_ProcBlowMethods>::ctor(this, actor, to_x, to_z);
-        this
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_warp_out_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction {
-    #[doc = "`ChangePosBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "ChangePosBind", args = 4)]
-    pub fn change_pos_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`WarpBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "WarpBind", args = 4)]
+impl MapAction_ProcWarp {
+    #[doc = "`GetWarpOutEffect(crate::app::unit::Unit)` overload"]
+    pub fn get_warp_out_effect(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __MapAction_ProcWarp_unity2_raw::get_warp_out_effect(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetWarpInEffect(crate::app::unit::Unit)` overload"]
+    pub fn get_warp_in_effect(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __MapAction_ProcWarp_unity2_raw::get_warp_in_effect(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
     pub fn warp_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`WarpInBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "WarpInBind", args = 4)]
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcWarp_unity2_raw::warp_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpInBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
     pub fn warp_in_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`WarpOutBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "WarpOutBind", args = 4)]
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcWarp_unity2_raw::warp_in_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpOutBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
     pub fn warp_out_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`DeadBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "DeadBind", args = 2)]
-    pub fn dead_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-    ) -> ();
-
-    #[doc = "`ReviveBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "ReviveBind", args = 2)]
-    pub fn revive_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-    ) -> ();
-
-    #[doc = "`BlowBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "BlowBind", args = 4)]
-    pub fn blow_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
-
-    #[doc = "`BounceBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, i32)` overload"]
-    #[method(name = "BounceBind", args = 5)]
-    pub fn bounce_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        dx: i32,
-        dz: i32,
-        distance: i32,
-    ) -> ();
-
-    #[doc = "`SyncSkyCastleCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]
-    #[method(name = "SyncSkyCastleCreate", args = 5)]
-    pub fn sync_sky_castle_create(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-        moving_sky_castle: crate::root::skycastle::SkyCastle_MovingSkyCastle,
-    ) -> ();
-
-    #[doc = "`JumpCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, f32)` overload"]
-    #[method(name = "JumpCreate", args = 5)]
-    pub fn jump_create(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-        range: f32,
-    ) -> ();
-
-    #[doc = "`TranslationBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]
-    #[method(name = "TranslationBind", args = 4)]
-    pub fn translation_bind(
-        actor: crate::app::unitactor::UnitActor,
-        super_: crate::app::procinst::ProcInst,
-        to_x: i32,
-        to_z: i32,
-    ) -> ();
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcWarp_unity2_raw::warp_out_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcRouteMove_Spline {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+pub trait IMapAction_ProcWarpMethods: IMapAction_ProcWarp {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WarpOut()` overload"]
+    fn warp_out(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::warp_out(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WarpIn()` overload"]
+    fn warp_in(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::warp_in(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeOut()` overload"]
+    fn fade_out(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeIn()` overload"]
+    fn fade_in(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::fade_in(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitTick()` overload"]
+    fn wait_tick(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcWarp as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcWarp_unity2_raw::wait_tick(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcWarp> IMapAction_ProcWarpMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcWarp {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcWarp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcWarpMethods>::ctor(this, actor, to_x, to_z);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcRouteMove_Spline_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRouteMove_Spline as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRouteMove_Spline as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcRouteMove_Spline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRouteMove_Spline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcRouteMove_SplineMethods: IMapAction_ProcRouteMove_Spline {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcRouteMove_Spline as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcRouteMove_Spline_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcRouteMove_Spline> IMapAction_ProcRouteMove_SplineMethods for __T {}
 
 #[cfg(feature = "app-mapaction")]
 impl MapAction_ProcRouteMove_Spline {
@@ -830,32 +4217,1236 @@ impl MapAction_ProcRouteMove_Spline {
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcJump {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcSyncSkyCastle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapAction_ProcSyncSkyCastle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcSyncSkyCastle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: MapAction_ProcSyncSkyCastle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcSyncSkyCastle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcSyncSkyCastle as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcSyncSkyCastle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcSyncSkyCastle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcSyncSkyCastleMethods: IMapAction_ProcSyncSkyCastle {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcSyncSkyCastle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcSyncSkyCastle_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcSyncSkyCastle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcSyncSkyCastle_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcSyncSkyCastle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcSyncSkyCastle_unity2_raw::on_tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcSyncSkyCastle> IMapAction_ProcSyncSkyCastleMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcBlow_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBlow as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBlow as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcBlow,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcBlow,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBlow as ::unity2::ClassIdentity>::class(),
+                "get_Speed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBlow as ::unity2::ClassIdentity>::NAME,
+                    "get_Speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_speed(
+        this: MapAction_ProcBlow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapAction_ProcBlow, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBlow as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBlow as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcBlow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcBlow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcBlow as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcBlow as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcBlow {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcBlow_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcBlowMethods: IMapAction_ProcBlow {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    fn ctor(
         self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcBlow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBlow_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Speed()` overload"]
+    fn get_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <MapAction_ProcBlow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBlow_unity2_raw::get_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcBlow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcBlow_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcBlow> IMapAction_ProcBlowMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcBlow {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcBlow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcBlowMethods>::ctor(this, actor, to_x, to_z);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcChangePos_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcChangePos as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcChangePos as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcChangePos,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcChangePos,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcChangePos as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcChangePos as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapAction_ProcChangePos,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcChangePos, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcChangePos as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcChangePos as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcChangePos,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcChangePos, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcChangePos as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcChangePos as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        to_x: i32,
+        to_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcChangePos {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcChangePos_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcChangePosMethods: IMapAction_ProcChangePos {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcChangePos as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcChangePos_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcChangePos as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcChangePos_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapAction_ProcChangePos as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapAction_ProcChangePos_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcChangePos> IMapAction_ProcChangePosMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcChangePos {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor, to_x: i32, to_z: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcChangePos),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcChangePosMethods>::ctor(this, actor, to_x, to_z);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcRevive_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRevive as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRevive as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcRevive,
+        actor: crate::app::unitactor::UnitActor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcRevive,
+            crate::app::unitactor::UnitActor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_executed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRevive as ::unity2::ClassIdentity>::class(),
+                "Executed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRevive as ::unity2::ClassIdentity>::NAME,
+                    "Executed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn executed(
+        this: MapAction_ProcRevive,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcRevive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_executed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcRevive as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcRevive as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        actor: crate::app::unitactor::UnitActor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, actor, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcRevive {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcRevive_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcReviveMethods: IMapAction_ProcRevive {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"]
+    fn ctor(self, actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcRevive as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcRevive_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Executed()` overload"]
+    fn executed(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcRevive as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcRevive_unity2_raw::executed(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcRevive> IMapAction_ProcReviveMethods for __T {}
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcRevive {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]
+    pub fn new(actor: crate::app::unitactor::UnitActor) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapAction_ProcRevive),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapAction_ProcReviveMethods>::ctor(this, actor);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapAction_ProcJump_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcJump as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcJump as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapAction_ProcJump,
         actor: crate::app::unitactor::UnitActor,
         to_x: i32,
         to_z: i32,
         range: f32,
-    ) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]
-    #[method(name = "Create", args = 5)]
-    pub fn create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapAction_ProcJump,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, actor, to_x, to_z, range, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcJump as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcJump as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: MapAction_ProcJump,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapAction_ProcJump, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unitactor::UnitActor as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapAction_ProcJump as ::unity2::ClassIdentity>::class(),
+                "Create",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapAction_ProcJump as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
         actor: crate::app::unitactor::UnitActor,
         to_x: i32,
         to_z: i32,
         range: f32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unitactor::UnitActor,
+            i32,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(super_, actor, to_x, to_z, range, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapaction")]
+impl MapAction_ProcJump {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __MapAction_ProcJump_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::convert::Into::into(range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+pub trait IMapAction_ProcJumpMethods: IMapAction_ProcJump {
+    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]
+    fn ctor(
+        self,
+        actor: impl ::core::convert::Into<crate::app::unitactor::UnitActor>,
+        to_x: impl ::core::convert::Into<i32>,
+        to_z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcJump_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(actor),
+                ::core::convert::Into::into(to_x),
+                ::core::convert::Into::into(to_z),
+                ::core::convert::Into::into(range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = <MapAction_ProcJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapAction_ProcJump_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapaction")]
+impl<__T: IMapAction_ProcJump> IMapAction_ProcJumpMethods for __T {}
 
 #[cfg(feature = "app-mapaction")]
 impl MapAction_ProcJump {
@@ -874,64 +5465,56 @@ impl MapAction_ProcJump {
 }
 
 #[cfg(feature = "app-mapaction")]
-#[::unity2::methods]
-impl MapAction_ProcSyncSkyCastle {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-        moving_sky_castle: crate::root::skycastle::SkyCastle_MovingSkyCastle,
-    ) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]
-    #[method(name = "Create", args = 5)]
-    pub fn create(
-        super_: crate::app::procinst::ProcInst,
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-        moving_sky_castle: crate::root::skycastle::SkyCastle_MovingSkyCastle,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcSyncSkyCastle {
-    #[doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` — overload selector"]
-    pub fn new(
-        actor: crate::app::unitactor::UnitActor,
-        to_x: i32,
-        to_z: i32,
-        moving_sky_castle: crate::root::skycastle::SkyCastle_MovingSkyCastle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapAction_ProcSyncSkyCastle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapAction_ProcSyncSkyCastleMethods>::ctor(
-            this,
-            actor,
-            to_x,
-            to_z,
-            moving_sky_castle,
-        );
-        this
-    }
+pub mod prelude {
+    pub use super::IMapAction;
+    pub use super::IMapAction_ProcBlow;
+    pub use super::IMapAction_ProcBlowMethods;
+    pub use super::IMapAction_ProcBounce;
+    pub use super::IMapAction_ProcBounceMethods;
+    pub use super::IMapAction_ProcChangePos;
+    pub use super::IMapAction_ProcChangePosMethods;
+    pub use super::IMapAction_ProcDead;
+    pub use super::IMapAction_ProcDeadMethods;
+    pub use super::IMapAction_ProcJump;
+    pub use super::IMapAction_ProcJumpMethods;
+    pub use super::IMapAction_ProcRevive;
+    pub use super::IMapAction_ProcReviveMethods;
+    pub use super::IMapAction_ProcRouteMove;
+    pub use super::IMapAction_ProcRouteMoveMethods;
+    pub use super::IMapAction_ProcRouteMove_Spline;
+    pub use super::IMapAction_ProcRouteMove_SplineMethods;
+    pub use super::IMapAction_ProcSyncSkyCastle;
+    pub use super::IMapAction_ProcSyncSkyCastleMethods;
+    pub use super::IMapAction_ProcTranslation;
+    pub use super::IMapAction_ProcTranslationMethods;
+    pub use super::IMapAction_ProcUnitAction;
+    pub use super::IMapAction_ProcUnitActionMethods;
+    pub use super::IMapAction_ProcWarp;
+    pub use super::IMapAction_ProcWarpMethods;
+    pub use super::MapAction;
+    pub use super::MapAction_ProcBlow;
+    pub use super::MapAction_ProcBounce;
+    pub use super::MapAction_ProcChangePos;
+    pub use super::MapAction_ProcDead;
+    pub use super::MapAction_ProcJump;
+    pub use super::MapAction_ProcRevive;
+    pub use super::MapAction_ProcRouteMove;
+    pub use super::MapAction_ProcRouteMove_Result;
+    pub use super::MapAction_ProcRouteMove_Spline;
+    pub use super::MapAction_ProcSyncSkyCastle;
+    pub use super::MapAction_ProcTranslation;
+    pub use super::MapAction_ProcUnitAction;
+    pub use super::MapAction_ProcWarp;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -21,50 +21,471 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-myroomeventreceiver")]
-#[::unity2::methods]
-impl MyRoomEventReceiver {
-    #[doc = "`get_AdjustedTime()` overload"]
-    #[method(name = "get_AdjustedTime", args = 0)]
-    pub fn get_adjusted_time(self) -> f64;
-
-    #[doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]
-    #[method(name = "OnNotify", args = 3)]
-    pub fn on_notify(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomEventReceiver_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_adjusted_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "get_AdjustedTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "get_AdjustedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_adjusted_time(
+        this: MyRoomEventReceiver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(MyRoomEventReceiver, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_adjusted_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: inotification :: INotification as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotify",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotify",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify(
+        this: MyRoomEventReceiver,
         origin: crate::unity_engine::playables::playable::Playable,
         notification: crate::unity_engine::playables::inotification::INotification,
         context: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`OnNotifyEffectMarker(crate::app::myroomeffectmarker::MyRoomEffectMarker)` overload"]
-    #[method(name = "OnNotifyEffectMarker", args = 1)]
-    pub fn on_notify_effect_marker(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomEventReceiver,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::inotification::INotification,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify::get_offset() as isize),
+        );
+        inner(this, origin, notification, context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify_effect_marker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::myroomeffectmarker::MyRoomEffectMarker as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotifyEffectMarker",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotifyEffectMarker",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify_effect_marker(
+        this: MyRoomEventReceiver,
         effect_marker: crate::app::myroomeffectmarker::MyRoomEffectMarker,
-    ) -> ();
-
-    #[doc = "`OnNotifySEMarker(crate::app::myroomsemarker::MyRoomSEMarker)` overload"]
-    #[method(name = "OnNotifySEMarker", args = 1)]
-    pub fn on_notify_se_marker(self, se_marker: crate::app::myroomsemarker::MyRoomSEMarker) -> ();
-
-    #[doc = "`OnNotifyCameraMarker(crate::app::myroomcameramarker::MyRoomCameraMarker)` overload"]
-    #[method(name = "OnNotifyCameraMarker", args = 1)]
-    pub fn on_notify_camera_marker(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomEventReceiver,
+            crate::app::myroomeffectmarker::MyRoomEffectMarker,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify_effect_marker::get_offset() as isize),
+        );
+        inner(this, effect_marker, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify_se_marker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::myroomsemarker::MyRoomSEMarker as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotifySEMarker",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotifySEMarker",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify_se_marker(
+        this: MyRoomEventReceiver,
+        se_marker: crate::app::myroomsemarker::MyRoomSEMarker,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomEventReceiver,
+            crate::app::myroomsemarker::MyRoomSEMarker,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify_se_marker::get_offset() as isize),
+        );
+        inner(this, se_marker, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify_camera_marker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::myroomcameramarker::MyRoomCameraMarker as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotifyCameraMarker",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotifyCameraMarker",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify_camera_marker(
+        this: MyRoomEventReceiver,
         camera_marker: crate::app::myroomcameramarker::MyRoomCameraMarker,
-    ) -> ();
-
-    #[doc = "`OnNotifyLookingCameraMarker(crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker)` overload"]
-    #[method(name = "OnNotifyLookingCameraMarker", args = 1)]
-    pub fn on_notify_looking_camera_marker(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomEventReceiver,
+            crate::app::myroomcameramarker::MyRoomCameraMarker,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify_camera_marker::get_offset() as isize),
+        );
+        inner(this, camera_marker, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify_looking_camera_marker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: myroomlookingcameramarker :: MyRoomLookingCameraMarker as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotifyLookingCameraMarker",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotifyLookingCameraMarker",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify_looking_camera_marker(
+        this: MyRoomEventReceiver,
         looking_camera_marker: crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomEventReceiver,
+            crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify_looking_camera_marker::get_offset() as isize),
+        );
+        inner(this, looking_camera_marker, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomEventReceiver as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomEventReceiver as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomEventReceiver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomEventReceiver, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-myroomeventreceiver")]
+pub trait IMyRoomEventReceiverMethods: IMyRoomEventReceiver {
+    #[doc = "`get_AdjustedTime()` overload"]
+    fn get_adjusted_time(self) -> f64 {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::get_adjusted_time(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]
+    fn on_notify(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        notification: impl ::core::convert::Into<
+            crate::unity_engine::playables::inotification::INotification,
+        >,
+        context: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::on_notify(
+                __receiver,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(notification),
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnNotifyEffectMarker(crate::app::myroomeffectmarker::MyRoomEffectMarker)` overload"]
+    fn on_notify_effect_marker(
+        self,
+        effect_marker: impl ::core::convert::Into<crate::app::myroomeffectmarker::MyRoomEffectMarker>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::on_notify_effect_marker(
+                __receiver,
+                ::core::convert::Into::into(effect_marker),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnNotifySEMarker(crate::app::myroomsemarker::MyRoomSEMarker)` overload"]
+    fn on_notify_se_marker(
+        self,
+        se_marker: impl ::core::convert::Into<crate::app::myroomsemarker::MyRoomSEMarker>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::on_notify_se_marker(
+                __receiver,
+                ::core::convert::Into::into(se_marker),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnNotifyCameraMarker(crate::app::myroomcameramarker::MyRoomCameraMarker)` overload"]
+    fn on_notify_camera_marker(
+        self,
+        camera_marker: impl ::core::convert::Into<crate::app::myroomcameramarker::MyRoomCameraMarker>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::on_notify_camera_marker(
+                __receiver,
+                ::core::convert::Into::into(camera_marker),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnNotifyLookingCameraMarker(crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker)` overload"]
+    fn on_notify_looking_camera_marker(
+        self,
+        looking_camera_marker: impl ::core::convert::Into<
+            crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::on_notify_looking_camera_marker(
+                __receiver,
+                ::core::convert::Into::into(looking_camera_marker),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomEventReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomEventReceiver_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomeventreceiver")]
+impl<__T: IMyRoomEventReceiver> IMyRoomEventReceiverMethods for __T {}
 
 #[cfg(feature = "app-myroomeventreceiver")]
 impl MyRoomEventReceiver {
@@ -80,4 +501,26 @@ impl MyRoomEventReceiver {
         <Self as IMyRoomEventReceiverMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-myroomeventreceiver")]
+pub mod prelude {
+    pub use super::IMyRoomEventReceiver;
+    pub use super::IMyRoomEventReceiverMethods;
+    pub use super::MyRoomEventReceiver;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

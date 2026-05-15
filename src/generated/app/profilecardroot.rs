@@ -14,6 +14,27 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardRoot_SortieCountInfo {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_SortieCount")]
+        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BgImage")]
+        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardRoot_StartHandler {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -43,36 +64,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_AchievementInfo {
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Caption")]
-        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Count")]
-        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BgImage")]
-        pub m_bg_image: crate::unity_engine::ui::image::Image,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_SortieCountInfo {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_SortieCount")]
-        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BgImage")]
-        pub m_bg_image: crate::unity_engine::ui::image::Image,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot.md"))]
@@ -259,81 +250,95 @@ mod __types {
         pub m_start_handler: crate::app::profilecardroot::ProfileCardRoot_StartHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardRoot_StartHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardRoot_AchievementInfo {
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Caption")]
+        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Count")]
+        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BgImage")]
+        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    }
 }
 
 #[cfg(feature = "app-profilecardroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods(value)]
-impl ProfileCardRoot_RectInfo {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        pos: crate::unity_engine::vector2::Vector2,
-        harf_size: crate::unity_engine::vector2::Vector2,
-        x_axis: crate::unity_engine::vector2::Vector2,
-        y_axis: crate::unity_engine::vector2::Vector2,
-    ) -> ();
-
-    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "GetAbsDot", args = 2)]
-    pub fn get_abs_dot(
-        v1: crate::unity_engine::vector2::Vector2,
-        v2: crate::unity_engine::vector2::Vector2,
-    ) -> f32;
-
-    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "IsOverlap", args = 2)]
-    pub fn is_overlap(
-        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> bool;
-
-    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "GetDistance", args = 2)]
-    pub fn get_distance(
-        pos: crate::unity_engine::vector2::Vector2,
-        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> f32;
-}
-
-#[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_AchievementInfo),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_SortieCountInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot_SortieCountInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot_SortieCountInfo {
+pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountInfo {
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_SortieCountInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_SortieCountInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-profilecardroot")]
+impl<__T: IProfileCardRoot_SortieCountInfo> IProfileCardRoot_SortieCountInfoMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
 impl ProfileCardRoot_SortieCountInfo {
@@ -352,324 +357,4478 @@ impl ProfileCardRoot_SortieCountInfo {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_StartHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_StartHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot_StartHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardRoot_StartHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot_StartHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`SetStartHandler(crate::app::profilecardroot::ProfileCardRoot_StartHandler)` overload"]
-    #[method(name = "SetStartHandler", args = 1)]
-    pub fn set_start_handler(
+#[cfg(feature = "app-profilecardroot")]
+pub trait IProfileCardRoot_StartHandlerMethods: IProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
         self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_StartHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_StartHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl<__T: IProfileCardRoot_StartHandler> IProfileCardRoot_StartHandlerMethods for __T {}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardRoot_StartHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_RectInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_RectInfo,
+        pos: crate::unity_engine::vector2::Vector2,
+        harf_size: crate::unity_engine::vector2::Vector2,
+        x_axis: crate::unity_engine::vector2::Vector2,
+        y_axis: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot_RectInfo,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, pos, harf_size, x_axis, y_axis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_abs_dot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "GetAbsDot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetAbsDot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_abs_dot(
+        v1: crate::unity_engine::vector2::Vector2,
+        v2: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_abs_dot::get_offset() as isize),
+        );
+        inner(v1, v2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_overlap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "IsOverlap",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "IsOverlap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_overlap(
+        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_overlap::get_offset() as isize),
+        );
+        inner(rect1, rect2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "GetDistance",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_distance(
+        pos: crate::unity_engine::vector2::Vector2,
+        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_distance::get_offset() as isize),
+        );
+        inner(pos, rect, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo {
+    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn get_abs_dot(
+        v1: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> f32 {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::get_abs_dot(
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    pub fn is_overlap(
+        rect1: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+        rect2: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> bool {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::is_overlap(
+                ::core::convert::Into::into(rect1),
+                ::core::convert::Into::into(rect2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    pub fn get_distance(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> f32 {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::get_distance(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn ctor(
+        self,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        harf_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        x_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        y_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(harf_size),
+                ::core::convert::Into::into(x_axis),
+                ::core::convert::Into::into(y_axis),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_StartHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SetStartHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetStartHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_handler(
+        this: ProfileCardRoot,
         start_handler: crate::app::profilecardroot::ProfileCardRoot_StartHandler,
-    ) -> ();
-
-    #[doc = "`IsOpening()` overload"]
-    #[method(name = "IsOpening", args = 0)]
-    pub fn is_opening(self) -> bool;
-
-    #[doc = "`SetAlpha(f32)` overload"]
-    #[method(name = "SetAlpha", args = 1)]
-    pub fn set_alpha(self, alpha: f32) -> ();
-
-    #[doc = "`UpdateCard(crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "UpdateCard", args = 1)]
-    pub fn update_card(self, card: crate::app::profilecard::ProfileCard) -> ();
-
-    #[doc = "`UpdataUserName(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdataUserName", args = 1)]
-    pub fn updata_user_name(self, user_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateTitle(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"]
-    #[method(name = "UpdateTitle", args = 1)]
-    pub fn update_title(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardroot::ProfileCardRoot_StartHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_handler::get_offset() as isize),
+        );
+        inner(this, start_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_opening {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsOpening",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsOpening",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_opening(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_opening::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SetAlpha",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha(
+        this: ProfileCardRoot,
+        alpha: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha::get_offset() as isize),
+            );
+        inner(this, alpha, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_card {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateCard",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCard",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_card(
+        this: ProfileCardRoot,
+        card: crate::app::profilecard::ProfileCard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_card::get_offset() as isize),
+        );
+        inner(this, card, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_updata_user_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdataUserName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdataUserName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn updata_user_name(
+        this: ProfileCardRoot,
+        user_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_updata_user_name::get_offset() as isize),
+        );
+        inner(this, user_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtitledata :: ProfileCardTitleData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateTitle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_title(
+        this: ProfileCardRoot,
         title_data: crate::app::profilecardtitledata::ProfileCardTitleData,
-    ) -> ();
-
-    #[doc = "`UpdateHyphen()` overload"]
-    #[method(name = "UpdateHyphen", args = 0)]
-    pub fn update_hyphen(self) -> ();
-
-    #[doc = "`UpdatePhoto(::unity2::Array<u8>)` overload"]
-    #[method(name = "UpdatePhoto", args = 1)]
-    pub fn update_photo(self, image: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`DestroyPhoto()` overload"]
-    #[method(name = "DestroyPhoto", args = 0)]
-    pub fn destroy_photo(self) -> ();
-
-    #[doc = "`UpdateComment(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateComment", args = 1)]
-    pub fn update_comment(self, comment_string: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdatePlayTime(f32)` overload"]
-    #[method(name = "UpdatePlayTime", args = 1)]
-    pub fn update_play_time(self, play_time: f32) -> ();
-
-    #[doc = "`UpdatePlayTime(i32, i32)` overload"]
-    #[method(name = "UpdatePlayTime", args = 2)]
-    pub fn update_play_time_2(self, hour: i32, minute: i32) -> ();
-
-    #[doc = "`UpdateFavoriteCharacter(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"]
-    #[method(name = "UpdateFavoriteCharacter", args = 1)]
-    pub fn update_favorite_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardtitledata::ProfileCardTitleData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_title::get_offset() as isize),
+        );
+        inner(this, title_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_hyphen {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateHyphen",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateHyphen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_hyphen(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_hyphen::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_photo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdatePhoto",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdatePhoto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_photo(
+        this: ProfileCardRoot,
+        image: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_photo::get_offset() as isize),
+        );
+        inner(this, image, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_photo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "DestroyPhoto",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "DestroyPhoto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_photo(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_photo::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_comment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateComment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateComment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_comment(
+        this: ProfileCardRoot,
+        comment_string: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_comment::get_offset() as isize),
+        );
+        inner(this, comment_string, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_play_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdatePlayTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdatePlayTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_play_time(
+        this: ProfileCardRoot,
+        play_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_play_time::get_offset() as isize),
+            );
+        inner(this, play_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_play_time_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdatePlayTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdatePlayTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_play_time_2(
+        this: ProfileCardRoot,
+        hour: i32,
+        minute: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_play_time_2::get_offset() as isize),
+            );
+        inner(this, hour, minute, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_favorite_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateFavoriteCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFavoriteCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_favorite_character(
+        this: ProfileCardRoot,
         character_data : crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData,
-    ) -> ();
-
-    #[doc = "`UpdateFavoriteMap(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData)` overload"]
-    #[method(name = "UpdateFavoriteMap", args = 1)]
-    pub fn update_favorite_map(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_favorite_character::get_offset() as isize),
+        );
+        inner(this, character_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_favorite_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateFavoriteMap",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFavoriteMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_favorite_map(
+        this: ProfileCardRoot,
         map_data: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-    ) -> ();
-
-    #[doc = "`UpdateBg(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateBg", args = 1)]
-    pub fn update_bg(self, pcbgid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateBg(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
-    #[method(name = "UpdateBg", args = 1)]
-    pub fn update_bg_2(self, bg_data: crate::app::profilecardbgdata::ProfileCardBgData) -> ();
-
-    #[doc = "`UpdateFrame(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateFrame", args = 1)]
-    pub fn update_frame(self, pcfid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateFrame(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
-    #[method(name = "UpdateFrame", args = 1)]
-    pub fn update_frame_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_favorite_map::get_offset() as isize),
+        );
+        inner(this, map_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_bg {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateBg",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateBg",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_bg(
+        this: ProfileCardRoot,
+        pcbgid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_bg::get_offset() as isize),
+        );
+        inner(this, pcbgid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_bg_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateBg",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateBg",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_bg_2(
+        this: ProfileCardRoot,
+        bg_data: crate::app::profilecardbgdata::ProfileCardBgData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardbgdata::ProfileCardBgData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_bg_2::get_offset() as isize),
+        );
+        inner(this, bg_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateFrame",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_frame(
+        this: ProfileCardRoot,
+        pcfid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_frame::get_offset() as isize),
+        );
+        inner(this, pcfid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_frame_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateFrame",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_frame_2(
+        this: ProfileCardRoot,
         frame_data: crate::app::profilecardframedata::ProfileCardFrameData,
-    ) -> ();
-
-    #[doc = "`UpdateCharacterStamp(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateCharacterStamp", args = 1)]
-    pub fn update_character_stamp(self, id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateCharacterStamp(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"]
-    #[method(name = "UpdateCharacterStamp", args = 1)]
-    pub fn update_character_stamp_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardframedata::ProfileCardFrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_frame_2::get_offset() as isize),
+        );
+        inner(this, frame_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_character_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateCharacterStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCharacterStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_character_stamp(
+        this: ProfileCardRoot,
+        id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_character_stamp::get_offset() as isize),
+        );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_character_stamp_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateCharacterStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCharacterStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_character_stamp_2(
+        this: ProfileCardRoot,
         stamp_data: crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-    ) -> ();
-
-    #[doc = "`UpdateTextDeco(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateTextDeco", args = 1)]
-    pub fn update_text_deco(self, pctdid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateTextDeco(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
-    #[method(name = "UpdateTextDeco", args = 1)]
-    pub fn update_text_deco_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_character_stamp_2::get_offset() as isize),
+        );
+        inner(this, stamp_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_deco {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateTextDeco",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextDeco",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_deco(
+        this: ProfileCardRoot,
+        pctdid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_text_deco::get_offset() as isize),
+        );
+        inner(this, pctdid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_deco_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateTextDeco",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextDeco",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_deco_2(
+        this: ProfileCardRoot,
         deco_data: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-    ) -> ();
-
-    #[doc = "`UpdateTextColor(::unity2::Il2CppString)` overload"]
-    #[method(name = "UpdateTextColor", args = 1)]
-    pub fn update_text_color(self, pctcid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UpdateTextColor(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"]
-    #[method(name = "UpdateTextColor", args = 1)]
-    pub fn update_text_color_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_text_deco_2::get_offset() as isize),
+        );
+        inner(this, deco_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_color(
+        this: ProfileCardRoot,
+        pctcid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_text_color::get_offset() as isize),
+        );
+        inner(this, pctcid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_color_2(
+        this: ProfileCardRoot,
         text_color_data: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-    ) -> ();
-
-    #[doc = "`UpdateFreeStamp(::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>)` overload"]
-    #[method(name = "UpdateFreeStamp", args = 1)]
-    pub fn update_free_stamp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_text_color_2::get_offset() as isize),
+        );
+        inner(this, text_color_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_free_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::app::profilecard::ProfileCard_FreeStamp,
+                >,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateFreeStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFreeStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_free_stamp(
+        this: ProfileCardRoot,
         free_stamp_list_array: ::unity2::Array<
             crate::system::collections::generic::list_1::List_1<
                 crate::app::profilecard::ProfileCard_FreeStamp,
             >,
         >,
-    ) -> ();
-
-    #[doc = "`SetFreeStampVisibility(bool)` overload"]
-    #[method(name = "SetFreeStampVisibility", args = 1)]
-    pub fn set_free_stamp_visibility(self, visible: bool) -> ();
-
-    #[doc = "`AddFreeStamp(crate::app::profilecard::ProfileCard_FreeStamp, i32)` overload"]
-    #[method(name = "AddFreeStamp", args = 2)]
-    pub fn add_free_stamp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::Array<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::app::profilecard::ProfileCard_FreeStamp,
+                >,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_free_stamp::get_offset() as isize),
+        );
+        inner(this, free_stamp_list_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_free_stamp_visibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SetFreeStampVisibility",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetFreeStampVisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_free_stamp_visibility(
+        this: ProfileCardRoot,
+        visible: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_free_stamp_visibility::get_offset() as isize),
+            );
+        inner(this, visible, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_free_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "AddFreeStamp",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "AddFreeStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_free_stamp(
+        this: ProfileCardRoot,
         free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
         page: i32,
-    ) -> ();
-
-    #[doc = "`RemoveFreeStamp(crate::app::profilecard::ProfileCard_FreeStamp, i32)` overload"]
-    #[method(name = "RemoveFreeStamp", args = 2)]
-    pub fn remove_free_stamp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecard::ProfileCard_FreeStamp,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_free_stamp::get_offset() as isize),
+        );
+        inner(this, free_stamp, page, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_free_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "RemoveFreeStamp",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "RemoveFreeStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_free_stamp(
+        this: ProfileCardRoot,
         free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
         page: i32,
-    ) -> ();
-
-    #[doc = "`ClearFreeStamp()` overload"]
-    #[method(name = "ClearFreeStamp", args = 0)]
-    pub fn clear_free_stamp(self) -> ();
-
-    #[doc = "`ClearFreeStamp(i32)` overload"]
-    #[method(name = "ClearFreeStamp", args = 1)]
-    pub fn clear_free_stamp_2(self, page: i32) -> ();
-
-    #[doc = "`GetStampObject(i32)` overload"]
-    #[method(name = "GetStampObject", args = 1)]
-    pub fn get_stamp_object(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecard::ProfileCard_FreeStamp,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_free_stamp::get_offset() as isize),
+        );
+        inner(this, free_stamp, page, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_free_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "ClearFreeStamp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "ClearFreeStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_free_stamp(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_free_stamp::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_free_stamp_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "ClearFreeStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "ClearFreeStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_free_stamp_2(
+        this: ProfileCardRoot,
+        page: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_free_stamp_2::get_offset() as isize),
+            );
+        inner(this, page, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stamp_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "GetStampObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetStampObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stamp_object(
+        this: ProfileCardRoot,
         index: i32,
-    ) -> crate::app::profilecardstampobject::ProfileCardStampObject;
-
-    #[doc = "`GetStamp(i32)` overload"]
-    #[method(name = "GetStamp", args = 1)]
-    pub fn get_stamp(self, index: i32) -> crate::app::profilecard::ProfileCard_FreeStamp;
-
-    #[doc = "`SetStampFrameActive(i32, bool)` overload"]
-    #[method(name = "SetStampFrameActive", args = 2)]
-    pub fn set_stamp_frame_active(self, stamp_index: i32, actived: bool) -> ();
-
-    #[doc = "`IsStampExist(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "IsStampExist", args = 1)]
-    pub fn is_stamp_exist(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecardstampobject::ProfileCardStampObject {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::profilecardstampobject::ProfileCardStampObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_stamp_object::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "GetStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stamp(
+        this: ProfileCardRoot,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard_FreeStamp = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_stamp::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_stamp_frame_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SetStampFrameActive",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetStampFrameActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_stamp_frame_active(
+        this: ProfileCardRoot,
+        stamp_index: i32,
+        actived: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_stamp_frame_active::get_offset() as isize),
+            );
+        inner(this, stamp_index, actived, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_stamp_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsStampExist",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsStampExist",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_stamp_exist(
+        this: ProfileCardRoot,
         rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> bool;
-
-    #[doc = "`GetOverlappedStamp(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "GetOverlappedStamp", args = 1)]
-    pub fn get_overlapped_stamp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_stamp_exist::get_offset() as isize),
+        );
+        inner(this, rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_overlapped_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "GetOverlappedStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetOverlappedStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_overlapped_stamp(
+        this: ProfileCardRoot,
         rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> crate::app::profilecard::ProfileCard_FreeStamp;
-
-    #[doc = "`GetOverlappedStampIndex(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "GetOverlappedStampIndex", args = 1)]
-    pub fn get_overlapped_stamp_index(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard_FreeStamp = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_overlapped_stamp::get_offset() as isize),
+        );
+        inner(this, rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_overlapped_stamp_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "GetOverlappedStampIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetOverlappedStampIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_overlapped_stamp_index(
+        this: ProfileCardRoot,
         rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> i32;
-
-    #[doc = "`Contain(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "Contain", args = 1)]
-    pub fn contain(self, rect_transform: crate::unity_engine::recttransform::RectTransform)
-        -> bool;
-
-    #[doc = "`GetRect()` overload"]
-    #[method(name = "GetRect", args = 0)]
-    pub fn get_rect(self) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`Open()` overload"]
-    #[method(name = "Open", args = 0)]
-    pub fn open(self) -> ();
-
-    #[doc = "`SwitchPages()` overload"]
-    #[method(name = "SwitchPages", args = 0)]
-    pub fn switch_pages(self) -> ();
-
-    #[doc = "`IsSwithcingPages()` overload"]
-    #[method(name = "IsSwithcingPages", args = 0)]
-    pub fn is_swithcing_pages(self) -> bool;
-
-    #[doc = "`IsFront()` overload"]
-    #[method(name = "IsFront", args = 0)]
-    pub fn is_front(self) -> bool;
-
-    #[doc = "`SwitchScale()` overload"]
-    #[method(name = "SwitchScale", args = 0)]
-    pub fn switch_scale(self) -> ();
-
-    #[doc = "`ScaleSmall()` overload"]
-    #[method(name = "ScaleSmall", args = 0)]
-    pub fn scale_small(self) -> ();
-
-    #[doc = "`ScaleSmallImmediately()` overload"]
-    #[method(name = "ScaleSmallImmediately", args = 0)]
-    pub fn scale_small_immediately(self) -> ();
-
-    #[doc = "`ScaleLarge()` overload"]
-    #[method(name = "ScaleLarge", args = 0)]
-    pub fn scale_large(self) -> ();
-
-    #[doc = "`IsScalingSmall()` overload"]
-    #[method(name = "IsScalingSmall", args = 0)]
-    pub fn is_scaling_small(self) -> bool;
-
-    #[doc = "`IsScalingLarge()` overload"]
-    #[method(name = "IsScalingLarge", args = 0)]
-    pub fn is_scaling_large(self) -> bool;
-
-    #[doc = "`IsScaledSmall()` overload"]
-    #[method(name = "IsScaledSmall", args = 0)]
-    pub fn is_scaled_small(self) -> bool;
-
-    #[doc = "`BlinkBg(bool)` overload"]
-    #[method(name = "BlinkBg", args = 1)]
-    pub fn blink_bg(self, on: bool) -> ();
-
-    #[doc = "`BlinkFrame(bool)` overload"]
-    #[method(name = "BlinkFrame", args = 1)]
-    pub fn blink_frame(self, on: bool) -> ();
-
-    #[doc = "`BlinkTextDeco(bool)` overload"]
-    #[method(name = "BlinkTextDeco", args = 1)]
-    pub fn blink_text_deco(self, on: bool) -> ();
-
-    #[doc = "`BlinkText(bool)` overload"]
-    #[method(name = "BlinkText", args = 1)]
-    pub fn blink_text(self, on: bool) -> ();
-
-    #[doc = "`BlinkTitle(bool)` overload"]
-    #[method(name = "BlinkTitle", args = 1)]
-    pub fn blink_title(self, on: bool) -> ();
-
-    #[doc = "`BlinkPhoto(bool)` overload"]
-    #[method(name = "BlinkPhoto", args = 1)]
-    pub fn blink_photo(self, on: bool) -> ();
-
-    #[doc = "`BlinkCharacterStamp(bool)` overload"]
-    #[method(name = "BlinkCharacterStamp", args = 1)]
-    pub fn blink_character_stamp(self, on: bool) -> ();
-
-    #[doc = "`BlinkComment(bool)` overload"]
-    #[method(name = "BlinkComment", args = 1)]
-    pub fn blink_comment(self, on: bool) -> ();
-
-    #[doc = "`BlinkFavoriteCharacter(bool)` overload"]
-    #[method(name = "BlinkFavoriteCharacter", args = 1)]
-    pub fn blink_favorite_character(self, on: bool) -> ();
-
-    #[doc = "`BlinkFavoriteRelayMap(bool)` overload"]
-    #[method(name = "BlinkFavoriteRelayMap", args = 1)]
-    pub fn blink_favorite_relay_map(self, on: bool) -> ();
-
-    #[doc = "`Close()` overload"]
-    #[method(name = "Close", args = 0)]
-    pub fn close(self) -> ();
-
-    #[doc = "`IsClosing()` overload"]
-    #[method(name = "IsClosing", args = 0)]
-    pub fn is_closing(self) -> bool;
-
-    #[doc = "`IsClosed()` overload"]
-    #[method(name = "IsClosed", args = 0)]
-    pub fn is_closed(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_overlapped_stamp_index::get_offset() as isize),
+        );
+        inner(this, rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "Contain",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "Contain",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn contain(
+        this: ProfileCardRoot,
+        rect_transform: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_contain::get_offset() as isize),
+        );
+        inner(this, rect_transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "GetRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rect(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            ProfileCardRoot,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "Open",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "Open",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_pages {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SwitchPages",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SwitchPages",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_pages(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_switch_pages::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_swithcing_pages {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsSwithcingPages",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsSwithcingPages",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_swithcing_pages(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_swithcing_pages::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_front {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsFront",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsFront",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_front(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_front::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "SwitchScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "SwitchScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_scale(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_switch_scale::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_small {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "ScaleSmall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "ScaleSmall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_small(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_scale_small::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_small_immediately {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "ScaleSmallImmediately",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "ScaleSmallImmediately",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_small_immediately(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_scale_small_immediately::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_large {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "ScaleLarge",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "ScaleLarge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_large(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_scale_large::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_scaling_small {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsScalingSmall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsScalingSmall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_scaling_small(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_scaling_small::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_scaling_large {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsScalingLarge",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsScalingLarge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_scaling_large(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_scaling_large::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_scaled_small {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsScaledSmall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsScaledSmall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_scaled_small(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_scaled_small::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_bg {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkBg",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkBg",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_bg(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_bg::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkFrame",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_frame(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_frame::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_text_deco {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkTextDeco",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkTextDeco",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_text_deco(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_text_deco::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_text(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_text::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkTitle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_title(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_title::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_photo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkPhoto",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkPhoto",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_photo(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_photo::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_character_stamp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkCharacterStamp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkCharacterStamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_character_stamp(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_character_stamp::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_comment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkComment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkComment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_comment(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_comment::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_favorite_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkFavoriteCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkFavoriteCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_favorite_character(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_favorite_character::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_blink_favorite_relay_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "BlinkFavoriteRelayMap",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "BlinkFavoriteRelayMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn blink_favorite_relay_map(
+        this: ProfileCardRoot,
+        on: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_blink_favorite_relay_map::get_offset() as isize),
+            );
+        inner(this, on, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "Close",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_closing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsClosing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsClosing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_closing(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_closing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_closed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "IsClosed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsClosed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_closed(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_closed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: ProfileCardRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ProfileCardRoot_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+pub trait IProfileCardRootMethods: IProfileCardRoot {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetStartHandler(crate::app::profilecardroot::ProfileCardRoot_StartHandler)` overload"]
+    fn set_start_handler(
+        self,
+        start_handler: impl ::core::convert::Into<
+            crate::app::profilecardroot::ProfileCardRoot_StartHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::set_start_handler(
+                __receiver,
+                ::core::convert::Into::into(start_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOpening()` overload"]
+    fn is_opening(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetAlpha(f32)` overload"]
+    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::set_alpha(
+                __receiver,
+                ::core::convert::Into::into(alpha),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateCard(crate::app::profilecard::ProfileCard)` overload"]
+    fn update_card(
+        self,
+        card: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_card(
+                __receiver,
+                ::core::convert::Into::into(card),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdataUserName(::unity2::Il2CppString)` overload"]
+    fn updata_user_name(self, user_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::updata_user_name(
+                __receiver,
+                ::core::convert::Into::into(user_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTitle(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"]
+    fn update_title(
+        self,
+        title_data: impl ::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_title(
+                __receiver,
+                ::core::convert::Into::into(title_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateHyphen()` overload"]
+    fn update_hyphen(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_hyphen(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdatePhoto(::unity2::Array<u8>)` overload"]
+    fn update_photo(self, image: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_photo(
+                __receiver,
+                ::core::convert::Into::into(image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyPhoto()` overload"]
+    fn destroy_photo(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::destroy_photo(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateComment(::unity2::Il2CppString)` overload"]
+    fn update_comment(
+        self,
+        comment_string: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_comment(
+                __receiver,
+                ::core::convert::Into::into(comment_string),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdatePlayTime(f32)` overload"]
+    fn update_play_time(self, play_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_play_time(
+                __receiver,
+                ::core::convert::Into::into(play_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdatePlayTime(i32, i32)` overload"]
+    fn update_play_time_2(
+        self,
+        hour: impl ::core::convert::Into<i32>,
+        minute: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_play_time_2(
+                __receiver,
+                ::core::convert::Into::into(hour),
+                ::core::convert::Into::into(minute),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFavoriteCharacter(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"]
+    fn update_favorite_character(
+        self,
+        character_data: impl ::core::convert::Into<
+            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_favorite_character(
+                __receiver,
+                ::core::convert::Into::into(character_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFavoriteMap(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData)` overload"]
+    fn update_favorite_map(
+        self,
+        map_data: impl ::core::convert::Into<
+            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_favorite_map(
+                __receiver,
+                ::core::convert::Into::into(map_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateBg(::unity2::Il2CppString)` overload"]
+    fn update_bg(self, pcbgid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_bg(
+                __receiver,
+                ::core::convert::Into::into(pcbgid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateBg(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
+    fn update_bg_2(
+        self,
+        bg_data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_bg_2(
+                __receiver,
+                ::core::convert::Into::into(bg_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFrame(::unity2::Il2CppString)` overload"]
+    fn update_frame(self, pcfid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_frame(
+                __receiver,
+                ::core::convert::Into::into(pcfid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFrame(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
+    fn update_frame_2(
+        self,
+        frame_data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_frame_2(
+                __receiver,
+                ::core::convert::Into::into(frame_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateCharacterStamp(::unity2::Il2CppString)` overload"]
+    fn update_character_stamp(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_character_stamp(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateCharacterStamp(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"]
+    fn update_character_stamp_2(
+        self,
+        stamp_data: impl ::core::convert::Into<
+            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_character_stamp_2(
+                __receiver,
+                ::core::convert::Into::into(stamp_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextDeco(::unity2::Il2CppString)` overload"]
+    fn update_text_deco(self, pctdid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_text_deco(
+                __receiver,
+                ::core::convert::Into::into(pctdid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextDeco(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
+    fn update_text_deco_2(
+        self,
+        deco_data: impl ::core::convert::Into<
+            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_text_deco_2(
+                __receiver,
+                ::core::convert::Into::into(deco_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextColor(::unity2::Il2CppString)` overload"]
+    fn update_text_color(self, pctcid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_text_color(
+                __receiver,
+                ::core::convert::Into::into(pctcid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextColor(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"]
+    fn update_text_color_2(
+        self,
+        text_color_data: impl ::core::convert::Into<
+            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_text_color_2(
+                __receiver,
+                ::core::convert::Into::into(text_color_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFreeStamp(::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>)` overload"]
+    fn update_free_stamp(
+        self,
+        free_stamp_list_array: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::app::profilecard::ProfileCard_FreeStamp,
+                >,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::update_free_stamp(
+                __receiver,
+                ::core::convert::Into::into(free_stamp_list_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFreeStampVisibility(bool)` overload"]
+    fn set_free_stamp_visibility(self, visible: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::set_free_stamp_visibility(
+                __receiver,
+                ::core::convert::Into::into(visible),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddFreeStamp(crate::app::profilecard::ProfileCard_FreeStamp, i32)` overload"]
+    fn add_free_stamp(
+        self,
+        free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>,
+        page: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::add_free_stamp(
+                __receiver,
+                ::core::convert::Into::into(free_stamp),
+                ::core::convert::Into::into(page),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RemoveFreeStamp(crate::app::profilecard::ProfileCard_FreeStamp, i32)` overload"]
+    fn remove_free_stamp(
+        self,
+        free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>,
+        page: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::remove_free_stamp(
+                __receiver,
+                ::core::convert::Into::into(free_stamp),
+                ::core::convert::Into::into(page),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearFreeStamp()` overload"]
+    fn clear_free_stamp(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::clear_free_stamp(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearFreeStamp(i32)` overload"]
+    fn clear_free_stamp_2(self, page: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::clear_free_stamp_2(
+                __receiver,
+                ::core::convert::Into::into(page),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStampObject(i32)` overload"]
+    fn get_stamp_object(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::app::profilecardstampobject::ProfileCardStampObject {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::get_stamp_object(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStamp(i32)` overload"]
+    fn get_stamp(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::get_stamp(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetStampFrameActive(i32, bool)` overload"]
+    fn set_stamp_frame_active(
+        self,
+        stamp_index: impl ::core::convert::Into<i32>,
+        actived: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::set_stamp_frame_active(
+                __receiver,
+                ::core::convert::Into::into(stamp_index),
+                ::core::convert::Into::into(actived),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStampExist(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    fn is_stamp_exist(
+        self,
+        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_stamp_exist(
+                __receiver,
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetOverlappedStamp(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    fn get_overlapped_stamp(
+        self,
+        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::get_overlapped_stamp(
+                __receiver,
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetOverlappedStampIndex(crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    fn get_overlapped_stamp_index(
+        self,
+        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::get_overlapped_stamp_index(
+                __receiver,
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Contain(crate::unity_engine::recttransform::RectTransform)` overload"]
+    fn contain(
+        self,
+        rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::contain(
+                __receiver,
+                ::core::convert::Into::into(rect_transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRect()` overload"]
+    fn get_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::get_rect(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Open()` overload"]
+    fn open(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::open(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SwitchPages()` overload"]
+    fn switch_pages(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::switch_pages(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSwithcingPages()` overload"]
+    fn is_swithcing_pages(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_swithcing_pages(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsFront()` overload"]
+    fn is_front(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_front(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SwitchScale()` overload"]
+    fn switch_scale(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::switch_scale(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ScaleSmall()` overload"]
+    fn scale_small(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::scale_small(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ScaleSmallImmediately()` overload"]
+    fn scale_small_immediately(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::scale_small_immediately(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScaleLarge()` overload"]
+    fn scale_large(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::scale_large(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsScalingSmall()` overload"]
+    fn is_scaling_small(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_scaling_small(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsScalingLarge()` overload"]
+    fn is_scaling_large(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_scaling_large(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsScaledSmall()` overload"]
+    fn is_scaled_small(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_scaled_small(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BlinkBg(bool)` overload"]
+    fn blink_bg(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_bg(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkFrame(bool)` overload"]
+    fn blink_frame(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_frame(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkTextDeco(bool)` overload"]
+    fn blink_text_deco(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_text_deco(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkText(bool)` overload"]
+    fn blink_text(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_text(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkTitle(bool)` overload"]
+    fn blink_title(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_title(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkPhoto(bool)` overload"]
+    fn blink_photo(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_photo(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkCharacterStamp(bool)` overload"]
+    fn blink_character_stamp(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_character_stamp(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkComment(bool)` overload"]
+    fn blink_comment(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_comment(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkFavoriteCharacter(bool)` overload"]
+    fn blink_favorite_character(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_favorite_character(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BlinkFavoriteRelayMap(bool)` overload"]
+    fn blink_favorite_relay_map(self, on: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::blink_favorite_relay_map(
+                __receiver,
+                ::core::convert::Into::into(on),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsClosing()` overload"]
+    fn is_closing(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsClosed()` overload"]
+    fn is_closed(self) -> bool {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl<__T: IProfileCardRoot> IProfileCardRootMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
 impl ProfileCardRoot {
@@ -688,29 +4847,130 @@ impl ProfileCardRoot {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_AchievementInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_AchievementInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot_AchievementInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_AchievementInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_AchievementInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl<__T: IProfileCardRoot_AchievementInfo> IProfileCardRoot_AchievementInfoMethods for __T {}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_StartHandler),
+                ::core::stringify!(ProfileCardRoot_AchievementInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+pub mod prelude {
+    pub use super::IProfileCardRoot;
+    pub use super::IProfileCardRootMethods;
+    pub use super::IProfileCardRoot_AchievementInfo;
+    pub use super::IProfileCardRoot_AchievementInfoMethods;
+    pub use super::IProfileCardRoot_SortieCountInfo;
+    pub use super::IProfileCardRoot_SortieCountInfoMethods;
+    pub use super::IProfileCardRoot_StartHandler;
+    pub use super::IProfileCardRoot_StartHandlerMethods;
+    pub use super::ProfileCardRoot;
+    pub use super::ProfileCardRoot_AchievementInfo;
+    pub use super::ProfileCardRoot_RectInfo;
+    pub use super::ProfileCardRoot_SortieCountInfo;
+    pub use super::ProfileCardRoot_StartHandler;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

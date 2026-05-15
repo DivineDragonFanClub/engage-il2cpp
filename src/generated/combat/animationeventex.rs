@@ -17,26 +17,222 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-animationeventex")]
-#[::unity2::methods]
-impl AnimationEventEx {
-    #[doc = "`IsEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "IsEqualTo", args = 2)]
-    pub fn is_equal_to(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationEventEx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_equal_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationEventEx as ::unity2::ClassIdentity>::class(),
+                "IsEqualTo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationEventEx as ::unity2::ClassIdentity>::NAME,
+                    "IsEqualTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_equal_to(
         a: crate::unity_engine::animationevent::AnimationEvent,
         b: crate::unity_engine::animationevent::AnimationEvent,
-    ) -> bool;
-
-    #[doc = "`IsNotEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "IsNotEqualTo", args = 2)]
-    pub fn is_not_equal_to(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationevent::AnimationEvent,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_equal_to::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_not_equal_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationEventEx as ::unity2::ClassIdentity>::class(),
+                "IsNotEqualTo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationEventEx as ::unity2::ClassIdentity>::NAME,
+                    "IsNotEqualTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_not_equal_to(
         a: crate::unity_engine::animationevent::AnimationEvent,
         b: crate::unity_engine::animationevent::AnimationEvent,
-    ) -> bool;
-
-    #[doc = "`CopyTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationevent::AnimationEvent,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_not_equal_to::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationEventEx as ::unity2::ClassIdentity>::class(),
+                "CopyTo",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationEventEx as ::unity2::ClassIdentity>::NAME,
+                    "CopyTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_to(
         src: crate::unity_engine::animationevent::AnimationEvent,
         dst: crate::unity_engine::animationevent::AnimationEvent,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationevent::AnimationEvent,
+            crate::unity_engine::animationevent::AnimationEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_to::get_offset() as isize),
+        );
+        inner(src, dst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-animationeventex")]
+impl AnimationEventEx {
+    #[doc = "`IsEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    pub fn is_equal_to(
+        a: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+        b: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> bool {
+        unsafe {
+            __AnimationEventEx_unity2_raw::is_equal_to(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNotEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    pub fn is_not_equal_to(
+        a: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+        b: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> bool {
+        unsafe {
+            __AnimationEventEx_unity2_raw::is_not_equal_to(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CopyTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]
+    pub fn copy_to(
+        src: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+        dst: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
+    ) -> () {
+        unsafe {
+            __AnimationEventEx_unity2_raw::copy_to(
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(dst),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-animationeventex")]
+pub mod prelude {
+    pub use super::AnimationEventEx;
+    pub use super::IAnimationEventEx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

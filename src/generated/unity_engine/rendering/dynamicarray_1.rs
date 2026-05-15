@@ -46,9 +46,9 @@ impl<T0: ::unity2::ClassIdentity> DynamicArray_1<T0> {
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
 
-    #[doc = "`Add(T0)` overload"]
+    #[doc = "`Add(*mutT0)` overload"]
     #[method(name = "Add", args = 1)]
-    pub fn add(self, value: T0) -> i32;
+    pub fn add(self, value: *mut T0) -> i32;
 
     #[doc = "`Resize(i32, bool)` overload"]
     #[method(name = "Resize", args = 2)]
@@ -56,7 +56,7 @@ impl<T0: ::unity2::ClassIdentity> DynamicArray_1<T0> {
 
     #[doc = "`get_Item(i32)` overload"]
     #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> T0;
+    pub fn get_item(self, index: i32) -> *mut T0;
 }
 
 #[cfg(feature = "unity_engine-rendering-dynamicarray_1")]
@@ -86,4 +86,14 @@ impl<T0: ::unity2::ClassIdentity> DynamicArray_1<T0> {
         <Self as IDynamicArray_1Methods<T0>>::ctor_2(this, size);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicarray_1")]
+pub mod prelude {
+    pub use super::DynamicArray_1;
+    pub use super::IDynamicArray_1;
+    pub use super::IDynamicArray_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

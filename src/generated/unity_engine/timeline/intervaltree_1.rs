@@ -118,3 +118,17 @@ impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-timeline-intervaltree_1")]
+pub mod prelude {
+    pub use super::IIntervalTree_1;
+    pub use super::IIntervalTree_1Methods;
+    pub use super::IntervalTree_1;
+    pub use super::IntervalTree_1_Entry;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

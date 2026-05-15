@@ -20,9 +20,66 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraExtensions_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_universal_additional_camera_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraExtensions as ::unity2::ClassIdentity>::class(),
+                "GetUniversalAdditionalCameraData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraExtensions as ::unity2::ClassIdentity>::NAME,
+                    "GetUniversalAdditionalCameraData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_universal_additional_camera_data (camera : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData{
+        let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_universal_additional_camera_data :: get_offset () as isize) ,) ;
+        inner(camera, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
 impl CameraExtensions {
-    #[doc = "`GetUniversalAdditionalCameraData(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "GetUniversalAdditionalCameraData", args = 1)]
-    pub fn get_universal_additional_camera_data (camera : crate :: unity_engine :: camera :: Camera) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData ;
+    #[doc = "`GetUniversalAdditionalCameraData(crate::unity_engine::camera::Camera)` overload"]    pub fn get_universal_additional_camera_data (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData{
+        unsafe {
+            __CameraExtensions_unity2_raw::get_universal_additional_camera_data(
+                ::core::convert::Into::into(camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
+pub mod prelude {
+    pub use super::CameraExtensions;
+    pub use super::ICameraExtensions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

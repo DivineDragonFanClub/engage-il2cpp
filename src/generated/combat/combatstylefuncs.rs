@@ -17,23 +17,198 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-combatstylefuncs")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CombatStyleFuncs_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_style1st {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
+                "MakeStyle1st",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
+                    "MakeStyle1st",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_style1st(
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        let inner: extern "C" fn(
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::combatstyle::CombatStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_style1st::get_offset() as isize),
+        );
+        inner(record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_style2nd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
+                "MakeStyle2nd",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
+                    "MakeStyle2nd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_style2nd(
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        let inner: extern "C" fn(
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::combatstyle::CombatStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_style2nd::get_offset() as isize),
+        );
+        inner(record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shoot_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatStyleFuncs as ::unity2::ClassIdentity>::class(),
+                "GetShootStyle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatStyleFuncs as ::unity2::ClassIdentity>::NAME,
+                    "GetShootStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shoot_style(
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        let inner: extern "C" fn(
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::combatstyle::CombatStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_shoot_style::get_offset() as isize),
+        );
+        inner(record, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-combatstylefuncs")]
 impl CombatStyleFuncs {
     #[doc = "`MakeStyle1st(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "MakeStyle1st", args = 1)]
     pub fn make_style1st(
-        record: crate::combat::combatrecord::CombatRecord,
-    ) -> crate::combat::combatstyle::CombatStyle;
-
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            __CombatStyleFuncs_unity2_raw::make_style1st(
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`MakeStyle2nd(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "MakeStyle2nd", args = 1)]
     pub fn make_style2nd(
-        record: crate::combat::combatrecord::CombatRecord,
-    ) -> crate::combat::combatstyle::CombatStyle;
-
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            __CombatStyleFuncs_unity2_raw::make_style2nd(
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetShootStyle(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "GetShootStyle", args = 1)]
     pub fn get_shoot_style(
-        record: crate::combat::combatrecord::CombatRecord,
-    ) -> crate::combat::combatstyle::CombatStyle;
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            __CombatStyleFuncs_unity2_raw::get_shoot_style(
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-combatstylefuncs")]
+pub mod prelude {
+    pub use super::CombatStyleFuncs;
+    pub use super::ICombatStyleFuncs;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

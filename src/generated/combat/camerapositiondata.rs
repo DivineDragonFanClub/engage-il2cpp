@@ -13,6 +13,22 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct CameraPositionData_CameraShakeSettings {
+        #[rename(name = "ShakeDuration")]
+        pub shake_duration: i32,
+        #[rename(name = "ShakeRadius")]
+        pub shake_radius: f32,
+        #[rename(name = "ArmorStepDuraton")]
+        pub armor_step_duraton: i32,
+        #[rename(name = "ArmorStepMagnitude")]
+        pub armor_step_magnitude: f32,
+        #[rename(name = "ScaleCurveDistance")]
+        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
     #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -79,212 +95,2540 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraPositionData_CameraShakeSettings {
-        #[rename(name = "ShakeDuration")]
-        pub shake_duration: i32,
-        #[rename(name = "ShakeRadius")]
-        pub shake_radius: f32,
-        #[rename(name = "ArmorStepDuraton")]
-        pub armor_step_duraton: i32,
-        #[rename(name = "ArmorStepMagnitude")]
-        pub armor_step_magnitude: f32,
-        #[rename(name = "ScaleCurveDistance")]
-        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
-    }
 }
 
 #[cfg(feature = "combat-camerapositiondata-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-camerapositiondata")]
-#[::unity2::methods]
-impl CameraPositionData {
-    #[doc = "`get_IsReverse()` overload"]
-    #[method(name = "get_IsReverse", args = 0)]
-    pub fn get_is_reverse(self) -> bool;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraPositionData_CameraShakeSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CameraPositionData_CameraShakeSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData_CameraShakeSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`set_IsReverse(bool)` overload"]
-    #[method(name = "set_IsReverse", args = 1)]
-    pub fn set_is_reverse(self, value: bool) -> ();
+#[cfg(feature = "combat-camerapositiondata")]
+pub trait ICameraPositionData_CameraShakeSettingsMethods:
+    ICameraPositionData_CameraShakeSettings
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < CameraPositionData_CameraShakeSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __CameraPositionData_CameraShakeSettings_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`get_BattleCenter()` overload"]
-    #[method(name = "get_BattleCenter", args = 0)]
-    pub fn get_battle_center(self) -> crate::unity_engine::vector3::Vector3;
+#[cfg(feature = "combat-camerapositiondata")]
+impl<__T: ICameraPositionData_CameraShakeSettings> ICameraPositionData_CameraShakeSettingsMethods
+    for __T
+{
+}
 
-    #[doc = "`set_BattleCenter(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_BattleCenter", args = 1)]
-    pub fn set_battle_center(self, value: crate::unity_engine::vector3::Vector3) -> ();
+#[cfg(feature = "combat-camerapositiondata")]
+impl CameraPositionData_CameraShakeSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraPositionData_CameraShakeSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
+        this
+    }
+}
 
-    #[doc = "`get_BattleVector()` overload"]
-    #[method(name = "get_BattleVector", args = 0)]
-    pub fn get_battle_vector(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_BattleVector(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_BattleVector", args = 1)]
-    pub fn set_battle_vector(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_BattleNormalVector()` overload"]
-    #[method(name = "get_BattleNormalVector", args = 0)]
-    pub fn get_battle_normal_vector(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_BattleNormalVector(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_BattleNormalVector", args = 1)]
-    pub fn set_battle_normal_vector(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_BattleDistance()` overload"]
-    #[method(name = "get_BattleDistance", args = 0)]
-    pub fn get_battle_distance(self) -> f32;
-
-    #[doc = "`set_BattleDistance(f32)` overload"]
-    #[method(name = "set_BattleDistance", args = 1)]
-    pub fn set_battle_distance(self, value: f32) -> ();
-
-    #[doc = "`get_BasePosition()` overload"]
-    #[method(name = "get_BasePosition", args = 0)]
-    pub fn get_base_position(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`set_BasePosition(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "set_BasePosition", args = 1)]
-    pub fn set_base_position(
-        self,
+#[cfg(feature = "combat-camerapositiondata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraPositionData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_IsReverse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_IsReverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_reverse(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_reverse::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_IsReverse",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_IsReverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_reverse(
+        this: CameraPositionData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_reverse::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_battle_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_BattleCenter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_BattleCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_battle_center(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_battle_center::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_BattleCenter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_BattleCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_center(
+        this: CameraPositionData,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_center::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_battle_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_BattleVector",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_BattleVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_battle_vector(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_battle_vector::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_BattleVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_BattleVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_vector(
+        this: CameraPositionData,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_vector::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_battle_normal_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_BattleNormalVector",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_BattleNormalVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_battle_normal_vector(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_battle_normal_vector::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_normal_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_BattleNormalVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_BattleNormalVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_normal_vector(
+        this: CameraPositionData,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_normal_vector::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_battle_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_BattleDistance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_BattleDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_battle_distance(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_battle_distance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_BattleDistance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_BattleDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_distance(
+        this: CameraPositionData,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_battle_distance::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_BasePosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_BasePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_position(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_base_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_base_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector3::Vector3,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_BasePosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_BasePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_base_position(
+        this: CameraPositionData,
         value: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`get_CharaArray()` overload"]
-    #[method(name = "get_CharaArray", args = 0)]
-    pub fn get_chara_array(self) -> ::unity2::Array<crate::combat::character::Character>;
-
-    #[doc = "`set_CharaArray(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "set_CharaArray", args = 1)]
-    pub fn set_chara_array(self, value: ::unity2::Array<crate::combat::character::Character>)
-        -> ();
-
-    #[doc = "`get_m_DeadHeight()` overload"]
-    #[method(name = "get_m_DeadHeight", args = 0)]
-    pub fn get_m_dead_height(self) -> ::unity2::Array<f32>;
-
-    #[doc = "`set_m_DeadHeight(::unity2::Array<f32>)` overload"]
-    #[method(name = "set_m_DeadHeight", args = 1)]
-    pub fn set_m_dead_height(self, value: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`get_UnitTall()` overload"]
-    #[method(name = "get_UnitTall", args = 0)]
-    pub fn get_unit_tall(self) -> ::unity2::Array<f32>;
-
-    #[doc = "`set_UnitTall(::unity2::Array<f32>)` overload"]
-    #[method(name = "set_UnitTall", args = 1)]
-    pub fn set_unit_tall(self, value: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`get_JointList()` overload"]
-    #[method(name = "get_JointList", args = 0)]
-    pub fn get_joint_list(self) -> ::unity2::Array<crate::combat::characterjoint::CharacterJoint>;
-
-    #[doc = "`set_JointList(::unity2::Array<crate::combat::characterjoint::CharacterJoint>)` overload"]
-    #[method(name = "set_JointList", args = 1)]
-    pub fn set_joint_list(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_base_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_CharaArray",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_CharaArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chara_array(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::character::Character> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::combat::character::Character> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chara_array::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_CharaArray",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_CharaArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_array(
+        this: CameraPositionData,
+        value: ::unity2::Array<crate::combat::character::Character>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_chara_array::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_dead_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_m_DeadHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_m_DeadHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_dead_height(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<f32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_dead_height::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_dead_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_m_DeadHeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_m_DeadHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_dead_height(
+        this: CameraPositionData,
+        value: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_dead_height::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_UnitTall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_UnitTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit_tall(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<f32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unit_tall::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_UnitTall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_UnitTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_tall(
+        this: CameraPositionData,
+        value: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_tall::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_joint_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_JointList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_JointList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_joint_list(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::characterjoint::CharacterJoint> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::combat::characterjoint::CharacterJoint> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_joint_list::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_joint_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::characterjoint::CharacterJoint,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_JointList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_JointList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_joint_list(
+        this: CameraPositionData,
         value: ::unity2::Array<crate::combat::characterjoint::CharacterJoint>,
-    ) -> ();
-
-    #[doc = "`get_IsBeforeDragonChange()` overload"]
-    #[method(name = "get_IsBeforeDragonChange", args = 0)]
-    pub fn get_is_before_dragon_change(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_IsBeforeDragonChange(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_IsBeforeDragonChange", args = 1)]
-    pub fn set_is_before_dragon_change(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_IsInitialized()` overload"]
-    #[method(name = "get_IsInitialized", args = 0)]
-    pub fn get_is_initialized(self) -> bool;
-
-    #[doc = "`get_IsCharacterLoadFinished()` overload"]
-    #[method(name = "get_IsCharacterLoadFinished", args = 0)]
-    pub fn get_is_character_load_finished(self) -> bool;
-
-    #[doc = "`LateUpdate()` overload"]
-    #[method(name = "LateUpdate", args = 0)]
-    pub fn late_update(self) -> ();
-
-    #[doc = "`UpdateImpl()` overload"]
-    #[method(name = "UpdateImpl", args = 0)]
-    pub fn update_impl(self) -> ();
-
-    #[doc = "`Initialize(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, record: crate::combat::combatrecord::CombatRecord) -> ();
-
-    #[doc = "`Initialize(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize_2(self, chara: ::unity2::Array<crate::combat::character::Character>) -> ();
-
-    #[doc = "`GetCenter(i32)` overload"]
-    #[method(name = "GetCenter", args = 1)]
-    pub fn get_center(self, side: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GeTall(i32)` overload"]
-    #[method(name = "GeTall", args = 1)]
-    pub fn ge_tall(self, side: i32) -> f32;
-
-    #[doc = "`LoadTall(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "LoadTall", args = 1)]
-    pub fn load_tall(self, record: crate::combat::combatrecord::CombatRecord) -> ();
-
-    #[doc = "`LoadTall(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "LoadTall", args = 1)]
-    pub fn load_tall_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<crate::combat::characterjoint::CharacterJoint>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_joint_list::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_before_dragon_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_IsBeforeDragonChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_IsBeforeDragonChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_before_dragon_change(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_before_dragon_change::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_before_dragon_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "set_IsBeforeDragonChange",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "set_IsBeforeDragonChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_before_dragon_change(
+        this: CameraPositionData,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_before_dragon_change::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_initialized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_IsInitialized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_IsInitialized",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_initialized(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_initialized::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_character_load_finished {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_IsCharacterLoadFinished",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_IsCharacterLoadFinished",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_character_load_finished(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_character_load_finished::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_late_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "LateUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "LateUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn late_update(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_late_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "UpdateImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "UpdateImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_impl(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_impl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(
+        this: CameraPositionData,
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(this, record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_2(
+        this: CameraPositionData,
+        chara: ::unity2::Array<crate::combat::character::Character>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize_2::get_offset() as isize),
+        );
+        inner(this, chara, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "GetCenter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "GetCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_center(
+        this: CameraPositionData,
+        side: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_center::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ge_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "GeTall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "GeTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ge_tall(
+        this: CameraPositionData,
+        side: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(CameraPositionData, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ge_tall::get_offset() as isize),
+            );
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "LoadTall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "LoadTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_tall(
+        this: CameraPositionData,
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_tall::get_offset() as isize),
+        );
+        inner(this, record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_tall_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "LoadTall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "LoadTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_tall_2(
+        this: CameraPositionData,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
-    ) -> ();
-
-    #[doc = "`LoadJoint()` overload"]
-    #[method(name = "LoadJoint", args = 0)]
-    pub fn load_joint(self) -> ();
-
-    #[doc = "`CulculateInfo(bool, crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "CulculateInfo", args = 2)]
-    pub fn culculate_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_tall_2::get_offset() as isize),
+        );
+        inner(this, chara_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_joint {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "LoadJoint",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "LoadJoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_joint(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_load_joint::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_culculate_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "CulculateInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "CulculateInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn culculate_info(
+        this: CameraPositionData,
         is_initialize: bool,
         record: crate::combat::combatrecord::CombatRecord,
-    ) -> ();
-
-    #[doc = "`GetJointPos(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]
-    #[method(name = "GetJointPos", args = 2)]
-    pub fn get_joint_pos(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            bool,
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_culculate_info::get_offset() as isize),
+        );
+        inner(this, is_initialize, record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_joint_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "GetJointPos",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "GetJointPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_joint_pos(
+        this: CameraPositionData,
         side: i32,
         target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetJoint(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]
-    #[method(name = "GetJoint", args = 2)]
-    pub fn get_joint(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            i32,
+            crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_joint_pos::get_offset() as isize),
+        );
+        inner(this, side, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_joint {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "GetJoint",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "GetJoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_joint(
+        this: CameraPositionData,
         side: i32,
         t: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
-    ) -> crate::unity_engine::transform::Transform;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            i32,
+            crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_joint::get_offset() as isize),
+        );
+        inner(this, side, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_look_at_stacks {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_LookAtStacks",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_LookAtStacks",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_look_at_stacks(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+    > {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_look_at_stacks::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lines {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                "get_Lines",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    "get_Lines",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_lines(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::linerenderer::LineRenderer> {
+        let inner: extern "C" fn(
+            CameraPositionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::linerenderer::LineRenderer,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_lines::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CameraPositionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CameraPositionData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "combat-camerapositiondata")]
+pub trait ICameraPositionDataMethods: ICameraPositionData {
+    #[doc = "`get_IsReverse()` overload"]
+    fn get_is_reverse(self) -> bool {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_is_reverse(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsReverse(bool)` overload"]
+    fn set_is_reverse(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_is_reverse(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BattleCenter()` overload"]
+    fn get_battle_center(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_battle_center(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_BattleCenter(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_battle_center(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_battle_center(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BattleVector()` overload"]
+    fn get_battle_vector(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_battle_vector(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_BattleVector(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_battle_vector(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_battle_vector(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BattleNormalVector()` overload"]
+    fn get_battle_normal_vector(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_battle_normal_vector(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_BattleNormalVector(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_battle_normal_vector(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_battle_normal_vector(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BattleDistance()` overload"]
+    fn get_battle_distance(self) -> f32 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_battle_distance(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_BattleDistance(f32)` overload"]
+    fn set_battle_distance(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_battle_distance(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_BasePosition()` overload"]
+    fn get_base_position(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_base_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_BasePosition(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_base_position(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_base_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CharaArray()` overload"]
+    fn get_chara_array(self) -> ::unity2::Array<crate::combat::character::Character> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_chara_array(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_CharaArray(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn set_chara_array(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_chara_array(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_DeadHeight()` overload"]
+    fn get_m_dead_height(self) -> ::unity2::Array<f32> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_m_dead_height(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_DeadHeight(::unity2::Array<f32>)` overload"]
+    fn set_m_dead_height(self, value: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_m_dead_height(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UnitTall()` overload"]
+    fn get_unit_tall(self) -> ::unity2::Array<f32> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_unit_tall(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_UnitTall(::unity2::Array<f32>)` overload"]
+    fn set_unit_tall(self, value: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_unit_tall(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_JointList()` overload"]
+    fn get_joint_list(self) -> ::unity2::Array<crate::combat::characterjoint::CharacterJoint> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_joint_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_JointList(::unity2::Array<crate::combat::characterjoint::CharacterJoint>)` overload"]
+    fn set_joint_list(
+        self,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::characterjoint::CharacterJoint>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_joint_list(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsBeforeDragonChange()` overload"]
+    fn get_is_before_dragon_change(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_is_before_dragon_change(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsBeforeDragonChange(::unity2::Array<bool>)` overload"]
+    fn set_is_before_dragon_change(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<bool>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::set_is_before_dragon_change(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsInitialized()` overload"]
+    fn get_is_initialized(self) -> bool {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_is_initialized(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsCharacterLoadFinished()` overload"]
+    fn get_is_character_load_finished(self) -> bool {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_is_character_load_finished(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::late_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateImpl()` overload"]
+    fn update_impl(self) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::update_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Initialize(crate::combat::combatrecord::CombatRecord)` overload"]
+    fn initialize(
+        self,
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::initialize(
+                __receiver,
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Initialize(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn initialize_2(
+        self,
+        chara: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::initialize_2(
+                __receiver,
+                ::core::convert::Into::into(chara),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCenter(i32)` overload"]
+    fn get_center(
+        self,
+        side: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_center(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GeTall(i32)` overload"]
+    fn ge_tall(self, side: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::ge_tall(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadTall(crate::combat::combatrecord::CombatRecord)` overload"]
+    fn load_tall(
+        self,
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::load_tall(
+                __receiver,
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadTall(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn load_tall_2(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::load_tall_2(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadJoint()` overload"]
+    fn load_joint(self) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::load_joint(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CulculateInfo(bool, crate::combat::combatrecord::CombatRecord)` overload"]
+    fn culculate_info(
+        self,
+        is_initialize: impl ::core::convert::Into<bool>,
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::culculate_info(
+                __receiver,
+                ::core::convert::Into::into(is_initialize),
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetJointPos(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]
+    fn get_joint_pos(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        target: impl ::core::convert::Into<
+            crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        >,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_joint_pos(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetJoint(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]
+    fn get_joint(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        t: impl ::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData_TargetJoint>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_joint(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_LookAtStacks()` overload"]
-    #[method(name = "get_LookAtStacks", args = 0)]
-    pub fn get_look_at_stacks(
+    fn get_look_at_stacks(
         self,
     ) -> ::unity2::Array<
         crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_look_at_stacks(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Lines()` overload"]
-    #[method(name = "get_Lines", args = 0)]
-    pub fn get_lines(self) -> ::unity2::Array<crate::unity_engine::linerenderer::LineRenderer>;
-
+    fn get_lines(self) -> ::unity2::Array<crate::unity_engine::linerenderer::LineRenderer> {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::get_lines(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CameraPositionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CameraPositionData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "combat-camerapositiondata")]
+impl<__T: ICameraPositionData> ICameraPositionDataMethods for __T {}
 
 #[cfg(feature = "combat-camerapositiondata")]
 impl CameraPositionData {
@@ -303,25 +2647,33 @@ impl CameraPositionData {
 }
 
 #[cfg(feature = "combat-camerapositiondata")]
-#[::unity2::methods]
-impl CameraPositionData_CameraShakeSettings {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData_CameraShakeSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraPositionData_CameraShakeSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::CameraPositionData;
+    pub use super::CameraPositionData_CameraShakeSettings;
+    pub use super::CameraPositionData_TargetJoint;
+    pub use super::ICameraPositionData;
+    pub use super::ICameraPositionDataMethods;
+    pub use super::ICameraPositionData_CameraShakeSettings;
+    pub use super::ICameraPositionData_CameraShakeSettingsMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

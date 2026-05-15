@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitParamDetail")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitParamDetail {
-        #[rename(name = "m_value")]
-        pub m_value: ::unity2::Array<i32>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md"))]
     #[repr(C)]
     #[derive(
@@ -84,55 +76,507 @@ mod __types {
             Self { value: 7 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitParamDetail")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitParamDetail {
+        #[rename(name = "m_value")]
+        pub m_value: ::unity2::Array<i32>,
+    }
 }
 
 #[cfg(feature = "app-unitparamdetail-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitparamdetail")]
-#[::unity2::methods]
-impl UnitParamDetail {
-    #[doc = "`SetParam(i32, i32, i32, i32, i32, i32)` overload"]
-    #[method(name = "SetParam", args = 6)]
-    pub fn set_param(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitParamDetail_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "SetParam",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "SetParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_param(
+        this: UnitParamDetail,
         total: i32,
         no_god: i32,
         no_effect: i32,
         no_hub: i32,
         terrain: i32,
         support: i32,
-    ) -> ();
-
-    #[doc = "`AddParam(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, i32)` overload"]
-    #[method(name = "AddParam", args = 2)]
-    pub fn add_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitParamDetail,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_param::get_offset() as isize),
+        );
+        inner(
+            this,
+            total,
+            no_god,
+            no_effect,
+            no_hub,
+            terrain,
+            support,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "AddParam",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "AddParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_param(
+        this: UnitParamDetail,
         r#type: crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
         val: i32,
-    ) -> ();
-
-    #[doc = "`SetParamForContinuous(i32, i32, i32)` overload"]
-    #[method(name = "SetParamForContinuous", args = 3)]
-    pub fn set_param_for_continuous(self, god_delta: i32, skill_delta: i32, weight: i32) -> ();
-
-    #[doc = "`GetValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)` overload"]
-    #[method(name = "GetValue", args = 1)]
-    pub fn get_value(self, detail: crate::app::unitparamdetail::UnitParamDetail_ValueDetail)
-        -> i32;
-
-    #[doc = "`GetTotal()` overload"]
-    #[method(name = "GetTotal", args = 0)]
-    pub fn get_total(self) -> i32;
-
-    #[doc = "`GetEnhanceDir(bool)` overload"]
-    #[method(name = "GetEnhanceDir", args = 1)]
-    pub fn get_enhance_dir(self, is_god_change: bool) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitParamDetail,
+            crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_param::get_offset() as isize),
+        );
+        inner(this, r#type, val, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_param_for_continuous {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "SetParamForContinuous",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "SetParamForContinuous",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_param_for_continuous(
+        this: UnitParamDetail,
+        god_delta: i32,
+        skill_delta: i32,
+        weight: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitParamDetail, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_param_for_continuous::get_offset() as isize),
+            );
+        inner(this, god_delta, skill_delta, weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "GetValue",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "GetValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: UnitParamDetail,
+        detail: crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            UnitParamDetail,
+            crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_value::get_offset() as isize),
+        );
+        inner(this, detail, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_total {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "GetTotal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "GetTotal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_total(
+        this: UnitParamDetail,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(UnitParamDetail, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_total::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enhance_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                "GetEnhanceDir",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    "GetEnhanceDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enhance_dir(
+        this: UnitParamDetail,
+        is_god_change: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(UnitParamDetail, bool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enhance_dir::get_offset() as isize),
+            );
+        inner(this, is_god_change, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitParamDetail as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitParamDetail as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitParamDetail,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitParamDetail, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-unitparamdetail")]
+pub trait IUnitParamDetailMethods: IUnitParamDetail {
+    #[doc = "`SetParam(i32, i32, i32, i32, i32, i32)` overload"]
+    fn set_param(
+        self,
+        total: impl ::core::convert::Into<i32>,
+        no_god: impl ::core::convert::Into<i32>,
+        no_effect: impl ::core::convert::Into<i32>,
+        no_hub: impl ::core::convert::Into<i32>,
+        terrain: impl ::core::convert::Into<i32>,
+        support: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::set_param(
+                __receiver,
+                ::core::convert::Into::into(total),
+                ::core::convert::Into::into(no_god),
+                ::core::convert::Into::into(no_effect),
+                ::core::convert::Into::into(no_hub),
+                ::core::convert::Into::into(terrain),
+                ::core::convert::Into::into(support),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddParam(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, i32)` overload"]
+    fn add_param(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::unitparamdetail::UnitParamDetail_ValueDetail>,
+        val: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::add_param(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(val),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetParamForContinuous(i32, i32, i32)` overload"]
+    fn set_param_for_continuous(
+        self,
+        god_delta: impl ::core::convert::Into<i32>,
+        skill_delta: impl ::core::convert::Into<i32>,
+        weight: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::set_param_for_continuous(
+                __receiver,
+                ::core::convert::Into::into(god_delta),
+                ::core::convert::Into::into(skill_delta),
+                ::core::convert::Into::into(weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)` overload"]
+    fn get_value(
+        self,
+        detail: impl ::core::convert::Into<crate::app::unitparamdetail::UnitParamDetail_ValueDetail>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::get_value(
+                __receiver,
+                ::core::convert::Into::into(detail),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTotal()` overload"]
+    fn get_total(self) -> i32 {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::get_total(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnhanceDir(bool)` overload"]
+    fn get_enhance_dir(self, is_god_change: impl ::core::convert::Into<bool>) -> i32 {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::get_enhance_dir(
+                __receiver,
+                ::core::convert::Into::into(is_god_change),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitParamDetail as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitParamDetail_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitparamdetail")]
+impl<__T: IUnitParamDetail> IUnitParamDetailMethods for __T {}
 
 #[cfg(feature = "app-unitparamdetail")]
 impl UnitParamDetail {
@@ -148,4 +592,21 @@ impl UnitParamDetail {
         <Self as IUnitParamDetailMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-unitparamdetail")]
+pub mod prelude {
+    pub use super::IUnitParamDetail;
+    pub use super::IUnitParamDetailMethods;
+    pub use super::UnitParamDetail;
+    pub use super::UnitParamDetail_ValueDetail;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

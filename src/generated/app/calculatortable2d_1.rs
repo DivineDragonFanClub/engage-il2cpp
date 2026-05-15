@@ -49,3 +49,22 @@ impl<T0: ::unity2::ClassIdentity> CalculatorTable2D_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-calculatortable2d_1")]
+pub mod prelude {
+    pub use super::CalculatorTable2D_1;
+    pub use super::ICalculatorTable2D_1;
+    pub use super::ICalculatorTable2D_1Methods;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    #[cfg(feature = "app-structdataarray_1")]
+    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -68,3 +68,16 @@ impl<T0: ::unity2::ClassIdentity> StructTemplate_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-structtemplate_1")]
+pub mod prelude {
+    pub use super::IStructTemplate_1;
+    pub use super::IStructTemplate_1Methods;
+    pub use super::StructTemplate_1;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

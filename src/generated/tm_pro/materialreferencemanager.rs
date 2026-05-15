@@ -45,151 +45,1509 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-materialreferencemanager")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MaterialReferenceManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::materialreferencemanager::MaterialReferenceManager {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: materialreferencemanager :: MaterialReferenceManager = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_instance :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddFontAsset",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_font_asset(
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_font_asset::get_offset() as isize),
+        );
+        inner(font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_font_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddFontAssetInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddFontAssetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_font_asset_internal(
+        this: MaterialReferenceManager,
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_font_asset_internal::get_offset() as isize),
+        );
+        inner(this, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddSpriteAsset",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddSpriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_sprite_asset(
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_sprite_asset::get_offset() as isize),
+        );
+        inner(sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_sprite_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddSpriteAssetInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddSpriteAssetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_sprite_asset_internal(
+        this: MaterialReferenceManager,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_sprite_asset_internal::get_offset() as isize),
+        );
+        inner(this, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_sprite_asset_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddSpriteAsset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddSpriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_sprite_asset_2(
+        hash_code: i32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_sprite_asset_2::get_offset() as isize),
+        );
+        inner(hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_sprite_asset_internal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddSpriteAssetInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddSpriteAssetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_sprite_asset_internal_2(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_sprite_asset_internal_2::get_offset() as isize),
+        );
+        inner(this, hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_font_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddFontMaterial",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddFontMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_font_material(
+        hash_code: i32,
+        material: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_font_material::get_offset() as isize),
+        );
+        inner(hash_code, material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_font_material_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddFontMaterialInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddFontMaterialInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_font_material_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        material: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_font_material_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_color_gradient_preset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_colorgradient::TMP_ColorGradient as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddColorGradientPreset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddColorGradientPreset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_color_gradient_preset(
+        hash_code: i32,
+        sprite_asset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            i32,
+            crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_color_gradient_preset::get_offset() as isize),
+        );
+        inner(hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_color_gradient_preset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_colorgradient::TMP_ColorGradient as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "AddColorGradientPreset_Internal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "AddColorGradientPreset_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_color_gradient_preset_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        sprite_asset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_color_gradient_preset_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contains {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "Contains",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "Contains",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn contains(
+        this: MaterialReferenceManager,
+        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_contains::get_offset() as isize),
+        );
+        inner(this, font, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contains_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "Contains",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "Contains",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn contains_2(
+        this: MaterialReferenceManager,
+        sprite: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_contains_2::get_offset() as isize),
+        );
+        inner(this, sprite, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetFontAsset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_font_asset(
+        hash_code: i32,
+        font_asset: *mut crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            *mut crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_font_asset::get_offset() as isize),
+        );
+        inner(hash_code, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_font_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetFontAssetInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetFontAssetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_font_asset_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        font_asset: *mut crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            *mut crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_font_asset_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetSpriteAsset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetSpriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_sprite_asset(
+        hash_code: i32,
+        sprite_asset: *mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            *mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_sprite_asset::get_offset() as isize),
+        );
+        inner(hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_sprite_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetSpriteAssetInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetSpriteAssetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_sprite_asset_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        sprite_asset: *mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            *mut crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_sprite_asset_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, sprite_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_color_gradient_preset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: tm_pro :: tmp_colorgradient :: TMP_ColorGradient as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetColorGradientPreset",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetColorGradientPreset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_color_gradient_preset(
+        hash_code: i32,
+        gradient_preset: *mut crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            *mut crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_color_gradient_preset::get_offset() as isize),
+        );
+        inner(hash_code, gradient_preset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_color_gradient_preset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: tm_pro :: tmp_colorgradient :: TMP_ColorGradient as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetColorGradientPresetInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetColorGradientPresetInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_color_gradient_preset_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        gradient_preset: *mut crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            *mut crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_color_gradient_preset_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, gradient_preset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetMaterial",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_material(
+        hash_code: i32,
+        material: *mut crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            *mut crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_material::get_offset() as isize),
+        );
+        inner(hash_code, material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_material_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                "TryGetMaterialInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetMaterialInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_material_internal(
+        this: MaterialReferenceManager,
+        hash_code: i32,
+        material: *mut crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MaterialReferenceManager,
+            i32,
+            *mut crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_material_internal::get_offset() as isize),
+        );
+        inner(this, hash_code, material, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialReferenceManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MaterialReferenceManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MaterialReferenceManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MaterialReferenceManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-materialreferencemanager")]
 impl MaterialReferenceManager {
     #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::tm_pro::materialreferencemanager::MaterialReferenceManager;
-
+    pub fn get_instance() -> crate::tm_pro::materialreferencemanager::MaterialReferenceManager {
+        unsafe { __MaterialReferenceManager_unity2_raw::get_instance(::core::option::Option::None) }
+    }
     #[doc = "`AddFontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "AddFontAsset", args = 1)]
-    pub fn add_font_asset(font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset) -> ();
-
-    #[doc = "`AddFontAssetInternal(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "AddFontAssetInternal", args = 1)]
-    pub fn add_font_asset_internal(
-        self,
-        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
+    pub fn add_font_asset(
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            __MaterialReferenceManager_unity2_raw::add_font_asset(
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`AddSpriteAsset(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "AddSpriteAsset", args = 1)]
-    pub fn add_sprite_asset(sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) -> ();
-
-    #[doc = "`AddSpriteAssetInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "AddSpriteAssetInternal", args = 1)]
-    pub fn add_sprite_asset_internal(
-        self,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-    ) -> ();
-
+    pub fn add_sprite_asset(
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> () {
+        unsafe {
+            __MaterialReferenceManager_unity2_raw::add_sprite_asset(
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`AddSpriteAsset(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "AddSpriteAsset", args = 2)]
     pub fn add_sprite_asset_2(
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-    ) -> ();
-
-    #[doc = "`AddSpriteAssetInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "AddSpriteAssetInternal", args = 2)]
-    pub fn add_sprite_asset_internal_2(
-        self,
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-    ) -> ();
-
+        hash_code: impl ::core::convert::Into<i32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> () {
+        unsafe {
+            __MaterialReferenceManager_unity2_raw::add_sprite_asset_2(
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`AddFontMaterial(i32, crate::unity_engine::material::Material)` overload"]
-    #[method(name = "AddFontMaterial", args = 2)]
     pub fn add_font_material(
-        hash_code: i32,
-        material: crate::unity_engine::material::Material,
-    ) -> ();
-
-    #[doc = "`AddFontMaterialInternal(i32, crate::unity_engine::material::Material)` overload"]
-    #[method(name = "AddFontMaterialInternal", args = 2)]
-    pub fn add_font_material_internal(
-        self,
-        hash_code: i32,
-        material: crate::unity_engine::material::Material,
-    ) -> ();
-
+        hash_code: impl ::core::convert::Into<i32>,
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            __MaterialReferenceManager_unity2_raw::add_font_material(
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(material),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`AddColorGradientPreset(i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "AddColorGradientPreset", args = 2)]
     pub fn add_color_gradient_preset(
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> ();
-
-    #[doc = "`AddColorGradientPreset_Internal(i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "AddColorGradientPreset_Internal", args = 2)]
-    pub fn add_color_gradient_preset_internal(
-        self,
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> ();
-
-    #[doc = "`Contains(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, font: crate::tm_pro::tmp_fontasset::TMP_FontAsset) -> bool;
-
-    #[doc = "`Contains(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains_2(self, sprite: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) -> bool;
-
-    #[doc = "`TryGetFontAsset(i32, crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "TryGetFontAsset", args = 2)]
+        hash_code: impl ::core::convert::Into<i32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
+    ) -> () {
+        unsafe {
+            __MaterialReferenceManager_unity2_raw::add_color_gradient_preset(
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetFontAsset(i32, *mutcrate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
     pub fn try_get_font_asset(
-        hash_code: i32,
-        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> bool;
-
-    #[doc = "`TryGetFontAssetInternal(i32, crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "TryGetFontAssetInternal", args = 2)]
-    pub fn try_get_font_asset_internal(
-        self,
-        hash_code: i32,
-        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> bool;
-
-    #[doc = "`TryGetSpriteAsset(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "TryGetSpriteAsset", args = 2)]
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_fontasset::TMP_FontAsset) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_fontasset::TMP_FontAsset>::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_font_asset(
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetSpriteAsset(i32, *mutcrate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
     pub fn try_get_sprite_asset(
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-    ) -> bool;
-
-    #[doc = "`TryGetSpriteAssetInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "TryGetSpriteAssetInternal", args = 2)]
-    pub fn try_get_sprite_asset_internal(
-        self,
-        hash_code: i32,
-        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-    ) -> bool;
-
-    #[doc = "`TryGetColorGradientPreset(i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "TryGetColorGradientPreset", args = 2)]
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_sprite_asset(
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetColorGradientPreset(i32, *mutcrate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
     pub fn try_get_color_gradient_preset(
-        hash_code: i32,
-        gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> bool;
-
-    #[doc = "`TryGetColorGradientPresetInternal(i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "TryGetColorGradientPresetInternal", args = 2)]
-    pub fn try_get_color_gradient_preset_internal(
-        self,
-        hash_code: i32,
-        gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> bool;
-
-    #[doc = "`TryGetMaterial(i32, crate::unity_engine::material::Material)` overload"]
-    #[method(name = "TryGetMaterial", args = 2)]
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            >::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_color_gradient_preset(
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetMaterial(i32, *mutcrate::unity_engine::material::Material)` overload"]
     pub fn try_get_material(
-        hash_code: i32,
-        material: crate::unity_engine::material::Material,
-    ) -> bool;
-
-    #[doc = "`TryGetMaterialInternal(i32, crate::unity_engine::material::Material)` overload"]
-    #[method(name = "TryGetMaterialInternal", args = 2)]
-    pub fn try_get_material_internal(
-        self,
-        hash_code: i32,
-        material: crate::unity_engine::material::Material,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::unity_engine::material::Material) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::material::Material>::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_material(
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
 }
+
+#[cfg(feature = "tm_pro-materialreferencemanager")]
+pub trait IMaterialReferenceManagerMethods: IMaterialReferenceManager {
+    #[doc = "`AddFontAssetInternal(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn add_font_asset_internal(
+        self,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::add_font_asset_internal(
+                __receiver,
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddSpriteAssetInternal(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
+    fn add_sprite_asset_internal(
+        self,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::add_sprite_asset_internal(
+                __receiver,
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddSpriteAssetInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
+    fn add_sprite_asset_internal_2(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::add_sprite_asset_internal_2(
+                __receiver,
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddFontMaterialInternal(i32, crate::unity_engine::material::Material)` overload"]
+    fn add_font_material_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::add_font_material_internal(
+                __receiver,
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddColorGradientPreset_Internal(i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
+    fn add_color_gradient_preset_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+        sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::add_color_gradient_preset_internal(
+                __receiver,
+                ::core::convert::Into::into(hash_code),
+                ::core::convert::Into::into(sprite_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Contains(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn contains(
+        self,
+        font: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::contains(
+                __receiver,
+                ::core::convert::Into::into(font),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Contains(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
+    fn contains_2(
+        self,
+        sprite: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::contains_2(
+                __receiver,
+                ::core::convert::Into::into(sprite),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetFontAssetInternal(i32, *mutcrate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn try_get_font_asset_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_fontasset::TMP_FontAsset) {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_fontasset::TMP_FontAsset>::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_font_asset_internal(
+                    __receiver,
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetSpriteAssetInternal(i32, *mutcrate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
+    fn try_get_sprite_asset_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_sprite_asset_internal(
+                    __receiver,
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetColorGradientPresetInternal(i32, *mutcrate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
+    fn try_get_color_gradient_preset_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient) {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            >::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_color_gradient_preset_internal(
+                    __receiver,
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetMaterialInternal(i32, *mutcrate::unity_engine::material::Material)` overload"]
+    fn try_get_material_internal(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::unity_engine::material::Material) {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::material::Material>::uninit();
+            let __ret = {
+                __MaterialReferenceManager_unity2_raw::try_get_material_internal(
+                    __receiver,
+                    ::core::convert::Into::into(hash_code),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialReferenceManager as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MaterialReferenceManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-materialreferencemanager")]
+impl<__T: IMaterialReferenceManager> IMaterialReferenceManagerMethods for __T {}
 
 #[cfg(feature = "tm_pro-materialreferencemanager")]
 impl MaterialReferenceManager {
@@ -205,4 +1563,14 @@ impl MaterialReferenceManager {
         <Self as IMaterialReferenceManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-materialreferencemanager")]
+pub mod prelude {
+    pub use super::IMaterialReferenceManager;
+    pub use super::IMaterialReferenceManagerMethods;
+    pub use super::MaterialReferenceManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

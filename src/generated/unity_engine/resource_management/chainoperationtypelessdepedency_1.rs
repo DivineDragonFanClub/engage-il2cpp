@@ -119,3 +119,16 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1")]
+pub mod prelude {
+    pub use super::ChainOperationTypelessDepedency_1;
+    pub use super::IChainOperationTypelessDepedency_1;
+    pub use super::IChainOperationTypelessDepedency_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+}

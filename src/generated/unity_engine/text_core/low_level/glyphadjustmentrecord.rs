@@ -43,15 +43,125 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphadjustmentrecord")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GlyphAdjustmentRecord_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GlyphAdjustmentRecord as ::unity2::ClassIdentity>::class(),
+                "get_glyphIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GlyphAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_index(
+        this: GlyphAdjustmentRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(GlyphAdjustmentRecord, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_glyph_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_value_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GlyphAdjustmentRecord as ::unity2::ClassIdentity>::class(),
+                "get_glyphValueRecord",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GlyphAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphValueRecord",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_value_record(
+        this: GlyphAdjustmentRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord {
+        let inner : extern "C" fn (GlyphAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_glyph_value_record :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-glyphadjustmentrecord")]
 impl GlyphAdjustmentRecord {
     #[doc = "`get_glyphIndex()` overload"]
-    #[method(name = "get_glyphIndex", args = 0)]
-    pub fn get_glyph_index(self) -> u32;
-
+    pub fn get_glyph_index(self) -> u32 {
+        unsafe {
+            __GlyphAdjustmentRecord_unity2_raw::get_glyph_index(self, ::core::option::Option::None)
+        }
+    }
     #[doc = "`get_glyphValueRecord()` overload"]
-    #[method(name = "get_glyphValueRecord", args = 0)]
     pub fn get_glyph_value_record(
         self,
-    ) -> crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord;
+    ) -> crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord {
+        unsafe {
+            __GlyphAdjustmentRecord_unity2_raw::get_glyph_value_record(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-glyphadjustmentrecord")]
+pub mod prelude {
+    pub use super::GlyphAdjustmentRecord;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

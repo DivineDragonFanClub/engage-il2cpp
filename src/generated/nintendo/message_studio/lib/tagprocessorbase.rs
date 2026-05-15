@@ -24,78 +24,872 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
-#[::unity2::methods]
-impl TagProcessorBase {
-    #[doc = "`Process(::unity2::IntPtr)` overload"]
-    #[method(name = "Process", args = 1)]
-    pub fn process(self, p: ::unity2::IntPtr) -> ();
-
-    #[doc = "`ProcessTag(u16, u16, ::unity2::Array<u8>)` overload"]
-    #[method(name = "ProcessTag", args = 3)]
-    pub fn process_tag(self, group: u16, tag: u16, param: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ProcessSystemTag(u16, ::unity2::Array<u8>)` overload"]
-    #[method(name = "ProcessSystemTag", args = 2)]
-    pub fn process_system_tag(self, tag: u16, param: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ProcessChar(u16)` overload"]
-    #[method(name = "ProcessChar", args = 1)]
-    pub fn process_char(self, c: u16) -> ();
-
-    #[doc = "`ProcessRubyTag(crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo)` overload"]
-    #[method(name = "ProcessRubyTag", args = 1)]
-    pub fn process_ruby_tag(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TagProcessorBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "Process",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "Process",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process(
+        this: TagProcessorBase,
+        p: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process::get_offset() as isize),
+        );
+        inner(this, p, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessTag",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_tag(
+        this: TagProcessorBase,
+        group: u16,
+        tag: u16,
+        param: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            u16,
+            u16,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_tag::get_offset() as isize),
+        );
+        inner(this, group, tag, param, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_system_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessSystemTag",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessSystemTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_system_tag(
+        this: TagProcessorBase,
+        tag: u16,
+        param: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            u16,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_system_tag::get_offset() as isize),
+        );
+        inner(this, tag, param, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessChar",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_char(
+        this: TagProcessorBase,
+        c: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TagProcessorBase, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_process_char::get_offset() as isize),
+            );
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_ruby_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: rubytaginfo :: RubyTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessRubyTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessRubyTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_ruby_tag(
+        this: TagProcessorBase,
         ruby_tag_info: crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessFontTag(crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo)` overload"]
-    #[method(name = "ProcessFontTag", args = 1)]
-    pub fn process_font_tag(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_ruby_tag::get_offset() as isize),
+        );
+        inner(this, ruby_tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_font_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: fonttaginfo :: FontTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessFontTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessFontTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_font_tag(
+        this: TagProcessorBase,
         font_tag_info: crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessSizeTag(crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo)` overload"]
-    #[method(name = "ProcessSizeTag", args = 1)]
-    pub fn process_size_tag(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_font_tag::get_offset() as isize),
+        );
+        inner(this, font_tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_size_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: sizetaginfo :: SizeTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessSizeTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessSizeTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_size_tag(
+        this: TagProcessorBase,
         size_tag_info: crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessColorTag(crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo)` overload"]
-    #[method(name = "ProcessColorTag", args = 1)]
-    pub fn process_color_tag(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_size_tag::get_offset() as isize),
+        );
+        inner(this, size_tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_color_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: colortaginfo :: ColorTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessColorTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessColorTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_color_tag(
+        this: TagProcessorBase,
         color_tag_info: crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessPageBreakTag(crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo)` overload"]
-    #[method(name = "ProcessPageBreakTag", args = 1)]
-    pub fn process_page_break_tag(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_color_tag::get_offset() as isize),
+        );
+        inner(this, color_tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_page_break_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: pagebreaktaginfo :: PageBreakTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessPageBreakTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessPageBreakTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_page_break_tag(
+        this: TagProcessorBase,
         page_break_tag_info : crate :: nintendo :: message_studio :: lib :: pagebreaktaginfo :: PageBreakTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessCustomTag(crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo)` overload"]
-    #[method(name = "ProcessCustomTag", args = 1)]
-    pub fn process_custom_tag(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_page_break_tag::get_offset() as isize),
+        );
+        inner(this, page_break_tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_custom_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: customtaginfo :: CustomTagInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessCustomTag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessCustomTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_custom_tag(
+        this: TagProcessorBase,
         tag_info: crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,
-    ) -> ();
-
-    #[doc = "`ProcessEnd()` overload"]
-    #[method(name = "ProcessEnd", args = 0)]
-    pub fn process_end(self) -> ();
-
-    #[doc = "`ReadChar(::unity2::IntPtr, i32)` overload"]
-    #[method(name = "ReadChar", args = 2)]
-    pub fn read_char(self, p: ::unity2::IntPtr, offset: i32) -> u16;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_custom_tag::get_offset() as isize),
+        );
+        inner(this, tag_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ProcessEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ProcessEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_end(
+        this: TagProcessorBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TagProcessorBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_process_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                "ReadChar",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    "ReadChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_char(
+        this: TagProcessorBase,
+        p: ::unity2::IntPtr,
+        offset: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(
+            TagProcessorBase,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> u16 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_char::get_offset() as isize),
+        );
+        inner(this, p, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TagProcessorBase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TagProcessorBase as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TagProcessorBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TagProcessorBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
+pub trait ITagProcessorBaseMethods: ITagProcessorBase {
+    #[doc = "`Process(::unity2::IntPtr)` overload"]
+    fn process(self, p: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process(
+                __receiver,
+                ::core::convert::Into::into(p),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessTag(u16, u16, ::unity2::Array<u8>)` overload"]
+    fn process_tag(
+        self,
+        group: impl ::core::convert::Into<u16>,
+        tag: impl ::core::convert::Into<u16>,
+        param: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_tag(
+                __receiver,
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(tag),
+                ::core::convert::Into::into(param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessSystemTag(u16, ::unity2::Array<u8>)` overload"]
+    fn process_system_tag(
+        self,
+        tag: impl ::core::convert::Into<u16>,
+        param: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_system_tag(
+                __receiver,
+                ::core::convert::Into::into(tag),
+                ::core::convert::Into::into(param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessChar(u16)` overload"]
+    fn process_char(self, c: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_char(
+                __receiver,
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessRubyTag(crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo)` overload"]
+    fn process_ruby_tag(
+        self,
+        ruby_tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_ruby_tag(
+                __receiver,
+                ::core::convert::Into::into(ruby_tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessFontTag(crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo)` overload"]
+    fn process_font_tag(
+        self,
+        font_tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_font_tag(
+                __receiver,
+                ::core::convert::Into::into(font_tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessSizeTag(crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo)` overload"]
+    fn process_size_tag(
+        self,
+        size_tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_size_tag(
+                __receiver,
+                ::core::convert::Into::into(size_tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessColorTag(crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo)` overload"]
+    fn process_color_tag(
+        self,
+        color_tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_color_tag(
+                __receiver,
+                ::core::convert::Into::into(color_tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessPageBreakTag(crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo)` overload"]
+    fn process_page_break_tag(
+        self,
+        page_break_tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_page_break_tag(
+                __receiver,
+                ::core::convert::Into::into(page_break_tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessCustomTag(crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo)` overload"]
+    fn process_custom_tag(
+        self,
+        tag_info: impl ::core::convert::Into<
+            crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_custom_tag(
+                __receiver,
+                ::core::convert::Into::into(tag_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessEnd()` overload"]
+    fn process_end(self) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::process_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReadChar(::unity2::IntPtr, i32)` overload"]
+    fn read_char(
+        self,
+        p: impl ::core::convert::Into<::unity2::IntPtr>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> u16 {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::read_char(
+                __receiver,
+                ::core::convert::Into::into(p),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TagProcessorBase as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TagProcessorBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
+impl<__T: ITagProcessorBase> ITagProcessorBaseMethods for __T {}
 
 #[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
 impl TagProcessorBase {
@@ -111,4 +905,14 @@ impl TagProcessorBase {
         <Self as ITagProcessorBaseMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
+pub mod prelude {
+    pub use super::ITagProcessorBase;
+    pub use super::ITagProcessorBaseMethods;
+    pub use super::TagProcessorBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

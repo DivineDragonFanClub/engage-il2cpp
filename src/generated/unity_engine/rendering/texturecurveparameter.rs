@@ -21,20 +21,141 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
-#[::unity2::methods]
-impl TextureCurveParameter {
-    #[doc = "`.ctor(crate::unity_engine::rendering::texturecurve::TextureCurve, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextureCurveParameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: texturecurve :: TextureCurve as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureCurveParameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureCurveParameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TextureCurveParameter,
         value: crate::unity_engine::rendering::texturecurve::TextureCurve,
         override_state: bool,
-    ) -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextureCurveParameter,
+            crate::unity_engine::rendering::texturecurve::TextureCurve,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, value, override_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextureCurveParameter as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextureCurveParameter as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: TextureCurveParameter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextureCurveParameter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
+pub trait ITextureCurveParameterMethods: ITextureCurveParameter {
+    #[doc = "`.ctor(crate::unity_engine::rendering::texturecurve::TextureCurve, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::texturecurve::TextureCurve>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TextureCurveParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextureCurveParameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver = <TextureCurveParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TextureCurveParameter_unity2_raw::release(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
+impl<__T: ITextureCurveParameter> ITextureCurveParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
 impl TextureCurveParameter {
@@ -53,4 +174,20 @@ impl TextureCurveParameter {
         <Self as ITextureCurveParameterMethods>::ctor(this, value, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
+pub mod prelude {
+    pub use super::ITextureCurveParameter;
+    pub use super::ITextureCurveParameterMethods;
+    pub use super::TextureCurveParameter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

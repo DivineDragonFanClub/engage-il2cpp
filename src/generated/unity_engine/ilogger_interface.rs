@@ -15,51 +15,496 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ilogger_interface")]
-#[::unity2::methods]
-impl ILogger_Interface {
-    #[doc = "`get_logHandler()` overload"]
-    #[method(name = "get_logHandler", args = 0)]
-    pub fn get_log_handler(self) -> crate::unity_engine::iloghandler::ILogHandler;
-
-    #[doc = "`get_logEnabled()` overload"]
-    #[method(name = "get_logEnabled", args = 0)]
-    pub fn get_log_enabled(self) -> bool;
-
-    #[doc = "`set_logEnabled(bool)` overload"]
-    #[method(name = "set_logEnabled", args = 1)]
-    pub fn set_log_enabled(self, value: bool) -> ();
-
-    #[doc = "`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object)` overload"]
-    #[method(name = "Log", args = 2)]
-    pub fn log(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ILogger_Interface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_log_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "get_logHandler",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "get_logHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_log_handler(
+        this: ILogger_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::iloghandler::ILogHandler {
+        let inner: extern "C" fn(
+            ILogger_Interface,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::iloghandler::ILogHandler = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_log_handler::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_log_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "get_logEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "get_logEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_log_enabled(
+        this: ILogger_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ILogger_Interface, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_log_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_log_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "set_logEnabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "set_logEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_log_enabled(
+        this: ILogger_Interface,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ILogger_Interface, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_log_enabled::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::logtype::LogType as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "Log",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "Log",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log(
+        this: ILogger_Interface,
         log_type: crate::unity_engine::logtype::LogType,
         message: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object, crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "Log", args = 3)]
-    pub fn log_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ILogger_Interface,
+            crate::unity_engine::logtype::LogType,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_log::get_offset() as isize),
+        );
+        inner(this, log_type, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::logtype::LogType as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "Log",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "Log",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_2(
+        this: ILogger_Interface,
         log_type: crate::unity_engine::logtype::LogType,
         message: crate::system::object::Object,
         context: crate::unity_engine::object_2::Object_2,
-    ) -> ();
-
-    #[doc = "`LogError(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = "LogError", args = 2)]
-    pub fn log_error(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ILogger_Interface,
+            crate::unity_engine::logtype::LogType,
+            crate::system::object::Object,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_log_2::get_offset() as isize),
+        );
+        inner(this, log_type, message, context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "LogError",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "LogError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_error(
+        this: ILogger_Interface,
         tag: ::unity2::Il2CppString,
         message: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`LogFormat(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "LogFormat", args = 3)]
-    pub fn log_format(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ILogger_Interface,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_log_error::get_offset() as isize),
+        );
+        inner(this, tag, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::logtype::LogType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogger_Interface as ::unity2::ClassIdentity>::class(),
+                "LogFormat",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogger_Interface as ::unity2::ClassIdentity>::NAME,
+                    "LogFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_format(
+        this: ILogger_Interface,
         log_type: crate::unity_engine::logtype::LogType,
         format: ::unity2::Il2CppString,
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ILogger_Interface,
+            crate::unity_engine::logtype::LogType,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_log_format::get_offset() as isize),
+        );
+        inner(this, log_type, format, args, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ilogger_interface")]
+pub trait IILogger_InterfaceMethods: IILogger_Interface {
+    #[doc = "`get_logHandler()` overload"]
+    fn get_log_handler(self) -> crate::unity_engine::iloghandler::ILogHandler {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::get_log_handler(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_logEnabled()` overload"]
+    fn get_log_enabled(self) -> bool {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::get_log_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_logEnabled(bool)` overload"]
+    fn set_log_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::set_log_enabled(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object)` overload"]
+    fn log(
+        self,
+        log_type: impl ::core::convert::Into<crate::unity_engine::logtype::LogType>,
+        message: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::log(
+                __receiver,
+                ::core::convert::Into::into(log_type),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object, crate::unity_engine::object_2::Object_2)` overload"]
+    fn log_2(
+        self,
+        log_type: impl ::core::convert::Into<crate::unity_engine::logtype::LogType>,
+        message: impl ::core::convert::Into<crate::system::object::Object>,
+        context: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::log_2(
+                __receiver,
+                ::core::convert::Into::into(log_type),
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LogError(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn log_error(
+        self,
+        tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+        message: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::log_error(
+                __receiver,
+                ::core::convert::Into::into(tag),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LogFormat(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    fn log_format(
+        self,
+        log_type: impl ::core::convert::Into<crate::unity_engine::logtype::LogType>,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ILogger_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogger_Interface_unity2_raw::log_format(
+                __receiver,
+                ::core::convert::Into::into(log_type),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ilogger_interface")]
+impl<__T: IILogger_Interface> IILogger_InterfaceMethods for __T {}
+
+#[cfg(feature = "unity_engine-ilogger_interface")]
+pub mod prelude {
+    pub use super::IILogger_Interface;
+    pub use super::IILogger_InterfaceMethods;
+    pub use super::ILogger_Interface;
 }

@@ -116,3 +116,13 @@ impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-ui-collections-indexedset_1")]
+pub mod prelude {
+    pub use super::IIndexedSet_1;
+    pub use super::IIndexedSet_1Methods;
+    pub use super::IndexedSet_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -22,3 +22,12 @@ mod __types {
 
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-wellknownsymbols")]
+pub mod prelude {
+    pub use super::IWellKnownSymbols;
+    pub use super::WellKnownSymbols;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

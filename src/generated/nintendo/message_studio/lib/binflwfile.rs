@@ -20,47 +20,565 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
-#[::unity2::methods]
-impl BinFlwFile {
-    #[doc = "`InitObject(::unity2::IntPtr)` overload"]
-    #[method(name = "InitObject", args = 1)]
-    pub fn init_object(self, resource_ptr: ::unity2::IntPtr) -> ::unity2::IntPtr;
-
-    #[doc = "`CloseObject(::unity2::IntPtr)` overload"]
-    #[method(name = "CloseObject", args = 1)]
-    pub fn close_object(self, object_ptr: ::unity2::IntPtr) -> ();
-
-    #[doc = "`GetNodeNum()` overload"]
-    #[method(name = "GetNodeNum", args = 0)]
-    pub fn get_node_num(self) -> i32;
-
-    #[doc = "`GetEntryNodeIndex(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetEntryNodeIndex", args = 1)]
-    pub fn get_entry_node_index(self, label: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetNodeData(i32)` overload"]
-    #[method(name = "GetNodeData", args = 1)]
-    pub fn get_node_data(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BinFlwFile_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "InitObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "InitObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_object(
+        this: BinFlwFile,
+        resource_ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            BinFlwFile,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_object::get_offset() as isize),
+        );
+        inner(this, resource_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "CloseObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "CloseObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_object(
+        this: BinFlwFile,
+        object_ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BinFlwFile, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_object::get_offset() as isize),
+            );
+        inner(this, object_ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_node_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetNodeNum",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetNodeNum",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_node_num(
+        this: BinFlwFile,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BinFlwFile, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_node_num::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_entry_node_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetEntryNodeIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetEntryNodeIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_entry_node_index(
+        this: BinFlwFile,
+        label: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            BinFlwFile,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_entry_node_index::get_offset() as isize),
+        );
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_node_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetNodeData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetNodeData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_node_data(
+        this: BinFlwFile,
         index: i32,
-    ) -> crate::nintendo::message_studio::lib::lmsflownodedata::LMSFlowNodeData;
-
-    #[doc = "`GetCaseIndexesFromBranchNode(i32)` overload"]
-    #[method(name = "GetCaseIndexesFromBranchNode", args = 1)]
-    pub fn get_case_indexes_from_branch_node(self, index: i32) -> ::unity2::Array<u16>;
-
-    #[doc = "`GetFlowParamText(i32)` overload"]
-    #[method(name = "GetFlowParamText", args = 1)]
-    pub fn get_flow_param_text(self, offset: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetIndexTest(i32)` overload"]
-    #[method(name = "GetIndexTest", args = 1)]
-    pub fn get_index_test(self, index: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nintendo::message_studio::lib::lmsflownodedata::LMSFlowNodeData {
+        let inner : extern "C" fn (BinFlwFile , i32 , :: unity2 :: OptionalMethod ,) -> crate :: nintendo :: message_studio :: lib :: lmsflownodedata :: LMSFlowNodeData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_node_data :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_case_indexes_from_branch_node {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetCaseIndexesFromBranchNode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetCaseIndexesFromBranchNode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_case_indexes_from_branch_node(
+        this: BinFlwFile,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u16> {
+        let inner: extern "C" fn(
+            BinFlwFile,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u16> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_case_indexes_from_branch_node::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flow_param_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetFlowParamText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetFlowParamText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flow_param_text(
+        this: BinFlwFile,
+        offset: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            BinFlwFile,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flow_param_text::get_offset() as isize),
+        );
+        inner(this, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_test {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                "GetIndexTest",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    "GetIndexTest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_test(
+        this: BinFlwFile,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BinFlwFile, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index_test::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinFlwFile as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinFlwFile as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: BinFlwFile, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BinFlwFile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
+pub trait IBinFlwFileMethods: IBinFlwFile {
+    #[doc = "`InitObject(::unity2::IntPtr)` overload"]
+    fn init_object(
+        self,
+        resource_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::init_object(
+                __receiver,
+                ::core::convert::Into::into(resource_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseObject(::unity2::IntPtr)` overload"]
+    fn close_object(self, object_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::close_object(
+                __receiver,
+                ::core::convert::Into::into(object_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNodeNum()` overload"]
+    fn get_node_num(self) -> i32 {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_node_num(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEntryNodeIndex(::unity2::Il2CppString)` overload"]
+    fn get_entry_node_index(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_entry_node_index(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNodeData(i32)` overload"]
+    fn get_node_data(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::nintendo::message_studio::lib::lmsflownodedata::LMSFlowNodeData {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_node_data(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCaseIndexesFromBranchNode(i32)` overload"]
+    fn get_case_indexes_from_branch_node(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Array<u16> {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_case_indexes_from_branch_node(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFlowParamText(i32)` overload"]
+    fn get_flow_param_text(
+        self,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_flow_param_text(
+                __receiver,
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndexTest(i32)` overload"]
+    fn get_index_test(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::get_index_test(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BinFlwFile as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BinFlwFile_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
+impl<__T: IBinFlwFile> IBinFlwFileMethods for __T {}
 
 #[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
 impl BinFlwFile {
@@ -76,4 +594,17 @@ impl BinFlwFile {
         <Self as IBinFlwFileMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
+pub mod prelude {
+    pub use super::BinFlwFile;
+    pub use super::IBinFlwFile;
+    pub use super::IBinFlwFileMethods;
+    pub use crate::nintendo::message_studio::lib::binlibmsfilebase::IBinLibmsFileBase;
+    #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
+    pub use crate::nintendo::message_studio::lib::binlibmsfilebase::IBinLibmsFileBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

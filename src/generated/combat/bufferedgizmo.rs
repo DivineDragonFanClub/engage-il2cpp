@@ -7,16 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo.md"))]
-    #[::unity2::class(namespace = "Combat", name = "BufferedGizmo")]
-    #[parent(crate::system::object::Object)]
-    pub struct BufferedGizmo {
-        #[rename(name = "segments")]
-        pub segments: crate::system::collections::generic::list_1::List_1<
-            crate::combat::bufferedgizmo::BufferedGizmo_Segment,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo_Segment.md"))]
     #[::unity2::class(namespace = "Combat", name = "BufferedGizmo.Segment")]
     #[parent(crate::system::object::Object)]
@@ -28,60 +18,111 @@ mod __types {
         #[rename(name = "color")]
         pub color: crate::unity_engine::color::Color,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo.md"))]
+    #[::unity2::class(namespace = "Combat", name = "BufferedGizmo")]
+    #[parent(crate::system::object::Object)]
+    pub struct BufferedGizmo {
+        #[rename(name = "segments")]
+        pub segments: crate::system::collections::generic::list_1::List_1<
+            crate::combat::bufferedgizmo::BufferedGizmo_Segment,
+        >,
+    }
 }
 
 #[cfg(feature = "combat-bufferedgizmo-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-bufferedgizmo")]
-#[::unity2::methods]
-impl BufferedGizmo {
-    #[doc = "`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BufferedGizmo_Segment_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BufferedGizmo_Segment as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BufferedGizmo_Segment as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BufferedGizmo_Segment,
         a: crate::unity_engine::vector3::Vector3,
         b: crate::unity_engine::vector3::Vector3,
         color: crate::unity_engine::color::Color,
-    ) -> ();
-
-    #[doc = "`Draw()` overload"]
-    #[method(name = "Draw", args = 0)]
-    pub fn draw(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BufferedGizmo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBufferedGizmoMethods>::ctor(this);
-        this
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BufferedGizmo_Segment,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, a, b, color, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "combat-bufferedgizmo")]
-#[::unity2::methods]
-impl BufferedGizmo_Segment {
+pub trait IBufferedGizmo_SegmentMethods: IBufferedGizmo_Segment {
     #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
+    fn ctor(
         self,
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-    ) -> ();
+        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BufferedGizmo_Segment as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BufferedGizmo_Segment_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "combat-bufferedgizmo")]
+impl<__T: IBufferedGizmo_Segment> IBufferedGizmo_SegmentMethods for __T {}
 
 #[cfg(feature = "combat-bufferedgizmo")]
 impl BufferedGizmo_Segment {
@@ -101,4 +142,226 @@ impl BufferedGizmo_Segment {
         <Self as IBufferedGizmo_SegmentMethods>::ctor(this, a, b, color);
         this
     }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BufferedGizmo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BufferedGizmo as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BufferedGizmo as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: BufferedGizmo,
+        a: crate::unity_engine::vector3::Vector3,
+        b: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BufferedGizmo,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, a, b, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BufferedGizmo as ::unity2::ClassIdentity>::class(),
+                "Draw",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BufferedGizmo as ::unity2::ClassIdentity>::NAME,
+                    "Draw",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw(this: BufferedGizmo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BufferedGizmo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_draw::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BufferedGizmo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BufferedGizmo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: BufferedGizmo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BufferedGizmo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+pub trait IBufferedGizmoMethods: IBufferedGizmo {
+    #[doc = "`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
+    fn add(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BufferedGizmo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BufferedGizmo_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Draw()` overload"]
+    fn draw(self) -> () {
+        unsafe {
+            let __receiver = <BufferedGizmo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BufferedGizmo_unity2_raw::draw(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BufferedGizmo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BufferedGizmo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+impl<__T: IBufferedGizmo> IBufferedGizmoMethods for __T {}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+impl BufferedGizmo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BufferedGizmo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBufferedGizmoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+pub mod prelude {
+    pub use super::BufferedGizmo;
+    pub use super::BufferedGizmo_Segment;
+    pub use super::IBufferedGizmo;
+    pub use super::IBufferedGizmoMethods;
+    pub use super::IBufferedGizmo_Segment;
+    pub use super::IBufferedGizmo_SegmentMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

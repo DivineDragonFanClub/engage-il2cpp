@@ -97,3 +97,16 @@ impl<
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-unityevent_4")]
+pub mod prelude {
+    pub use super::IUnityEvent_4;
+    pub use super::IUnityEvent_4Methods;
+    pub use super::UnityEvent_4;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    #[cfg(feature = "unity_engine-events-unityeventbase")]
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
+}

@@ -63,3 +63,20 @@ impl<T0: ::unity2::ClassIdentity> CachedInvokableCall_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-cachedinvokablecall_1")]
+pub mod prelude {
+    pub use super::CachedInvokableCall_1;
+    pub use super::ICachedInvokableCall_1;
+    pub use super::ICachedInvokableCall_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCall;
+    #[cfg(feature = "unity_engine-events-baseinvokablecall")]
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
+    pub use crate::unity_engine::events::invokablecall_1::IInvokableCall_1;
+    #[cfg(feature = "unity_engine-events-invokablecall_1")]
+    pub use crate::unity_engine::events::invokablecall_1::IInvokableCall_1Methods;
+    pub use crate::unity_engine::events::invokablecall_1::InvokableCall_1;
+}

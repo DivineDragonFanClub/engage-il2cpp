@@ -18,14 +18,166 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
-#[::unity2::methods]
-impl IAllocationStrategy {
-    #[doc = "`New(::unity2::SystemType, i32)` overload"]
-    #[method(name = "New", args = 2)]
-    pub fn new(self, r#type: ::unity2::SystemType, type_hash: i32)
-        -> crate::system::object::Object;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IAllocationStrategy_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IAllocationStrategy as ::unity2::ClassIdentity>::class(),
+                "New",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IAllocationStrategy as ::unity2::ClassIdentity>::NAME,
+                    "New",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn new(
+        this: IAllocationStrategy,
+        r#type: ::unity2::SystemType,
+        type_hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            IAllocationStrategy,
+            ::unity2::SystemType,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_new::get_offset() as isize),
+        );
+        inner(this, r#type, type_hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IAllocationStrategy as ::unity2::ClassIdentity>::class(),
+                "Release",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IAllocationStrategy as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: IAllocationStrategy,
+        type_hash: i32,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IAllocationStrategy,
+            i32,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release::get_offset() as isize),
+        );
+        inner(this, type_hash, obj, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
+pub trait IIAllocationStrategyMethods: IIAllocationStrategy {
+    #[doc = "`New(::unity2::SystemType, i32)` overload"]
+    fn new(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        type_hash: impl ::core::convert::Into<i32>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <IAllocationStrategy as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IAllocationStrategy_unity2_raw::new(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(type_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Release(i32, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(self, type_hash: i32, obj: crate::system::object::Object) -> ();
+    fn release(
+        self,
+        type_hash: impl ::core::convert::Into<i32>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IAllocationStrategy as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IAllocationStrategy_unity2_raw::release(
+                __receiver,
+                ::core::convert::Into::into(type_hash),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
+impl<__T: IIAllocationStrategy> IIAllocationStrategyMethods for __T {}
+
+#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
+pub mod prelude {
+    pub use super::IAllocationStrategy;
+    pub use super::IIAllocationStrategy;
+    pub use super::IIAllocationStrategyMethods;
 }

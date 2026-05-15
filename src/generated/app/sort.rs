@@ -8,79 +8,725 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md"))]
-    #[::unity2::class(namespace = "App", name = "Sort")]
-    #[parent(crate::app::sortconstant::SortConstant)]
-    pub struct Sort {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md"))]
     #[::unity2::class(namespace = "App", name = "Sort.ElementComparer")]
     #[parent(crate::system::object::Object)]
     pub struct Sort_ElementComparer {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md"))]
+    #[::unity2::class(namespace = "App", name = "Sort")]
+    #[parent(crate::app::sortconstant::SortConstant)]
+    pub struct Sort {}
 }
 
 #[cfg(feature = "app-sort-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sort")]
-#[::unity2::methods]
-impl Sort {
-    #[doc = "`InsertionSort(crate::system::collections::ilist::IList)` overload"]
-    #[method(name = "InsertionSort", args = 1)]
-    pub fn insertion_sort(list: crate::system::collections::ilist::IList) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Sort_ElementComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort_ElementComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort_ElementComparer as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: Sort_ElementComparer,
+        a: crate::system::object::Object,
+        b: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Sort_ElementComparer,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort_ElementComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort_ElementComparer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Sort_ElementComparer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Sort_ElementComparer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`InsertionSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "InsertionSort", args = 2)]
-    pub fn insertion_sort_2(
+#[cfg(feature = "app-sort")]
+pub trait ISort_ElementComparerMethods: ISort_ElementComparer {
+    #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn compare(
+        self,
+        a: impl ::core::convert::Into<crate::system::object::Object>,
+        b: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Sort_ElementComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Sort_ElementComparer_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Sort_ElementComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Sort_ElementComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-sort")]
+impl<__T: ISort_ElementComparer> ISort_ElementComparerMethods for __T {}
+
+#[cfg(feature = "app-sort")]
+impl Sort_ElementComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Sort_ElementComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISort_ElementComparerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sort")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Sort_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insertion_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ilist::IList as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "InsertionSort",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "InsertionSort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insertion_sort(
+        list: crate::system::collections::ilist::IList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insertion_sort::get_offset() as isize),
+        );
+        inner(list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insertion_sort_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ilist :: IList as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "InsertionSort",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "InsertionSort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insertion_sort_2(
         list: crate::system::collections::ilist::IList,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> ();
-
-    #[doc = "`InsertionSortPartly(crate::system::collections::ilist::IList, i32, i32, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "InsertionSortPartly", args = 4)]
-    pub fn insertion_sort_partly(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insertion_sort_2::get_offset() as isize),
+        );
+        inner(list, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insertion_sort_partly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ilist :: IList as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "InsertionSortPartly",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "InsertionSortPartly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insertion_sort_partly(
         list: crate::system::collections::ilist::IList,
         first: i32,
         last: i32,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> ();
-
-    #[doc = "`MergeSort(crate::system::collections::ilist::IList)` overload"]
-    #[method(name = "MergeSort", args = 1)]
-    pub fn merge_sort(list: crate::system::collections::ilist::IList) -> ();
-
-    #[doc = "`MergeSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "MergeSort", args = 2)]
-    pub fn merge_sort_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            i32,
+            i32,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insertion_sort_partly::get_offset() as isize),
+        );
+        inner(list, first, last, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_merge_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ilist::IList as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "MergeSort",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "MergeSort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn merge_sort(
+        list: crate::system::collections::ilist::IList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_merge_sort::get_offset() as isize),
+        );
+        inner(list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_merge_sort_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ilist :: IList as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "MergeSort",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "MergeSort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn merge_sort_2(
         list: crate::system::collections::ilist::IList,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> ();
-
-    #[doc = "`MergeSortPartly(crate::system::collections::ilist::IList, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "MergeSortPartly", args = 5)]
-    pub fn merge_sort_partly(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_merge_sort_2::get_offset() as isize),
+        );
+        inner(list, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_merge_sort_partly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ilist :: IList as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "MergeSortPartly",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "MergeSortPartly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn merge_sort_partly(
         list: crate::system::collections::ilist::IList,
         begin: i32,
         end: i32,
         work: ::unity2::Array<crate::system::object::Object>,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> ();
-
-    #[doc = "`MergeSortMerge(crate::system::collections::ilist::IList, i32, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    #[method(name = "MergeSortMerge", args = 6)]
-    pub fn merge_sort_merge(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            i32,
+            i32,
+            ::unity2::Array<crate::system::object::Object>,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_merge_sort_partly::get_offset() as isize),
+        );
+        inner(list, begin, end, work, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_merge_sort_merge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: ilist :: IList as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                "MergeSortMerge",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    "MergeSortMerge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn merge_sort_merge(
         list: crate::system::collections::ilist::IList,
         begin: i32,
         middle: i32,
         end: i32,
         work: ::unity2::Array<crate::system::object::Object>,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::ilist::IList,
+            i32,
+            i32,
+            i32,
+            ::unity2::Array<crate::system::object::Object>,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_merge_sort_merge::get_offset() as isize),
+        );
+        inner(
+            list,
+            begin,
+            middle,
+            end,
+            work,
+            comparer,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Sort as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Sort as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Sort, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Sort, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-sort")]
+impl Sort {
+    #[doc = "`InsertionSort(crate::system::collections::ilist::IList)` overload"]
+    pub fn insertion_sort(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::insertion_sort(
+                ::core::convert::Into::into(list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InsertionSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    pub fn insertion_sort_2(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::insertion_sort_2(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InsertionSortPartly(crate::system::collections::ilist::IList, i32, i32, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    pub fn insertion_sort_partly(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+        first: impl ::core::convert::Into<i32>,
+        last: impl ::core::convert::Into<i32>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::insertion_sort_partly(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(first),
+                ::core::convert::Into::into(last),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MergeSort(crate::system::collections::ilist::IList)` overload"]
+    pub fn merge_sort(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::merge_sort(
+                ::core::convert::Into::into(list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MergeSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    pub fn merge_sort_2(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::merge_sort_2(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MergeSortPartly(crate::system::collections::ilist::IList, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    pub fn merge_sort_partly(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+        begin: impl ::core::convert::Into<i32>,
+        end: impl ::core::convert::Into<i32>,
+        work: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::merge_sort_partly(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(begin),
+                ::core::convert::Into::into(end),
+                ::core::convert::Into::into(work),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MergeSortMerge(crate::system::collections::ilist::IList, i32, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
+    pub fn merge_sort_merge(
+        list: impl ::core::convert::Into<crate::system::collections::ilist::IList>,
+        begin: impl ::core::convert::Into<i32>,
+        middle: impl ::core::convert::Into<i32>,
+        end: impl ::core::convert::Into<i32>,
+        work: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+    ) -> () {
+        unsafe {
+            __Sort_unity2_raw::merge_sort_merge(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(begin),
+                ::core::convert::Into::into(middle),
+                ::core::convert::Into::into(end),
+                ::core::convert::Into::into(work),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sort")]
+pub trait ISortMethods: ISort {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Sort as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Sort_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-sort")]
+impl<__T: ISort> ISortMethods for __T {}
 
 #[cfg(feature = "app-sort")]
 impl Sort {
@@ -99,30 +745,17 @@ impl Sort {
 }
 
 #[cfg(feature = "app-sort")]
-#[::unity2::methods]
-impl Sort_ElementComparer {
-    #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(self, a: crate::system::object::Object, b: crate::system::object::Object)
-        -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sort")]
-impl Sort_ElementComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Sort_ElementComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISort_ElementComparerMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::ISort;
+    pub use super::ISortMethods;
+    pub use super::ISort_ElementComparer;
+    pub use super::ISort_ElementComparerMethods;
+    pub use super::Sort;
+    pub use super::Sort_ElementComparer;
+    pub use crate::app::sortconstant::ISortConstant;
+    #[cfg(feature = "app-sortconstant")]
+    pub use crate::app::sortconstant::ISortConstantMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

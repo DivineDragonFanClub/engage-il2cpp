@@ -28,19 +28,6 @@ mod __types {
         pub sync_root: ::unity2::IlInstance,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "OrderedDictionary.OrderedDictionaryEnumerator"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct OrderedDictionary_OrderedDictionaryEnumerator {
-        #[rename(name = "_objectReturnType")]
-        pub object_return_type: i32,
-        #[rename(name = "arrayEnumerator")]
-        pub array_enumerator: crate::system::collections::ienumerator::IEnumerator,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]
     #[::unity2::class(
         namespace = "System.Collections.Specialized",
@@ -53,132 +40,1503 @@ mod __types {
         #[rename(name = "isKeys")]
         pub is_keys: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections.Specialized",
+        name = "OrderedDictionary.OrderedDictionaryEnumerator"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct OrderedDictionary_OrderedDictionaryEnumerator {
+        #[rename(name = "_objectReturnType")]
+        pub object_return_type: i32,
+        #[rename(name = "arrayEnumerator")]
+        pub array_enumerator: crate::system::collections::ienumerator::IEnumerator,
+    }
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
-#[::unity2::methods]
-impl OrderedDictionary {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, capacity: i32) -> ();
-
-    #[doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_3(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __OrderedDictionary_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: OrderedDictionary,
+        capacity: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(OrderedDictionary, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, capacity, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: OrderedDictionary,
         capacity: i32,
         comparer: crate::system::collections::iequalitycomparer::IEqualityComparer,
-    ) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`System.Collections.IDictionary.get_IsFixedSize()` overload"]
-    #[method(name = "System.Collections.IDictionary.get_IsFixedSize", args = 0)]
-    pub fn system_collections_i_dictionary_get_is_fixed_size(self) -> bool;
-
-    #[doc = "`get_IsReadOnly()` overload"]
-    #[method(name = "get_IsReadOnly", args = 0)]
-    pub fn get_is_read_only(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`get_Keys()` overload"]
-    #[method(name = "get_Keys", args = 0)]
-    pub fn get_keys(self) -> crate::system::collections::icollection::ICollection;
-
-    #[doc = "`get_objectsArray()` overload"]
-    #[method(name = "get_objectsArray", args = 0)]
-    pub fn get_objects_array(self) -> crate::system::collections::arraylist::ArrayList;
-
-    #[doc = "`get_objectsTable()` overload"]
-    #[method(name = "get_objectsTable", args = 0)]
-    pub fn get_objects_table(self) -> crate::system::collections::hashtable::Hashtable;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Item(crate::system::object::Object)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, key: crate::system::object::Object) -> crate::system::object::Object;
-
-    #[doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            i32,
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, capacity, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_dictionary_get_is_fixed_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IDictionary.get_IsFixedSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.IDictionary.get_IsFixedSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_dictionary_get_is_fixed_size(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_system_collections_i_dictionary_get_is_fixed_size::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_read_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_IsReadOnly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_IsReadOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_read_only(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_read_only::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_IsSynchronized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.ICollection.get_IsSynchronized",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_is_synchronized(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_system_collections_i_collection_get_is_synchronized::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_keys {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_Keys",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_Keys",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_keys(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::icollection::ICollection {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::icollection::ICollection = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_keys::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_objects_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_objectsArray",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_objectsArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_objects_array(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::arraylist::ArrayList {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::arraylist::ArrayList = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_objects_array::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_objects_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_objectsTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_objectsTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_objects_table(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::hashtable::Hashtable {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::hashtable::Hashtable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_objects_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_SyncRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.ICollection.get_SyncRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_sync_root(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_collection_get_sync_root::get_offset() as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: OrderedDictionary,
+        key: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "set_Item",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "set_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item(
+        this: OrderedDictionary,
         key: crate::system::object::Object,
         value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`get_Values()` overload"]
-    #[method(name = "get_Values", args = 0)]
-    pub fn get_values(self) -> crate::system::collections::icollection::ICollection;
-
-    #[doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_item::get_offset() as isize),
+        );
+        inner(this, key, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "get_Values",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "get_Values",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_values(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::icollection::ICollection {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::icollection::ICollection = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_values::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: OrderedDictionary,
         key: crate::system::object::Object,
         value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Contains(crate::system::object::Object)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, key: crate::system::object::Object) -> bool;
-
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
-
-    #[doc = "`IndexOfKey(crate::system::object::Object)` overload"]
-    #[method(name = "IndexOfKey", args = 1)]
-    pub fn index_of_key(self, key: crate::system::object::Object) -> i32;
-
-    #[doc = "`OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(name = "OnDeserialization", args = 1)]
-    pub fn on_deserialization(self, sender: crate::system::object::Object) -> ();
-
-    #[doc = "`Remove(crate::system::object::Object)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, key: crate::system::object::Object) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(
-        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-        args = 1
-    )]
-    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, key, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contains {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "Contains",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "Contains",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn contains(
+        this: OrderedDictionary,
+        key: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_contains::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "CopyTo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "CopyTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_to(
+        this: OrderedDictionary,
+        array: ::unity2::IlInstance,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::IlInstance,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_to::get_offset() as isize),
+        );
+        inner(this, array, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_index_of_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "IndexOfKey",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "IndexOfKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn index_of_key(
+        this: OrderedDictionary,
+        key: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_index_of_key::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "OnDeserialization",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "OnDeserialization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_deserialization(
+        this: OrderedDictionary,
         sender: crate::system::object::Object,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_deserialization::get_offset() as isize),
+        );
+        inner(this, sender, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: OrderedDictionary,
+        key: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "GetEnumerator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator {
+        let inner : extern "C" fn (OrderedDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_enumerator :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerable.GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.IEnumerable.GetEnumerator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: OrderedDictionary,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            OrderedDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary as ::unity2::ClassIdentity>::class(),
+                "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <OrderedDictionary as ::unity2::ClassIdentity>::NAME,
+                    "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        this: OrderedDictionary,
+        sender: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (OrderedDictionary , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_system_runtime_serialization_i_deserialization_callback_on_deserialization :: get_offset () as isize) ,) ;
+        inner(this, sender, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+pub trait IOrderedDictionaryMethods: IOrderedDictionary {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor_2(self, capacity: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(capacity),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
+    fn ctor_3(
+        self,
+        capacity: impl ::core::convert::Into<i32>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`System.Collections.IDictionary.get_IsFixedSize()` overload"]
+    fn system_collections_i_dictionary_get_is_fixed_size(self) -> bool {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::system_collections_i_dictionary_get_is_fixed_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsReadOnly()` overload"]
+    fn get_is_read_only(self) -> bool {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_is_read_only(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::system_collections_i_collection_get_is_synchronized(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Keys()` overload"]
+    fn get_keys(self) -> crate::system::collections::icollection::ICollection {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_objectsArray()` overload"]
+    fn get_objects_array(self) -> crate::system::collections::arraylist::ArrayList {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_objects_array(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_objectsTable()` overload"]
+    fn get_objects_table(self) -> crate::system::collections::hashtable::Hashtable {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_objects_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::system_collections_i_collection_get_sync_root(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Item(crate::system::object::Object)` overload"]
+    fn get_item(
+        self,
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn set_item(
+        self,
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::set_item(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Values()` overload"]
+    fn get_values(self) -> crate::system::collections::icollection::ICollection {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_values(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn add(
+        self,
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Contains(crate::system::object::Object)` overload"]
+    fn contains(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::contains(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn copy_to(
+        self,
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::copy_to(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IndexOfKey(crate::system::object::Object)` overload"]
+    fn index_of_key(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::index_of_key(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDeserialization(crate::system::object::Object)` overload"]
+    fn on_deserialization(
+        self,
+        sender: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::on_deserialization(
+                __receiver,
+                ::core::convert::Into::into(sender),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(crate::system::object::Object)` overload"]
+    fn remove(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::remove(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(
+        self,
+    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw::system_collections_i_enumerable_get_enumerator(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
+    fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        self,
+        sender: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_unity2_raw :: system_runtime_serialization_i_deserialization_callback_on_deserialization (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl<__T: IOrderedDictionary> IOrderedDictionaryMethods for __T {}
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 impl OrderedDictionary {
@@ -226,39 +1584,693 @@ impl OrderedDictionary {
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
-#[::unity2::methods]
-impl OrderedDictionary_OrderedDictionaryEnumerator {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        array: crate::system::collections::arraylist::ArrayList,
+        is_keys: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            crate::system::collections::arraylist::ArrayList,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, array, is_keys, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , "System.Collections.ICollection.CopyTo" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.ICollection.CopyTo" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_copy_to(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        array: ::unity2::IlInstance,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::IlInstance,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_system_collections_i_collection_copy_to::get_offset() as isize),
+        );
+        inner(this, array, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , "System.Collections.ICollection.get_Count" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.ICollection.get_Count" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_count(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_system_collections_i_collection_get_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , "System.Collections.ICollection.get_IsSynchronized" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.ICollection.get_IsSynchronized" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_is_synchronized(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_collection_get_is_synchronized::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , "System.Collections.ICollection.get_SyncRoot" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.ICollection.get_SyncRoot" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_sync_root(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_collection_get_sync_root::get_offset() as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerable.GetEnumerator" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerable.GetEnumerator" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods:
+    IOrderedDictionary_OrderedDictionaryKeyValueCollection
+{
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
+    fn ctor(
         self,
+        array: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
+        is_keys: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(is_keys),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn system_collections_i_collection_copy_to(
+        self,
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw :: system_collections_i_collection_copy_to (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
+    fn system_collections_i_collection_get_count(self) -> i32 {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw :: system_collections_i_collection_get_count (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw :: system_collections_i_collection_get_is_synchronized (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw :: system_collections_i_collection_get_sync_root (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw :: system_collections_i_enumerable_get_enumerator (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl<__T: IOrderedDictionary_OrderedDictionaryKeyValueCollection>
+    IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods for __T
+{
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
+    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(
+            this, array, is_keys,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
         array: crate::system::collections::arraylist::ArrayList,
         object_return_type: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            crate::system::collections::arraylist::ArrayList,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, array, object_return_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_entry {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Entry",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Entry" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_entry(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::dictionaryentry::DictionaryEntry {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::collections::dictionaryentry::DictionaryEntry =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_entry::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Key",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Key" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_key(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_key::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_value::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_next(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: OrderedDictionary_OrderedDictionaryEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+pub trait IOrderedDictionary_OrderedDictionaryEnumeratorMethods:
+    IOrderedDictionary_OrderedDictionaryEnumerator
+{
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, i32)` overload"]
+    fn ctor(
+        self,
+        array: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
+        object_return_type: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(object_return_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
+    fn get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_current(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-
+    fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_entry(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
+    fn get_key(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_key(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
+    fn get_value(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_value(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::move_next(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = < OrderedDictionary_OrderedDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl<__T: IOrderedDictionary_OrderedDictionaryEnumerator>
+    IOrderedDictionary_OrderedDictionaryEnumeratorMethods for __T
+{
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
@@ -285,54 +2297,17 @@ impl OrderedDictionary_OrderedDictionaryEnumerator {
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
-#[::unity2::methods]
-impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, array: crate::system::collections::arraylist::ArrayList, is_keys: bool)
-        -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
-
-    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
-    #[method(name = "System.Collections.ICollection.get_Count", args = 0)]
-    pub fn system_collections_i_collection_get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
-    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(
-            this, array, is_keys,
-        );
-        this
-    }
+pub mod prelude {
+    pub use super::IOrderedDictionary;
+    pub use super::IOrderedDictionaryMethods;
+    pub use super::IOrderedDictionary_OrderedDictionaryEnumerator;
+    pub use super::IOrderedDictionary_OrderedDictionaryEnumeratorMethods;
+    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollection;
+    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods;
+    pub use super::OrderedDictionary;
+    pub use super::OrderedDictionary_OrderedDictionaryEnumerator;
+    pub use super::OrderedDictionary_OrderedDictionaryKeyValueCollection;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

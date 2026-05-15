@@ -19,3 +19,12 @@ mod __types {
 
 #[cfg(feature = "combat-animatorlayer-types")]
 pub use __types::*;
+
+#[cfg(feature = "combat-animatorlayer")]
+pub mod prelude {
+    pub use super::AnimatorLayer;
+    pub use super::IAnimatorLayer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

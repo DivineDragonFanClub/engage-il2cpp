@@ -64,3 +64,19 @@ impl<
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-unityaction_4")]
+pub mod prelude {
+    pub use super::IUnityAction_4;
+    pub use super::IUnityAction_4Methods;
+    pub use super::UnityAction_4;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

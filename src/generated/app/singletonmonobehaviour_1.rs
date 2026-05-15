@@ -99,3 +99,25 @@ impl<T0: ::unity2::ClassIdentity> SingletonMonoBehaviour_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-singletonmonobehaviour_1")]
+pub mod prelude {
+    pub use super::ISingletonMonoBehaviour_1;
+    pub use super::ISingletonMonoBehaviour_1Methods;
+    pub use super::SingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+}

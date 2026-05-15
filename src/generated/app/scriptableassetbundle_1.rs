@@ -41,3 +41,17 @@ impl<T0: ::unity2::ClassIdentity> ScriptableAssetBundle_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-scriptableassetbundle_1")]
+pub mod prelude {
+    pub use super::IScriptableAssetBundle_1;
+    pub use super::IScriptableAssetBundle_1Methods;
+    pub use super::ScriptableAssetBundle_1;
+    pub use crate::app::irawassetbundle_1::IIRawAssetBundle_1;
+    #[cfg(feature = "app-irawassetbundle_1")]
+    pub use crate::app::irawassetbundle_1::IIRawAssetBundle_1Methods;
+    pub use crate::app::irawassetbundle_1::IRawAssetBundle_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

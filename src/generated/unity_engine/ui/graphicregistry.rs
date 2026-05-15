@@ -40,64 +40,543 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-graphicregistry")]
-#[::unity2::methods]
-impl GraphicRegistry {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::unity_engine::ui::graphicregistry::GraphicRegistry;
-
-    #[doc = "`RegisterGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
-    #[method(name = "RegisterGraphicForCanvas", args = 2)]
-    pub fn register_graphic_for_canvas(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GraphicRegistry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GraphicRegistry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GraphicRegistry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::graphicregistry::GraphicRegistry {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::ui::graphicregistry::GraphicRegistry = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_graphic_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "RegisterGraphicForCanvas",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "RegisterGraphicForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_graphic_for_canvas(
         c: crate::unity_engine::canvas::Canvas,
         graphic: crate::unity_engine::ui::graphic::Graphic,
-    ) -> ();
-
-    #[doc = "`RegisterRaycastGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
-    #[method(name = "RegisterRaycastGraphicForCanvas", args = 2)]
-    pub fn register_raycast_graphic_for_canvas(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::canvas::Canvas,
+            crate::unity_engine::ui::graphic::Graphic,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register_graphic_for_canvas::get_offset() as isize),
+        );
+        inner(c, graphic, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_raycast_graphic_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "RegisterRaycastGraphicForCanvas",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "RegisterRaycastGraphicForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_raycast_graphic_for_canvas(
         c: crate::unity_engine::canvas::Canvas,
         graphic: crate::unity_engine::ui::graphic::Graphic,
-    ) -> ();
-
-    #[doc = "`UnregisterGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
-    #[method(name = "UnregisterGraphicForCanvas", args = 2)]
-    pub fn unregister_graphic_for_canvas(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::canvas::Canvas,
+            crate::unity_engine::ui::graphic::Graphic,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register_raycast_graphic_for_canvas::get_offset() as isize),
+        );
+        inner(c, graphic, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister_graphic_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "UnregisterGraphicForCanvas",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "UnregisterGraphicForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister_graphic_for_canvas(
         c: crate::unity_engine::canvas::Canvas,
         graphic: crate::unity_engine::ui::graphic::Graphic,
-    ) -> ();
-
-    #[doc = "`UnregisterRaycastGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
-    #[method(name = "UnregisterRaycastGraphicForCanvas", args = 2)]
-    pub fn unregister_raycast_graphic_for_canvas(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::canvas::Canvas,
+            crate::unity_engine::ui::graphic::Graphic,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unregister_graphic_for_canvas::get_offset() as isize),
+        );
+        inner(c, graphic, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister_raycast_graphic_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "UnregisterRaycastGraphicForCanvas",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "UnregisterRaycastGraphicForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister_raycast_graphic_for_canvas(
         c: crate::unity_engine::canvas::Canvas,
         graphic: crate::unity_engine::ui::graphic::Graphic,
-    ) -> ();
-
-    #[doc = "`GetGraphicsForCanvas(crate::unity_engine::canvas::Canvas)` overload"]
-    #[method(name = "GetGraphicsForCanvas", args = 1)]
-    pub fn get_graphics_for_canvas(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::canvas::Canvas,
+            crate::unity_engine::ui::graphic::Graphic,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unregister_raycast_graphic_for_canvas::get_offset() as isize),
+        );
+        inner(c, graphic, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsForCanvas",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_for_canvas(
         canvas: crate::unity_engine::canvas::Canvas,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
         crate::unity_engine::ui::graphic::Graphic,
-    >;
-
-    #[doc = "`GetRaycastableGraphicsForCanvas(crate::unity_engine::canvas::Canvas)` overload"]
-    #[method(name = "GetRaycastableGraphicsForCanvas", args = 1)]
-    pub fn get_raycastable_graphics_for_canvas(
+    > {
+        let inner : extern "C" fn (crate :: unity_engine :: canvas :: Canvas , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: ui :: graphic :: Graphic > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_for_canvas :: get_offset () as isize) ,) ;
+        inner(canvas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_raycastable_graphics_for_canvas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                "GetRaycastableGraphicsForCanvas",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    "GetRaycastableGraphicsForCanvas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_raycastable_graphics_for_canvas(
         canvas: crate::unity_engine::canvas::Canvas,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
         crate::unity_engine::ui::graphic::Graphic,
-    >;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    > {
+        let inner : extern "C" fn (crate :: unity_engine :: canvas :: Canvas , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: ui :: graphic :: Graphic > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_raycastable_graphics_for_canvas :: get_offset () as isize) ,) ;
+        inner(canvas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicRegistry as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicRegistry as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+impl GraphicRegistry {
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance() -> crate::unity_engine::ui::graphicregistry::GraphicRegistry {
+        unsafe { __GraphicRegistry_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`RegisterGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
+    pub fn register_graphic_for_canvas(
+        c: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+        graphic: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>,
+    ) -> () {
+        unsafe {
+            __GraphicRegistry_unity2_raw::register_graphic_for_canvas(
+                ::core::convert::Into::into(c),
+                ::core::convert::Into::into(graphic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RegisterRaycastGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
+    pub fn register_raycast_graphic_for_canvas(
+        c: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+        graphic: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>,
+    ) -> () {
+        unsafe {
+            __GraphicRegistry_unity2_raw::register_raycast_graphic_for_canvas(
+                ::core::convert::Into::into(c),
+                ::core::convert::Into::into(graphic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnregisterGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
+    pub fn unregister_graphic_for_canvas(
+        c: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+        graphic: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>,
+    ) -> () {
+        unsafe {
+            __GraphicRegistry_unity2_raw::unregister_graphic_for_canvas(
+                ::core::convert::Into::into(c),
+                ::core::convert::Into::into(graphic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnregisterRaycastGraphicForCanvas(crate::unity_engine::canvas::Canvas, crate::unity_engine::ui::graphic::Graphic)` overload"]
+    pub fn unregister_raycast_graphic_for_canvas(
+        c: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+        graphic: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>,
+    ) -> () {
+        unsafe {
+            __GraphicRegistry_unity2_raw::unregister_raycast_graphic_for_canvas(
+                ::core::convert::Into::into(c),
+                ::core::convert::Into::into(graphic),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsForCanvas(crate::unity_engine::canvas::Canvas)` overload"]
+    pub fn get_graphics_for_canvas(
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::ui::graphic::Graphic,
+    > {
+        unsafe {
+            __GraphicRegistry_unity2_raw::get_graphics_for_canvas(
+                ::core::convert::Into::into(canvas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRaycastableGraphicsForCanvas(crate::unity_engine::canvas::Canvas)` overload"]
+    pub fn get_raycastable_graphics_for_canvas(
+        canvas: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::ui::graphic::Graphic,
+    > {
+        unsafe {
+            __GraphicRegistry_unity2_raw::get_raycastable_graphics_for_canvas(
+                ::core::convert::Into::into(canvas),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __GraphicRegistry_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+pub trait IGraphicRegistryMethods: IGraphicRegistry {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GraphicRegistry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GraphicRegistry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+impl<__T: IGraphicRegistry> IGraphicRegistryMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-graphicregistry")]
 impl GraphicRegistry {
@@ -113,4 +592,14 @@ impl GraphicRegistry {
         <Self as IGraphicRegistryMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+pub mod prelude {
+    pub use super::GraphicRegistry;
+    pub use super::IGraphicRegistry;
+    pub use super::IGraphicRegistryMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

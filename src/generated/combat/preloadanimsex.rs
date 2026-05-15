@@ -17,32 +17,321 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-preloadanimsex")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PreloadAnimsEx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_not {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type(),
+                <crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PreloadAnimsEx as ::unity2::ClassIdentity>::class(),
+                "not",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PreloadAnimsEx as ::unity2::ClassIdentity>::NAME,
+                    "not",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn not(
+        lhs: crate::combat::preloadanims::PreloadAnims,
+        rhs: crate::combat::preloadanims::PreloadAnims,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::preloadanims::PreloadAnims,
+            crate::combat::preloadanims::PreloadAnims,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_not::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type(),
+                <crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PreloadAnimsEx as ::unity2::ClassIdentity>::class(),
+                "has",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PreloadAnimsEx as ::unity2::ClassIdentity>::NAME,
+                    "has",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has(
+        lhs: crate::combat::preloadanims::PreloadAnims,
+        rhs: crate::combat::preloadanims::PreloadAnims,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::preloadanims::PreloadAnims,
+            crate::combat::preloadanims::PreloadAnims,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_full_loadable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::preloadanims::PreloadAnims as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PreloadAnimsEx as ::unity2::ClassIdentity>::class(),
+                "IsFullLoadable",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PreloadAnimsEx as ::unity2::ClassIdentity>::NAME,
+                    "IsFullLoadable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_full_loadable(
+        f: crate::combat::preloadanims::PreloadAnims,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::preloadanims::PreloadAnims,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_full_loadable::get_offset() as isize),
+        );
+        inner(f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hash_to_bit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PreloadAnimsEx as ::unity2::ClassIdentity>::class(),
+                "HashToBit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PreloadAnimsEx as ::unity2::ClassIdentity>::NAME,
+                    "HashToBit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hash_to_bit(
+        hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::preloadanims::PreloadAnims {
+        let inner: extern "C" fn(
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::preloadanims::PreloadAnims = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hash_to_bit::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_preload_names {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PreloadAnimsEx as ::unity2::ClassIdentity>::class(),
+                "GetAllPreloadNames",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PreloadAnimsEx as ::unity2::ClassIdentity>::NAME,
+                    "GetAllPreloadNames",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_preload_names(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            ::unity2::Il2CppString,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_all_preload_names::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-preloadanimsex")]
 impl PreloadAnimsEx {
     #[doc = "`not(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"]
-    #[method(name = "not", args = 2)]
     pub fn not(
-        lhs: crate::combat::preloadanims::PreloadAnims,
-        rhs: crate::combat::preloadanims::PreloadAnims,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+        rhs: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+    ) -> bool {
+        unsafe {
+            __PreloadAnimsEx_unity2_raw::not(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`has(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"]
-    #[method(name = "has", args = 2)]
     pub fn has(
-        lhs: crate::combat::preloadanims::PreloadAnims,
-        rhs: crate::combat::preloadanims::PreloadAnims,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+        rhs: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+    ) -> bool {
+        unsafe {
+            __PreloadAnimsEx_unity2_raw::has(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsFullLoadable(crate::combat::preloadanims::PreloadAnims)` overload"]
-    #[method(name = "IsFullLoadable", args = 1)]
-    pub fn is_full_loadable(f: crate::combat::preloadanims::PreloadAnims) -> bool;
-
+    pub fn is_full_loadable(
+        f: impl ::core::convert::Into<crate::combat::preloadanims::PreloadAnims>,
+    ) -> bool {
+        unsafe {
+            __PreloadAnimsEx_unity2_raw::is_full_loadable(
+                ::core::convert::Into::into(f),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`HashToBit(i32)` overload"]
-    #[method(name = "HashToBit", args = 1)]
-    pub fn hash_to_bit(hash: i32) -> crate::combat::preloadanims::PreloadAnims;
-
+    pub fn hash_to_bit(
+        hash: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::preloadanims::PreloadAnims {
+        unsafe {
+            __PreloadAnimsEx_unity2_raw::hash_to_bit(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetAllPreloadNames()` overload"]
-    #[method(name = "GetAllPreloadNames", args = 0)]
     pub fn get_all_preload_names(
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe { __PreloadAnimsEx_unity2_raw::get_all_preload_names(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-preloadanimsex")]
+pub mod prelude {
+    pub use super::IPreloadAnimsEx;
+    pub use super::PreloadAnimsEx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

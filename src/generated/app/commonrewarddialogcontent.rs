@@ -26,54 +26,437 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-commonrewarddialogcontent")]
-#[::unity2::methods]
-impl CommonRewardDialogContent {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    #[method(name = "LoadPrefabAsync", args = 0)]
-    pub fn load_prefab_async() -> ();
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    #[method(name = "IsLoadingPrefab", args = 0)]
-    pub fn is_loading_prefab() -> bool;
-
-    #[doc = "`UnloadPrefab()` overload"]
-    #[method(name = "UnloadPrefab", args = 0)]
-    pub fn unload_prefab() -> ();
-
-    #[doc = "`CreateRelay(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
-    #[method(name = "CreateRelay", args = 2)]
-    pub fn create_relay(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CommonRewardDialogContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_prefab_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "LoadPrefabAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "LoadPrefabAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_prefab_async::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_prefab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "IsLoadingPrefab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingPrefab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading_prefab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_prefab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "UnloadPrefab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "UnloadPrefab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_prefab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_relay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "CreateRelay",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "CreateRelay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_relay(
         main_item_param_list: crate::system::collections::generic::list_1::List_1<
             crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
         >,
         sub_item_param_list: crate::system::collections::generic::list_1::List_1<
             crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
         >,
-    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
-
-    #[doc = "`CreateSubOnly(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"]
-    #[method(name = "CreateSubOnly", args = 3)]
-    pub fn create_sub_only(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent {
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , :: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_relay :: get_offset () as isize) ,) ;
+        inner(
+            main_item_param_list,
+            sub_item_param_list,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_sub_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<
+                    crate::app::itemdata::ItemData,
+                    i32,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "CreateSubOnly",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "CreateSubOnly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_sub_only(
         title_text: ::unity2::Il2CppString,
         sub_item_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::app::itemdata::ItemData,
             i32,
         >,
         money: i32,
-    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
-
-    #[doc = "`SetItem(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = "SetItem", args = 3)]
-    pub fn set_item(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_sub_only :: get_offset () as isize) ,) ;
+        inner(title_text, sub_item_param_list, money, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                "SetItem",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    "SetItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item(
         root: crate::unity_engine::gameobject::GameObject,
         item: crate::app::itemdata::ItemData,
         count: i32,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::itemdata::ItemData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_item::get_offset() as isize),
+        );
+        inner(root, item, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardDialogContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CommonRewardDialogContent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CommonRewardDialogContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CommonRewardDialogContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+impl CommonRewardDialogContent {
+    #[doc = "`LoadPrefabAsync()` overload"]
+    pub fn load_prefab_async() -> () {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::load_prefab_async(::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLoadingPrefab()` overload"]
+    pub fn is_loading_prefab() -> bool {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::is_loading_prefab(::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadPrefab()` overload"]
+    pub fn unload_prefab() -> () {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::unload_prefab(::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateRelay(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
+    pub fn create_relay(
+        main_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
+        >,
+        sub_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
+        >,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::create_relay(
+                ::core::convert::Into::into(main_item_param_list),
+                ::core::convert::Into::into(sub_item_param_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateSubOnly(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"]
+    pub fn create_sub_only(
+        title_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        sub_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                crate::app::itemdata::ItemData,
+                i32,
+            >,
+        >,
+        money: impl ::core::convert::Into<i32>,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::create_sub_only(
+                ::core::convert::Into::into(title_text),
+                ::core::convert::Into::into(sub_item_param_list),
+                ::core::convert::Into::into(money),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetItem(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, i32)` overload"]
+    pub fn set_item(
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __CommonRewardDialogContent_unity2_raw::set_item(
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(item),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+pub trait ICommonRewardDialogContentMethods: ICommonRewardDialogContent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CommonRewardDialogContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CommonRewardDialogContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+impl<__T: ICommonRewardDialogContent> ICommonRewardDialogContentMethods for __T {}
 
 #[cfg(feature = "app-commonrewarddialogcontent")]
 impl CommonRewardDialogContent {
@@ -89,4 +472,29 @@ impl CommonRewardDialogContent {
         <Self as ICommonRewardDialogContentMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+pub mod prelude {
+    pub use super::CommonRewardDialogContent;
+    pub use super::ICommonRewardDialogContent;
+    pub use super::ICommonRewardDialogContentMethods;
+    pub use crate::app::gamemessagecontent::IGameMessageContent;
+    #[cfg(feature = "app-gamemessagecontent")]
+    pub use crate::app::gamemessagecontent::IGameMessageContentMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

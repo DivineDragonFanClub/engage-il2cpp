@@ -23,37 +23,32 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CancelConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_CancelConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.DeleteConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_DeleteConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.SuspendConfirmDialog.YesDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_SuspendConfirmDialog_YesDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct SaveDataMenu_MenuItem {
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SaveDataMenu_ConfirmDialog {
         #[rename(name = "m_SaveDataHeaderHandle")]
         pub m_save_data_header_handle:
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        #[rename(name = "m_IsSelected")]
-        pub m_is_selected: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.LoadConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_LoadConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CancelConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_CancelConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_NoItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.NoItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct SaveDataMenu_ConfirmDialog_NoItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
@@ -63,40 +58,29 @@ mod __types {
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
     pub struct SaveDataMenu_DeleteConfirmDialog_YesDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_YesItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.YesItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct SaveDataMenu_ConfirmDialog_YesItem {
-        #[rename(name = "m_DestSaveDataHeaderHandle")]
-        pub m_dest_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SuspendConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_SuspendConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_YesDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_NoDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.CancelConfirmDialog.YesDialogItem"
+        name = "SaveDataMenu.DeleteConfirmDialog.NoDialogItem"
     )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_CancelConfirmDialog_YesDialogItem {}
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_DeleteConfirmDialog_NoDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_NoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.NoItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct SaveDataMenu_ConfirmDialog_NoItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_YesDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_NoDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.SaveConfirmDialog.YesDialogItem"
+        name = "SaveDataMenu.SuspendConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_SuspendConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.SuspendConfirmDialog.YesDialogItem"
     )]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_SaveConfirmDialog_YesDialogItem {}
+    pub struct SaveDataMenu_SuspendConfirmDialog_YesDialogItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu.md"))]
     #[::unity2::class(namespace = "App", name = "SaveDataMenu")]
@@ -135,67 +119,6 @@ mod __types {
         pub m_select1st_item_index: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.LoadConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_LoadConfirmDialog {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenu/SaveDataMenu_Sequence.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SaveDataMenu_Sequence {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SaveDataMenu_Sequence {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SaveDataMenu.Sequence";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SaveDataMenu_Sequence {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SaveDataMenu_Sequence {
-        pub fn select1st() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn select2nd() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CopyConfirmDialog.YesDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-        #[rename(name = "m_SrcSaveDataHeaderHandle")]
-        pub m_src_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_NoDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -203,6 +126,14 @@ mod __types {
     )]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
     pub struct SaveDataMenu_SaveConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.CancelConfirmDialog.YesDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_CancelConfirmDialog_YesDialogItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItemContent")]
@@ -260,11 +191,6 @@ mod __types {
         pub m_game_mode_classic_frame_color: crate::unity_engine::color::Color,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SaveConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_SaveConfirmDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -273,26 +199,37 @@ mod __types {
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
     pub struct SaveDataMenu_LoadConfirmDialog_YesDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CopyConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_CopyConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.SuspendConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_SuspendConfirmDialog_NoDialogItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct SaveDataMenu_MenuContent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.CancelConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_CancelConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SuspendConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_SuspendConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.LoadConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_LoadConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CopyConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_CopyConfirmDialog {
+        #[rename(name = "m_SrcSaveDataHeaderHandle")]
+        pub m_src_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenu/SaveDataMenu_Mode.md"))]
     #[repr(C)]
@@ -354,97 +291,300 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct SaveDataMenu_ConfirmDialog {
-        #[rename(name = "m_SaveDataHeaderHandle")]
-        pub m_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenu/SaveDataMenu_Sequence.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SaveDataMenu_Sequence {
+        pub value: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_NoDialogItem.md"))]
+    impl ::unity2::ClassIdentity for SaveDataMenu_Sequence {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SaveDataMenu.Sequence";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SaveDataMenu_Sequence {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SaveDataMenu_Sequence {
+        pub fn select1st() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn select2nd() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.DeleteConfirmDialog.NoDialogItem"
+        name = "SaveDataMenu.CopyConfirmDialog.YesDialogItem"
     )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_DeleteConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CopyConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_CopyConfirmDialog {
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_CopyConfirmDialog_YesDialogItem {
         #[rename(name = "m_SrcSaveDataHeaderHandle")]
         pub m_src_save_data_header_handle:
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CancelConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_CancelConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_NoDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_NoDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.LoadConfirmDialog.NoDialogItem"
+        name = "SaveDataMenu.CopyConfirmDialog.NoDialogItem"
     )]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_LoadConfirmDialog_NoDialogItem {}
+    pub struct SaveDataMenu_CopyConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.SaveConfirmDialog.YesDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_SaveConfirmDialog_YesDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SaveConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_SaveConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.DeleteConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_DeleteConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_YesItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.YesItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct SaveDataMenu_ConfirmDialog_YesItem {
+        #[rename(name = "m_DestSaveDataHeaderHandle")]
+        pub m_dest_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct SaveDataMenu_MenuItem {
+        #[rename(name = "m_SaveDataHeaderHandle")]
+        pub m_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        #[rename(name = "m_IsSelected")]
+        pub m_is_selected: bool,
+    }
 }
 
 #[cfg(feature = "app-savedatamenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CancelConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CancelConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
             )
         });
-        <Self as ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_DeleteConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+    pub unsafe fn ctor(
+        this: SaveDataMenu_ConfirmDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
         dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogitemyes :: BasicDialogItemYes as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+        message: ::unity2::Il2CppString,
+        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
+        save_data_hedaer_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::basicdialogitemyes::BasicDialogItemYes,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            message,
+            yes_item,
+            save_data_hedaer_handle,
+            __unity2_method_info,
+        )
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_DeleteConfirmDialog {
+impl SaveDataMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        save_data_hedaer_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(yes_item),
+                ::core::convert::Into::into(save_data_hedaer_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_ConfirmDialogMethods: ISaveDataMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_ConfirmDialog> ISaveDataMenu_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<
@@ -456,11 +596,11 @@ impl SaveDataMenu_DeleteConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog),
+                ::core::stringify!(SaveDataMenu_ConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_DeleteConfirmDialogMethods>::ctor(
+        <Self as ISaveDataMenu_ConfirmDialogMethods>::ctor(
             this,
             menu_item_list,
             dialog_content,
@@ -471,35 +611,290 @@ impl SaveDataMenu_DeleteConfirmDialog {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_LoadConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_LoadConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_LoadConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_LoadConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_LoadConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+pub trait ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_LoadConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_LoadConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_LoadConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_LoadConfirmDialog_NoDialogItem>
+    ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CancelConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CancelConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CancelConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, save_data_header_handle, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CancelConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_CancelConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CancelConfirmDialogMethods: ISaveDataMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_CancelConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_CancelConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CancelConfirmDialog> ISaveDataMenu_CancelConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_YesDialogItem),
+                ::core::stringify!(SaveDataMenu_CancelConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods>::ctor(
+        <Self as ISaveDataMenu_CancelConfirmDialogMethods>::ctor(
             this,
+            menu_item_list,
+            dialog_content,
             save_data_header_handle,
         );
         this
@@ -507,77 +902,224 @@ impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_MenuItem {
-    #[doc = "`GetHeaderHandle()` overload"]
-    #[method(name = "GetHeaderHandle", args = 0)]
-    pub fn get_header_handle(
-        self,
-    ) -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle;
-
-    #[doc = "`GetHeight()` overload"]
-    #[method(name = "GetHeight", args = 0)]
-    pub fn get_height(self) -> f32;
-
-    #[doc = "`IsSelected()` overload"]
-    #[method(name = "IsSelected", args = 0)]
-    pub fn is_selected(self) -> bool;
-
-    #[doc = "`SetSelect(bool)` overload"]
-    #[method(name = "SetSelect", args = 1)]
-    pub fn set_select(self, enable: bool) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_headerhandle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_ConfirmDialog_NoItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_ConfirmDialog_NoItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_ConfirmDialog_NoItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_ConfirmDialog_NoItem,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_ConfirmDialog_NoItem,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_MenuItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_headerhandle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
+pub trait ISaveDataMenu_ConfirmDialog_NoItemMethods: ISaveDataMenu_ConfirmDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_ConfirmDialog_NoItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_ConfirmDialog_NoItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_ConfirmDialog_NoItem> ISaveDataMenu_ConfirmDialog_NoItemMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_MenuItem),
+                ::core::stringify!(SaveDataMenu_ConfirmDialog_NoItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_MenuItemMethods>::ctor(this, save_data_headerhandle);
+        <Self as ISaveDataMenu_ConfirmDialog_NoItemMethods>::ctor(this, text);
         this
     }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_DeleteConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_DeleteConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_DeleteConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_DeleteConfirmDialog_YesDialogItem,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_DeleteConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_header_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_DeleteConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_DeleteConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_DeleteConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_DeleteConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_DeleteConfirmDialog_YesDialogItem
+{
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_DeleteConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_DeleteConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_DeleteConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_DeleteConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_DeleteConfirmDialog_YesDialogItem>
+    ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods for __T
+{
 }
 
 #[cfg(feature = "app-savedatamenu")]
@@ -602,106 +1144,303 @@ impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog_YesItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        text: ::unity2::Il2CppString,
-    ) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_DeleteConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_DeleteConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_DeleteConfirmDialog_NoDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_DeleteConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_DeleteConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog_YesItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        text: ::unity2::Il2CppString,
-    ) -> Self {
+pub trait ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_DeleteConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_DeleteConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_DeleteConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_DeleteConfirmDialog_NoDialogItem>
+    ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog_YesItem),
+                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_NoDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_ConfirmDialog_YesItemMethods>::ctor(
-            this,
-            dest_save_data_header_handle,
-            text,
-        );
+        <Self as ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SuspendConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SuspendConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_SuspendConfirmDialog_NoDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SuspendConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SuspendConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
+pub trait ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_SuspendConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_SuspendConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SuspendConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_SuspendConfirmDialog_NoDialogItem>
+    ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog),
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_NoDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_SuspendConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
-            save_data_header_handle,
-        );
+        <Self as ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SuspendConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SuspendConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_SuspendConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SuspendConfirmDialog_YesDialogItem,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SuspendConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_header_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SuspendConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_SuspendConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_SuspendConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_SuspendConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_SuspendConfirmDialog_YesDialogItem
+{
     #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
+    fn ctor(
         self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_SuspendConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SuspendConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_SuspendConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SuspendConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
+impl<__T: ISaveDataMenu_SuspendConfirmDialog_YesDialogItem>
+    ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
     #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
@@ -709,11 +1448,11 @@ impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_YesDialogItem),
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_YesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods>::ctor(
+        <Self as ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods>::ctor(
             this,
             save_data_header_handle,
         );
@@ -722,99 +1461,283 @@ impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog_NoItem),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_show_row_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "GetShowRowMax",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as ISaveDataMenu_ConfirmDialog_NoItemMethods>::ctor(this, text);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetShowRowMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SaveConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SaveConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
+    pub unsafe fn get_show_row_max(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_show_row_max::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_save_from_period {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "IsSaveFromPeriod",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            save_data_header_handle,
-        );
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "IsSaveFromPeriod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu {
-    #[doc = "`GetShowRowMax()` overload"]
-    #[method(name = "GetShowRowMax", args = 0)]
-    pub fn get_show_row_max(self) -> i32;
-
-    #[doc = "`IsSaveFromPeriod()` overload"]
-    #[method(name = "IsSaveFromPeriod", args = 0)]
-    pub fn is_save_from_period(self) -> bool;
-
-    #[doc = "`GetTitleMess(crate::app::savedatamenu::SaveDataMenu_Mode)` overload"]
-    #[method(name = "GetTitleMess", args = 1)]
-    pub fn get_title_mess(
+    pub unsafe fn is_save_from_period(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_save_from_period::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_title_mess {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::savedatamenu::SaveDataMenu_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "GetTitleMess",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetTitleMess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_title_mess(
         mode: crate::app::savedatamenu::SaveDataMenu_Mode,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpMess(crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::savedatamenu::SaveDataMenu_Sequence)` overload"]
-    #[method(name = "GetHelpMess", args = 2)]
-    pub fn get_help_mess(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::savedatamenu::SaveDataMenu_Mode,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_title_mess::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_help_mess {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::savedatamenu::SaveDataMenu_Mode as ::unity2::IlType>::il_type(),
+                <crate::app::savedatamenu::SaveDataMenu_Sequence as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "GetHelpMess",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetHelpMess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_help_mess(
         mode: crate::app::savedatamenu::SaveDataMenu_Mode,
         sequence: crate::app::savedatamenu::SaveDataMenu_Sequence,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetKeyHelpId(crate::app::savedatamenu::SaveDataMenu_Mode)` overload"]
-    #[method(name = "GetKeyHelpId", args = 1)]
-    pub fn get_key_help_id(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::savedatamenu::SaveDataMenu_Mode,
+            crate::app::savedatamenu::SaveDataMenu_Sequence,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_help_mess::get_offset() as isize),
+        );
+        inner(mode, sequence, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_key_help_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::savedatamenu::SaveDataMenu_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "GetKeyHelpId",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetKeyHelpId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_key_help_id(
         mode: crate::app::savedatamenu::SaveDataMenu_Mode,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::app::savedatamenusequence::SaveDataMenuSequence, crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::savedatamenu::SaveDataMenu_Mode,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_key_help_id::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: savedatamenusequence :: SaveDataMenuSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: savedatamenu :: SaveDataMenu_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu,
         menu_iltem_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -823,96 +1746,1111 @@ impl SaveDataMenu {
         menu_sequence: crate::app::savedatamenusequence::SaveDataMenuSequence,
         mode: crate::app::savedatamenu::SaveDataMenu_Mode,
         save_data_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
-    ) -> ();
-
-    #[doc = "`AfterBuild()` overload"]
-    #[method(name = "AfterBuild", args = 0)]
-    pub fn after_build(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-
-    #[doc = "`SaveDataLoadSetting(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
-    #[method(name = "SaveDataLoadSetting", args = 2)]
-    pub fn save_data_load_setting(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::savedatamenusequence::SaveDataMenuSequence,
+            crate::app::savedatamenu::SaveDataMenu_Mode,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_iltem_list,
+            basic_menu_content,
+            prefab,
+            menu_sequence,
+            mode,
+            save_data_header_reader,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_after_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "AfterBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn after_build(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_after_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "OnClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_close(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_data_load_setting {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "SaveDataLoadSetting",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "SaveDataLoadSetting",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_data_load_setting(
+        this: SaveDataMenu,
         r#type: crate::app::gamesavedata::GameSaveData_Types,
         index: i32,
-    ) -> ();
-
-    #[doc = "`SaveCallback(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
-    #[method(name = "SaveCallback", args = 2)]
-    pub fn save_callback(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_data_load_setting::get_offset() as isize),
+        );
+        inner(this, r#type, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "SaveCallback",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "SaveCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_callback(
+        this: SaveDataMenu,
         is_success: bool,
         save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
-    ) -> ();
-
-    #[doc = "`CopyCallback(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
-    #[method(name = "CopyCallback", args = 2)]
-    pub fn copy_callback(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu,
+            bool,
+            crate::app::gamesavedataheader::GameSaveDataHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_callback::get_offset() as isize),
+        );
+        inner(this, is_success, save_data_header, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "CopyCallback",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "CopyCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_callback(
+        this: SaveDataMenu,
         is_success: bool,
         save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
-    ) -> ();
-
-    #[doc = "`DeleteCallback(bool)` overload"]
-    #[method(name = "DeleteCallback", args = 1)]
-    pub fn delete_callback(self, is_success: bool) -> ();
-
-    #[doc = "`LoadPrfabAsync()` overload"]
-    #[method(name = "LoadPrfabAsync", args = 0)]
-    pub fn load_prfab_async() -> ();
-
-    #[doc = "`UnloadPrfab()` overload"]
-    #[method(name = "UnloadPrfab", args = 0)]
-    pub fn unload_prfab() -> ();
-
-    #[doc = "`IsLoadingPrfab()` overload"]
-    #[method(name = "IsLoadingPrfab", args = 0)]
-    pub fn is_loading_prfab() -> bool;
-
-    #[doc = "`LoadIconAsync()` overload"]
-    #[method(name = "LoadIconAsync", args = 0)]
-    pub fn load_icon_async() -> ();
-
-    #[doc = "`UnloadIcon()` overload"]
-    #[method(name = "UnloadIcon", args = 0)]
-    pub fn unload_icon() -> ();
-
-    #[doc = "`IsLoadingIcon()` overload"]
-    #[method(name = "IsLoadingIcon", args = 0)]
-    pub fn is_loading_icon() -> bool;
-
-    #[doc = "`GetIconSpriteManager()` overload"]
-    #[method(name = "GetIconSpriteManager", args = 0)]
-    pub fn get_icon_sprite_manager() -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2;
-
-    #[doc = "`UpdateTitleBarText()` overload"]
-    #[method(name = "UpdateTitleBarText", args = 0)]
-    pub fn update_title_bar_text(self) -> ();
-
-    #[doc = "`CreateMenuBind(crate::app::savedatamenusequence::SaveDataMenuSequence, crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader)` overload"]
-    #[method(name = "CreateMenuBind", args = 3)]
-    pub fn create_menu_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu,
+            bool,
+            crate::app::gamesavedataheader::GameSaveDataHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_callback::get_offset() as isize),
+        );
+        inner(this, is_success, save_data_header, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "DeleteCallback",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "DeleteCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_callback(
+        this: SaveDataMenu,
+        is_success: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_callback::get_offset() as isize),
+            );
+        inner(this, is_success, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_prfab_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "LoadPrfabAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "LoadPrfabAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_prfab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_prfab_async::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_prfab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "UnloadPrfab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "UnloadPrfab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_prfab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_prfab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_prfab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "IsLoadingPrfab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingPrfab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_prfab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading_prfab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_icon_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "LoadIconAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "LoadIconAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_icon_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_icon_async::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "UnloadIcon",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "UnloadIcon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_icon(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_icon::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "IsLoadingIcon",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingIcon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_icon(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading_icon::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_icon_sprite_manager {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "GetIconSpriteManager",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetIconSpriteManager",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_icon_sprite_manager(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_icon_sprite_manager::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_title_bar_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "UpdateTitleBarText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTitleBarText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_title_bar_text(
+        this: SaveDataMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_title_bar_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_menu_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: savedatamenusequence :: SaveDataMenuSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: savedatamenu :: SaveDataMenu_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "CreateMenuBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateMenuBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_menu_bind(
         super_: crate::app::savedatamenusequence::SaveDataMenuSequence,
         mode: crate::app::savedatamenu::SaveDataMenu_Mode,
         reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
-    ) -> ();
-
-    #[doc = "`IsSaveDataAccessSuccess()` overload"]
-    #[method(name = "IsSaveDataAccessSuccess", args = 0)]
-    pub fn is_save_data_access_success() -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::savedatamenusequence::SaveDataMenuSequence,
+            crate::app::savedatamenu::SaveDataMenu_Mode,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_menu_bind::get_offset() as isize),
+        );
+        inner(super_, mode, reader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_save_data_access_success {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                "IsSaveDataAccessSuccess",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    "IsSaveDataAccessSuccess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_save_data_access_success(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_save_data_access_success::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu {
+    #[doc = "`GetTitleMess(crate::app::savedatamenu::SaveDataMenu_Mode)` overload"]
+    pub fn get_title_mess(
+        mode: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Mode>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __SaveDataMenu_unity2_raw::get_title_mess(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHelpMess(crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::savedatamenu::SaveDataMenu_Sequence)` overload"]
+    pub fn get_help_mess(
+        mode: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Mode>,
+        sequence: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Sequence>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __SaveDataMenu_unity2_raw::get_help_mess(
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(sequence),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetKeyHelpId(crate::app::savedatamenu::SaveDataMenu_Mode)` overload"]
+    pub fn get_key_help_id(
+        mode: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Mode>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __SaveDataMenu_unity2_raw::get_key_help_id(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadPrfabAsync()` overload"]
+    pub fn load_prfab_async() -> () {
+        unsafe { __SaveDataMenu_unity2_raw::load_prfab_async(::core::option::Option::None) }
+    }
+    #[doc = "`UnloadPrfab()` overload"]
+    pub fn unload_prfab() -> () {
+        unsafe { __SaveDataMenu_unity2_raw::unload_prfab(::core::option::Option::None) }
+    }
+    #[doc = "`IsLoadingPrfab()` overload"]
+    pub fn is_loading_prfab() -> bool {
+        unsafe { __SaveDataMenu_unity2_raw::is_loading_prfab(::core::option::Option::None) }
+    }
+    #[doc = "`LoadIconAsync()` overload"]
+    pub fn load_icon_async() -> () {
+        unsafe { __SaveDataMenu_unity2_raw::load_icon_async(::core::option::Option::None) }
+    }
+    #[doc = "`UnloadIcon()` overload"]
+    pub fn unload_icon() -> () {
+        unsafe { __SaveDataMenu_unity2_raw::unload_icon(::core::option::Option::None) }
+    }
+    #[doc = "`IsLoadingIcon()` overload"]
+    pub fn is_loading_icon() -> bool {
+        unsafe { __SaveDataMenu_unity2_raw::is_loading_icon(::core::option::Option::None) }
+    }
+    #[doc = "`GetIconSpriteManager()` overload"]
+    pub fn get_icon_sprite_manager() -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
+        unsafe { __SaveDataMenu_unity2_raw::get_icon_sprite_manager(::core::option::Option::None) }
+    }
+    #[doc = "`CreateMenuBind(crate::app::savedatamenusequence::SaveDataMenuSequence, crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader)` overload"]
+    pub fn create_menu_bind(
+        super_: impl ::core::convert::Into<crate::app::savedatamenusequence::SaveDataMenuSequence>,
+        mode: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Mode>,
+        reader: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_unity2_raw::create_menu_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(reader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSaveDataAccessSuccess()` overload"]
+    pub fn is_save_data_access_success() -> bool {
+        unsafe {
+            __SaveDataMenu_unity2_raw::is_save_data_access_success(::core::option::Option::None)
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SaveDataMenu_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenuMethods: ISaveDataMenu {
+    #[doc = "`GetShowRowMax()` overload"]
+    fn get_show_row_max(self) -> i32 {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::get_show_row_max(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSaveFromPeriod()` overload"]
+    fn is_save_from_period(self) -> bool {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::is_save_from_period(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::app::savedatamenusequence::SaveDataMenuSequence, crate::app::savedatamenu::SaveDataMenu_Mode, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader)` overload"]
+    fn ctor(
+        self,
+        menu_iltem_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        basic_menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        menu_sequence: impl ::core::convert::Into<
+            crate::app::savedatamenusequence::SaveDataMenuSequence,
+        >,
+        mode: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_Mode>,
+        save_data_header_reader: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_iltem_list),
+                ::core::convert::Into::into(basic_menu_content),
+                ::core::convert::Into::into(prefab),
+                ::core::convert::Into::into(menu_sequence),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(save_data_header_reader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveDataLoadSetting(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
+    fn save_data_load_setting(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::save_data_load_setting(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveCallback(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
+    fn save_callback(
+        self,
+        is_success: impl ::core::convert::Into<bool>,
+        save_data_header: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::save_callback(
+                __receiver,
+                ::core::convert::Into::into(is_success),
+                ::core::convert::Into::into(save_data_header),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CopyCallback(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
+    fn copy_callback(
+        self,
+        is_success: impl ::core::convert::Into<bool>,
+        save_data_header: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::copy_callback(
+                __receiver,
+                ::core::convert::Into::into(is_success),
+                ::core::convert::Into::into(save_data_header),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteCallback(bool)` overload"]
+    fn delete_callback(self, is_success: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::delete_callback(
+                __receiver,
+                ::core::convert::Into::into(is_success),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTitleBarText()` overload"]
+    fn update_title_bar_text(self) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_unity2_raw::update_title_bar_text(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu> ISaveDataMenuMethods for __T {}
 
 #[cfg(feature = "app-savedatamenu")]
 impl SaveDataMenu {
@@ -948,26 +2886,1792 @@ impl SaveDataMenu {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SaveConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SaveConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SaveConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SaveConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SaveConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_SaveConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_SaveConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SaveConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_SaveConfirmDialog_NoDialogItem>
+    ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CancelConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CancelConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_CancelConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CancelConfirmDialog_YesDialogItem,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CancelConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_header_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CancelConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(
+                ),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_CancelConfirmDialog_YesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_CancelConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_CancelConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_CancelConfirmDialog_YesDialogItem
+{
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
         self,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_CancelConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CancelConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_CancelConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CancelConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CancelConfirmDialog_YesDialogItem>
+    ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_MenuItemContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "Build",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build(
+        this: SaveDataMenu_MenuItemContent,
+        menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItemContent,
+            crate::app::basicmenuitem::BasicMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build::get_offset() as isize),
+        );
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "Disable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "Disable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable(
+        this: SaveDataMenu_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "BuildTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "BuildTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_text_color(
+        this: SaveDataMenu_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build_text_color::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "UpdateTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_text_color(
+        this: SaveDataMenu_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_text_color::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_by_menu_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::savedatamenu::SaveDataMenu_MenuItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "SetupByMenuItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "SetupByMenuItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_by_menu_item(
+        this: SaveDataMenu_MenuItemContent,
+        menu_item: crate::app::savedatamenu::SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItemContent,
+            crate::app::savedatamenu::SaveDataMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup_by_menu_item::get_offset() as isize),
+        );
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_type_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "GetDataTypeName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "GetDataTypeName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_type_name(
+        this: SaveDataMenu_MenuItemContent,
+        save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItemContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data_type_name::get_offset() as isize),
+        );
+        inner(this, save_data_header_reader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_place_and_seqence_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "GetPlaceAndSeqenceName",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "GetPlaceAndSeqenceName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_place_and_seqence_name(
+        this: SaveDataMenu_MenuItemContent,
+        save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
+        place_name: *mut ::unity2::Il2CppString,
+        sequence_name: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItemContent,
+            crate::app::gamesavedataheader::GameSaveDataHeader,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_place_and_seqence_name::get_offset() as isize),
+        );
+        inner(
+            this,
+            save_data_header,
+            place_name,
+            sequence_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_time_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "GetPlayTimeString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    "GetPlayTimeString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_play_time_string(
+        this: SaveDataMenu_MenuItemContent,
+        play_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItemContent,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_play_time_string::get_offset() as isize),
+        );
+        inner(this, play_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_MenuItemContentMethods: ISaveDataMenu_MenuItemContent {
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    fn build(
+        self,
+        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::build(
+                __receiver,
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Disable()` overload"]
+    fn disable(self) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::disable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildTextColor()` overload"]
+    fn build_text_color(self) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::build_text_color(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextColor()` overload"]
+    fn update_text_color(self) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::update_text_color(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupByMenuItem(crate::app::savedatamenu::SaveDataMenu_MenuItem)` overload"]
+    fn setup_by_menu_item(
+        self,
+        menu_item: impl ::core::convert::Into<crate::app::savedatamenu::SaveDataMenu_MenuItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::setup_by_menu_item(
+                __receiver,
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDataTypeName(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn get_data_type_name(
+        self,
+        save_data_header_reader: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::get_data_type_name(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_reader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPlaceAndSeqenceName(crate::app::gamesavedataheader::GameSaveDataHeader, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
+    fn get_place_and_seqence_name(
+        self,
+        save_data_header: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
+    ) -> (::unity2::Il2CppString, ::unity2::Il2CppString) {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            __SaveDataMenu_MenuItemContent_unity2_raw::get_place_and_seqence_name(
+                __receiver,
+                ::core::convert::Into::into(save_data_header),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetPlayTimeString(f32)` overload"]
+    fn get_play_time_string(
+        self,
+        play_time: impl ::core::convert::Into<f32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::get_play_time_string(
+                __receiver,
+                ::core::convert::Into::into(play_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuItemContent_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_MenuItemContent> ISaveDataMenu_MenuItemContentMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_MenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_MenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_MenuItemContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_LoadConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_LoadConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_LoadConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_LoadConfirmDialog_YesDialogItem,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_LoadConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_header_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_LoadConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_LoadConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_LoadConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_LoadConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_LoadConfirmDialog_YesDialogItem
+{
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_LoadConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_LoadConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_LoadConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_LoadConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_LoadConfirmDialog_YesDialogItem>
+    ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_MenuContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_menu_item_content_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "GetMenuItemContentMax",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                    "GetMenuItemContentMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_menu_item_content_max(
+        this: SaveDataMenu_MenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SaveDataMenu_MenuContent, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_menu_item_content_max::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_w {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcW",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                    "CalcW",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_w(
+        this: SaveDataMenu_MenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SaveDataMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_w::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_h {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcH",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                    "CalcH",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_h(
+        this: SaveDataMenu_MenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SaveDataMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_h::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_cursor_moved_pos_y {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcCursorMovedPosY",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                    "CalcCursorMovedPosY",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_cursor_moved_pos_y(
+        this: SaveDataMenu_MenuContent,
+        menu_item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SaveDataMenu_MenuContent, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
+            );
+        inner(this, menu_item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_MenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_MenuContentMethods: ISaveDataMenu_MenuContent {
+    #[doc = "`GetMenuItemContentMax()` overload"]
+    fn get_menu_item_content_max(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuContent_unity2_raw::get_menu_item_content_max(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcW()` overload"]
+    fn calc_w(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcH()` overload"]
+    fn calc_h(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuContent_unity2_raw::calc_cursor_moved_pos_y(
+                __receiver,
+                ::core::convert::Into::into(menu_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_MenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_MenuContent> ISaveDataMenu_MenuContentMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_MenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CancelConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CancelConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataMenu_CancelConfirmDialog_NoDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CancelConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CancelConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_CancelConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_CancelConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CancelConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CancelConfirmDialog_NoDialogItem>
+    ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CancelConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SuspendConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SuspendConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SuspendConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SuspendConfirmDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
         dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SuspendConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SuspendConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SuspendConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, save_data_header_handle, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SuspendConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_SuspendConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_SuspendConfirmDialogMethods: ISaveDataMenu_SuspendConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_SuspendConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_SuspendConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_SuspendConfirmDialog> ISaveDataMenu_SuspendConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SuspendConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_SuspendConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_LoadConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_LoadConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_LoadConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_LoadConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_LoadConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_LoadConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_LoadConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, save_data_header_handle, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_LoadConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_LoadConfirmDialogMethods: ISaveDataMenu_LoadConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_LoadConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_LoadConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_LoadConfirmDialog> ISaveDataMenu_LoadConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-savedatamenu")]
 impl SaveDataMenu_LoadConfirmDialog {
@@ -997,407 +4701,194 @@ impl SaveDataMenu_LoadConfirmDialog {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CopyConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CopyConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
             )
         });
-        <Self as ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods>::ctor(
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CopyConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CopyConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CopyConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
             this,
+            menu_item_list,
+            dialog_content,
             dest_save_data_header_handle,
             src_save_data_header_handle,
-        );
-        this
+            __unity2_method_info,
+        )
     }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CopyConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
             )
         });
-        <Self as ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CopyConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_MenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
-
-    #[doc = "`Disable()` overload"]
-    #[method(name = "Disable", args = 0)]
-    pub fn disable(self) -> ();
-
-    #[doc = "`BuildTextColor()` overload"]
-    #[method(name = "BuildTextColor", args = 0)]
-    pub fn build_text_color(self) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`SetupByMenuItem(crate::app::savedatamenu::SaveDataMenu_MenuItem)` overload"]
-    #[method(name = "SetupByMenuItem", args = 1)]
-    pub fn setup_by_menu_item(
-        self,
-        menu_item: crate::app::savedatamenu::SaveDataMenu_MenuItem,
-    ) -> ();
-
-    #[doc = "`GetDataTypeName(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "GetDataTypeName", args = 1)]
-    pub fn get_data_type_name(
-        self,
-        save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetPlaceAndSeqenceName(crate::app::gamesavedataheader::GameSaveDataHeader, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPlaceAndSeqenceName", args = 3)]
-    pub fn get_place_and_seqence_name(
-        self,
-        save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
-        place_name: ::unity2::Il2CppString,
-        sequence_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetPlayTimeString(f32)` overload"]
-    #[method(name = "GetPlayTimeString", args = 1)]
-    pub fn get_play_time_string(self, play_time: f32) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_MenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_MenuItemContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SaveConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, bool)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        is_save_complete_data: bool,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SaveConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SaveConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SaveConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
-            save_data_header_handle,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
         );
-        this
+        inner(
+            super_,
+            dest_save_data_header_handle,
+            src_save_data_header_handle,
+            __unity2_method_info,
+        )
     }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_MenuContent {
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    #[method(name = "GetMenuItemContentMax", args = 0)]
-    pub fn get_menu_item_content_max(self) -> i32;
-
-    #[doc = "`CalcW()` overload"]
-    #[method(name = "CalcW", args = 0)]
-    pub fn calc_w(self) -> f32;
-
-    #[doc = "`CalcH()` overload"]
-    #[method(name = "CalcH", args = 0)]
-    pub fn calc_h(self) -> f32;
-
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    #[method(name = "CalcCursorMovedPosY", args = 1)]
-    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_MenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_MenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_MenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
-        save_data_hedaer_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_ConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
 impl SaveDataMenu_CopyConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 3)]
     pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        dest_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+        src_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_CopyConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(dest_save_data_header_handle),
+                ::core::convert::Into::into(src_save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CopyConfirmDialogMethods: ISaveDataMenu_CopyConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        dest_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+        src_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_CopyConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_CopyConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(dest_save_data_header_handle),
+                ::core::convert::Into::into(src_save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CopyConfirmDialog> ISaveDataMenu_CopyConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-savedatamenu")]
 impl SaveDataMenu_CopyConfirmDialog {
@@ -1429,29 +4920,617 @@ impl SaveDataMenu_CopyConfirmDialog {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CancelConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CopyConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CopyConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CopyConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CopyConfirmDialog_YesDialogItem,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CopyConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            dest_save_data_header_handle,
+            src_save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CopyConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CopyConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_CopyConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_CopyConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_CopyConfirmDialog_YesDialogItem
+{
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
         self,
+        dest_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+        src_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_CopyConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CopyConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(dest_save_data_header_handle),
+                ::core::convert::Into::into(src_save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_CopyConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CopyConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CopyConfirmDialog_YesDialogItem>
+    ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            dest_save_data_header_handle,
+            src_save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_CopyConfirmDialog_NoDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_CopyConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_CopyConfirmDialog_NoDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_CopyConfirmDialog_NoDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_CopyConfirmDialog_NoDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods:
+    ISaveDataMenu_CopyConfirmDialog_NoDialogItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_CopyConfirmDialog_NoDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_CopyConfirmDialog_NoDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_CopyConfirmDialog_NoDialogItem>
+    ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SaveConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SaveConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SaveConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SaveConfirmDialog_YesDialogItem,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SaveConfirmDialog_YesDialogItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_header_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SaveConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SaveConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_SaveConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_SaveConfirmDialog_YesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods:
+    ISaveDataMenu_SaveConfirmDialog_YesDialogItem
+{
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < SaveDataMenu_SaveConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SaveConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SaveDataMenu_SaveConfirmDialog_YesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SaveDataMenu_SaveConfirmDialog_YesDialogItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_SaveConfirmDialog_YesDialogItem>
+    ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SaveConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_SaveConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SaveConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SaveConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_SaveConfirmDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
         dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_SaveConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_SaveConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_SaveConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+        is_save_complete_data: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            save_data_header_handle,
+            is_save_complete_data,
+            __unity2_method_info,
+        )
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CancelConfirmDialog {
+impl SaveDataMenu_SaveConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, bool)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+        is_save_complete_data: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_SaveConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::convert::Into::into(is_save_complete_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_SaveConfirmDialogMethods: ISaveDataMenu_SaveConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_SaveConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_SaveConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_SaveConfirmDialog> ISaveDataMenu_SaveConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SaveConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<
@@ -1463,11 +5542,11 @@ impl SaveDataMenu_CancelConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CancelConfirmDialog),
+                ::core::stringify!(SaveDataMenu_SaveConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_CancelConfirmDialogMethods>::ctor(
+        <Self as ISaveDataMenu_SaveConfirmDialogMethods>::ctor(
             this,
             menu_item_list,
             dialog_content,
@@ -1478,25 +5557,941 @@ impl SaveDataMenu_CancelConfirmDialog {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_DeleteConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_DeleteConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_DeleteConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_DeleteConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_DeleteConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_DeleteConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_DeleteConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, save_data_header_handle, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl SaveDataMenu_DeleteConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __SaveDataMenu_DeleteConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_DeleteConfirmDialogMethods: ISaveDataMenu_DeleteConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+        save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_DeleteConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_DeleteConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::convert::Into::into(save_data_header_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_DeleteConfirmDialog> ISaveDataMenu_DeleteConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_DeleteConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_NoDialogItem),
+                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods>::ctor(this);
+        <Self as ISaveDataMenu_DeleteConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+        );
         this
     }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_ConfirmDialog_YesItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_ConfirmDialog_YesItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_ConfirmDialog_YesItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_ConfirmDialog_YesItem,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_ConfirmDialog_YesItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            dest_save_data_header_handle,
+            text,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_ConfirmDialog_YesItemMethods: ISaveDataMenu_ConfirmDialog_YesItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        dest_save_data_header_handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SaveDataMenu_ConfirmDialog_YesItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SaveDataMenu_ConfirmDialog_YesItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(dest_save_data_header_handle),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_ConfirmDialog_YesItem> ISaveDataMenu_ConfirmDialog_YesItemMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog_YesItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        text: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_ConfirmDialog_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_ConfirmDialog_YesItemMethods>::ctor(
+            this,
+            dest_save_data_header_handle,
+            text,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveDataMenu_MenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_header_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetHeaderHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetHeaderHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_header_handle(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle {
+        let inner : extern "C" fn (SaveDataMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_header_handle :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_height(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SaveDataMenu_MenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_selected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "IsSelected",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "IsSelected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_selected(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SaveDataMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_selected::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "SetSelect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "SetSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_select(
+        this: SaveDataMenu_MenuItem,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SaveDataMenu_MenuItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_select::get_offset() as isize),
+            );
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SaveDataMenu_MenuItem,
+        save_data_headerhandle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItem,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, save_data_headerhandle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SaveDataMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: SaveDataMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SaveDataMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub trait ISaveDataMenu_MenuItemMethods: ISaveDataMenu_MenuItem {
+    #[doc = "`GetHeaderHandle()` overload"]
+    fn get_header_handle(
+        self,
+    ) -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::get_header_handle(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHeight()` overload"]
+    fn get_height(self) -> f32 {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSelected()` overload"]
+    fn is_selected(self) -> bool {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::is_selected(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSelect(bool)` overload"]
+    fn set_select(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::set_select(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        save_data_headerhandle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(save_data_headerhandle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <SaveDataMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SaveDataMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl<__T: ISaveDataMenu_MenuItem> ISaveDataMenu_MenuItemMethods for __T {}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_MenuItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_headerhandle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_MenuItemMethods>::ctor(this, save_data_headerhandle);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+pub mod prelude {
+    pub use super::ISaveDataMenu;
+    pub use super::ISaveDataMenuMethods;
+    pub use super::ISaveDataMenu_CancelConfirmDialog;
+    pub use super::ISaveDataMenu_CancelConfirmDialogMethods;
+    pub use super::ISaveDataMenu_CancelConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_CancelConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods;
+    pub use super::ISaveDataMenu_ConfirmDialog;
+    pub use super::ISaveDataMenu_ConfirmDialogMethods;
+    pub use super::ISaveDataMenu_ConfirmDialog_NoItem;
+    pub use super::ISaveDataMenu_ConfirmDialog_NoItemMethods;
+    pub use super::ISaveDataMenu_ConfirmDialog_YesItem;
+    pub use super::ISaveDataMenu_ConfirmDialog_YesItemMethods;
+    pub use super::ISaveDataMenu_CopyConfirmDialog;
+    pub use super::ISaveDataMenu_CopyConfirmDialogMethods;
+    pub use super::ISaveDataMenu_CopyConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_CopyConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods;
+    pub use super::ISaveDataMenu_DeleteConfirmDialog;
+    pub use super::ISaveDataMenu_DeleteConfirmDialogMethods;
+    pub use super::ISaveDataMenu_DeleteConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_DeleteConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods;
+    pub use super::ISaveDataMenu_LoadConfirmDialog;
+    pub use super::ISaveDataMenu_LoadConfirmDialogMethods;
+    pub use super::ISaveDataMenu_LoadConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_LoadConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods;
+    pub use super::ISaveDataMenu_MenuContent;
+    pub use super::ISaveDataMenu_MenuContentMethods;
+    pub use super::ISaveDataMenu_MenuItem;
+    pub use super::ISaveDataMenu_MenuItemContent;
+    pub use super::ISaveDataMenu_MenuItemContentMethods;
+    pub use super::ISaveDataMenu_MenuItemMethods;
+    pub use super::ISaveDataMenu_SaveConfirmDialog;
+    pub use super::ISaveDataMenu_SaveConfirmDialogMethods;
+    pub use super::ISaveDataMenu_SaveConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_SaveConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods;
+    pub use super::ISaveDataMenu_SuspendConfirmDialog;
+    pub use super::ISaveDataMenu_SuspendConfirmDialogMethods;
+    pub use super::ISaveDataMenu_SuspendConfirmDialog_NoDialogItem;
+    pub use super::ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods;
+    pub use super::ISaveDataMenu_SuspendConfirmDialog_YesDialogItem;
+    pub use super::ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods;
+    pub use super::SaveDataMenu;
+    pub use super::SaveDataMenu_CancelConfirmDialog;
+    pub use super::SaveDataMenu_CancelConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_CancelConfirmDialog_YesDialogItem;
+    pub use super::SaveDataMenu_ConfirmDialog;
+    pub use super::SaveDataMenu_ConfirmDialog_NoItem;
+    pub use super::SaveDataMenu_ConfirmDialog_YesItem;
+    pub use super::SaveDataMenu_CopyConfirmDialog;
+    pub use super::SaveDataMenu_CopyConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_CopyConfirmDialog_YesDialogItem;
+    pub use super::SaveDataMenu_DeleteConfirmDialog;
+    pub use super::SaveDataMenu_DeleteConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_DeleteConfirmDialog_YesDialogItem;
+    pub use super::SaveDataMenu_LoadConfirmDialog;
+    pub use super::SaveDataMenu_LoadConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_LoadConfirmDialog_YesDialogItem;
+    pub use super::SaveDataMenu_MenuContent;
+    pub use super::SaveDataMenu_MenuItem;
+    pub use super::SaveDataMenu_MenuItemContent;
+    pub use super::SaveDataMenu_Mode;
+    pub use super::SaveDataMenu_SaveConfirmDialog;
+    pub use super::SaveDataMenu_SaveConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_SaveConfirmDialog_YesDialogItem;
+    pub use super::SaveDataMenu_Sequence;
+    pub use super::SaveDataMenu_SuspendConfirmDialog;
+    pub use super::SaveDataMenu_SuspendConfirmDialog_NoDialogItem;
+    pub use super::SaveDataMenu_SuspendConfirmDialog_YesDialogItem;
+    pub use crate::app::basicdialog::IBasicDialog;
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    #[cfg(feature = "app-basicdialogitem")]
+    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
+    #[cfg(feature = "app-basicdialogitemno")]
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    #[cfg(feature = "app-basicdialogitemyes")]
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    #[cfg(feature = "app-basicmenucontent")]
+    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    #[cfg(feature = "app-basicmenuitemcontent")]
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::yesnodialog::IYesNoDialog;
+    #[cfg(feature = "app-yesnodialog")]
+    pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

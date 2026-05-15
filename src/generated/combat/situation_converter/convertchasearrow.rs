@@ -21,41 +21,442 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertchasearrow")]
-#[::unity2::methods]
-impl ConvertChaseArrow {
-    #[doc = "`get_IsSecondAttack()` overload"]
-    #[method(name = "get_IsSecondAttack", args = 0)]
-    pub fn get_is_second_attack(self) -> bool;
-
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::combat::situation_converter::cameradataset::CameraDataSet)
-        -> ();
-
-    #[doc = "`get_DoChase()` overload"]
-    #[method(name = "get_DoChase", args = 0)]
-    pub fn get_do_chase(self) -> bool;
-
-    #[doc = "`set_DoChase(bool)` overload"]
-    #[method(name = "set_DoChase", args = 1)]
-    pub fn set_do_chase(self, value: bool) -> ();
-
-    #[doc = "`get_IsEnd()` overload"]
-    #[method(name = "get_IsEnd", args = 0)]
-    pub fn get_is_end(self) -> bool;
-
-    #[doc = "`set_IsEnd(bool)` overload"]
-    #[method(name = "set_IsEnd", args = 1)]
-    pub fn set_is_end(self, value: bool) -> ();
-
-    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Convert", args = 2)]
-    pub fn convert(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConvertChaseArrow_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_second_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "get_IsSecondAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "get_IsSecondAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_second_attack(
+        this: ConvertChaseArrow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ConvertChaseArrow, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_second_attack::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ConvertChaseArrow,
+        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ConvertChaseArrow,
+            crate::combat::situation_converter::cameradataset::CameraDataSet,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_do_chase {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "get_DoChase",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "get_DoChase",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_do_chase(
+        this: ConvertChaseArrow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ConvertChaseArrow, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_do_chase::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_do_chase {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "set_DoChase",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "set_DoChase",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_do_chase(
+        this: ConvertChaseArrow,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConvertChaseArrow, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_do_chase::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "get_IsEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "get_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_end(
+        this: ConvertChaseArrow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ConvertChaseArrow, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "set_IsEnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "set_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_end(
+        this: ConvertChaseArrow,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ConvertChaseArrow, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_end::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConvertChaseArrow as ::unity2::ClassIdentity>::class(),
+                "Convert",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ConvertChaseArrow as ::unity2::ClassIdentity>::NAME,
+                    "Convert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert(
+        this: ConvertChaseArrow,
         situation: crate::combat::camerasituation::CameraSituation,
         arg: ::unity2::Il2CppString,
-    ) -> crate::combat::cameraposition::CameraPosition;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let inner: extern "C" fn(
+            ConvertChaseArrow,
+            crate::combat::camerasituation::CameraSituation,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert::get_offset() as isize),
+        );
+        inner(this, situation, arg, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-situation_converter-convertchasearrow")]
+pub trait IConvertChaseArrowMethods: IConvertChaseArrow {
+    #[doc = "`get_IsSecondAttack()` overload"]
+    fn get_is_second_attack(self) -> bool {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::get_is_second_attack(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(
+        self,
+        data: impl ::core::convert::Into<
+            crate::combat::situation_converter::cameradataset::CameraDataSet,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DoChase()` overload"]
+    fn get_do_chase(self) -> bool {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::get_do_chase(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_DoChase(bool)` overload"]
+    fn set_do_chase(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::set_do_chase(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsEnd()` overload"]
+    fn get_is_end(self) -> bool {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::get_is_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsEnd(bool)` overload"]
+    fn set_is_end(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::set_is_end(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
+    fn convert(
+        self,
+        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertChaseArrow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ConvertChaseArrow_unity2_raw::convert(
+                __receiver,
+                ::core::convert::Into::into(situation),
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertchasearrow")]
+impl<__T: IConvertChaseArrow> IConvertChaseArrowMethods for __T {}
 
 #[cfg(feature = "combat-situation_converter-convertchasearrow")]
 impl ConvertChaseArrow {
@@ -71,4 +472,17 @@ impl ConvertChaseArrow {
         <Self as IConvertChaseArrowMethods>::ctor(this, data);
         this
     }
+}
+
+#[cfg(feature = "combat-situation_converter-convertchasearrow")]
+pub mod prelude {
+    pub use super::ConvertChaseArrow;
+    pub use super::IConvertChaseArrow;
+    pub use super::IConvertChaseArrowMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

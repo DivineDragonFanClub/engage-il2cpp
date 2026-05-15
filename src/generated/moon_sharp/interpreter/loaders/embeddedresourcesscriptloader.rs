@@ -31,28 +31,289 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
-#[::unity2::methods]
-impl EmbeddedResourcesScriptLoader {
-    #[doc = "`.ctor(crate::system::reflection::assembly::Assembly)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, resource_assembly: crate::system::reflection::assembly::Assembly) -> ();
-
-    #[doc = "`FileNameToResource(::unity2::Il2CppString)` overload"]
-    #[method(name = "FileNameToResource", args = 1)]
-    pub fn file_name_to_resource(self, file: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`ScriptFileExists(::unity2::Il2CppString)` overload"]
-    #[method(name = "ScriptFileExists", args = 1)]
-    pub fn script_file_exists(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
-    #[method(name = "LoadFile", args = 2)]
-    pub fn load_file(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EmbeddedResourcesScriptLoader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EmbeddedResourcesScriptLoader,
+        resource_assembly: crate::system::reflection::assembly::Assembly,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EmbeddedResourcesScriptLoader,
+            crate::system::reflection::assembly::Assembly,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, resource_assembly, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_file_name_to_resource {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::class(),
+                "FileNameToResource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::NAME,
+                    "FileNameToResource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn file_name_to_resource(
+        this: EmbeddedResourcesScriptLoader,
+        file: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            EmbeddedResourcesScriptLoader,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_file_name_to_resource::get_offset() as isize),
+        );
+        inner(this, file, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_script_file_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::class(),
+                "ScriptFileExists",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::NAME,
+                    "ScriptFileExists",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn script_file_exists(
+        this: EmbeddedResourcesScriptLoader,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            EmbeddedResourcesScriptLoader,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_script_file_exists::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_file {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::class(),
+                "LoadFile",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EmbeddedResourcesScriptLoader as ::unity2::ClassIdentity>::NAME,
+                    "LoadFile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_file(
+        this: EmbeddedResourcesScriptLoader,
         file: ::unity2::Il2CppString,
         global_context: crate::moon_sharp::interpreter::table::Table,
-    ) -> crate::system::object::Object;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            EmbeddedResourcesScriptLoader,
+            ::unity2::Il2CppString,
+            crate::moon_sharp::interpreter::table::Table,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_file::get_offset() as isize),
+        );
+        inner(this, file, global_context, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
+pub trait IEmbeddedResourcesScriptLoaderMethods: IEmbeddedResourcesScriptLoader {
+    #[doc = "`.ctor(crate::system::reflection::assembly::Assembly)` overload"]
+    fn ctor(
+        self,
+        resource_assembly: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EmbeddedResourcesScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EmbeddedResourcesScriptLoader_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(resource_assembly),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FileNameToResource(::unity2::Il2CppString)` overload"]
+    fn file_name_to_resource(
+        self,
+        file: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <EmbeddedResourcesScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EmbeddedResourcesScriptLoader_unity2_raw::file_name_to_resource(
+                __receiver,
+                ::core::convert::Into::into(file),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScriptFileExists(::unity2::Il2CppString)` overload"]
+    fn script_file_exists(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver =
+                <EmbeddedResourcesScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EmbeddedResourcesScriptLoader_unity2_raw::script_file_exists(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
+    fn load_file(
+        self,
+        file: impl ::core::convert::Into<::unity2::Il2CppString>,
+        global_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver =
+                <EmbeddedResourcesScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EmbeddedResourcesScriptLoader_unity2_raw::load_file(
+                __receiver,
+                ::core::convert::Into::into(file),
+                ::core::convert::Into::into(global_context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
+impl<__T: IEmbeddedResourcesScriptLoader> IEmbeddedResourcesScriptLoaderMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
 impl EmbeddedResourcesScriptLoader {
@@ -68,4 +329,17 @@ impl EmbeddedResourcesScriptLoader {
         <Self as IEmbeddedResourcesScriptLoaderMethods>::ctor(this, resource_assembly);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
+pub mod prelude {
+    pub use super::EmbeddedResourcesScriptLoader;
+    pub use super::IEmbeddedResourcesScriptLoader;
+    pub use super::IEmbeddedResourcesScriptLoaderMethods;
+    pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBase;
+    #[cfg(feature = "moon_sharp-interpreter-loaders-scriptloaderbase")]
+    pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

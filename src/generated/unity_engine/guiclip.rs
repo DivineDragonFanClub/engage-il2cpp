@@ -17,56 +17,591 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guiclip")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUIClip_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_visible_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "get_visibleRect",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "get_visibleRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_visible_rect(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_visible_rect::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_push {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "Internal_Push",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Push",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_push(
+        screen_rect: crate::unity_engine::rect::Rect,
+        scroll_offset: crate::unity_engine::vector2::Vector2,
+        render_offset: crate::unity_engine::vector2::Vector2,
+        reset_offset: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_push::get_offset() as isize),
+        );
+        inner(
+            screen_rect,
+            scroll_offset,
+            render_offset,
+            reset_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_pop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "Internal_Pop",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Pop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_pop(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_pop::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "SetMatrix",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "SetMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_matrix(
+        m: crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_matrix::get_offset() as isize),
+        );
+        inner(m, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "Push",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "Push",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push(
+        screen_rect: crate::unity_engine::rect::Rect,
+        scroll_offset: crate::unity_engine::vector2::Vector2,
+        render_offset: crate::unity_engine::vector2::Vector2,
+        reset_offset: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_push::get_offset() as isize),
+        );
+        inner(
+            screen_rect,
+            scroll_offset,
+            render_offset,
+            reset_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "Pop",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "Pop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pop::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_visible_rect_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "get_visibleRect_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "get_visibleRect_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_visible_rect_injected(
+        ret: *mut crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_visible_rect_injected::get_offset() as isize),
+        );
+        inner(ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_push_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "Internal_Push_Injected",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Push_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_push_injected(
+        screen_rect: *mut crate::unity_engine::rect::Rect,
+        scroll_offset: *mut crate::unity_engine::vector2::Vector2,
+        render_offset: *mut crate::unity_engine::vector2::Vector2,
+        reset_offset: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::rect::Rect,
+            *mut crate::unity_engine::vector2::Vector2,
+            *mut crate::unity_engine::vector2::Vector2,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_push_injected::get_offset() as isize),
+        );
+        inner(
+            screen_rect,
+            scroll_offset,
+            render_offset,
+            reset_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_matrix_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUIClip as ::unity2::ClassIdentity>::class(),
+                "SetMatrix_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUIClip as ::unity2::ClassIdentity>::NAME,
+                    "SetMatrix_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_matrix_injected(
+        m: *mut crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_matrix_injected::get_offset() as isize),
+        );
+        inner(m, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guiclip")]
 impl GUIClip {
     #[doc = "`get_visibleRect()` overload"]
-    #[method(name = "get_visibleRect", args = 0)]
-    pub fn get_visible_rect() -> crate::unity_engine::rect::Rect;
-
+    pub fn get_visible_rect() -> crate::unity_engine::rect::Rect {
+        unsafe { __GUIClip_unity2_raw::get_visible_rect(::core::option::Option::None) }
+    }
     #[doc = "`Internal_Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"]
-    #[method(name = "Internal_Push", args = 4)]
     pub fn internal_push(
-        screen_rect: crate::unity_engine::rect::Rect,
-        scroll_offset: crate::unity_engine::vector2::Vector2,
-        render_offset: crate::unity_engine::vector2::Vector2,
-        reset_offset: bool,
-    ) -> ();
-
+        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        scroll_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        render_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        reset_offset: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GUIClip_unity2_raw::internal_push(
+                ::core::convert::Into::into(screen_rect),
+                ::core::convert::Into::into(scroll_offset),
+                ::core::convert::Into::into(render_offset),
+                ::core::convert::Into::into(reset_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Internal_Pop()` overload"]
-    #[method(name = "Internal_Pop", args = 0)]
-    pub fn internal_pop() -> ();
-
+    pub fn internal_pop() -> () {
+        unsafe { __GUIClip_unity2_raw::internal_pop(::core::option::Option::None) }
+    }
     #[doc = "`SetMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "SetMatrix", args = 1)]
-    pub fn set_matrix(m: crate::unity_engine::matrix4x4::Matrix4x4) -> ();
-
+    pub fn set_matrix(
+        m: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
+    ) -> () {
+        unsafe {
+            __GUIClip_unity2_raw::set_matrix(
+                ::core::convert::Into::into(m),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"]
-    #[method(name = "Push", args = 4)]
     pub fn push(
-        screen_rect: crate::unity_engine::rect::Rect,
-        scroll_offset: crate::unity_engine::vector2::Vector2,
-        render_offset: crate::unity_engine::vector2::Vector2,
-        reset_offset: bool,
-    ) -> ();
-
+        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        scroll_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        render_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        reset_offset: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __GUIClip_unity2_raw::push(
+                ::core::convert::Into::into(screen_rect),
+                ::core::convert::Into::into(scroll_offset),
+                ::core::convert::Into::into(render_offset),
+                ::core::convert::Into::into(reset_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Pop()` overload"]
-    #[method(name = "Pop", args = 0)]
-    pub fn pop() -> ();
-
-    #[doc = "`get_visibleRect_Injected(crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "get_visibleRect_Injected", args = 1)]
-    pub fn get_visible_rect_injected(ret: crate::unity_engine::rect::Rect) -> ();
-
-    #[doc = "`Internal_Push_Injected(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"]
-    #[method(name = "Internal_Push_Injected", args = 4)]
+    pub fn pop() -> () {
+        unsafe { __GUIClip_unity2_raw::pop(::core::option::Option::None) }
+    }
+    #[doc = "`get_visibleRect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
+    pub fn get_visible_rect_injected() -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            __GUIClip_unity2_raw::get_visible_rect_injected(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Internal_Push_Injected(*mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, bool)` overload"]
     pub fn internal_push_injected(
-        screen_rect: crate::unity_engine::rect::Rect,
-        scroll_offset: crate::unity_engine::vector2::Vector2,
-        render_offset: crate::unity_engine::vector2::Vector2,
-        reset_offset: bool,
-    ) -> ();
+        reset_offset: impl ::core::convert::Into<bool>,
+    ) -> (
+        crate::unity_engine::rect::Rect,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector2::Vector2,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __GUIClip_unity2_raw::internal_push_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                ::core::convert::Into::into(reset_offset),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`SetMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
+    pub fn set_matrix_injected() -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __GUIClip_unity2_raw::set_matrix_injected(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
 
-    #[doc = "`SetMatrix_Injected(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "SetMatrix_Injected", args = 1)]
-    pub fn set_matrix_injected(m: crate::unity_engine::matrix4x4::Matrix4x4) -> ();
+#[cfg(feature = "unity_engine-guiclip")]
+pub mod prelude {
+    pub use super::GUIClip;
+    pub use super::IGUIClip;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,3 +2,5 @@
 
 #[cfg(any(feature = "unity_engine-ui_elements-uir-utility_2-types"))]
 pub mod utility_2;
+#[cfg(feature = "unity_engine-ui_elements-uir-utility_2-types")]
+pub use utility_2::{IUtility_2, IUtility_GPUBuffer_1, Utility_2, Utility_GPUBuffer_1};

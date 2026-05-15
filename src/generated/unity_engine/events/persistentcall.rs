@@ -30,61 +30,636 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-persistentcall")]
-#[::unity2::methods]
-impl PersistentCall {
-    #[doc = "`get_target()` overload"]
-    #[method(name = "get_target", args = 0)]
-    pub fn get_target(self) -> crate::unity_engine::object_2::Object_2;
-
-    #[doc = "`get_targetAssemblyTypeName()` overload"]
-    #[method(name = "get_targetAssemblyTypeName", args = 0)]
-    pub fn get_target_assembly_type_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_methodName()` overload"]
-    #[method(name = "get_methodName", args = 0)]
-    pub fn get_method_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_mode()` overload"]
-    #[method(name = "get_mode", args = 0)]
-    pub fn get_mode(
-        self,
-    ) -> crate::unity_engine::events::persistentlistenermode::PersistentListenerMode;
-
-    #[doc = "`get_arguments()` overload"]
-    #[method(name = "get_arguments", args = 0)]
-    pub fn get_arguments(self) -> crate::unity_engine::events::argumentcache::ArgumentCache;
-
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
-
-    #[doc = "`GetRuntimeCall(crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]
-    #[method(name = "GetRuntimeCall", args = 1)]
-    pub fn get_runtime_call(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PersistentCall_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "get_target",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "get_target",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(
+            PersistentCall,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_assembly_type_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "get_targetAssemblyTypeName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "get_targetAssemblyTypeName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_assembly_type_name(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PersistentCall,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_assembly_type_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_method_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "get_methodName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "get_methodName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_method_name(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PersistentCall,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_method_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "get_mode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "get_mode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mode(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::persistentlistenermode::PersistentListenerMode {
+        let inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: persistentlistenermode :: PersistentListenerMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_arguments {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "get_arguments",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "get_arguments",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_arguments(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::argumentcache::ArgumentCache {
+        let inner: extern "C" fn(
+            PersistentCall,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::events::argumentcache::ArgumentCache = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_arguments::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PersistentCall, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_runtime_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: unityeventbase :: UnityEventBase as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "GetRuntimeCall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "GetRuntimeCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_runtime_call(
+        this: PersistentCall,
         the_event: crate::unity_engine::events::unityeventbase::UnityEventBase,
-    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
-
-    #[doc = "`GetObjectCall(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, crate::unity_engine::events::argumentcache::ArgumentCache)` overload"]
-    #[method(name = "GetObjectCall", args = 3)]
-    pub fn get_object_call(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall {
+        let inner : extern "C" fn (PersistentCall , crate :: unity_engine :: events :: unityeventbase :: UnityEventBase , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_runtime_call :: get_offset () as isize) ,) ;
+        inner(this, the_event, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_object_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: methodinfo :: MethodInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: events :: argumentcache :: ArgumentCache as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "GetObjectCall",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "GetObjectCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_object_call(
         target: crate::unity_engine::object_2::Object_2,
         method: crate::system::reflection::methodinfo::MethodInfo,
         arguments: crate::unity_engine::events::argumentcache::ArgumentCache,
-    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
-
-    #[doc = "`OnBeforeSerialize()` overload"]
-    #[method(name = "OnBeforeSerialize", args = 0)]
-    pub fn on_before_serialize(self) -> ();
-
-    #[doc = "`OnAfterDeserialize()` overload"]
-    #[method(name = "OnAfterDeserialize", args = 0)]
-    pub fn on_after_deserialize(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall {
+        let inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , crate :: system :: reflection :: methodinfo :: MethodInfo , crate :: unity_engine :: events :: argumentcache :: ArgumentCache , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_object_call :: get_offset () as isize) ,) ;
+        inner(target, method, arguments, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_before_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "OnBeforeSerialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "OnBeforeSerialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_before_serialize(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PersistentCall, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_before_serialize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_after_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                "OnAfterDeserialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    "OnAfterDeserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_after_deserialize(
+        this: PersistentCall,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PersistentCall, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_after_deserialize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCall as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCall as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: PersistentCall, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PersistentCall, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-events-persistentcall")]
+impl PersistentCall {
+    #[doc = "`GetObjectCall(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, crate::unity_engine::events::argumentcache::ArgumentCache)` overload"]
+    pub fn get_object_call(
+        target: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+        method: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
+        arguments: impl ::core::convert::Into<crate::unity_engine::events::argumentcache::ArgumentCache>,
+    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall {
+        unsafe {
+            __PersistentCall_unity2_raw::get_object_call(
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(arguments),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-events-persistentcall")]
+pub trait IPersistentCallMethods: IPersistentCall {
+    #[doc = "`get_target()` overload"]
+    fn get_target(self) -> crate::unity_engine::object_2::Object_2 {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_target(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetAssemblyTypeName()` overload"]
+    fn get_target_assembly_type_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_target_assembly_type_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_methodName()` overload"]
+    fn get_method_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_method_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_mode()` overload"]
+    fn get_mode(
+        self,
+    ) -> crate::unity_engine::events::persistentlistenermode::PersistentListenerMode {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_arguments()` overload"]
+    fn get_arguments(self) -> crate::unity_engine::events::argumentcache::ArgumentCache {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_arguments(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsValid()` overload"]
+    fn is_valid(self) -> bool {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetRuntimeCall(crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]
+    fn get_runtime_call(
+        self,
+        the_event: impl ::core::convert::Into<
+            crate::unity_engine::events::unityeventbase::UnityEventBase,
+        >,
+    ) -> crate::unity_engine::events::baseinvokablecall::BaseInvokableCall {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::get_runtime_call(
+                __receiver,
+                ::core::convert::Into::into(the_event),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBeforeSerialize()` overload"]
+    fn on_before_serialize(self) -> () {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::on_before_serialize(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnAfterDeserialize()` overload"]
+    fn on_after_deserialize(self) -> () {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::on_after_deserialize(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PersistentCall as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCall_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-events-persistentcall")]
+impl<__T: IPersistentCall> IPersistentCallMethods for __T {}
 
 #[cfg(feature = "unity_engine-events-persistentcall")]
 impl PersistentCall {
@@ -100,4 +675,14 @@ impl PersistentCall {
         <Self as IPersistentCallMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-events-persistentcall")]
+pub mod prelude {
+    pub use super::IPersistentCall;
+    pub use super::IPersistentCallMethods;
+    pub use super::PersistentCall;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

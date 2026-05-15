@@ -21,41 +21,349 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontutilities")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_FontUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
+                "SearchForCharacter",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontUtilities as ::unity2::ClassIdentity>::NAME,
+                    "SearchForCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_character(
+        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        unicode: u32,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_character::get_offset() as isize),
+        );
+        inner(font, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_character_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
+                "SearchForCharacter",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontUtilities as ::unity2::ClassIdentity>::NAME,
+                    "SearchForCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_character_2(
+        fonts: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        >,
+        unicode: u32,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_character_2::get_offset() as isize),
+        );
+        inner(fonts, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_character_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
+                "SearchForCharacterInternal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontUtilities as ::unity2::ClassIdentity>::NAME,
+                    "SearchForCharacterInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_character_internal(
+        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        unicode: u32,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_character_internal::get_offset() as isize),
+        );
+        inner(font, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_for_character_internal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
+                "SearchForCharacterInternal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontUtilities as ::unity2::ClassIdentity>::NAME,
+                    "SearchForCharacterInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_for_character_internal_2(
+        fonts: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        >,
+        unicode: u32,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search_for_character_internal_2::get_offset() as isize),
+        );
+        inner(fonts, unicode, character, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontutilities")]
 impl TMP_FontUtilities {
-    #[doc = "`SearchForCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset, u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "SearchForCharacter", args = 3)]
+    #[doc = "`SearchForCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset, u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
     pub fn search_for_character(
-        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`SearchForCharacter(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "SearchForCharacter", args = 3)]
+        font: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        crate::tm_pro::tmp_character::TMP_Character,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontUtilities_unity2_raw::search_for_character(
+                    ::core::convert::Into::into(font),
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForCharacter(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
     pub fn search_for_character_2(
-        fonts: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        fonts: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
         >,
-        unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`SearchForCharacterInternal(crate::tm_pro::tmp_fontasset::TMP_FontAsset, u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "SearchForCharacterInternal", args = 3)]
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        crate::tm_pro::tmp_character::TMP_Character,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontUtilities_unity2_raw::search_for_character_2(
+                    ::core::convert::Into::into(fonts),
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForCharacterInternal(crate::tm_pro::tmp_fontasset::TMP_FontAsset, u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
     pub fn search_for_character_internal(
-        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`SearchForCharacterInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "SearchForCharacterInternal", args = 3)]
+        font: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        crate::tm_pro::tmp_character::TMP_Character,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontUtilities_unity2_raw::search_for_character_internal(
+                    ::core::convert::Into::into(font),
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SearchForCharacterInternal(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>, u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
     pub fn search_for_character_internal_2(
-        fonts: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        fonts: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
         >,
-        unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        crate::tm_pro::tmp_character::TMP_Character,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontUtilities_unity2_raw::search_for_character_internal_2(
+                    ::core::convert::Into::into(fonts),
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontutilities")]
+pub mod prelude {
+    pub use super::ITMP_FontUtilities;
+    pub use super::TMP_FontUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

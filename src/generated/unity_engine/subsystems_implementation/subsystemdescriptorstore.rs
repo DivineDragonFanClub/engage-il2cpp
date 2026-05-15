@@ -24,30 +24,360 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorstore")]
-#[::unity2::methods]
-impl SubsystemDescriptorStore {
-    #[doc = "`InitializeManagedDescriptor(::unity2::IntPtr, crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor)` overload"]
-    #[method(name = "InitializeManagedDescriptor", args = 2)]
-    pub fn initialize_managed_descriptor(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SubsystemDescriptorStore_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_managed_descriptor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: integratedsubsystemdescriptor :: IntegratedSubsystemDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                "InitializeManagedDescriptor",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                    "InitializeManagedDescriptor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_managed_descriptor(
         ptr: ::unity2::IntPtr,
         desc: crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor,
-    ) -> ();
-
-    #[doc = "`ClearManagedDescriptors()` overload"]
-    #[method(name = "ClearManagedDescriptors", args = 0)]
-    pub fn clear_managed_descriptors() -> ();
-
-    #[doc = "`ReportSingleSubsystemAnalytics(::unity2::Il2CppString)` overload"]
-    #[method(name = "ReportSingleSubsystemAnalytics", args = 1)]
-    pub fn report_single_subsystem_analytics(id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`RegisterDeprecatedDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"]
-    #[method(name = "RegisterDeprecatedDescriptor", args = 1)]
-    pub fn register_deprecated_descriptor(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize_managed_descriptor::get_offset() as isize),
+        );
+        inner(ptr, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_managed_descriptors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                "ClearManagedDescriptors",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                    "ClearManagedDescriptors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_managed_descriptors(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_managed_descriptors::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report_single_subsystem_analytics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                "ReportSingleSubsystemAnalytics",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                    "ReportSingleSubsystemAnalytics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn report_single_subsystem_analytics(
+        id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_report_single_subsystem_analytics::get_offset() as isize),
+            );
+        inner(id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_deprecated_descriptor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: subsystemdescriptor :: SubsystemDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                "RegisterDeprecatedDescriptor",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                    "RegisterDeprecatedDescriptor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_deprecated_descriptor(
         descriptor: crate::unity_engine::subsystemdescriptor::SubsystemDescriptor,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::subsystemdescriptor::SubsystemDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register_deprecated_descriptor::get_offset() as isize),
+        );
+        inner(descriptor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorstore")]
+impl SubsystemDescriptorStore {
+    #[doc = "`InitializeManagedDescriptor(::unity2::IntPtr, crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor)` overload"]
+    pub fn initialize_managed_descriptor(
+        ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        desc: impl ::core::convert::Into<
+            crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor,
+        >,
+    ) -> () {
+        unsafe {
+            __SubsystemDescriptorStore_unity2_raw::initialize_managed_descriptor(
+                ::core::convert::Into::into(ptr),
+                ::core::convert::Into::into(desc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearManagedDescriptors()` overload"]
+    pub fn clear_managed_descriptors() -> () {
+        unsafe {
+            __SubsystemDescriptorStore_unity2_raw::clear_managed_descriptors(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReportSingleSubsystemAnalytics(::unity2::Il2CppString)` overload"]
+    pub fn report_single_subsystem_analytics(
+        id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __SubsystemDescriptorStore_unity2_raw::report_single_subsystem_analytics(
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn register_descriptor<
+        M0: ::unity2::IlType + ::core::marker::Copy,
+        M1: ::unity2::IlType + ::core::marker::Copy,
+    >(
+        descriptor: impl ::core::convert::Into<M0>,
+        store_in_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<M1>,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::class(),
+                "RegisterDescriptor",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <SubsystemDescriptorStore as ::unity2::ClassIdentity>::NAME,
+                "RegisterDescriptor",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize)
+            ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[
+                        <M0 as ::unity2::IlType>::il_type(),
+                        <M1 as ::unity2::IlType>::il_type(),
+                    ],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                M0,
+                crate::system::collections::generic::list_1::List_1<M1>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(descriptor),
+                ::core::convert::Into::into(store_in_list),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`RegisterDeprecatedDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"]
+    pub fn register_deprecated_descriptor(
+        descriptor: impl ::core::convert::Into<
+            crate::unity_engine::subsystemdescriptor::SubsystemDescriptor,
+        >,
+    ) -> () {
+        unsafe {
+            __SubsystemDescriptorStore_unity2_raw::register_deprecated_descriptor(
+                ::core::convert::Into::into(descriptor),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __SubsystemDescriptorStore_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorstore")]
+pub mod prelude {
+    pub use super::ISubsystemDescriptorStore;
+    pub use super::SubsystemDescriptorStore;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

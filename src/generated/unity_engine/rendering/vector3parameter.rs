@@ -21,21 +21,167 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-vector3parameter")]
-#[::unity2::methods]
-impl Vector3Parameter {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, value: crate::unity_engine::vector3::Vector3, override_state: bool) -> ();
-
-    #[doc = "`Interp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Interp", args = 3)]
-    pub fn interp(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Vector3Parameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vector3Parameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vector3Parameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Vector3Parameter,
+        value: crate::unity_engine::vector3::Vector3,
+        override_state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Vector3Parameter,
+            crate::unity_engine::vector3::Vector3,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, value, override_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_interp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Vector3Parameter as ::unity2::ClassIdentity>::class(),
+                "Interp",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Vector3Parameter as ::unity2::ClassIdentity>::NAME,
+                    "Interp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn interp(
+        this: Vector3Parameter,
         from: crate::unity_engine::vector3::Vector3,
         to: crate::unity_engine::vector3::Vector3,
         t: f32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Vector3Parameter,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_interp::get_offset() as isize),
+        );
+        inner(this, from, to, t, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-vector3parameter")]
+pub trait IVector3ParameterMethods: IVector3Parameter {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Vector3Parameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Vector3Parameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Interp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn interp(
+        self,
+        from: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        to: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Vector3Parameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Vector3Parameter_unity2_raw::interp(
+                __receiver,
+                ::core::convert::Into::into(from),
+                ::core::convert::Into::into(to),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-vector3parameter")]
+impl<__T: IVector3Parameter> IVector3ParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-vector3parameter")]
 impl Vector3Parameter {
@@ -51,4 +197,20 @@ impl Vector3Parameter {
         <Self as IVector3ParameterMethods>::ctor(this, value, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-vector3parameter")]
+pub mod prelude {
+    pub use super::IVector3Parameter;
+    pub use super::IVector3ParameterMethods;
+    pub use super::Vector3Parameter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

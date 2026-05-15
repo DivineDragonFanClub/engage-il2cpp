@@ -20,11 +20,74 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InstructionFieldUsage_Extensions_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_field_usage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InstructionFieldUsage_Extensions as ::unity2::ClassIdentity>::class(),
+                "GetFieldUsage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InstructionFieldUsage_Extensions as ::unity2::ClassIdentity>::NAME,
+                    "GetFieldUsage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_field_usage(
+        op: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage
+    {
+        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: instructionfieldusage :: InstructionFieldUsage = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_field_usage :: get_offset () as isize) ,) ;
+        inner(op, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
 impl InstructionFieldUsage_Extensions {
     #[doc = "`GetFieldUsage(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)` overload"]
-    #[method(name = "GetFieldUsage", args = 1)]
     pub fn get_field_usage(
-        op: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
-    ) -> crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage;
+        op: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::opcode::OpCode>,
+    ) -> crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage
+    {
+        unsafe {
+            __InstructionFieldUsage_Extensions_unity2_raw::get_field_usage(
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
+pub mod prelude {
+    pub use super::IInstructionFieldUsage_Extensions;
+    pub use super::InstructionFieldUsage_Extensions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

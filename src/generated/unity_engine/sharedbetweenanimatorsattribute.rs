@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute")]
+pub mod prelude {
+    pub use super::ISharedBetweenAnimatorsAttribute;
+    pub use super::SharedBetweenAnimatorsAttribute;
+}

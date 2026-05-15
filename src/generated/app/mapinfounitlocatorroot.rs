@@ -14,146 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapInfoUnitLocatorRoot_TextMeshProKind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapInfoUnitLocatorRoot.TextMeshProKind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapInfoUnitLocatorRoot_TextMeshProKind {
-        pub fn battle_type() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn phys_atk_title() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn phys_atk_value() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn def_title() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn def_value() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mag_atk_title() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mag_atk_value() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn res_title() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn res_value() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn hit_title() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn hit_value() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn avo_title() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn avo_value() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn crit_title() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn crit_value() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn crit_avo_title() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn crit_avo_value() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn skill_title() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn skill_value() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn spd_title() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn spd_value() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn move_title() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn move_value() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn phys_title() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn phys_value() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 25 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot.md"))]
     #[::unity2::class(namespace = "App", name = "MapInfoUnitLocatorRoot")]
     #[parent(crate::app::mapinfobase::MapInfoBase)]
@@ -296,7 +156,7 @@ mod __types {
         pub m_is_dirty_alpha: bool,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -305,14 +165,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MapInfoUnitLocatorRoot_CanvasGroupKind {
+    pub struct MapInfoUnitLocatorRoot_TextMeshProKind {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind {
+    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MapInfoUnitLocatorRoot.CanvasGroupKind";
+        const NAME: &'static str = "MapInfoUnitLocatorRoot.TextMeshProKind";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -321,7 +181,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind {
+    impl ::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -330,45 +190,109 @@ mod __types {
         }
     }
 
-    impl MapInfoUnitLocatorRoot_CanvasGroupKind {
-        pub fn frm1() -> Self {
+    impl MapInfoUnitLocatorRoot_TextMeshProKind {
+        pub fn battle_type() -> Self {
             Self { value: 0 }
         }
 
-        pub fn frm2() -> Self {
+        pub fn phys_atk_title() -> Self {
             Self { value: 1 }
         }
 
-        pub fn info0() -> Self {
+        pub fn phys_atk_value() -> Self {
             Self { value: 2 }
         }
 
-        pub fn info1() -> Self {
+        pub fn def_title() -> Self {
             Self { value: 3 }
         }
 
-        pub fn info2() -> Self {
+        pub fn def_value() -> Self {
             Self { value: 4 }
         }
 
-        pub fn info3() -> Self {
+        pub fn mag_atk_title() -> Self {
             Self { value: 5 }
         }
 
-        pub fn info4() -> Self {
+        pub fn mag_atk_value() -> Self {
             Self { value: 6 }
         }
 
-        pub fn info5() -> Self {
+        pub fn res_title() -> Self {
             Self { value: 7 }
         }
 
-        pub fn info6() -> Self {
+        pub fn res_value() -> Self {
             Self { value: 8 }
         }
 
-        pub fn num() -> Self {
+        pub fn hit_title() -> Self {
             Self { value: 9 }
+        }
+
+        pub fn hit_value() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn avo_title() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn avo_value() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn crit_title() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn crit_value() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn crit_avo_title() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn crit_avo_value() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn skill_title() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn skill_value() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn spd_title() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn spd_value() -> Self {
+            Self { value: 20 }
+        }
+
+        pub fn move_title() -> Self {
+            Self { value: 21 }
+        }
+
+        pub fn move_value() -> Self {
+            Self { value: 22 }
+        }
+
+        pub fn phys_title() -> Self {
+            Self { value: 23 }
+        }
+
+        pub fn phys_value() -> Self {
+            Self { value: 24 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 25 }
         }
     }
 
@@ -707,149 +631,1868 @@ mod __types {
             Self { value: 62 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapInfoUnitLocatorRoot_CanvasGroupKind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapInfoUnitLocatorRoot.CanvasGroupKind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapInfoUnitLocatorRoot_CanvasGroupKind {
+        pub fn frm1() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn frm2() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn info0() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn info1() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn info2() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn info3() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn info4() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn info5() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn info6() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 9 }
+        }
+    }
 }
 
 #[cfg(feature = "app-mapinfounitlocatorroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapinfounitlocatorroot")]
-#[::unity2::methods]
-impl MapInfoUnitLocatorRoot {
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`GetPartInfo()` overload"]
-    #[method(name = "GetPartInfo", args = 0)]
-    pub fn get_part_info(self) -> ();
-
-    #[doc = "`InitPartInfoAlpha()` overload"]
-    #[method(name = "InitPartInfoAlpha", args = 0)]
-    pub fn init_part_info_alpha(self) -> ();
-
-    #[doc = "`GetImage()` overload"]
-    #[method(name = "GetImage", args = 0)]
-    pub fn get_image(self) -> ();
-
-    #[doc = "`InitPageAlpha()` overload"]
-    #[method(name = "InitPageAlpha", args = 0)]
-    pub fn init_page_alpha(self) -> ();
-
-    #[doc = "`UpdatePosition(crate::app::unit::Unit)` overload"]
-    #[method(name = "UpdatePosition", args = 1)]
-    pub fn update_position(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`UpdateParam(crate::app::unit::Unit)` overload"]
-    #[method(name = "UpdateParam", args = 1)]
-    pub fn update_param(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`UpdateActive()` overload"]
-    #[method(name = "UpdateActive", args = 0)]
-    pub fn update_active(self) -> ();
-
-    #[doc = "`IsVisible(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsVisible", args = 1)]
-    pub fn is_visible(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`SetAlphaTotalInfo(bool)` overload"]
-    #[method(name = "SetAlphaTotalInfo", args = 1)]
-    pub fn set_alpha_total_info(self, enable: bool) -> ();
-
-    #[doc = "`SetAlphaPartInfo()` overload"]
-    #[method(name = "SetAlphaPartInfo", args = 0)]
-    pub fn set_alpha_part_info(self) -> ();
-
-    #[doc = "`SetAlphaInfo(crate::app::gameconfig::GameConfig_UnitInfoType, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind, bool)` overload"]
-    #[method(name = "SetAlphaInfo", args = 3)]
-    pub fn set_alpha_info(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapInfoUnitLocatorRoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_part_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "GetPartInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetPartInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_part_info(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_part_info::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_part_info_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "InitPartInfoAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "InitPartInfoAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_part_info_alpha(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_part_info_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "GetImage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetImage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_image(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_image::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_page_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "InitPageAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "InitPageAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_page_alpha(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_page_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "UpdatePosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdatePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_position(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_position::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_param(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_param::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "UpdateActive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "UpdateActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_active(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_active::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_visible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "IsVisible",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsVisible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_visible(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_visible::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha_total_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetAlphaTotalInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetAlphaTotalInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha_total_info(
+        this: MapInfoUnitLocatorRoot,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha_total_info::get_offset() as isize),
+            );
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha_part_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetAlphaPartInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetAlphaPartInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha_part_info(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha_part_info::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameconfig :: GameConfig_UnitInfoType as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_CanvasGroupKind as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetAlphaInfo",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetAlphaInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha_info(
+        this: MapInfoUnitLocatorRoot,
         page: crate::app::gameconfig::GameConfig_UnitInfoType,
         index: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind,
         enabled: bool,
-    ) -> ();
-
-    #[doc = "`IsUpdateAlpha(f32, bool)` overload"]
-    #[method(name = "IsUpdateAlpha", args = 2)]
-    pub fn is_update_alpha(alpha: f32, enable: bool) -> bool;
-
-    #[doc = "`SetUnitInfo(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo", args = 1)]
-    pub fn set_unit_info(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfoValue(i32, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind, bool, bool)` overload"]
-    #[method(name = "SetUnitInfoValue", args = 4)]
-    pub fn set_unit_info_value(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::gameconfig::GameConfig_UnitInfoType,
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_alpha_info::get_offset() as isize),
+        );
+        inner(this, page, index, enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_update_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "IsUpdateAlpha",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsUpdateAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_update_alpha(
+        alpha: *mut f32,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(*mut f32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_update_alpha::get_offset() as isize),
+            );
+        inner(alpha, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfoValue",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfoValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info_value(
+        this: MapInfoUnitLocatorRoot,
         value: i32,
         kind: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
         is_withhold: bool,
         is_sure_hit: bool,
-    ) -> ();
-
-    #[doc = "`SetUnitInfo0(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo0", args = 1)]
-    pub fn set_unit_info0(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo1(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo1", args = 1)]
-    pub fn set_unit_info1(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo2(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo2", args = 1)]
-    pub fn set_unit_info2(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo3(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo3", args = 1)]
-    pub fn set_unit_info3(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo4(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo4", args = 1)]
-    pub fn set_unit_info4(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo5(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo5", args = 1)]
-    pub fn set_unit_info5(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetUnitInfo6(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetUnitInfo6", args = 1)]
-    pub fn set_unit_info6(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetLanguageLabel(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetLanguageLabel", args = 1)]
-    pub fn get_language_label(self, label: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetTitleName(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind)` overload"]
-    #[method(name = "GetTitleName", args = 2)]
-    pub fn get_title_name(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            i32,
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info_value::get_offset() as isize),
+        );
+        inner(
+            this,
+            value,
+            kind,
+            is_withhold,
+            is_sure_hit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info0 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo0",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo0",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info0(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info0::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info1 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo1",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo1",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info1(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info1::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo2",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info2(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info2::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo3",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo3",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info3(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info3::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo4",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo4",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info4(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info4::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo5",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo5",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info5(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info5::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_info6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitInfo6",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitInfo6",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_info6(
+        this: MapInfoUnitLocatorRoot,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_info6::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_language_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "GetLanguageLabel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetLanguageLabel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_language_label(
+        this: MapInfoUnitLocatorRoot,
+        label: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_language_label::get_offset() as isize),
+        );
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_title_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_TextMeshProKind as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "GetTitleName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetTitleName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_title_name(
+        this: MapInfoUnitLocatorRoot,
         unit: crate::app::unit::Unit,
         kind: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetTitleSprite(crate::app::unit::Unit, crate::app::mapinfounit::MapInfoUnit_SpriteKind)` overload"]
-    #[method(name = "GetTitleSprite", args = 2)]
-    pub fn get_title_sprite(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_title_name::get_offset() as isize),
+        );
+        inner(this, unit, kind, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_title_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::mapinfounit::MapInfoUnit_SpriteKind as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "GetTitleSprite",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetTitleSprite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_title_sprite(
+        this: MapInfoUnitLocatorRoot,
         unit: crate::app::unit::Unit,
         kind: crate::app::mapinfounit::MapInfoUnit_SpriteKind,
-    ) -> crate::unity_engine::sprite::Sprite;
-
-    #[doc = "`SetAttackValue(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)` overload"]
-    #[method(name = "SetAttackValue", args = 2)]
-    pub fn set_attack_value(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            crate::app::mapinfounit::MapInfoUnit_SpriteKind,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_title_sprite::get_offset() as isize),
+        );
+        inner(this, unit, kind, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "SetAttackValue",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetAttackValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_attack_value(
+        this: MapInfoUnitLocatorRoot,
         unit: crate::app::unit::Unit,
         kind: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
-    ) -> ();
-
-    #[doc = "`set_IsUpdate(bool)` overload"]
-    #[method(name = "set_IsUpdate", args = 1)]
-    pub fn set_is_update(self, value: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapInfoUnitLocatorRoot,
+            crate::app::unit::Unit,
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_attack_value::get_offset() as isize),
+        );
+        inner(this, unit, kind, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "set_IsUpdate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "set_IsUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_update(
+        this: MapInfoUnitLocatorRoot,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_update::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoUnitLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapInfoUnitLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapInfoUnitLocatorRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapinfounitlocatorroot")]
+impl MapInfoUnitLocatorRoot {
+    #[doc = "`IsUpdateAlpha(*mutf32, bool)` overload"]
+    pub fn is_update_alpha(enable: impl ::core::convert::Into<bool>) -> (bool, f32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
+            let __ret = {
+                __MapInfoUnitLocatorRoot_unity2_raw::is_update_alpha(
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(enable),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "app-mapinfounitlocatorroot")]
+pub trait IMapInfoUnitLocatorRootMethods: IMapInfoUnitLocatorRoot {
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPartInfo()` overload"]
+    fn get_part_info(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::get_part_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitPartInfoAlpha()` overload"]
+    fn init_part_info_alpha(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::init_part_info_alpha(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetImage()` overload"]
+    fn get_image(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::get_image(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitPageAlpha()` overload"]
+    fn init_page_alpha(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::init_page_alpha(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdatePosition(crate::app::unit::Unit)` overload"]
+    fn update_position(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::update_position(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateParam(crate::app::unit::Unit)` overload"]
+    fn update_param(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::update_param(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateActive()` overload"]
+    fn update_active(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::update_active(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsVisible(crate::app::unit::Unit)` overload"]
+    fn is_visible(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::is_visible(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAlphaTotalInfo(bool)` overload"]
+    fn set_alpha_total_info(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_alpha_total_info(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAlphaPartInfo()` overload"]
+    fn set_alpha_part_info(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_alpha_part_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAlphaInfo(crate::app::gameconfig::GameConfig_UnitInfoType, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind, bool)` overload"]
+    fn set_alpha_info(
+        self,
+        page: impl ::core::convert::Into<crate::app::gameconfig::GameConfig_UnitInfoType>,
+        index: impl ::core::convert::Into<
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind,
+        >,
+        enabled: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_alpha_info(
+                __receiver,
+                ::core::convert::Into::into(page),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo(crate::app::unit::Unit)` overload"]
+    fn set_unit_info(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfoValue(i32, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind, bool, bool)` overload"]
+    fn set_unit_info_value(
+        self,
+        value: impl ::core::convert::Into<i32>,
+        kind: impl ::core::convert::Into<
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
+        >,
+        is_withhold: impl ::core::convert::Into<bool>,
+        is_sure_hit: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info_value(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(is_withhold),
+                ::core::convert::Into::into(is_sure_hit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo0(crate::app::unit::Unit)` overload"]
+    fn set_unit_info0(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info0(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo1(crate::app::unit::Unit)` overload"]
+    fn set_unit_info1(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info1(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo2(crate::app::unit::Unit)` overload"]
+    fn set_unit_info2(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo3(crate::app::unit::Unit)` overload"]
+    fn set_unit_info3(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info3(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo4(crate::app::unit::Unit)` overload"]
+    fn set_unit_info4(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info4(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo5(crate::app::unit::Unit)` overload"]
+    fn set_unit_info5(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info5(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitInfo6(crate::app::unit::Unit)` overload"]
+    fn set_unit_info6(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_unit_info6(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLanguageLabel(::unity2::Il2CppString)` overload"]
+    fn get_language_label(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::get_language_label(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTitleName(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind)` overload"]
+    fn get_title_name(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        kind: impl ::core::convert::Into<
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::get_title_name(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(kind),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTitleSprite(crate::app::unit::Unit, crate::app::mapinfounit::MapInfoUnit_SpriteKind)` overload"]
+    fn get_title_sprite(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        kind: impl ::core::convert::Into<crate::app::mapinfounit::MapInfoUnit_SpriteKind>,
+    ) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::get_title_sprite(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(kind),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAttackValue(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)` overload"]
+    fn set_attack_value(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        kind: impl ::core::convert::Into<
+            crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_attack_value(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(kind),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsUpdate(bool)` overload"]
+    fn set_is_update(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::set_is_update(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapInfoUnitLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapInfoUnitLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapinfounitlocatorroot")]
+impl<__T: IMapInfoUnitLocatorRoot> IMapInfoUnitLocatorRootMethods for __T {}
 
 #[cfg(feature = "app-mapinfounitlocatorroot")]
 impl MapInfoUnitLocatorRoot {
@@ -865,4 +2508,38 @@ impl MapInfoUnitLocatorRoot {
         <Self as IMapInfoUnitLocatorRootMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mapinfounitlocatorroot")]
+pub mod prelude {
+    pub use super::IMapInfoUnitLocatorRoot;
+    pub use super::IMapInfoUnitLocatorRootMethods;
+    pub use super::MapInfoUnitLocatorRoot;
+    pub use super::MapInfoUnitLocatorRoot_CanvasGroupKind;
+    pub use super::MapInfoUnitLocatorRoot_ImageKind;
+    pub use super::MapInfoUnitLocatorRoot_TextMeshProKind;
+    pub use crate::app::mapinfobase::IMapInfoBase;
+    #[cfg(feature = "app-mapinfobase")]
+    pub use crate::app::mapinfobase::IMapInfoBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

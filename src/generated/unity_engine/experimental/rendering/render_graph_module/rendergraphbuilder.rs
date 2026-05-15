@@ -46,85 +46,1010 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphbuilder")]
-#[::unity2::methods(value)]
-impl RenderGraphBuilder {
-    #[doc = "`UseColorBuffer(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle, i32)` overload"]
-    #[method(name = "UseColorBuffer", args = 2)]
-    pub fn use_color_buffer (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , index : i32) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`UseDepthBuffer(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle, crate::unity_engine::experimental::rendering::render_graph_module::depthaccess::DepthAccess)` overload"]
-    #[method(name = "UseDepthBuffer", args = 2)]
-    pub fn use_depth_buffer (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , flags : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: depthaccess :: DepthAccess) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`ReadTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "ReadTexture", args = 1)]
-    pub fn read_texture (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`WriteTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "WriteTexture", args = 1)]
-    pub fn write_texture (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`CreateTransientTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc)` overload"]
-    #[method(name = "CreateTransientTexture", args = 1)]
-    pub fn create_transient_texture (self , desc : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`CreateTransientTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "CreateTransientTexture", args = 1)]
-    pub fn create_transient_texture_2 (self , texture : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`UseRendererList(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"]
-    #[method(name = "UseRendererList", args = 1)]
-    pub fn use_renderer_list (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle ;
-
-    #[doc = "`ReadComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]
-    #[method(name = "ReadComputeBuffer", args = 1)]
-    pub fn read_compute_buffer (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`WriteComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]
-    #[method(name = "WriteComputeBuffer", args = 1)]
-    pub fn write_compute_buffer (self , input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`CreateTransientComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferdesc::ComputeBufferDesc)` overload"]
-    #[method(name = "CreateTransientComputeBuffer", args = 1)]
-    pub fn create_transient_compute_buffer (self , desc : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`CreateTransientComputeBuffer(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]
-    #[method(name = "CreateTransientComputeBuffer", args = 1)]
-    pub fn create_transient_compute_buffer_2 (self , computebuffer : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
-
-    #[doc = "`EnableAsyncCompute(bool)` overload"]
-    #[method(name = "EnableAsyncCompute", args = 1)]
-    pub fn enable_async_compute(self, value: bool) -> ();
-
-    #[doc = "`AllowPassCulling(bool)` overload"]
-    #[method(name = "AllowPassCulling", args = 1)]
-    pub fn allow_pass_culling(self, value: bool) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourceregistry::RenderGraphResourceRegistry, crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraphBuilder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_color_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "UseColorBuffer",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "UseColorBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn use_color_buffer (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_use_color_buffer :: get_offset () as isize) ,) ;
+        inner(this, input, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_depth_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: depthaccess :: DepthAccess as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "UseDepthBuffer",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "UseDepthBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn use_depth_buffer (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , flags : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: depthaccess :: DepthAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: depthaccess :: DepthAccess , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_use_depth_buffer :: get_offset () as isize) ,) ;
+        inner(this, input, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "ReadTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "ReadTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn read_texture (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_read_texture :: get_offset () as isize) ,) ;
+        inner(this, input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "WriteTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "WriteTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn write_texture (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_write_texture :: get_offset () as isize) ,) ;
+        inner(this, input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_transient_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "CreateTransientTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CreateTransientTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_transient_texture (this : RenderGraphBuilder , desc : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_transient_texture :: get_offset () as isize) ,) ;
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_transient_texture_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "CreateTransientTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CreateTransientTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_transient_texture_2 (this : RenderGraphBuilder , texture : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_transient_texture_2 :: get_offset () as isize) ,) ;
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_use_renderer_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "UseRendererList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "UseRendererList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn use_renderer_list (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_use_renderer_list :: get_offset () as isize) ,) ;
+        inner(this, input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_compute_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "ReadComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "ReadComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn read_compute_buffer (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_read_compute_buffer :: get_offset () as isize) ,) ;
+        inner(this, input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_compute_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "WriteComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "WriteComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn write_compute_buffer (this : RenderGraphBuilder , input : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_write_compute_buffer :: get_offset () as isize) ,) ;
+        inner(this, input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_transient_compute_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "CreateTransientComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CreateTransientComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_transient_compute_buffer (this : RenderGraphBuilder , desc : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_transient_compute_buffer :: get_offset () as isize) ,) ;
+        inner(this, desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_transient_compute_buffer_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "CreateTransientComputeBuffer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CreateTransientComputeBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create_transient_compute_buffer_2 (this : RenderGraphBuilder , computebuffer : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle{
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_transient_compute_buffer_2 :: get_offset () as isize) ,) ;
+        inner(this, computebuffer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_async_compute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "EnableAsyncCompute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "EnableAsyncCompute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn enable_async_compute(
+        this: RenderGraphBuilder,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphBuilder, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_enable_async_compute::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allow_pass_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "AllowPassCulling",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "AllowPassCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allow_pass_culling(
+        this: RenderGraphBuilder,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphBuilder, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_allow_pass_culling::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: RenderGraphBuilder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphBuilder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderGraphBuilder,
         render_pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass,
         resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry,
         render_graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphBuilder , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            render_pass,
+            resources,
+            render_graph,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose_2(
+        this: RenderGraphBuilder,
+        disposing: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphBuilder, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose_2::get_offset() as isize),
+            );
+        inner(this, disposing, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_resource {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "CheckResource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "CheckResource",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_resource(
+        this: RenderGraphBuilder,
+        res : * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphBuilder , * mut crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_check_resource :: get_offset () as isize) ,) ;
+        inner(this, res, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_debug_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "GenerateDebugData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                    "GenerateDebugData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_debug_data(
+        this: RenderGraphBuilder,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphBuilder, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_generate_debug_data::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+}
 
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose_2(self, disposing: bool) -> ();
-
-    #[doc = "`CheckResource(crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)` overload"]
-    #[method(name = "CheckResource", args = 1)]
-    pub fn check_resource(
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphbuilder")]
+impl RenderGraphBuilder {
+    #[doc = "`UseColorBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle, i32)` overload"]    pub fn use_color_buffer (self , index : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::use_color_buffer(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(index),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`UseDepthBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle, crate::unity_engine::experimental::rendering::render_graph_module::depthaccess::DepthAccess)` overload"]    pub fn use_depth_buffer (self , flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: depthaccess :: DepthAccess >) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::use_depth_buffer(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(flags),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ReadTexture(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]    pub fn read_texture (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::read_texture(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`WriteTexture(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]    pub fn write_texture (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::write_texture(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateTransientTexture(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc)` overload"]    pub fn create_transient_texture (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::create_transient_texture(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateTransientTexture(*mutcrate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]    pub fn create_transient_texture_2 (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::create_transient_texture_2(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`UseRendererList(*mutcrate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"]    pub fn use_renderer_list (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::use_renderer_list(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ReadComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]    pub fn read_compute_buffer (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::read_compute_buffer(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`WriteComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]    pub fn write_compute_buffer (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::write_compute_buffer(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateTransientComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferdesc::ComputeBufferDesc)` overload"]    pub fn create_transient_compute_buffer (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::create_transient_compute_buffer(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`CreateTransientComputeBuffer(*mutcrate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]    pub fn create_transient_compute_buffer_2 (self ,) -> (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle > :: uninit () ;
+            let __ret = {
+                __RenderGraphBuilder_unity2_raw::create_transient_compute_buffer_2(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    pub fn set_render_func<M0: ::unity2::IlType + ::core::marker::Copy>(
         self,
-        res : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
-    ) -> ();
-
+        render_func : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < M0 > >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::class(),
+                "SetRenderFunc",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <RenderGraphBuilder as ::unity2::ClassIdentity>::NAME,
+                "SetRenderFunc",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f : extern "C" fn (RenderGraphBuilder , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                self,
+                ::core::convert::Into::into(render_func),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`EnableAsyncCompute(bool)` overload"]
+    pub fn enable_async_compute(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RenderGraphBuilder_unity2_raw::enable_async_compute(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllowPassCulling(bool)` overload"]
+    pub fn allow_pass_culling(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RenderGraphBuilder_unity2_raw::allow_pass_culling(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __RenderGraphBuilder_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourceregistry::RenderGraphResourceRegistry, crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
+    pub fn ctor(
+        self,
+        render_pass : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass >,
+        resources : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry >,
+        render_graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph >,
+    ) -> () {
+        unsafe {
+            __RenderGraphBuilder_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(render_pass),
+                ::core::convert::Into::into(resources),
+                ::core::convert::Into::into(render_graph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose(bool)` overload"]
+    pub fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RenderGraphBuilder_unity2_raw::dispose_2(
+                self,
+                ::core::convert::Into::into(disposing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckResource(*mutcrate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)` overload"]    pub fn check_resource (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle{
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle > :: uninit () ;
+            __RenderGraphBuilder_unity2_raw::check_resource(
+                self,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
     #[doc = "`GenerateDebugData(bool)` overload"]
-    #[method(name = "GenerateDebugData", args = 1)]
-    pub fn generate_debug_data(self, value: bool) -> ();
+    pub fn generate_debug_data(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RenderGraphBuilder_unity2_raw::generate_debug_data(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphbuilder")]
+pub mod prelude {
+    pub use super::RenderGraphBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

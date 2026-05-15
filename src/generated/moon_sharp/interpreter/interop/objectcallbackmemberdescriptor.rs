@@ -31,16 +31,103 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
-#[::unity2::methods]
-impl ObjectCallbackMemberDescriptor {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, func_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::system::object::Object>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ObjectCallbackMemberDescriptor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ObjectCallbackMemberDescriptor,
+        func_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectCallbackMemberDescriptor,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, func_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::func_4::Func_4<
+                    crate::system::object::Object,
+                    crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                    crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                    crate::system::object::Object,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: ObjectCallbackMemberDescriptor,
         func_name: ::unity2::Il2CppString,
         call_back: crate::system::func_4::Func_4<
             crate::system::object::Object,
@@ -48,12 +135,60 @@ impl ObjectCallbackMemberDescriptor {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::object::Object,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::system::object::Object>, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectCallbackMemberDescriptor,
+            ::unity2::Il2CppString,
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::system::object::Object,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, func_name, call_back, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_4 :: Func_4 < crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: ObjectCallbackMemberDescriptor,
         func_name: ::unity2::Il2CppString,
         call_back: crate::system::func_4::Func_4<
             crate::system::object::Object,
@@ -62,18 +197,169 @@ impl ObjectCallbackMemberDescriptor {
             crate::system::object::Object,
         >,
         parameters : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
-    ) -> ();
-
-    #[doc = "`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
-    #[method(name = "Execute", args = 4)]
-    pub fn execute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ObjectCallbackMemberDescriptor , :: unity2 :: Il2CppString , crate :: system :: func_4 :: Func_4 < crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , crate :: system :: object :: Object > , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_3 :: get_offset () as isize) ,) ;
+        inner(this, func_name, call_back, parameters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectCallbackMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: ObjectCallbackMemberDescriptor,
         script: crate::moon_sharp::interpreter::script::Script,
         obj: crate::system::object::Object,
         context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            ObjectCallbackMemberDescriptor,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute::get_offset() as isize),
+        );
+        inner(this, script, obj, context, args, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+pub trait IObjectCallbackMemberDescriptorMethods: IObjectCallbackMemberDescriptor {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, func_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <ObjectCallbackMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ObjectCallbackMemberDescriptor_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(func_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::system::object::Object>)` overload"]
+    fn ctor_2(
+        self,
+        func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        call_back: impl ::core::convert::Into<
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::system::object::Object,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ObjectCallbackMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ObjectCallbackMemberDescriptor_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(func_name),
+                ::core::convert::Into::into(call_back),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::system::object::Object>, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]
+    fn ctor_3(
+        self,
+        func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        call_back: impl ::core::convert::Into<
+            crate::system::func_4::Func_4<
+                crate::system::object::Object,
+                crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+                crate::system::object::Object,
+            >,
+        >,
+        parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ObjectCallbackMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ObjectCallbackMemberDescriptor_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(func_name),
+                ::core::convert::Into::into(call_back),
+                ::core::convert::Into::into(parameters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
+    fn execute(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        context: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        >,
+        args: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver =
+                <ObjectCallbackMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ObjectCallbackMemberDescriptor_unity2_raw::execute(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(context),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+impl<__T: IObjectCallbackMemberDescriptor> IObjectCallbackMemberDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
 impl ObjectCallbackMemberDescriptor {
@@ -134,4 +420,17 @@ impl ObjectCallbackMemberDescriptor {
         );
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+pub mod prelude {
+    pub use super::IObjectCallbackMemberDescriptor;
+    pub use super::IObjectCallbackMemberDescriptorMethods;
+    pub use super::ObjectCallbackMemberDescriptor;
+    pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase;
+    #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
+    pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBaseMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -63,3 +63,19 @@ impl<T0: ::unity2::ClassIdentity> SingletonScriptableObject_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-singletonscriptableobject_1")]
+pub mod prelude {
+    pub use super::ISingletonScriptableObject_1;
+    pub use super::ISingletonScriptableObject_1Methods;
+    pub use super::SingletonScriptableObject_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+}

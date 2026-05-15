@@ -74,116 +74,1301 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-touchscreenkeyboard")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TouchScreenKeyboard_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "Internal_Destroy",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_destroy(
+        ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_destroy::get_offset() as isize),
+            );
+        inner(ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Finalize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TouchScreenKeyboard,
+        text: ::unity2::Il2CppString,
+        keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+        autocorrection: bool,
+        multiline: bool,
+        secure: bool,
+        alert: bool,
+        text_placeholder: ::unity2::Il2CppString,
+        character_limit: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TouchScreenKeyboard,
+            ::unity2::Il2CppString,
+            crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+            bool,
+            bool,
+            bool,
+            bool,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            text,
+            keyboard_type,
+            autocorrection,
+            multiline,
+            secure,
+            alert,
+            text_placeholder,
+            character_limit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_touch_screen_keyboard_internal_constructor_helper {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "TouchScreenKeyboard_InternalConstructorHelper",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "TouchScreenKeyboard_InternalConstructorHelper",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn touch_screen_keyboard_internal_constructor_helper(
+        arguments : * mut crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments,
+        text: ::unity2::Il2CppString,
+        text_placeholder: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner : extern "C" fn (* mut crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_touch_screen_keyboard_internal_constructor_helper :: get_offset () as isize) ,) ;
+        inner(arguments, text, text_placeholder, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_supported {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_isSupported",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_isSupported",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_supported(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_supported::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_in_place_editing_allowed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_isInPlaceEditingAllowed",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_isInPlaceEditingAllowed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_in_place_editing_allowed(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_in_place_editing_allowed::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "Open",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Open",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open(
+        text: ::unity2::Il2CppString,
+        keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+        autocorrection: bool,
+        multiline: bool,
+        secure: bool,
+        alert: bool,
+        text_placeholder: ::unity2::Il2CppString,
+        character_limit: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+            bool,
+            bool,
+            bool,
+            bool,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open::get_offset() as isize),
+            );
+        inner(
+            text,
+            keyboard_type,
+            autocorrection,
+            multiline,
+            secure,
+            alert,
+            text_placeholder,
+            character_limit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_text",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            TouchScreenKeyboard,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "set_text",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "set_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text(
+        this: TouchScreenKeyboard,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TouchScreenKeyboard,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hide_input {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "set_hideInput",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "set_hideInput",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hide_input(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hide_input::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_active",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_active",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_active::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "set_active",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "set_active",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: TouchScreenKeyboard,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TouchScreenKeyboard, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_status",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_status",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_status(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard_Status {
+        let inner : extern "C" fn (TouchScreenKeyboard , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_status :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_limit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "set_characterLimit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "set_characterLimit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_limit(
+        this: TouchScreenKeyboard,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TouchScreenKeyboard, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_character_limit::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_get_selection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_canGetSelection",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_canGetSelection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_get_selection(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_can_get_selection::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_selection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_canSetSelection",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_canSetSelection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_set_selection(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_can_set_selection::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_selection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_selection",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_selection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_selection(
+        this: TouchScreenKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rangeint::RangeInt {
+        let inner: extern "C" fn(
+            TouchScreenKeyboard,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rangeint::RangeInt = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_selection::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_selection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rangeint::RangeInt as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "set_selection",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "set_selection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_selection(
+        this: TouchScreenKeyboard,
+        value: crate::unity_engine::rangeint::RangeInt,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TouchScreenKeyboard,
+            crate::unity_engine::rangeint::RangeInt,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_selection::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_selection_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "GetSelection",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "GetSelection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_selection_2(
+        start: *mut i32,
+        length: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(*mut i32, *mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_selection_2::get_offset() as isize),
+            );
+        inner(start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_selection_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenKeyboard as ::unity2::ClassIdentity>::class(),
+                "SetSelection",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TouchScreenKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "SetSelection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_selection_2(
+        start: i32,
+        length: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_selection_2::get_offset() as isize),
+        );
+        inner(start, length, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-touchscreenkeyboard")]
 impl TouchScreenKeyboard {
     #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
-    #[method(name = "Internal_Destroy", args = 1)]
-    pub fn internal_destroy(ptr: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, bool, bool, bool, bool, ::unity2::Il2CppString, i32)` overload"]
-    #[method(name = ".ctor", args = 8)]
-    pub fn ctor(
-        self,
-        text: ::unity2::Il2CppString,
-        keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
-        autocorrection: bool,
-        multiline: bool,
-        secure: bool,
-        alert: bool,
-        text_placeholder: ::unity2::Il2CppString,
-        character_limit: i32,
-    ) -> ();
-
-    #[doc = "`TouchScreenKeyboard_InternalConstructorHelper(crate::unity_engine::touchscreenkeyboard_internalconstructorhelperarguments::TouchScreenKeyboard_InternalConstructorHelperArguments, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "TouchScreenKeyboard_InternalConstructorHelper", args = 3)]
-    pub fn touch_screen_keyboard_internal_constructor_helper(
-        arguments : crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments,
-        text: ::unity2::Il2CppString,
-        text_placeholder: ::unity2::Il2CppString,
-    ) -> ::unity2::IntPtr;
-
+    pub fn internal_destroy(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            __TouchScreenKeyboard_unity2_raw::internal_destroy(
+                ::core::convert::Into::into(ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TouchScreenKeyboard_InternalConstructorHelper(*mutcrate::unity_engine::touchscreenkeyboard_internalconstructorhelperarguments::TouchScreenKeyboard_InternalConstructorHelperArguments, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]    pub fn touch_screen_keyboard_internal_constructor_helper (text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , text_placeholder : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (:: unity2 :: IntPtr , crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: touchscreenkeyboard_internalconstructorhelperarguments :: TouchScreenKeyboard_InternalConstructorHelperArguments > :: uninit () ;
+            let __ret = {
+                __TouchScreenKeyboard_unity2_raw::touch_screen_keyboard_internal_constructor_helper(
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(text),
+                    ::core::convert::Into::into(text_placeholder),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
     #[doc = "`get_isSupported()` overload"]
-    #[method(name = "get_isSupported", args = 0)]
-    pub fn get_is_supported() -> bool;
-
+    pub fn get_is_supported() -> bool {
+        unsafe { __TouchScreenKeyboard_unity2_raw::get_is_supported(::core::option::Option::None) }
+    }
     #[doc = "`get_isInPlaceEditingAllowed()` overload"]
-    #[method(name = "get_isInPlaceEditingAllowed", args = 0)]
-    pub fn get_is_in_place_editing_allowed() -> bool;
-
+    pub fn get_is_in_place_editing_allowed() -> bool {
+        unsafe {
+            __TouchScreenKeyboard_unity2_raw::get_is_in_place_editing_allowed(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Open(::unity2::Il2CppString, crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, bool, bool, bool, bool, ::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "Open", args = 8)]
     pub fn open(
-        text: ::unity2::Il2CppString,
-        keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
-        autocorrection: bool,
-        multiline: bool,
-        secure: bool,
-        alert: bool,
-        text_placeholder: ::unity2::Il2CppString,
-        character_limit: i32,
-    ) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard;
-
-    #[doc = "`get_text()` overload"]
-    #[method(name = "get_text", args = 0)]
-    pub fn get_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_text", args = 1)]
-    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
-
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        keyboard_type: impl ::core::convert::Into<
+            crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+        >,
+        autocorrection: impl ::core::convert::Into<bool>,
+        multiline: impl ::core::convert::Into<bool>,
+        secure: impl ::core::convert::Into<bool>,
+        alert: impl ::core::convert::Into<bool>,
+        text_placeholder: impl ::core::convert::Into<::unity2::Il2CppString>,
+        character_limit: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard {
+        unsafe {
+            __TouchScreenKeyboard_unity2_raw::open(
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(keyboard_type),
+                ::core::convert::Into::into(autocorrection),
+                ::core::convert::Into::into(multiline),
+                ::core::convert::Into::into(secure),
+                ::core::convert::Into::into(alert),
+                ::core::convert::Into::into(text_placeholder),
+                ::core::convert::Into::into(character_limit),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_hideInput(bool)` overload"]
-    #[method(name = "set_hideInput", args = 1)]
-    pub fn set_hide_input(value: bool) -> ();
-
-    #[doc = "`get_active()` overload"]
-    #[method(name = "get_active", args = 0)]
-    pub fn get_active(self) -> bool;
-
-    #[doc = "`set_active(bool)` overload"]
-    #[method(name = "set_active", args = 1)]
-    pub fn set_active(self, value: bool) -> ();
-
-    #[doc = "`get_status()` overload"]
-    #[method(name = "get_status", args = 0)]
-    pub fn get_status(self)
-        -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard_Status;
-
-    #[doc = "`set_characterLimit(i32)` overload"]
-    #[method(name = "set_characterLimit", args = 1)]
-    pub fn set_character_limit(self, value: i32) -> ();
-
-    #[doc = "`get_canGetSelection()` overload"]
-    #[method(name = "get_canGetSelection", args = 0)]
-    pub fn get_can_get_selection(self) -> bool;
-
-    #[doc = "`get_canSetSelection()` overload"]
-    #[method(name = "get_canSetSelection", args = 0)]
-    pub fn get_can_set_selection(self) -> bool;
-
-    #[doc = "`get_selection()` overload"]
-    #[method(name = "get_selection", args = 0)]
-    pub fn get_selection(self) -> crate::unity_engine::rangeint::RangeInt;
-
-    #[doc = "`set_selection(crate::unity_engine::rangeint::RangeInt)` overload"]
-    #[method(name = "set_selection", args = 1)]
-    pub fn set_selection(self, value: crate::unity_engine::rangeint::RangeInt) -> ();
-
-    #[doc = "`GetSelection(i32, i32)` overload"]
-    #[method(name = "GetSelection", args = 2)]
-    pub fn get_selection_2(start: i32, length: i32) -> ();
-
+    pub fn set_hide_input(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __TouchScreenKeyboard_unity2_raw::set_hide_input(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSelection(*muti32, *muti32)` overload"]
+    pub fn get_selection_2() -> (i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TouchScreenKeyboard_unity2_raw::get_selection_2(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
     #[doc = "`SetSelection(i32, i32)` overload"]
-    #[method(name = "SetSelection", args = 2)]
-    pub fn set_selection_2(start: i32, length: i32) -> ();
+    pub fn set_selection_2(
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TouchScreenKeyboard_unity2_raw::set_selection_2(
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-touchscreenkeyboard")]
+pub trait ITouchScreenKeyboardMethods: ITouchScreenKeyboard {
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, bool, bool, bool, bool, ::unity2::Il2CppString, i32)` overload"]
+    fn ctor(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        keyboard_type: impl ::core::convert::Into<
+            crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+        >,
+        autocorrection: impl ::core::convert::Into<bool>,
+        multiline: impl ::core::convert::Into<bool>,
+        secure: impl ::core::convert::Into<bool>,
+        alert: impl ::core::convert::Into<bool>,
+        text_placeholder: impl ::core::convert::Into<::unity2::Il2CppString>,
+        character_limit: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(keyboard_type),
+                ::core::convert::Into::into(autocorrection),
+                ::core::convert::Into::into(multiline),
+                ::core::convert::Into::into(secure),
+                ::core::convert::Into::into(alert),
+                ::core::convert::Into::into(text_placeholder),
+                ::core::convert::Into::into(character_limit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_text()` overload"]
+    fn get_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
+    fn set_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::set_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_active()` overload"]
+    fn get_active(self) -> bool {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_active(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_active(bool)` overload"]
+    fn set_active(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_status()` overload"]
+    fn get_status(self) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard_Status {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_status(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_characterLimit(i32)` overload"]
+    fn set_character_limit(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::set_character_limit(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_canGetSelection()` overload"]
+    fn get_can_get_selection(self) -> bool {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_can_get_selection(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_canSetSelection()` overload"]
+    fn get_can_set_selection(self) -> bool {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_can_set_selection(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_selection()` overload"]
+    fn get_selection(self) -> crate::unity_engine::rangeint::RangeInt {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::get_selection(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_selection(crate::unity_engine::rangeint::RangeInt)` overload"]
+    fn set_selection(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rangeint::RangeInt>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TouchScreenKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TouchScreenKeyboard_unity2_raw::set_selection(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-touchscreenkeyboard")]
+impl<__T: ITouchScreenKeyboard> ITouchScreenKeyboardMethods for __T {}
 
 #[cfg(feature = "unity_engine-touchscreenkeyboard")]
 impl TouchScreenKeyboard {
@@ -218,4 +1403,21 @@ impl TouchScreenKeyboard {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-touchscreenkeyboard")]
+pub mod prelude {
+    pub use super::ITouchScreenKeyboard;
+    pub use super::ITouchScreenKeyboardMethods;
+    pub use super::TouchScreenKeyboard;
+    pub use super::TouchScreenKeyboard_Status;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -25,201 +25,2453 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gamecalculatorcommand")]
-#[::unity2::methods]
-impl GameCalculatorCommand {
-    #[doc = "`GetImpl(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetImpl", args = 1)]
-    pub fn get_impl(self, unit: crate::app::unit::Unit) -> f32;
-
-    #[doc = "`GetImpl(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "GetImpl", args = 1)]
-    pub fn get_impl_2(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
-
-    #[doc = "`TryGetImpl(crate::app::unit::Unit)` overload"]
-    #[method(name = "TryGetImpl", args = 1)]
-    pub fn try_get_impl(self, unit: crate::app::unit::Unit) -> f32;
-
-    #[doc = "`SetImpl(crate::app::unit::Unit, f32)` overload"]
-    #[method(name = "SetImpl", args = 2)]
-    pub fn set_impl(self, unit: crate::app::unit::Unit, value: f32) -> ();
-
-    #[doc = "`SetImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
-    #[method(name = "SetImpl", args = 2)]
-    pub fn set_impl_2(self, side: crate::app::battleinfoside::BattleInfoSide, value: f32) -> ();
-
-    #[doc = "`TrySetImpl(crate::app::unit::Unit, f32)` overload"]
-    #[method(name = "TrySetImpl", args = 2)]
-    pub fn try_set_impl(self, unit: crate::app::unit::Unit, value: f32) -> ();
-
-    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameCalculatorCommand_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "GetImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "GetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_impl::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "GetImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "GetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_impl_2(
+        this: GameCalculatorCommand,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_impl_2::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "TryGetImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "TryGetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_impl::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "SetImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "SetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_impl::get_offset() as isize),
+        );
+        inner(this, unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "SetImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "SetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_impl_2(
+        this: GameCalculatorCommand,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_impl_2::get_offset() as isize),
+        );
+        inner(this, side, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "TrySetImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "TrySetImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_set_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_set_impl::get_offset() as isize),
+        );
+        inner(this, unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "FuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "FuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_impl(
+        this: GameCalculatorCommand,
         unit: crate::app::unit::Unit,
         args: crate::system::collections::generic::list_1::List_1<f32>,
-    ) -> f32;
-
-    #[doc = "`FuncImpl(crate::app::battleinfoside::BattleInfoSide, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            crate::system::collections::generic::list_1::List_1<f32>,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_impl::get_offset() as isize),
+        );
+        inner(this, unit, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "FuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "FuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_impl_2(
+        this: GameCalculatorCommand,
         side: crate::app::battleinfoside::BattleInfoSide,
         args: crate::system::collections::generic::list_1::List_1<f32>,
-    ) -> f32;
-
-    #[doc = "`TryFuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "TryFuncImpl", args = 2)]
-    pub fn try_func_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::system::collections::generic::list_1::List_1<f32>,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_impl_2::get_offset() as isize),
+        );
+        inner(this, side, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_func_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "TryFuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "TryFuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_func_impl(
+        this: GameCalculatorCommand,
         unit: crate::app::unit::Unit,
         args: crate::system::collections::generic::list_1::List_1<f32>,
-    ) -> f32;
-
-    #[doc = "`FuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl_3(self, unit: crate::app::unit::Unit, arg: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`FuncImpl(crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            crate::system::collections::generic::list_1::List_1<f32>,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_func_impl::get_offset() as isize),
+        );
+        inner(this, unit, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_impl_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "FuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "FuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_impl_3(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        arg: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_impl_3::get_offset() as isize),
+        );
+        inner(this, unit, arg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_impl_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "FuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "FuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_impl_4(
+        this: GameCalculatorCommand,
         side: crate::app::battleinfoside::BattleInfoSide,
         arg: ::unity2::Il2CppString,
-    ) -> f32;
-
-    #[doc = "`TryFuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
-    #[method(name = "TryFuncImpl", args = 2)]
-    pub fn try_func_impl_2(self, unit: crate::app::unit::Unit, arg: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`AddImpl(crate::app::unit::Unit, f32)` overload"]
-    #[method(name = "AddImpl", args = 2)]
-    pub fn add_impl(self, unit: crate::app::unit::Unit, value: f32) -> ();
-
-    #[doc = "`AddImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
-    #[method(name = "AddImpl", args = 2)]
-    pub fn add_impl_2(self, side: crate::app::battleinfoside::BattleInfoSide, value: f32) -> ();
-
-    #[doc = "`ScaleImpl(crate::app::unit::Unit, f32)` overload"]
-    #[method(name = "ScaleImpl", args = 2)]
-    pub fn scale_impl(self, unit: crate::app::unit::Unit, value: f32) -> ();
-
-    #[doc = "`ScaleImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
-    #[method(name = "ScaleImpl", args = 2)]
-    pub fn scale_impl_2(self, side: crate::app::battleinfoside::BattleInfoSide, value: f32) -> ();
-
-    #[doc = "`GetInvalid()` overload"]
-    #[method(name = "GetInvalid", args = 0)]
-    pub fn get_invalid(self) -> f32;
-
-    #[doc = "`Get(crate::system::object::Object)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, obj: crate::system::object::Object) -> f32;
-
-    #[doc = "`Get(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Get", args = 2)]
-    pub fn get_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_impl_4::get_offset() as isize),
+        );
+        inner(this, side, arg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_func_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "TryFuncImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "TryFuncImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_func_impl_2(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        arg: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_func_impl_2::get_offset() as isize),
+        );
+        inner(this, unit, arg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "AddImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "AddImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_impl::get_offset() as isize),
+        );
+        inner(this, unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "AddImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "AddImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_impl_2(
+        this: GameCalculatorCommand,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_impl_2::get_offset() as isize),
+        );
+        inner(this, side, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "ScaleImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "ScaleImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_impl(
+        this: GameCalculatorCommand,
+        unit: crate::app::unit::Unit,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::unit::Unit,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scale_impl::get_offset() as isize),
+        );
+        inner(this, unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "ScaleImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "ScaleImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_impl_2(
+        this: GameCalculatorCommand,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::app::battleinfoside::BattleInfoSide,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scale_impl_2::get_offset() as isize),
+        );
+        inner(this, side, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_invalid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "GetInvalid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "GetInvalid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_invalid(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_invalid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Get",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: GameCalculatorCommand,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Get",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_2(
+        this: GameCalculatorCommand,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> f32;
-
-    #[doc = "`Set(f32, crate::system::object::Object)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, value: f32, obj: crate::system::object::Object) -> ();
-
-    #[doc = "`Set(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_2::get_offset() as isize),
+        );
+        inner(this, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: GameCalculatorCommand,
+        value: f32,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, value, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Set",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_2(
+        this: GameCalculatorCommand,
         value: f32,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]
-    #[method(name = "Func", args = 2)]
-    pub fn func(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_2::get_offset() as isize),
+        );
+        inner(this, value, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Func",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func(
+        this: GameCalculatorCommand,
         args: crate::system::collections::generic::list_1::List_1<f32>,
         obj: crate::system::object::Object,
-    ) -> f32;
-
-    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Func", args = 3)]
-    pub fn func_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::system::collections::generic::list_1::List_1<f32>,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func::get_offset() as isize),
+        );
+        inner(this, args, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Func",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_2(
+        this: GameCalculatorCommand,
         args: crate::system::collections::generic::list_1::List_1<f32>,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> f32;
-
-    #[doc = "`Func(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = "Func", args = 2)]
-    pub fn func_3(self, arg: ::unity2::Il2CppString, obj: crate::system::object::Object) -> f32;
-
-    #[doc = "`Func(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Func", args = 3)]
-    pub fn func_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            crate::system::collections::generic::list_1::List_1<f32>,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_2::get_offset() as isize),
+        );
+        inner(this, args, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Func",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_3(
+        this: GameCalculatorCommand,
+        arg: ::unity2::Il2CppString,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_3::get_offset() as isize),
+        );
+        inner(this, arg, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_func_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Func",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Func",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn func_4(
+        this: GameCalculatorCommand,
         arg: ::unity2::Il2CppString,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> f32;
-
-    #[doc = "`Add(f32, crate::system::object::Object)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(self, value: f32, obj: crate::system::object::Object) -> ();
-
-    #[doc = "`Add(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_func_4::get_offset() as isize),
+        );
+        inner(this, arg, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: GameCalculatorCommand,
+        value: f32,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, value, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_2(
+        this: GameCalculatorCommand,
         value: f32,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Scale(f32, crate::system::object::Object)` overload"]
-    #[method(name = "Scale", args = 2)]
-    pub fn scale(self, value: f32, obj: crate::system::object::Object) -> ();
-
-    #[doc = "`Scale(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Scale", args = 3)]
-    pub fn scale_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_2::get_offset() as isize),
+        );
+        inner(this, value, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Scale",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Scale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale(
+        this: GameCalculatorCommand,
+        value: f32,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scale::get_offset() as isize),
+        );
+        inner(this, value, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scale_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Scale",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Scale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scale_2(
+        this: GameCalculatorCommand,
         value: f32,
         obj1: crate::system::object::Object,
         obj2: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`get_Header()` overload"]
-    #[method(name = "get_Header", args = 0)]
-    pub fn get_header(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Reverse()` overload"]
-    #[method(name = "Reverse", args = 0)]
-    pub fn reverse(self) -> crate::app::gamecalculatorcommand::GameCalculatorCommand;
-
-    #[doc = "`Swap()` overload"]
-    #[method(name = "Swap", args = 0)]
-    pub fn swap(self) -> crate::app::gamecalculatorcommand::GameCalculatorCommand;
-
-    #[doc = "`IsReverse()` overload"]
-    #[method(name = "IsReverse", args = 0)]
-    pub fn is_reverse(self) -> bool;
-
-    #[doc = "`GetIndex()` overload"]
-    #[method(name = "GetIndex", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`IsVisible()` overload"]
-    #[method(name = "IsVisible", args = 0)]
-    pub fn is_visible(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            f32,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scale_2::get_offset() as isize),
+        );
+        inner(this, value, obj1, obj2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_header {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "get_Header",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "get_Header",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_header(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_header::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Reverse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Reverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reverse(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamecalculatorcommand::GameCalculatorCommand {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::gamecalculatorcommand::GameCalculatorCommand = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reverse::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_swap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "Swap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "Swap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn swap(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamecalculatorcommand::GameCalculatorCommand {
+        let inner: extern "C" fn(
+            GameCalculatorCommand,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::gamecalculatorcommand::GameCalculatorCommand = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_swap::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "IsReverse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "IsReverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_reverse(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_reverse::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "GetIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "GetIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_visible {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                "IsVisible",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    "IsVisible",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_visible(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_visible::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameCalculatorCommand as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameCalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameCalculatorCommand,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-gamecalculatorcommand")]
+pub trait IGameCalculatorCommandMethods: IGameCalculatorCommand {
+    #[doc = "`GetImpl(crate::app::unit::Unit)` overload"]
+    fn get_impl(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetImpl(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn get_impl_2(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_impl_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetImpl(crate::app::unit::Unit)` overload"]
+    fn try_get_impl(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::try_get_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetImpl(crate::app::unit::Unit, f32)` overload"]
+    fn set_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::set_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
+    fn set_impl_2(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::set_impl_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrySetImpl(crate::app::unit::Unit, f32)` overload"]
+    fn try_set_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::try_set_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    fn func_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncImpl(crate::app::battleinfoside::BattleInfoSide, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    fn func_impl_2(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_impl_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryFuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    fn try_func_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::try_func_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
+    fn func_impl_3(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_impl_3(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FuncImpl(crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]
+    fn func_impl_4(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_impl_4(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryFuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
+    fn try_func_impl_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::try_func_impl_2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(arg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddImpl(crate::app::unit::Unit, f32)` overload"]
+    fn add_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::add_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
+    fn add_impl_2(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::add_impl_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScaleImpl(crate::app::unit::Unit, f32)` overload"]
+    fn scale_impl(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::scale_impl(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ScaleImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]
+    fn scale_impl_2(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::scale_impl_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInvalid()` overload"]
+    fn get_invalid(self) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_invalid(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(crate::system::object::Object)` overload"]
+    fn get(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn get_2(
+        self,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_2(
+                __receiver,
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Set(f32, crate::system::object::Object)` overload"]
+    fn set(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Set(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn set_2(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::set_2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]
+    fn func(
+        self,
+        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func(
+                __receiver,
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn func_2(
+        self,
+        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_2(
+                __receiver,
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Func(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn func_3(
+        self,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_3(
+                __receiver,
+                ::core::convert::Into::into(arg),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Func(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn func_4(
+        self,
+        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::func_4(
+                __receiver,
+                ::core::convert::Into::into(arg),
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(f32, crate::system::object::Object)` overload"]
+    fn add(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn add_2(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::add_2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Scale(f32, crate::system::object::Object)` overload"]
+    fn scale(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::scale(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Scale(f32, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn scale_2(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        obj1: impl ::core::convert::Into<crate::system::object::Object>,
+        obj2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::scale_2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(obj1),
+                ::core::convert::Into::into(obj2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Header()` overload"]
+    fn get_header(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_header(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reverse()` overload"]
+    fn reverse(self) -> crate::app::gamecalculatorcommand::GameCalculatorCommand {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::reverse(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Swap()` overload"]
+    fn swap(self) -> crate::app::gamecalculatorcommand::GameCalculatorCommand {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::swap(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsReverse()` overload"]
+    fn is_reverse(self) -> bool {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::is_reverse(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetIndex()` overload"]
+    fn get_index(self) -> i32 {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::get_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsVisible()` overload"]
+    fn is_visible(self) -> bool {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::is_visible(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameCalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameCalculatorCommand_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gamecalculatorcommand")]
+impl<__T: IGameCalculatorCommand> IGameCalculatorCommandMethods for __T {}
 
 #[cfg(feature = "app-gamecalculatorcommand")]
 impl GameCalculatorCommand {
@@ -235,4 +2487,17 @@ impl GameCalculatorCommand {
         <Self as IGameCalculatorCommandMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-gamecalculatorcommand")]
+pub mod prelude {
+    pub use super::GameCalculatorCommand;
+    pub use super::IGameCalculatorCommand;
+    pub use super::IGameCalculatorCommandMethods;
+    pub use crate::app::calculatorcommand::ICalculatorCommand;
+    #[cfg(feature = "app-calculatorcommand")]
+    pub use crate::app::calculatorcommand::ICalculatorCommandMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

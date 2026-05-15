@@ -28,73 +28,793 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-glyph")]
-#[::unity2::methods]
-impl Glyph {
-    #[doc = "`get_index()` overload"]
-    #[method(name = "get_index", args = 0)]
-    pub fn get_index(self) -> u32;
-
-    #[doc = "`set_index(u32)` overload"]
-    #[method(name = "set_index", args = 1)]
-    pub fn set_index(self, value: u32) -> ();
-
-    #[doc = "`get_metrics()` overload"]
-    #[method(name = "get_metrics", args = 0)]
-    pub fn get_metrics(self) -> crate::unity_engine::text_core::glyphmetrics::GlyphMetrics;
-
-    #[doc = "`set_metrics(crate::unity_engine::text_core::glyphmetrics::GlyphMetrics)` overload"]
-    #[method(name = "set_metrics", args = 1)]
-    pub fn set_metrics(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Glyph_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "get_index",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "get_index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index(this: Glyph, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(Glyph, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_index::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "set_index",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "set_index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_index(
+        this: Glyph,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Glyph, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_index::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_metrics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "get_metrics",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "get_metrics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_metrics(
+        this: Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::glyphmetrics::GlyphMetrics {
+        let inner: extern "C" fn(
+            Glyph,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::text_core::glyphmetrics::GlyphMetrics = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_metrics::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_metrics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "set_metrics",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "set_metrics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_metrics(
+        this: Glyph,
         value: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
-    ) -> ();
-
-    #[doc = "`get_glyphRect()` overload"]
-    #[method(name = "get_glyphRect", args = 0)]
-    pub fn get_glyph_rect(self) -> crate::unity_engine::text_core::glyphrect::GlyphRect;
-
-    #[doc = "`set_glyphRect(crate::unity_engine::text_core::glyphrect::GlyphRect)` overload"]
-    #[method(name = "set_glyphRect", args = 1)]
-    pub fn set_glyph_rect(self, value: crate::unity_engine::text_core::glyphrect::GlyphRect) -> ();
-
-    #[doc = "`get_scale()` overload"]
-    #[method(name = "get_scale", args = 0)]
-    pub fn get_scale(self) -> f32;
-
-    #[doc = "`set_scale(f32)` overload"]
-    #[method(name = "set_scale", args = 1)]
-    pub fn set_scale(self, value: f32) -> ();
-
-    #[doc = "`get_atlasIndex()` overload"]
-    #[method(name = "get_atlasIndex", args = 0)]
-    pub fn get_atlas_index(self) -> i32;
-
-    #[doc = "`set_atlasIndex(i32)` overload"]
-    #[method(name = "set_atlasIndex", args = 1)]
-    pub fn set_atlas_index(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Glyph,
+            crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_metrics::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "get_glyphRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_rect(
+        this: Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::glyphrect::GlyphRect {
+        let inner: extern "C" fn(
+            Glyph,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::glyphrect::GlyphRect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_glyph_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_glyph_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::text_core::glyphrect::GlyphRect as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "set_glyphRect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "set_glyphRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_glyph_rect(
+        this: Glyph,
+        value: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Glyph,
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_glyph_rect::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "get_scale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "get_scale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scale(this: Glyph, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(Glyph, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scale::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "set_scale",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "set_scale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scale(
+        this: Glyph,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Glyph, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_scale::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "get_atlasIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_index(
+        this: Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Glyph, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_atlas_index::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                "set_atlasIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_index(
+        this: Glyph,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Glyph, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_atlas_index::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Glyph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Glyph, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Glyph,
         glyph_struct : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
-    ) -> ();
-
-    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (Glyph , crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_2 :: get_offset () as isize) ,) ;
+        inner(this, glyph_struct, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Glyph as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Glyph as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: Glyph,
         index: u32,
         metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
         glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
         scale: f32,
         atlas_index: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Glyph,
+            u32,
+            crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            index,
+            metrics,
+            glyph_rect,
+            scale,
+            atlas_index,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "unity_engine-text_core-glyph")]
+pub trait IGlyphMethods: IGlyph {
+    #[doc = "`get_index()` overload"]
+    fn get_index(self) -> u32 {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::get_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_index(u32)` overload"]
+    fn set_index(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::set_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_metrics()` overload"]
+    fn get_metrics(self) -> crate::unity_engine::text_core::glyphmetrics::GlyphMetrics {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::get_metrics(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_metrics(crate::unity_engine::text_core::glyphmetrics::GlyphMetrics)` overload"]
+    fn set_metrics(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::text_core::glyphmetrics::GlyphMetrics>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::set_metrics(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_glyphRect()` overload"]
+    fn get_glyph_rect(self) -> crate::unity_engine::text_core::glyphrect::GlyphRect {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::get_glyph_rect(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_glyphRect(crate::unity_engine::text_core::glyphrect::GlyphRect)` overload"]
+    fn set_glyph_rect(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::set_glyph_rect(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_scale()` overload"]
+    fn get_scale(self) -> f32 {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::get_scale(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_scale(f32)` overload"]
+    fn set_scale(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::set_scale(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasIndex()` overload"]
+    fn get_atlas_index(self) -> i32 {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::get_atlas_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_atlasIndex(i32)` overload"]
+    fn set_atlas_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::set_atlas_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
+    fn ctor_2(
+        self,
+        glyph_struct : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(glyph_struct),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(u32, crate::unity_engine::text_core::glyphmetrics::GlyphMetrics, crate::unity_engine::text_core::glyphrect::GlyphRect, f32, i32)` overload"]
+    fn ctor_3(
+        self,
+        index: impl ::core::convert::Into<u32>,
+        metrics: impl ::core::convert::Into<crate::unity_engine::text_core::glyphmetrics::GlyphMetrics>,
+        glyph_rect: impl ::core::convert::Into<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        scale: impl ::core::convert::Into<f32>,
+        atlas_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Glyph_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(metrics),
+                ::core::convert::Into::into(glyph_rect),
+                ::core::convert::Into::into(scale),
+                ::core::convert::Into::into(atlas_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-glyph")]
+impl<__T: IGlyph> IGlyphMethods for __T {}
 
 #[cfg(feature = "unity_engine-text_core-glyph")]
 impl Glyph {
@@ -144,4 +864,14 @@ impl Glyph {
         <Self as IGlyphMethods>::ctor_3(this, index, metrics, glyph_rect, scale, atlas_index);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-text_core-glyph")]
+pub mod prelude {
+    pub use super::Glyph;
+    pub use super::IGlyph;
+    pub use super::IGlyphMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

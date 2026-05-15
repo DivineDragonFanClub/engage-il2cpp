@@ -10,22 +10,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_HideUIEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "AccessoryShopBuyRootProc.HideUIEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryShopBuyRootProc_HideUIEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_EndWatchingEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "AccessoryShopBuyRootProc.EndWatchingEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryShopBuyRootProc_EndWatchingEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -73,79 +57,143 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AccessoryShopBuyRootProc_StartWatchingEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_EndWatchingEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "AccessoryShopBuyRootProc.EndWatchingEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AccessoryShopBuyRootProc_EndWatchingEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_HideUIEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "AccessoryShopBuyRootProc.HideUIEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AccessoryShopBuyRootProc_HideUIEventHandler {}
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_HideUIEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopbuyrootproc")]
-impl AccessoryShopBuyRootProc_HideUIEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopBuyRootProc_HideUIEventHandler),
-                ::core::stringify!(new),
-            )
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
         });
-        <Self as IAccessoryShopBuyRootProc_HideUIEventHandlerMethods>::ctor(this, object, method);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_EndWatchingEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopbuyrootproc")]
-impl AccessoryShopBuyRootProc_EndWatchingEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopBuyRootProc_EndWatchingEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods>::ctor(
-            this, object, method,
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        this
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler {
+pub trait IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods:
+    IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler
+{
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler>
+    IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
@@ -167,15 +215,121 @@ impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler {
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods:
+    IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler>
+    IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
@@ -197,15 +351,149 @@ impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler {
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_ShowUIEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_ShowUIEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc_ShowUIEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc_ShowUIEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_ShowUIEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ShowUIEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc_ShowUIEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc_ShowUIEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_ShowUIEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_ShowUIEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods:
+    IAccessoryShopBuyRootProc_ShowUIEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ShowUIEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ShowUIEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_ShowUIEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_ShowUIEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_ShowUIEventHandler>
+    IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
@@ -225,12 +513,45 @@ impl AccessoryShopBuyRootProc_ShowUIEventHandler {
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc {
-    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animator::Animator, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_StartWatchingEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ShowUIEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_HideUIEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc,
         super_: crate::app::procinst::ProcInst,
         key_help_all_object: crate::unity_engine::gameobject::GameObject,
         key_help_all_animator: crate::unity_engine::animator::Animator,
@@ -240,20 +561,241 @@ impl AccessoryShopBuyRootProc {
         end_watching_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_EndWatchingEventHandler,
         show_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ShowUIEventHandler,
         hide_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_HideUIEventHandler,
-    ) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`KeyHelpAllOpen()` overload"]
-    #[method(name = "KeyHelpAllOpen", args = 0)]
-    pub fn key_help_all_open(self) -> ();
-
-    #[doc = "`KeyHelpAllClose()` overload"]
-    #[method(name = "KeyHelpAllClose", args = 0)]
-    pub fn key_help_all_close(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (AccessoryShopBuyRootProc , crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: animator :: Animator , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_StartWatchingEventHandler , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_EndWatchingEventHandler , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ShowUIEventHandler , crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_HideUIEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            super_,
+            key_help_all_object,
+            key_help_all_animator,
+            change_unit_to_prev_event_handler,
+            change_unit_to_next_event_handler,
+            start_watching_event_handler,
+            end_watching_event_handler,
+            show_ui_event_handler,
+            hide_ui_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: AccessoryShopBuyRootProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryShopBuyRootProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_help_all_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::class(),
+                "KeyHelpAllOpen",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::NAME,
+                    "KeyHelpAllOpen",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn key_help_all_open(
+        this: AccessoryShopBuyRootProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryShopBuyRootProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_key_help_all_open::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_help_all_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::class(),
+                "KeyHelpAllClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc as ::unity2::ClassIdentity>::NAME,
+                    "KeyHelpAllClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn key_help_all_close(
+        this: AccessoryShopBuyRootProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryShopBuyRootProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_key_help_all_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProcMethods: IAccessoryShopBuyRootProc {
+    #[doc = "`.ctor(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animator::Animator, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_StartWatchingEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler, crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler)` overload"]
+    fn ctor(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        key_help_all_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        key_help_all_animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        change_unit_to_prev_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler >,
+        change_unit_to_next_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler >,
+        start_watching_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_StartWatchingEventHandler >,
+        end_watching_event_handler: impl ::core::convert::Into<
+            crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler,
+        >,
+        show_ui_event_handler: impl ::core::convert::Into<
+            crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler,
+        >,
+        hide_ui_event_handler: impl ::core::convert::Into<
+            crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryShopBuyRootProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryShopBuyRootProc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(key_help_all_object),
+                ::core::convert::Into::into(key_help_all_animator),
+                ::core::convert::Into::into(change_unit_to_prev_event_handler),
+                ::core::convert::Into::into(change_unit_to_next_event_handler),
+                ::core::convert::Into::into(start_watching_event_handler),
+                ::core::convert::Into::into(end_watching_event_handler),
+                ::core::convert::Into::into(show_ui_event_handler),
+                ::core::convert::Into::into(hide_ui_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryShopBuyRootProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryShopBuyRootProc_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyHelpAllOpen()` overload"]
+    fn key_help_all_open(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryShopBuyRootProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryShopBuyRootProc_unity2_raw::key_help_all_open(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`KeyHelpAllClose()` overload"]
+    fn key_help_all_close(self) -> () {
+        unsafe {
+            let __receiver =
+                <AccessoryShopBuyRootProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AccessoryShopBuyRootProc_unity2_raw::key_help_all_close(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc> IAccessoryShopBuyRootProcMethods for __T {}
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
 impl AccessoryShopBuyRootProc {
@@ -293,15 +835,121 @@ impl AccessoryShopBuyRootProc {
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
-#[::unity2::methods]
-impl AccessoryShopBuyRootProc_StartWatchingEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_StartWatchingEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_StartWatchingEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_StartWatchingEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_StartWatchingEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_StartWatchingEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods:
+    IAccessoryShopBuyRootProc_StartWatchingEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_StartWatchingEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> bool;
+    fn invoke(self) -> bool {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_StartWatchingEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_StartWatchingEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_StartWatchingEventHandler>
+    IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
@@ -320,4 +968,339 @@ impl AccessoryShopBuyRootProc_StartWatchingEventHandler {
         );
         this
     }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_EndWatchingEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_EndWatchingEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_EndWatchingEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_EndWatchingEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_EndWatchingEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods:
+    IAccessoryShopBuyRootProc_EndWatchingEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_EndWatchingEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_EndWatchingEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_EndWatchingEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_EndWatchingEventHandler>
+    IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_EndWatchingEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_EndWatchingEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopBuyRootProc_HideUIEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc_HideUIEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc_HideUIEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopBuyRootProc_HideUIEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_HideUIEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopBuyRootProc_HideUIEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopBuyRootProc_HideUIEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AccessoryShopBuyRootProc_HideUIEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AccessoryShopBuyRootProc_HideUIEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub trait IAccessoryShopBuyRootProc_HideUIEventHandlerMethods:
+    IAccessoryShopBuyRootProc_HideUIEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_HideUIEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_HideUIEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < AccessoryShopBuyRootProc_HideUIEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AccessoryShopBuyRootProc_HideUIEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl<__T: IAccessoryShopBuyRootProc_HideUIEventHandler>
+    IAccessoryShopBuyRootProc_HideUIEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_HideUIEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_HideUIEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_HideUIEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+pub mod prelude {
+    pub use super::AccessoryShopBuyRootProc;
+    pub use super::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
+    pub use super::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
+    pub use super::AccessoryShopBuyRootProc_EndWatchingEventHandler;
+    pub use super::AccessoryShopBuyRootProc_HideUIEventHandler;
+    pub use super::AccessoryShopBuyRootProc_ShowUIEventHandler;
+    pub use super::AccessoryShopBuyRootProc_StartWatchingEventHandler;
+    pub use super::IAccessoryShopBuyRootProc;
+    pub use super::IAccessoryShopBuyRootProcMethods;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods;
+    pub use super::IAccessoryShopBuyRootProc_EndWatchingEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods;
+    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandlerMethods;
+    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods;
+    pub use super::IAccessoryShopBuyRootProc_StartWatchingEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -10,27 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))]
-    #[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SoftwareKeyboard {
-        #[static_field]
-        #[rename(name = "DataCodeMaxLength")]
-        pub data_code_max_length: i32,
-        #[rename(name = "m_maxLength")]
-        pub m_max_length: i32,
-        #[rename(name = "m_headerText")]
-        pub m_header_text: ::unity2::Il2CppString,
-        #[rename(name = "m_subText")]
-        pub m_sub_text: ::unity2::Il2CppString,
-        #[rename(name = "m_initialText")]
-        pub m_initial_text: ::unity2::Il2CppString,
-        #[rename(name = "m_preset")]
-        pub m_preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
-        #[rename(name = "m_callback")]
-        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]
     #[repr(C)]
     #[derive(
@@ -78,61 +57,500 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))]
+    #[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct SoftwareKeyboard {
+        #[static_field]
+        #[rename(name = "DataCodeMaxLength")]
+        pub data_code_max_length: i32,
+        #[rename(name = "m_maxLength")]
+        pub m_max_length: i32,
+        #[rename(name = "m_headerText")]
+        pub m_header_text: ::unity2::Il2CppString,
+        #[rename(name = "m_subText")]
+        pub m_sub_text: ::unity2::Il2CppString,
+        #[rename(name = "m_initialText")]
+        pub m_initial_text: ::unity2::Il2CppString,
+        #[rename(name = "m_preset")]
+        pub m_preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+        #[rename(name = "m_callback")]
+        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "app-softwarekeyboard-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-softwarekeyboard")]
-#[::unity2::methods]
-impl SoftwareKeyboard {
-    #[doc = "`get_ResultText()` overload"]
-    #[method(name = "get_ResultText", args = 0)]
-    pub fn get_result_text() -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SoftwareKeyboard_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "get_ResultText",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "get_ResultText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result_text(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_result_text::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SoftwareKeyboard,
         max_length: i32,
         initial_text: ::unity2::Il2CppString,
         header_text: ::unity2::Il2CppString,
         sub_text: ::unity2::Il2CppString,
         preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
         callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`CreateDesc()` overload"]
-    #[method(name = "CreateDesc", args = 0)]
-    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create(self) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`Callback()` overload"]
-    #[method(name = "Callback", args = 0)]
-    pub fn callback(self) -> ();
-
-    #[doc = "`ShowKeyboard()` overload"]
-    #[method(name = "ShowKeyboard", args = 0)]
-    pub fn show_keyboard(self) -> ();
-
-    #[doc = "`NetKeepAliveOn()` overload"]
-    #[method(name = "NetKeepAliveOn", args = 0)]
-    pub fn net_keep_alive_on(self) -> ();
-
-    #[doc = "`NetKeepAliveOff()` overload"]
-    #[method(name = "NetKeepAliveOff", args = 0)]
-    pub fn net_keep_alive_off(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CreateBind", args = 7)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SoftwareKeyboard,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+            crate::system::action_1::Action_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            max_length,
+            initial_text,
+            header_text,
+            sub_text,
+            preset,
+            callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "CreateDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            SoftwareKeyboard,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "Callback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "Callback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn callback(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_callback::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_keyboard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "ShowKeyboard",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "ShowKeyboard",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_keyboard(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show_keyboard::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_net_keep_alive_on {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "NetKeepAliveOn",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "NetKeepAliveOn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn net_keep_alive_on(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_net_keep_alive_on::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_net_keep_alive_off {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "NetKeepAliveOff",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "NetKeepAliveOff",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn net_keep_alive_off(
+        this: SoftwareKeyboard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SoftwareKeyboard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_net_keep_alive_off::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         max_length: i32,
         initial_text: ::unity2::Il2CppString,
@@ -140,24 +558,326 @@ impl SoftwareKeyboard {
         sub_text: ::unity2::Il2CppString,
         preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
         callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`CreateBindByPlayerNameInput(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CreateBindByPlayerNameInput", args = 3)]
-    pub fn create_bind_by_player_name_input(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+            crate::system::action_1::Action_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            max_length,
+            initial_text,
+            header_text,
+            sub_text,
+            preset,
+            callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_by_player_name_input {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "CreateBindByPlayerNameInput",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindByPlayerNameInput",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_by_player_name_input(
         super_: crate::app::procinst::ProcInst,
         name: ::unity2::Il2CppString,
         callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result() -> ::unity2::Il2CppString;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::system::action_1::Action_1<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_by_player_name_input::get_offset() as isize),
+        );
+        inner(super_, name, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                "GetResult",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    "GetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_result::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoftwareKeyboard as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoftwareKeyboard as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-softwarekeyboard")]
+impl SoftwareKeyboard {
+    #[doc = "`get_ResultText()` overload"]
+    pub fn get_result_text() -> ::unity2::Il2CppString {
+        unsafe { __SoftwareKeyboard_unity2_raw::get_result_text(::core::option::Option::None) }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        max_length: impl ::core::convert::Into<i32>,
+        initial_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        header_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        sub_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        preset: impl ::core::convert::Into<crate::app::softwarekeyboard::SoftwareKeyboard_Preset>,
+        callback: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            __SoftwareKeyboard_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(max_length),
+                ::core::convert::Into::into(initial_text),
+                ::core::convert::Into::into(header_text),
+                ::core::convert::Into::into(sub_text),
+                ::core::convert::Into::into(preset),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindByPlayerNameInput(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
+    pub fn create_bind_by_player_name_input(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        callback: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            __SoftwareKeyboard_unity2_raw::create_bind_by_player_name_input(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetResult()` overload"]
+    pub fn get_result() -> ::unity2::Il2CppString {
+        unsafe { __SoftwareKeyboard_unity2_raw::get_result(::core::option::Option::None) }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SoftwareKeyboard_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-softwarekeyboard")]
+pub trait ISoftwareKeyboardMethods: ISoftwareKeyboard {
+    #[doc = "`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
+    fn ctor(
+        self,
+        max_length: impl ::core::convert::Into<i32>,
+        initial_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        header_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        sub_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        preset: impl ::core::convert::Into<crate::app::softwarekeyboard::SoftwareKeyboard_Preset>,
+        callback: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(max_length),
+                ::core::convert::Into::into(initial_text),
+                ::core::convert::Into::into(header_text),
+                ::core::convert::Into::into(sub_text),
+                ::core::convert::Into::into(preset),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Create()` overload"]
+    fn create(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Callback()` overload"]
+    fn callback(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::callback(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowKeyboard()` overload"]
+    fn show_keyboard(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::show_keyboard(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`NetKeepAliveOn()` overload"]
+    fn net_keep_alive_on(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::net_keep_alive_on(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`NetKeepAliveOff()` overload"]
+    fn net_keep_alive_off(self) -> () {
+        unsafe {
+            let __receiver = <SoftwareKeyboard as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoftwareKeyboard_unity2_raw::net_keep_alive_off(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-softwarekeyboard")]
+impl<__T: ISoftwareKeyboard> ISoftwareKeyboardMethods for __T {}
 
 #[cfg(feature = "app-softwarekeyboard")]
 impl SoftwareKeyboard {
@@ -188,4 +908,24 @@ impl SoftwareKeyboard {
         );
         this
     }
+}
+
+#[cfg(feature = "app-softwarekeyboard")]
+pub mod prelude {
+    pub use super::ISoftwareKeyboard;
+    pub use super::ISoftwareKeyboardMethods;
+    pub use super::SoftwareKeyboard;
+    pub use super::SoftwareKeyboard_Preset;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

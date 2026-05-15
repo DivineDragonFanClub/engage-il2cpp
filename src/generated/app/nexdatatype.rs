@@ -73,3 +73,12 @@ mod __types {
 
 #[cfg(feature = "app-nexdatatype-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-nexdatatype")]
+pub mod prelude {
+    pub use super::INexDataType;
+    pub use super::NexDataType;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

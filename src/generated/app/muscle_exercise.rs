@@ -2,7 +2,13 @@
 
 #[cfg(any(feature = "app-muscle_exercise-assistselect-types"))]
 pub mod assistselect;
+#[cfg(feature = "app-muscle_exercise-assistselect-types")]
+pub use assistselect::AssistSelect;
 #[cfg(any(feature = "app-muscle_exercise-level-types"))]
 pub mod level;
+#[cfg(feature = "app-muscle_exercise-level-types")]
+pub use level::Level;
 #[cfg(any(feature = "app-muscle_exercise-type-types"))]
 pub mod r#type;
+#[cfg(feature = "app-muscle_exercise-type-types")]
+pub use r#type::Type;

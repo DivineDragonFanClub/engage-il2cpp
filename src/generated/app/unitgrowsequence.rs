@@ -10,6 +10,32 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitGrowSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct UnitGrowSequence {
+        #[rename(name = "m_CameraMode")]
+        pub m_camera_mode: crate::app::viewmode::ViewMode_Mode,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_OldLevel")]
+        pub m_old_level: i32,
+        #[rename(name = "m_IsTalk")]
+        pub m_is_talk: bool,
+        #[rename(name = "m_SkillPoint")]
+        pub m_skill_point: i32,
+        #[rename(name = "m_ClassChangeJob")]
+        pub m_class_change_job: crate::app::jobdata::JobData,
+        #[rename(name = "m_ClassChangeItem")]
+        pub m_class_change_item: crate::app::itemdata::ItemData,
+        #[rename(name = "m_ClassChangeWeaponMask")]
+        pub m_class_change_weapon_mask: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_ClassChangeWeapon")]
+        pub m_class_change_weapon: crate::app::itemdata::ItemData,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitgrowsequence/UnitGrowSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -65,117 +91,897 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitGrowSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct UnitGrowSequence {
-        #[rename(name = "m_CameraMode")]
-        pub m_camera_mode: crate::app::viewmode::ViewMode_Mode,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_OldLevel")]
-        pub m_old_level: i32,
-        #[rename(name = "m_IsTalk")]
-        pub m_is_talk: bool,
-        #[rename(name = "m_SkillPoint")]
-        pub m_skill_point: i32,
-        #[rename(name = "m_ClassChangeJob")]
-        pub m_class_change_job: crate::app::jobdata::JobData,
-        #[rename(name = "m_ClassChangeItem")]
-        pub m_class_change_item: crate::app::itemdata::ItemData,
-        #[rename(name = "m_ClassChangeWeaponMask")]
-        pub m_class_change_weapon_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_ClassChangeWeapon")]
-        pub m_class_change_weapon: crate::app::itemdata::ItemData,
-    }
 }
 
 #[cfg(feature = "app-unitgrowsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitgrowsequence")]
-#[::unity2::methods]
-impl UnitGrowSequence {
-    #[doc = "`setUnitGrowData(crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
-    #[method(name = "setUnitGrowData", args = 2)]
-    pub fn set_unit_grow_data(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitGrowSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_grow_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "setUnitGrowData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "setUnitGrowData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_grow_data(
+        this: UnitGrowSequence,
         side: crate::app::battleinfoside::BattleInfoSide,
         is_talk: bool,
-    ) -> ();
-
-    #[doc = "`setUnitGrowData(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "setUnitGrowData", args = 2)]
-    pub fn set_unit_grow_data_2(self, unit: crate::app::unit::Unit, exp: i32) -> ();
-
-    #[doc = "`setUnitGrowData(crate::app::unit::Unit, i32, i32, bool)` overload"]
-    #[method(name = "setUnitGrowData", args = 4)]
-    pub fn set_unit_grow_data_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitGrowSequence,
+            crate::app::battleinfoside::BattleInfoSide,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_grow_data::get_offset() as isize),
+        );
+        inner(this, side, is_talk, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_grow_data_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "setUnitGrowData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "setUnitGrowData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_grow_data_2(
+        this: UnitGrowSequence,
+        unit: crate::app::unit::Unit,
+        exp: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitGrowSequence,
+            crate::app::unit::Unit,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_grow_data_2::get_offset() as isize),
+        );
+        inner(this, unit, exp, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_grow_data_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "setUnitGrowData",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "setUnitGrowData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_grow_data_3(
+        this: UnitGrowSequence,
         unit: crate::app::unit::Unit,
         exp: i32,
         skill_point: i32,
         is_talk: bool,
-    ) -> ();
-
-    #[doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::jobdata::JobData, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "setUnitClassChange", args = 3)]
-    pub fn set_unit_class_change(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitGrowSequence,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_grow_data_3::get_offset() as isize),
+        );
+        inner(this, unit, exp, skill_point, is_talk, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_class_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "setUnitClassChange",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "setUnitClassChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_class_change(
+        this: UnitGrowSequence,
         unit: crate::app::unit::Unit,
         job: crate::app::jobdata::JobData,
         item: crate::app::itemdata::ItemData,
-    ) -> ();
-
-    #[doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    #[method(name = "setUnitClassChange", args = 2)]
-    pub fn set_unit_class_change_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitGrowSequence,
+            crate::app::unit::Unit,
+            crate::app::jobdata::JobData,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_class_change::get_offset() as isize),
+        );
+        inner(this, unit, job, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_class_change_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::classchange::ClassChange_ChangeJobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "setUnitClassChange",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "setUnitClassChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_class_change_2(
+        this: UnitGrowSequence,
         unit: crate::app::unit::Unit,
         data: crate::app::classchange::ClassChange_ChangeJobData,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitGrowSequence,
+            crate::app::unit::Unit,
+            crate::app::classchange::ClassChange_ChangeJobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_class_change_2::get_offset() as isize),
+        );
+        inner(this, unit, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::unitgrowsequence::UnitGrowSequence;
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-
-    #[doc = "`GainExp()` overload"]
-    #[method(name = "GainExp", args = 0)]
-    pub fn gain_exp(self) -> ();
-
-    #[doc = "`CheckLevelUp()` overload"]
-    #[method(name = "CheckLevelUp", args = 0)]
-    pub fn check_level_up(self) -> ();
-
-    #[doc = "`LevelUp()` overload"]
-    #[method(name = "LevelUp", args = 0)]
-    pub fn level_up(self) -> ();
-
-    #[doc = "`CheckClassChange()` overload"]
-    #[method(name = "CheckClassChange", args = 0)]
-    pub fn check_class_change(self) -> ();
-
-    #[doc = "`ClassChange()` overload"]
-    #[method(name = "ClassChange", args = 0)]
-    pub fn class_change(self) -> ();
-
-    #[doc = "`SetWeapon()` overload"]
-    #[method(name = "SetWeapon", args = 0)]
-    pub fn set_weapon(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unitgrowsequence::UnitGrowSequence {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unitgrowsequence::UnitGrowSequence = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "Prepare",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "Prepare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_prepare::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_gain_exp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "GainExp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "GainExp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn gain_exp(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_gain_exp::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "CheckLevelUp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "CheckLevelUp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_level_up(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_level_up::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "LevelUp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "LevelUp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn level_up(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_level_up::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_class_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "CheckClassChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "CheckClassChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_class_change(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_class_change::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_class_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "ClassChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "ClassChange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn class_change(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_class_change::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                "SetWeapon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weapon(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_weapon::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitGrowSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitGrowSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitGrowSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitGrowSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-unitgrowsequence")]
+impl UnitGrowSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::unitgrowsequence::UnitGrowSequence {
+        unsafe {
+            __UnitGrowSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitgrowsequence")]
+pub trait IUnitGrowSequenceMethods: IUnitGrowSequence {
+    #[doc = "`setUnitGrowData(crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
+    fn set_unit_grow_data(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        is_talk: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_unit_grow_data(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(is_talk),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`setUnitGrowData(crate::app::unit::Unit, i32)` overload"]
+    fn set_unit_grow_data_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        exp: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_unit_grow_data_2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(exp),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`setUnitGrowData(crate::app::unit::Unit, i32, i32, bool)` overload"]
+    fn set_unit_grow_data_3(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        exp: impl ::core::convert::Into<i32>,
+        skill_point: impl ::core::convert::Into<i32>,
+        is_talk: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_unit_grow_data_3(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(exp),
+                ::core::convert::Into::into(skill_point),
+                ::core::convert::Into::into(is_talk),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::jobdata::JobData, crate::app::itemdata::ItemData)` overload"]
+    fn set_unit_class_change(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_unit_class_change(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(job),
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
+    fn set_unit_class_change_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        data: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_unit_class_change_2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Prepare()` overload"]
+    fn prepare(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::prepare(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GainExp()` overload"]
+    fn gain_exp(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::gain_exp(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CheckLevelUp()` overload"]
+    fn check_level_up(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::check_level_up(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LevelUp()` overload"]
+    fn level_up(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::level_up(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CheckClassChange()` overload"]
+    fn check_class_change(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::check_class_change(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClassChange()` overload"]
+    fn class_change(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::class_change(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetWeapon()` overload"]
+    fn set_weapon(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::set_weapon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitGrowSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitGrowSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitgrowsequence")]
+impl<__T: IUnitGrowSequence> IUnitGrowSequenceMethods for __T {}
 
 #[cfg(feature = "app-unitgrowsequence")]
 impl UnitGrowSequence {
@@ -191,4 +997,24 @@ impl UnitGrowSequence {
         <Self as IUnitGrowSequenceMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-unitgrowsequence")]
+pub mod prelude {
+    pub use super::IUnitGrowSequence;
+    pub use super::IUnitGrowSequenceMethods;
+    pub use super::UnitGrowSequence;
+    pub use super::UnitGrowSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

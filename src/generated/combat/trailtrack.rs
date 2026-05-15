@@ -30,62 +30,553 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-trailtrack")]
-#[::unity2::methods]
-impl TrailTrack {
-    #[doc = "`Add(f32, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrailTrack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: TrailTrack,
         time: f32,
         root: crate::unity_engine::vector3::Vector3,
         tip: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`Evaluate(f32, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "Evaluate", args = 3)]
-    pub fn evaluate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrailTrack,
+            f32,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, time, root, tip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Evaluate",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Evaluate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate(
+        this: TrailTrack,
         time: f32,
-        root: crate::unity_engine::vector3::Vector3,
-        tip: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`Optimize(f32)` overload"]
-    #[method(name = "Optimize", args = 1)]
-    pub fn optimize(self, eps: f32) -> ();
-
-    #[doc = "`Remap(crate::combat::flattenedvec3curve::FlattenedVec3Curve, crate::combat::flattenedvec3curve::FlattenedVec3Curve)` overload"]
-    #[method(name = "Remap", args = 2)]
-    pub fn remap(
+        root: *mut crate::unity_engine::vector3::Vector3,
+        tip: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrailTrack,
+            f32,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evaluate::get_offset() as isize),
+        );
+        inner(this, time, root, tip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Optimize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Optimize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize(
+        this: TrailTrack,
+        eps: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TrailTrack, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_optimize::get_offset() as isize),
+            );
+        inner(this, eps, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: flattenedvec3curve :: FlattenedVec3Curve as :: unity2 :: IlType > :: il_type () , < crate :: combat :: flattenedvec3curve :: FlattenedVec3Curve as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Remap",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Remap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remap(
         oc: crate::combat::flattenedvec3curve::FlattenedVec3Curve,
         nc: crate::combat::flattenedvec3curve::FlattenedVec3Curve,
-    ) -> ();
-
-    #[doc = "`Smoothing(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
-    #[method(name = "Smoothing", args = 1)]
-    pub fn smoothing(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::combat::flattenedvec3curve::FlattenedVec3Curve,
+            crate::combat::flattenedvec3curve::FlattenedVec3Curve,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remap::get_offset() as isize),
+        );
+        inner(oc, nc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_smoothing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Smoothing",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Smoothing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn smoothing(
         src: crate::unity_engine::animationcurve::AnimationCurve,
-    ) -> crate::unity_engine::animationcurve::AnimationCurve;
-
-    #[doc = "`Equals(crate::combat::trailtrack::TrailTrack, crate::combat::trailtrack::TrailTrack)` overload"]
-    #[method(name = "Equals", args = 2)]
-    pub fn equals(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationcurve::AnimationCurve {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationcurve::AnimationCurve,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_smoothing::get_offset() as isize),
+        );
+        inner(src, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::trailtrack::TrailTrack as ::unity2::IlType>::il_type(),
+                <crate::combat::trailtrack::TrailTrack as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
         a: crate::combat::trailtrack::TrailTrack,
         b: crate::combat::trailtrack::TrailTrack,
-    ) -> bool;
-
-    #[doc = "`Equals(crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"]
-    #[method(name = "Equals", args = 3)]
-    pub fn equals_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::trailtrack::TrailTrack,
+            crate::combat::trailtrack::TrailTrack,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
+                ),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
         a: crate::unity_engine::animationcurve::AnimationCurve,
         b: crate::unity_engine::animationcurve::AnimationCurve,
         eps: f32,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::animationcurve::AnimationCurve,
+            crate::unity_engine::animationcurve::AnimationCurve,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(a, b, eps, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrailTrack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrailTrack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TrailTrack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TrailTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-trailtrack")]
+impl TrailTrack {
+    #[doc = "`Remap(crate::combat::flattenedvec3curve::FlattenedVec3Curve, crate::combat::flattenedvec3curve::FlattenedVec3Curve)` overload"]
+    pub fn remap(
+        oc: impl ::core::convert::Into<crate::combat::flattenedvec3curve::FlattenedVec3Curve>,
+        nc: impl ::core::convert::Into<crate::combat::flattenedvec3curve::FlattenedVec3Curve>,
+    ) -> () {
+        unsafe {
+            __TrailTrack_unity2_raw::remap(
+                ::core::convert::Into::into(oc),
+                ::core::convert::Into::into(nc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Smoothing(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
+    pub fn smoothing(
+        src: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
+    ) -> crate::unity_engine::animationcurve::AnimationCurve {
+        unsafe {
+            __TrailTrack_unity2_raw::smoothing(
+                ::core::convert::Into::into(src),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::combat::trailtrack::TrailTrack, crate::combat::trailtrack::TrailTrack)` overload"]
+    pub fn equals(
+        a: impl ::core::convert::Into<crate::combat::trailtrack::TrailTrack>,
+        b: impl ::core::convert::Into<crate::combat::trailtrack::TrailTrack>,
+    ) -> bool {
+        unsafe {
+            __TrailTrack_unity2_raw::equals(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"]
+    pub fn equals_2(
+        a: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
+        b: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
+        eps: impl ::core::convert::Into<f32>,
+    ) -> bool {
+        unsafe {
+            __TrailTrack_unity2_raw::equals_2(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(eps),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-trailtrack")]
+pub trait ITrailTrackMethods: ITrailTrack {
+    #[doc = "`Add(f32, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    fn add(
+        self,
+        time: impl ::core::convert::Into<f32>,
+        root: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        tip: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TrailTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrailTrack_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(tip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Evaluate(f32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn evaluate(
+        self,
+        time: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let __receiver = <TrailTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __TrailTrack_unity2_raw::evaluate(
+                __receiver,
+                ::core::convert::Into::into(time),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Optimize(f32)` overload"]
+    fn optimize(self, eps: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TrailTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrailTrack_unity2_raw::optimize(
+                __receiver,
+                ::core::convert::Into::into(eps),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TrailTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrailTrack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-trailtrack")]
+impl<__T: ITrailTrack> ITrailTrackMethods for __T {}
 
 #[cfg(feature = "combat-trailtrack")]
 impl TrailTrack {
@@ -101,4 +592,14 @@ impl TrailTrack {
         <Self as ITrailTrackMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-trailtrack")]
+pub mod prelude {
+    pub use super::ITrailTrack;
+    pub use super::ITrailTrackMethods;
+    pub use super::TrailTrack;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

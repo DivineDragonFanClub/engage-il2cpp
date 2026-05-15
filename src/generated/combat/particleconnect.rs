@@ -44,11 +44,49 @@ mod __types {
     }
 
     impl ParticleConnect {
-        pub fn _unnamed() -> Self {
+        pub fn 未設定() -> Self {
             Self { value: 0 }
+        }
+
+        pub fn に接続() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn の姿勢() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn の位置() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn の地面() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn チキ爪() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn の地面水平() -> Self {
+            Self { value: 6 }
         }
     }
 }
 
 #[cfg(feature = "combat-particleconnect-types")]
 pub use __types::*;
+
+#[cfg(feature = "combat-particleconnect")]
+pub mod prelude {
+    pub use super::ParticleConnect;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

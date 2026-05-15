@@ -120,3 +120,14 @@ impl<T0: ::unity2::ClassIdentity> TMP_TextProcessingStack_1<T0> {
     #[method(name = "PreviousItem", args = 0)]
     pub fn previous_item(self) -> T0;
 }
+
+#[cfg(feature = "tm_pro-tmp_textprocessingstack_1")]
+pub mod prelude {
+    pub use super::TMP_TextProcessingStack_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

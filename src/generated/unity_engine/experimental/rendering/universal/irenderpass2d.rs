@@ -18,11 +18,75 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
-#[::unity2::methods]
-impl IRenderPass2D {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IRenderPass2D_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_renderer_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IRenderPass2D as ::unity2::ClassIdentity>::class(),
+                "get_rendererData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IRenderPass2D as ::unity2::ClassIdentity>::NAME,
+                    "get_rendererData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_renderer_data(
+        this: IRenderPass2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData
+    {
+        let inner : extern "C" fn (IRenderPass2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_renderer_data :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
+pub trait IIRenderPass2DMethods: IIRenderPass2D {
     #[doc = "`get_rendererData()` overload"]
-    #[method(name = "get_rendererData", args = 0)]
-    pub fn get_renderer_data(
+    fn get_renderer_data(
         self,
-    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData;
+    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData
+    {
+        unsafe {
+            let __receiver = <IRenderPass2D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IRenderPass2D_unity2_raw::get_renderer_data(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
+impl<__T: IIRenderPass2D> IIRenderPass2DMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
+pub mod prelude {
+    pub use super::IIRenderPass2D;
+    pub use super::IIRenderPass2DMethods;
+    pub use super::IRenderPass2D;
 }

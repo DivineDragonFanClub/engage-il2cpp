@@ -33,122 +33,1147 @@ pub use __types::*;
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
 )]
-#[::unity2::methods]
-impl RenderGraphDefaultResources {
-    #[doc = "`get_blackTexture()` overload"]
-    #[method(name = "get_blackTexture", args = 0)]
-    pub fn get_black_texture (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_blackTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_blackTexture", args = 1)]
-    pub fn set_black_texture(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraphDefaultResources_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_blackTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_blackTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_black_texture (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_black_texture :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_black_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_blackTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_blackTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_black_texture(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_whiteTexture()` overload"]
-    #[method(name = "get_whiteTexture", args = 0)]
-    pub fn get_white_texture (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_whiteTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_whiteTexture", args = 1)]
-    pub fn set_white_texture(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_black_texture :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_white_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_whiteTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_whiteTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_white_texture (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_white_texture :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_white_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_whiteTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_whiteTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_white_texture(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_clearTextureXR()` overload"]
-    #[method(name = "get_clearTextureXR", args = 0)]
-    pub fn get_clear_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_clearTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_clearTextureXR", args = 1)]
-    pub fn set_clear_texture_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_white_texture :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clear_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_clearTextureXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_clearTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_clear_texture_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_clear_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_clear_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_clearTextureXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_clearTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_clear_texture_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_magentaTextureXR()` overload"]
-    #[method(name = "get_magentaTextureXR", args = 0)]
-    pub fn get_magenta_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_magentaTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_magentaTextureXR", args = 1)]
-    pub fn set_magenta_texture_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_clear_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_magenta_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_magentaTextureXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_magentaTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_magenta_texture_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_magenta_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_magenta_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_magentaTextureXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_magentaTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_magenta_texture_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_blackTextureXR()` overload"]
-    #[method(name = "get_blackTextureXR", args = 0)]
-    pub fn get_black_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_blackTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_blackTextureXR", args = 1)]
-    pub fn set_black_texture_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_magenta_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_blackTextureXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_blackTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_black_texture_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_black_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_black_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_blackTextureXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_blackTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_black_texture_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_blackTextureArrayXR()` overload"]
-    #[method(name = "get_blackTextureArrayXR", args = 0)]
-    pub fn get_black_texture_array_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_blackTextureArrayXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_blackTextureArrayXR", args = 1)]
-    pub fn set_black_texture_array_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_black_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture_array_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_blackTextureArrayXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_blackTextureArrayXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_black_texture_array_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_black_texture_array_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_black_texture_array_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_blackTextureArrayXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_blackTextureArrayXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_black_texture_array_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_blackUIntTextureXR()` overload"]
-    #[method(name = "get_blackUIntTextureXR", args = 0)]
-    pub fn get_black_u_int_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_blackUIntTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_blackUIntTextureXR", args = 1)]
-    pub fn set_black_u_int_texture_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_black_texture_array_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_u_int_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_blackUIntTextureXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_blackUIntTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_black_u_int_texture_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_black_u_int_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_black_u_int_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_blackUIntTextureXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_blackUIntTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_black_u_int_texture_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_blackTexture3DXR()` overload"]
-    #[method(name = "get_blackTexture3DXR", args = 0)]
-    pub fn get_black_texture3_dxr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_blackTexture3DXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_blackTexture3DXR", args = 1)]
-    pub fn set_black_texture3_dxr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_black_u_int_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_black_texture3_dxr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_blackTexture3DXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_blackTexture3DXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_black_texture3_dxr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_black_texture3_dxr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_black_texture3_dxr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_blackTexture3DXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_blackTexture3DXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_black_texture3_dxr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`get_whiteTextureXR()` overload"]
-    #[method(name = "get_whiteTextureXR", args = 0)]
-    pub fn get_white_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle ;
-
-    #[doc = "`set_whiteTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
-    #[method(name = "set_whiteTextureXR", args = 1)]
-    pub fn set_white_texture_xr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_black_texture3_dxr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_white_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "get_whiteTextureXR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "get_whiteTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_white_texture_xr (this : RenderGraphDefaultResources , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        let inner : extern "C" fn (RenderGraphDefaultResources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_white_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_white_texture_xr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "set_whiteTextureXR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "set_whiteTextureXR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_white_texture_xr(
+        this: RenderGraphDefaultResources,
         value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup(self) -> ();
-
-    #[doc = "`InitializeForRendering(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
-    #[method(name = "InitializeForRendering", args = 1)]
-    pub fn initialize_for_rendering(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_white_texture_xr :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderGraphDefaultResources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphDefaultResources, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cleanup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "Cleanup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "Cleanup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cleanup(
+        this: RenderGraphDefaultResources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderGraphDefaultResources, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cleanup::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_for_rendering {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraphDefaultResources as ::unity2::ClassIdentity>::class(),
+                "InitializeForRendering",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderGraphDefaultResources as ::unity2::ClassIdentity>::NAME,
+                    "InitializeForRendering",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_for_rendering(
+        this: RenderGraphDefaultResources,
         render_graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (RenderGraphDefaultResources , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_initialize_for_rendering :: get_offset () as isize) ,) ;
+        inner(this, render_graph, __unity2_method_info)
+    }
 }
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
+)]
+pub trait IRenderGraphDefaultResourcesMethods: IRenderGraphDefaultResources {
+    #[doc = "`get_blackTexture()` overload"]    fn get_black_texture (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_black_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_blackTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_black_texture(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_black_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_whiteTexture()` overload"]    fn get_white_texture (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_white_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_whiteTexture(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_white_texture(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_white_texture(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_clearTextureXR()` overload"]    fn get_clear_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_clear_texture_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_clearTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_clear_texture_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_clear_texture_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_magentaTextureXR()` overload"]    fn get_magenta_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_magenta_texture_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_magentaTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_magenta_texture_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_magenta_texture_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_blackTextureXR()` overload"]    fn get_black_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_black_texture_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_blackTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_black_texture_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_black_texture_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_blackTextureArrayXR()` overload"]    fn get_black_texture_array_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_black_texture_array_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_blackTextureArrayXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_black_texture_array_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_black_texture_array_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_blackUIntTextureXR()` overload"]    fn get_black_u_int_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_black_u_int_texture_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_blackUIntTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_black_u_int_texture_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_black_u_int_texture_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_blackTexture3DXR()` overload"]    fn get_black_texture3_dxr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_black_texture3_dxr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_blackTexture3DXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_black_texture3_dxr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_black_texture3_dxr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_whiteTextureXR()` overload"]    fn get_white_texture_xr (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle{
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::get_white_texture_xr(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_whiteTextureXR(crate::unity_engine::experimental::rendering::render_graph_module::texturehandle::TextureHandle)` overload"]
+    fn set_white_texture_xr(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::set_white_texture_xr(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Cleanup()` overload"]
+    fn cleanup(self) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::cleanup(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeForRendering(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]
+    fn initialize_for_rendering(
+        self,
+        render_graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RenderGraphDefaultResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderGraphDefaultResources_unity2_raw::initialize_for_rendering(
+                __receiver,
+                ::core::convert::Into::into(render_graph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
+)]
+impl<__T: IRenderGraphDefaultResources> IRenderGraphDefaultResourcesMethods for __T {}
 
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
@@ -166,4 +1191,16 @@ impl RenderGraphDefaultResources {
         <Self as IRenderGraphDefaultResourcesMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
+)]
+pub mod prelude {
+    pub use super::IRenderGraphDefaultResources;
+    pub use super::IRenderGraphDefaultResourcesMethods;
+    pub use super::RenderGraphDefaultResources;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

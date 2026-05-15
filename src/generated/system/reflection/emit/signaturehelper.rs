@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-signaturehelper-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-signaturehelper")]
+pub mod prelude {
+    pub use super::ISignatureHelper;
+    pub use super::SignatureHelper;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

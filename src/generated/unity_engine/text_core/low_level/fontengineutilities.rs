@@ -39,9 +39,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FontEngineUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_max_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngineUtilities as ::unity2::ClassIdentity>::class(),
+                "MaxValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngineUtilities as ::unity2::ClassIdentity>::NAME,
+                    "MaxValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn max_value(
+        a: i32,
+        b: i32,
+        c: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_max_value::get_offset() as isize),
+            );
+        inner(a, b, c, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
 impl FontEngineUtilities {
     #[doc = "`MaxValue(i32, i32, i32)` overload"]
-    #[method(name = "MaxValue", args = 3)]
-    pub fn max_value(a: i32, b: i32, c: i32) -> i32;
+    pub fn max_value(
+        a: impl ::core::convert::Into<i32>,
+        b: impl ::core::convert::Into<i32>,
+        c: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __FontEngineUtilities_unity2_raw::max_value(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
+pub mod prelude {
+    pub use super::FontEngineUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

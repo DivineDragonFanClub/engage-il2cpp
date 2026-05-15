@@ -95,3 +95,19 @@ impl<T0: ::unity2::ClassIdentity> BitFieldTemplate32_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-bitfieldtemplate32_1")]
+pub mod prelude {
+    pub use super::BitFieldTemplate32_1;
+    pub use super::IBitFieldTemplate32_1;
+    pub use super::IBitFieldTemplate32_1Methods;
+    pub use crate::app::bitfield32::IBitField32;
+    #[cfg(feature = "app-bitfield32")]
+    pub use crate::app::bitfield32::IBitField32Methods;
+    pub use crate::app::bitfieldcommon::IBitFieldCommon;
+    #[cfg(feature = "app-bitfieldcommon")]
+    pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

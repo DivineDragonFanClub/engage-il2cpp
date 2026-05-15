@@ -13,66 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemMenuDetailSetter_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemMenuDetailSetter_Kind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemMenuDetailSetter.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemMenuDetailSetter_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemMenuDetailSetter_Kind {
-        pub fn power() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn weight() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn hit() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn critical() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn avoid() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn secure() -> Self {
-            Self { value: 5 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))]
     #[::unity2::class(namespace = "App", name = "ItemMenuDetailSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -178,104 +118,1151 @@ mod __types {
         #[rename(name = "m_TmpBattleInfo")]
         pub m_tmp_battle_info: crate::app::battleinfo::BattleInfo,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemMenuDetailSetter_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemMenuDetailSetter_Kind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemMenuDetailSetter.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemMenuDetailSetter_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemMenuDetailSetter_Kind {
+        pub fn power() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn weight() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn hit() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn critical() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn avoid() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn secure() -> Self {
+            Self { value: 5 }
+        }
+    }
 }
 
 #[cfg(feature = "app-itemmenudetailsetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-itemmenudetailsetter")]
-#[::unity2::methods]
-impl ItemMenuDetailSetter {
-    #[doc = "`get_IsEnchantMode()` overload"]
-    #[method(name = "get_IsEnchantMode", args = 0)]
-    pub fn get_is_enchant_mode(self) -> bool;
-
-    #[doc = "`set_IsEnchantMode(bool)` overload"]
-    #[method(name = "set_IsEnchantMode", args = 1)]
-    pub fn set_is_enchant_mode(self, value: bool) -> ();
-
-    #[doc = "`SetEnchantMode(bool)` overload"]
-    #[method(name = "SetEnchantMode", args = 1)]
-    pub fn set_enchant_mode(self, is_enchant: bool) -> ();
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`SetData(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "SetData", args = 1)]
-    pub fn set_data(self, selected_item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`SetData(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "SetData", args = 2)]
-    pub fn set_data_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemMenuDetailSetter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_enchant_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "get_IsEnchantMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "get_IsEnchantMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_enchant_mode(
+        this: ItemMenuDetailSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ItemMenuDetailSetter, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_enchant_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_enchant_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "set_IsEnchantMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "set_IsEnchantMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_enchant_mode(
+        this: ItemMenuDetailSetter,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_enchant_mode::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enchant_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetEnchantMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetEnchantMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enchant_mode(
+        this: ItemMenuDetailSetter,
+        is_enchant: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enchant_mode::get_offset() as isize),
+            );
+        inner(this, is_enchant, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: ItemMenuDetailSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data(
+        this: ItemMenuDetailSetter,
+        selected_item: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data::get_offset() as isize),
+        );
+        inner(this, selected_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data_2(
+        this: ItemMenuDetailSetter,
         unit: crate::app::unit::Unit,
         selected_item: crate::app::unititem::UnitItem,
-    ) -> ();
-
-    #[doc = "`SetData(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::unit::Unit)` overload"]
-    #[method(name = "SetData", args = 3)]
-    pub fn set_data_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data_2::get_offset() as isize),
+        );
+        inner(this, unit, selected_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data_3(
+        this: ItemMenuDetailSetter,
         unit_item_base: crate::app::unititem::UnitItem,
         unit_item_target: crate::app::unititem::UnitItem,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`SetData(crate::app::unititem::UnitItem, crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind, i32)` overload"]
-    #[method(name = "SetData", args = 3)]
-    pub fn set_data_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            unit_item_base,
+            unit_item_target,
+            unit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemmenudetailsetter :: ItemMenuDetailSetter_Kind as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data_4(
+        this: ItemMenuDetailSetter,
         unit_item: crate::app::unititem::UnitItem,
         kind: crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind,
         value: i32,
-    ) -> ();
-
-    #[doc = "`SetMenuTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetMenuTitle", args = 1)]
-    pub fn set_menu_title(self, title: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetContentsText(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetContentsText", args = 1)]
-    pub fn set_contents_text(self, message: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetRangeText(i32, i32)` overload"]
-    #[method(name = "SetRangeText", args = 2)]
-    pub fn set_range_text(self, r_i: i32, r_o: i32) -> ();
-
-    #[doc = "`SetContentsText(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "SetContentsText", args = 1)]
-    pub fn set_contents_text_2(self, item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`TrySetUpDownIcon(crate::unity_engine::ui::image::Image, crate::unity_engine::color::Color, i32, i32)` overload"]
-    #[method(name = "TrySetUpDownIcon", args = 4)]
-    pub fn try_set_up_down_icon(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::app::unititem::UnitItem,
+            crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data_4::get_offset() as isize),
+        );
+        inner(this, unit_item, kind, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_menu_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetMenuTitle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetMenuTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_menu_title(
+        this: ItemMenuDetailSetter,
+        title: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_menu_title::get_offset() as isize),
+        );
+        inner(this, title, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_contents_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetContentsText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetContentsText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_contents_text(
+        this: ItemMenuDetailSetter,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_contents_text::get_offset() as isize),
+        );
+        inner(this, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_range_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetRangeText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetRangeText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_range_text(
+        this: ItemMenuDetailSetter,
+        r_i: i32,
+        r_o: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_range_text::get_offset() as isize),
+            );
+        inner(this, r_i, r_o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_contents_text_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "SetContentsText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetContentsText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_contents_text_2(
+        this: ItemMenuDetailSetter,
+        item: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_contents_text_2::get_offset() as isize),
+        );
+        inner(this, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_up_down_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "TrySetUpDownIcon",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "TrySetUpDownIcon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_set_up_down_icon(
+        this: ItemMenuDetailSetter,
         icon: crate::unity_engine::ui::image::Image,
-        color: crate::unity_engine::color::Color,
+        color: *mut crate::unity_engine::color::Color,
         before: i32,
         now: i32,
-    ) -> ();
-
-    #[doc = "`TrySetUpDownIconForWeight(crate::unity_engine::ui::image::Image, crate::unity_engine::color::Color, i32, i32)` overload"]
-    #[method(name = "TrySetUpDownIconForWeight", args = 4)]
-    pub fn try_set_up_down_icon_for_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::unity_engine::ui::image::Image,
+            *mut crate::unity_engine::color::Color,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_set_up_down_icon::get_offset() as isize),
+        );
+        inner(this, icon, color, before, now, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_up_down_icon_for_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "TrySetUpDownIconForWeight",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "TrySetUpDownIconForWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_set_up_down_icon_for_weight(
+        this: ItemMenuDetailSetter,
         icon: crate::unity_engine::ui::image::Image,
-        color: crate::unity_engine::color::Color,
+        color: *mut crate::unity_engine::color::Color,
         before: i32,
         now: i32,
-    ) -> ();
-
-    #[doc = "`PlayAnim(bool)` overload"]
-    #[method(name = "PlayAnim", args = 1)]
-    pub fn play_anim(self, is_open: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemMenuDetailSetter,
+            crate::unity_engine::ui::image::Image,
+            *mut crate::unity_engine::color::Color,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_set_up_down_icon_for_weight::get_offset() as isize),
+        );
+        inner(this, icon, color, before, now, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                "PlayAnim",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    "PlayAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_anim(
+        this: ItemMenuDetailSetter,
+        is_open: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_anim::get_offset() as isize),
+            );
+        inner(this, is_open, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemMenuDetailSetter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemMenuDetailSetter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemMenuDetailSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemMenuDetailSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-itemmenudetailsetter")]
+pub trait IItemMenuDetailSetterMethods: IItemMenuDetailSetter {
+    #[doc = "`get_IsEnchantMode()` overload"]
+    fn get_is_enchant_mode(self) -> bool {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::get_is_enchant_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsEnchantMode(bool)` overload"]
+    fn set_is_enchant_mode(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_is_enchant_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEnchantMode(bool)` overload"]
+    fn set_enchant_mode(self, is_enchant: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_enchant_mode(
+                __receiver,
+                ::core::convert::Into::into(is_enchant),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(crate::app::unititem::UnitItem)` overload"]
+    fn set_data(
+        self,
+        selected_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(selected_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetData(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    fn set_data_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        selected_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_data_2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(selected_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetData(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::unit::Unit)` overload"]
+    fn set_data_3(
+        self,
+        unit_item_base: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        unit_item_target: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_data_3(
+                __receiver,
+                ::core::convert::Into::into(unit_item_base),
+                ::core::convert::Into::into(unit_item_target),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetData(crate::app::unititem::UnitItem, crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind, i32)` overload"]
+    fn set_data_4(
+        self,
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        kind: impl ::core::convert::Into<crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_data_4(
+                __receiver,
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMenuTitle(::unity2::Il2CppString)` overload"]
+    fn set_menu_title(self, title: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_menu_title(
+                __receiver,
+                ::core::convert::Into::into(title),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetContentsText(::unity2::Il2CppString)` overload"]
+    fn set_contents_text(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_contents_text(
+                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRangeText(i32, i32)` overload"]
+    fn set_range_text(
+        self,
+        r_i: impl ::core::convert::Into<i32>,
+        r_o: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_range_text(
+                __receiver,
+                ::core::convert::Into::into(r_i),
+                ::core::convert::Into::into(r_o),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetContentsText(crate::app::unititem::UnitItem)` overload"]
+    fn set_contents_text_2(
+        self,
+        item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::set_contents_text_2(
+                __receiver,
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrySetUpDownIcon(crate::unity_engine::ui::image::Image, *mutcrate::unity_engine::color::Color, i32, i32)` overload"]
+    fn try_set_up_down_icon(
+        self,
+        icon: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
+        before: impl ::core::convert::Into<i32>,
+        now: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __ItemMenuDetailSetter_unity2_raw::try_set_up_down_icon(
+                __receiver,
+                ::core::convert::Into::into(icon),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(before),
+                ::core::convert::Into::into(now),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TrySetUpDownIconForWeight(crate::unity_engine::ui::image::Image, *mutcrate::unity_engine::color::Color, i32, i32)` overload"]
+    fn try_set_up_down_icon_for_weight(
+        self,
+        icon: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
+        before: impl ::core::convert::Into<i32>,
+        now: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __ItemMenuDetailSetter_unity2_raw::try_set_up_down_icon_for_weight(
+                __receiver,
+                ::core::convert::Into::into(icon),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(before),
+                ::core::convert::Into::into(now),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`PlayAnim(bool)` overload"]
+    fn play_anim(self, is_open: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::play_anim(
+                __receiver,
+                ::core::convert::Into::into(is_open),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ItemMenuDetailSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemMenuDetailSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-itemmenudetailsetter")]
+impl<__T: IItemMenuDetailSetter> IItemMenuDetailSetterMethods for __T {}
 
 #[cfg(feature = "app-itemmenudetailsetter")]
 impl ItemMenuDetailSetter {
@@ -291,4 +1278,33 @@ impl ItemMenuDetailSetter {
         <Self as IItemMenuDetailSetterMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-itemmenudetailsetter")]
+pub mod prelude {
+    pub use super::IItemMenuDetailSetter;
+    pub use super::IItemMenuDetailSetterMethods;
+    pub use super::ItemMenuDetailSetter;
+    pub use super::ItemMenuDetailSetter_Kind;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

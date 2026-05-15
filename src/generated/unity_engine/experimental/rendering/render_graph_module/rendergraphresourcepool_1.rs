@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraphResourcePool`1"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderGraphResourcePool_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "s_CurrentFrameIndex")]
+        pub s_current_frame_index: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1_ResourceLogInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,18 +57,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphResourcePool`1"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphResourcePool_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "s_CurrentFrameIndex")]
-        pub s_current_frame_index: i32,
-    }
 }
 
 #[cfg(
@@ -89,9 +89,9 @@ impl<T0: ::unity2::ClassIdentity> RenderGraphResourcePool_1<T0> {
     #[method(name = "ReleaseResource", args = 3)]
     pub fn release_resource(self, hash: i32, resource: T0, current_frame_index: i32) -> ();
 
-    #[doc = "`TryGetResource(i32, T0)` overload"]
+    #[doc = "`TryGetResource(i32, *mutT0)` overload"]
     #[method(name = "TryGetResource", args = 2)]
-    pub fn try_get_resource(self, hash_code: i32, resource: T0) -> bool;
+    pub fn try_get_resource(self, hash_code: i32, resource: *mut T0) -> bool;
 
     #[doc = "`PurgeUnusedResources(i32)` overload"]
     #[method(name = "PurgeUnusedResources", args = 1)]
@@ -141,4 +141,20 @@ impl<T0: ::unity2::ClassIdentity> RenderGraphResourcePool_1<T0> {
         <Self as IRenderGraphResourcePool_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1"
+)]
+pub mod prelude {
+    pub use super::IRenderGraphResourcePool_1;
+    pub use super::IRenderGraphResourcePool_1Methods;
+    pub use super::RenderGraphResourcePool_1;
+    pub use super::RenderGraphResourcePool_1_ResourceLogInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

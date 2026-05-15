@@ -14,40 +14,26 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData.ShaderResources"
+        name = "ForwardRendererData"
     )]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardRendererData_ShaderResources {
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "zprepass")]
-        pub zprepass: crate::unity_engine::shader::Shader,
-        #[rename(name = "downsampleDepth")]
-        pub downsample_depth: crate::unity_engine::shader::Shader,
-        #[rename(name = "halfResoComposite")]
-        pub half_reso_composite: crate::unity_engine::shader::Shader,
-        #[rename(name = "lightOcclusion")]
-        pub light_occlusion: crate::unity_engine::shader::Shader,
-        #[rename(name = "copyDepthPS")]
-        pub copy_depth_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "screenSpaceShadowPS")]
-        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "samplingPS")]
-        pub sampling_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDepthInfoPS")]
-        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDeferredPS")]
-        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "stencilDeferredPS")]
-        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "fallbackErrorPS")]
-        pub fallback_error_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "materialErrorPS")]
-        pub material_error_ps: crate::unity_engine::shader::Shader,
-    }
+    #[parent(
+        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
+    )]
+    pub struct ForwardRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
+# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
+# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
+# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]
     #[repr(C)]
@@ -113,37 +99,1141 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData"
+        name = "ForwardRendererData.ShaderResources"
     )]
-    #[parent(
-        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
-    )]
-    pub struct ForwardRendererData {
-# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
-# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
-# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
-# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
-# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
-}
+    #[parent(crate::system::object::Object)]
+    pub struct ForwardRendererData_ShaderResources {
+        #[rename(name = "blitPS")]
+        pub blit_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "zprepass")]
+        pub zprepass: crate::unity_engine::shader::Shader,
+        #[rename(name = "downsampleDepth")]
+        pub downsample_depth: crate::unity_engine::shader::Shader,
+        #[rename(name = "halfResoComposite")]
+        pub half_reso_composite: crate::unity_engine::shader::Shader,
+        #[rename(name = "lightOcclusion")]
+        pub light_occlusion: crate::unity_engine::shader::Shader,
+        #[rename(name = "copyDepthPS")]
+        pub copy_depth_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "screenSpaceShadowPS")]
+        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "samplingPS")]
+        pub sampling_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDepthInfoPS")]
+        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDeferredPS")]
+        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "stencilDeferredPS")]
+        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "fallbackErrorPS")]
+        pub fallback_error_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "materialErrorPS")]
+        pub material_error_ps: crate::unity_engine::shader::Shader,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-#[::unity2::methods]
-impl ForwardRendererData_ShaderResources {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ForwardRendererData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
+        let inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_opaque_layer_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_opaqueLayerMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_opaqueLayerMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_opaque_layer_mask(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::layermask::LayerMask {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_opaque_layer_mask::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_opaque_layer_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_opaqueLayerMask",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_opaqueLayerMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_opaque_layer_mask(
+        this: ForwardRendererData,
+        value: crate::unity_engine::layermask::LayerMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_opaque_layer_mask::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transparent_layer_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_transparentLayerMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_transparentLayerMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transparent_layer_mask(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::layermask::LayerMask {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transparent_layer_mask::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_transparent_layer_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_transparentLayerMask",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_transparentLayerMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_transparent_layer_mask(
+        this: ForwardRendererData,
+        value: crate::unity_engine::layermask::LayerMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_transparent_layer_mask::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_stencil_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_defaultStencilState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_defaultStencilState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_stencil_state(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData {
+        let inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_stencil_state :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default_stencil_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_defaultStencilState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_defaultStencilState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_default_stencil_state(
+        this: ForwardRendererData,
+        value: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_default_stencil_state::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shadow_transparent_receive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_shadowTransparentReceive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_shadowTransparentReceive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shadow_transparent_receive(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_shadow_transparent_receive::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shadow_transparent_receive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_shadowTransparentReceive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_shadowTransparentReceive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shadow_transparent_receive(
+        this: ForwardRendererData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ForwardRendererData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_shadow_transparent_receive::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendering_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_renderingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_renderingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendering_mode(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
+        let inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rendering_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rendering_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_renderingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_renderingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rendering_mode(
+        this: ForwardRendererData,
+        value: crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ForwardRendererData,
+            crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rendering_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_accurate_gbuffer_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_accurateGbufferNormals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_accurateGbufferNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_accurate_gbuffer_normals(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_accurate_gbuffer_normals::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_accurate_gbuffer_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_accurateGbufferNormals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_accurateGbufferNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_accurate_gbuffer_normals(
+        this: ForwardRendererData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ForwardRendererData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_accurate_gbuffer_normals::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mixed_resolution_flag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "get_mixedResolutionFlag",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "get_mixedResolutionFlag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_mixed_resolution_flag (this : ForwardRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag{
+        let inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mixed_resolution_flag :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mixed_resolution_flag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "set_mixedResolutionFlag",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "set_mixedResolutionFlag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mixed_resolution_flag(
+        this: ForwardRendererData,
+        value : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_mixed_resolution_flag :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ForwardRendererData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+pub trait IForwardRendererDataMethods: IForwardRendererData {
+    #[doc = "`Create()` overload"]
+    fn create(
+        self,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_opaqueLayerMask()` overload"]
+    fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_opaque_layer_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
+    fn set_opaque_layer_mask(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_opaque_layer_mask(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_transparentLayerMask()` overload"]
+    fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_transparent_layer_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
+    fn set_transparent_layer_mask(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_transparent_layer_mask(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_defaultStencilState()` overload"]
+    fn get_default_stencil_state(
+        self,
+    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_default_stencil_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_defaultStencilState(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)` overload"]
+    fn set_default_stencil_state(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_default_stencil_state(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_shadowTransparentReceive()` overload"]
+    fn get_shadow_transparent_receive(self) -> bool {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_shadow_transparent_receive(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_shadowTransparentReceive(bool)` overload"]
+    fn set_shadow_transparent_receive(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_shadow_transparent_receive(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_renderingMode()` overload"]
+    fn get_rendering_mode(
+        self,
+    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_rendering_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_renderingMode(crate::unity_engine::rendering::universal::renderingmode::RenderingMode)` overload"]
+    fn set_rendering_mode(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_rendering_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_accurateGbufferNormals()` overload"]
+    fn get_accurate_gbuffer_normals(self) -> bool {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_accurate_gbuffer_normals(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_accurateGbufferNormals(bool)` overload"]
+    fn set_accurate_gbuffer_normals(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_accurate_gbuffer_normals(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_mixedResolutionFlag()` overload"]    fn get_mixed_resolution_flag (self ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag{
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::get_mixed_resolution_flag(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_mixedResolutionFlag(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)` overload"]
+    fn set_mixed_resolution_flag(
+        self,
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::set_mixed_resolution_flag(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnEnable()` overload"]
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ForwardRendererData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ForwardRendererData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl<__T: IForwardRendererData> IForwardRendererDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl ForwardRendererData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForwardRendererData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForwardRendererDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ForwardRendererData_ShaderResources_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ForwardRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ForwardRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ForwardRendererData_ShaderResources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ForwardRendererData_ShaderResources,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+pub trait IForwardRendererData_ShaderResourcesMethods:
+    IForwardRendererData_ShaderResources
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ForwardRendererData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ForwardRendererData_ShaderResources_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl<__T: IForwardRendererData_ShaderResources> IForwardRendererData_ShaderResourcesMethods
+    for __T
+{
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
@@ -163,105 +1253,30 @@ impl ForwardRendererData_ShaderResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-#[::unity2::methods]
-impl ForwardRendererData {
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create(
-        self,
-    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
-
-    #[doc = "`get_opaqueLayerMask()` overload"]
-    #[method(name = "get_opaqueLayerMask", args = 0)]
-    pub fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
-
-    #[doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "set_opaqueLayerMask", args = 1)]
-    pub fn set_opaque_layer_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
-
-    #[doc = "`get_transparentLayerMask()` overload"]
-    #[method(name = "get_transparentLayerMask", args = 0)]
-    pub fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
-
-    #[doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "set_transparentLayerMask", args = 1)]
-    pub fn set_transparent_layer_mask(self, value: crate::unity_engine::layermask::LayerMask)
-        -> ();
-
-    #[doc = "`get_defaultStencilState()` overload"]
-    #[method(name = "get_defaultStencilState", args = 0)]
-    pub fn get_default_stencil_state(
-        self,
-    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData;
-
-    #[doc = "`set_defaultStencilState(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)` overload"]
-    #[method(name = "set_defaultStencilState", args = 1)]
-    pub fn set_default_stencil_state(
-        self,
-        value: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
-    ) -> ();
-
-    #[doc = "`get_shadowTransparentReceive()` overload"]
-    #[method(name = "get_shadowTransparentReceive", args = 0)]
-    pub fn get_shadow_transparent_receive(self) -> bool;
-
-    #[doc = "`set_shadowTransparentReceive(bool)` overload"]
-    #[method(name = "set_shadowTransparentReceive", args = 1)]
-    pub fn set_shadow_transparent_receive(self, value: bool) -> ();
-
-    #[doc = "`get_renderingMode()` overload"]
-    #[method(name = "get_renderingMode", args = 0)]
-    pub fn get_rendering_mode(
-        self,
-    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode;
-
-    #[doc = "`set_renderingMode(crate::unity_engine::rendering::universal::renderingmode::RenderingMode)` overload"]
-    #[method(name = "set_renderingMode", args = 1)]
-    pub fn set_rendering_mode(
-        self,
-        value: crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
-    ) -> ();
-
-    #[doc = "`get_accurateGbufferNormals()` overload"]
-    #[method(name = "get_accurateGbufferNormals", args = 0)]
-    pub fn get_accurate_gbuffer_normals(self) -> bool;
-
-    #[doc = "`set_accurateGbufferNormals(bool)` overload"]
-    #[method(name = "set_accurateGbufferNormals", args = 1)]
-    pub fn set_accurate_gbuffer_normals(self, value: bool) -> ();
-
-    #[doc = "`get_mixedResolutionFlag()` overload"]
-    #[method(name = "get_mixedResolutionFlag", args = 0)]
-    pub fn get_mixed_resolution_flag (self ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ;
-
-    #[doc = "`set_mixedResolutionFlag(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)` overload"]
-    #[method(name = "set_mixedResolutionFlag", args = 1)]
-    pub fn set_mixed_resolution_flag(
-        self,
-        value : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag,
-    ) -> ();
-
-    #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ForwardRendererData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IForwardRendererDataMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::ForwardRendererData;
+    pub use super::ForwardRendererData_MixedResolutionFlag;
+    pub use super::ForwardRendererData_ShaderResources;
+    pub use super::IForwardRendererData;
+    pub use super::IForwardRendererDataMethods;
+    pub use super::IForwardRendererData_ShaderResources;
+    pub use super::IForwardRendererData_ShaderResourcesMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
+    pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererDataMethods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

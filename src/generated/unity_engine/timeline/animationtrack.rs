@@ -81,263 +81,2390 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
-#[::unity2::methods]
-impl AnimationTrack_AnimationTrackUpgrade {
-    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertRotationsToEuler", args = 1)]
-    pub fn convert_rotations_to_euler(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationTrack_AnimationTrackUpgrade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_rotations_to_euler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationtrack :: AnimationTrack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertRotationsToEuler",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                    "ConvertRotationsToEuler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_rotations_to_euler(
         track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
-
-    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertRootMotion", args = 1)]
-    pub fn convert_root_motion(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::animationtrack::AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_rotations_to_euler::get_offset() as isize),
+        );
+        inner(track, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationtrack :: AnimationTrack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertRootMotion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                    "ConvertRootMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_root_motion(
         track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
-
-    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertInfiniteTrack", args = 1)]
-    pub fn convert_infinite_track(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::animationtrack::AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_root_motion::get_offset() as isize),
+        );
+        inner(track, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_infinite_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationtrack :: AnimationTrack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertInfiniteTrack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                    "ConvertInfiniteTrack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_infinite_track(
         track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::animationtrack::AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_infinite_track::get_offset() as isize),
+        );
+        inner(track, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
-#[::unity2::methods]
-impl AnimationTrack {
-    #[doc = "`get_position()` overload"]
-    #[method(name = "get_position", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+impl AnimationTrack_AnimationTrackUpgrade {
+    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_rotations_to_euler(
+        track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>,
+    ) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_rotations_to_euler(
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_root_motion(
+        track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>,
+    ) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_root_motion(
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_infinite_track(
+        track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>,
+    ) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_infinite_track(
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position", args = 1)]
-    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rotation()` overload"]
-    #[method(name = "get_rotation", args = 0)]
-    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_rotation", args = 1)]
-    pub fn set_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_eulerAngles()` overload"]
-    #[method(name = "get_eulerAngles", args = 0)]
-    pub fn get_euler_angles(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_eulerAngles", args = 1)]
-    pub fn set_euler_angles(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_applyOffsets()` overload"]
-    #[method(name = "get_applyOffsets", args = 0)]
-    pub fn get_apply_offsets(self) -> bool;
-
-    #[doc = "`set_applyOffsets(bool)` overload"]
-    #[method(name = "set_applyOffsets", args = 1)]
-    pub fn set_apply_offsets(self, value: bool) -> ();
-
-    #[doc = "`get_trackOffset()` overload"]
-    #[method(name = "get_trackOffset", args = 0)]
-    pub fn get_track_offset(self) -> crate::unity_engine::timeline::trackoffset::TrackOffset;
-
-    #[doc = "`set_trackOffset(crate::unity_engine::timeline::trackoffset::TrackOffset)` overload"]
-    #[method(name = "set_trackOffset", args = 1)]
-    pub fn set_track_offset(
-        self,
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationTrack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_position",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_position",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position(
+        this: AnimationTrack,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_rotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rotation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_rotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_rotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation(
+        this: AnimationTrack,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_eulerAngles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_eulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_euler_angles(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_euler_angles::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_eulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_eulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_euler_angles(
+        this: AnimationTrack,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_euler_angles::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_apply_offsets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_applyOffsets",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_applyOffsets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_apply_offsets(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_apply_offsets::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_apply_offsets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_applyOffsets",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_applyOffsets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_apply_offsets(
+        this: AnimationTrack,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_apply_offsets::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_track_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_trackOffset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_trackOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_track_offset(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::trackoffset::TrackOffset {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::trackoffset::TrackOffset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_track_offset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_track_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackoffset :: TrackOffset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_trackOffset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_trackOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_track_offset(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::trackoffset::TrackOffset,
-    ) -> ();
-
-    #[doc = "`get_matchTargetFields()` overload"]
-    #[method(name = "get_matchTargetFields", args = 0)]
-    pub fn get_match_target_fields(
-        self,
-    ) -> crate::unity_engine::timeline::matchtargetfields::MatchTargetFields;
-
-    #[doc = "`set_matchTargetFields(crate::unity_engine::timeline::matchtargetfields::MatchTargetFields)` overload"]
-    #[method(name = "set_matchTargetFields", args = 1)]
-    pub fn set_match_target_fields(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::trackoffset::TrackOffset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_track_offset::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_match_target_fields {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_matchTargetFields",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_matchTargetFields",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_match_target_fields(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::matchtargetfields::MatchTargetFields {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_match_target_fields :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_match_target_fields {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_matchTargetFields",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_matchTargetFields",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_match_target_fields(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-    ) -> ();
-
-    #[doc = "`get_infiniteClip()` overload"]
-    #[method(name = "get_infiniteClip", args = 0)]
-    pub fn get_infinite_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
-
-    #[doc = "`set_infiniteClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = "set_infiniteClip", args = 1)]
-    pub fn set_infinite_clip(self, value: crate::unity_engine::animationclip::AnimationClip) -> ();
-
-    #[doc = "`get_infiniteClipRemoveOffset()` overload"]
-    #[method(name = "get_infiniteClipRemoveOffset", args = 0)]
-    pub fn get_infinite_clip_remove_offset(self) -> bool;
-
-    #[doc = "`set_infiniteClipRemoveOffset(bool)` overload"]
-    #[method(name = "set_infiniteClipRemoveOffset", args = 1)]
-    pub fn set_infinite_clip_remove_offset(self, value: bool) -> ();
-
-    #[doc = "`get_avatarMask()` overload"]
-    #[method(name = "get_avatarMask", args = 0)]
-    pub fn get_avatar_mask(self) -> crate::unity_engine::avatarmask::AvatarMask;
-
-    #[doc = "`set_avatarMask(crate::unity_engine::avatarmask::AvatarMask)` overload"]
-    #[method(name = "set_avatarMask", args = 1)]
-    pub fn set_avatar_mask(self, value: crate::unity_engine::avatarmask::AvatarMask) -> ();
-
-    #[doc = "`get_applyAvatarMask()` overload"]
-    #[method(name = "get_applyAvatarMask", args = 0)]
-    pub fn get_apply_avatar_mask(self) -> bool;
-
-    #[doc = "`set_applyAvatarMask(bool)` overload"]
-    #[method(name = "set_applyAvatarMask", args = 1)]
-    pub fn set_apply_avatar_mask(self, value: bool) -> ();
-
-    #[doc = "`CanCompileClips()` overload"]
-    #[method(name = "CanCompileClips", args = 0)]
-    pub fn can_compile_clips(self) -> bool;
-
-    #[doc = "`get_outputs()` overload"]
-    #[method(name = "get_outputs", args = 0)]
-    pub fn get_outputs(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_match_target_fields::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_infinite_clip::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip(
+        this: AnimationTrack,
+        value: crate::unity_engine::animationclip::AnimationClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_remove_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipRemoveOffset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipRemoveOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_remove_offset(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_infinite_clip_remove_offset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_remove_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipRemoveOffset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipRemoveOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_remove_offset(
+        this: AnimationTrack,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_infinite_clip_remove_offset::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_avatar_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_avatarMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_avatarMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_avatar_mask(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::avatarmask::AvatarMask {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::avatarmask::AvatarMask = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_avatar_mask::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_avatar_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::avatarmask::AvatarMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_avatarMask",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_avatarMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_avatar_mask(
+        this: AnimationTrack,
+        value: crate::unity_engine::avatarmask::AvatarMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::avatarmask::AvatarMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_avatar_mask::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_apply_avatar_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_applyAvatarMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_applyAvatarMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_apply_avatar_mask(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_apply_avatar_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_apply_avatar_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_applyAvatarMask",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_applyAvatarMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_apply_avatar_mask(
+        this: AnimationTrack,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_apply_avatar_mask::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_compile_clips {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CanCompileClips",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CanCompileClips",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_compile_clips(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_can_compile_clips::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_outputs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_outputs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_outputs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_outputs(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::unity_engine::playables::playablebinding::PlayableBinding,
-    >;
-
-    #[doc = "`get_inClipMode()` overload"]
-    #[method(name = "get_inClipMode", args = 0)]
-    pub fn get_in_clip_mode(self) -> bool;
-
-    #[doc = "`get_infiniteClipOffsetPosition()` overload"]
-    #[method(name = "get_infiniteClipOffsetPosition", args = 0)]
-    pub fn get_infinite_clip_offset_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_infiniteClipOffsetPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_infiniteClipOffsetPosition", args = 1)]
-    pub fn set_infinite_clip_offset_position(
-        self,
+    > {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_outputs :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_in_clip_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_inClipMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_inClipMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_in_clip_mode(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_in_clip_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_offset_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipOffsetPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipOffsetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_offset_position(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_infinite_clip_offset_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_offset_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipOffsetPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipOffsetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_offset_position(
+        this: AnimationTrack,
         value: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`get_infiniteClipOffsetRotation()` overload"]
-    #[method(name = "get_infiniteClipOffsetRotation", args = 0)]
-    pub fn get_infinite_clip_offset_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_infiniteClipOffsetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_infiniteClipOffsetRotation", args = 1)]
-    pub fn set_infinite_clip_offset_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_offset_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_offset_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipOffsetRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipOffsetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_offset_rotation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_infinite_clip_offset_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_offset_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipOffsetRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipOffsetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_offset_rotation(
+        this: AnimationTrack,
         value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_infiniteClipOffsetEulerAngles()` overload"]
-    #[method(name = "get_infiniteClipOffsetEulerAngles", args = 0)]
-    pub fn get_infinite_clip_offset_euler_angles(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_infiniteClipOffsetEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_infiniteClipOffsetEulerAngles", args = 1)]
-    pub fn set_infinite_clip_offset_euler_angles(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_offset_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_offset_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipOffsetEulerAngles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipOffsetEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_offset_euler_angles(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_infinite_clip_offset_euler_angles::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_offset_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipOffsetEulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipOffsetEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_offset_euler_angles(
+        this: AnimationTrack,
         value: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`get_infiniteClipApplyFootIK()` overload"]
-    #[method(name = "get_infiniteClipApplyFootIK", args = 0)]
-    pub fn get_infinite_clip_apply_foot_ik(self) -> bool;
-
-    #[doc = "`set_infiniteClipApplyFootIK(bool)` overload"]
-    #[method(name = "set_infiniteClipApplyFootIK", args = 1)]
-    pub fn set_infinite_clip_apply_foot_ik(self, value: bool) -> ();
-
-    #[doc = "`get_infiniteClipTimeOffset()` overload"]
-    #[method(name = "get_infiniteClipTimeOffset", args = 0)]
-    pub fn get_infinite_clip_time_offset(self) -> f64;
-
-    #[doc = "`set_infiniteClipTimeOffset(f64)` overload"]
-    #[method(name = "set_infiniteClipTimeOffset", args = 1)]
-    pub fn set_infinite_clip_time_offset(self, value: f64) -> ();
-
-    #[doc = "`get_infiniteClipPreExtrapolation()` overload"]
-    #[method(name = "get_infiniteClipPreExtrapolation", args = 0)]
-    pub fn get_infinite_clip_pre_extrapolation(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
-
-    #[doc = "`set_infiniteClipPreExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
-    #[method(name = "set_infiniteClipPreExtrapolation", args = 1)]
-    pub fn set_infinite_clip_pre_extrapolation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_offset_euler_angles::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_apply_foot_ik {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipApplyFootIK",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipApplyFootIK",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_apply_foot_ik(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_infinite_clip_apply_foot_ik::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_apply_foot_ik {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipApplyFootIK",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipApplyFootIK",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_apply_foot_ik(
+        this: AnimationTrack,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_infinite_clip_apply_foot_ik::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_time_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipTimeOffset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipTimeOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_time_offset(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_infinite_clip_time_offset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_time_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipTimeOffset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipTimeOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_time_offset(
+        this: AnimationTrack,
+        value: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_infinite_clip_time_offset::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_pre_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipPreExtrapolation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipPreExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_pre_extrapolation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_infinite_clip_pre_extrapolation :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_pre_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipPreExtrapolation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipPreExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_pre_extrapolation(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-    ) -> ();
-
-    #[doc = "`get_infiniteClipPostExtrapolation()` overload"]
-    #[method(name = "get_infiniteClipPostExtrapolation", args = 0)]
-    pub fn get_infinite_clip_post_extrapolation(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
-
-    #[doc = "`set_infiniteClipPostExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
-    #[method(name = "set_infiniteClipPostExtrapolation", args = 1)]
-    pub fn set_infinite_clip_post_extrapolation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_pre_extrapolation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_post_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipPostExtrapolation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipPostExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_post_extrapolation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_infinite_clip_post_extrapolation :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_post_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipPostExtrapolation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipPostExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_post_extrapolation(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-    ) -> ();
-
-    #[doc = "`get_infiniteClipLoop()` overload"]
-    #[method(name = "get_infiniteClipLoop", args = 0)]
-    pub fn get_infinite_clip_loop(
-        self,
-    ) -> crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode;
-
-    #[doc = "`set_infiniteClipLoop(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]
-    #[method(name = "set_infiniteClipLoop", args = 1)]
-    pub fn set_infinite_clip_loop(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_post_extrapolation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_infinite_clip_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_infiniteClipLoop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_infiniteClipLoop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_infinite_clip_loop(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode
+    {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_infinite_clip_loop :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_infinite_clip_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_infiniteClipLoop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_infiniteClipLoop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_infinite_clip_loop(
+        this: AnimationTrack,
         value : crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode,
-    ) -> ();
-
-    #[doc = "`ResetOffsets()` overload"]
-    #[method(name = "ResetOffsets", args = 0)]
-    pub fn reset_offsets(self) -> ();
-
-    #[doc = "`CreateClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = "CreateClip", args = 1)]
-    pub fn create_clip(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_infinite_clip_loop::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_offsets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "ResetOffsets",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "ResetOffsets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_offsets(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_offsets::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CreateClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CreateClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_clip(
+        this: AnimationTrack,
         clip: crate::unity_engine::animationclip::AnimationClip,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip;
-
-    #[doc = "`CreateInfiniteClip(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateInfiniteClip", args = 1)]
-    pub fn create_infinite_clip(self, infinite_clip_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`CreateRecordableClip(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateRecordableClip", args = 1)]
-    pub fn create_recordable_clip(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_clip::get_offset() as isize),
+        );
+        inner(this, clip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_infinite_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CreateInfiniteClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CreateInfiniteClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_infinite_clip(
+        this: AnimationTrack,
+        infinite_clip_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_infinite_clip::get_offset() as isize),
+        );
+        inner(this, infinite_clip_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_recordable_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CreateRecordableClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CreateRecordableClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_recordable_clip(
+        this: AnimationTrack,
         anim_clip_name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip;
-
-    #[doc = "`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    #[method(name = "OnCreateClip", args = 1)]
-    pub fn on_create_clip(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_recordable_clip::get_offset() as isize),
+        );
+        inner(this, anim_clip_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "OnCreateClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "OnCreateClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create_clip(
+        this: AnimationTrack,
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
-    ) -> ();
-
-    #[doc = "`CalculateItemsHash()` overload"]
-    #[method(name = "CalculateItemsHash", args = 0)]
-    pub fn calculate_items_hash(self) -> i32;
-
-    #[doc = "`UpdateClipOffsets()` overload"]
-    #[method(name = "UpdateClipOffsets", args = 0)]
-    pub fn update_clip_offsets(self) -> ();
-
-    #[doc = "`CompileTrackPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::timeline::animationtrack::AnimationTrack, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
-    #[method(name = "CompileTrackPlayable", args = 5)]
-    pub fn compile_track_playable(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_create_clip::get_offset() as isize),
+        );
+        inner(this, clip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_items_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CalculateItemsHash",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CalculateItemsHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_items_hash(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calculate_items_hash::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_clip_offsets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "UpdateClipOffsets",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "UpdateClipOffsets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_clip_offsets(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_clip_offsets::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile_track_playable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: animationtrack :: AnimationTrack as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CompileTrackPlayable",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CompileTrackPlayable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compile_track_playable(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
         go: crate::unity_engine::gameobject::GameObject,
@@ -345,241 +2472,2979 @@ impl AnimationTrack {
             crate::unity_engine::timeline::runtimeelement::RuntimeElement,
         >,
         mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`UnityEngine.Timeline.ILayerable.CreateLayerMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "UnityEngine.Timeline.ILayerable.CreateLayerMixer", args = 3)]
-    pub fn unity_engine_timeline_i_layerable_create_layer_mixer(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::timeline::animationtrack::AnimationTrack,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compile_track_playable::get_offset() as isize),
+        );
+        inner(this, graph, track, go, tree, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unity_engine_timeline_i_layerable_create_layer_mixer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "UnityEngine.Timeline.ILayerable.CreateLayerMixer",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "UnityEngine.Timeline.ILayerable.CreateLayerMixer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unity_engine_timeline_i_layerable_create_layer_mixer(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
         input_count: i32,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`OnCreateClipPlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]
-    #[method(name = "OnCreateClipPlayableGraph", args = 3)]
-    pub fn on_create_clip_playable_graph(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::gameobject::GameObject,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_unity_engine_timeline_i_layerable_create_layer_mixer::get_offset()
+                        as isize,
+                ),
+        );
+        inner(this, graph, go, input_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create_clip_playable_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "OnCreateClipPlayableGraph",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "OnCreateClipPlayableGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create_clip_playable_graph(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
         tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
             crate::unity_engine::timeline::runtimeelement::RuntimeElement,
         >,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`GetDefaultBlendCount()` overload"]
-    #[method(name = "GetDefaultBlendCount", args = 0)]
-    pub fn get_default_blend_count(self) -> i32;
-
-    #[doc = "`AttachDefaultBlend(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable, bool)` overload"]
-    #[method(name = "AttachDefaultBlend", args = 3)]
-    pub fn attach_default_blend(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_create_clip_playable_graph::get_offset() as isize),
+        );
+        inner(this, graph, go, tree, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_blend_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetDefaultBlendCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetDefaultBlendCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_blend_count(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_default_blend_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attach_default_blend {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "AttachDefaultBlend",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "AttachDefaultBlend",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn attach_default_blend(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         mixer : crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable,
         require_offset: bool,
-    ) -> ();
-
-    #[doc = "`AttachOffsetPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playable::Playable, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "AttachOffsetPlayable", args = 4)]
-    pub fn attach_offset_playable(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (AnimationTrack , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_attach_default_blend :: get_offset () as isize) ,) ;
+        inner(this, graph, mixer, require_offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attach_offset_playable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "AttachOffsetPlayable",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "AttachOffsetPlayable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn attach_offset_playable(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         playable: crate::unity_engine::playables::playable::Playable,
         pos: crate::unity_engine::vector3::Vector3,
         rot: crate::unity_engine::quaternion::Quaternion,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`RequiresMotionXPlayable(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "RequiresMotionXPlayable", args = 2)]
-    pub fn requires_motion_x_playable(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_attach_offset_playable::get_offset() as isize),
+        );
+        inner(this, graph, playable, pos, rot, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_requires_motion_x_playable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "RequiresMotionXPlayable",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "RequiresMotionXPlayable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn requires_motion_x_playable(
+        this: AnimationTrack,
         mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> bool;
-
-    #[doc = "`UsesAbsoluteMotion(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
-    #[method(name = "UsesAbsoluteMotion", args = 1)]
-    pub fn uses_absolute_motion(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_requires_motion_x_playable::get_offset() as isize),
+        );
+        inner(this, mode, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uses_absolute_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "UsesAbsoluteMotion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "UsesAbsoluteMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn uses_absolute_motion(
         mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
-    ) -> bool;
-
-    #[doc = "`HasController(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "HasController", args = 1)]
-    pub fn has_controller(self, game_object: crate::unity_engine::gameobject::GameObject) -> bool;
-
-    #[doc = "`GetBinding(crate::unity_engine::playables::playabledirector::PlayableDirector)` overload"]
-    #[method(name = "GetBinding", args = 1)]
-    pub fn get_binding(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_uses_absolute_motion::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "HasController",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "HasController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_controller(
+        this: AnimationTrack,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_controller::get_offset() as isize),
+        );
+        inner(this, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_binding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetBinding",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetBinding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_binding(
+        this: AnimationTrack,
         director: crate::unity_engine::playables::playabledirector::PlayableDirector,
-    ) -> crate::unity_engine::animator::Animator;
-
-    #[doc = "`CreateGroupMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "CreateGroupMixer", args = 3)]
-    pub fn create_group_mixer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animator::Animator {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playabledirector::PlayableDirector,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animator::Animator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_binding::get_offset() as isize),
+        );
+        inner(this, director, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_group_mixer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CreateGroupMixer",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CreateGroupMixer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_group_mixer(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
         input_count: i32,
-    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable;
-
-    #[doc = "`CreateInfiniteTrackPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
-    #[method(name = "CreateInfiniteTrackPlayable", args = 4)]
-    pub fn create_infinite_track_playable(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable
+    {
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_group_mixer :: get_offset () as isize) ,) ;
+        inner(graph, go, input_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_infinite_track_playable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "CreateInfiniteTrackPlayable",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "CreateInfiniteTrackPlayable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_infinite_track_playable(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
         tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
             crate::unity_engine::timeline::runtimeelement::RuntimeElement,
         >,
         mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`ApplyTrackOffset(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playable::Playable, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
-    #[method(name = "ApplyTrackOffset", args = 4)]
-    pub fn apply_track_offset(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_infinite_track_playable::get_offset() as isize),
+        );
+        inner(this, graph, go, tree, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_track_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "ApplyTrackOffset",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "ApplyTrackOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_track_offset(
+        this: AnimationTrack,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         root: crate::unity_engine::playables::playable::Playable,
         go: crate::unity_engine::gameobject::GameObject,
         mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
-    ) -> crate::unity_engine::playables::playable::Playable;
-
-    #[doc = "`GetEvaluationTime(f64, f64)` overload"]
-    #[method(name = "GetEvaluationTime", args = 2)]
-    pub fn get_evaluation_time(self, out_start: f64, out_duration: f64) -> ();
-
-    #[doc = "`GetSequenceTime(f64, f64)` overload"]
-    #[method(name = "GetSequenceTime", args = 2)]
-    pub fn get_sequence_time(self, out_start: f64, out_duration: f64) -> ();
-
-    #[doc = "`AssignAnimationClip(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = "AssignAnimationClip", args = 2)]
-    pub fn assign_animation_clip(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_track_offset::get_offset() as isize),
+        );
+        inner(this, graph, root, go, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_evaluation_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f64 as ::unity2::IlType>::il_type(),
+                <*mut f64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetEvaluationTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetEvaluationTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_evaluation_time(
+        this: AnimationTrack,
+        out_start: *mut f64,
+        out_duration: *mut f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            *mut f64,
+            *mut f64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_evaluation_time::get_offset() as isize),
+        );
+        inner(this, out_start, out_duration, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sequence_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f64 as ::unity2::IlType>::il_type(),
+                <*mut f64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetSequenceTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetSequenceTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sequence_time(
+        this: AnimationTrack,
+        out_start: *mut f64,
+        out_duration: *mut f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            *mut f64,
+            *mut f64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sequence_time::get_offset() as isize),
+        );
+        inner(this, out_start, out_duration, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assign_animation_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animationclip :: AnimationClip as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "AssignAnimationClip",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "AssignAnimationClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn assign_animation_clip(
+        this: AnimationTrack,
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         anim_clip: crate::unity_engine::animationclip::AnimationClip,
-    ) -> ();
-
-    #[doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]
-    #[method(name = "GatherProperties", args = 2)]
-    pub fn gather_properties(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_assign_animation_clip::get_offset() as isize),
+        );
+        inner(this, clip, anim_clip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_gather_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GatherProperties",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GatherProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn gather_properties(
+        this: AnimationTrack,
         director: crate::unity_engine::playables::playabledirector::PlayableDirector,
         driver: crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
-    ) -> ();
-
-    #[doc = "`GetAnimationClips(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip>)` overload"]
-    #[method(name = "GetAnimationClips", args = 1)]
-    pub fn get_animation_clips(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::playables::playabledirector::PlayableDirector,
+            crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_gather_properties::get_offset() as isize),
+        );
+        inner(this, director, driver, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animation_clips {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::animationclip::AnimationClip,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetAnimationClips",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimationClips",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animation_clips(
+        this: AnimationTrack,
         anim_clips: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::animationclip::AnimationClip,
         >,
-    ) -> ();
-
-    #[doc = "`GetOffsetMode(crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "GetOffsetMode", args = 2)]
-    pub fn get_offset_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animationclip::AnimationClip,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animation_clips::get_offset() as isize),
+        );
+        inner(this, anim_clips, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_offset_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetOffsetMode",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetOffsetMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_offset_mode(
+        this: AnimationTrack,
         go: crate::unity_engine::gameobject::GameObject,
         animates_root_transform: bool,
-    ) -> crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode;
-
-    #[doc = "`IsRootTransformDisabledByMask(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "IsRootTransformDisabledByMask", args = 2)]
-    pub fn is_root_transform_disabled_by_mask(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode {
+        let inner : extern "C" fn (AnimationTrack , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_offset_mode :: get_offset () as isize) ,) ;
+        inner(this, go, animates_root_transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_root_transform_disabled_by_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "IsRootTransformDisabledByMask",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "IsRootTransformDisabledByMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_root_transform_disabled_by_mask(
+        this: AnimationTrack,
         game_object: crate::unity_engine::gameobject::GameObject,
         generic_root_node: crate::unity_engine::transform::Transform,
-    ) -> bool;
-
-    #[doc = "`GetGenericRootNode(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "GetGenericRootNode", args = 1)]
-    pub fn get_generic_root_node(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_root_transform_disabled_by_mask::get_offset() as isize),
+        );
+        inner(this, game_object, generic_root_node, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_generic_root_node {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "GetGenericRootNode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "GetGenericRootNode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_generic_root_node(
+        this: AnimationTrack,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`AnimatesRootTransform()` overload"]
-    #[method(name = "AnimatesRootTransform", args = 0)]
-    pub fn animates_root_transform(self) -> bool;
-
-    #[doc = "`FindInHierarchyBreadthFirst(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
-    #[method(name = "FindInHierarchyBreadthFirst", args = 2)]
-    pub fn find_in_hierarchy_breadth_first(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_generic_root_node::get_offset() as isize),
+        );
+        inner(this, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_animates_root_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "AnimatesRootTransform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "AnimatesRootTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn animates_root_transform(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_animates_root_transform::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_in_hierarchy_breadth_first {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "FindInHierarchyBreadthFirst",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "FindInHierarchyBreadthFirst",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_in_hierarchy_breadth_first(
         t: crate::unity_engine::transform::Transform,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_openClipOffsetPosition()` overload"]
-    #[method(name = "get_openClipOffsetPosition", args = 0)]
-    pub fn get_open_clip_offset_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_openClipOffsetPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_openClipOffsetPosition", args = 1)]
-    pub fn set_open_clip_offset_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_openClipOffsetRotation()` overload"]
-    #[method(name = "get_openClipOffsetRotation", args = 0)]
-    pub fn get_open_clip_offset_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_openClipOffsetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_openClipOffsetRotation", args = 1)]
-    pub fn set_open_clip_offset_rotation(
-        self,
-        value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_openClipOffsetEulerAngles()` overload"]
-    #[method(name = "get_openClipOffsetEulerAngles", args = 0)]
-    pub fn get_open_clip_offset_euler_angles(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_openClipOffsetEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_openClipOffsetEulerAngles", args = 1)]
-    pub fn set_open_clip_offset_euler_angles(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_in_hierarchy_breadth_first::get_offset() as isize),
+        );
+        inner(t, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_clip_offset_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_openClipOffsetPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_openClipOffsetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_open_clip_offset_position(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_open_clip_offset_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_open_clip_offset_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_openClipOffsetPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_openClipOffsetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_open_clip_offset_position(
+        this: AnimationTrack,
         value: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`get_openClipPreExtrapolation()` overload"]
-    #[method(name = "get_openClipPreExtrapolation", args = 0)]
-    pub fn get_open_clip_pre_extrapolation(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
-
-    #[doc = "`set_openClipPreExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
-    #[method(name = "set_openClipPreExtrapolation", args = 1)]
-    pub fn set_open_clip_pre_extrapolation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_open_clip_offset_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_clip_offset_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_openClipOffsetRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_openClipOffsetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_open_clip_offset_rotation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_open_clip_offset_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_open_clip_offset_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_openClipOffsetRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_openClipOffsetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_open_clip_offset_rotation(
+        this: AnimationTrack,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_open_clip_offset_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_clip_offset_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_openClipOffsetEulerAngles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_openClipOffsetEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_open_clip_offset_euler_angles(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_open_clip_offset_euler_angles::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_open_clip_offset_euler_angles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_openClipOffsetEulerAngles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_openClipOffsetEulerAngles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_open_clip_offset_euler_angles(
+        this: AnimationTrack,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_open_clip_offset_euler_angles::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_clip_pre_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_openClipPreExtrapolation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_openClipPreExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_open_clip_pre_extrapolation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_open_clip_pre_extrapolation :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_open_clip_pre_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_openClipPreExtrapolation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_openClipPreExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_open_clip_pre_extrapolation(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-    ) -> ();
-
-    #[doc = "`get_openClipPostExtrapolation()` overload"]
-    #[method(name = "get_openClipPostExtrapolation", args = 0)]
-    pub fn get_open_clip_post_extrapolation(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
-
-    #[doc = "`set_openClipPostExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
-    #[method(name = "set_openClipPostExtrapolation", args = 1)]
-    pub fn set_open_clip_post_extrapolation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_open_clip_pre_extrapolation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_clip_post_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "get_openClipPostExtrapolation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_openClipPostExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_open_clip_post_extrapolation(
+        this: AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        let inner : extern "C" fn (AnimationTrack , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_open_clip_post_extrapolation :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_open_clip_post_extrapolation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "set_openClipPostExtrapolation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "set_openClipPostExtrapolation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_open_clip_post_extrapolation(
+        this: AnimationTrack,
         value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-    ) -> ();
-
-    #[doc = "`OnUpgradeFromVersion(i32)` overload"]
-    #[method(name = "OnUpgradeFromVersion", args = 1)]
-    pub fn on_upgrade_from_version(self, old_version: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationTrack,
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_open_clip_post_extrapolation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_upgrade_from_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                "OnUpgradeFromVersion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    "OnUpgradeFromVersion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_upgrade_from_version(
+        this: AnimationTrack,
+        old_version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AnimationTrack, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_upgrade_from_version::get_offset() as isize),
+            );
+        inner(this, old_version, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: AnimationTrack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationTrack as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+impl AnimationTrack {
+    #[doc = "`UsesAbsoluteMotion(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
+    pub fn uses_absolute_motion(
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        >,
+    ) -> bool {
+        unsafe {
+            __AnimationTrack_unity2_raw::uses_absolute_motion(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateGroupMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    pub fn create_group_mixer(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        input_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable
+    {
+        unsafe {
+            __AnimationTrack_unity2_raw::create_group_mixer(
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(input_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindInHierarchyBreadthFirst(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]
+    pub fn find_in_hierarchy_breadth_first(
+        t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            __AnimationTrack_unity2_raw::find_in_hierarchy_breadth_first(
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AnimationTrack_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+pub trait IAnimationTrackMethods: IAnimationTrack {
+    #[doc = "`get_position()` overload"]
+    fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rotation()` overload"]
+    fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_eulerAngles()` overload"]
+    fn get_euler_angles(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_euler_angles(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_euler_angles(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_applyOffsets()` overload"]
+    fn get_apply_offsets(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_apply_offsets(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_applyOffsets(bool)` overload"]
+    fn set_apply_offsets(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_apply_offsets(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_trackOffset()` overload"]
+    fn get_track_offset(self) -> crate::unity_engine::timeline::trackoffset::TrackOffset {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_track_offset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_trackOffset(crate::unity_engine::timeline::trackoffset::TrackOffset)` overload"]
+    fn set_track_offset(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::timeline::trackoffset::TrackOffset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_track_offset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_matchTargetFields()` overload"]
+    fn get_match_target_fields(
+        self,
+    ) -> crate::unity_engine::timeline::matchtargetfields::MatchTargetFields {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_match_target_fields(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_matchTargetFields(crate::unity_engine::timeline::matchtargetfields::MatchTargetFields)` overload"]
+    fn set_match_target_fields(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_match_target_fields(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClip()` overload"]
+    fn get_infinite_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_infiniteClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn set_infinite_clip(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipRemoveOffset()` overload"]
+    fn get_infinite_clip_remove_offset(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_remove_offset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipRemoveOffset(bool)` overload"]
+    fn set_infinite_clip_remove_offset(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_remove_offset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_avatarMask()` overload"]
+    fn get_avatar_mask(self) -> crate::unity_engine::avatarmask::AvatarMask {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_avatar_mask(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_avatarMask(crate::unity_engine::avatarmask::AvatarMask)` overload"]
+    fn set_avatar_mask(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::avatarmask::AvatarMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_avatar_mask(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_applyAvatarMask()` overload"]
+    fn get_apply_avatar_mask(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_apply_avatar_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_applyAvatarMask(bool)` overload"]
+    fn set_apply_avatar_mask(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_apply_avatar_mask(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanCompileClips()` overload"]
+    fn can_compile_clips(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::can_compile_clips(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_outputs()` overload"]
+    fn get_outputs(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::playables::playablebinding::PlayableBinding,
+    > {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_inClipMode()` overload"]
+    fn get_in_clip_mode(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_in_clip_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_infiniteClipOffsetPosition()` overload"]
+    fn get_infinite_clip_offset_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_offset_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipOffsetPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_infinite_clip_offset_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_offset_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipOffsetRotation()` overload"]
+    fn get_infinite_clip_offset_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_offset_rotation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipOffsetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_infinite_clip_offset_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_offset_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipOffsetEulerAngles()` overload"]
+    fn get_infinite_clip_offset_euler_angles(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_offset_euler_angles(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipOffsetEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_infinite_clip_offset_euler_angles(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_offset_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipApplyFootIK()` overload"]
+    fn get_infinite_clip_apply_foot_ik(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_apply_foot_ik(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipApplyFootIK(bool)` overload"]
+    fn set_infinite_clip_apply_foot_ik(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_apply_foot_ik(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipTimeOffset()` overload"]
+    fn get_infinite_clip_time_offset(self) -> f64 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_time_offset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipTimeOffset(f64)` overload"]
+    fn set_infinite_clip_time_offset(self, value: impl ::core::convert::Into<f64>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_time_offset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipPreExtrapolation()` overload"]
+    fn get_infinite_clip_pre_extrapolation(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_pre_extrapolation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipPreExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
+    fn set_infinite_clip_pre_extrapolation(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_pre_extrapolation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipPostExtrapolation()` overload"]
+    fn get_infinite_clip_post_extrapolation(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_post_extrapolation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipPostExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
+    fn set_infinite_clip_post_extrapolation(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_post_extrapolation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_infiniteClipLoop()` overload"]
+    fn get_infinite_clip_loop(
+        self,
+    ) -> crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode
+    {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_infinite_clip_loop(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_infiniteClipLoop(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]
+    fn set_infinite_clip_loop(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_infinite_clip_loop(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetOffsets()` overload"]
+    fn reset_offsets(self) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::reset_offsets(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn create_clip(
+        self,
+        clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::create_clip(
+                __receiver,
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateInfiniteClip(::unity2::Il2CppString)` overload"]
+    fn create_infinite_clip(
+        self,
+        infinite_clip_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::create_infinite_clip(
+                __receiver,
+                ::core::convert::Into::into(infinite_clip_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateRecordableClip(::unity2::Il2CppString)` overload"]
+    fn create_recordable_clip(
+        self,
+        anim_clip_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::create_recordable_clip(
+                __receiver,
+                ::core::convert::Into::into(anim_clip_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
+    fn on_create_clip(
+        self,
+        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::on_create_clip(
+                __receiver,
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateItemsHash()` overload"]
+    fn calculate_items_hash(self) -> i32 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::calculate_items_hash(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateClipOffsets()` overload"]
+    fn update_clip_offsets(self) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::update_clip_offsets(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompileTrackPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::timeline::animationtrack::AnimationTrack, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
+    fn compile_track_playable(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        tree: impl ::core::convert::Into<
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+        >,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::compile_track_playable(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(track),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(tree),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnityEngine.Timeline.ILayerable.CreateLayerMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    fn unity_engine_timeline_i_layerable_create_layer_mixer(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        input_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::unity_engine_timeline_i_layerable_create_layer_mixer(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(input_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreateClipPlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]
+    fn on_create_clip_playable_graph(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        tree: impl ::core::convert::Into<
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+        >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::on_create_clip_playable_graph(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(tree),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDefaultBlendCount()` overload"]
+    fn get_default_blend_count(self) -> i32 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_default_blend_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AttachDefaultBlend(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable, bool)` overload"]
+    fn attach_default_blend(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        mixer : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable >,
+        require_offset: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::attach_default_blend(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(mixer),
+                ::core::convert::Into::into(require_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AttachOffsetPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playable::Playable, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn attach_offset_playable(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rot: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::attach_offset_playable(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(rot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RequiresMotionXPlayable(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn requires_motion_x_playable(
+        self,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        >,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::requires_motion_x_playable(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasController(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn has_controller(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::has_controller(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBinding(crate::unity_engine::playables::playabledirector::PlayableDirector)` overload"]
+    fn get_binding(
+        self,
+        director: impl ::core::convert::Into<
+            crate::unity_engine::playables::playabledirector::PlayableDirector,
+        >,
+    ) -> crate::unity_engine::animator::Animator {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_binding(
+                __receiver,
+                ::core::convert::Into::into(director),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateInfiniteTrackPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
+    fn create_infinite_track_playable(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        tree: impl ::core::convert::Into<
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
+                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
+            >,
+        >,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::create_infinite_track_playable(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(tree),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyTrackOffset(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playable::Playable, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]
+    fn apply_track_offset(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        root: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::apply_track_offset(
+                __receiver,
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEvaluationTime(*mutf64, *mutf64)` overload"]
+    fn get_evaluation_time(self) -> (f64, f64) {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<f64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<f64>::uninit();
+            __AnimationTrack_unity2_raw::get_evaluation_time(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetSequenceTime(*mutf64, *mutf64)` overload"]
+    fn get_sequence_time(self) -> (f64, f64) {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<f64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<f64>::uninit();
+            __AnimationTrack_unity2_raw::get_sequence_time(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`AssignAnimationClip(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn assign_animation_clip(
+        self,
+        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+        anim_clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::assign_animation_clip(
+                __receiver,
+                ::core::convert::Into::into(clip),
+                ::core::convert::Into::into(anim_clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]
+    fn gather_properties(
+        self,
+        director: impl ::core::convert::Into<
+            crate::unity_engine::playables::playabledirector::PlayableDirector,
+        >,
+        driver: impl ::core::convert::Into<
+            crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::gather_properties(
+                __receiver,
+                ::core::convert::Into::into(director),
+                ::core::convert::Into::into(driver),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimationClips(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip>)` overload"]
+    fn get_animation_clips(
+        self,
+        anim_clips: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animationclip::AnimationClip,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_animation_clips(
+                __receiver,
+                ::core::convert::Into::into(anim_clips),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetOffsetMode(crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    fn get_offset_mode(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        animates_root_transform: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_offset_mode(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(animates_root_transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRootTransformDisabledByMask(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]
+    fn is_root_transform_disabled_by_mask(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        generic_root_node: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::is_root_transform_disabled_by_mask(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(generic_root_node),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGenericRootNode(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn get_generic_root_node(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_generic_root_node(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AnimatesRootTransform()` overload"]
+    fn animates_root_transform(self) -> bool {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::animates_root_transform(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_openClipOffsetPosition()` overload"]
+    fn get_open_clip_offset_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_open_clip_offset_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_openClipOffsetPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_open_clip_offset_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_open_clip_offset_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_openClipOffsetRotation()` overload"]
+    fn get_open_clip_offset_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_open_clip_offset_rotation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_openClipOffsetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_open_clip_offset_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_open_clip_offset_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_openClipOffsetEulerAngles()` overload"]
+    fn get_open_clip_offset_euler_angles(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_open_clip_offset_euler_angles(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_openClipOffsetEulerAngles(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_open_clip_offset_euler_angles(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_open_clip_offset_euler_angles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_openClipPreExtrapolation()` overload"]
+    fn get_open_clip_pre_extrapolation(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_open_clip_pre_extrapolation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_openClipPreExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
+    fn set_open_clip_pre_extrapolation(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_open_clip_pre_extrapolation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_openClipPostExtrapolation()` overload"]
+    fn get_open_clip_post_extrapolation(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::get_open_clip_post_extrapolation(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_openClipPostExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
+    fn set_open_clip_post_extrapolation(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::set_open_clip_post_extrapolation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnUpgradeFromVersion(i32)` overload"]
+    fn on_upgrade_from_version(self, old_version: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::on_upgrade_from_version(
+                __receiver,
+                ::core::convert::Into::into(old_version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AnimationTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimationTrack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+impl<__T: IAnimationTrack> IAnimationTrackMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
 impl AnimationTrack {
@@ -595,4 +5460,28 @@ impl AnimationTrack {
         <Self as IAnimationTrackMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+pub mod prelude {
+    pub use super::AnimationTrack;
+    pub use super::AnimationTrack_AnimationTrackUpgrade;
+    pub use super::IAnimationTrack;
+    pub use super::IAnimationTrackMethods;
+    pub use super::IAnimationTrack_AnimationTrackUpgrade;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
+    #[cfg(feature = "unity_engine-playables-playableasset")]
+    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::unity_engine::timeline::trackasset::ITrackAsset;
+    #[cfg(feature = "unity_engine-timeline-trackasset")]
+    pub use crate::unity_engine::timeline::trackasset::ITrackAssetMethods;
 }

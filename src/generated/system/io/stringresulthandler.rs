@@ -23,23 +23,218 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-stringresulthandler")]
-#[::unity2::methods]
-impl StringResultHandler {
-    #[doc = "`.ctor(bool, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, include_files: bool, include_dirs: bool) -> ();
-
-    #[doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]
-    #[method(name = "IsResultIncluded", args = 1)]
-    pub fn is_result_included(self, result: crate::system::io::searchresult::SearchResult) -> bool;
-
-    #[doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]
-    #[method(name = "CreateObject", args = 1)]
-    pub fn create_object(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StringResultHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StringResultHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StringResultHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: StringResultHandler,
+        include_files: bool,
+        include_dirs: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(StringResultHandler, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, include_files, include_dirs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_result_included {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::searchresult::SearchResult as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StringResultHandler as ::unity2::ClassIdentity>::class(),
+                "IsResultIncluded",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StringResultHandler as ::unity2::ClassIdentity>::NAME,
+                    "IsResultIncluded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_result_included(
+        this: StringResultHandler,
         result: crate::system::io::searchresult::SearchResult,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            StringResultHandler,
+            crate::system::io::searchresult::SearchResult,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_result_included::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::searchresult::SearchResult as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StringResultHandler as ::unity2::ClassIdentity>::class(),
+                "CreateObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <StringResultHandler as ::unity2::ClassIdentity>::NAME,
+                    "CreateObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_object(
+        this: StringResultHandler,
+        result: crate::system::io::searchresult::SearchResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            StringResultHandler,
+            crate::system::io::searchresult::SearchResult,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_object::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-io-stringresulthandler")]
+pub trait IStringResultHandlerMethods: IStringResultHandler {
+    #[doc = "`.ctor(bool, bool)` overload"]
+    fn ctor(
+        self,
+        include_files: impl ::core::convert::Into<bool>,
+        include_dirs: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StringResultHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(include_files),
+                ::core::convert::Into::into(include_dirs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]
+    fn is_result_included(
+        self,
+        result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StringResultHandler_unity2_raw::is_result_included(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]
+    fn create_object(
+        self,
+        result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StringResultHandler_unity2_raw::create_object(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-stringresulthandler")]
+impl<__T: IStringResultHandler> IStringResultHandlerMethods for __T {}
 
 #[cfg(feature = "system-io-stringresulthandler")]
 impl StringResultHandler {
@@ -55,4 +250,17 @@ impl StringResultHandler {
         <Self as IStringResultHandlerMethods>::ctor(this, include_files, include_dirs);
         this
     }
+}
+
+#[cfg(feature = "system-io-stringresulthandler")]
+pub mod prelude {
+    pub use super::IStringResultHandler;
+    pub use super::IStringResultHandlerMethods;
+    pub use super::StringResultHandler;
+    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1;
+    #[cfg(feature = "system-io-searchresulthandler_1")]
+    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

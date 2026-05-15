@@ -23,9 +23,72 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
-#[::unity2::methods]
-impl ProviderException {
-    #[doc = "`get_Location()` overload"]
-    #[method(name = "get_Location", args = 0)]
-    pub fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProviderException_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_location {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProviderException as ::unity2::ClassIdentity>::class(),
+                "get_Location",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProviderException as ::unity2::ClassIdentity>::NAME,
+                    "get_Location",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_location (this : ProviderException , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation{
+        let inner : extern "C" fn (ProviderException , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_location :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
+pub trait IProviderExceptionMethods: IProviderException {
+    #[doc = "`get_Location()` overload"]    fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation{
+        unsafe {
+            let __receiver = <ProviderException as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProviderException_unity2_raw::get_location(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
+impl<__T: IProviderException> IProviderExceptionMethods for __T {}
+
+#[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
+pub mod prelude {
+    pub use super::IProviderException;
+    pub use super::IProviderExceptionMethods;
+    pub use super::ProviderException;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::exceptions::operationexception::IOperationException;
+    #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+    pub use crate::unity_engine::resource_management::exceptions::operationexception::IOperationExceptionMethods;
 }

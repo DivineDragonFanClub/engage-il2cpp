@@ -37,12 +37,76 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-aiinterferencesimulator")]
-#[::unity2::methods]
-impl AIInterferenceSimulator_Flag {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIInterferenceSimulator_Flag_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator_Flag as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator_Flag as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIInterferenceSimulator_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterferenceSimulator_Flag, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+pub trait IAIInterferenceSimulator_FlagMethods: IAIInterferenceSimulator_Flag {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator_Flag as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_Flag_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+impl<__T: IAIInterferenceSimulator_Flag> IAIInterferenceSimulator_FlagMethods for __T {}
 
 #[cfg(feature = "app-aiinterferencesimulator")]
 impl AIInterferenceSimulator_Flag {
@@ -61,28 +125,236 @@ impl AIInterferenceSimulator_Flag {
 }
 
 #[cfg(feature = "app-aiinterferencesimulator")]
-#[::unity2::methods]
-impl AIInterferenceSimulator {
-    #[doc = "`get_IsNotSuitable()` overload"]
-    #[method(name = "get_IsNotSuitable", args = 0)]
-    pub fn get_is_not_suitable(self) -> bool;
-
-    #[doc = "`get_Hit()` overload"]
-    #[method(name = "get_Hit", args = 0)]
-    pub fn get_hit(self) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Prepare(i32)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, flag: i32) -> ();
-
-    #[doc = "`Calculate(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
-    #[method(name = "Calculate", args = 8)]
-    pub fn calculate(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIInterferenceSimulator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_not_suitable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "get_IsNotSuitable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "get_IsNotSuitable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_not_suitable(
+        this: AIInterferenceSimulator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AIInterferenceSimulator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_not_suitable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "get_Hit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "get_Hit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hit(
+        this: AIInterferenceSimulator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(AIInterferenceSimulator, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIInterferenceSimulator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterferenceSimulator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "Prepare",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "Prepare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare(
+        this: AIInterferenceSimulator,
+        flag: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterferenceSimulator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_prepare::get_offset() as isize),
+            );
+        inner(this, flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: AIInterferenceSimulator,
         offense: crate::app::unit::Unit,
         defense: crate::app::unit::Unit,
         x: i32,
@@ -91,12 +363,81 @@ impl AIInterferenceSimulator {
         item_index: i32,
         defense_x: i32,
         defense_z: i32,
-    ) -> ();
-
-    #[doc = "`CalculateBattleInfo(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
-    #[method(name = "CalculateBattleInfo", args = 8)]
-    pub fn calculate_battle_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AIInterferenceSimulator,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(
+            this,
+            offense,
+            defense,
+            x,
+            z,
+            range,
+            item_index,
+            defense_x,
+            defense_z,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_battle_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "CalculateBattleInfo",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "CalculateBattleInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_battle_info(
+        this: AIInterferenceSimulator,
         offense: crate::app::unit::Unit,
         defense: crate::app::unit::Unit,
         x: i32,
@@ -105,12 +446,212 @@ impl AIInterferenceSimulator {
         item_index: i32,
         defense_x: i32,
         defense_z: i32,
-    ) -> ();
-
-    #[doc = "`CalculateScore()` overload"]
-    #[method(name = "CalculateScore", args = 0)]
-    pub fn calculate_score(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AIInterferenceSimulator,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_battle_info::get_offset() as isize),
+        );
+        inner(
+            this,
+            offense,
+            defense,
+            x,
+            z,
+            range,
+            item_index,
+            defense_x,
+            defense_z,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterferenceSimulator as ::unity2::ClassIdentity>::class(),
+                "CalculateScore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIInterferenceSimulator as ::unity2::ClassIdentity>::NAME,
+                    "CalculateScore",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_score(
+        this: AIInterferenceSimulator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterferenceSimulator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calculate_score::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+pub trait IAIInterferenceSimulatorMethods: IAIInterferenceSimulator {
+    #[doc = "`get_IsNotSuitable()` overload"]
+    fn get_is_not_suitable(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::get_is_not_suitable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Hit()` overload"]
+    fn get_hit(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Prepare(i32)` overload"]
+    fn prepare(self, flag: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::prepare(
+                __receiver,
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
+    fn calculate(
+        self,
+        offense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        defense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<i32>,
+        item_index: impl ::core::convert::Into<i32>,
+        defense_x: impl ::core::convert::Into<i32>,
+        defense_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(offense),
+                ::core::convert::Into::into(defense),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(range),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(defense_x),
+                ::core::convert::Into::into(defense_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateBattleInfo(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
+    fn calculate_battle_info(
+        self,
+        offense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        defense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<i32>,
+        item_index: impl ::core::convert::Into<i32>,
+        defense_x: impl ::core::convert::Into<i32>,
+        defense_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::calculate_battle_info(
+                __receiver,
+                ::core::convert::Into::into(offense),
+                ::core::convert::Into::into(defense),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(range),
+                ::core::convert::Into::into(item_index),
+                ::core::convert::Into::into(defense_x),
+                ::core::convert::Into::into(defense_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateScore()` overload"]
+    fn calculate_score(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterferenceSimulator as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AIInterferenceSimulator_unity2_raw::calculate_score(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+impl<__T: IAIInterferenceSimulator> IAIInterferenceSimulatorMethods for __T {}
 
 #[cfg(feature = "app-aiinterferencesimulator")]
 impl AIInterferenceSimulator {
@@ -126,4 +667,26 @@ impl AIInterferenceSimulator {
         <Self as IAIInterferenceSimulatorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+pub mod prelude {
+    pub use super::AIInterferenceSimulator;
+    pub use super::AIInterferenceSimulator_Flag;
+    pub use super::IAIInterferenceSimulator;
+    pub use super::IAIInterferenceSimulatorMethods;
+    pub use super::IAIInterferenceSimulator_Flag;
+    pub use super::IAIInterferenceSimulator_FlagMethods;
+    pub use crate::app::aisimulatorbase::IAISimulatorBase;
+    #[cfg(feature = "app-aisimulatorbase")]
+    pub use crate::app::aisimulatorbase::IAISimulatorBaseMethods;
+    pub use crate::app::bitfield32::IBitField32;
+    #[cfg(feature = "app-bitfield32")]
+    pub use crate::app::bitfield32::IBitField32Methods;
+    pub use crate::app::bitfieldcommon::IBitFieldCommon;
+    #[cfg(feature = "app-bitfieldcommon")]
+    pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

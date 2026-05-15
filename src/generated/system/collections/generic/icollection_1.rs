@@ -45,3 +45,10 @@ impl<T0: ::unity2::ClassIdentity> ICollection_1<T0> {
     #[method(name = "Remove", args = 1)]
     pub fn remove(self, item: T0) -> bool;
 }
+
+#[cfg(feature = "system-collections-generic-icollection_1")]
+pub mod prelude {
+    pub use super::ICollection_1;
+    pub use super::IICollection_1;
+    pub use super::IICollection_1Methods;
+}

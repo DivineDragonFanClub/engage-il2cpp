@@ -130,3 +130,19 @@ impl<
         this
     }
 }
+
+#[cfg(feature = "system-action_15")]
+pub mod prelude {
+    pub use super::Action_15;
+    pub use super::IAction_15;
+    pub use super::IAction_15Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

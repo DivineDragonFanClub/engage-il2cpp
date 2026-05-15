@@ -79,3 +79,13 @@ impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
+pub mod prelude {
+    pub use super::IPropertyTableAssigner_1;
+    pub use super::IPropertyTableAssigner_1Methods;
+    pub use super::PropertyTableAssigner_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

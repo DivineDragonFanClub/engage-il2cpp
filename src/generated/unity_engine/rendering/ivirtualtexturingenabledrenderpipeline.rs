@@ -18,9 +18,84 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
-#[::unity2::methods]
-impl IVirtualTexturingEnabledRenderPipeline {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IVirtualTexturingEnabledRenderPipeline_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_virtual_texturing_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IVirtualTexturingEnabledRenderPipeline as ::unity2::ClassIdentity>::class(),
+                "get_virtualTexturingEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IVirtualTexturingEnabledRenderPipeline as ::unity2::ClassIdentity>::NAME,
+                    "get_virtualTexturingEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_virtual_texturing_enabled(
+        this: IVirtualTexturingEnabledRenderPipeline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            IVirtualTexturingEnabledRenderPipeline,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_virtual_texturing_enabled::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
+pub trait IIVirtualTexturingEnabledRenderPipelineMethods:
+    IIVirtualTexturingEnabledRenderPipeline
+{
     #[doc = "`get_virtualTexturingEnabled()` overload"]
-    #[method(name = "get_virtualTexturingEnabled", args = 0)]
-    pub fn get_virtual_texturing_enabled(self) -> bool;
+    fn get_virtual_texturing_enabled(self) -> bool {
+        unsafe {
+            let __receiver = < IVirtualTexturingEnabledRenderPipeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __IVirtualTexturingEnabledRenderPipeline_unity2_raw::get_virtual_texturing_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
+impl<__T: IIVirtualTexturingEnabledRenderPipeline> IIVirtualTexturingEnabledRenderPipelineMethods
+    for __T
+{
+}
+
+#[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
+pub mod prelude {
+    pub use super::IIVirtualTexturingEnabledRenderPipeline;
+    pub use super::IIVirtualTexturingEnabledRenderPipelineMethods;
+    pub use super::IVirtualTexturingEnabledRenderPipeline;
 }

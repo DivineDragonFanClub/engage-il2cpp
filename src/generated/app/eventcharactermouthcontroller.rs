@@ -13,36 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactermouthcontroller/EventCharacterMouthController.md"))]
-    #[::unity2::class(namespace = "App", name = "EventCharacterMouthController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventCharacterMouthController {
-        #[rename(name = "LayerNameArray")]
-        pub layer_name_array: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_animLayerIndexArray")]
-        pub m_anim_layer_index_array: ::unity2::Array<i32>,
-        #[rename(name = "m_weight")]
-        pub m_weight: ::unity2::Array<crate::app::weightfader::WeightFader>,
-        #[rename(name = "m_voiceEventName")]
-        pub m_voice_event_name: ::unity2::Il2CppString,
-        #[rename(name = "m_weight_a")]
-        pub m_weight_a: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weight_i")]
-        pub m_weight_i: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weight_u")]
-        pub m_weight_u: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weight_e")]
-        pub m_weight_e: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weight_o")]
-        pub m_weight_o: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weightScale_vol")]
-        pub m_weight_scale_vol: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_weightOffset_vol")]
-        pub m_weight_offset_vol: crate::unity_engine::animationcurve::AnimationCurve,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcharactermouthcontroller/EventCharacterMouthController_AnimLayer.md"))]
     #[repr(C)]
     #[derive(
@@ -102,42 +72,495 @@ mod __types {
             Self { value: 5 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactermouthcontroller/EventCharacterMouthController.md"))]
+    #[::unity2::class(namespace = "App", name = "EventCharacterMouthController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventCharacterMouthController {
+        #[rename(name = "LayerNameArray")]
+        pub layer_name_array: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_animLayerIndexArray")]
+        pub m_anim_layer_index_array: ::unity2::Array<i32>,
+        #[rename(name = "m_weight")]
+        pub m_weight: ::unity2::Array<crate::app::weightfader::WeightFader>,
+        #[rename(name = "m_voiceEventName")]
+        pub m_voice_event_name: ::unity2::Il2CppString,
+        #[rename(name = "m_weight_a")]
+        pub m_weight_a: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weight_i")]
+        pub m_weight_i: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weight_u")]
+        pub m_weight_u: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weight_e")]
+        pub m_weight_e: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weight_o")]
+        pub m_weight_o: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weightScale_vol")]
+        pub m_weight_scale_vol: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_weightOffset_vol")]
+        pub m_weight_offset_vol: crate::unity_engine::animationcurve::AnimationCurve,
+    }
 }
 
 #[cfg(feature = "app-eventcharactermouthcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eventcharactermouthcontroller")]
-#[::unity2::methods]
-impl EventCharacterMouthController {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`GetWeight(i32)` overload"]
-    #[method(name = "GetWeight", args = 1)]
-    pub fn get_weight(self, anim_layer_index: i32) -> f32;
-
-    #[doc = "`SetVoiceEventName(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetVoiceEventName", args = 1)]
-    pub fn set_voice_event_name(self, voice_event_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetWeight(i32, f32, f32)` overload"]
-    #[method(name = "SetWeight", args = 3)]
-    pub fn set_weight(self, anim_layer_index: i32, weight: f32, msec: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventCharacterMouthController_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventCharacterMouthController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterMouthController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: EventCharacterMouthController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterMouthController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "Init",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: EventCharacterMouthController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterMouthController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: EventCharacterMouthController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterMouthController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "GetWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "GetWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_weight(
+        this: EventCharacterMouthController,
+        anim_layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            EventCharacterMouthController,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_weight::get_offset() as isize),
+        );
+        inner(this, anim_layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_voice_event_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "SetVoiceEventName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "SetVoiceEventName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_voice_event_name(
+        this: EventCharacterMouthController,
+        voice_event_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterMouthController,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_voice_event_name::get_offset() as isize),
+        );
+        inner(this, voice_event_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterMouthController as ::unity2::ClassIdentity>::class(),
+                "SetWeight",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterMouthController as ::unity2::ClassIdentity>::NAME,
+                    "SetWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weight(
+        this: EventCharacterMouthController,
+        anim_layer_index: i32,
+        weight: f32,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterMouthController,
+            i32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_weight::get_offset() as isize),
+        );
+        inner(this, anim_layer_index, weight, msec, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventcharactermouthcontroller")]
+pub trait IEventCharacterMouthControllerMethods: IEventCharacterMouthController {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::start(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::init(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetWeight(i32)` overload"]
+    fn get_weight(self, anim_layer_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::get_weight(
+                __receiver,
+                ::core::convert::Into::into(anim_layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVoiceEventName(::unity2::Il2CppString)` overload"]
+    fn set_voice_event_name(
+        self,
+        voice_event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::set_voice_event_name(
+                __receiver,
+                ::core::convert::Into::into(voice_event_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWeight(i32, f32, f32)` overload"]
+    fn set_weight(
+        self,
+        anim_layer_index: impl ::core::convert::Into<i32>,
+        weight: impl ::core::convert::Into<f32>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterMouthController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterMouthController_unity2_raw::set_weight(
+                __receiver,
+                ::core::convert::Into::into(anim_layer_index),
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventcharactermouthcontroller")]
+impl<__T: IEventCharacterMouthController> IEventCharacterMouthControllerMethods for __T {}
 
 #[cfg(feature = "app-eventcharactermouthcontroller")]
 impl EventCharacterMouthController {
@@ -153,4 +576,33 @@ impl EventCharacterMouthController {
         <Self as IEventCharacterMouthControllerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-eventcharactermouthcontroller")]
+pub mod prelude {
+    pub use super::EventCharacterMouthController;
+    pub use super::EventCharacterMouthController_AnimLayer;
+    pub use super::IEventCharacterMouthController;
+    pub use super::IEventCharacterMouthControllerMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

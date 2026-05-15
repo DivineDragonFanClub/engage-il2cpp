@@ -99,11 +99,87 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_compatibility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Compatibility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_text_alignment_enum_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Compatibility as ::unity2::ClassIdentity>::class(),
+                "ConvertTextAlignmentEnumValues",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Compatibility as ::unity2::ClassIdentity>::NAME,
+                    "ConvertTextAlignmentEnumValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_text_alignment_enum_values(
+        old_value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions {
+        let inner: extern "C" fn(
+            crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_text_alignment_enum_values::get_offset() as isize),
+        );
+        inner(old_value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_compatibility")]
 impl TMP_Compatibility {
     #[doc = "`ConvertTextAlignmentEnumValues(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]
-    #[method(name = "ConvertTextAlignmentEnumValues", args = 1)]
     pub fn convert_text_alignment_enum_values(
-        old_value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
-    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
+        old_value: impl ::core::convert::Into<crate::tm_pro::textalignmentoptions::TextAlignmentOptions>,
+    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions {
+        unsafe {
+            __TMP_Compatibility_unity2_raw::convert_text_alignment_enum_values(
+                ::core::convert::Into::into(old_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_compatibility")]
+pub mod prelude {
+    pub use super::ITMP_Compatibility;
+    pub use super::TMP_Compatibility;
+    pub use super::TMP_Compatibility_AnchorPositions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

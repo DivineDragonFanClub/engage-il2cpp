@@ -2,5 +2,13 @@
 
 #[cfg(any(feature = "unity_engine-internal-defaultvalueattribute-types"))]
 pub mod defaultvalueattribute;
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+pub use defaultvalueattribute::IDefaultValueAttributeMethods;
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute-types")]
+pub use defaultvalueattribute::{DefaultValueAttribute, IDefaultValueAttribute};
 #[cfg(any(feature = "unity_engine-internal-excludefromdocsattribute-types"))]
 pub mod excludefromdocsattribute;
+#[cfg(feature = "unity_engine-internal-excludefromdocsattribute")]
+pub use excludefromdocsattribute::IExcludeFromDocsAttributeMethods;
+#[cfg(feature = "unity_engine-internal-excludefromdocsattribute-types")]
+pub use excludefromdocsattribute::{ExcludeFromDocsAttribute, IExcludeFromDocsAttribute};

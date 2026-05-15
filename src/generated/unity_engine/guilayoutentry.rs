@@ -42,98 +42,1146 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guilayoutentry")]
-#[::unity2::methods]
-impl GUILayoutEntry {
-    #[doc = "`get_style()` overload"]
-    #[method(name = "get_style", args = 0)]
-    pub fn get_style(self) -> crate::unity_engine::guistyle::GUIStyle;
-
-    #[doc = "`set_style(crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "set_style", args = 1)]
-    pub fn set_style(self, value: crate::unity_engine::guistyle::GUIStyle) -> ();
-
-    #[doc = "`get_marginLeft()` overload"]
-    #[method(name = "get_marginLeft", args = 0)]
-    pub fn get_margin_left(self) -> i32;
-
-    #[doc = "`get_marginRight()` overload"]
-    #[method(name = "get_marginRight", args = 0)]
-    pub fn get_margin_right(self) -> i32;
-
-    #[doc = "`get_marginTop()` overload"]
-    #[method(name = "get_marginTop", args = 0)]
-    pub fn get_margin_top(self) -> i32;
-
-    #[doc = "`get_marginBottom()` overload"]
-    #[method(name = "get_marginBottom", args = 0)]
-    pub fn get_margin_bottom(self) -> i32;
-
-    #[doc = "`get_marginHorizontal()` overload"]
-    #[method(name = "get_marginHorizontal", args = 0)]
-    pub fn get_margin_horizontal(self) -> i32;
-
-    #[doc = "`get_marginVertical()` overload"]
-    #[method(name = "get_marginVertical", args = 0)]
-    pub fn get_margin_vertical(self) -> i32;
-
-    #[doc = "`.ctor(f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUILayoutEntry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_style",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_style",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::guistyle::GUIStyle {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::guistyle::GUIStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "set_style",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "set_style",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_style(
+        this: GUILayoutEntry,
+        value: crate::unity_engine::guistyle::GUIStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_style::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginLeft",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginLeft",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_left(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_left::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginRight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_right(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_right::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_top {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginTop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginTop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_top(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_top::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_bottom {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginBottom",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginBottom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_bottom(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_bottom::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginHorizontal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginHorizontal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_horizontal(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_horizontal::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin_vertical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "get_marginVertical",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "get_marginVertical",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin_vertical(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_margin_vertical::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GUILayoutEntry,
         min_width: f32,
         max_width: f32,
         min_height: f32,
         max_height: f32,
         style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
-
-    #[doc = "`.ctor(f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            min_width,
+            max_width,
+            min_height,
+            max_height,
+            style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: GUILayoutEntry,
         min_width: f32,
         max_width: f32,
         min_height: f32,
         max_height: f32,
         style: crate::unity_engine::guistyle::GUIStyle,
         options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> ();
-
-    #[doc = "`CalcWidth()` overload"]
-    #[method(name = "CalcWidth", args = 0)]
-    pub fn calc_width(self) -> ();
-
-    #[doc = "`CalcHeight()` overload"]
-    #[method(name = "CalcHeight", args = 0)]
-    pub fn calc_height(self) -> ();
-
-    #[doc = "`SetHorizontal(f32, f32)` overload"]
-    #[method(name = "SetHorizontal", args = 2)]
-    pub fn set_horizontal(self, x: f32, width: f32) -> ();
-
-    #[doc = "`SetVertical(f32, f32)` overload"]
-    #[method(name = "SetVertical", args = 2)]
-    pub fn set_vertical(self, y: f32, height: f32) -> ();
-
-    #[doc = "`ApplyStyleSettings(crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = "ApplyStyleSettings", args = 1)]
-    pub fn apply_style_settings(self, style: crate::unity_engine::guistyle::GUIStyle) -> ();
-
-    #[doc = "`ApplyOptions(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    #[method(name = "ApplyOptions", args = 1)]
-    pub fn apply_options(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            min_width,
+            max_width,
+            min_height,
+            max_height,
+            style,
+            options,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "CalcWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "CalcWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_width(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "CalcHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "CalcHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_height(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "SetHorizontal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "SetHorizontal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_horizontal(
+        this: GUILayoutEntry,
+        x: f32,
+        width: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayoutEntry, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_horizontal::get_offset() as isize),
+            );
+        inner(this, x, width, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "SetVertical",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "SetVertical",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertical(
+        this: GUILayoutEntry,
+        y: f32,
+        height: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayoutEntry, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_vertical::get_offset() as isize),
+            );
+        inner(this, y, height, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_style_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "ApplyStyleSettings",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "ApplyStyleSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_style_settings(
+        this: GUILayoutEntry,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_style_settings::get_offset() as isize),
+        );
+        inner(this, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::guilayoutoption::GUILayoutOption,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "ApplyOptions",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "ApplyOptions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_options(
+        this: GUILayoutEntry,
         options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_options::get_offset() as isize),
+        );
+        inner(this, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: GUILayoutEntry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            GUILayoutEntry,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayoutEntry as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayoutEntry as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-guilayoutentry")]
+impl GUILayoutEntry {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __GUILayoutEntry_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayoutentry")]
+pub trait IGUILayoutEntryMethods: IGUILayoutEntry {
+    #[doc = "`get_style()` overload"]
+    fn get_style(self) -> crate::unity_engine::guistyle::GUIStyle {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_style(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_style(crate::unity_engine::guistyle::GUIStyle)` overload"]
+    fn set_style(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::set_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_marginLeft()` overload"]
+    fn get_margin_left(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_left(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_marginRight()` overload"]
+    fn get_margin_right(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_right(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_marginTop()` overload"]
+    fn get_margin_top(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_top(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_marginBottom()` overload"]
+    fn get_margin_bottom(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_bottom(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_marginHorizontal()` overload"]
+    fn get_margin_horizontal(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_horizontal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_marginVertical()` overload"]
+    fn get_margin_vertical(self) -> i32 {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::get_margin_vertical(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    fn ctor(
+        self,
+        min_width: impl ::core::convert::Into<f32>,
+        max_width: impl ::core::convert::Into<f32>,
+        min_height: impl ::core::convert::Into<f32>,
+        max_height: impl ::core::convert::Into<f32>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(min_width),
+                ::core::convert::Into::into(max_width),
+                ::core::convert::Into::into(min_height),
+                ::core::convert::Into::into(max_height),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(f32, f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn ctor_2(
+        self,
+        min_width: impl ::core::convert::Into<f32>,
+        max_width: impl ::core::convert::Into<f32>,
+        min_height: impl ::core::convert::Into<f32>,
+        max_height: impl ::core::convert::Into<f32>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(min_width),
+                ::core::convert::Into::into(max_width),
+                ::core::convert::Into::into(min_height),
+                ::core::convert::Into::into(max_height),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcWidth()` overload"]
+    fn calc_width(self) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::calc_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcHeight()` overload"]
+    fn calc_height(self) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::calc_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetHorizontal(f32, f32)` overload"]
+    fn set_horizontal(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        width: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::set_horizontal(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(width),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertical(f32, f32)` overload"]
+    fn set_vertical(
+        self,
+        y: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::set_vertical(
+                __receiver,
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyStyleSettings(crate::unity_engine::guistyle::GUIStyle)` overload"]
+    fn apply_style_settings(
+        self,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::apply_style_settings(
+                __receiver,
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyOptions(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn apply_options(
+        self,
+        options: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::apply_options(
+                __receiver,
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <GUILayoutEntry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayoutEntry_unity2_raw::to_string(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayoutentry")]
+impl<__T: IGUILayoutEntry> IGUILayoutEntryMethods for __T {}
 
 #[cfg(feature = "unity_engine-guilayoutentry")]
 impl GUILayoutEntry {
@@ -179,4 +1227,14 @@ impl GUILayoutEntry {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-guilayoutentry")]
+pub mod prelude {
+    pub use super::GUILayoutEntry;
+    pub use super::IGUILayoutEntry;
+    pub use super::IGUILayoutEntryMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

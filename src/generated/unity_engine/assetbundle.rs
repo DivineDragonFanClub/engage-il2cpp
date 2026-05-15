@@ -18,136 +18,1265 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-assetbundle")]
-#[::unity2::methods]
-impl AssetBundle {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`LoadFromFileAsync_Internal(::unity2::Il2CppString, u32, u64)` overload"]
-    #[method(name = "LoadFromFileAsync_Internal", args = 3)]
-    pub fn load_from_file_async_internal(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetBundle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: AssetBundle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetBundle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_file_async_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromFileAsync_Internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromFileAsync_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_file_async_internal(
         path: ::unity2::Il2CppString,
         crc: u32,
         offset: u64,
-    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest;
-
-    #[doc = "`LoadFromFileAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadFromFileAsync", args = 1)]
-    pub fn load_from_file_async(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , u32 , u64 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_from_file_async_internal :: get_offset () as isize) ,) ;
+        inner(path, crc, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_file_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromFileAsync",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromFileAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_file_async(
         path: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest;
-
-    #[doc = "`LoadFromFileAsync(::unity2::Il2CppString, u32)` overload"]
-    #[method(name = "LoadFromFileAsync", args = 2)]
-    pub fn load_from_file_async_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_from_file_async :: get_offset () as isize) ,) ;
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_file_async_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromFileAsync",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromFileAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_file_async_2(
         path: ::unity2::Il2CppString,
         crc: u32,
-    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest;
-
-    #[doc = "`LoadFromFile_Internal(::unity2::Il2CppString, u32, u64)` overload"]
-    #[method(name = "LoadFromFile_Internal", args = 3)]
-    pub fn load_from_file_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_from_file_async_2 :: get_offset () as isize) ,) ;
+        inner(path, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_file_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromFile_Internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromFile_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_file_internal(
         path: ::unity2::Il2CppString,
         crc: u32,
         offset: u64,
-    ) -> crate::unity_engine::assetbundle::AssetBundle;
-
-    #[doc = "`LoadFromFile(::unity2::Il2CppString, u32)` overload"]
-    #[method(name = "LoadFromFile", args = 2)]
-    pub fn load_from_file(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            u32,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_file_internal::get_offset() as isize),
+        );
+        inner(path, crc, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_file {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromFile",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromFile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_file(
         path: ::unity2::Il2CppString,
         crc: u32,
-    ) -> crate::unity_engine::assetbundle::AssetBundle;
-
-    #[doc = "`LoadFromMemory_Internal(::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "LoadFromMemory_Internal", args = 2)]
-    pub fn load_from_memory_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_file::get_offset() as isize),
+        );
+        inner(path, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_memory_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromMemory_Internal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromMemory_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_memory_internal(
         binary: ::unity2::Array<u8>,
         crc: u32,
-    ) -> crate::unity_engine::assetbundle::AssetBundle;
-
-    #[doc = "`LoadFromMemory(::unity2::Array<u8>)` overload"]
-    #[method(name = "LoadFromMemory", args = 1)]
-    pub fn load_from_memory(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_memory_internal::get_offset() as isize),
+        );
+        inner(binary, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_from_memory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadFromMemory",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadFromMemory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_from_memory(
         binary: ::unity2::Array<u8>,
-    ) -> crate::unity_engine::assetbundle::AssetBundle;
-
-    #[doc = "`LoadAsset(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAsset", args = 2)]
-    pub fn load_asset(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_from_memory::get_offset() as isize),
+        );
+        inner(binary, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAsset",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::object_2::Object_2;
-
-    #[doc = "`LoadAsset_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAsset_Internal", args = 2)]
-    pub fn load_asset_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAsset_Internal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsset_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_internal(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::object_2::Object_2;
-
-    #[doc = "`LoadAssetAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetAsync", args = 2)]
-    pub fn load_asset_async(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_internal::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetAsync",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_async(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest;
-
-    #[doc = "`LoadAssetWithSubAssets(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetWithSubAssets", args = 2)]
-    pub fn load_asset_with_sub_assets(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::assetbundlerequest::AssetBundleRequest = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_async::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_with_sub_assets {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetWithSubAssets",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetWithSubAssets",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_with_sub_assets(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
-
-    #[doc = "`LoadAssetWithSubAssetsAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetWithSubAssetsAsync", args = 2)]
-    pub fn load_asset_with_sub_assets_async(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_with_sub_assets::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_with_sub_assets_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetWithSubAssetsAsync",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetWithSubAssetsAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_with_sub_assets_async(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest;
-
-    #[doc = "`LoadAllAssetsAsync(::unity2::SystemType)` overload"]
-    #[method(name = "LoadAllAssetsAsync", args = 1)]
-    pub fn load_all_assets_async(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::assetbundlerequest::AssetBundleRequest = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_with_sub_assets_async::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_all_assets_async_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAllAssetsAsync",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAllAssetsAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_all_assets_async_2(
+        this: AssetBundle,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest;
-
-    #[doc = "`LoadAssetAsync_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetAsync_Internal", args = 2)]
-    pub fn load_asset_async_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::assetbundlerequest::AssetBundleRequest = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_all_assets_async_2::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_async_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetAsync_Internal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetAsync_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_async_internal(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest;
-
-    #[doc = "`Unload(bool)` overload"]
-    #[method(name = "Unload", args = 1)]
-    pub fn unload(self, unload_all_loaded_objects: bool) -> ();
-
-    #[doc = "`LoadAssetWithSubAssets_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetWithSubAssets_Internal", args = 2)]
-    pub fn load_asset_with_sub_assets_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::assetbundlerequest::AssetBundleRequest = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_async_internal::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "Unload",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "Unload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload(
+        this: AssetBundle,
+        unload_all_loaded_objects: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetBundle, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload::get_offset() as isize),
+            );
+        inner(this, unload_all_loaded_objects, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_with_sub_assets_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetWithSubAssets_Internal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetWithSubAssets_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_with_sub_assets_internal(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
-
-    #[doc = "`LoadAssetWithSubAssetsAsync_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    #[method(name = "LoadAssetWithSubAssetsAsync_Internal", args = 2)]
-    pub fn load_asset_with_sub_assets_async_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_with_sub_assets_internal::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_asset_with_sub_assets_async_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAssetWithSubAssetsAsync_Internal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetWithSubAssetsAsync_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_asset_with_sub_assets_async_internal(
+        this: AssetBundle,
         name: ::unity2::Il2CppString,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        let inner: extern "C" fn(
+            AssetBundle,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::assetbundlerequest::AssetBundleRequest = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_asset_with_sub_assets_async_internal::get_offset() as isize),
+        );
+        inner(this, name, r#type, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-assetbundle")]
+impl AssetBundle {
+    #[doc = "`LoadFromFileAsync_Internal(::unity2::Il2CppString, u32, u64)` overload"]
+    pub fn load_from_file_async_internal(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        crc: impl ::core::convert::Into<u32>,
+        offset: impl ::core::convert::Into<u64>,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_file_async_internal(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(crc),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromFileAsync(::unity2::Il2CppString)` overload"]
+    pub fn load_from_file_async(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_file_async(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromFileAsync(::unity2::Il2CppString, u32)` overload"]
+    pub fn load_from_file_async_2(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_file_async_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromFile_Internal(::unity2::Il2CppString, u32, u64)` overload"]
+    pub fn load_from_file_internal(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        crc: impl ::core::convert::Into<u32>,
+        offset: impl ::core::convert::Into<u64>,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_file_internal(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(crc),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromFile(::unity2::Il2CppString, u32)` overload"]
+    pub fn load_from_file(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_file(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromMemory_Internal(::unity2::Array<u8>, u32)` overload"]
+    pub fn load_from_memory_internal(
+        binary: impl ::core::convert::Into<::unity2::Array<u8>>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_memory_internal(
+                ::core::convert::Into::into(binary),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFromMemory(::unity2::Array<u8>)` overload"]
+    pub fn load_from_memory(
+        binary: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> crate::unity_engine::assetbundle::AssetBundle {
+        unsafe {
+            __AssetBundle_unity2_raw::load_from_memory(
+                ::core::convert::Into::into(binary),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-assetbundle")]
+pub trait IAssetBundleMethods: IAssetBundle {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadAsset(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAsset_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_internal(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_internal(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_async(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_async(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetWithSubAssets(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_with_sub_assets(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_with_sub_assets(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetWithSubAssetsAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_with_sub_assets_async(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_with_sub_assets_async(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn load_all_assets_async<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <AssetBundle as ::unity2::ClassIdentity>::class(),
+                "LoadAllAssetsAsync",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <AssetBundle as ::unity2::ClassIdentity>::NAME,
+                "LoadAllAssetsAsync",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                AssetBundle,
+                ::unity2::OptionalMethod,
+            )
+                -> crate::unity_engine::assetbundlerequest::AssetBundleRequest =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`LoadAllAssetsAsync(::unity2::SystemType)` overload"]
+    fn load_all_assets_async_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_all_assets_async_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetAsync_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_async_internal(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_async_internal(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Unload(bool)` overload"]
+    fn unload(self, unload_all_loaded_objects: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::unload(
+                __receiver,
+                ::core::convert::Into::into(unload_all_loaded_objects),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetWithSubAssets_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_with_sub_assets_internal(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_with_sub_assets_internal(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadAssetWithSubAssetsAsync_Internal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn load_asset_with_sub_assets_async_internal(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
+        unsafe {
+            let __receiver = <AssetBundle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AssetBundle_unity2_raw::load_asset_with_sub_assets_async_internal(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-assetbundle")]
+impl<__T: IAssetBundle> IAssetBundleMethods for __T {}
 
 #[cfg(feature = "unity_engine-assetbundle")]
 impl AssetBundle {
@@ -163,4 +1292,17 @@ impl AssetBundle {
         <Self as IAssetBundleMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-assetbundle")]
+pub mod prelude {
+    pub use super::AssetBundle;
+    pub use super::IAssetBundle;
+    pub use super::IAssetBundleMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

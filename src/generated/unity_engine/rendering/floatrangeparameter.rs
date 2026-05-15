@@ -26,35 +26,299 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
-#[::unity2::methods]
-impl FloatRangeParameter {
-    #[doc = "`get_value()` overload"]
-    #[method(name = "get_value", args = 0)]
-    pub fn get_value(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`set_value(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "set_value", args = 1)]
-    pub fn set_value(self, value: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FloatRangeParameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FloatRangeParameter as ::unity2::ClassIdentity>::class(),
+                "get_value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FloatRangeParameter as ::unity2::ClassIdentity>::NAME,
+                    "get_value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: FloatRangeParameter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            FloatRangeParameter,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_value::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FloatRangeParameter as ::unity2::ClassIdentity>::class(),
+                "set_value",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FloatRangeParameter as ::unity2::ClassIdentity>::NAME,
+                    "set_value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_value(
+        this: FloatRangeParameter,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FloatRangeParameter,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_value::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FloatRangeParameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FloatRangeParameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FloatRangeParameter,
         value: crate::unity_engine::vector2::Vector2,
         min: f32,
         max: f32,
         override_state: bool,
-    ) -> ();
-
-    #[doc = "`Interp(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "Interp", args = 3)]
-    pub fn interp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FloatRangeParameter,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, value, min, max, override_state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_interp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FloatRangeParameter as ::unity2::ClassIdentity>::class(),
+                "Interp",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FloatRangeParameter as ::unity2::ClassIdentity>::NAME,
+                    "Interp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn interp(
+        this: FloatRangeParameter,
         from: crate::unity_engine::vector2::Vector2,
         to: crate::unity_engine::vector2::Vector2,
         t: f32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FloatRangeParameter,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_interp::get_offset() as isize),
+        );
+        inner(this, from, to, t, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
+pub trait IFloatRangeParameterMethods: IFloatRangeParameter {
+    #[doc = "`get_value()` overload"]
+    fn get_value(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <FloatRangeParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FloatRangeParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_value(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_value(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <FloatRangeParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FloatRangeParameter_unity2_raw::set_value(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        min: impl ::core::convert::Into<f32>,
+        max: impl ::core::convert::Into<f32>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <FloatRangeParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FloatRangeParameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Interp(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    fn interp(
+        self,
+        from: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        to: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <FloatRangeParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FloatRangeParameter_unity2_raw::interp(
+                __receiver,
+                ::core::convert::Into::into(from),
+                ::core::convert::Into::into(to),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
+impl<__T: IFloatRangeParameter> IFloatRangeParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
 impl FloatRangeParameter {
@@ -75,4 +339,20 @@ impl FloatRangeParameter {
         <Self as IFloatRangeParameterMethods>::ctor(this, value, min, max, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
+pub mod prelude {
+    pub use super::FloatRangeParameter;
+    pub use super::IFloatRangeParameter;
+    pub use super::IFloatRangeParameterMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

@@ -58,16 +58,144 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-helpproc")]
-#[::unity2::methods]
-impl HelpProc_EventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HelpProc_EventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc_EventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc_EventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HelpProc_EventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpProc_EventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc_EventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc_EventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: HelpProc_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpProc_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-helpproc")]
+pub trait IHelpProc_EventHandlerMethods: IHelpProc_EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpProc_EventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_EventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc_EventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_EventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-helpproc")]
+impl<__T: IHelpProc_EventHandler> IHelpProc_EventHandlerMethods for __T {}
 
 #[cfg(feature = "app-helpproc")]
 impl HelpProc_EventHandler {
@@ -86,35 +214,304 @@ impl HelpProc_EventHandler {
 }
 
 #[cfg(feature = "app-helpproc")]
-#[::unity2::methods]
-impl HelpProc {
-    #[doc = "`Begin()` overload"]
-    #[method(name = "Begin", args = 0)]
-    pub fn begin(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`CommitMapPanelTarget()` overload"]
-    #[method(name = "CommitMapPanelTarget", args = 0)]
-    pub fn commit_map_panel_target(self) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`Enable()` overload"]
-    #[method(name = "Enable", args = 0)]
-    pub fn enable() -> ();
-
-    #[doc = "`Disable()` overload"]
-    #[method(name = "Disable", args = 0)]
-    pub fn disable() -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 10)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HelpProc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "Begin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "Begin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn begin(this: HelpProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HelpProc, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_begin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(this: HelpProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HelpProc, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_map_panel_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CommitMapPanelTarget",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CommitMapPanelTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn commit_map_panel_target(
+        this: HelpProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpProc, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_commit_map_panel_target::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "End",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "End",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end(this: HelpProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HelpProc, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "Enable",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "Enable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn enable(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_enable::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "Disable",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "Disable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_disable::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         parent: crate::app::procinst::ProcInst,
         target_object: crate::unity_engine::gameobject::GameObject,
         enter: crate::app::helpproc::HelpProc_EventHandler,
@@ -125,69 +522,672 @@ impl HelpProc {
         ring: crate::app::unitring::UnitRing,
         is_temp_unit: bool,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateBindUnitStatus(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBindUnitStatus", args = 4)]
-    pub fn create_bind_unit_status(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::app::helpproc::HelpProc_EventHandler,
+            bool,
+            crate::app::godunit::GodUnit,
+            bool,
+            crate::app::unitring::UnitRing,
+            bool,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            parent,
+            target_object,
+            enter,
+            exit,
+            is_temp_god,
+            god,
+            is_temp_ring,
+            ring,
+            is_temp_unit,
+            unit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_unit_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBindUnitStatus",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindUnitStatus",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_unit_status(
         parent: crate::app::procinst::ProcInst,
         enter: crate::app::helpproc::HelpProc_EventHandler,
         exit: crate::app::helpproc::HelpProc_EventHandler,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateBindUnitInfo(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler)` overload"]
-    #[method(name = "CreateBindUnitInfo", args = 3)]
-    pub fn create_bind_unit_info(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_unit_status::get_offset() as isize),
+        );
+        inner(parent, enter, exit, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_unit_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBindUnitInfo",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindUnitInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_unit_info(
         parent: crate::app::procinst::ProcInst,
         enter: crate::app::helpproc::HelpProc_EventHandler,
         exit: crate::app::helpproc::HelpProc_EventHandler,
-    ) -> ();
-
-    #[doc = "`CraeteBindEngageLink(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CraeteBindEngageLink", args = 6)]
-    pub fn craete_bind_engage_link(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::app::helpproc::HelpProc_EventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_unit_info::get_offset() as isize),
+        );
+        inner(parent, enter, exit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_craete_bind_engage_link {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::helpproc::HelpProc_EventHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CraeteBindEngageLink",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CraeteBindEngageLink",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn craete_bind_engage_link(
         parent: crate::app::procinst::ProcInst,
         enter: crate::app::helpproc::HelpProc_EventHandler,
         exit: crate::app::helpproc::HelpProc_EventHandler,
         target_object: crate::unity_engine::gameobject::GameObject,
         god: crate::app::godunit::GodUnit,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateBindGodRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBindGodRingSelect", args = 4)]
-    pub fn create_bind_god_ring_select(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::app::helpproc::HelpProc_EventHandler,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::godunit::GodUnit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_craete_bind_engage_link::get_offset() as isize),
+        );
+        inner(
+            parent,
+            enter,
+            exit,
+            target_object,
+            god,
+            unit,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_god_ring_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBindGodRingSelect",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindGodRingSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_god_ring_select(
         parent: crate::app::procinst::ProcInst,
         target_object: crate::unity_engine::gameobject::GameObject,
         god: crate::app::godunit::GodUnit,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateBindCommonRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unitring::UnitRing, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBindCommonRingSelect", args = 4)]
-    pub fn create_bind_common_ring_select(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::godunit::GodUnit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_god_ring_select::get_offset() as isize),
+        );
+        inner(parent, target_object, god, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_common_ring_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBindCommonRingSelect",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindCommonRingSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_common_ring_select(
         parent: crate::app::procinst::ProcInst,
         target_object: crate::unity_engine::gameobject::GameObject,
         ring: crate::app::unitring::UnitRing,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateBindShopUnitSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "CreateBindShopUnitSelect", args = 2)]
-    pub fn create_bind_shop_unit_select(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unitring::UnitRing,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_common_ring_select::get_offset() as isize),
+        );
+        inner(parent, target_object, ring, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_shop_unit_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                "CreateBindShopUnitSelect",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindShopUnitSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_shop_unit_select(
         parent: crate::app::procinst::ProcInst,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_shop_unit_select::get_offset() as isize),
+        );
+        inner(parent, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: HelpProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HelpProc, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpProc as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpProc as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-helpproc")]
+impl HelpProc {
+    #[doc = "`Enable()` overload"]
+    pub fn enable() -> () {
+        unsafe { __HelpProc_unity2_raw::enable(::core::option::Option::None) }
+    }
+    #[doc = "`Disable()` overload"]
+    pub fn disable() -> () {
+        unsafe { __HelpProc_unity2_raw::disable(::core::option::Option::None) }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"]
+    pub fn create_bind(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        target_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        enter: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        exit: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        is_temp_god: impl ::core::convert::Into<bool>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        is_temp_ring: impl ::core::convert::Into<bool>,
+        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
+        is_temp_unit: impl ::core::convert::Into<bool>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(target_object),
+                ::core::convert::Into::into(enter),
+                ::core::convert::Into::into(exit),
+                ::core::convert::Into::into(is_temp_god),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(is_temp_ring),
+                ::core::convert::Into::into(ring),
+                ::core::convert::Into::into(is_temp_unit),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindUnitStatus(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::app::unit::Unit)` overload"]
+    pub fn create_bind_unit_status(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        enter: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        exit: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind_unit_status(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(enter),
+                ::core::convert::Into::into(exit),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindUnitInfo(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler)` overload"]
+    pub fn create_bind_unit_info(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        enter: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        exit: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind_unit_info(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(enter),
+                ::core::convert::Into::into(exit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CraeteBindEngageLink(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]
+    pub fn craete_bind_engage_link(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        enter: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        exit: impl ::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>,
+        target_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::craete_bind_engage_link(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(enter),
+                ::core::convert::Into::into(exit),
+                ::core::convert::Into::into(target_object),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindGodRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]
+    pub fn create_bind_god_ring_select(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        target_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind_god_ring_select(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(target_object),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindCommonRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unitring::UnitRing, crate::app::unit::Unit)` overload"]
+    pub fn create_bind_common_ring_select(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        target_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind_common_ring_select(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(target_object),
+                ::core::convert::Into::into(ring),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindShopUnitSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create_bind_shop_unit_select(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            __HelpProc_unity2_raw::create_bind_shop_unit_select(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __HelpProc_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-helpproc")]
+pub trait IHelpProcMethods: IHelpProc {
+    #[doc = "`Begin()` overload"]
+    fn begin(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_unity2_raw::begin(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CommitMapPanelTarget()` overload"]
+    fn commit_map_panel_target(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_unity2_raw::commit_map_panel_target(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`End()` overload"]
+    fn end(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_unity2_raw::end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HelpProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpProc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-helpproc")]
+impl<__T: IHelpProc> IHelpProcMethods for __T {}
 
 #[cfg(feature = "app-helpproc")]
 impl HelpProc {
@@ -203,4 +1203,29 @@ impl HelpProc {
         <Self as IHelpProcMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-helpproc")]
+pub mod prelude {
+    pub use super::HelpProc;
+    pub use super::HelpProc_EventHandler;
+    pub use super::IHelpProc;
+    pub use super::IHelpProcMethods;
+    pub use super::IHelpProc_EventHandler;
+    pub use super::IHelpProc_EventHandlerMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

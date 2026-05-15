@@ -59,9 +59,9 @@ impl<T0: ::unity2::ClassIdentity> PriorityQueue_1<T0> {
         leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1_LessOrEqual < T0 >,
     ) -> ();
 
-    #[doc = "`Swap(i32, i32)` overload"]
+    #[doc = "`Swap(*muti32, *muti32)` overload"]
     #[method(name = "Swap", args = 2)]
-    pub fn swap(a: i32, b: i32) -> ();
+    pub fn swap(a: *mut i32, b: *mut i32) -> ();
 
     #[doc = "`Init()` overload"]
     #[method(name = "Init", args = 0)]
@@ -131,4 +131,17 @@ impl<T0: ::unity2::ClassIdentity> PriorityQueue_1_StackItem<T0> {
         <Self as IPriorityQueue_1_StackItemMethods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
+pub mod prelude {
+    pub use super::IPriorityQueue_1;
+    pub use super::IPriorityQueue_1Methods;
+    pub use super::IPriorityQueue_1_StackItem;
+    pub use super::IPriorityQueue_1_StackItemMethods;
+    pub use super::PriorityQueue_1;
+    pub use super::PriorityQueue_1_StackItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

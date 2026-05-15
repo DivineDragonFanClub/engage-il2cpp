@@ -138,121 +138,1011 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-helpparamsetter")]
-#[::unity2::methods]
-impl HelpParamSetter {
-    #[doc = "`SetRingSelectGod(bool, crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "SetRingSelectGod", args = 2)]
-    pub fn set_ring_select_god(self, is_temp_god: bool, god: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`SetRingSelectCommon(bool, crate::app::unitring::UnitRing)` overload"]
-    #[method(name = "SetRingSelectCommon", args = 2)]
-    pub fn set_ring_select_common(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HelpParamSetter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ring_select_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetRingSelectGod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetRingSelectGod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ring_select_god(
+        this: HelpParamSetter,
+        is_temp_god: bool,
+        god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            bool,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ring_select_god::get_offset() as isize),
+        );
+        inner(this, is_temp_god, god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ring_select_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetRingSelectCommon",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetRingSelectCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ring_select_common(
+        this: HelpParamSetter,
         is_temp_ring: bool,
         ring: crate::app::unitring::UnitRing,
-    ) -> ();
-
-    #[doc = "`MoveImmediate()` overload"]
-    #[method(name = "MoveImmediate", args = 0)]
-    pub fn move_immediate(self) -> ();
-
-    #[doc = "`UpdateLangage()` overload"]
-    #[method(name = "UpdateLangage", args = 0)]
-    pub fn update_langage(self) -> ();
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`SetItemFixedText()` overload"]
-    #[method(name = "SetItemFixedText", args = 0)]
-    pub fn set_item_fixed_text(self) -> ();
-
-    #[doc = "`TrySetUpDownIcon(crate::unity_engine::ui::image::Image, crate::tm_pro::textmeshprougui::TextMeshProUGUI, i32, i32)` overload"]
-    #[method(name = "TrySetUpDownIcon", args = 4)]
-    pub fn try_set_up_down_icon(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            bool,
+            crate::app::unitring::UnitRing,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ring_select_common::get_offset() as isize),
+        );
+        inner(this, is_temp_ring, ring, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_immediate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "MoveImmediate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "MoveImmediate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_immediate(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_move_immediate::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_langage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "UpdateLangage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "UpdateLangage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_langage(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_langage::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "OnDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "OnDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_destroy(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_fixed_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetItemFixedText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetItemFixedText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item_fixed_text(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_item_fixed_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_up_down_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "TrySetUpDownIcon",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "TrySetUpDownIcon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_set_up_down_icon(
+        this: HelpParamSetter,
         icon: crate::unity_engine::ui::image::Image,
         text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         before: i32,
         now: i32,
-    ) -> ();
-
-    #[doc = "`MoveCursor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "MoveCursor", args = 1)]
-    pub fn move_cursor(self, frame: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`UpdateCursorPosition()` overload"]
-    #[method(name = "UpdateCursorPosition", args = 0)]
-    pub fn update_cursor_position(self) -> ();
-
-    #[doc = "`CurveDecel(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, f32, i32)` overload"]
-    #[method(name = "CurveDecel", args = 5)]
-    pub fn curve_decel(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::ui::image::Image,
+            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_set_up_down_icon::get_offset() as isize),
+        );
+        inner(this, icon, text, before, now, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_cursor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "MoveCursor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "MoveCursor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_cursor(
+        this: HelpParamSetter,
+        frame: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_cursor::get_offset() as isize),
+        );
+        inner(this, frame, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_cursor_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "UpdateCursorPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCursorPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_cursor_position(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_cursor_position::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_curve_decel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "CurveDecel",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "CurveDecel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn curve_decel(
+        this: HelpParamSetter,
         prev: crate::unity_engine::vector2::Vector2,
         next: crate::unity_engine::vector2::Vector2,
         now: f32,
         term: f32,
         num: i32,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetHelpText(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetHelpText", args = 1)]
-    pub fn get_help_text(self, help: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetPerson(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]
-    #[method(name = "SetPerson", args = 2)]
-    pub fn set_person(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_curve_decel::get_offset() as isize),
+        );
+        inner(this, prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_help_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "GetHelpText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "GetHelpText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_help_text(
+        this: HelpParamSetter,
+        help: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_help_text::get_offset() as isize),
+        );
+        inner(this, help, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetPerson",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_person(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`IsVeyreForNetwork(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsVeyreForNetwork", args = 1)]
-    pub fn is_veyre_for_network(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`SetJob(crate::unity_engine::gameobject::GameObject, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "SetJob", args = 2)]
-    pub fn set_job(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_person::get_offset() as isize),
+        );
+        inner(this, frame, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_veyre_for_network {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "IsVeyreForNetwork",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "IsVeyreForNetwork",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_veyre_for_network(
+        this: HelpParamSetter,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_veyre_for_network::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetJob",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetJob",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_job(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         job: crate::app::jobdata::JobData,
-    ) -> ();
-
-    #[doc = "`SetBattleStyle(crate::unity_engine::gameobject::GameObject, crate::app::battlestyle::BattleStyle_Types)` overload"]
-    #[method(name = "SetBattleStyle", args = 2)]
-    pub fn set_battle_style(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_job::get_offset() as isize),
+        );
+        inner(this, frame, job, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetBattleStyle",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetBattleStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_style(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         style: crate::app::battlestyle::BattleStyle_Types,
-    ) -> ();
-
-    #[doc = "`SetEfficacy(crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "SetEfficacy", args = 2)]
-    pub fn set_efficacy(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::battlestyle::BattleStyle_Types,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_style::get_offset() as isize),
+        );
+        inner(this, frame, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_efficacy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetEfficacy",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetEfficacy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_efficacy(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         skill: crate::app::skilldata::SkillData,
-    ) -> ();
-
-    #[doc = "`SetItemData(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32, crate::app::unititem::UnitItem, bool)` overload"]
-    #[method(name = "SetItemData", args = 8)]
-    pub fn set_item_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_efficacy::get_offset() as isize),
+        );
+        inner(this, frame, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetItemData",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetItemData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item_data(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         data: crate::app::itemdata::ItemData,
         unit: crate::app::unit::Unit,
@@ -261,112 +1151,1308 @@ impl HelpParamSetter {
         endurance: i32,
         item: crate::app::unititem::UnitItem,
         is_use_enchant: bool,
-    ) -> ();
-
-    #[doc = "`SetRangeText(i32, i32)` overload"]
-    #[method(name = "SetRangeText", args = 2)]
-    pub fn set_range_text(self, r_i: i32, r_o: i32) -> ();
-
-    #[doc = "`SetUnitItem(crate::unity_engine::gameobject::GameObject, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, bool)` overload"]
-    #[method(name = "SetUnitItem", args = 6)]
-    pub fn set_unit_item(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::itemdata::ItemData,
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            crate::app::unitring::UnitRing,
+            i32,
+            crate::app::unititem::UnitItem,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_item_data::get_offset() as isize),
+        );
+        inner(
+            this,
+            frame,
+            data,
+            unit,
+            god,
+            ring,
+            endurance,
+            item,
+            is_use_enchant,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_range_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetRangeText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetRangeText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_range_text(
+        this: HelpParamSetter,
+        r_i: i32,
+        r_o: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_range_text::get_offset() as isize),
+            );
+        inner(this, r_i, r_o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetUnitItem",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_item(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         item: crate::app::unititem::UnitItem,
         unit: crate::app::unit::Unit,
         god: crate::app::godunit::GodUnit,
         ring: crate::app::unitring::UnitRing,
         is_use_enchant: bool,
-    ) -> ();
-
-    #[doc = "`SetSkill(crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData, bool, crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "SetSkill", args = 4)]
-    pub fn set_skill(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unititem::UnitItem,
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            crate::app::unitring::UnitRing,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_item::get_offset() as isize),
+        );
+        inner(
+            this,
+            frame,
+            item,
+            unit,
+            god,
+            ring,
+            is_use_enchant,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetSkill",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetSkill",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skill(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         skill: crate::app::skilldata::SkillData,
         b_engage: bool,
         god: crate::app::godunit::GodUnit,
-    ) -> ();
-
-    #[doc = "`SetCapability(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]
-    #[method(name = "SetCapability", args = 3)]
-    pub fn set_capability(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::skilldata::SkillData,
+            bool,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skill::get_offset() as isize),
+        );
+        inner(this, frame, skill, b_engage, god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_capability {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetCapability",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetCapability",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_capability(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         unit: crate::app::unit::Unit,
         r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-    ) -> ();
-
-    #[doc = "`SetBattleInfo(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetBattleInfo", args = 4)]
-    pub fn set_battle_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            crate::app::capabilitydefinition::CapabilityDefinition_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_capability::get_offset() as isize),
+        );
+        inner(this, frame, unit, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetBattleInfo",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetBattleInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_info(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         unit: crate::app::unit::Unit,
         r#type: crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
         text: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`AddEnhancedString(::unity2::Il2CppString, ::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "AddEnhancedString", args = 3)]
-    pub fn add_enhanced_string(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_info::get_offset() as isize),
+        );
+        inner(this, frame, unit, r#type, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_enhanced_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "AddEnhancedString",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "AddEnhancedString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_enhanced_string(
+        this: HelpParamSetter,
         info_text: ::unity2::Il2CppString,
         title: ::unity2::Il2CppString,
         value: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetGod(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "SetGod", args = 3)]
-    pub fn set_god(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_enhanced_string::get_offset() as isize),
+        );
+        inner(this, info_text, title, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetGod",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetGod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_god(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         unit: crate::app::unit::Unit,
         temp_god: crate::app::godunit::GodUnit,
-    ) -> ();
-
-    #[doc = "`SetGod(crate::unity_engine::gameobject::GameObject, crate::app::goddata::GodData)` overload"]
-    #[method(name = "SetGod", args = 2)]
-    pub fn set_god_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_god::get_offset() as isize),
+        );
+        inner(this, frame, unit, temp_god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_god_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetGod",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetGod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_god_2(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         god_data: crate::app::goddata::GodData,
-    ) -> ();
-
-    #[doc = "`SetWeaponLevel(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData_Kinds, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "SetWeaponLevel", args = 3)]
-    pub fn set_weapon_level(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_god_2::get_offset() as isize),
+        );
+        inner(this, frame, god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weapon_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetWeaponLevel",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetWeaponLevel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weapon_level(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         item_kind: crate::app::itemdata::ItemData_Kinds,
         job_data: crate::app::jobdata::JobData,
-    ) -> ();
-
-    #[doc = "`SetEnchantment(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]
-    #[method(name = "SetEnchantment", args = 2)]
-    pub fn set_enchantment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::itemdata::ItemData_Kinds,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_weapon_level::get_offset() as isize),
+        );
+        inner(this, frame, item_kind, job_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enchantment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetEnchantment",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetEnchantment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enchantment(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`SetFixedText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetFixedText", args = 2)]
-    pub fn set_fixed_text(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enchantment::get_offset() as isize),
+        );
+        inner(this, frame, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fixed_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                "SetFixedText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    "SetFixedText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fixed_text(
+        this: HelpParamSetter,
         frame: crate::unity_engine::gameobject::GameObject,
         text: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpParamSetter,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fixed_text::get_offset() as isize),
+        );
+        inner(this, frame, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HelpParamSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HelpParamSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpParamSetter as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpParamSetter as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-helpparamsetter")]
+impl HelpParamSetter {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __HelpParamSetter_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-helpparamsetter")]
+pub trait IHelpParamSetterMethods: IHelpParamSetter {
+    #[doc = "`SetRingSelectGod(bool, crate::app::godunit::GodUnit)` overload"]
+    fn set_ring_select_god(
+        self,
+        is_temp_god: impl ::core::convert::Into<bool>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_ring_select_god(
+                __receiver,
+                ::core::convert::Into::into(is_temp_god),
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRingSelectCommon(bool, crate::app::unitring::UnitRing)` overload"]
+    fn set_ring_select_common(
+        self,
+        is_temp_ring: impl ::core::convert::Into<bool>,
+        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_ring_select_common(
+                __receiver,
+                ::core::convert::Into::into(is_temp_ring),
+                ::core::convert::Into::into(ring),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveImmediate()` overload"]
+    fn move_immediate(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::move_immediate(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateLangage()` overload"]
+    fn update_langage(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::update_langage(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDestroy()` overload"]
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetItemFixedText()` overload"]
+    fn set_item_fixed_text(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_item_fixed_text(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TrySetUpDownIcon(crate::unity_engine::ui::image::Image, crate::tm_pro::textmeshprougui::TextMeshProUGUI, i32, i32)` overload"]
+    fn try_set_up_down_icon(
+        self,
+        icon: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
+        text: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        before: impl ::core::convert::Into<i32>,
+        now: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::try_set_up_down_icon(
+                __receiver,
+                ::core::convert::Into::into(icon),
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(before),
+                ::core::convert::Into::into(now),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveCursor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn move_cursor(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::move_cursor(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateCursorPosition()` overload"]
+    fn update_cursor_position(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::update_cursor_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CurveDecel(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, f32, i32)` overload"]
+    fn curve_decel(
+        self,
+        prev: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        next: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::curve_decel(
+                __receiver,
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHelpText(::unity2::Il2CppString)` overload"]
+    fn get_help_text(
+        self,
+        help: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::get_help_text(
+                __receiver,
+                ::core::convert::Into::into(help),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPerson(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]
+    fn set_person(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_person(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsVeyreForNetwork(crate::app::unit::Unit)` overload"]
+    fn is_veyre_for_network(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::is_veyre_for_network(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetJob(crate::unity_engine::gameobject::GameObject, crate::app::jobdata::JobData)` overload"]
+    fn set_job(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_job(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(job),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBattleStyle(crate::unity_engine::gameobject::GameObject, crate::app::battlestyle::BattleStyle_Types)` overload"]
+    fn set_battle_style(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_battle_style(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEfficacy(crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"]
+    fn set_efficacy(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_efficacy(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetItemData(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32, crate::app::unititem::UnitItem, bool)` overload"]
+    fn set_item_data(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
+        endurance: impl ::core::convert::Into<i32>,
+        item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        is_use_enchant: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_item_data(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(ring),
+                ::core::convert::Into::into(endurance),
+                ::core::convert::Into::into(item),
+                ::core::convert::Into::into(is_use_enchant),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRangeText(i32, i32)` overload"]
+    fn set_range_text(
+        self,
+        r_i: impl ::core::convert::Into<i32>,
+        r_o: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_range_text(
+                __receiver,
+                ::core::convert::Into::into(r_i),
+                ::core::convert::Into::into(r_o),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitItem(crate::unity_engine::gameobject::GameObject, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, bool)` overload"]
+    fn set_unit_item(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
+        is_use_enchant: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_unit_item(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(item),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(ring),
+                ::core::convert::Into::into(is_use_enchant),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSkill(crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData, bool, crate::app::godunit::GodUnit)` overload"]
+    fn set_skill(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        b_engage: impl ::core::convert::Into<bool>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_skill(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(b_engage),
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCapability(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]
+    fn set_capability(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_capability(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBattleInfo(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType, ::unity2::Il2CppString)` overload"]
+    fn set_battle_info(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        r#type: impl ::core::convert::Into<
+            crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
+        >,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_battle_info(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEnhancedString(::unity2::Il2CppString, ::unity2::Il2CppString, i32)` overload"]
+    fn add_enhanced_string(
+        self,
+        info_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::add_enhanced_string(
+                __receiver,
+                ::core::convert::Into::into(info_text),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGod(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
+    fn set_god(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        temp_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_god(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(temp_god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGod(crate::unity_engine::gameobject::GameObject, crate::app::goddata::GodData)` overload"]
+    fn set_god_2(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_god_2(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(god_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWeaponLevel(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData_Kinds, crate::app::jobdata::JobData)` overload"]
+    fn set_weapon_level(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
+        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_weapon_level(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(item_kind),
+                ::core::convert::Into::into(job_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEnchantment(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]
+    fn set_enchantment(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_enchantment(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFixedText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    fn set_fixed_text(
+        self,
+        frame: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::set_fixed_text(
+                __receiver,
+                ::core::convert::Into::into(frame),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HelpParamSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpParamSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-helpparamsetter")]
+impl<__T: IHelpParamSetter> IHelpParamSetterMethods for __T {}
 
 #[cfg(feature = "app-helpparamsetter")]
 impl HelpParamSetter {
@@ -382,4 +2468,26 @@ impl HelpParamSetter {
         <Self as IHelpParamSetterMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-helpparamsetter")]
+pub mod prelude {
+    pub use super::HelpParamSetter;
+    pub use super::IHelpParamSetter;
+    pub use super::IHelpParamSetterMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

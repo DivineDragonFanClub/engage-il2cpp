@@ -17,3 +17,18 @@ mod __types {
 
 #[cfg(feature = "unity_engine-assetbundlerecompressoperation-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-assetbundlerecompressoperation")]
+pub mod prelude {
+    pub use super::AssetBundleRecompressOperation;
+    pub use super::IAssetBundleRecompressOperation;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::asyncoperation::IAsyncOperation;
+    #[cfg(feature = "unity_engine-asyncoperation")]
+    pub use crate::unity_engine::asyncoperation::IAsyncOperationMethods;
+    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
+    #[cfg(feature = "unity_engine-yieldinstruction")]
+    pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+}

@@ -30,46 +30,441 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-bakedmesh")]
-#[::unity2::methods]
-impl BakedMesh {
-    #[doc = "`Create(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BakedMesh_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         parent: crate::unity_engine::transform::Transform,
-    ) -> crate::combat::bakedmesh::BakedMesh;
-
-    #[doc = "`get_meshFilter()` overload"]
-    #[method(name = "get_meshFilter", args = 0)]
-    pub fn get_mesh_filter(self) -> crate::unity_engine::meshfilter::MeshFilter;
-
-    #[doc = "`get_meshRenderer()` overload"]
-    #[method(name = "get_meshRenderer", args = 0)]
-    pub fn get_mesh_renderer(self) -> crate::unity_engine::meshrenderer::MeshRenderer;
-
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`BakeFrom(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer, bool)` overload"]
-    #[method(name = "BakeFrom", args = 2)]
-    pub fn bake_from(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::bakedmesh::BakedMesh {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::bakedmesh::BakedMesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh_filter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "get_meshFilter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "get_meshFilter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh_filter(
+        this: BakedMesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshfilter::MeshFilter {
+        let inner: extern "C" fn(
+            BakedMesh,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::meshfilter::MeshFilter = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh_filter::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh_renderer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "get_meshRenderer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "get_meshRenderer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh_renderer(
+        this: BakedMesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshrenderer::MeshRenderer {
+        let inner: extern "C" fn(
+            BakedMesh,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::meshrenderer::MeshRenderer = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh_renderer::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "OnDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "OnDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_destroy(
+        this: BakedMesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BakedMesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bake_from {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "BakeFrom",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "BakeFrom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bake_from(
+        this: BakedMesh,
         skmesh: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
         omit2nd: bool,
-    ) -> ();
-
-    #[doc = "`BakeFrom(crate::unity_engine::meshfilter::MeshFilter, crate::unity_engine::meshrenderer::MeshRenderer)` overload"]
-    #[method(name = "BakeFrom", args = 2)]
-    pub fn bake_from_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BakedMesh,
+            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bake_from::get_offset() as isize),
+        );
+        inner(this, skmesh, omit2nd, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bake_from_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::meshfilter::MeshFilter as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshrenderer::MeshRenderer as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                "BakeFrom",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    "BakeFrom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bake_from_2(
+        this: BakedMesh,
         filter: crate::unity_engine::meshfilter::MeshFilter,
         renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BakedMesh,
+            crate::unity_engine::meshfilter::MeshFilter,
+            crate::unity_engine::meshrenderer::MeshRenderer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bake_from_2::get_offset() as isize),
+        );
+        inner(this, filter, renderer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BakedMesh as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BakedMesh as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: BakedMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BakedMesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-bakedmesh")]
+impl BakedMesh {
+    #[doc = "`Create(crate::unity_engine::transform::Transform)` overload"]
+    pub fn create(
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::combat::bakedmesh::BakedMesh {
+        unsafe {
+            __BakedMesh_unity2_raw::create(
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-bakedmesh")]
+pub trait IBakedMeshMethods: IBakedMesh {
+    #[doc = "`get_meshFilter()` overload"]
+    fn get_mesh_filter(self) -> crate::unity_engine::meshfilter::MeshFilter {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::get_mesh_filter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_meshRenderer()` overload"]
+    fn get_mesh_renderer(self) -> crate::unity_engine::meshrenderer::MeshRenderer {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::get_mesh_renderer(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDestroy()` overload"]
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BakeFrom(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer, bool)` overload"]
+    fn bake_from(
+        self,
+        skmesh: impl ::core::convert::Into<
+            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        >,
+        omit2nd: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::bake_from(
+                __receiver,
+                ::core::convert::Into::into(skmesh),
+                ::core::convert::Into::into(omit2nd),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BakeFrom(crate::unity_engine::meshfilter::MeshFilter, crate::unity_engine::meshrenderer::MeshRenderer)` overload"]
+    fn bake_from_2(
+        self,
+        filter: impl ::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>,
+        renderer: impl ::core::convert::Into<crate::unity_engine::meshrenderer::MeshRenderer>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::bake_from_2(
+                __receiver,
+                ::core::convert::Into::into(filter),
+                ::core::convert::Into::into(renderer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BakedMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BakedMesh_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-bakedmesh")]
+impl<__T: IBakedMesh> IBakedMeshMethods for __T {}
 
 #[cfg(feature = "combat-bakedmesh")]
 impl BakedMesh {
@@ -85,4 +480,26 @@ impl BakedMesh {
         <Self as IBakedMeshMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-bakedmesh")]
+pub mod prelude {
+    pub use super::BakedMesh;
+    pub use super::IBakedMesh;
+    pub use super::IBakedMeshMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

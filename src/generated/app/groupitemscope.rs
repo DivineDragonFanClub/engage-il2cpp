@@ -20,45 +20,367 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-groupitemscope")]
-#[::unity2::methods]
-impl GroupItemScope {
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GroupItemScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GroupItemScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GroupItemScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GroupItemScope,
         menu: crate::app::debugmenu::DebugMenu,
         name: ::unity2::Il2CppString,
         state: crate::app::menuitem::MenuItem_State,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GroupItemScope,
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_State,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, menu, name, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GroupItemScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GroupItemScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: GroupItemScope,
         menu: crate::app::debugmenu::DebugMenu,
         name: ::unity2::Il2CppString,
         english: ::unity2::Il2CppString,
         state: crate::app::menuitem::MenuItem_State,
-    ) -> ();
-
-    #[doc = "`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
-    #[method(name = "Setup", args = 4)]
-    pub fn setup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GroupItemScope,
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_State,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, menu, name, english, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::debugmenu::DebugMenu as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::menuitem::MenuItem_State as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GroupItemScope as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GroupItemScope as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: GroupItemScope,
         menu: crate::app::debugmenu::DebugMenu,
         name: ::unity2::Il2CppString,
         english: ::unity2::Il2CppString,
         state: crate::app::menuitem::MenuItem_State,
-    ) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GroupItemScope,
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_State,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup::get_offset() as isize),
+        );
+        inner(this, menu, name, english, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GroupItemScope as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GroupItemScope as ::unity2::ClassIdentity>::NAME,
+                    "Finalize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(
+        this: GroupItemScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GroupItemScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GroupItemScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GroupItemScope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: GroupItemScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GroupItemScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-groupitemscope")]
+pub trait IGroupItemScopeMethods: IGroupItemScope {
+    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
+    fn ctor(
+        self,
+        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GroupItemScope_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
+    fn ctor_2(
+        self,
+        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        english: impl ::core::convert::Into<::unity2::Il2CppString>,
+        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GroupItemScope_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(menu),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(english),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]
+    fn setup(
+        self,
+        menu: impl ::core::convert::Into<crate::app::debugmenu::DebugMenu>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        english: impl ::core::convert::Into<::unity2::Il2CppString>,
+        state: impl ::core::convert::Into<crate::app::menuitem::MenuItem_State>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GroupItemScope_unity2_raw::setup(
+                __receiver,
+                ::core::convert::Into::into(menu),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(english),
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GroupItemScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <GroupItemScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GroupItemScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-groupitemscope")]
+impl<__T: IGroupItemScope> IGroupItemScopeMethods for __T {}
 
 #[cfg(feature = "app-groupitemscope")]
 impl GroupItemScope {
@@ -96,4 +418,14 @@ impl GroupItemScope {
         <Self as IGroupItemScopeMethods>::ctor_2(this, menu, name, english, state);
         this
     }
+}
+
+#[cfg(feature = "app-groupitemscope")]
+pub mod prelude {
+    pub use super::GroupItemScope;
+    pub use super::IGroupItemScope;
+    pub use super::IGroupItemScopeMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

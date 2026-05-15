@@ -32,10 +32,6 @@ mod __types {
         pub m_unhandled_events: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
-        #[rename(name = "s_EventHandlers")]
-        pub s_event_handlers: crate::root::delegatelist_1::DelegateList_1<
-            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
-        >,
         #[rename(name = "m_lastTickSent")]
         pub m_last_tick_sent: f32,
         #[rename(name = "m_lastFrame")]
@@ -51,59 +47,509 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
-#[::unity2::methods]
-impl DiagnosticEventCollectorSingleton {
-    #[doc = "`GetGameObjectName()` overload"]
-    #[method(name = "GetGameObjectName", args = 0)]
-    pub fn get_game_object_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>, bool, bool)` overload"]
-    #[method(name = "RegisterEventHandler", args = 3)]
-    pub fn register_event_handler(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiagnosticEventCollectorSingleton_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_game_object_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "GetGameObjectName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "GetGameObjectName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_game_object_name(
+        this: DiagnosticEventCollectorSingleton,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            DiagnosticEventCollectorSingleton,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_game_object_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "RegisterEventHandler",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "RegisterEventHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_event_handler(
         handler: crate::system::action_1::Action_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
         register: bool,
         create: bool,
-    ) -> bool;
-
-    #[doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]
-    #[method(name = "RegisterEventHandler", args = 1)]
-    pub fn register_event_handler_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , bool , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_register_event_handler :: get_offset () as isize) ,) ;
+        inner(handler, register, create, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_event_handler_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "RegisterEventHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "RegisterEventHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_event_handler_2(
+        this: DiagnosticEventCollectorSingleton,
         handler: crate::system::action_1::Action_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
-    ) -> ();
-
-    #[doc = "`UnregisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]
-    #[method(name = "UnregisterEventHandler", args = 1)]
-    pub fn unregister_event_handler(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (DiagnosticEventCollectorSingleton , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_register_event_handler_2 :: get_offset () as isize) ,) ;
+        inner(this, handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "UnregisterEventHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "UnregisterEventHandler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister_event_handler(
+        this: DiagnosticEventCollectorSingleton,
         handler: crate::system::action_1::Action_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
-    ) -> ();
-
-    #[doc = "`PostEvent(crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent)` overload"]
-    #[method(name = "PostEvent", args = 1)]
-    pub fn post_event(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (DiagnosticEventCollectorSingleton , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unregister_event_handler :: get_offset () as isize) ,) ;
+        inner(this, handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "PostEvent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "PostEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_event(
+        this: DiagnosticEventCollectorSingleton,
         diagnostic_event : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent,
-    ) -> ();
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiagnosticEventCollectorSingleton,
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_post_event::get_offset() as isize),
+        );
+        inner(this, diagnostic_event, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(
+        this: DiagnosticEventCollectorSingleton,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiagnosticEventCollectorSingleton,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_awake::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: DiagnosticEventCollectorSingleton,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiagnosticEventCollectorSingleton,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiagnosticEventCollectorSingleton as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiagnosticEventCollectorSingleton,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiagnosticEventCollectorSingleton,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+impl DiagnosticEventCollectorSingleton {
+    #[doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>, bool, bool)` overload"]
+    pub fn register_event_handler(
+        handler : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > >,
+        register: impl ::core::convert::Into<bool>,
+        create: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            __DiagnosticEventCollectorSingleton_unity2_raw::register_event_handler(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(register),
+                ::core::convert::Into::into(create),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+pub trait IDiagnosticEventCollectorSingletonMethods: IDiagnosticEventCollectorSingleton {
+    #[doc = "`GetGameObjectName()` overload"]
+    fn get_game_object_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::get_game_object_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]
+    fn register_event_handler_2(
+        self,
+        handler : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::register_event_handler_2(
+                __receiver,
+                ::core::convert::Into::into(handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnregisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]
+    fn unregister_event_handler(
+        self,
+        handler : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent > >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::unregister_event_handler(
+                __receiver,
+                ::core::convert::Into::into(handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PostEvent(crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent)` overload"]
+    fn post_event(
+        self,
+        diagnostic_event: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::post_event(
+                __receiver,
+                ::core::convert::Into::into(diagnostic_event),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::awake(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DiagnosticEventCollectorSingleton as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DiagnosticEventCollectorSingleton_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+impl<__T: IDiagnosticEventCollectorSingleton> IDiagnosticEventCollectorSingletonMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
 impl DiagnosticEventCollectorSingleton {
@@ -119,4 +565,29 @@ impl DiagnosticEventCollectorSingleton {
         <Self as IDiagnosticEventCollectorSingletonMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+pub mod prelude {
+    pub use super::DiagnosticEventCollectorSingleton;
+    pub use super::IDiagnosticEventCollectorSingleton;
+    pub use super::IDiagnosticEventCollectorSingletonMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2;
+    #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
+    pub use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2Methods;
 }

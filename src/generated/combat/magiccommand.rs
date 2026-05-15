@@ -44,11 +44,81 @@ mod __types {
     }
 
     impl MagicCommand {
-        pub fn _unnamed() -> Self {
+        pub fn なし() -> Self {
             Self { value: 0 }
+        }
+
+        pub fn エフェ生成() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn エフェ削除() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn 魔弾発射() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn 魔弾衝突() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn 魔弾停止() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn 目標変更() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn サウンド() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn カット切替() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn カメラ() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn カメラ戻す() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn ラジブラー() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn 背景暗さ() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn ノード移動() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn 新エフェ生成() -> Self {
+            Self { value: 14 }
         }
     }
 }
 
 #[cfg(feature = "combat-magiccommand-types")]
 pub use __types::*;
+
+#[cfg(feature = "combat-magiccommand")]
+pub mod prelude {
+    pub use super::MagicCommand;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

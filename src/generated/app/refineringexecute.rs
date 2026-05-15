@@ -21,32 +21,262 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-refineringexecute")]
-#[::unity2::methods]
-impl RefineRingExecute {
-    #[doc = "`Do(crate::app::goddata::GodData, i32, crate::system::collections::generic::list_1::List_1<bool>)` overload"]
-    #[method(name = "Do", args = 3)]
-    pub fn r#do(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineRingExecute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < bool > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineRingExecute as ::unity2::ClassIdentity>::class(),
+                "Do",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineRingExecute as ::unity2::ClassIdentity>::NAME,
+                    "Do",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn r#do(
         god_data: crate::app::goddata::GodData,
         times: i32,
-        new_list: crate::system::collections::generic::list_1::List_1<bool>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>;
-
-    #[doc = "`AddAchieve(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)` overload"]
-    #[method(name = "AddAchieve", args = 1)]
-    pub fn add_achieve(
+        new_list: *mut crate::system::collections::generic::list_1::List_1<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> {
+        let inner: extern "C" fn(
+            crate::app::goddata::GodData,
+            i32,
+            *mut crate::system::collections::generic::list_1::List_1<bool>,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::unitring::UnitRing,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do::get_offset() as isize),
+        );
+        inner(god_data, times, new_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_achieve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::unitring::UnitRing,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineRingExecute as ::unity2::ClassIdentity>::class(),
+                "AddAchieve",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineRingExecute as ::unity2::ClassIdentity>::NAME,
+                    "AddAchieve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_achieve(
         unit_ring_list: crate::system::collections::generic::list_1::List_1<
             crate::app::unitring::UnitRing,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_achieve::get_offset() as isize),
+        );
+        inner(unit_ring_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineRingExecute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineRingExecute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineRingExecute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineRingExecute, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineRingExecute as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineRingExecute as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-refineringexecute")]
+impl RefineRingExecute {
+    #[doc = "`Do(crate::app::goddata::GodData, i32, *mutcrate::system::collections::generic::list_1::List_1<bool>)` overload"]
+    pub fn r#do(
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        times: impl ::core::convert::Into<i32>,
+    ) -> (
+        crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+        crate::system::collections::generic::list_1::List_1<bool>,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<bool>,
+            >::uninit();
+            let __ret = {
+                __RefineRingExecute_unity2_raw::r#do(
+                    ::core::convert::Into::into(god_data),
+                    ::core::convert::Into::into(times),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`AddAchieve(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)` overload"]
+    pub fn add_achieve(
+        unit_ring_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+        >,
+    ) -> () {
+        unsafe {
+            __RefineRingExecute_unity2_raw::add_achieve(
+                ::core::convert::Into::into(unit_ring_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RefineRingExecute_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-refineringexecute")]
+pub trait IRefineRingExecuteMethods: IRefineRingExecute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RefineRingExecute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineRingExecute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refineringexecute")]
+impl<__T: IRefineRingExecute> IRefineRingExecuteMethods for __T {}
 
 #[cfg(feature = "app-refineringexecute")]
 impl RefineRingExecute {
@@ -62,4 +292,14 @@ impl RefineRingExecute {
         <Self as IRefineRingExecuteMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-refineringexecute")]
+pub mod prelude {
+    pub use super::IRefineRingExecute;
+    pub use super::IRefineRingExecuteMethods;
+    pub use super::RefineRingExecute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -56,12 +56,56 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-fontassetcreationsettings")]
-#[::unity2::methods(value)]
-impl FontAssetCreationSettings {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, i32, i32, i32, i32, ::unity2::Il2CppString, i32)` overload"]
-    #[method(name = ".ctor", args = 10)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FontAssetCreationSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontAssetCreationSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                10,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontAssetCreationSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FontAssetCreationSettings,
         source_font_file_guid: ::unity2::Il2CppString,
         point_size: i32,
         point_size_sampling_mode: i32,
@@ -72,5 +116,85 @@ impl FontAssetCreationSettings {
         character_selection_mode: i32,
         character_set: ::unity2::Il2CppString,
         render_mode: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FontAssetCreationSettings,
+            ::unity2::Il2CppString,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_font_file_guid,
+            point_size,
+            point_size_sampling_mode,
+            padding,
+            packing_mode,
+            atlas_width,
+            atlas_height,
+            character_selection_mode,
+            character_set,
+            render_mode,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "tm_pro-fontassetcreationsettings")]
+impl FontAssetCreationSettings {
+    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, i32, i32, i32, i32, i32, ::unity2::Il2CppString, i32)` overload"]
+    pub fn ctor(
+        self,
+        source_font_file_guid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        point_size: impl ::core::convert::Into<i32>,
+        point_size_sampling_mode: impl ::core::convert::Into<i32>,
+        padding: impl ::core::convert::Into<i32>,
+        packing_mode: impl ::core::convert::Into<i32>,
+        atlas_width: impl ::core::convert::Into<i32>,
+        atlas_height: impl ::core::convert::Into<i32>,
+        character_selection_mode: impl ::core::convert::Into<i32>,
+        character_set: impl ::core::convert::Into<::unity2::Il2CppString>,
+        render_mode: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __FontAssetCreationSettings_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(source_font_file_guid),
+                ::core::convert::Into::into(point_size),
+                ::core::convert::Into::into(point_size_sampling_mode),
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(packing_mode),
+                ::core::convert::Into::into(atlas_width),
+                ::core::convert::Into::into(atlas_height),
+                ::core::convert::Into::into(character_selection_mode),
+                ::core::convert::Into::into(character_set),
+                ::core::convert::Into::into(render_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-fontassetcreationsettings")]
+pub mod prelude {
+    pub use super::FontAssetCreationSettings;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

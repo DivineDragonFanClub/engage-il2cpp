@@ -18,3 +18,21 @@ mod __types {
 
 #[cfg(feature = "unity_engine-joint2d-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-joint2d")]
+pub mod prelude {
+    pub use super::IJoint2D;
+    pub use super::Joint2D;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+}

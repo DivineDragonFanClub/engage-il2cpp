@@ -82,3 +82,17 @@ impl<T0: ::unity2::ClassIdentity> Interpolator_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-interpolator_1")]
+pub mod prelude {
+    pub use super::IInterpolator_1;
+    pub use super::IInterpolator_1Methods;
+    pub use super::Interpolator_1;
+    pub use crate::app::interpolatortime::IInterpolatorTime;
+    #[cfg(feature = "app-interpolatortime")]
+    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    pub use crate::app::interpolatortime::InterpolatorTime;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

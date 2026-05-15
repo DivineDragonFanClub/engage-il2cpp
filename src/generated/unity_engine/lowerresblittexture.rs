@@ -18,9 +18,85 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
-#[::unity2::methods]
-impl LowerResBlitTexture {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LowerResBlitTexture_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lower_res_blit_texture_dont_strip_me {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LowerResBlitTexture as ::unity2::ClassIdentity>::class(),
+                "LowerResBlitTextureDontStripMe",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LowerResBlitTexture as ::unity2::ClassIdentity>::NAME,
+                    "LowerResBlitTextureDontStripMe",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lower_res_blit_texture_dont_strip_me(
+        this: LowerResBlitTexture,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LowerResBlitTexture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_lower_res_blit_texture_dont_strip_me::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-lowerresblittexture")]
+pub trait ILowerResBlitTextureMethods: ILowerResBlitTexture {
     #[doc = "`LowerResBlitTextureDontStripMe()` overload"]
-    #[method(name = "LowerResBlitTextureDontStripMe", args = 0)]
-    pub fn lower_res_blit_texture_dont_strip_me(self) -> ();
+    fn lower_res_blit_texture_dont_strip_me(self) -> () {
+        unsafe {
+            let __receiver = <LowerResBlitTexture as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LowerResBlitTexture_unity2_raw::lower_res_blit_texture_dont_strip_me(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-lowerresblittexture")]
+impl<__T: ILowerResBlitTexture> ILowerResBlitTextureMethods for __T {}
+
+#[cfg(feature = "unity_engine-lowerresblittexture")]
+pub mod prelude {
+    pub use super::ILowerResBlitTexture;
+    pub use super::ILowerResBlitTextureMethods;
+    pub use super::LowerResBlitTexture;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

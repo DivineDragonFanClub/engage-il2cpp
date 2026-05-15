@@ -17,32 +17,306 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-gl")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GL_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_wireframe {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GL as ::unity2::ClassIdentity>::class(),
+                "get_wireframe",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GL as ::unity2::ClassIdentity>::NAME,
+                    "get_wireframe",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_wireframe(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_wireframe::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_invert_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GL as ::unity2::ClassIdentity>::class(),
+                "get_invertCulling",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GL as ::unity2::ClassIdentity>::NAME,
+                    "get_invertCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_invert_culling(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_invert_culling::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_invert_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GL as ::unity2::ClassIdentity>::class(),
+                "set_invertCulling",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GL as ::unity2::ClassIdentity>::NAME,
+                    "set_invertCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_invert_culling(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_invert_culling::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gpu_projection_matrix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GL as ::unity2::ClassIdentity>::class(),
+                "GetGPUProjectionMatrix",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GL as ::unity2::ClassIdentity>::NAME,
+                    "GetGPUProjectionMatrix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gpu_projection_matrix(
+        proj: crate::unity_engine::matrix4x4::Matrix4x4,
+        render_into_texture: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(
+            crate::unity_engine::matrix4x4::Matrix4x4,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gpu_projection_matrix::get_offset() as isize),
+        );
+        inner(proj, render_into_texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gpu_projection_matrix_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GL as ::unity2::ClassIdentity>::class(),
+                "GetGPUProjectionMatrix_Injected",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GL as ::unity2::ClassIdentity>::NAME,
+                    "GetGPUProjectionMatrix_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gpu_projection_matrix_injected(
+        proj: *mut crate::unity_engine::matrix4x4::Matrix4x4,
+        render_into_texture: bool,
+        ret: *mut crate::unity_engine::matrix4x4::Matrix4x4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            bool,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_gpu_projection_matrix_injected::get_offset() as isize),
+        );
+        inner(proj, render_into_texture, ret, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-gl")]
 impl GL {
     #[doc = "`get_wireframe()` overload"]
-    #[method(name = "get_wireframe", args = 0)]
-    pub fn get_wireframe() -> bool;
-
+    pub fn get_wireframe() -> bool {
+        unsafe { __GL_unity2_raw::get_wireframe(::core::option::Option::None) }
+    }
     #[doc = "`get_invertCulling()` overload"]
-    #[method(name = "get_invertCulling", args = 0)]
-    pub fn get_invert_culling() -> bool;
-
+    pub fn get_invert_culling() -> bool {
+        unsafe { __GL_unity2_raw::get_invert_culling(::core::option::Option::None) }
+    }
     #[doc = "`set_invertCulling(bool)` overload"]
-    #[method(name = "set_invertCulling", args = 1)]
-    pub fn set_invert_culling(value: bool) -> ();
-
+    pub fn set_invert_culling(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __GL_unity2_raw::set_invert_culling(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetGPUProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"]
-    #[method(name = "GetGPUProjectionMatrix", args = 2)]
     pub fn get_gpu_projection_matrix(
-        proj: crate::unity_engine::matrix4x4::Matrix4x4,
-        render_into_texture: bool,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
-
-    #[doc = "`GetGPUProjectionMatrix_Injected(crate::unity_engine::matrix4x4::Matrix4x4, bool, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    #[method(name = "GetGPUProjectionMatrix_Injected", args = 3)]
+        proj: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
+        render_into_texture: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe {
+            __GL_unity2_raw::get_gpu_projection_matrix(
+                ::core::convert::Into::into(proj),
+                ::core::convert::Into::into(render_into_texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGPUProjectionMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, bool, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn get_gpu_projection_matrix_injected(
-        proj: crate::unity_engine::matrix4x4::Matrix4x4,
-        render_into_texture: bool,
-        ret: crate::unity_engine::matrix4x4::Matrix4x4,
-    ) -> ();
+        render_into_texture: impl ::core::convert::Into<bool>,
+    ) -> (
+        crate::unity_engine::matrix4x4::Matrix4x4,
+        crate::unity_engine::matrix4x4::Matrix4x4,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __GL_unity2_raw::get_gpu_projection_matrix_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(render_into_texture),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-gl")]
+pub mod prelude {
+    pub use super::GL;
+    pub use super::IGL;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

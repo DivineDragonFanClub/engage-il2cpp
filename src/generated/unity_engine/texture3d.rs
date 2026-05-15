@@ -19,26 +19,152 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-texture3d")]
-#[::unity2::methods]
-impl Texture3D {
-    #[doc = "`get_isReadable()` overload"]
-    #[method(name = "get_isReadable", args = 0)]
-    pub fn get_is_readable(self) -> bool;
-
-    #[doc = "`SetPixelImpl(i32, i32, i32, i32, crate::unity_engine::color::Color)` overload"]
-    #[method(name = "SetPixelImpl", args = 5)]
-    pub fn set_pixel_impl(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Texture3D_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_readable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "get_isReadable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "get_isReadable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_readable(
+        this: Texture3D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Texture3D, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_readable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixel_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "SetPixelImpl",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "SetPixelImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixel_impl(
+        this: Texture3D,
         image: i32,
         x: i32,
         y: i32,
         z: i32,
         color: crate::unity_engine::color::Color,
-    ) -> ();
-
-    #[doc = "`Internal_CreateImpl(crate::unity_engine::texture3d::Texture3D, i32, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, ::unity2::IntPtr)` overload"]
-    #[method(name = "Internal_CreateImpl", args = 8)]
-    pub fn internal_create_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixel_impl::get_offset() as isize),
+        );
+        inner(this, image, x, y, z, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture3d :: Texture3D as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "Internal_CreateImpl",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CreateImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create_impl(
         mono: crate::unity_engine::texture3d::Texture3D,
         w: i32,
         h: i32,
@@ -47,11 +173,69 @@ impl Texture3D {
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
         native_tex: ::unity2::IntPtr,
-    ) -> bool;
-
-    #[doc = "`Internal_Create(crate::unity_engine::texture3d::Texture3D, i32, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, ::unity2::IntPtr)` overload"]
-    #[method(name = "Internal_Create", args = 8)]
-    pub fn internal_create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture3d::Texture3D,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create_impl::get_offset() as isize),
+        );
+        inner(
+            mono,
+            w,
+            h,
+            d,
+            mip_count,
+            format,
+            flags,
+            native_tex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: texture3d :: Texture3D as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "Internal_Create",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create(
         mono: crate::unity_engine::texture3d::Texture3D,
         w: i32,
         h: i32,
@@ -60,140 +244,1367 @@ impl Texture3D {
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
         native_tex: ::unity2::IntPtr,
-    ) -> ();
-
-    #[doc = "`ApplyImpl(bool, bool)` overload"]
-    #[method(name = "ApplyImpl", args = 2)]
-    pub fn apply_impl(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
-
-    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, i32)` overload"]
-    #[method(name = "SetPixels", args = 2)]
-    pub fn set_pixels(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture3d::Texture3D,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create::get_offset() as isize),
+        );
+        inner(
+            mono,
+            w,
+            h,
+            d,
+            mip_count,
+            format,
+            flags,
+            native_tex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "ApplyImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "ApplyImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_impl(
+        this: Texture3D,
+        update_mipmaps: bool,
+        make_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Texture3D, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_impl::get_offset() as isize),
+            );
+        inner(
+            this,
+            update_mipmaps,
+            make_no_longer_readable,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixels {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "SetPixels",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "SetPixels",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixels(
+        this: Texture3D,
         colors: ::unity2::Array<crate::unity_engine::color::Color>,
         miplevel: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixels::get_offset() as isize),
+        );
+        inner(this, colors, miplevel, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: defaultformat :: DefaultFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, i32)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
         mip_count: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, i32)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            format,
+            flags,
+            mip_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_count: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, i32, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            texture_format,
+            mip_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_5(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_count: i32,
         native_tex: ::unity2::IntPtr,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            i32,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            texture_format,
+            mip_count,
+            native_tex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_6(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_chain: bool,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, bool, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            texture_format,
+            mip_chain,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_7(
+        this: Texture3D,
         width: i32,
         height: i32,
         depth: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_chain: bool,
         native_tex: ::unity2::IntPtr,
-    ) -> ();
-
-    #[doc = "`Apply(bool, bool)` overload"]
-    #[method(name = "Apply", args = 2)]
-    pub fn apply(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
-
-    #[doc = "`Apply(bool)` overload"]
-    #[method(name = "Apply", args = 1)]
-    pub fn apply_2(self, update_mipmaps: bool) -> ();
-
-    #[doc = "`Apply()` overload"]
-    #[method(name = "Apply", args = 0)]
-    pub fn apply_3(self) -> ();
-
-    #[doc = "`SetPixel(i32, i32, i32, crate::unity_engine::color::Color, i32)` overload"]
-    #[method(name = "SetPixel", args = 5)]
-    pub fn set_pixel(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            bool,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_7::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            depth,
+            texture_format,
+            mip_chain,
+            native_tex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "Apply",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "Apply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply(
+        this: Texture3D,
+        update_mipmaps: bool,
+        make_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Texture3D, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply::get_offset() as isize),
+            );
+        inner(
+            this,
+            update_mipmaps,
+            make_no_longer_readable,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "Apply",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "Apply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_2(
+        this: Texture3D,
+        update_mipmaps: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Texture3D, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_2::get_offset() as isize),
+            );
+        inner(this, update_mipmaps, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "Apply",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "Apply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_3(this: Texture3D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Texture3D, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_3::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "SetPixel",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "SetPixel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixel(
+        this: Texture3D,
         x: i32,
         y: i32,
         z: i32,
         color: crate::unity_engine::color::Color,
         mip_level: i32,
-    ) -> ();
-
-    #[doc = "`ValidateIsNotCrunched(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = "ValidateIsNotCrunched", args = 1)]
-    pub fn validate_is_not_crunched(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixel::get_offset() as isize),
+        );
+        inner(this, x, y, z, color, mip_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_is_not_crunched {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "ValidateIsNotCrunched",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "ValidateIsNotCrunched",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_is_not_crunched(
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`SetPixelImpl_Injected(i32, i32, i32, i32, crate::unity_engine::color::Color)` overload"]
-    #[method(name = "SetPixelImpl_Injected", args = 5)]
-    pub fn set_pixel_impl_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_is_not_crunched::get_offset() as isize),
+        );
+        inner(flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixel_impl_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Texture3D as ::unity2::ClassIdentity>::class(),
+                "SetPixelImpl_Injected",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Texture3D as ::unity2::ClassIdentity>::NAME,
+                    "SetPixelImpl_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixel_impl_injected(
+        this: Texture3D,
         image: i32,
         x: i32,
         y: i32,
         z: i32,
-        color: crate::unity_engine::color::Color,
-    ) -> ();
+        color: *mut crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Texture3D,
+            i32,
+            i32,
+            i32,
+            i32,
+            *mut crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixel_impl_injected::get_offset() as isize),
+        );
+        inner(this, image, x, y, z, color, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-texture3d")]
+impl Texture3D {
+    #[doc = "`Internal_CreateImpl(crate::unity_engine::texture3d::Texture3D, i32, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, ::unity2::IntPtr)` overload"]
+    pub fn internal_create_impl(
+        mono: impl ::core::convert::Into<crate::unity_engine::texture3d::Texture3D>,
+        w: impl ::core::convert::Into<i32>,
+        h: impl ::core::convert::Into<i32>,
+        d: impl ::core::convert::Into<i32>,
+        mip_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+        native_tex: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> bool {
+        unsafe {
+            __Texture3D_unity2_raw::internal_create_impl(
+                ::core::convert::Into::into(mono),
+                ::core::convert::Into::into(w),
+                ::core::convert::Into::into(h),
+                ::core::convert::Into::into(d),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::convert::Into::into(native_tex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_Create(crate::unity_engine::texture3d::Texture3D, i32, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, ::unity2::IntPtr)` overload"]
+    pub fn internal_create(
+        mono: impl ::core::convert::Into<crate::unity_engine::texture3d::Texture3D>,
+        w: impl ::core::convert::Into<i32>,
+        h: impl ::core::convert::Into<i32>,
+        d: impl ::core::convert::Into<i32>,
+        mip_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+        native_tex: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            __Texture3D_unity2_raw::internal_create(
+                ::core::convert::Into::into(mono),
+                ::core::convert::Into::into(w),
+                ::core::convert::Into::into(h),
+                ::core::convert::Into::into(d),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::convert::Into::into(native_tex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidateIsNotCrunched(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    pub fn validate_is_not_crunched(
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            __Texture3D_unity2_raw::validate_is_not_crunched(
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-texture3d")]
+pub trait ITexture3DMethods: ITexture3D {
+    #[doc = "`get_isReadable()` overload"]
+    fn get_is_readable(self) -> bool {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetPixelImpl(i32, i32, i32, i32, crate::unity_engine::color::Color)` overload"]
+    fn set_pixel_impl(
+        self,
+        image: impl ::core::convert::Into<i32>,
+        x: impl ::core::convert::Into<i32>,
+        y: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::set_pixel_impl(
+                __receiver,
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyImpl(bool, bool)` overload"]
+    fn apply_impl(
+        self,
+        update_mipmaps: impl ::core::convert::Into<bool>,
+        make_no_longer_readable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::apply_impl(
+                __receiver,
+                ::core::convert::Into::into(update_mipmaps),
+                ::core::convert::Into::into(make_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, i32)` overload"]
+    fn set_pixels(
+        self,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+        miplevel: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::set_pixels(
+                __receiver,
+                ::core::convert::Into::into(colors),
+                ::core::convert::Into::into(miplevel),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    fn ctor(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    fn ctor_2(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, i32)` overload"]
+    fn ctor_3(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+        mip_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::convert::Into::into(mip_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, i32)` overload"]
+    fn ctor_4(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, i32, ::unity2::IntPtr)` overload"]
+    fn ctor_5(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_count: impl ::core::convert::Into<i32>,
+        native_tex: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_5(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(native_tex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
+    fn ctor_6(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_chain: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_6(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_chain),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, i32, crate::unity_engine::textureformat::TextureFormat, bool, ::unity2::IntPtr)` overload"]
+    fn ctor_7(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        depth: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_chain: impl ::core::convert::Into<bool>,
+        native_tex: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::ctor_7(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_chain),
+                ::core::convert::Into::into(native_tex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Apply(bool, bool)` overload"]
+    fn apply(
+        self,
+        update_mipmaps: impl ::core::convert::Into<bool>,
+        make_no_longer_readable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::apply(
+                __receiver,
+                ::core::convert::Into::into(update_mipmaps),
+                ::core::convert::Into::into(make_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Apply(bool)` overload"]
+    fn apply_2(self, update_mipmaps: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::apply_2(
+                __receiver,
+                ::core::convert::Into::into(update_mipmaps),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Apply()` overload"]
+    fn apply_3(self) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::apply_3(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetPixel(i32, i32, i32, crate::unity_engine::color::Color, i32)` overload"]
+    fn set_pixel(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        y: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        mip_level: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Texture3D_unity2_raw::set_pixel(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(mip_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPixelImpl_Injected(i32, i32, i32, i32, *mutcrate::unity_engine::color::Color)` overload"]
+    fn set_pixel_impl_injected(
+        self,
+        image: impl ::core::convert::Into<i32>,
+        x: impl ::core::convert::Into<i32>,
+        y: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <Texture3D as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            __Texture3D_unity2_raw::set_pixel_impl_injected(
+                __receiver,
+                ::core::convert::Into::into(image),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-texture3d")]
+impl<__T: ITexture3D> ITexture3DMethods for __T {}
 
 #[cfg(feature = "unity_engine-texture3d")]
 impl Texture3D {
@@ -348,4 +1759,20 @@ impl Texture3D {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-texture3d")]
+pub mod prelude {
+    pub use super::ITexture3D;
+    pub use super::ITexture3DMethods;
+    pub use super::Texture3D;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::texture::ITexture;
+    #[cfg(feature = "unity_engine-texture")]
+    pub use crate::unity_engine::texture::ITextureMethods;
 }

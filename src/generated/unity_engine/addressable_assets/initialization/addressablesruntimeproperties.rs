@@ -38,42 +38,480 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
-#[::unity2::methods]
-impl AddressablesRuntimeProperties {
-    #[doc = "`GetAssemblies()` overload"]
-    #[method(name = "GetAssemblies", args = 0)]
-    pub fn get_assemblies() -> ::unity2::Array<crate::system::reflection::assembly::Assembly>;
-
-    #[doc = "`GetCachedValueCount()` overload"]
-    #[method(name = "GetCachedValueCount", args = 0)]
-    pub fn get_cached_value_count() -> i32;
-
-    #[doc = "`SetPropertyValue(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetPropertyValue", args = 2)]
-    pub fn set_property_value(name: ::unity2::Il2CppString, val: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ClearCachedPropertyValues()` overload"]
-    #[method(name = "ClearCachedPropertyValues", args = 0)]
-    pub fn clear_cached_property_values() -> ();
-
-    #[doc = "`EvaluateProperty(::unity2::Il2CppString)` overload"]
-    #[method(name = "EvaluateProperty", args = 1)]
-    pub fn evaluate_property(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`EvaluateString(::unity2::Il2CppString)` overload"]
-    #[method(name = "EvaluateString", args = 1)]
-    pub fn evaluate_string(input: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`EvaluateString(::unity2::Il2CppString, u16, u16, crate::system::func_2::Func_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
-    #[method(name = "EvaluateString", args = 4)]
-    pub fn evaluate_string_2(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AddressablesRuntimeProperties_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assemblies {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "GetAssemblies",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "GetAssemblies",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_assemblies(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::system::reflection::assembly::Assembly> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::system::reflection::assembly::Assembly> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_assemblies::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cached_value_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "GetCachedValueCount",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "GetCachedValueCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cached_value_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_cached_value_count::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_property_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "SetPropertyValue",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "SetPropertyValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_property_value(
+        name: ::unity2::Il2CppString,
+        val: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_property_value::get_offset() as isize),
+        );
+        inner(name, val, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_cached_property_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "ClearCachedPropertyValues",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "ClearCachedPropertyValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_cached_property_values(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_cached_property_values::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate_property {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "EvaluateProperty",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "EvaluateProperty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate_property(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evaluate_property::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "EvaluateString",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "EvaluateString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate_string(
+        input: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evaluate_string::get_offset() as isize),
+        );
+        inner(input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate_string_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                "EvaluateString",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    "EvaluateString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate_string_2(
         input_string: ::unity2::Il2CppString,
         start_delimiter: u16,
         end_delimiter: u16,
         var_func: crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            u16,
+            u16,
+            crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evaluate_string_2::get_offset() as isize),
+        );
+        inner(
+            input_string,
+            start_delimiter,
+            end_delimiter,
+            var_func,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AddressablesRuntimeProperties as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
+impl AddressablesRuntimeProperties {
+    #[doc = "`GetAssemblies()` overload"]
+    pub fn get_assemblies() -> ::unity2::Array<crate::system::reflection::assembly::Assembly> {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::get_assemblies(::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCachedValueCount()` overload"]
+    pub fn get_cached_value_count() -> i32 {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::get_cached_value_count(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPropertyValue(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn set_property_value(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        val: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::set_property_value(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(val),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearCachedPropertyValues()` overload"]
+    pub fn clear_cached_property_values() -> () {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::clear_cached_property_values(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EvaluateProperty(::unity2::Il2CppString)` overload"]
+    pub fn evaluate_property(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::evaluate_property(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EvaluateString(::unity2::Il2CppString)` overload"]
+    pub fn evaluate_string(
+        input: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::evaluate_string(
+                ::core::convert::Into::into(input),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EvaluateString(::unity2::Il2CppString, u16, u16, crate::system::func_2::Func_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
+    pub fn evaluate_string_2(
+        input_string: impl ::core::convert::Into<::unity2::Il2CppString>,
+        start_delimiter: impl ::core::convert::Into<u16>,
+        end_delimiter: impl ::core::convert::Into<u16>,
+        var_func: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AddressablesRuntimeProperties_unity2_raw::evaluate_string_2(
+                ::core::convert::Into::into(input_string),
+                ::core::convert::Into::into(start_delimiter),
+                ::core::convert::Into::into(end_delimiter),
+                ::core::convert::Into::into(var_func),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __AddressablesRuntimeProperties_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
+pub mod prelude {
+    pub use super::AddressablesRuntimeProperties;
+    pub use super::IAddressablesRuntimeProperties;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

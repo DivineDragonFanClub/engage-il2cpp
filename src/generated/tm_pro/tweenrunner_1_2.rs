@@ -61,3 +61,13 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1_2<T0> {
         this
     }
 }
+
+#[cfg(feature = "tm_pro-tweenrunner_1_2")]
+pub mod prelude {
+    pub use super::ITweenRunner_1_2;
+    pub use super::ITweenRunner_1_2Methods;
+    pub use super::TweenRunner_1_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

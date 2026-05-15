@@ -54,107 +54,1188 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
-#[::unity2::methods]
-impl DynamicResolutionHandler {
-    #[doc = "`get_filter()` overload"]
-    #[method(name = "get_filter", args = 0)]
-    pub fn get_filter(
-        self,
-    ) -> crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter;
-
-    #[doc = "`set_filter(crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter)` overload"]
-    #[method(name = "set_filter", args = 1)]
-    pub fn set_filter(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DynamicResolutionHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_filter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "get_filter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "get_filter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_filter(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter {
+        let inner : extern "C" fn (DynamicResolutionHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: dynamicresupscalefilter :: DynamicResUpscaleFilter = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_filter :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_filter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: dynamicresupscalefilter :: DynamicResUpscaleFilter as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "set_filter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "set_filter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_filter(
+        this: DynamicResolutionHandler,
         value: crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
-    ) -> ();
-
-    #[doc = "`get_finalViewport()` overload"]
-    #[method(name = "get_finalViewport", args = 0)]
-    pub fn get_final_viewport(self) -> crate::unity_engine::vector2int::Vector2Int;
-
-    #[doc = "`set_finalViewport(crate::unity_engine::vector2int::Vector2Int)` overload"]
-    #[method(name = "set_finalViewport", args = 1)]
-    pub fn set_final_viewport(self, value: crate::unity_engine::vector2int::Vector2Int) -> ();
-
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance(
-    ) -> crate::unity_engine::rendering::dynamicresolutionhandler::DynamicResolutionHandler;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`DefaultDynamicResMethod()` overload"]
-    #[method(name = "DefaultDynamicResMethod", args = 0)]
-    pub fn default_dynamic_res_method() -> f32;
-
-    #[doc = "`ProcessSettings(crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings)` overload"]
-    #[method(name = "ProcessSettings", args = 1)]
-    pub fn process_settings(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DynamicResolutionHandler,
+            crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_filter::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_final_viewport {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "get_finalViewport",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "get_finalViewport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_final_viewport(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2int::Vector2Int {
+        let inner: extern "C" fn(
+            DynamicResolutionHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2int::Vector2Int = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_final_viewport::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_final_viewport {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2int::Vector2Int as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "set_finalViewport",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "set_finalViewport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_final_viewport(
+        this: DynamicResolutionHandler,
+        value: crate::unity_engine::vector2int::Vector2Int,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DynamicResolutionHandler,
+            crate::unity_engine::vector2int::Vector2Int,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_final_viewport::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::dynamicresolutionhandler::DynamicResolutionHandler {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: dynamicresolutionhandler :: DynamicResolutionHandler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_instance :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_default_dynamic_res_method {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "DefaultDynamicResMethod",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "DefaultDynamicResMethod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn default_dynamic_res_method(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_default_dynamic_res_method::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "ProcessSettings",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "ProcessSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_settings(
+        this: DynamicResolutionHandler,
         settings : crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings,
-    ) -> ();
-
-    #[doc = "`SetDynamicResScaler(crate::unity_engine::rendering::performdynamicres::PerformDynamicRes, crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType)` overload"]
-    #[method(name = "SetDynamicResScaler", args = 2)]
-    pub fn set_dynamic_res_scaler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (DynamicResolutionHandler , crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_process_settings :: get_offset () as isize) ,) ;
+        inner(this, settings, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dynamic_res_scaler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: performdynamicres :: PerformDynamicRes as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: dynamicresscalepolicytype :: DynamicResScalePolicyType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "SetDynamicResScaler",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "SetDynamicResScaler",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_dynamic_res_scaler(
         scaler: crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
         scaler_type : crate :: unity_engine :: rendering :: dynamicresscalepolicytype :: DynamicResScalePolicyType,
-    ) -> ();
-
-    #[doc = "`SetCurrentCameraRequest(bool)` overload"]
-    #[method(name = "SetCurrentCameraRequest", args = 1)]
-    pub fn set_current_camera_request(self, camera_request: bool) -> ();
-
-    #[doc = "`Update(crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings, crate::system::action::Action)` overload"]
-    #[method(name = "Update", args = 2)]
-    pub fn update(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
+            crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_dynamic_res_scaler::get_offset() as isize),
+        );
+        inner(scaler, scaler_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_current_camera_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "SetCurrentCameraRequest",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "SetCurrentCameraRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_current_camera_request(
+        this: DynamicResolutionHandler,
+        camera_request: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DynamicResolutionHandler, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_current_camera_request::get_offset() as isize),
+            );
+        inner(this, camera_request, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "Update",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: DynamicResolutionHandler,
         settings : crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings,
         on_resolution_change: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`SoftwareDynamicResIsEnabled()` overload"]
-    #[method(name = "SoftwareDynamicResIsEnabled", args = 0)]
-    pub fn software_dynamic_res_is_enabled(self) -> bool;
-
-    #[doc = "`HardwareDynamicResIsEnabled()` overload"]
-    #[method(name = "HardwareDynamicResIsEnabled", args = 0)]
-    pub fn hardware_dynamic_res_is_enabled(self) -> bool;
-
-    #[doc = "`RequestsHardwareDynamicResolution()` overload"]
-    #[method(name = "RequestsHardwareDynamicResolution", args = 0)]
-    pub fn requests_hardware_dynamic_resolution(self) -> bool;
-
-    #[doc = "`DynamicResolutionEnabled()` overload"]
-    #[method(name = "DynamicResolutionEnabled", args = 0)]
-    pub fn dynamic_resolution_enabled(self) -> bool;
-
-    #[doc = "`ForceSoftwareFallback()` overload"]
-    #[method(name = "ForceSoftwareFallback", args = 0)]
-    pub fn force_software_fallback(self) -> ();
-
-    #[doc = "`GetScaledSize(crate::unity_engine::vector2int::Vector2Int)` overload"]
-    #[method(name = "GetScaledSize", args = 1)]
-    pub fn get_scaled_size(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (DynamicResolutionHandler , crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_update :: get_offset () as isize) ,) ;
+        inner(this, settings, on_resolution_change, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_software_dynamic_res_is_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "SoftwareDynamicResIsEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "SoftwareDynamicResIsEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn software_dynamic_res_is_enabled(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_software_dynamic_res_is_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hardware_dynamic_res_is_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "HardwareDynamicResIsEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "HardwareDynamicResIsEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hardware_dynamic_res_is_enabled(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hardware_dynamic_res_is_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_requests_hardware_dynamic_resolution {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "RequestsHardwareDynamicResolution",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "RequestsHardwareDynamicResolution",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn requests_hardware_dynamic_resolution(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_requests_hardware_dynamic_resolution::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dynamic_resolution_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "DynamicResolutionEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "DynamicResolutionEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dynamic_resolution_enabled(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dynamic_resolution_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_force_software_fallback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "ForceSoftwareFallback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "ForceSoftwareFallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn force_software_fallback(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_force_software_fallback::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scaled_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2int::Vector2Int as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "GetScaledSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "GetScaledSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scaled_size(
+        this: DynamicResolutionHandler,
         size: crate::unity_engine::vector2int::Vector2Int,
-    ) -> crate::unity_engine::vector2int::Vector2Int;
-
-    #[doc = "`GetCurrentScale()` overload"]
-    #[method(name = "GetCurrentScale", args = 0)]
-    pub fn get_current_scale(self) -> f32;
-
-    #[doc = "`GetLastScaledSize()` overload"]
-    #[method(name = "GetLastScaledSize", args = 0)]
-    pub fn get_last_scaled_size(self) -> crate::unity_engine::vector2int::Vector2Int;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2int::Vector2Int {
+        let inner: extern "C" fn(
+            DynamicResolutionHandler,
+            crate::unity_engine::vector2int::Vector2Int,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2int::Vector2Int = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scaled_size::get_offset() as isize),
+        );
+        inner(this, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "GetCurrentScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_scale(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(DynamicResolutionHandler, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_current_scale::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_last_scaled_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                "GetLastScaledSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    "GetLastScaledSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_last_scaled_size(
+        this: DynamicResolutionHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2int::Vector2Int {
+        let inner: extern "C" fn(
+            DynamicResolutionHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2int::Vector2Int = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_last_scaled_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicResolutionHandler as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicResolutionHandler as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+impl DynamicResolutionHandler {
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance(
+    ) -> crate::unity_engine::rendering::dynamicresolutionhandler::DynamicResolutionHandler {
+        unsafe { __DynamicResolutionHandler_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`DefaultDynamicResMethod()` overload"]
+    pub fn default_dynamic_res_method() -> f32 {
+        unsafe {
+            __DynamicResolutionHandler_unity2_raw::default_dynamic_res_method(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetDynamicResScaler(crate::unity_engine::rendering::performdynamicres::PerformDynamicRes, crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType)` overload"]
+    pub fn set_dynamic_res_scaler(
+        scaler: impl ::core::convert::Into<
+            crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
+        >,
+        scaler_type: impl ::core::convert::Into<
+            crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType,
+        >,
+    ) -> () {
+        unsafe {
+            __DynamicResolutionHandler_unity2_raw::set_dynamic_res_scaler(
+                ::core::convert::Into::into(scaler),
+                ::core::convert::Into::into(scaler_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DynamicResolutionHandler_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+pub trait IDynamicResolutionHandlerMethods: IDynamicResolutionHandler {
+    #[doc = "`get_filter()` overload"]
+    fn get_filter(
+        self,
+    ) -> crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::get_filter(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_filter(crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter)` overload"]
+    fn set_filter(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::set_filter(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_finalViewport()` overload"]
+    fn get_final_viewport(self) -> crate::unity_engine::vector2int::Vector2Int {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::get_final_viewport(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_finalViewport(crate::unity_engine::vector2int::Vector2Int)` overload"]
+    fn set_final_viewport(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::set_final_viewport(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ProcessSettings(crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings)` overload"]
+    fn process_settings(
+        self,
+        settings : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::process_settings(
+                __receiver,
+                ::core::convert::Into::into(settings),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCurrentCameraRequest(bool)` overload"]
+    fn set_current_camera_request(self, camera_request: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::set_current_camera_request(
+                __receiver,
+                ::core::convert::Into::into(camera_request),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update(crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings, crate::system::action::Action)` overload"]
+    fn update(
+        self,
+        settings : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings >,
+        on_resolution_change: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(settings),
+                ::core::convert::Into::into(on_resolution_change),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SoftwareDynamicResIsEnabled()` overload"]
+    fn software_dynamic_res_is_enabled(self) -> bool {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::software_dynamic_res_is_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HardwareDynamicResIsEnabled()` overload"]
+    fn hardware_dynamic_res_is_enabled(self) -> bool {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::hardware_dynamic_res_is_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RequestsHardwareDynamicResolution()` overload"]
+    fn requests_hardware_dynamic_resolution(self) -> bool {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::requests_hardware_dynamic_resolution(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DynamicResolutionEnabled()` overload"]
+    fn dynamic_resolution_enabled(self) -> bool {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::dynamic_resolution_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ForceSoftwareFallback()` overload"]
+    fn force_software_fallback(self) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::force_software_fallback(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetScaledSize(crate::unity_engine::vector2int::Vector2Int)` overload"]
+    fn get_scaled_size(
+        self,
+        size: impl ::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>,
+    ) -> crate::unity_engine::vector2int::Vector2Int {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::get_scaled_size(
+                __receiver,
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrentScale()` overload"]
+    fn get_current_scale(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::get_current_scale(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLastScaledSize()` overload"]
+    fn get_last_scaled_size(self) -> crate::unity_engine::vector2int::Vector2Int {
+        unsafe {
+            let __receiver =
+                <DynamicResolutionHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicResolutionHandler_unity2_raw::get_last_scaled_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+impl<__T: IDynamicResolutionHandler> IDynamicResolutionHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
 impl DynamicResolutionHandler {
@@ -170,4 +1251,14 @@ impl DynamicResolutionHandler {
         <Self as IDynamicResolutionHandlerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+pub mod prelude {
+    pub use super::DynamicResolutionHandler;
+    pub use super::IDynamicResolutionHandler;
+    pub use super::IDynamicResolutionHandlerMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

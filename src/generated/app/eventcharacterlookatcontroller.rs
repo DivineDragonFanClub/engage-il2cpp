@@ -11,23 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]
-    #[::unity2::class(namespace = "App", name = "EventCharacterLookAtController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventCharacterLookAtController {
-# [static_field] # [rename (name = "CurrentTargetNameOfEye")] pub current_target_name_of_eye : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CurrentTargetNameOfHead")] pub current_target_name_of_head : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "WeightMin")] pub weight_min : f32 ,
-# [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
-# [rename (name = "m_characterJoint")] pub m_character_joint : crate :: combat :: characterjoint :: CharacterJoint ,
-# [rename (name = "m_currentTargetOfEye")] pub m_current_target_of_eye : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_currentTargetOfHead")] pub m_current_target_of_head : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_currentTargetPosOfEye")] pub m_current_target_pos_of_eye : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
-# [rename (name = "m_currentTargetPosOfHead")] pub m_current_target_pos_of_head : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
-# [rename (name = "m_weightOfEye")] pub m_weight_of_eye : crate :: app :: weightfader :: WeightFader ,
-# [rename (name = "m_weightOfHead")] pub m_weight_of_head : crate :: app :: weightfader :: WeightFader ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController_PositionFader.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -46,62 +29,979 @@ mod __types {
         #[rename(name = "m_duration")]
         pub m_duration: f32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]
+    #[::unity2::class(namespace = "App", name = "EventCharacterLookAtController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventCharacterLookAtController {
+# [static_field] # [rename (name = "CurrentTargetNameOfEye")] pub current_target_name_of_eye : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CurrentTargetNameOfHead")] pub current_target_name_of_head : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "WeightMin")] pub weight_min : f32 ,
+# [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
+# [rename (name = "m_characterJoint")] pub m_character_joint : crate :: combat :: characterjoint :: CharacterJoint ,
+# [rename (name = "m_currentTargetOfEye")] pub m_current_target_of_eye : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_currentTargetOfHead")] pub m_current_target_of_head : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_currentTargetPosOfEye")] pub m_current_target_pos_of_eye : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
+# [rename (name = "m_currentTargetPosOfHead")] pub m_current_target_pos_of_head : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
+# [rename (name = "m_weightOfEye")] pub m_weight_of_eye : crate :: app :: weightfader :: WeightFader ,
+# [rename (name = "m_weightOfHead")] pub m_weight_of_head : crate :: app :: weightfader :: WeightFader ,
+}
 }
 
 #[cfg(feature = "app-eventcharacterlookatcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
-#[::unity2::methods]
-impl EventCharacterLookAtController {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventCharacterLookAtController_PositionFader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventCharacterLookAtController_PositionFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController_PositionFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: EventCharacterLookAtController_PositionFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController_PositionFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: EventCharacterLookAtController_PositionFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController_PositionFader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: EventCharacterLookAtController_PositionFader,
+        pos: crate::unity_engine::vector3::Vector3,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController_PositionFader,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, pos, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController_PositionFader as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: EventCharacterLookAtController_PositionFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController_PositionFader,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`Init(crate::combat::character::Character, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Init", args = 2)]
-    pub fn init(
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+pub trait IEventCharacterLookAtController_PositionFaderMethods:
+    IEventCharacterLookAtController_PositionFader
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < EventCharacterLookAtController_PositionFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventCharacterLookAtController_PositionFader_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = < EventCharacterLookAtController_PositionFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventCharacterLookAtController_PositionFader_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = < EventCharacterLookAtController_PositionFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventCharacterLookAtController_PositionFader_unity2_raw::get(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    fn set(
         self,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventCharacterLookAtController_PositionFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventCharacterLookAtController_PositionFader_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = < EventCharacterLookAtController_PositionFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventCharacterLookAtController_PositionFader_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+impl<__T: IEventCharacterLookAtController_PositionFader>
+    IEventCharacterLookAtController_PositionFaderMethods for __T
+{
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+impl EventCharacterLookAtController_PositionFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventCharacterLookAtController_PositionFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventCharacterLookAtController_PositionFaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventCharacterLookAtController_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventCharacterLookAtController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterLookAtController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: EventCharacterLookAtController,
         character: crate::combat::character::Character,
         pid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`Reset(f32)` overload"]
-    #[method(name = "Reset", args = 1)]
-    pub fn reset(self, msec: f32) -> ();
-
-    #[doc = "`SetTargetObjectOfEye(crate::unity_engine::gameobject::GameObject, f32)` overload"]
-    #[method(name = "SetTargetObjectOfEye", args = 2)]
-    pub fn set_target_object_of_eye(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            crate::combat::character::Character,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init::get_offset() as isize),
+        );
+        inner(this, character, pid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: EventCharacterLookAtController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventCharacterLookAtController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: EventCharacterLookAtController,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_object_of_eye {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "SetTargetObjectOfEye",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "SetTargetObjectOfEye",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_target_object_of_eye(
+        this: EventCharacterLookAtController,
         target: crate::unity_engine::gameobject::GameObject,
         msec: f32,
-    ) -> ();
-
-    #[doc = "`SetTargetObjectOfHead(crate::unity_engine::gameobject::GameObject, f32)` overload"]
-    #[method(name = "SetTargetObjectOfHead", args = 2)]
-    pub fn set_target_object_of_head(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            crate::unity_engine::gameobject::GameObject,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_target_object_of_eye::get_offset() as isize),
+        );
+        inner(this, target, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_object_of_head {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "SetTargetObjectOfHead",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "SetTargetObjectOfHead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_target_object_of_head(
+        this: EventCharacterLookAtController,
         target: crate::unity_engine::gameobject::GameObject,
         msec: f32,
-    ) -> ();
-
-    #[doc = "`CalcDefaultTargetPos()` overload"]
-    #[method(name = "CalcDefaultTargetPos", args = 0)]
-    pub fn calc_default_target_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`SetWeightOfEye(f32, f32)` overload"]
-    #[method(name = "SetWeightOfEye", args = 2)]
-    pub fn set_weight_of_eye(self, weight: f32, msec: f32) -> ();
-
-    #[doc = "`SetWeightOfHead(f32, f32)` overload"]
-    #[method(name = "SetWeightOfHead", args = 2)]
-    pub fn set_weight_of_head(self, weight: f32, msec: f32) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            crate::unity_engine::gameobject::GameObject,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_target_object_of_head::get_offset() as isize),
+        );
+        inner(this, target, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_default_target_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "CalcDefaultTargetPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "CalcDefaultTargetPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_default_target_pos(
+        this: EventCharacterLookAtController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_default_target_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weight_of_eye {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "SetWeightOfEye",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "SetWeightOfEye",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weight_of_eye(
+        this: EventCharacterLookAtController,
+        weight: f32,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_weight_of_eye::get_offset() as isize),
+        );
+        inner(this, weight, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_weight_of_head {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventCharacterLookAtController as ::unity2::ClassIdentity>::class(),
+                "SetWeightOfHead",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventCharacterLookAtController as ::unity2::ClassIdentity>::NAME,
+                    "SetWeightOfHead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_weight_of_head(
+        this: EventCharacterLookAtController,
+        weight: f32,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventCharacterLookAtController,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_weight_of_head::get_offset() as isize),
+        );
+        inner(this, weight, msec, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+pub trait IEventCharacterLookAtControllerMethods: IEventCharacterLookAtController {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Init(crate::combat::character::Character, ::unity2::Il2CppString)` overload"]
+    fn init(
+        self,
+        character: impl ::core::convert::Into<crate::combat::character::Character>,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::init(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset(f32)` overload"]
+    fn reset(self, msec: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::reset(
+                __receiver,
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTargetObjectOfEye(crate::unity_engine::gameobject::GameObject, f32)` overload"]
+    fn set_target_object_of_eye(
+        self,
+        target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::set_target_object_of_eye(
+                __receiver,
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTargetObjectOfHead(crate::unity_engine::gameobject::GameObject, f32)` overload"]
+    fn set_target_object_of_head(
+        self,
+        target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::set_target_object_of_head(
+                __receiver,
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcDefaultTargetPos()` overload"]
+    fn calc_default_target_pos(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::calc_default_target_pos(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWeightOfEye(f32, f32)` overload"]
+    fn set_weight_of_eye(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::set_weight_of_eye(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWeightOfHead(f32, f32)` overload"]
+    fn set_weight_of_head(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventCharacterLookAtController as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __EventCharacterLookAtController_unity2_raw::set_weight_of_head(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+impl<__T: IEventCharacterLookAtController> IEventCharacterLookAtControllerMethods for __T {}
 
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
 impl EventCharacterLookAtController {
@@ -120,41 +1020,26 @@ impl EventCharacterLookAtController {
 }
 
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
-#[::unity2::methods]
-impl EventCharacterLookAtController_PositionFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, pos: crate::unity_engine::vector3::Vector3, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> crate::unity_engine::vector3::Vector3;
-}
-
-#[cfg(feature = "app-eventcharacterlookatcontroller")]
-impl EventCharacterLookAtController_PositionFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventCharacterLookAtController_PositionFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventCharacterLookAtController_PositionFaderMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::EventCharacterLookAtController;
+    pub use super::EventCharacterLookAtController_PositionFader;
+    pub use super::IEventCharacterLookAtController;
+    pub use super::IEventCharacterLookAtControllerMethods;
+    pub use super::IEventCharacterLookAtController_PositionFader;
+    pub use super::IEventCharacterLookAtController_PositionFaderMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

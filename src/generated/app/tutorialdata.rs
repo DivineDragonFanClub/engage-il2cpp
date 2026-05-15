@@ -12,7 +12,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Notices.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -21,14 +21,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TutorialData_SSTypes {
+    pub struct TutorialData_Notices {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
+    impl ::unity2::ClassIdentity for TutorialData_Notices {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TutorialData.SSTypes";
+        const NAME: &'static str = "TutorialData.Notices";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TutorialData_SSTypes {
+    impl ::unity2::IlType for TutorialData_Notices {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -46,60 +46,16 @@ mod __types {
         }
     }
 
-    impl TutorialData_SSTypes {
-        pub fn common() -> Self {
+    impl TutorialData_Notices {
+        pub fn normal() -> Self {
             Self { value: 0 }
         }
 
-        pub fn by_language() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TutorialData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TutorialData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TutorialData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TutorialData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TutorialData_Flags {
-        pub fn lock() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn unlock() -> Self {
+        pub fn silent() -> Self {
             Self { value: 1 }
         }
 
-        pub fn read() -> Self {
+        pub fn forced() -> Self {
             Self { value: 2 }
         }
     }
@@ -172,7 +128,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Notices.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -181,14 +137,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TutorialData_Notices {
+    pub struct TutorialData_SSTypes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TutorialData_Notices {
+    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TutorialData.Notices";
+        const NAME: &'static str = "TutorialData.SSTypes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -197,7 +153,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TutorialData_Notices {
+    impl ::unity2::IlType for TutorialData_SSTypes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -206,17 +162,13 @@ mod __types {
         }
     }
 
-    impl TutorialData_Notices {
-        pub fn normal() -> Self {
+    impl TutorialData_SSTypes {
+        pub fn common() -> Self {
             Self { value: 0 }
         }
 
-        pub fn silent() -> Self {
+        pub fn by_language() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn forced() -> Self {
-            Self { value: 2 }
         }
     }
 
@@ -228,143 +180,1763 @@ mod __types {
         #[rename(name = "FirstIndex")]
         pub first_index: i32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TutorialData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TutorialData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TutorialData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TutorialData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TutorialData_Flags {
+        pub fn lock() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unlock() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn read() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-tutorialdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-tutorialdata")]
-#[::unity2::methods]
-impl TutorialData {
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load() -> ();
-
-    #[doc = "`TryGetFromTutid(::unity2::Il2CppString)` overload"]
-    #[method(name = "TryGetFromTutid", args = 1)]
-    pub fn try_get_from_tutid(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TutorialData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "Load",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "Load",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_from_tutid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "TryGetFromTutid",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "TryGetFromTutid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_from_tutid(
         tutid: ::unity2::Il2CppString,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>;
-
-    #[doc = "`LockPickUpTutorial()` overload"]
-    #[method(name = "LockPickUpTutorial", args = 0)]
-    pub fn lock_pick_up_tutorial() -> ();
-
-    #[doc = "`SetListFlag(crate::app::tutorialdata::TutorialData_Flags)` overload"]
-    #[method(name = "SetListFlag", args = 1)]
-    pub fn set_list_flag(flag: crate::app::tutorialdata::TutorialData_Flags) -> ();
-
-    #[doc = "`GetListFromType(crate::app::tutorialdata::TutorialData_Types, bool)` overload"]
-    #[method(name = "GetListFromType", args = 2)]
-    pub fn get_list_from_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>
+    {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::tutorialdata::TutorialData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_from_tutid::get_offset() as isize),
+        );
+        inner(tutid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lock_pick_up_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "LockPickUpTutorial",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "LockPickUpTutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lock_pick_up_tutorial(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lock_pick_up_tutorial::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_list_flag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::tutorialdata::TutorialData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "SetListFlag",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "SetListFlag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_list_flag(
+        flag: crate::app::tutorialdata::TutorialData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::tutorialdata::TutorialData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_list_flag::get_offset() as isize),
+        );
+        inner(flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_list_from_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::tutorialdata::TutorialData_Types as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "GetListFromType",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "GetListFromType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_list_from_type(
         r#type: crate::app::tutorialdata::TutorialData_Types,
         is_get_all_tutorial: bool,
-    ) -> crate::app::structarraylist_1::StructArrayList_1<crate::app::tutorialdata::TutorialData>;
-
-    #[doc = "`get_MID()` overload"]
-    #[method(name = "get_MID", args = 0)]
-    pub fn get_mid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_MID(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_MID", args = 1)]
-    pub fn set_mid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Title()` overload"]
-    #[method(name = "get_Title", args = 0)]
-    pub fn get_title(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Title(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Title", args = 1)]
-    pub fn set_title(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_SpriteAtlas()` overload"]
-    #[method(name = "get_SpriteAtlas", args = 0)]
-    pub fn get_sprite_atlas(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_SpriteAtlas(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_SpriteAtlas", args = 1)]
-    pub fn set_sprite_atlas(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> crate::app::tutorialdata::TutorialData_Types;
-
-    #[doc = "`set_Type(crate::app::tutorialdata::TutorialData_Types)` overload"]
-    #[method(name = "set_Type", args = 1)]
-    pub fn set_type(self, value: crate::app::tutorialdata::TutorialData_Types) -> ();
-
-    #[doc = "`get_Notice()` overload"]
-    #[method(name = "get_Notice", args = 0)]
-    pub fn get_notice(self) -> crate::app::tutorialdata::TutorialData_Notices;
-
-    #[doc = "`set_Notice(crate::app::tutorialdata::TutorialData_Notices)` overload"]
-    #[method(name = "set_Notice", args = 1)]
-    pub fn set_notice(self, value: crate::app::tutorialdata::TutorialData_Notices) -> ();
-
-    #[doc = "`get_Cid()` overload"]
-    #[method(name = "get_Cid", args = 0)]
-    pub fn get_cid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Cid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Cid", args = 1)]
-    pub fn set_cid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_No()` overload"]
-    #[method(name = "get_No", args = 0)]
-    pub fn get_no(self) -> i32;
-
-    #[doc = "`set_No(i32)` overload"]
-    #[method(name = "set_No", args = 1)]
-    pub fn set_no(self, value: i32) -> ();
-
-    #[doc = "`get_SSType()` overload"]
-    #[method(name = "get_SSType", args = 0)]
-    pub fn get_ss_type(self) -> crate::app::tutorialdata::TutorialData_SSTypes;
-
-    #[doc = "`set_SSType(crate::app::tutorialdata::TutorialData_SSTypes)` overload"]
-    #[method(name = "set_SSType", args = 1)]
-    pub fn set_ss_type(self, value: crate::app::tutorialdata::TutorialData_SSTypes) -> ();
-
-    #[doc = "`GetGlobalFlagsName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetGlobalFlagsName", args = 1)]
-    pub fn get_global_flags_name(tutid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]
-    #[method(name = "SetGlobalFlags", args = 2)]
-    pub fn set_global_flags(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::structarraylist_1::StructArrayList_1<crate::app::tutorialdata::TutorialData>
+    {
+        let inner: extern "C" fn(
+            crate::app::tutorialdata::TutorialData_Types,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::structarraylist_1::StructArrayList_1<
+            crate::app::tutorialdata::TutorialData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_list_from_type::get_offset() as isize),
+        );
+        inner(r#type, is_get_all_tutorial, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_MID",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_MID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mid(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_mid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_MID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_MID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mid(
+        this: TutorialData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mid::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_Title",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_Title",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_title(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_title::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_Title",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_Title",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_title(
+        this: TutorialData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_title::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_atlas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_SpriteAtlas",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_SpriteAtlas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_atlas(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sprite_atlas::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite_atlas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_SpriteAtlas",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_SpriteAtlas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite_atlas(
+        this: TutorialData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite_atlas::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_Type",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_Type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_type(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::tutorialdata::TutorialData_Types {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::tutorialdata::TutorialData_Types = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::tutorialdata::TutorialData_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_Type",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_Type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_type(
+        this: TutorialData,
+        value: crate::app::tutorialdata::TutorialData_Types,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            crate::app::tutorialdata::TutorialData_Types,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_notice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_Notice",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_Notice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_notice(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::tutorialdata::TutorialData_Notices {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::tutorialdata::TutorialData_Notices = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_notice::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_notice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::tutorialdata::TutorialData_Notices as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_Notice",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_Notice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_notice(
+        this: TutorialData,
+        value: crate::app::tutorialdata::TutorialData_Notices,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            crate::app::tutorialdata::TutorialData_Notices,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_notice::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_Cid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_Cid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cid(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_cid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_Cid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_Cid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cid(
+        this: TutorialData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_cid::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_no {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_No",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_No",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_no(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_no::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_no {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_No",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_No",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_no(
+        this: TutorialData,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TutorialData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_no::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ss_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "get_SSType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "get_SSType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ss_type(
+        this: TutorialData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::tutorialdata::TutorialData_SSTypes {
+        let inner: extern "C" fn(
+            TutorialData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::tutorialdata::TutorialData_SSTypes = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ss_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ss_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::tutorialdata::TutorialData_SSTypes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "set_SSType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "set_SSType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ss_type(
+        this: TutorialData,
+        value: crate::app::tutorialdata::TutorialData_SSTypes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TutorialData,
+            crate::app::tutorialdata::TutorialData_SSTypes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ss_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_global_flags_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "GetGlobalFlagsName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "GetGlobalFlagsName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_global_flags_name(
+        tutid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_global_flags_name::get_offset() as isize),
+        );
+        inner(tutid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_global_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::tutorialdata::TutorialData_Flags as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "SetGlobalFlags",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "SetGlobalFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_global_flags(
         tutid: ::unity2::Il2CppString,
         flag: crate::app::tutorialdata::TutorialData_Flags,
-    ) -> ();
-
-    #[doc = "`GetGlobalFlags(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetGlobalFlags", args = 1)]
-    pub fn get_global_flags(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::tutorialdata::TutorialData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_global_flags::get_offset() as isize),
+        );
+        inner(tutid, flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_global_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "GetGlobalFlags",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "GetGlobalFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_global_flags(
         tutid: ::unity2::Il2CppString,
-    ) -> crate::app::tutorialdata::TutorialData_Flags;
-
-    #[doc = "`IsGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]
-    #[method(name = "IsGlobalFlags", args = 2)]
-    pub fn is_global_flags(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::tutorialdata::TutorialData_Flags {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::tutorialdata::TutorialData_Flags = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_global_flags::get_offset() as isize),
+        );
+        inner(tutid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_global_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::tutorialdata::TutorialData_Flags as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "IsGlobalFlags",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "IsGlobalFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_global_flags(
         tutid: ::unity2::Il2CppString,
         flag: crate::app::tutorialdata::TutorialData_Flags,
-    ) -> bool;
-
-    #[doc = "`IsLock(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsLock", args = 1)]
-    pub fn is_lock(tutid: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`RegistGlobalFlags()` overload"]
-    #[method(name = "RegistGlobalFlags", args = 0)]
-    pub fn regist_global_flags() -> ();
-
-    #[doc = "`CompletedChapter(crate::app::chapterdata::ChapterData)` overload"]
-    #[method(name = "CompletedChapter", args = 1)]
-    pub fn completed_chapter(chapter: crate::app::chapterdata::ChapterData) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::tutorialdata::TutorialData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_global_flags::get_offset() as isize),
+        );
+        inner(tutid, flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_lock {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "IsLock",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "IsLock",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_lock(
+        tutid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_lock::get_offset() as isize),
+            );
+        inner(tutid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_regist_global_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "RegistGlobalFlags",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "RegistGlobalFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn regist_global_flags(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_regist_global_flags::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_completed_chapter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                "CompletedChapter",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    "CompletedChapter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn completed_chapter(
+        chapter: crate::app::chapterdata::ChapterData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::chapterdata::ChapterData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_completed_chapter::get_offset() as isize),
+        );
+        inner(chapter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TutorialData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TutorialData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TutorialData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-tutorialdata")]
+impl TutorialData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe { __TutorialData_unity2_raw::load(::core::option::Option::None) }
+    }
+    #[doc = "`TryGetFromTutid(::unity2::Il2CppString)` overload"]
+    pub fn try_get_from_tutid(
+        tutid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>
+    {
+        unsafe {
+            __TutorialData_unity2_raw::try_get_from_tutid(
+                ::core::convert::Into::into(tutid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LockPickUpTutorial()` overload"]
+    pub fn lock_pick_up_tutorial() -> () {
+        unsafe { __TutorialData_unity2_raw::lock_pick_up_tutorial(::core::option::Option::None) }
+    }
+    #[doc = "`SetListFlag(crate::app::tutorialdata::TutorialData_Flags)` overload"]
+    pub fn set_list_flag(
+        flag: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>,
+    ) -> () {
+        unsafe {
+            __TutorialData_unity2_raw::set_list_flag(
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetListFromType(crate::app::tutorialdata::TutorialData_Types, bool)` overload"]
+    pub fn get_list_from_type(
+        r#type: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Types>,
+        is_get_all_tutorial: impl ::core::convert::Into<bool>,
+    ) -> crate::app::structarraylist_1::StructArrayList_1<crate::app::tutorialdata::TutorialData>
+    {
+        unsafe {
+            __TutorialData_unity2_raw::get_list_from_type(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(is_get_all_tutorial),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGlobalFlagsName(::unity2::Il2CppString)` overload"]
+    pub fn get_global_flags_name(
+        tutid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __TutorialData_unity2_raw::get_global_flags_name(
+                ::core::convert::Into::into(tutid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]
+    pub fn set_global_flags(
+        tutid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        flag: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>,
+    ) -> () {
+        unsafe {
+            __TutorialData_unity2_raw::set_global_flags(
+                ::core::convert::Into::into(tutid),
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGlobalFlags(::unity2::Il2CppString)` overload"]
+    pub fn get_global_flags(
+        tutid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::tutorialdata::TutorialData_Flags {
+        unsafe {
+            __TutorialData_unity2_raw::get_global_flags(
+                ::core::convert::Into::into(tutid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]
+    pub fn is_global_flags(
+        tutid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        flag: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>,
+    ) -> bool {
+        unsafe {
+            __TutorialData_unity2_raw::is_global_flags(
+                ::core::convert::Into::into(tutid),
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLock(::unity2::Il2CppString)` overload"]
+    pub fn is_lock(tutid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __TutorialData_unity2_raw::is_lock(
+                ::core::convert::Into::into(tutid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RegistGlobalFlags()` overload"]
+    pub fn regist_global_flags() -> () {
+        unsafe { __TutorialData_unity2_raw::regist_global_flags(::core::option::Option::None) }
+    }
+    #[doc = "`CompletedChapter(crate::app::chapterdata::ChapterData)` overload"]
+    pub fn completed_chapter(
+        chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>,
+    ) -> () {
+        unsafe {
+            __TutorialData_unity2_raw::completed_chapter(
+                ::core::convert::Into::into(chapter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-tutorialdata")]
+pub trait ITutorialDataMethods: ITutorialData {
+    #[doc = "`get_MID()` overload"]
+    fn get_mid(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_mid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MID(::unity2::Il2CppString)` overload"]
+    fn set_mid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_mid(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Title()` overload"]
+    fn get_title(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_title(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Title(::unity2::Il2CppString)` overload"]
+    fn set_title(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_title(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SpriteAtlas()` overload"]
+    fn get_sprite_atlas(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_sprite_atlas(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SpriteAtlas(::unity2::Il2CppString)` overload"]
+    fn set_sprite_atlas(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_sprite_atlas(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Type()` overload"]
+    fn get_type(self) -> crate::app::tutorialdata::TutorialData_Types {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Type(crate::app::tutorialdata::TutorialData_Types)` overload"]
+    fn set_type(
+        self,
+        value: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Types>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Notice()` overload"]
+    fn get_notice(self) -> crate::app::tutorialdata::TutorialData_Notices {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_notice(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Notice(crate::app::tutorialdata::TutorialData_Notices)` overload"]
+    fn set_notice(
+        self,
+        value: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_Notices>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_notice(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Cid()` overload"]
+    fn get_cid(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_cid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Cid(::unity2::Il2CppString)` overload"]
+    fn set_cid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_cid(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_No()` overload"]
+    fn get_no(self) -> i32 {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_no(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_No(i32)` overload"]
+    fn set_no(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_no(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SSType()` overload"]
+    fn get_ss_type(self) -> crate::app::tutorialdata::TutorialData_SSTypes {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::get_ss_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SSType(crate::app::tutorialdata::TutorialData_SSTypes)` overload"]
+    fn set_ss_type(
+        self,
+        value: impl ::core::convert::Into<crate::app::tutorialdata::TutorialData_SSTypes>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::set_ss_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TutorialData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-tutorialdata")]
+impl<__T: ITutorialData> ITutorialDataMethods for __T {}
 
 #[cfg(feature = "app-tutorialdata")]
 impl TutorialData {
@@ -380,4 +1952,33 @@ impl TutorialData {
         <Self as ITutorialDataMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-tutorialdata")]
+pub mod prelude {
+    pub use super::ITutorialData;
+    pub use super::ITutorialDataMethods;
+    pub use super::TutorialData;
+    pub use super::TutorialData_Flags;
+    pub use super::TutorialData_Notices;
+    pub use super::TutorialData_SSTypes;
+    pub use super::TutorialData_Types;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::app::structdataarray_1::IStructDataArray_1;
+    #[cfg(feature = "app-structdataarray_1")]
+    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

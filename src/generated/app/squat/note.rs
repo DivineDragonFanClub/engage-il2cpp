@@ -9,66 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Note_ResultRank {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Note_ResultRank {
-        const NAMESPACE: &'static str = "App.Squat";
-
-        const NAME: &'static str = "Note.ResultRank";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Note_ResultRank {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Note_ResultRank {
-        pub fn perfect() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn good() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn bad() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn miss() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn assist() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn rank_num() -> Self {
-            Self { value: 5 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -210,96 +150,897 @@ mod __types {
         #[rename(name = "m_LatterB")]
         pub m_latter_b: f32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Note_ResultRank {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Note_ResultRank {
+        const NAMESPACE: &'static str = "App.Squat";
+
+        const NAME: &'static str = "Note.ResultRank";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Note_ResultRank {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Note_ResultRank {
+        pub fn perfect() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn good() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn bad() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn miss() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn assist() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn rank_num() -> Self {
+            Self { value: 5 }
+        }
+    }
 }
 
 #[cfg(feature = "app-squat-note-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-squat-note")]
-#[::unity2::methods]
-impl Note {
-    #[doc = "`get_NoteType()` overload"]
-    #[method(name = "get_NoteType", args = 0)]
-    pub fn get_note_type(self) -> crate::app::squat::note::Note_Type;
-
-    #[doc = "`set_NoteType(crate::app::squat::note::Note_Type)` overload"]
-    #[method(name = "set_NoteType", args = 1)]
-    pub fn set_note_type(self, value: crate::app::squat::note::Note_Type) -> ();
-
-    #[doc = "`get_IsFinish()` overload"]
-    #[method(name = "get_IsFinish", args = 0)]
-    pub fn get_is_finish(self) -> bool;
-
-    #[doc = "`set_IsFinish(bool)` overload"]
-    #[method(name = "set_IsFinish", args = 1)]
-    pub fn set_is_finish(self, value: bool) -> ();
-
-    #[doc = "`get_IsTrigger()` overload"]
-    #[method(name = "get_IsTrigger", args = 0)]
-    pub fn get_is_trigger(self) -> bool;
-
-    #[doc = "`set_IsTrigger(bool)` overload"]
-    #[method(name = "set_IsTrigger", args = 1)]
-    pub fn set_is_trigger(self, value: bool) -> ();
-
-    #[doc = "`get_IsAccepted()` overload"]
-    #[method(name = "get_IsAccepted", args = 0)]
-    pub fn get_is_accepted(self) -> bool;
-
-    #[doc = "`set_IsAccepted(bool)` overload"]
-    #[method(name = "set_IsAccepted", args = 1)]
-    pub fn set_is_accepted(self, value: bool) -> ();
-
-    #[doc = "`get_IsClockwiseCheck()` overload"]
-    #[method(name = "get_IsClockwiseCheck", args = 0)]
-    pub fn get_is_clockwise_check(self) -> bool;
-
-    #[doc = "`set_IsClockwiseCheck(bool)` overload"]
-    #[method(name = "set_IsClockwiseCheck", args = 1)]
-    pub fn set_is_clockwise_check(self, value: bool) -> ();
-
-    #[doc = "`get_Result()` overload"]
-    #[method(name = "get_Result", args = 0)]
-    pub fn get_result(self) -> crate::app::squat::note::Note_ResultRank;
-
-    #[doc = "`set_Result(crate::app::squat::note::Note_ResultRank)` overload"]
-    #[method(name = "set_Result", args = 1)]
-    pub fn set_result(self, value: crate::app::squat::note::Note_ResultRank) -> ();
-
-    #[doc = "`get_RectPos()` overload"]
-    #[method(name = "get_RectPos", args = 0)]
-    pub fn get_rect_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SetJudgeParam(crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData)` overload"]
-    #[method(name = "SetJudgeParam", args = 1)]
-    pub fn set_judge_param(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Note_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_note_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_NoteType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_NoteType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_note_type(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::squat::note::Note_Type {
+        let inner: extern "C" fn(
+            Note,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::squat::note::Note_Type = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_note_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_note_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::squat::note::Note_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_NoteType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_NoteType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_note_type(
+        this: Note,
+        value: crate::app::squat::note::Note_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            crate::app::squat::note::Note_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_note_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_finish {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_IsFinish",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_IsFinish",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_finish(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_finish::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_finish {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_IsFinish",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_IsFinish",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_finish(
+        this: Note,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Note, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_finish::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_IsTrigger",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_IsTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_trigger(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_trigger::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_IsTrigger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_IsTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_trigger(
+        this: Note,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Note, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_trigger::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_accepted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_IsAccepted",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_IsAccepted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_accepted(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_accepted::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_accepted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_IsAccepted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_IsAccepted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_accepted(
+        this: Note,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Note, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_accepted::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_clockwise_check {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_IsClockwiseCheck",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_IsClockwiseCheck",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_clockwise_check(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_clockwise_check::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_clockwise_check {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_IsClockwiseCheck",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_IsClockwiseCheck",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_clockwise_check(
+        this: Note,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Note, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_clockwise_check::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_Result",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_Result",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::squat::note::Note_ResultRank {
+        let inner: extern "C" fn(
+            Note,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::squat::note::Note_ResultRank = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_result::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::squat::note::Note_ResultRank as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "set_Result",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "set_Result",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result(
+        this: Note,
+        value: crate::app::squat::note::Note_ResultRank,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            crate::app::squat::note::Note_ResultRank,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "get_RectPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "get_RectPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rect_pos(
+        this: Note,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Note,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rect_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Note, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_judge_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "SetJudgeParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "SetJudgeParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_judge_param(
+        this: Note,
         set_judge: crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData,
-    ) -> ();
-
-    #[doc = "`CreateArrow(bool, crate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, crate::unity_engine::transform::Transform, f32)` overload"]
-    #[method(name = "CreateArrow", args = 7)]
-    pub fn create_arrow(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_judge_param::get_offset() as isize),
+        );
+        inner(this, set_judge, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_arrow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::squat::note::Note_Type as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "CreateArrow",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "CreateArrow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_arrow(
+        this: Note,
         is_right: bool,
-        canvas: crate::unity_engine::gameobject::GameObject,
+        canvas: *mut crate::unity_engine::gameobject::GameObject,
         set_type: crate::app::squat::note::Note_Type,
         set_time: f32,
         move_height_pf: f32,
         base_trans: crate::unity_engine::transform::Transform,
         first_time_mult: f32,
-    ) -> ();
-
-    #[doc = "`CreateClockWise(bool, crate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, f32, crate::unity_engine::transform::Transform, f32, i32)` overload"]
-    #[method(name = "CreateClockWise", args = 9)]
-    pub fn create_clock_wise(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            bool,
+            *mut crate::unity_engine::gameobject::GameObject,
+            crate::app::squat::note::Note_Type,
+            f32,
+            f32,
+            crate::unity_engine::transform::Transform,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_arrow::get_offset() as isize),
+        );
+        inner(
+            this,
+            is_right,
+            canvas,
+            set_type,
+            set_time,
+            move_height_pf,
+            base_trans,
+            first_time_mult,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_clock_wise {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::squat::note::Note_Type as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "CreateClockWise",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "CreateClockWise",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_clock_wise(
+        this: Note,
         is_right: bool,
-        canvas: crate::unity_engine::gameobject::GameObject,
+        canvas: *mut crate::unity_engine::gameobject::GameObject,
         set_type: crate::app::squat::note::Note_Type,
         start_time: f32,
         end_time: f32,
@@ -307,18 +1048,129 @@ impl Note {
         base_trans: crate::unity_engine::transform::Transform,
         first_time_mult: f32,
         radius_count: i32,
-    ) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`Tick(f32, crate::app::squat::stick::Stick, f32, bool, f32, f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "Tick", args = 11)]
-    pub fn tick(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            bool,
+            *mut crate::unity_engine::gameobject::GameObject,
+            crate::app::squat::note::Note_Type,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::transform::Transform,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_clock_wise::get_offset() as isize),
+        );
+        inner(
+            this,
+            is_right,
+            canvas,
+            set_type,
+            start_time,
+            end_time,
+            move_height_pf,
+            base_trans,
+            first_time_mult,
+            radius_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(this: Note, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Note, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut crate::app::squat::stick::Stick as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                11,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: Note,
         time_mult: f32,
-        stick: crate::app::squat::stick::Stick,
+        stick: *mut crate::app::squat::stick::Stick,
         height_pf: f32,
         is_top: bool,
         setfb: f32,
@@ -328,40 +1180,646 @@ impl Note {
         setlg: f32,
         setlb: f32,
         overwrite_range: f32,
-    ) -> ();
-
-    #[doc = "`TickArrow(bool, f32, f32, crate::app::squat::stick::Stick)` overload"]
-    #[method(name = "TickArrow", args = 4)]
-    pub fn tick_arrow(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            f32,
+            *mut crate::app::squat::stick::Stick,
+            f32,
+            bool,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick::get_offset() as isize),
+        );
+        inner(
+            this,
+            time_mult,
+            stick,
+            height_pf,
+            is_top,
+            setfb,
+            setfg,
+            setfp,
+            setlp,
+            setlg,
+            setlb,
+            overwrite_range,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_arrow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut crate::app::squat::stick::Stick as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "TickArrow",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "TickArrow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_arrow(
+        this: Note,
         is_top: bool,
         center: f32,
         not_check_area: f32,
-        stick: crate::app::squat::stick::Stick,
-    ) -> ();
-
-    #[doc = "`TickArrowJudge(f32, f32, crate::app::squat::stick::Stick)` overload"]
-    #[method(name = "TickArrowJudge", args = 3)]
-    pub fn tick_arrow_judge(
-        self,
+        stick: *mut crate::app::squat::stick::Stick,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            bool,
+            f32,
+            f32,
+            *mut crate::app::squat::stick::Stick,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_arrow::get_offset() as isize),
+        );
+        inner(
+            this,
+            is_top,
+            center,
+            not_check_area,
+            stick,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_arrow_judge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut crate::app::squat::stick::Stick as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "TickArrowJudge",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "TickArrowJudge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_arrow_judge(
+        this: Note,
         center: f32,
         not_check_area: f32,
-        stick: crate::app::squat::stick::Stick,
-    ) -> ();
-
-    #[doc = "`TickClockwise(bool, crate::app::squat::stick::Stick, f32)` overload"]
-    #[method(name = "TickClockwise", args = 3)]
-    pub fn tick_clockwise(
-        self,
+        stick: *mut crate::app::squat::stick::Stick,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            f32,
+            f32,
+            *mut crate::app::squat::stick::Stick,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_arrow_judge::get_offset() as isize),
+        );
+        inner(this, center, not_check_area, stick, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_clockwise {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <*mut crate::app::squat::stick::Stick as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "TickClockwise",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "TickClockwise",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_clockwise(
+        this: Note,
         is_top: bool,
-        stick: crate::app::squat::stick::Stick,
+        stick: *mut crate::app::squat::stick::Stick,
         overwrite_range: f32,
-    ) -> ();
-
-    #[doc = "`TickClockwiseJudge(crate::app::squat::stick::Stick)` overload"]
-    #[method(name = "TickClockwiseJudge", args = 1)]
-    pub fn tick_clockwise_judge(self, stick: crate::app::squat::stick::Stick) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            bool,
+            *mut crate::app::squat::stick::Stick,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_clockwise::get_offset() as isize),
+        );
+        inner(this, is_top, stick, overwrite_range, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_clockwise_judge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::app::squat::stick::Stick as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Note as ::unity2::ClassIdentity>::class(),
+                "TickClockwiseJudge",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Note as ::unity2::ClassIdentity>::NAME,
+                    "TickClockwiseJudge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_clockwise_judge(
+        this: Note,
+        stick: *mut crate::app::squat::stick::Stick,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Note,
+            *mut crate::app::squat::stick::Stick,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick_clockwise_judge::get_offset() as isize),
+        );
+        inner(this, stick, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-squat-note")]
+pub trait INoteMethods: INote {
+    #[doc = "`get_NoteType()` overload"]
+    fn get_note_type(self) -> crate::app::squat::note::Note_Type {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_note_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_NoteType(crate::app::squat::note::Note_Type)` overload"]
+    fn set_note_type(
+        self,
+        value: impl ::core::convert::Into<crate::app::squat::note::Note_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_note_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsFinish()` overload"]
+    fn get_is_finish(self) -> bool {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_is_finish(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsFinish(bool)` overload"]
+    fn set_is_finish(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_is_finish(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsTrigger()` overload"]
+    fn get_is_trigger(self) -> bool {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_is_trigger(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsTrigger(bool)` overload"]
+    fn set_is_trigger(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_is_trigger(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsAccepted()` overload"]
+    fn get_is_accepted(self) -> bool {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_is_accepted(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsAccepted(bool)` overload"]
+    fn set_is_accepted(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_is_accepted(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsClockwiseCheck()` overload"]
+    fn get_is_clockwise_check(self) -> bool {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_is_clockwise_check(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsClockwiseCheck(bool)` overload"]
+    fn set_is_clockwise_check(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_is_clockwise_check(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Result()` overload"]
+    fn get_result(self) -> crate::app::squat::note::Note_ResultRank {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Result(crate::app::squat::note::Note_ResultRank)` overload"]
+    fn set_result(
+        self,
+        value: impl ::core::convert::Into<crate::app::squat::note::Note_ResultRank>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_result(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RectPos()` overload"]
+    fn get_rect_pos(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::get_rect_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetJudgeParam(crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData)` overload"]
+    fn set_judge_param(
+        self,
+        set_judge: impl ::core::convert::Into<
+            crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::set_judge_param(
+                __receiver,
+                ::core::convert::Into::into(set_judge),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateArrow(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, crate::unity_engine::transform::Transform, f32)` overload"]
+    fn create_arrow(
+        self,
+        is_right: impl ::core::convert::Into<bool>,
+        set_type: impl ::core::convert::Into<crate::app::squat::note::Note_Type>,
+        set_time: impl ::core::convert::Into<f32>,
+        move_height_pf: impl ::core::convert::Into<f32>,
+        base_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        first_time_mult: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::gameobject::GameObject>::uninit();
+            __Note_unity2_raw::create_arrow(
+                __receiver,
+                ::core::convert::Into::into(is_right),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(set_type),
+                ::core::convert::Into::into(set_time),
+                ::core::convert::Into::into(move_height_pf),
+                ::core::convert::Into::into(base_trans),
+                ::core::convert::Into::into(first_time_mult),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`CreateClockWise(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, f32, crate::unity_engine::transform::Transform, f32, i32)` overload"]
+    fn create_clock_wise(
+        self,
+        is_right: impl ::core::convert::Into<bool>,
+        set_type: impl ::core::convert::Into<crate::app::squat::note::Note_Type>,
+        start_time: impl ::core::convert::Into<f32>,
+        end_time: impl ::core::convert::Into<f32>,
+        move_height_pf: impl ::core::convert::Into<f32>,
+        base_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        first_time_mult: impl ::core::convert::Into<f32>,
+        radius_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::gameobject::GameObject>::uninit();
+            __Note_unity2_raw::create_clock_wise(
+                __receiver,
+                ::core::convert::Into::into(is_right),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(set_type),
+                ::core::convert::Into::into(start_time),
+                ::core::convert::Into::into(end_time),
+                ::core::convert::Into::into(move_height_pf),
+                ::core::convert::Into::into(base_trans),
+                ::core::convert::Into::into(first_time_mult),
+                ::core::convert::Into::into(radius_count),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Note_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tick(f32, *mutcrate::app::squat::stick::Stick, f32, bool, f32, f32, f32, f32, f32, f32, f32)` overload"]
+    fn tick(
+        self,
+        time_mult: impl ::core::convert::Into<f32>,
+        height_pf: impl ::core::convert::Into<f32>,
+        is_top: impl ::core::convert::Into<bool>,
+        setfb: impl ::core::convert::Into<f32>,
+        setfg: impl ::core::convert::Into<f32>,
+        setfp: impl ::core::convert::Into<f32>,
+        setlp: impl ::core::convert::Into<f32>,
+        setlg: impl ::core::convert::Into<f32>,
+        setlb: impl ::core::convert::Into<f32>,
+        overwrite_range: impl ::core::convert::Into<f32>,
+    ) -> crate::app::squat::stick::Stick {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::squat::stick::Stick>::uninit();
+            __Note_unity2_raw::tick(
+                __receiver,
+                ::core::convert::Into::into(time_mult),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(height_pf),
+                ::core::convert::Into::into(is_top),
+                ::core::convert::Into::into(setfb),
+                ::core::convert::Into::into(setfg),
+                ::core::convert::Into::into(setfp),
+                ::core::convert::Into::into(setlp),
+                ::core::convert::Into::into(setlg),
+                ::core::convert::Into::into(setlb),
+                ::core::convert::Into::into(overwrite_range),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TickArrow(bool, f32, f32, *mutcrate::app::squat::stick::Stick)` overload"]
+    fn tick_arrow(
+        self,
+        is_top: impl ::core::convert::Into<bool>,
+        center: impl ::core::convert::Into<f32>,
+        not_check_area: impl ::core::convert::Into<f32>,
+    ) -> crate::app::squat::stick::Stick {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::squat::stick::Stick>::uninit();
+            __Note_unity2_raw::tick_arrow(
+                __receiver,
+                ::core::convert::Into::into(is_top),
+                ::core::convert::Into::into(center),
+                ::core::convert::Into::into(not_check_area),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TickArrowJudge(f32, f32, *mutcrate::app::squat::stick::Stick)` overload"]
+    fn tick_arrow_judge(
+        self,
+        center: impl ::core::convert::Into<f32>,
+        not_check_area: impl ::core::convert::Into<f32>,
+    ) -> crate::app::squat::stick::Stick {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::squat::stick::Stick>::uninit();
+            __Note_unity2_raw::tick_arrow_judge(
+                __receiver,
+                ::core::convert::Into::into(center),
+                ::core::convert::Into::into(not_check_area),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TickClockwise(bool, *mutcrate::app::squat::stick::Stick, f32)` overload"]
+    fn tick_clockwise(
+        self,
+        is_top: impl ::core::convert::Into<bool>,
+        overwrite_range: impl ::core::convert::Into<f32>,
+    ) -> crate::app::squat::stick::Stick {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::squat::stick::Stick>::uninit();
+            __Note_unity2_raw::tick_clockwise(
+                __receiver,
+                ::core::convert::Into::into(is_top),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(overwrite_range),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TickClockwiseJudge(*mutcrate::app::squat::stick::Stick)` overload"]
+    fn tick_clockwise_judge(self) -> crate::app::squat::stick::Stick {
+        unsafe {
+            let __receiver = <Note as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::squat::stick::Stick>::uninit();
+            __Note_unity2_raw::tick_clockwise_judge(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-squat-note")]
+impl<__T: INote> INoteMethods for __T {}
 
 #[cfg(feature = "app-squat-note")]
 impl Note {
@@ -377,4 +1835,22 @@ impl Note {
         <Self as INoteMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-squat-note")]
+pub mod prelude {
+    pub use super::INote;
+    pub use super::INoteMethods;
+    pub use super::Note;
+    pub use super::Note_ResultRank;
+    pub use super::Note_Type;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

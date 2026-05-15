@@ -17,13 +17,75 @@ mod __types {
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: gamecolor :: GameColor >)]
     pub struct GameColor {
         #[rename(name = "サンプル")]
-        pub _unnamed: crate::unity_engine::color::Color,
+        pub サンプル: crate::unity_engine::color::Color,
+        #[rename(name = "進撃可能位置")]
+        pub 進撃可能位置: crate::unity_engine::color::Color,
+        #[rename(name = "進撃禁止位置")]
+        pub 進撃禁止位置: crate::unity_engine::color::Color,
+        #[rename(name = "進撃選択位置")]
+        pub 進撃選択位置: crate::unity_engine::color::Color,
+        #[rename(name = "文字デフォルト")]
+        pub 文字デフォルト: crate::unity_engine::color::Color,
+        #[rename(name = "文字不可")]
+        pub 文字不可: crate::unity_engine::color::Color,
+        #[rename(name = "文字ヘルプ")]
+        pub 文字ヘルプ: crate::unity_engine::color::Color,
+        #[rename(name = "文字錬成")]
+        pub 文字錬成: crate::unity_engine::color::Color,
+        #[rename(name = "数値上昇")]
+        pub 数値上昇: crate::unity_engine::color::Color,
+        #[rename(name = "数値下降")]
+        pub 数値下降: crate::unity_engine::color::Color,
+        #[rename(name = "数値上限")]
+        pub 数値上限: crate::unity_engine::color::Color,
+        #[rename(name = "数値不足")]
+        pub 数値不足: crate::unity_engine::color::Color,
+        #[rename(name = "エンゲージ技コマンド")]
+        pub エンゲージ技コマンド: crate::unity_engine::color::Color,
+        #[rename(name = "エンゲージ技コマンド不可")]
+        pub エンゲージ技コマンド不可: crate::unity_engine::color::Color,
+        #[rename(name = "緑文字コマンド")]
+        pub 緑文字コマンド: crate::unity_engine::color::Color,
+        #[rename(name = "黄色文字")]
+        pub 黄色文字: crate::unity_engine::color::Color,
+        #[rename(name = "支援会話不可")]
+        pub 支援会話不可: crate::unity_engine::color::Color,
         #[rename(name = "SkillE")]
         pub skill_e: crate::unity_engine::color::Color,
+        #[rename(name = "デフォルトカラー")]
+        pub デフォルトカラー: crate::unity_engine::color::Color,
+        #[rename(name = "セカンドカラー")]
+        pub セカンドカラー: crate::unity_engine::color::Color,
+        #[rename(name = "ダイアログ")]
+        pub ダイアログ: crate::unity_engine::color::Color,
+        #[rename(name = "選択不可カラー")]
+        pub 選択不可カラー: crate::unity_engine::color::Color,
         #[rename(name = "ページナビON")]
-        pub _____on: crate::unity_engine::color::Color,
+        pub ページナビon: crate::unity_engine::color::Color,
         #[rename(name = "ページナビOFF")]
-        pub _____off: crate::unity_engine::color::Color,
+        pub ページナビoff: crate::unity_engine::color::Color,
+        #[rename(name = "種類アイコン選択")]
+        pub 種類アイコン選択: crate::unity_engine::color::Color,
+        #[rename(name = "種類アイコン非選択")]
+        pub 種類アイコン非選択: crate::unity_engine::color::Color,
+        #[rename(name = "マップカーソル白")]
+        pub マップカーソル白: crate::unity_engine::color::Color,
+        #[rename(name = "マップカーソル赤")]
+        pub マップカーソル赤: crate::unity_engine::color::Color,
+        #[rename(name = "待機中")]
+        pub 待機中: crate::unity_engine::color::Color,
+        #[rename(name = "個別危険範囲を表示中")]
+        pub 個別危険範囲を表示中: crate::unity_engine::color::Color,
+        #[rename(name = "紋章士リング")]
+        pub 紋章士リング: crate::unity_engine::color::Color,
+        #[rename(name = "闇紋章士リング")]
+        pub 闇紋章士リング: crate::unity_engine::color::Color,
+        #[rename(name = "ウィンドウ無効")]
+        pub ウィンドウ無効: crate::unity_engine::color::Color,
+        #[rename(name = "被支援発光")]
+        pub 被支援発光: crate::unity_engine::color::Color,
+        #[rename(name = "被支援輪郭")]
+        pub 被支援輪郭: crate::unity_engine::color::Color,
     }
 }
 
@@ -31,12 +93,69 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gamecolor")]
-#[::unity2::methods]
-impl GameColor {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameColor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameColor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameColor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GameColor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameColor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-gamecolor")]
+pub trait IGameColorMethods: IGameColor {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameColor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameColor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gamecolor")]
+impl<__T: IGameColor> IGameColorMethods for __T {}
 
 #[cfg(feature = "app-gamecolor")]
 impl GameColor {
@@ -52,4 +171,23 @@ impl GameColor {
         <Self as IGameColorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-gamecolor")]
+pub mod prelude {
+    pub use super::GameColor;
+    pub use super::IGameColor;
+    pub use super::IGameColorMethods;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    #[cfg(feature = "app-singletonscriptableobject_1")]
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

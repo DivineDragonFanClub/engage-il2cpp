@@ -56,3 +56,17 @@ mod __types {
 
 #[cfg(feature = "tm_pro-sprite_asset_utilities-spriteassetimportformats-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-sprite_asset_utilities-spriteassetimportformats")]
+pub mod prelude {
+    pub use super::SpriteAssetImportFormats;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

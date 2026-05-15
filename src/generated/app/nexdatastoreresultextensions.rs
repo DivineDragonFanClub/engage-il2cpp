@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "app-nexdatastoreresultextensions-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-nexdatastoreresultextensions")]
+pub mod prelude {
+    pub use super::INexDataStoreResultExtensions;
+    pub use super::NexDataStoreResultExtensions;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

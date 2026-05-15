@@ -17,26 +17,210 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-linqhelpers")]
-#[::unity2::methods]
-impl LinqHelpers {
-    #[doc = "`OfDataType(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::moon_sharp::interpreter::datatype::DataType)` overload"]
-    #[method(name = "OfDataType", args = 2)]
-    pub fn of_data_type(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LinqHelpers_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_of_data_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::datatype::DataType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LinqHelpers as ::unity2::ClassIdentity>::class(),
+                "OfDataType",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LinqHelpers as ::unity2::ClassIdentity>::NAME,
+                    "OfDataType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn of_data_type(
         enumerable: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
         r#type: crate::moon_sharp::interpreter::datatype::DataType,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::moon_sharp::interpreter::dynvalue::DynValue,
-    >;
-
-    #[doc = "`AsObjects(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "AsObjects", args = 1)]
-    pub fn as_objects(
+    > {
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_of_data_type :: get_offset () as isize) ,) ;
+        inner(enumerable, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_as_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                    crate::moon_sharp::interpreter::dynvalue::DynValue,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LinqHelpers as ::unity2::ClassIdentity>::class(),
+                "AsObjects",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LinqHelpers as ::unity2::ClassIdentity>::NAME,
+                    "AsObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn as_objects(
         enumerable: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::system::object::Object,
-    >;
+    > {
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: object :: Object > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_as_objects :: get_offset () as isize) ,) ;
+        inner(enumerable, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-linqhelpers")]
+impl LinqHelpers {
+    pub fn convert<M0: ::unity2::IlType + ::core::marker::Copy>(
+        enumerable: impl ::core::convert::Into<
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+        r#type: impl ::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <LinqHelpers as ::unity2::ClassIdentity>::class(),
+                "Convert",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <LinqHelpers as ::unity2::ClassIdentity>::NAME,
+                "Convert",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f : extern "C" fn (crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(enumerable),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`OfDataType(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>, crate::moon_sharp::interpreter::datatype::DataType)` overload"]
+    pub fn of_data_type(
+        enumerable: impl ::core::convert::Into<
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+        r#type: impl ::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    > {
+        unsafe {
+            __LinqHelpers_unity2_raw::of_data_type(
+                ::core::convert::Into::into(enumerable),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AsObjects(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    pub fn as_objects(
+        enumerable: impl ::core::convert::Into<
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+            >,
+        >,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::system::object::Object,
+    > {
+        unsafe {
+            __LinqHelpers_unity2_raw::as_objects(
+                ::core::convert::Into::into(enumerable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-linqhelpers")]
+pub mod prelude {
+    pub use super::ILinqHelpers;
+    pub use super::LinqHelpers;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

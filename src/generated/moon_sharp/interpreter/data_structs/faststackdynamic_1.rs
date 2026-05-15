@@ -76,3 +76,16 @@ impl<T0: ::unity2::ClassIdentity> FastStackDynamic_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1")]
+pub mod prelude {
+    pub use super::FastStackDynamic_1;
+    pub use super::IFastStackDynamic_1;
+    pub use super::IFastStackDynamic_1Methods;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

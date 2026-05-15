@@ -24,50 +24,493 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-#[::unity2::methods]
-impl VFXEventAttribute {
-    #[doc = "`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VFXEventAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VFXEventAttribute,
         ptr: ::unity2::IntPtr,
         owner: bool,
         vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
-    ) -> ();
-
-    #[doc = "`Internal_Create()` overload"]
-    #[method(name = "Internal_Create", args = 0)]
-    pub fn internal_create() -> ::unity2::IntPtr;
-
-    #[doc = "`Internal_InstanciateVFXEventAttribute(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
-    #[method(name = "Internal_InstanciateVFXEventAttribute", args = 1)]
-    pub fn internal_instanciate_vfx_event_attribute(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VFXEventAttribute,
+            ::unity2::IntPtr,
+            bool,
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, ptr, owner, vfx_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Internal_Create",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_create::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_instanciate_vfx_event_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Internal_InstanciateVFXEventAttribute",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Internal_InstanciateVFXEventAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_instanciate_vfx_event_attribute(
         vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
-    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
-
-    #[doc = "`Internal_InitFromAsset(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
-    #[method(name = "Internal_InitFromAsset", args = 1)]
-    pub fn internal_init_from_asset(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
+        let inner: extern "C" fn(
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_internal_instanciate_vfx_event_attribute::get_offset() as isize,
+                    ),
+            );
+        inner(vfx_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_init_from_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Internal_InitFromAsset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Internal_InitFromAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_init_from_asset(
+        this: VFXEventAttribute,
         vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
-    ) -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
-    #[method(name = "Internal_Destroy", args = 1)]
-    pub fn internal_destroy(ptr: ::unity2::IntPtr) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VFXEventAttribute,
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_init_from_asset::get_offset() as isize),
+        );
+        inner(this, vfx_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: VFXEventAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VFXEventAttribute, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Finalize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(
+        this: VFXEventAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VFXEventAttribute, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: VFXEventAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VFXEventAttribute, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXEventAttribute as ::unity2::ClassIdentity>::class(),
+                "Internal_Destroy",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXEventAttribute as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_destroy(
+        ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_destroy::get_offset() as isize),
+            );
+        inner(ptr, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+impl VFXEventAttribute {
+    #[doc = "`Internal_Create()` overload"]
+    pub fn internal_create() -> ::unity2::IntPtr {
+        unsafe { __VFXEventAttribute_unity2_raw::internal_create(::core::option::Option::None) }
+    }
+    #[doc = "`Internal_InstanciateVFXEventAttribute(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
+    pub fn internal_instanciate_vfx_event_attribute(
+        vfx_asset: impl ::core::convert::Into<
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+        >,
+    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute {
+        unsafe {
+            __VFXEventAttribute_unity2_raw::internal_instanciate_vfx_event_attribute(
+                ::core::convert::Into::into(vfx_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
+    pub fn internal_destroy(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            __VFXEventAttribute_unity2_raw::internal_destroy(
+                ::core::convert::Into::into(ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+pub trait IVFXEventAttributeMethods: IVFXEventAttribute {
+    #[doc = "`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
+    fn ctor(
+        self,
+        ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        owner: impl ::core::convert::Into<bool>,
+        vfx_asset: impl ::core::convert::Into<
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VFXEventAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VFXEventAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(ptr),
+                ::core::convert::Into::into(owner),
+                ::core::convert::Into::into(vfx_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_InitFromAsset(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]
+    fn internal_init_from_asset(
+        self,
+        vfx_asset: impl ::core::convert::Into<
+            crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VFXEventAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VFXEventAttribute_unity2_raw::internal_init_from_asset(
+                __receiver,
+                ::core::convert::Into::into(vfx_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver = <VFXEventAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VFXEventAttribute_unity2_raw::release(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <VFXEventAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VFXEventAttribute_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <VFXEventAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VFXEventAttribute_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+impl<__T: IVFXEventAttribute> IVFXEventAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
 impl VFXEventAttribute {
@@ -87,4 +530,14 @@ impl VFXEventAttribute {
         <Self as IVFXEventAttributeMethods>::ctor(this, ptr, owner, vfx_asset);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+pub mod prelude {
+    pub use super::IVFXEventAttribute;
+    pub use super::IVFXEventAttributeMethods;
+    pub use super::VFXEventAttribute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

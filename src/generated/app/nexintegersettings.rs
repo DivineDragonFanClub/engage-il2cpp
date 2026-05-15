@@ -22,3 +22,12 @@ mod __types {
 
 #[cfg(feature = "app-nexintegersettings-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-nexintegersettings")]
+pub mod prelude {
+    pub use super::INexIntegerSettings;
+    pub use super::NexIntegerSettings;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

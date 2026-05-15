@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))]
+    #[::unity2::class(namespace = "App", name = "DLCManager.MountData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DLCManager_MountData {
+        #[rename(name = "content")]
+        pub content: crate::app::dlcmanager::DLCManager_Content,
+        #[rename(name = "mountBuffer")]
+        pub mount_buffer: ::unity2::Array<u8>,
+        #[rename(name = "mountName")]
+        pub mount_name: ::unity2::Il2CppString,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager.md"))]
     #[::unity2::class(namespace = "App", name = "DLCManager")]
     #[parent(crate::system::object::Object)]
@@ -38,16 +50,14 @@ mod __types {
         pub s_has_list: ::unity2::Array<crate::app::dlcmanager::DLCManager_DLCList>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))]
-    #[::unity2::class(namespace = "App", name = "DLCManager.MountData")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))]
+    #[::unity2::class(namespace = "App", name = "DLCManager.DLCList")]
     #[parent(crate::system::object::Object)]
-    pub struct DLCManager_MountData {
+    pub struct DLCManager_DLCList {
         #[rename(name = "content")]
         pub content: crate::app::dlcmanager::DLCManager_Content,
-        #[rename(name = "mountBuffer")]
-        pub mount_buffer: ::unity2::Array<u8>,
-        #[rename(name = "mountName")]
-        pub mount_name: ::unity2::Il2CppString,
+        #[rename(name = "hasContent")]
+        pub has_content: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
@@ -97,180 +107,78 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))]
-    #[::unity2::class(namespace = "App", name = "DLCManager.DLCList")]
-    #[parent(crate::system::object::Object)]
-    pub struct DLCManager_DLCList {
-        #[rename(name = "content")]
-        pub content: crate::app::dlcmanager::DLCManager_Content,
-        #[rename(name = "hasContent")]
-        pub has_content: bool,
-    }
 }
 
 #[cfg(feature = "app-dlcmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dlcmanager")]
-#[::unity2::methods]
-impl DLCManager {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release() -> ();
-
-    #[doc = "`Refresh()` overload"]
-    #[method(name = "Refresh", args = 0)]
-    pub fn refresh() -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update() -> ();
-
-    #[doc = "`MountDLC()` overload"]
-    #[method(name = "MountDLC", args = 0)]
-    pub fn mount_dlc() -> ();
-
-    #[doc = "`GetFolderName(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "GetFolderName", args = 1)]
-    pub fn get_folder_name(
-        content: crate::app::dlcmanager::DLCManager_Content,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetAssetGroupName(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "GetAssetGroupName", args = 1)]
-    pub fn get_asset_group_name(
-        content: crate::app::dlcmanager::DLCManager_Content,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetContent(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetContent", args = 1)]
-    pub fn get_content(name: ::unity2::Il2CppString) -> crate::app::dlcmanager::DLCManager_Content;
-
-    #[doc = "`GetStreamingAssetsDLCPath(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "GetStreamingAssetsDLCPath", args = 1)]
-    pub fn get_streaming_assets_dlc_path(
-        content: crate::app::dlcmanager::DLCManager_Content,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`HasContent(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "HasContent", args = 1)]
-    pub fn has_content(content: crate::app::dlcmanager::DLCManager_Content) -> bool;
-
-    #[doc = "`HasContents(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]
-    #[method(name = "HasContents", args = 1)]
-    pub fn has_contents(
-        contents: ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
-    ) -> bool;
-
-    #[doc = "`HasContentError(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "HasContentError", args = 1)]
-    pub fn has_content_error(content: crate::app::dlcmanager::DLCManager_Content) -> bool;
-
-    #[doc = "`GetAddOnContentIndex(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "GetAddOnContentIndex", args = 1)]
-    pub fn get_add_on_content_index(content: crate::app::dlcmanager::DLCManager_Content) -> i32;
-
-    #[doc = "`TryIndexToContent(i32, crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "TryIndexToContent", args = 2)]
-    pub fn try_index_to_content(
-        index: i32,
-        content: crate::app::dlcmanager::DLCManager_Content,
-    ) -> bool;
-
-    #[doc = "`IsRequiredReleaseVersion(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "IsRequiredReleaseVersion", args = 1)]
-    pub fn is_required_release_version(content: crate::app::dlcmanager::DLCManager_Content)
-        -> bool;
-
-    #[doc = "`GetAllContents()` overload"]
-    #[method(name = "GetAllContents", args = 0)]
-    pub fn get_all_contents() -> ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>;
-
-    #[doc = "`ShowUnacceptableVersion()` overload"]
-    #[method(name = "ShowUnacceptableVersion", args = 0)]
-    pub fn show_unacceptable_version() -> ();
-
-    #[doc = "`ShowLostError(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "ShowLostError", args = 1)]
-    pub fn show_lost_error(content: crate::app::dlcmanager::DLCManager_Content) -> ();
-
-    #[doc = "`ShowLostError(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]
-    #[method(name = "ShowLostError", args = 1)]
-    pub fn show_lost_error_2(
-        contents: ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
-    ) -> ();
-
-    #[doc = "`InitHasList()` overload"]
-    #[method(name = "InitHasList", args = 0)]
-    pub fn init_has_list() -> ();
-
-    #[doc = "`GetHasList(crate::app::dlcmanager::DLCManager_Content)` overload"]
-    #[method(name = "GetHasList", args = 1)]
-    pub fn get_has_list(
-        content: crate::app::dlcmanager::DLCManager_Content,
-    ) -> crate::app::dlcmanager::DLCManager_DLCList;
-
-    #[doc = "`RefreshHasList()` overload"]
-    #[method(name = "RefreshHasList", args = 0)]
-    pub fn refresh_has_list() -> ();
-
-    #[doc = "`StartListChangedEvent()` overload"]
-    #[method(name = "StartListChangedEvent", args = 0)]
-    pub fn start_list_changed_event() -> ();
-
-    #[doc = "`TryRunListChangedEvent()` overload"]
-    #[method(name = "TryRunListChangedEvent", args = 0)]
-    pub fn try_run_list_changed_event() -> bool;
-
-    #[doc = "`AddChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]
-    #[method(name = "AddChangedEventListener", args = 1)]
-    pub fn add_changed_event_listener(
-        add_event: crate::unity_engine::events::unityaction::UnityAction,
-    ) -> ();
-
-    #[doc = "`RemoveChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]
-    #[method(name = "RemoveChangedEventListener", args = 1)]
-    pub fn remove_changed_event_listener(
-        remove_event: crate::unity_engine::events::unityaction::UnityAction,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DLCManager),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DLCManager_MountData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager_MountData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as IDLCManagerMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager_MountData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DLCManager_MountData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DLCManager_MountData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-dlcmanager")]
-#[::unity2::methods]
-impl DLCManager_MountData {
+pub trait IDLCManager_MountDataMethods: IDLCManager_MountData {
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DLCManager_MountData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DLCManager_MountData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "app-dlcmanager")]
+impl<__T: IDLCManager_MountData> IDLCManager_MountDataMethods for __T {}
 
 #[cfg(feature = "app-dlcmanager")]
 impl DLCManager_MountData {
@@ -289,12 +197,1605 @@ impl DLCManager_MountData {
 }
 
 #[cfg(feature = "app-dlcmanager")]
-#[::unity2::methods]
-impl DLCManager_DLCList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DLCManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_refresh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "Refresh",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "Refresh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn refresh(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_refresh::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mount_dlc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "MountDLC",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "MountDLC",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mount_dlc(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mount_dlc::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_folder_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetFolderName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetFolderName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_folder_name(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_folder_name::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_group_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetAssetGroupName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetGroupName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_group_name(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_asset_group_name::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetContent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_content(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::dlcmanager::DLCManager_Content {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::dlcmanager::DLCManager_Content = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_content::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_streaming_assets_dlc_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetStreamingAssetsDLCPath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetStreamingAssetsDLCPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_streaming_assets_dlc_path(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_streaming_assets_dlc_path::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "HasContent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "HasContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_content(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_content::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_contents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::app::dlcmanager::DLCManager_Content,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "HasContents",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "HasContents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_contents(
+        contents: ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_contents::get_offset() as isize),
+        );
+        inner(contents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_content_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "HasContentError",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "HasContentError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_content_error(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_content_error::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_add_on_content_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetAddOnContentIndex",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetAddOnContentIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_add_on_content_index(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_add_on_content_index::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_index_to_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "TryIndexToContent",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "TryIndexToContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_index_to_content(
+        index: i32,
+        content: *mut crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            i32,
+            *mut crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_index_to_content::get_offset() as isize),
+        );
+        inner(index, content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_required_release_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "IsRequiredReleaseVersion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "IsRequiredReleaseVersion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_required_release_version(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_required_release_version::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_contents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetAllContents",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetAllContents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_contents(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_all_contents::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_unacceptable_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "ShowUnacceptableVersion",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "ShowUnacceptableVersion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_unacceptable_version(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_unacceptable_version::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_lost_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "ShowLostError",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "ShowLostError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_lost_error(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_lost_error::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_lost_error_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::app::dlcmanager::DLCManager_Content,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "ShowLostError",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "ShowLostError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_lost_error_2(
+        contents: ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_lost_error_2::get_offset() as isize),
+        );
+        inner(contents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_has_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "InitHasList",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "InitHasList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_has_list(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_has_list::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dlcmanager::DLCManager_Content as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "GetHasList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "GetHasList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_list(
+        content: crate::app::dlcmanager::DLCManager_Content,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::dlcmanager::DLCManager_DLCList {
+        let inner: extern "C" fn(
+            crate::app::dlcmanager::DLCManager_Content,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::dlcmanager::DLCManager_DLCList = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_has_list::get_offset() as isize),
+        );
+        inner(content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_refresh_has_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "RefreshHasList",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "RefreshHasList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn refresh_has_list(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_refresh_has_list::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_list_changed_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "StartListChangedEvent",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "StartListChangedEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_list_changed_event(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_start_list_changed_event::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_run_list_changed_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "TryRunListChangedEvent",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "TryRunListChangedEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_run_list_changed_event(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_run_list_changed_event::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_changed_event_listener {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: unityaction :: UnityAction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "AddChangedEventListener",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "AddChangedEventListener",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_changed_event_listener(
+        add_event: crate::unity_engine::events::unityaction::UnityAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::events::unityaction::UnityAction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_changed_event_listener::get_offset() as isize),
+        );
+        inner(add_event, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_changed_event_listener {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: unityaction :: UnityAction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                "RemoveChangedEventListener",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    "RemoveChangedEventListener",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_changed_event_listener(
+        remove_event: crate::unity_engine::events::unityaction::UnityAction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::events::unityaction::UnityAction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_changed_event_listener::get_offset() as isize),
+        );
+        inner(remove_event, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: DLCManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DLCManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager {
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __DLCManager_unity2_raw::initialize(::core::option::Option::None) }
+    }
+    #[doc = "`Release()` overload"]
+    pub fn release() -> () {
+        unsafe { __DLCManager_unity2_raw::release(::core::option::Option::None) }
+    }
+    #[doc = "`Refresh()` overload"]
+    pub fn refresh() -> () {
+        unsafe { __DLCManager_unity2_raw::refresh(::core::option::Option::None) }
+    }
+    #[doc = "`Update()` overload"]
+    pub fn update() -> () {
+        unsafe { __DLCManager_unity2_raw::update(::core::option::Option::None) }
+    }
+    #[doc = "`MountDLC()` overload"]
+    pub fn mount_dlc() -> () {
+        unsafe { __DLCManager_unity2_raw::mount_dlc(::core::option::Option::None) }
+    }
+    #[doc = "`GetFolderName(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn get_folder_name(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __DLCManager_unity2_raw::get_folder_name(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetGroupName(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn get_asset_group_name(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __DLCManager_unity2_raw::get_asset_group_name(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetContent(::unity2::Il2CppString)` overload"]
+    pub fn get_content(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::dlcmanager::DLCManager_Content {
+        unsafe {
+            __DLCManager_unity2_raw::get_content(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStreamingAssetsDLCPath(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn get_streaming_assets_dlc_path(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __DLCManager_unity2_raw::get_streaming_assets_dlc_path(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasContent(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn has_content(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> bool {
+        unsafe {
+            __DLCManager_unity2_raw::has_content(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasContents(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]
+    pub fn has_contents(
+        contents: impl ::core::convert::Into<
+            ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+        >,
+    ) -> bool {
+        unsafe {
+            __DLCManager_unity2_raw::has_contents(
+                ::core::convert::Into::into(contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasContentError(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn has_content_error(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> bool {
+        unsafe {
+            __DLCManager_unity2_raw::has_content_error(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAddOnContentIndex(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn get_add_on_content_index(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> i32 {
+        unsafe {
+            __DLCManager_unity2_raw::get_add_on_content_index(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryIndexToContent(i32, *mutcrate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn try_index_to_content(
+        index: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::app::dlcmanager::DLCManager_Content) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::app::dlcmanager::DLCManager_Content>::uninit();
+            let __ret = {
+                __DLCManager_unity2_raw::try_index_to_content(
+                    ::core::convert::Into::into(index),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`IsRequiredReleaseVersion(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn is_required_release_version(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> bool {
+        unsafe {
+            __DLCManager_unity2_raw::is_required_release_version(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAllContents()` overload"]
+    pub fn get_all_contents() -> ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> {
+        unsafe { __DLCManager_unity2_raw::get_all_contents(::core::option::Option::None) }
+    }
+    #[doc = "`ShowUnacceptableVersion()` overload"]
+    pub fn show_unacceptable_version() -> () {
+        unsafe { __DLCManager_unity2_raw::show_unacceptable_version(::core::option::Option::None) }
+    }
+    #[doc = "`ShowLostError(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn show_lost_error(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> () {
+        unsafe {
+            __DLCManager_unity2_raw::show_lost_error(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ShowLostError(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]
+    pub fn show_lost_error_2(
+        contents: impl ::core::convert::Into<
+            ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>,
+        >,
+    ) -> () {
+        unsafe {
+            __DLCManager_unity2_raw::show_lost_error_2(
+                ::core::convert::Into::into(contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitHasList()` overload"]
+    pub fn init_has_list() -> () {
+        unsafe { __DLCManager_unity2_raw::init_has_list(::core::option::Option::None) }
+    }
+    #[doc = "`GetHasList(crate::app::dlcmanager::DLCManager_Content)` overload"]
+    pub fn get_has_list(
+        content: impl ::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>,
+    ) -> crate::app::dlcmanager::DLCManager_DLCList {
+        unsafe {
+            __DLCManager_unity2_raw::get_has_list(
+                ::core::convert::Into::into(content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RefreshHasList()` overload"]
+    pub fn refresh_has_list() -> () {
+        unsafe { __DLCManager_unity2_raw::refresh_has_list(::core::option::Option::None) }
+    }
+    #[doc = "`StartListChangedEvent()` overload"]
+    pub fn start_list_changed_event() -> () {
+        unsafe { __DLCManager_unity2_raw::start_list_changed_event(::core::option::Option::None) }
+    }
+    #[doc = "`TryRunListChangedEvent()` overload"]
+    pub fn try_run_list_changed_event() -> bool {
+        unsafe { __DLCManager_unity2_raw::try_run_list_changed_event(::core::option::Option::None) }
+    }
+    #[doc = "`AddChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]
+    pub fn add_changed_event_listener(
+        add_event: impl ::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>,
+    ) -> () {
+        unsafe {
+            __DLCManager_unity2_raw::add_changed_event_listener(
+                ::core::convert::Into::into(add_event),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RemoveChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]
+    pub fn remove_changed_event_listener(
+        remove_event: impl ::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>,
+    ) -> () {
+        unsafe {
+            __DLCManager_unity2_raw::remove_changed_event_listener(
+                ::core::convert::Into::into(remove_event),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DLCManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+pub trait IDLCManagerMethods: IDLCManager {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DLCManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DLCManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+impl<__T: IDLCManager> IDLCManagerMethods for __T {}
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DLCManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDLCManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DLCManager_DLCList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DLCManager_DLCList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DLCManager_DLCList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DLCManager_DLCList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DLCManager_DLCList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+pub trait IDLCManager_DLCListMethods: IDLCManager_DLCList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DLCManager_DLCList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DLCManager_DLCList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+impl<__T: IDLCManager_DLCList> IDLCManager_DLCListMethods for __T {}
 
 #[cfg(feature = "app-dlcmanager")]
 impl DLCManager_DLCList {
@@ -310,4 +1811,27 @@ impl DLCManager_DLCList {
         <Self as IDLCManager_DLCListMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+pub mod prelude {
+    pub use super::DLCManager;
+    pub use super::DLCManager_Content;
+    pub use super::DLCManager_DLCList;
+    pub use super::DLCManager_MountData;
+    pub use super::IDLCManager;
+    pub use super::IDLCManagerMethods;
+    pub use super::IDLCManager_DLCList;
+    pub use super::IDLCManager_DLCListMethods;
+    pub use super::IDLCManager_MountData;
+    pub use super::IDLCManager_MountDataMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

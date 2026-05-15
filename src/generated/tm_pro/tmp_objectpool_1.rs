@@ -77,3 +77,13 @@ impl<T0: ::unity2::ClassIdentity> TMP_ObjectPool_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "tm_pro-tmp_objectpool_1")]
+pub mod prelude {
+    pub use super::ITMP_ObjectPool_1;
+    pub use super::ITMP_ObjectPool_1Methods;
+    pub use super::TMP_ObjectPool_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

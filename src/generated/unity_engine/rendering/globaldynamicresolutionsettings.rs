@@ -49,9 +49,64 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GlobalDynamicResolutionSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new_default {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GlobalDynamicResolutionSettings as ::unity2::ClassIdentity>::class(),
+                "NewDefault",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GlobalDynamicResolutionSettings as ::unity2::ClassIdentity>::NAME,
+                    "NewDefault",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn new_default (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings{
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_new_default :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
 impl GlobalDynamicResolutionSettings {
-    #[doc = "`NewDefault()` overload"]
-    #[method(name = "NewDefault", args = 0)]
-    pub fn new_default () -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings ;
+    #[doc = "`NewDefault()` overload"]    pub fn new_default () -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings{
+        unsafe {
+            __GlobalDynamicResolutionSettings_unity2_raw::new_default(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
+pub mod prelude {
+    pub use super::GlobalDynamicResolutionSettings;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

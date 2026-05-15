@@ -15,15 +15,104 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-iloghandler")]
-#[::unity2::methods]
-impl ILogHandler {
-    #[doc = "`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "LogFormat", args = 4)]
-    pub fn log_format(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ILogHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_log_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::logtype::LogType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILogHandler as ::unity2::ClassIdentity>::class(),
+                "LogFormat",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILogHandler as ::unity2::ClassIdentity>::NAME,
+                    "LogFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn log_format(
+        this: ILogHandler,
         log_type: crate::unity_engine::logtype::LogType,
         context: crate::unity_engine::object_2::Object_2,
         format: ::unity2::Il2CppString,
         args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ILogHandler,
+            crate::unity_engine::logtype::LogType,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_log_format::get_offset() as isize),
+        );
+        inner(this, log_type, context, format, args, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-iloghandler")]
+pub trait IILogHandlerMethods: IILogHandler {
+    #[doc = "`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    fn log_format(
+        self,
+        log_type: impl ::core::convert::Into<crate::unity_engine::logtype::LogType>,
+        context: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ILogHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILogHandler_unity2_raw::log_format(
+                __receiver,
+                ::core::convert::Into::into(log_type),
+                ::core::convert::Into::into(context),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(args),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-iloghandler")]
+impl<__T: IILogHandler> IILogHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-iloghandler")]
+pub mod prelude {
+    pub use super::IILogHandler;
+    pub use super::IILogHandlerMethods;
+    pub use super::ILogHandler;
 }

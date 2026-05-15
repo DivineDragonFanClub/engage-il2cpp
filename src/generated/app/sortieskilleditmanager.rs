@@ -10,22 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
-    pub struct SortieSkillEditManager {
-        #[rename(name = "m_EquipSkillMenu")]
-        pub m_equip_skill_menu: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
-        #[rename(name = "m_PoolSkillMenu")]
-        pub m_pool_skill_menu: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
-        #[rename(name = "m_SkillInfo")]
-        pub m_skill_info: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SkillInfoRoot")]
-        pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md"))]
     #[repr(C)]
     #[derive(
@@ -69,105 +53,1131 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
+    pub struct SortieSkillEditManager {
+        #[rename(name = "m_EquipSkillMenu")]
+        pub m_equip_skill_menu: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
+        #[rename(name = "m_PoolSkillMenu")]
+        pub m_pool_skill_menu: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
+        #[rename(name = "m_SkillInfo")]
+        pub m_skill_info: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SkillInfoRoot")]
+        pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+    }
 }
 
 #[cfg(feature = "app-sortieskilleditmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-sortieskilleditmanager")]
-#[::unity2::methods]
-impl SortieSkillEditManager {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`UpdateMenu()` overload"]
-    #[method(name = "UpdateMenu", args = 0)]
-    pub fn update_menu(self) -> ();
-
-    #[doc = "`SetSkillInfo(crate::app::skilldata::SkillData, bool)` overload"]
-    #[method(name = "SetSkillInfo", args = 2)]
-    pub fn set_skill_info(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieSkillEditManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "UpdateMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "UpdateMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_menu(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "SetSkillInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "SetSkillInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skill_info(
+        this: SortieSkillEditManager,
         skill: crate::app::skilldata::SkillData,
         is_inheritance: bool,
-    ) -> ();
-
-    #[doc = "`get_EquipSkillMenu()` overload"]
-    #[method(name = "get_EquipSkillMenu", args = 0)]
-    pub fn get_equip_skill_menu(
-        self,
-    ) -> crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu;
-
-    #[doc = "`set_EquipSkillMenu(crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu)` overload"]
-    #[method(name = "set_EquipSkillMenu", args = 1)]
-    pub fn set_equip_skill_menu(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::app::skilldata::SkillData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skill_info::get_offset() as isize),
+        );
+        inner(this, skill, is_inheritance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_equip_skill_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "get_EquipSkillMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "get_EquipSkillMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_equip_skill_menu(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_equip_skill_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_equip_skill_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilleditequipskillmenu :: SkillEditEquipSkillMenu as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "set_EquipSkillMenu",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "set_EquipSkillMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_equip_skill_menu(
+        this: SortieSkillEditManager,
         value: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
-    ) -> ();
-
-    #[doc = "`get_PoolSkillMenu()` overload"]
-    #[method(name = "get_PoolSkillMenu", args = 0)]
-    pub fn get_pool_skill_menu(self) -> crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu;
-
-    #[doc = "`set_PoolSkillMenu(crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu)` overload"]
-    #[method(name = "set_PoolSkillMenu", args = 1)]
-    pub fn set_pool_skill_menu(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_equip_skill_menu::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pool_skill_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "get_PoolSkillMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "get_PoolSkillMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pool_skill_menu(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pool_skill_menu::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pool_skill_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilleditpoolskillmenu :: SkillEditPoolSkillMenu as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "set_PoolSkillMenu",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "set_PoolSkillMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pool_skill_menu(
+        this: SortieSkillEditManager,
         value: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
-    ) -> ();
-
-    #[doc = "`get_SkillInfo()` overload"]
-    #[method(name = "get_SkillInfo", args = 0)]
-    pub fn get_skill_info(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_SkillInfo(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_SkillInfo", args = 1)]
-    pub fn set_skill_info_2(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_SkillInfoRoot()` overload"]
-    #[method(name = "get_SkillInfoRoot", args = 0)]
-    pub fn get_skill_info_root(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_SkillInfoRoot(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_SkillInfoRoot", args = 1)]
-    pub fn set_skill_info_root(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_Mode()` overload"]
-    #[method(name = "get_Mode", args = 0)]
-    pub fn get_mode(self) -> crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes;
-
-    #[doc = "`set_Mode(crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes)` overload"]
-    #[method(name = "set_Mode", args = 1)]
-    pub fn set_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pool_skill_menu::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "get_SkillInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "get_SkillInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skill_info(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_skill_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "set_SkillInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "set_SkillInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skill_info_2(
+        this: SortieSkillEditManager,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skill_info_2::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_info_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "get_SkillInfoRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "get_SkillInfoRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skill_info_root(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_skill_info_root::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill_info_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "set_SkillInfoRoot",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "set_SkillInfoRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skill_info_root(
+        this: SortieSkillEditManager,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_skill_info_root::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "get_Mode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "get_Mode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mode(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes {
+        let inner : extern "C" fn (SortieSkillEditManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieskilleditmanager :: SortieSkillEditManager_Modes = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieskilleditmanager :: SortieSkillEditManager_Modes as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "set_Mode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "set_Mode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mode(
+        this: SortieSkillEditManager,
         value: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
-    ) -> ();
-
-    #[doc = "`IsTrade()` overload"]
-    #[method(name = "IsTrade", args = 0)]
-    pub fn is_trade(self) -> bool;
-
-    #[doc = "`SetTrade()` overload"]
-    #[method(name = "SetTrade", args = 0)]
-    pub fn set_trade(self) -> ();
-
-    #[doc = "`ResetMode()` overload"]
-    #[method(name = "ResetMode", args = 0)]
-    pub fn reset_mode(self) -> ();
-
-    #[doc = "`IsInheritanceSkillDouble(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "IsInheritanceSkillDouble", args = 2)]
-    pub fn is_inheritance_skill_double(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_trade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "IsTrade",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "IsTrade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_trade(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_trade::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "SetTrade",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "SetTrade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trade(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_trade::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "ResetMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "ResetMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_mode(
+        this: SortieSkillEditManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieSkillEditManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_inheritance_skill_double {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieSkillEditManager as ::unity2::ClassIdentity>::class(),
+                "IsInheritanceSkillDouble",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieSkillEditManager as ::unity2::ClassIdentity>::NAME,
+                    "IsInheritanceSkillDouble",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_inheritance_skill_double(
+        this: SortieSkillEditManager,
         unit: crate::app::unit::Unit,
         skill: crate::app::skilldata::SkillData,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            SortieSkillEditManager,
+            crate::app::unit::Unit,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_inheritance_skill_double::get_offset() as isize),
+        );
+        inner(this, unit, skill, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-sortieskilleditmanager")]
+pub trait ISortieSkillEditManagerMethods: ISortieSkillEditManager {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateMenu()` overload"]
+    fn update_menu(self) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::update_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSkillInfo(crate::app::skilldata::SkillData, bool)` overload"]
+    fn set_skill_info(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        is_inheritance: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_skill_info(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(is_inheritance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_EquipSkillMenu()` overload"]
+    fn get_equip_skill_menu(self) -> crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::get_equip_skill_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_EquipSkillMenu(crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu)` overload"]
+    fn set_equip_skill_menu(
+        self,
+        value: impl ::core::convert::Into<crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_equip_skill_menu(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PoolSkillMenu()` overload"]
+    fn get_pool_skill_menu(self) -> crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::get_pool_skill_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PoolSkillMenu(crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu)` overload"]
+    fn set_pool_skill_menu(
+        self,
+        value: impl ::core::convert::Into<crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_pool_skill_menu(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SkillInfo()` overload"]
+    fn get_skill_info(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::get_skill_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SkillInfo(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_skill_info_2(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_skill_info_2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SkillInfoRoot()` overload"]
+    fn get_skill_info_root(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::get_skill_info_root(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SkillInfoRoot(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_skill_info_root(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_skill_info_root(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Mode()` overload"]
+    fn get_mode(self) -> crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Mode(crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes)` overload"]
+    fn set_mode(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsTrade()` overload"]
+    fn is_trade(self) -> bool {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::is_trade(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTrade()` overload"]
+    fn set_trade(self) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::set_trade(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ResetMode()` overload"]
+    fn reset_mode(self) -> () {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::reset_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsInheritanceSkillDouble(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
+    fn is_inheritance_skill_double(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <SortieSkillEditManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieSkillEditManager_unity2_raw::is_inheritance_skill_double(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieskilleditmanager")]
+impl<__T: ISortieSkillEditManager> ISortieSkillEditManagerMethods for __T {}
 
 #[cfg(feature = "app-sortieskilleditmanager")]
 impl SortieSkillEditManager {
@@ -183,4 +1193,24 @@ impl SortieSkillEditManager {
         <Self as ISortieSkillEditManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-sortieskilleditmanager")]
+pub mod prelude {
+    pub use super::ISortieSkillEditManager;
+    pub use super::ISortieSkillEditManagerMethods;
+    pub use super::SortieSkillEditManager;
+    pub use super::SortieSkillEditManager_Modes;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

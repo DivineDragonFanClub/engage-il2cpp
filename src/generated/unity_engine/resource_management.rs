@@ -16,8 +16,18 @@
 pub mod async_operations;
 #[cfg(any(feature = "unity_engine-resource_management-chainoperation_2-types"))]
 pub mod chainoperation_2;
+#[cfg(feature = "unity_engine-resource_management-chainoperation_2")]
+pub use chainoperation_2::IChainOperation_2Methods;
+#[cfg(feature = "unity_engine-resource_management-chainoperation_2-types")]
+pub use chainoperation_2::{ChainOperation_2, IChainOperation_2};
 #[cfg(any(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1-types"))]
 pub mod chainoperationtypelessdepedency_1;
+#[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1")]
+pub use chainoperationtypelessdepedency_1::IChainOperationTypelessDepedency_1Methods;
+#[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1-types")]
+pub use chainoperationtypelessdepedency_1::{
+    ChainOperationTypelessDepedency_1, IChainOperationTypelessDepedency_1,
+};
 #[cfg(any(
     feature = "unity_engine-resource_management-diagnostics-diagnosticevent-types",
     feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types",
@@ -34,6 +44,10 @@ pub mod diagnostics;
 pub mod exceptions;
 #[cfg(any(feature = "unity_engine-resource_management-iupdatereceiver-types"))]
 pub mod iupdatereceiver;
+#[cfg(feature = "unity_engine-resource_management-iupdatereceiver")]
+pub use iupdatereceiver::IIUpdateReceiverMethods;
+#[cfg(feature = "unity_engine-resource_management-iupdatereceiver-types")]
+pub use iupdatereceiver::{IIUpdateReceiver, IUpdateReceiver};
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_locations-ilocationsizedata-types",
     feature = "unity_engine-resource_management-resource_locations-iresourcelocation-types",
@@ -69,6 +83,17 @@ pub mod resource_locations;
 pub mod resource_providers;
 #[cfg(any(feature = "unity_engine-resource_management-resourcemanager-types"))]
 pub mod resourcemanager;
+#[cfg(feature = "unity_engine-resource_management-resourcemanager-types")]
+pub use resourcemanager::{
+    IResourceManager, IResourceManager_CompletedOperation_1, IResourceManager_InstanceOperation,
+    ResourceManager, ResourceManager_CompletedOperation_1, ResourceManager_DiagnosticEventContext,
+    ResourceManager_DiagnosticEventType, ResourceManager_InstanceOperation,
+};
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+pub use resourcemanager::{
+    IResourceManagerMethods, IResourceManager_CompletedOperation_1Methods,
+    IResourceManager_InstanceOperationMethods,
+};
 #[cfg(any(
     feature = "unity_engine-resource_management-util-asyncophandlescachekey-types",
     feature = "unity_engine-resource_management-util-componentsingleton_1_2-types",
@@ -94,5 +119,11 @@ pub mod resourcemanager;
 pub mod util;
 #[cfg(any(feature = "unity_engine-resource_management-webrequestqueue-types"))]
 pub mod webrequestqueue;
+#[cfg(feature = "unity_engine-resource_management-webrequestqueue-types")]
+pub use webrequestqueue::{IWebRequestQueue, WebRequestQueue};
 #[cfg(any(feature = "unity_engine-resource_management-webrequestqueueoperation-types"))]
 pub mod webrequestqueueoperation;
+#[cfg(feature = "unity_engine-resource_management-webrequestqueueoperation")]
+pub use webrequestqueueoperation::IWebRequestQueueOperationMethods;
+#[cfg(feature = "unity_engine-resource_management-webrequestqueueoperation-types")]
+pub use webrequestqueueoperation::{IWebRequestQueueOperation, WebRequestQueueOperation};

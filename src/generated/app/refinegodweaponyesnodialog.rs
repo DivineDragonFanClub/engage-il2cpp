@@ -16,11 +16,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineGodWeaponYesNoDialog_YesEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -29,6 +24,11 @@ mod __types {
         pub m_yes_event_handler:
             crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineGodWeaponYesNoDialog_YesEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog")]
@@ -40,47 +40,148 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
-#[::unity2::methods]
-impl RefineGodWeaponYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-refinegodweaponyesnodialog")]
-impl RefineGodWeaponYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponYesNoDialog_YesEventHandler),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineGodWeaponYesNoDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
             )
         });
-        <Self as IRefineGodWeaponYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineGodWeaponYesNoDialog_YesMenuItem,
+        message: ::unity2::Il2CppString,
+        yes_event_handler : crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineGodWeaponYesNoDialog_YesMenuItem,
+            ::unity2::Il2CppString,
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, message, yes_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RefineGodWeaponYesNoDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RefineGodWeaponYesNoDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
-#[::unity2::methods]
-impl RefineGodWeaponYesNoDialog_YesMenuItem {
+pub trait IRefineGodWeaponYesNoDialog_YesMenuItemMethods:
+    IRefineGodWeaponYesNoDialog_YesMenuItem
+{
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
+    fn ctor(
         self,
-        message: ::unity2::Il2CppString,
-        yes_event_handler : crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler,
-    ) -> ();
-
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefineGodWeaponYesNoDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineGodWeaponYesNoDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < RefineGodWeaponYesNoDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineGodWeaponYesNoDialog_YesMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl<__T: IRefineGodWeaponYesNoDialog_YesMenuItem> IRefineGodWeaponYesNoDialog_YesMenuItemMethods
+    for __T
+{
 }
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
@@ -107,11 +208,206 @@ impl RefineGodWeaponYesNoDialog_YesMenuItem {
 }
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
-#[::unity2::methods]
-impl RefineGodWeaponYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 7)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineGodWeaponYesNoDialog_YesEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineGodWeaponYesNoDialog_YesEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineGodWeaponYesNoDialog_YesEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefineGodWeaponYesNoDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineGodWeaponYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+pub trait IRefineGodWeaponYesNoDialog_YesEventHandlerMethods:
+    IRefineGodWeaponYesNoDialog_YesEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineGodWeaponYesNoDialog_YesEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineGodWeaponYesNoDialog_YesEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl<__T: IRefineGodWeaponYesNoDialog_YesEventHandler>
+    IRefineGodWeaponYesNoDialog_YesEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl RefineGodWeaponYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponYesNoDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineGodWeaponYesNoDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         god_unit: crate::app::godunit::GodUnit,
         item_data: crate::app::itemdata::ItemData,
@@ -119,44 +415,393 @@ impl RefineGodWeaponYesNoDialog {
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         current_level: i32,
         yes_event_handler : crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 6)]
-    pub fn create_bind_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::godunit::GodUnit,
+            crate::app::itemdata::ItemData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+            i32,
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            god_unit,
+            item_data,
+            god_weapon_refine_data,
+            kind,
+            current_level,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
         super_: crate::app::procinst::ProcInst,
         god_unit: crate::app::godunit::GodUnit,
         item_data: crate::app::itemdata::ItemData,
         god_weapon_refine_data: crate::app::godweaponrefinedata::GodWeaponRefineData,
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         yes_event_handler : crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBindForChangeSkill(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBindForChangeSkill", args = 6)]
-    pub fn create_bind_for_change_skill(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::godunit::GodUnit,
+            crate::app::itemdata::ItemData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(
+            super_,
+            god_unit,
+            item_data,
+            god_weapon_refine_data,
+            kind,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_for_change_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBindForChangeSkill",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindForChangeSkill",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_for_change_skill(
         super_: crate::app::procinst::ProcInst,
         god_unit: crate::app::godunit::GodUnit,
         item_data: crate::app::itemdata::ItemData,
         god_weapon_refine_data: crate::app::godweaponrefinedata::GodWeaponRefineData,
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         yes_event_handler : crate :: app :: refinegodweaponyesnodialog :: RefineGodWeaponYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::godunit::GodUnit,
+            crate::app::itemdata::ItemData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_for_change_skill::get_offset() as isize),
+        );
+        inner(
+            super_,
+            god_unit,
+            item_data,
+            god_weapon_refine_data,
+            kind,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineGodWeaponYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
         menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineGodWeaponYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineGodWeaponYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "OnClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_close(
+        this: RefineGodWeaponYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineGodWeaponYesNoDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl RefineGodWeaponYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        god_weapon_refine_data: impl ::core::convert::Into<
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+        >,
+        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
+        current_level: impl ::core::convert::Into<i32>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __RefineGodWeaponYesNoDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(god_unit),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(god_weapon_refine_data),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(current_level),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        god_weapon_refine_data: impl ::core::convert::Into<
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+        >,
+        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __RefineGodWeaponYesNoDialog_unity2_raw::create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(god_unit),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(god_weapon_refine_data),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindForChangeSkill(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_for_change_skill(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        god_weapon_refine_data: impl ::core::convert::Into<
+            crate::app::godweaponrefinedata::GodWeaponRefineData,
+        >,
+        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __RefineGodWeaponYesNoDialog_unity2_raw::create_bind_for_change_skill(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(god_unit),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(god_weapon_refine_data),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+pub trait IRefineGodWeaponYesNoDialogMethods: IRefineGodWeaponYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponYesNoDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
+        unsafe {
+            let __receiver =
+                <RefineGodWeaponYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RefineGodWeaponYesNoDialog_unity2_raw::on_close(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl<__T: IRefineGodWeaponYesNoDialog> IRefineGodWeaponYesNoDialogMethods for __T {}
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
 impl RefineGodWeaponYesNoDialog {
@@ -177,4 +822,47 @@ impl RefineGodWeaponYesNoDialog {
         <Self as IRefineGodWeaponYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+pub mod prelude {
+    pub use super::IRefineGodWeaponYesNoDialog;
+    pub use super::IRefineGodWeaponYesNoDialogMethods;
+    pub use super::IRefineGodWeaponYesNoDialog_YesEventHandler;
+    pub use super::IRefineGodWeaponYesNoDialog_YesEventHandlerMethods;
+    pub use super::IRefineGodWeaponYesNoDialog_YesMenuItem;
+    pub use super::IRefineGodWeaponYesNoDialog_YesMenuItemMethods;
+    pub use super::RefineGodWeaponYesNoDialog;
+    pub use super::RefineGodWeaponYesNoDialog_YesEventHandler;
+    pub use super::RefineGodWeaponYesNoDialog_YesMenuItem;
+    pub use crate::app::basicdialog::IBasicDialog;
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    #[cfg(feature = "app-basicdialogitem")]
+    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+    #[cfg(feature = "app-basicdialogitemyes")]
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::yesnodialog::IYesNoDialog;
+    #[cfg(feature = "app-yesnodialog")]
+    pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

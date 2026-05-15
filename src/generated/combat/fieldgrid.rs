@@ -12,11 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FieldGrid")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FieldGrid {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,51 +40,521 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))]
+    #[::unity2::class(namespace = "Combat", name = "FieldGrid")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct FieldGrid {}
 }
 
 #[cfg(feature = "combat-fieldgrid-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-fieldgrid")]
-#[::unity2::methods]
-impl FieldGrid {
-    #[doc = "`FindGrid()` overload"]
-    #[method(name = "FindGrid", args = 0)]
-    pub fn find_grid() -> crate::combat::fieldgrid::FieldGrid;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FieldGrid_PlayFieldRect_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid_PlayFieldRect as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid_PlayFieldRect as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FieldGrid_PlayFieldRect,
+        rect: crate::unity_engine::rect::Rect,
+        size: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FieldGrid_PlayFieldRect,
+            crate::unity_engine::rect::Rect,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, rect, size, __unity2_method_info)
+    }
+}
 
-    #[doc = "`get_HasGrid()` overload"]
-    #[method(name = "get_HasGrid", args = 0)]
-    pub fn get_has_grid() -> bool;
+#[cfg(feature = "combat-fieldgrid")]
+impl FieldGrid_PlayFieldRect {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
+    pub fn ctor(
+        self,
+        rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        size: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __FieldGrid_PlayFieldRect_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`ToggleGrid()` overload"]
-    #[method(name = "ToggleGrid", args = 0)]
-    pub fn toggle_grid() -> ();
-
-    #[doc = "`MakeGrid()` overload"]
-    #[method(name = "MakeGrid", args = 0)]
-    pub fn make_grid() -> ();
-
-    #[doc = "`GetPlayFieldRect()` overload"]
-    #[method(name = "GetPlayFieldRect", args = 0)]
-    pub fn get_play_field_rect() -> crate::combat::fieldgrid::FieldGrid_PlayFieldRect;
-
-    #[doc = "`MakeGridMesh(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]
-    #[method(name = "MakeGridMesh", args = 1)]
-    pub fn make_grid_mesh(
+#[cfg(feature = "combat-fieldgrid")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FieldGrid_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_grid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "FindGrid",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "FindGrid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_grid(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fieldgrid::FieldGrid {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::fieldgrid::FieldGrid =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_find_grid::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_grid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "get_HasGrid",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "get_HasGrid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_grid(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_has_grid::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_toggle_grid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "ToggleGrid",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "ToggleGrid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn toggle_grid(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_toggle_grid::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_grid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "MakeGrid",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "MakeGrid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_grid(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_grid::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_field_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "GetPlayFieldRect",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "GetPlayFieldRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_play_field_rect(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fieldgrid::FieldGrid_PlayFieldRect {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::fieldgrid::FieldGrid_PlayFieldRect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_play_field_rect::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_grid_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::fieldgrid::FieldGrid_PlayFieldRect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "MakeGridMesh",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "MakeGridMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn make_grid_mesh(
         field: crate::combat::fieldgrid::FieldGrid_PlayFieldRect,
-    ) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`AddCoordinate(crate::unity_engine::gameobject::GameObject, crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]
-    #[method(name = "AddCoordinate", args = 2)]
-    pub fn add_coordinate(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            crate::combat::fieldgrid::FieldGrid_PlayFieldRect,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_make_grid_mesh::get_offset() as isize),
+        );
+        inner(field, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_coordinate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::combat::fieldgrid::FieldGrid_PlayFieldRect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                "AddCoordinate",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    "AddCoordinate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_coordinate(
         parent: crate::unity_engine::gameobject::GameObject,
         field: crate::combat::fieldgrid::FieldGrid_PlayFieldRect,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::combat::fieldgrid::FieldGrid_PlayFieldRect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_coordinate::get_offset() as isize),
+        );
+        inner(parent, field, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldGrid as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldGrid as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: FieldGrid, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FieldGrid, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-fieldgrid")]
+impl FieldGrid {
+    #[doc = "`FindGrid()` overload"]
+    pub fn find_grid() -> crate::combat::fieldgrid::FieldGrid {
+        unsafe { __FieldGrid_unity2_raw::find_grid(::core::option::Option::None) }
+    }
+    #[doc = "`get_HasGrid()` overload"]
+    pub fn get_has_grid() -> bool {
+        unsafe { __FieldGrid_unity2_raw::get_has_grid(::core::option::Option::None) }
+    }
+    #[doc = "`ToggleGrid()` overload"]
+    pub fn toggle_grid() -> () {
+        unsafe { __FieldGrid_unity2_raw::toggle_grid(::core::option::Option::None) }
+    }
+    #[doc = "`MakeGrid()` overload"]
+    pub fn make_grid() -> () {
+        unsafe { __FieldGrid_unity2_raw::make_grid(::core::option::Option::None) }
+    }
+    #[doc = "`GetPlayFieldRect()` overload"]
+    pub fn get_play_field_rect() -> crate::combat::fieldgrid::FieldGrid_PlayFieldRect {
+        unsafe { __FieldGrid_unity2_raw::get_play_field_rect(::core::option::Option::None) }
+    }
+    #[doc = "`MakeGridMesh(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]
+    pub fn make_grid_mesh(
+        field: impl ::core::convert::Into<crate::combat::fieldgrid::FieldGrid_PlayFieldRect>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            __FieldGrid_unity2_raw::make_grid_mesh(
+                ::core::convert::Into::into(field),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCoordinate(crate::unity_engine::gameobject::GameObject, crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]
+    pub fn add_coordinate(
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        field: impl ::core::convert::Into<crate::combat::fieldgrid::FieldGrid_PlayFieldRect>,
+    ) -> () {
+        unsafe {
+            __FieldGrid_unity2_raw::add_coordinate(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(field),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-fieldgrid")]
+pub trait IFieldGridMethods: IFieldGrid {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FieldGrid as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FieldGrid_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-fieldgrid")]
+impl<__T: IFieldGrid> IFieldGridMethods for __T {}
 
 #[cfg(feature = "combat-fieldgrid")]
 impl FieldGrid {
@@ -108,9 +573,27 @@ impl FieldGrid {
 }
 
 #[cfg(feature = "combat-fieldgrid")]
-#[::unity2::methods(value)]
-impl FieldGrid_PlayFieldRect {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, rect: crate::unity_engine::rect::Rect, size: f32) -> ();
+pub mod prelude {
+    pub use super::FieldGrid;
+    pub use super::FieldGrid_PlayFieldRect;
+    pub use super::IFieldGrid;
+    pub use super::IFieldGridMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

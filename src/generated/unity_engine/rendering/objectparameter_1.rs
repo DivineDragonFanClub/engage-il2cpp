@@ -87,3 +87,19 @@ impl<T0: ::unity2::ClassIdentity> ObjectParameter_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-rendering-objectparameter_1")]
+pub mod prelude {
+    pub use super::IObjectParameter_1;
+    pub use super::IObjectParameter_1Methods;
+    pub use super::ObjectParameter_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+}

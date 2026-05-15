@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-ui-ilayoutselfcontroller")]
+pub mod prelude {
+    pub use super::IILayoutSelfController;
+    pub use super::ILayoutSelfController;
+}

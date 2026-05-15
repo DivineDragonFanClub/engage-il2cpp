@@ -36,9 +36,9 @@ impl<T0: ::unity2::ClassIdentity> RawClassList_1<T0> {
     #[method(name = "Get", args = 1)]
     pub fn get(self, index: i32) -> T0;
 
-    #[doc = "`Set(i32, T0)` overload"]
+    #[doc = "`Set(i32, *mutT0)` overload"]
     #[method(name = "Set", args = 2)]
-    pub fn set(self, index: i32, value: T0) -> ();
+    pub fn set(self, index: i32, value: *mut T0) -> ();
 
     #[doc = "`Add(T0)` overload"]
     #[method(name = "Add", args = 1)]
@@ -63,4 +63,14 @@ impl<T0: ::unity2::ClassIdentity> RawClassList_1<T0> {
         <Self as IRawClassList_1Methods<T0>>::ctor(this, capacity);
         this
     }
+}
+
+#[cfg(feature = "app-rawclasslist_1")]
+pub mod prelude {
+    pub use super::IRawClassList_1;
+    pub use super::IRawClassList_1Methods;
+    pub use super::RawClassList_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

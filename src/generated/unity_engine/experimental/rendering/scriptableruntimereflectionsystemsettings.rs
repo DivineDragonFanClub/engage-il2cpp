@@ -26,29 +26,208 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRuntimeReflectionSystemSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_internal_scriptable_runtime_reflection_system_settings_system {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::class(),
+                "set_Internal_ScriptableRuntimeReflectionSystemSettings_system",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::NAME,
+                    "set_Internal_ScriptableRuntimeReflectionSystemSettings_system",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_internal_scriptable_runtime_reflection_system_settings_system(
+        value : crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_internal_scriptable_runtime_reflection_system_settings_system :: get_offset () as isize) ,) ;
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_internal_scriptable_runtime_reflection_system_settings_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::class(),
+                "get_Internal_ScriptableRuntimeReflectionSystemSettings_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::NAME,
+                    "get_Internal_ScriptableRuntimeReflectionSystemSettings_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_internal_scriptable_runtime_reflection_system_settings_instance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper{
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_internal_scriptable_runtime_reflection_system_settings_instance :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_scripting_dirty_reflection_system_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::class(),
+                "ScriptingDirtyReflectionSystemInstance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::NAME,
+                    "ScriptingDirtyReflectionSystemInstance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn scripting_dirty_reflection_system_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_scripting_dirty_reflection_system_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRuntimeReflectionSystemSettings as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
 impl ScriptableRuntimeReflectionSystemSettings {
     #[doc = "`set_Internal_ScriptableRuntimeReflectionSystemSettings_system(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)` overload"]
-    #[method(
-        name = "set_Internal_ScriptableRuntimeReflectionSystemSettings_system",
-        args = 1
-    )]
     pub fn set_internal_scriptable_runtime_reflection_system_settings_system(
-        value : crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem,
-    ) -> ();
-
-    #[doc = "`get_Internal_ScriptableRuntimeReflectionSystemSettings_instance()` overload"]
-    #[method(
-        name = "get_Internal_ScriptableRuntimeReflectionSystemSettings_instance",
-        args = 0
-    )]
-    pub fn get_internal_scriptable_runtime_reflection_system_settings_instance () -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper ;
-
+        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem >,
+    ) -> () {
+        unsafe {
+            __ScriptableRuntimeReflectionSystemSettings_unity2_raw :: set_internal_scriptable_runtime_reflection_system_settings_system (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`get_Internal_ScriptableRuntimeReflectionSystemSettings_instance()` overload"]    pub fn get_internal_scriptable_runtime_reflection_system_settings_instance () -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper{
+        unsafe {
+            __ScriptableRuntimeReflectionSystemSettings_unity2_raw :: get_internal_scriptable_runtime_reflection_system_settings_instance (:: core :: option :: Option :: None)
+        }
+    }
     #[doc = "`ScriptingDirtyReflectionSystemInstance()` overload"]
-    #[method(name = "ScriptingDirtyReflectionSystemInstance", args = 0)]
-    pub fn scripting_dirty_reflection_system_instance() -> ();
-
+    pub fn scripting_dirty_reflection_system_instance() -> () {
+        unsafe {
+            __ScriptableRuntimeReflectionSystemSettings_unity2_raw :: scripting_dirty_reflection_system_instance (:: core :: option :: Option :: None)
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe {
+            __ScriptableRuntimeReflectionSystemSettings_unity2_raw::cctor(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
+pub mod prelude {
+    pub use super::IScriptableRuntimeReflectionSystemSettings;
+    pub use super::ScriptableRuntimeReflectionSystemSettings;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

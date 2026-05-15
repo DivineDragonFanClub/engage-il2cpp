@@ -23,12 +23,86 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rangeattribute")]
-#[::unity2::methods]
-impl RangeAttribute {
-    #[doc = "`.ctor(f32, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, min: f32, max: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RangeAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RangeAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RangeAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RangeAttribute,
+        min: f32,
+        max: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RangeAttribute, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, min, max, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rangeattribute")]
+pub trait IRangeAttributeMethods: IRangeAttribute {
+    #[doc = "`.ctor(f32, f32)` overload"]
+    fn ctor(
+        self,
+        min: impl ::core::convert::Into<f32>,
+        max: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RangeAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RangeAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rangeattribute")]
+impl<__T: IRangeAttribute> IRangeAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-rangeattribute")]
 impl RangeAttribute {
@@ -44,4 +118,17 @@ impl RangeAttribute {
         <Self as IRangeAttributeMethods>::ctor(this, min, max);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rangeattribute")]
+pub mod prelude {
+    pub use super::IRangeAttribute;
+    pub use super::IRangeAttributeMethods;
+    pub use super::RangeAttribute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

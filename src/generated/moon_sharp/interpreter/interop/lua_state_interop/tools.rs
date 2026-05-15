@@ -20,53 +20,457 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-tools")]
-#[::unity2::methods]
-impl Tools {
-    #[doc = "`IsNumericType(crate::system::object::Object)` overload"]
-    #[method(name = "IsNumericType", args = 1)]
-    pub fn is_numeric_type(o: crate::system::object::Object) -> bool;
-
-    #[doc = "`IsPositive(crate::system::object::Object, bool)` overload"]
-    #[method(name = "IsPositive", args = 2)]
-    pub fn is_positive(value: crate::system::object::Object, zero_is_positive: bool) -> bool;
-
-    #[doc = "`ToUnsigned(crate::system::object::Object)` overload"]
-    #[method(name = "ToUnsigned", args = 1)]
-    pub fn to_unsigned(value: crate::system::object::Object) -> crate::system::object::Object;
-
-    #[doc = "`ToInteger(crate::system::object::Object, bool)` overload"]
-    #[method(name = "ToInteger", args = 2)]
-    pub fn to_integer(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Tools_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_numeric_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "IsNumericType",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "IsNumericType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_numeric_type(
+        o: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_numeric_type::get_offset() as isize),
+            );
+        inner(o, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_positive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "IsPositive",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "IsPositive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_positive(
+        value: crate::system::object::Object,
+        zero_is_positive: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_positive::get_offset() as isize),
+        );
+        inner(value, zero_is_positive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_unsigned {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "ToUnsigned",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "ToUnsigned",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_unsigned(
+        value: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_unsigned::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_integer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "ToInteger",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "ToInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_integer(
         value: crate::system::object::Object,
         round: bool,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`UnboxToLong(crate::system::object::Object, bool)` overload"]
-    #[method(name = "UnboxToLong", args = 2)]
-    pub fn unbox_to_long(value: crate::system::object::Object, round: bool) -> i64;
-
-    #[doc = "`ReplaceMetaChars(::unity2::Il2CppString)` overload"]
-    #[method(name = "ReplaceMetaChars", args = 1)]
-    pub fn replace_meta_chars(input: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`fprintf(crate::system::io::textwriter::TextWriter, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "fprintf", args = 3)]
-    pub fn fprintf(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_integer::get_offset() as isize),
+        );
+        inner(value, round, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unbox_to_long {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "UnboxToLong",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "UnboxToLong",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unbox_to_long(
+        value: crate::system::object::Object,
+        round: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unbox_to_long::get_offset() as isize),
+        );
+        inner(value, round, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_meta_chars {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "ReplaceMetaChars",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceMetaChars",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_meta_chars(
+        input: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_meta_chars::get_offset() as isize),
+        );
+        inner(input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fprintf {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::textwriter::TextWriter as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "fprintf",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "fprintf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fprintf(
         destination: crate::system::io::textwriter::TextWriter,
         format: ::unity2::Il2CppString,
         parameters: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`sprintf(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "sprintf", args = 2)]
-    pub fn sprintf(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::io::textwriter::TextWriter,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fprintf::get_offset() as isize),
+        );
+        inner(destination, format, parameters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sprintf {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "sprintf",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "sprintf",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sprintf(
         format: ::unity2::Il2CppString,
         parameters: ::unity2::Array<crate::system::object::Object>,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FormatOct(::unity2::Il2CppString, bool, i32, i32, bool, u16, crate::system::object::Object)` overload"]
-    #[method(name = "FormatOct", args = 7)]
-    pub fn format_oct(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sprintf::get_offset() as isize),
+        );
+        inner(format, parameters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_format_oct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "FormatOct",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "FormatOct",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn format_oct(
         native_format: ::unity2::Il2CppString,
         alternate: bool,
         field_length: i32,
@@ -74,11 +478,75 @@ impl Tools {
         left2_right: bool,
         padding: u16,
         value: crate::system::object::Object,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FormatHex(::unity2::Il2CppString, bool, i32, i32, bool, u16, crate::system::object::Object)` overload"]
-    #[method(name = "FormatHex", args = 7)]
-    pub fn format_hex(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            i32,
+            i32,
+            bool,
+            u16,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_format_oct::get_offset() as isize),
+        );
+        inner(
+            native_format,
+            alternate,
+            field_length,
+            field_precision,
+            left2_right,
+            padding,
+            value,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_format_hex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "FormatHex",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "FormatHex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn format_hex(
         native_format: ::unity2::Il2CppString,
         alternate: bool,
         field_length: i32,
@@ -86,11 +554,77 @@ impl Tools {
         left2_right: bool,
         padding: u16,
         value: crate::system::object::Object,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FormatNumber(::unity2::Il2CppString, bool, i32, i32, bool, bool, bool, u16, crate::system::object::Object)` overload"]
-    #[method(name = "FormatNumber", args = 9)]
-    pub fn format_number(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            i32,
+            i32,
+            bool,
+            u16,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_format_hex::get_offset() as isize),
+        );
+        inner(
+            native_format,
+            alternate,
+            field_length,
+            field_precision,
+            left2_right,
+            padding,
+            value,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_format_number {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                "FormatNumber",
+                9,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    "FormatNumber",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn format_number(
         native_format: ::unity2::Il2CppString,
         alternate: bool,
         field_length: i32,
@@ -100,9 +634,264 @@ impl Tools {
         positive_space: bool,
         padding: u16,
         value: crate::system::object::Object,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            i32,
+            i32,
+            bool,
+            bool,
+            bool,
+            u16,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_format_number::get_offset() as isize),
+        );
+        inner(
+            native_format,
+            alternate,
+            field_length,
+            field_precision,
+            left2_right,
+            positive_sign,
+            positive_space,
+            padding,
+            value,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tools as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tools as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-tools")]
+impl Tools {
+    #[doc = "`IsNumericType(crate::system::object::Object)` overload"]
+    pub fn is_numeric_type(o: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __Tools_unity2_raw::is_numeric_type(
+                ::core::convert::Into::into(o),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPositive(crate::system::object::Object, bool)` overload"]
+    pub fn is_positive(
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+        zero_is_positive: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            __Tools_unity2_raw::is_positive(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(zero_is_positive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToUnsigned(crate::system::object::Object)` overload"]
+    pub fn to_unsigned(
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            __Tools_unity2_raw::to_unsigned(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToInteger(crate::system::object::Object, bool)` overload"]
+    pub fn to_integer(
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+        round: impl ::core::convert::Into<bool>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            __Tools_unity2_raw::to_integer(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(round),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnboxToLong(crate::system::object::Object, bool)` overload"]
+    pub fn unbox_to_long(
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+        round: impl ::core::convert::Into<bool>,
+    ) -> i64 {
+        unsafe {
+            __Tools_unity2_raw::unbox_to_long(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(round),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReplaceMetaChars(::unity2::Il2CppString)` overload"]
+    pub fn replace_meta_chars(
+        input: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Tools_unity2_raw::replace_meta_chars(
+                ::core::convert::Into::into(input),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`fprintf(crate::system::io::textwriter::TextWriter, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    pub fn fprintf(
+        destination: impl ::core::convert::Into<crate::system::io::textwriter::TextWriter>,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parameters: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            __Tools_unity2_raw::fprintf(
+                ::core::convert::Into::into(destination),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(parameters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`sprintf(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
+    pub fn sprintf(
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parameters: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Tools_unity2_raw::sprintf(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(parameters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FormatOct(::unity2::Il2CppString, bool, i32, i32, bool, u16, crate::system::object::Object)` overload"]
+    pub fn format_oct(
+        native_format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        alternate: impl ::core::convert::Into<bool>,
+        field_length: impl ::core::convert::Into<i32>,
+        field_precision: impl ::core::convert::Into<i32>,
+        left2_right: impl ::core::convert::Into<bool>,
+        padding: impl ::core::convert::Into<u16>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Tools_unity2_raw::format_oct(
+                ::core::convert::Into::into(native_format),
+                ::core::convert::Into::into(alternate),
+                ::core::convert::Into::into(field_length),
+                ::core::convert::Into::into(field_precision),
+                ::core::convert::Into::into(left2_right),
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FormatHex(::unity2::Il2CppString, bool, i32, i32, bool, u16, crate::system::object::Object)` overload"]
+    pub fn format_hex(
+        native_format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        alternate: impl ::core::convert::Into<bool>,
+        field_length: impl ::core::convert::Into<i32>,
+        field_precision: impl ::core::convert::Into<i32>,
+        left2_right: impl ::core::convert::Into<bool>,
+        padding: impl ::core::convert::Into<u16>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Tools_unity2_raw::format_hex(
+                ::core::convert::Into::into(native_format),
+                ::core::convert::Into::into(alternate),
+                ::core::convert::Into::into(field_length),
+                ::core::convert::Into::into(field_precision),
+                ::core::convert::Into::into(left2_right),
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FormatNumber(::unity2::Il2CppString, bool, i32, i32, bool, bool, bool, u16, crate::system::object::Object)` overload"]
+    pub fn format_number(
+        native_format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        alternate: impl ::core::convert::Into<bool>,
+        field_length: impl ::core::convert::Into<i32>,
+        field_precision: impl ::core::convert::Into<i32>,
+        left2_right: impl ::core::convert::Into<bool>,
+        positive_sign: impl ::core::convert::Into<bool>,
+        positive_space: impl ::core::convert::Into<bool>,
+        padding: impl ::core::convert::Into<u16>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Tools_unity2_raw::format_number(
+                ::core::convert::Into::into(native_format),
+                ::core::convert::Into::into(alternate),
+                ::core::convert::Into::into(field_length),
+                ::core::convert::Into::into(field_precision),
+                ::core::convert::Into::into(left2_right),
+                ::core::convert::Into::into(positive_sign),
+                ::core::convert::Into::into(positive_space),
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __Tools_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-tools")]
+pub mod prelude {
+    pub use super::ITools;
+    pub use super::Tools;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

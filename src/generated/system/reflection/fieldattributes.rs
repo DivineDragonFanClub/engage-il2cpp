@@ -124,3 +124,17 @@ mod __types {
 
 #[cfg(feature = "system-reflection-fieldattributes-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-fieldattributes")]
+pub mod prelude {
+    pub use super::FieldAttributes;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

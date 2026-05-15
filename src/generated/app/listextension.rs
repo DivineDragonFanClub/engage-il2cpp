@@ -15,3 +15,80 @@ mod __types {
 
 #[cfg(feature = "app-listextension-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-listextension")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ListExtension_unity2_raw {
+    use super::*;
+}
+
+#[cfg(feature = "app-listextension")]
+impl ListExtension {
+    pub fn shuffle<M0: ::unity2::IlType + ::core::marker::Copy>(
+        list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        rand: impl ::core::convert::Into<crate::app::random_2::Random_2>,
+    ) -> crate::system::collections::generic::list_1::List_1<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ListExtension as ::unity2::ClassIdentity>::class(),
+                "Shuffle",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ListExtension as ::unity2::ClassIdentity>::NAME,
+                "Shuffle",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::list_1::List_1<M0>,
+                crate::app::random_2::Random_2,
+                ::unity2::OptionalMethod,
+            )
+                -> crate::system::collections::generic::list_1::List_1<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(list),
+                ::core::convert::Into::into(rand),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-listextension")]
+pub mod prelude {
+    pub use super::IListExtension;
+    pub use super::ListExtension;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

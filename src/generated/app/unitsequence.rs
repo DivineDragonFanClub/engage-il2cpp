@@ -13,19 +13,13 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSequence")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
-    pub struct UnitSequence {
-        #[rename(name = "待機中")]
-        pub _unnamed: crate::app::unitsequence::UnitSequence_Action,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitsequence/UnitSequence_Action.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct UnitSequence_Action {
-        pub _unnamed: crate::app::unitanim::UnitAnim_Types,
+        pub 起動モーション: crate::app::unitanim::UnitAnim_Types,
+        pub 常駐モーション: crate::app::unitanim::UnitAnim_Types,
+        pub 正面回転: bool,
     }
 
     impl ::unity2::ClassIdentity for UnitSequence_Action {
@@ -48,18 +42,101 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSequence")]
+    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
+    pub struct UnitSequence {
+        #[rename(name = "待機中")]
+        pub 待機中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "カーソル")]
+        pub カーソル: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "掴み中")]
+        pub 掴み中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "移動中")]
+        pub 移動中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "移動後")]
+        pub 移動後: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "敵選択中")]
+        pub 敵選択中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "戦闘中")]
+        pub 戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "戦闘後")]
+        pub 戦闘後: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "杖戦闘中")]
+        pub 杖戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "ガード中")]
+        pub ガード中: crate::app::unitsequence::UnitSequence_Action,
+    }
 }
 
 #[cfg(feature = "app-unitsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitsequence")]
-#[::unity2::methods]
-impl UnitSequence {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: UnitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-unitsequence")]
+pub trait IUnitSequenceMethods: IUnitSequence {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitsequence")]
+impl<__T: IUnitSequence> IUnitSequenceMethods for __T {}
 
 #[cfg(feature = "app-unitsequence")]
 impl UnitSequence {
@@ -75,4 +152,27 @@ impl UnitSequence {
         <Self as IUnitSequenceMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-unitsequence")]
+pub mod prelude {
+    pub use super::IUnitSequence;
+    pub use super::IUnitSequenceMethods;
+    pub use super::UnitSequence;
+    pub use super::UnitSequence_Action;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    #[cfg(feature = "app-singletonscriptableobject_1")]
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusCapture")]
+    #[parent(crate::system::object::Object)]
+    pub struct VersusCapture {
+        #[static_field]
+        #[rename(name = "OpponentPos")]
+        pub opponent_pos: crate::unity_engine::vector3::Vector3,
+        #[static_field]
+        #[rename(name = "PlayerPos")]
+        pub player_pos: crate::unity_engine::vector3::Vector3,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuscapture/VersusCapture_Preset.md"))]
     #[repr(C)]
     #[derive(
@@ -52,52 +64,302 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusCapture")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusCapture {
-        #[static_field]
-        #[rename(name = "OpponentPos")]
-        pub opponent_pos: crate::unity_engine::vector3::Vector3,
-        #[static_field]
-        #[rename(name = "PlayerPos")]
-        pub player_pos: crate::unity_engine::vector3::Vector3,
-    }
 }
 
 #[cfg(feature = "app-versuscapture-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versuscapture")]
-#[::unity2::methods]
-impl VersusCapture {
-    #[doc = "`DoCapture(crate::app::versuscapture::VersusCapture_Preset, bool)` overload"]
-    #[method(name = "DoCapture", args = 2)]
-    pub fn do_capture(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VersusCapture_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_capture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::versuscapture::VersusCapture_Preset as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusCapture as ::unity2::ClassIdentity>::class(),
+                "DoCapture",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusCapture as ::unity2::ClassIdentity>::NAME,
+                    "DoCapture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_capture(
         preset: crate::app::versuscapture::VersusCapture_Preset,
         is_reverse: bool,
-    ) -> crate::unity_engine::texture2d::Texture2D;
-
-    #[doc = "`SaveTex(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SaveTex", args = 2)]
-    pub fn save_tex(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture2d::Texture2D {
+        let inner: extern "C" fn(
+            crate::app::versuscapture::VersusCapture_Preset,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_do_capture::get_offset() as isize),
+        );
+        inner(preset, is_reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_tex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusCapture as ::unity2::ClassIdentity>::class(),
+                "SaveTex",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusCapture as ::unity2::ClassIdentity>::NAME,
+                    "SaveTex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_tex(
         tex: crate::unity_engine::texture2d::Texture2D,
         file_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetDirectory()` overload"]
-    #[method(name = "GetDirectory", args = 0)]
-    pub fn get_directory() -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture2d::Texture2D,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_tex::get_offset() as isize),
+        );
+        inner(tex, file_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusCapture as ::unity2::ClassIdentity>::class(),
+                "GetDirectory",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusCapture as ::unity2::ClassIdentity>::NAME,
+                    "GetDirectory",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_directory(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_directory::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusCapture as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusCapture as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: VersusCapture, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VersusCapture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusCapture as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusCapture as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-versuscapture")]
+impl VersusCapture {
+    #[doc = "`DoCapture(crate::app::versuscapture::VersusCapture_Preset, bool)` overload"]
+    pub fn do_capture(
+        preset: impl ::core::convert::Into<crate::app::versuscapture::VersusCapture_Preset>,
+        is_reverse: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::texture2d::Texture2D {
+        unsafe {
+            __VersusCapture_unity2_raw::do_capture(
+                ::core::convert::Into::into(preset),
+                ::core::convert::Into::into(is_reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveTex(crate::unity_engine::texture2d::Texture2D, ::unity2::Il2CppString)` overload"]
+    pub fn save_tex(
+        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __VersusCapture_unity2_raw::save_tex(
+                ::core::convert::Into::into(tex),
+                ::core::convert::Into::into(file_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDirectory()` overload"]
+    pub fn get_directory() -> ::unity2::Il2CppString {
+        unsafe { __VersusCapture_unity2_raw::get_directory(::core::option::Option::None) }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __VersusCapture_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-versuscapture")]
+pub trait IVersusCaptureMethods: IVersusCapture {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <VersusCapture as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VersusCapture_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-versuscapture")]
+impl<__T: IVersusCapture> IVersusCaptureMethods for __T {}
 
 #[cfg(feature = "app-versuscapture")]
 impl VersusCapture {
@@ -113,4 +375,21 @@ impl VersusCapture {
         <Self as IVersusCaptureMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-versuscapture")]
+pub mod prelude {
+    pub use super::IVersusCapture;
+    pub use super::IVersusCaptureMethods;
+    pub use super::VersusCapture;
+    pub use super::VersusCapture_Preset;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

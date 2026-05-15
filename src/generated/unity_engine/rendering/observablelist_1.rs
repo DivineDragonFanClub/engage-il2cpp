@@ -204,3 +204,13 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-rendering-observablelist_1")]
+pub mod prelude {
+    pub use super::IObservableList_1;
+    pub use super::IObservableList_1Methods;
+    pub use super::ObservableList_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

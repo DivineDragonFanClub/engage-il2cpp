@@ -17,88 +17,1023 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-mappopup")]
-#[::unity2::methods]
-impl MapPopup {
-    #[doc = "`GetPopupPos(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetPopupPos", args = 1)]
-    pub fn get_popup_pos(unit: crate::app::unit::Unit) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetPopupPos(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "GetPopupPos", args = 1)]
-    pub fn get_popup_pos_2(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapPopup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_popup_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "GetPopupPos",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "GetPopupPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_popup_pos(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_popup_pos::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_popup_pos_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "GetPopupPos",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "GetPopupPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_popup_pos_2(
         side: crate::app::battleinfoside::BattleInfoSide,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetRoot()` overload"]
-    #[method(name = "GetRoot", args = 0)]
-    pub fn get_root() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`PlayDamage(crate::app::battleinfoside::BattleInfoSide, i32, crate::app::battlescene::BattleScene_Result)` overload"]
-    #[method(name = "PlayDamage", args = 3)]
-    pub fn play_damage(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_popup_pos_2::get_offset() as isize),
+        );
+        inner(side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "GetRoot",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "GetRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayDamage",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayDamage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_damage(
         side: crate::app::battleinfoside::BattleInfoSide,
         value: i32,
         result: crate::app::battlescene::BattleScene_Result,
-    ) -> ();
-
-    #[doc = "`PlayDamage(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "PlayDamage", args = 2)]
-    pub fn play_damage_2(unit: crate::app::unit::Unit, value: i32) -> ();
-
-    #[doc = "`PlayHeal(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "PlayHeal", args = 2)]
-    pub fn play_heal(unit: crate::app::unit::Unit, value: i32) -> ();
-
-    #[doc = "`PlayHeal(crate::unity_engine::vector3::Vector3, i32)` overload"]
-    #[method(name = "PlayHeal", args = 2)]
-    pub fn play_heal_2(pos: crate::unity_engine::vector3::Vector3, value: i32) -> ();
-
-    #[doc = "`PlayDamage(crate::unity_engine::vector3::Vector3, i32)` overload"]
-    #[method(name = "PlayDamage", args = 2)]
-    pub fn play_damage_3(pos: crate::unity_engine::vector3::Vector3, value: i32) -> ();
-
-    #[doc = "`PlayCritical(crate::unity_engine::vector3::Vector3, i32)` overload"]
-    #[method(name = "PlayCritical", args = 2)]
-    pub fn play_critical(pos: crate::unity_engine::vector3::Vector3, value: i32) -> ();
-
-    #[doc = "`PlayChainAttack(crate::unity_engine::vector3::Vector3, i32)` overload"]
-    #[method(name = "PlayChainAttack", args = 2)]
-    pub fn play_chain_attack(pos: crate::unity_engine::vector3::Vector3, value: i32) -> ();
-
-    #[doc = "`PlaySkill(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "PlaySkill", args = 2)]
-    pub fn play_skill(unit: crate::app::unit::Unit, skill: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`PlayText(crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayText", args = 3)]
-    pub fn play_text(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::battleinfoside::BattleInfoSide,
+            i32,
+            crate::app::battlescene::BattleScene_Result,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_damage::get_offset() as isize),
+        );
+        inner(side, value, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_damage_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayDamage",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayDamage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_damage_2(
+        unit: crate::app::unit::Unit,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_damage_2::get_offset() as isize),
+            );
+        inner(unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayHeal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayHeal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_heal(
+        unit: crate::app::unit::Unit,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_heal::get_offset() as isize),
+            );
+        inner(unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_heal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayHeal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayHeal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_heal_2(
+        pos: crate::unity_engine::vector3::Vector3,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_heal_2::get_offset() as isize),
+        );
+        inner(pos, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_damage_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayDamage",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayDamage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_damage_3(
+        pos: crate::unity_engine::vector3::Vector3,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_damage_3::get_offset() as isize),
+        );
+        inner(pos, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_critical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayCritical",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayCritical",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_critical(
+        pos: crate::unity_engine::vector3::Vector3,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_critical::get_offset() as isize),
+        );
+        inner(pos, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_chain_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayChainAttack",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayChainAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_chain_attack(
+        pos: crate::unity_engine::vector3::Vector3,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_chain_attack::get_offset() as isize),
+        );
+        inner(pos, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlaySkill",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlaySkill",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_skill(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_skill::get_offset() as isize),
+        );
+        inner(unit, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayText",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_text(
         pos: crate::unity_engine::vector3::Vector3,
         color: crate::unity_engine::color::Color,
         text: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`PlayPopup(crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayPopup", args = 2)]
-    pub fn play_popup(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color::Color,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_text::get_offset() as isize),
+        );
+        inner(pos, color, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_popup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayPopup",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayPopup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_popup(
         side: crate::app::battleinfoside::BattleInfoSide,
         name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`PlayPopup(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayPopup", args = 2)]
-    pub fn play_popup_2(unit: crate::app::unit::Unit, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`PlayPopup(crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayPopup", args = 2)]
-    pub fn play_popup_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_popup::get_offset() as isize),
+        );
+        inner(side, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_popup_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayPopup",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayPopup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_popup_2(
+        unit: crate::app::unit::Unit,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_popup_2::get_offset() as isize),
+        );
+        inner(unit, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_popup_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                "PlayPopup",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    "PlayPopup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_popup_3(
         pos: crate::unity_engine::vector3::Vector3,
         name: ::unity2::Il2CppString,
-    ) -> crate::combat::hudpopup::HUDPopup;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::hudpopup::HUDPopup {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_popup_3::get_offset() as isize),
+        );
+        inner(pos, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPopup as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPopup as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapPopup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mappopup")]
+impl MapPopup {
+    #[doc = "`GetPopupPos(crate::app::unit::Unit)` overload"]
+    pub fn get_popup_pos(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __MapPopup_unity2_raw::get_popup_pos(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPopupPos(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    pub fn get_popup_pos_2(
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __MapPopup_unity2_raw::get_popup_pos_2(
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRoot()` overload"]
+    pub fn get_root() -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __MapPopup_unity2_raw::get_root(::core::option::Option::None) }
+    }
+    #[doc = "`PlayDamage(crate::app::battleinfoside::BattleInfoSide, i32, crate::app::battlescene::BattleScene_Result)` overload"]
+    pub fn play_damage(
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        value: impl ::core::convert::Into<i32>,
+        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_damage(
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayDamage(crate::app::unit::Unit, i32)` overload"]
+    pub fn play_damage_2(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_damage_2(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayHeal(crate::app::unit::Unit, i32)` overload"]
+    pub fn play_heal(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_heal(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayHeal(crate::unity_engine::vector3::Vector3, i32)` overload"]
+    pub fn play_heal_2(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_heal_2(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayDamage(crate::unity_engine::vector3::Vector3, i32)` overload"]
+    pub fn play_damage_3(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_damage_3(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayCritical(crate::unity_engine::vector3::Vector3, i32)` overload"]
+    pub fn play_critical(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_critical(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayChainAttack(crate::unity_engine::vector3::Vector3, i32)` overload"]
+    pub fn play_chain_attack(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_chain_attack(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlaySkill(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
+    pub fn play_skill(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_skill(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayText(crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]
+    pub fn play_text(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_text(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayPopup(crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]
+    pub fn play_popup(
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_popup(
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayPopup(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]
+    pub fn play_popup_2(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __MapPopup_unity2_raw::play_popup_2(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayPopup(crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]
+    pub fn play_popup_3(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::combat::hudpopup::HUDPopup {
+        unsafe {
+            __MapPopup_unity2_raw::play_popup_3(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mappopup")]
+pub trait IMapPopupMethods: IMapPopup {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapPopup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapPopup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mappopup")]
+impl<__T: IMapPopup> IMapPopupMethods for __T {}
 
 #[cfg(feature = "app-mappopup")]
 impl MapPopup {
@@ -114,4 +1049,14 @@ impl MapPopup {
         <Self as IMapPopupMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mappopup")]
+pub mod prelude {
+    pub use super::IMapPopup;
+    pub use super::IMapPopupMethods;
+    pub use super::MapPopup;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

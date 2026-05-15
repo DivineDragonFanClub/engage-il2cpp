@@ -22,9 +22,79 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-searchresult")]
-#[::unity2::methods]
-impl SearchResult {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SearchResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_user_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SearchResult as ::unity2::ClassIdentity>::class(),
+                "get_UserPath",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SearchResult as ::unity2::ClassIdentity>::NAME,
+                    "get_UserPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_user_path(
+        this: SearchResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SearchResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_user_path::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-searchresult")]
+pub trait ISearchResultMethods: ISearchResult {
     #[doc = "`get_UserPath()` overload"]
-    #[method(name = "get_UserPath", args = 0)]
-    pub fn get_user_path(self) -> ::unity2::Il2CppString;
+    fn get_user_path(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <SearchResult as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SearchResult_unity2_raw::get_user_path(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-io-searchresult")]
+impl<__T: ISearchResult> ISearchResultMethods for __T {}
+
+#[cfg(feature = "system-io-searchresult")]
+pub mod prelude {
+    pub use super::ISearchResult;
+    pub use super::ISearchResultMethods;
+    pub use super::SearchResult;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

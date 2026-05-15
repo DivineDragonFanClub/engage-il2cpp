@@ -15,13 +15,136 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-imapdeploy_interface")]
-#[::unity2::methods]
-impl IMapDeploy_Interface {
-    #[doc = "`SetBufferA()` overload"]
-    #[method(name = "SetBufferA", args = 0)]
-    pub fn set_buffer_a(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IMapDeploy_Interface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_buffer_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IMapDeploy_Interface as ::unity2::ClassIdentity>::class(),
+                "SetBufferA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IMapDeploy_Interface as ::unity2::ClassIdentity>::NAME,
+                    "SetBufferA",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_buffer_a(
+        this: IMapDeploy_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_buffer_a::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_buffer_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IMapDeploy_Interface as ::unity2::ClassIdentity>::class(),
+                "SetBufferB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IMapDeploy_Interface as ::unity2::ClassIdentity>::NAME,
+                    "SetBufferB",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_buffer_b(
+        this: IMapDeploy_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_buffer_b::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-imapdeploy_interface")]
+pub trait IIMapDeploy_InterfaceMethods: IIMapDeploy_Interface {
+    #[doc = "`SetBufferA()` overload"]
+    fn set_buffer_a(self) -> () {
+        unsafe {
+            let __receiver = <IMapDeploy_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IMapDeploy_Interface_unity2_raw::set_buffer_a(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetBufferB()` overload"]
-    #[method(name = "SetBufferB", args = 0)]
-    pub fn set_buffer_b(self) -> ();
+    fn set_buffer_b(self) -> () {
+        unsafe {
+            let __receiver = <IMapDeploy_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IMapDeploy_Interface_unity2_raw::set_buffer_b(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-imapdeploy_interface")]
+impl<__T: IIMapDeploy_Interface> IIMapDeploy_InterfaceMethods for __T {}
+
+#[cfg(feature = "app-imapdeploy_interface")]
+pub mod prelude {
+    pub use super::IIMapDeploy_Interface;
+    pub use super::IIMapDeploy_InterfaceMethods;
+    pub use super::IMapDeploy_Interface;
 }

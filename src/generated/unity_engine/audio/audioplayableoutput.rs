@@ -41,35 +41,312 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-audio-audioplayableoutput")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AudioPlayableOutput_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioPlayableOutput as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AudioPlayableOutput,
+        handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AudioPlayableOutput,
+            crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioPlayableOutput as ::unity2::ClassIdentity>::class(),
+                "GetHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                    "GetHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle(
+        this: AudioPlayableOutput,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
+        let inner : extern "C" fn (AudioPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_handle :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_explicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutput :: PlayableOutput as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioPlayableOutput as ::unity2::ClassIdentity>::class(),
+                "op_Explicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                    "op_Explicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_explicit(
+        output: crate::unity_engine::playables::playableoutput::PlayableOutput,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput {
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: audio :: audioplayableoutput :: AudioPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_explicit :: get_offset () as isize) ,) ;
+        inner(output, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_evaluate_on_seek {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioPlayableOutput as ::unity2::ClassIdentity>::class(),
+                "SetEvaluateOnSeek",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                    "SetEvaluateOnSeek",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_evaluate_on_seek(
+        this: AudioPlayableOutput,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AudioPlayableOutput, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_evaluate_on_seek::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_evaluate_on_seek {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioPlayableOutput as ::unity2::ClassIdentity>::class(),
+                "InternalSetEvaluateOnSeek",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetEvaluateOnSeek",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_evaluate_on_seek(
+        output: *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_evaluate_on_seek::get_offset() as isize),
+        );
+        inner(output, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
+impl AudioPlayableOutput {
+    #[doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]
+    pub fn op_explicit(
+        output: impl ::core::convert::Into<
+            crate::unity_engine::playables::playableoutput::PlayableOutput,
+        >,
+    ) -> crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput {
+        unsafe {
+            __AudioPlayableOutput_unity2_raw::op_explicit(
+                ::core::convert::Into::into(output),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetEvaluateOnSeek(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, bool)` overload"]
+    pub fn internal_set_evaluate_on_seek(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+            >::uninit();
+            __AudioPlayableOutput_unity2_raw::internal_set_evaluate_on_seek(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
 impl AudioPlayableOutput {
     #[doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
-    #[method(name = ".ctor", args = 1)]
     pub fn ctor(
         self,
-        handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-    ) -> ();
-
+        handle: impl ::core::convert::Into<
+            crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+        >,
+    ) -> () {
+        unsafe {
+            __AudioPlayableOutput_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetHandle()` overload"]
-    #[method(name = "GetHandle", args = 0)]
     pub fn get_handle(
         self,
-    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
-
-    #[doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]
-    #[method(name = "op_Explicit", args = 1)]
-    pub fn op_explicit(
-        output: crate::unity_engine::playables::playableoutput::PlayableOutput,
-    ) -> crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput;
-
+    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
+        unsafe { __AudioPlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None) }
+    }
     #[doc = "`SetEvaluateOnSeek(bool)` overload"]
-    #[method(name = "SetEvaluateOnSeek", args = 1)]
-    pub fn set_evaluate_on_seek(self, value: bool) -> ();
+    pub fn set_evaluate_on_seek(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __AudioPlayableOutput_unity2_raw::set_evaluate_on_seek(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`InternalSetEvaluateOnSeek(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, bool)` overload"]
-    #[method(name = "InternalSetEvaluateOnSeek", args = 2)]
-    pub fn internal_set_evaluate_on_seek(
-        output: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        value: bool,
-    ) -> ();
+#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
+pub mod prelude {
+    pub use super::AudioPlayableOutput;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

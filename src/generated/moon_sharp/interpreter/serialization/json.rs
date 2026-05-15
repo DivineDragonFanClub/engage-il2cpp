@@ -2,5 +2,11 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-serialization-json-jsonnull-types"))]
 pub mod jsonnull;
+#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
+pub use jsonnull::IJsonNullMethods;
+#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull-types")]
+pub use jsonnull::{IJsonNull, JsonNull};
 #[cfg(any(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter-types"))]
 pub mod jsontableconverter;
+#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter-types")]
+pub use jsontableconverter::{IJsonTableConverter, JsonTableConverter};

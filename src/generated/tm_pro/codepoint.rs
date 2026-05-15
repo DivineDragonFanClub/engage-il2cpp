@@ -76,3 +76,12 @@ mod __types {
 
 #[cfg(feature = "tm_pro-codepoint-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-codepoint")]
+pub mod prelude {
+    pub use super::CodePoint;
+    pub use super::ICodePoint;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

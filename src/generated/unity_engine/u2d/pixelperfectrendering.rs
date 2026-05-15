@@ -17,9 +17,75 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PixelPerfectRendering_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixel_snap_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PixelPerfectRendering as ::unity2::ClassIdentity>::class(),
+                "set_pixelSnapSpacing",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PixelPerfectRendering as ::unity2::ClassIdentity>::NAME,
+                    "set_pixelSnapSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixel_snap_spacing(
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixel_snap_spacing::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
 impl PixelPerfectRendering {
     #[doc = "`set_pixelSnapSpacing(f32)` overload"]
-    #[method(name = "set_pixelSnapSpacing", args = 1)]
-    pub fn set_pixel_snap_spacing(value: f32) -> ();
+    pub fn set_pixel_snap_spacing(value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __PixelPerfectRendering_unity2_raw::set_pixel_snap_spacing(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
+pub mod prelude {
+    pub use super::IPixelPerfectRendering;
+    pub use super::PixelPerfectRendering;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

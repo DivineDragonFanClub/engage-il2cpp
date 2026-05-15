@@ -31,81 +31,741 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-mapcollisions")]
-#[::unity2::methods]
-impl MapCollisions {
-    #[doc = "`CreateBorder(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "CreateBorder", args = 5)]
-    pub fn create_border(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapCollisions_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreateBorder",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreateBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_border(
         prefab: crate::unity_engine::gameobject::GameObject,
         parent: crate::unity_engine::gameobject::GameObject,
         name: ::unity2::Il2CppString,
         pos: crate::unity_engine::vector3::Vector3,
         scale: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetMinHeight(i32, i32)` overload"]
-    #[method(name = "GetMinHeight", args = 2)]
-    pub fn get_min_height(x: i32, z: i32) -> f32;
-
-    #[doc = "`CreateBorder(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32, i32)` overload"]
-    #[method(name = "CreateBorder", args = 5)]
-    pub fn create_border_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_border::get_offset() as isize),
+        );
+        inner(prefab, parent, name, pos, scale, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "GetMinHeight",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "GetMinHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_height(
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_min_height::get_offset() as isize),
+            );
+        inner(x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_border_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreateBorder",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreateBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_border_2(
         prefab: crate::unity_engine::gameobject::GameObject,
         parent: crate::unity_engine::gameobject::GameObject,
         name: ::unity2::Il2CppString,
         x: i32,
         z: i32,
-    ) -> ();
-
-    #[doc = "`CreateEdge(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32, i32, crate::app::dir_2::Dir_Type)` overload"]
-    #[method(name = "CreateEdge", args = 6)]
-    pub fn create_edge(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_border_2::get_offset() as isize),
+        );
+        inner(prefab, parent, name, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_edge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreateEdge",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreateEdge",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_edge(
         prefab: crate::unity_engine::gameobject::GameObject,
         parent: crate::unity_engine::gameobject::GameObject,
         name: ::unity2::Il2CppString,
         x: i32,
         z: i32,
         mask: crate::app::dir_2::Dir_Type,
-    ) -> ();
-
-    #[doc = "`CreateChild(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateChild", args = 1)]
-    pub fn create_child(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            i32,
+            i32,
+            crate::app::dir_2::Dir_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_edge::get_offset() as isize),
+        );
+        inner(prefab, parent, name, x, z, mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_child {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreateChild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreateChild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_child(
+        this: MapCollisions,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> ();
-
-    #[doc = "`CreteaCombatBorders(crate::app::battlecalculator::BattleCalculator)` overload"]
-    #[method(name = "CreteaCombatBorders", args = 1)]
-    pub fn cretea_combat_borders(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            MapCollisions,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_child::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(this: MapCollisions, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCollisions, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cretea_combat_borders {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreteaCombatBorders",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreteaCombatBorders",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cretea_combat_borders(
+        this: MapCollisions,
         calculator: crate::app::battlecalculator::BattleCalculator,
-    ) -> ();
-
-    #[doc = "`CreteaCombatBorders(bool, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "CreteaCombatBorders", args = 2)]
-    pub fn cretea_combat_borders_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapCollisions,
+            crate::app::battlecalculator::BattleCalculator,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cretea_combat_borders::get_offset() as isize),
+        );
+        inner(this, calculator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cretea_combat_borders_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "CreteaCombatBorders",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "CreteaCombatBorders",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cretea_combat_borders_2(
+        this: MapCollisions,
         can_sky_battle: bool,
         allow_side: crate::app::battleinfoside::BattleInfoSide,
-    ) -> ();
-
-    #[doc = "`DeleteCombatBorders()` overload"]
-    #[method(name = "DeleteCombatBorders", args = 0)]
-    pub fn delete_combat_borders(self) -> ();
-
-    #[doc = "`TryCreateInstance()` overload"]
-    #[method(name = "TryCreateInstance", args = 0)]
-    pub fn try_create_instance() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapCollisions,
+            bool,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cretea_combat_borders_2::get_offset() as isize),
+        );
+        inner(this, can_sky_battle, allow_side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_combat_borders {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "DeleteCombatBorders",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "DeleteCombatBorders",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_combat_borders(
+        this: MapCollisions,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapCollisions, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_combat_borders::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                "TryCreateInstance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    "TryCreateInstance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_create_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_create_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCollisions as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapCollisions as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapCollisions, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCollisions, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-mapcollisions")]
+impl MapCollisions {
+    #[doc = "`CreateBorder(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn create_border(
+        prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        scale: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __MapCollisions_unity2_raw::create_border(
+                ::core::convert::Into::into(prefab),
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMinHeight(i32, i32)` overload"]
+    pub fn get_min_height(
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __MapCollisions_unity2_raw::get_min_height(
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBorder(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32, i32)` overload"]
+    pub fn create_border_2(
+        prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapCollisions_unity2_raw::create_border_2(
+                ::core::convert::Into::into(prefab),
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateEdge(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32, i32, crate::app::dir_2::Dir_Type)` overload"]
+    pub fn create_edge(
+        prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        mask: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
+    ) -> () {
+        unsafe {
+            __MapCollisions_unity2_raw::create_edge(
+                ::core::convert::Into::into(prefab),
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryCreateInstance()` overload"]
+    pub fn try_create_instance() -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __MapCollisions_unity2_raw::try_create_instance(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapcollisions")]
+pub trait IMapCollisionsMethods: IMapCollisions {
+    #[doc = "`CreateChild(::unity2::Il2CppString)` overload"]
+    fn create_child(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::create_child(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup()` overload"]
+    fn setup(self) -> () {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::setup(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreteaCombatBorders(crate::app::battlecalculator::BattleCalculator)` overload"]
+    fn cretea_combat_borders(
+        self,
+        calculator: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::cretea_combat_borders(
+                __receiver,
+                ::core::convert::Into::into(calculator),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreteaCombatBorders(bool, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn cretea_combat_borders_2(
+        self,
+        can_sky_battle: impl ::core::convert::Into<bool>,
+        allow_side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::cretea_combat_borders_2(
+                __receiver,
+                ::core::convert::Into::into(can_sky_battle),
+                ::core::convert::Into::into(allow_side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteCombatBorders()` overload"]
+    fn delete_combat_borders(self) -> () {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::delete_combat_borders(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapCollisions as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapCollisions_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapcollisions")]
+impl<__T: IMapCollisions> IMapCollisionsMethods for __T {}
 
 #[cfg(feature = "app-mapcollisions")]
 impl MapCollisions {
@@ -121,4 +781,29 @@ impl MapCollisions {
         <Self as IMapCollisionsMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mapcollisions")]
+pub mod prelude {
+    pub use super::IMapCollisions;
+    pub use super::IMapCollisionsMethods;
+    pub use super::MapCollisions;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

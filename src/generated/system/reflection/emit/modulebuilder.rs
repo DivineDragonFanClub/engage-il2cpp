@@ -16,3 +16,15 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-modulebuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-modulebuilder")]
+pub mod prelude {
+    pub use super::IModuleBuilder;
+    pub use super::ModuleBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::module::IModule;
+    #[cfg(feature = "system-reflection-module")]
+    pub use crate::system::reflection::module::IModuleMethods;
+}

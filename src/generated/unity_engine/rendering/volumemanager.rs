@@ -43,169 +43,1698 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-volumemanager")]
-#[::unity2::methods]
-impl VolumeManager {
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::unity_engine::rendering::volumemanager::VolumeManager;
-
-    #[doc = "`get_stack()` overload"]
-    #[method(name = "get_stack", args = 0)]
-    pub fn get_stack(self) -> crate::unity_engine::rendering::volumestack::VolumeStack;
-
-    #[doc = "`set_stack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
-    #[method(name = "set_stack", args = 1)]
-    pub fn set_stack(self, value: crate::unity_engine::rendering::volumestack::VolumeStack) -> ();
-
-    #[doc = "`get_baseComponentTypes()` overload"]
-    #[method(name = "get_baseComponentTypes", args = 0)]
-    pub fn get_base_component_types(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>;
-
-    #[doc = "`set_baseComponentTypes(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>)` overload"]
-    #[method(name = "set_baseComponentTypes", args = 1)]
-    pub fn set_base_component_types(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VolumeManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::volumemanager::VolumeManager {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::volumemanager::VolumeManager =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_instance::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "get_stack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "get_stack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stack(
+        this: VolumeManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::volumestack::VolumeStack {
+        let inner: extern "C" fn(
+            VolumeManager,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::volumestack::VolumeStack = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_stack::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_stack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "set_stack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "set_stack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_stack(
+        this: VolumeManager,
+        value: crate::unity_engine::rendering::volumestack::VolumeStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_stack::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_component_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "get_baseComponentTypes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "get_baseComponentTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_component_types(
+        this: VolumeManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
+    {
+        let inner : extern "C" fn (VolumeManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_base_component_types :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_base_component_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                    ::unity2::SystemType,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "set_baseComponentTypes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "set_baseComponentTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_base_component_types(
+        this: VolumeManager,
         value: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
             ::unity2::SystemType,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CreateStack()` overload"]
-    #[method(name = "CreateStack", args = 0)]
-    pub fn create_stack(self) -> crate::unity_engine::rendering::volumestack::VolumeStack;
-
-    #[doc = "`DestroyStack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
-    #[method(name = "DestroyStack", args = 1)]
-    pub fn destroy_stack(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_base_component_types::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: VolumeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VolumeManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_stack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "CreateStack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "CreateStack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_stack(
+        this: VolumeManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::volumestack::VolumeStack {
+        let inner: extern "C" fn(
+            VolumeManager,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::volumestack::VolumeStack = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_stack::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_stack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "DestroyStack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "DestroyStack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_stack(
+        this: VolumeManager,
         stack: crate::unity_engine::rendering::volumestack::VolumeStack,
-    ) -> ();
-
-    #[doc = "`ReloadBaseTypes()` overload"]
-    #[method(name = "ReloadBaseTypes", args = 0)]
-    pub fn reload_base_types(self) -> ();
-
-    #[doc = "`Register(crate::unity_engine::rendering::volume::Volume, i32)` overload"]
-    #[method(name = "Register", args = 2)]
-    pub fn register(self, volume: crate::unity_engine::rendering::volume::Volume, layer: i32)
-        -> ();
-
-    #[doc = "`Unregister(crate::unity_engine::rendering::volume::Volume, i32)` overload"]
-    #[method(name = "Unregister", args = 2)]
-    pub fn unregister(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy_stack::get_offset() as isize),
+        );
+        inner(this, stack, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reload_base_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "ReloadBaseTypes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "ReloadBaseTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reload_base_types(
+        this: VolumeManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VolumeManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reload_base_types::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "Register",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "Register",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register(
+        this: VolumeManager,
         volume: crate::unity_engine::rendering::volume::Volume,
         layer: i32,
-    ) -> ();
-
-    #[doc = "`SetLayerDirty(i32)` overload"]
-    #[method(name = "SetLayerDirty", args = 1)]
-    pub fn set_layer_dirty(self, layer: i32) -> ();
-
-    #[doc = "`UpdateVolumeLayer(crate::unity_engine::rendering::volume::Volume, i32, i32)` overload"]
-    #[method(name = "UpdateVolumeLayer", args = 3)]
-    pub fn update_volume_layer(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volume::Volume,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register::get_offset() as isize),
+        );
+        inner(this, volume, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unregister {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "Unregister",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "Unregister",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unregister(
+        this: VolumeManager,
+        volume: crate::unity_engine::rendering::volume::Volume,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volume::Volume,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unregister::get_offset() as isize),
+        );
+        inner(this, volume, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_layer_dirty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "SetLayerDirty",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "SetLayerDirty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_layer_dirty(
+        this: VolumeManager,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VolumeManager, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_layer_dirty::get_offset() as isize),
+            );
+        inner(this, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_volume_layer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "UpdateVolumeLayer",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "UpdateVolumeLayer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_volume_layer(
+        this: VolumeManager,
         volume: crate::unity_engine::rendering::volume::Volume,
         prev_layer: i32,
         new_layer: i32,
-    ) -> ();
-
-    #[doc = "`OverrideData(crate::unity_engine::rendering::volumestack::VolumeStack, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>, f32)` overload"]
-    #[method(name = "OverrideData", args = 3)]
-    pub fn override_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volume::Volume,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_volume_layer::get_offset() as isize),
+        );
+        inner(this, volume, prev_layer, new_layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_override_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "OverrideData",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "OverrideData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn override_data(
+        this: VolumeManager,
         stack: crate::unity_engine::rendering::volumestack::VolumeStack,
         components: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::volumecomponent::VolumeComponent,
         >,
         interp_factor: f32,
-    ) -> ();
-
-    #[doc = "`ReplaceData(crate::unity_engine::rendering::volumestack::VolumeStack, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>)` overload"]
-    #[method(name = "ReplaceData", args = 2)]
-    pub fn replace_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volumecomponent::VolumeComponent,
+            >,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_override_data::get_offset() as isize),
+        );
+        inner(this, stack, components, interp_factor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "ReplaceData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_data(
+        this: VolumeManager,
         stack: crate::unity_engine::rendering::volumestack::VolumeStack,
         components: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::volumecomponent::VolumeComponent,
         >,
-    ) -> ();
-
-    #[doc = "`CheckBaseTypes()` overload"]
-    #[method(name = "CheckBaseTypes", args = 0)]
-    pub fn check_base_types(self) -> ();
-
-    #[doc = "`CheckStack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
-    #[method(name = "CheckStack", args = 1)]
-    pub fn check_stack(self, stack: crate::unity_engine::rendering::volumestack::VolumeStack)
-        -> ();
-
-    #[doc = "`Update(crate::unity_engine::transform::Transform, crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "Update", args = 2)]
-    pub fn update(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volumecomponent::VolumeComponent,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_data::get_offset() as isize),
+        );
+        inner(this, stack, components, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_base_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "CheckBaseTypes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "CheckBaseTypes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_base_types(
+        this: VolumeManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VolumeManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_base_types::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_stack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "CheckStack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "CheckStack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_stack(
+        this: VolumeManager,
+        stack: crate::unity_engine::rendering::volumestack::VolumeStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_stack::get_offset() as isize),
+        );
+        inner(this, stack, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "Update",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: VolumeManager,
         trigger: crate::unity_engine::transform::Transform,
         layer_mask: crate::unity_engine::layermask::LayerMask,
-    ) -> ();
-
-    #[doc = "`Update(crate::unity_engine::rendering::volumestack::VolumeStack, crate::unity_engine::transform::Transform, crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "Update", args = 3)]
-    pub fn update_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, trigger, layer_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumestack :: VolumeStack as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "Update",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_2(
+        this: VolumeManager,
         stack: crate::unity_engine::rendering::volumestack::VolumeStack,
         trigger: crate::unity_engine::transform::Transform,
         layer_mask: crate::unity_engine::layermask::LayerMask,
-    ) -> ();
-
-    #[doc = "`UpdateByVolumeProfile(crate::unity_engine::rendering::volumeprofile::VolumeProfile)` overload"]
-    #[method(name = "UpdateByVolumeProfile", args = 1)]
-    pub fn update_by_volume_profile(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumestack::VolumeStack,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_2::get_offset() as isize),
+        );
+        inner(this, stack, trigger, layer_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_by_volume_profile {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "UpdateByVolumeProfile",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "UpdateByVolumeProfile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_by_volume_profile(
+        this: VolumeManager,
         profile: crate::unity_engine::rendering::volumeprofile::VolumeProfile,
-    ) -> ();
-
-    #[doc = "`GetVolumes(crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "GetVolumes", args = 1)]
-    pub fn get_volumes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::rendering::volumeprofile::VolumeProfile,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_by_volume_profile::get_offset() as isize),
+        );
+        inner(this, profile, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_volumes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "GetVolumes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "GetVolumes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_volumes(
+        this: VolumeManager,
         layer_mask: crate::unity_engine::layermask::LayerMask,
-    ) -> ::unity2::Array<crate::unity_engine::rendering::volume::Volume>;
-
-    #[doc = "`GrabVolumes(crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "GrabVolumes", args = 1)]
-    pub fn grab_volumes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::volume::Volume> {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::rendering::volume::Volume,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_volumes::get_offset() as isize),
+        );
+        inner(this, layer_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_grab_volumes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "GrabVolumes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "GrabVolumes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn grab_volumes(
+        this: VolumeManager,
         mask: crate::unity_engine::layermask::LayerMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::unity_engine::rendering::volume::Volume,
-    >;
-
-    #[doc = "`SortByPriority(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volume::Volume>)` overload"]
-    #[method(name = "SortByPriority", args = 1)]
-    pub fn sort_by_priority(
+    > {
+        let inner: extern "C" fn(
+            VolumeManager,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::volume::Volume,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_grab_volumes::get_offset() as isize),
+        );
+        inner(this, mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_by_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::rendering::volume::Volume,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "SortByPriority",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "SortByPriority",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_by_priority(
         volumes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::volume::Volume,
         >,
-    ) -> ();
-
-    #[doc = "`IsVolumeRenderedByCamera(crate::unity_engine::rendering::volume::Volume, crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "IsVolumeRenderedByCamera", args = 2)]
-    pub fn is_volume_rendered_by_camera(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volume::Volume,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_sort_by_priority::get_offset() as isize),
+        );
+        inner(volumes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_volume_rendered_by_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "IsVolumeRenderedByCamera",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    "IsVolumeRenderedByCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_volume_rendered_by_camera(
         volume: crate::unity_engine::rendering::volume::Volume,
         camera: crate::unity_engine::camera::Camera,
-    ) -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::volume::Volume,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_volume_rendered_by_camera::get_offset() as isize),
+        );
+        inner(volume, camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-volumemanager")]
+impl VolumeManager {
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance() -> crate::unity_engine::rendering::volumemanager::VolumeManager {
+        unsafe { __VolumeManager_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`SortByPriority(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volume::Volume>)` overload"]
+    pub fn sort_by_priority(
+        volumes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volume::Volume,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __VolumeManager_unity2_raw::sort_by_priority(
+                ::core::convert::Into::into(volumes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsVolumeRenderedByCamera(crate::unity_engine::rendering::volume::Volume, crate::unity_engine::camera::Camera)` overload"]
+    pub fn is_volume_rendered_by_camera(
+        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> bool {
+        unsafe {
+            __VolumeManager_unity2_raw::is_volume_rendered_by_camera(
+                ::core::convert::Into::into(volume),
+                ::core::convert::Into::into(camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __VolumeManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-volumemanager")]
+pub trait IVolumeManagerMethods: IVolumeManager {
+    #[doc = "`get_stack()` overload"]
+    fn get_stack(self) -> crate::unity_engine::rendering::volumestack::VolumeStack {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::get_stack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_stack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
+    fn set_stack(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::set_stack(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_baseComponentTypes()` overload"]
+    fn get_base_component_types(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
+    {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::get_base_component_types(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_baseComponentTypes(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>)` overload"]
+    fn set_base_component_types(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::set_base_component_types(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateStack()` overload"]
+    fn create_stack(self) -> crate::unity_engine::rendering::volumestack::VolumeStack {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::create_stack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DestroyStack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
+    fn destroy_stack(
+        self,
+        stack: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::destroy_stack(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReloadBaseTypes()` overload"]
+    fn reload_base_types(self) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::reload_base_types(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Register(crate::unity_engine::rendering::volume::Volume, i32)` overload"]
+    fn register(
+        self,
+        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::register(
+                __receiver,
+                ::core::convert::Into::into(volume),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Unregister(crate::unity_engine::rendering::volume::Volume, i32)` overload"]
+    fn unregister(
+        self,
+        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::unregister(
+                __receiver,
+                ::core::convert::Into::into(volume),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn is_component_active_in_mask<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <VolumeManager as ::unity2::ClassIdentity>::class(),
+                "IsComponentActiveInMask",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <VolumeManager as ::unity2::ClassIdentity>::NAME,
+                "IsComponentActiveInMask",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                VolumeManager,
+                crate::unity_engine::layermask::LayerMask,
+                ::unity2::OptionalMethod,
+            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`SetLayerDirty(i32)` overload"]
+    fn set_layer_dirty(self, layer: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::set_layer_dirty(
+                __receiver,
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateVolumeLayer(crate::unity_engine::rendering::volume::Volume, i32, i32)` overload"]
+    fn update_volume_layer(
+        self,
+        volume: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
+        prev_layer: impl ::core::convert::Into<i32>,
+        new_layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::update_volume_layer(
+                __receiver,
+                ::core::convert::Into::into(volume),
+                ::core::convert::Into::into(prev_layer),
+                ::core::convert::Into::into(new_layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OverrideData(crate::unity_engine::rendering::volumestack::VolumeStack, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>, f32)` overload"]
+    fn override_data(
+        self,
+        stack: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+        components: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volumecomponent::VolumeComponent,
+            >,
+        >,
+        interp_factor: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::override_data(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::convert::Into::into(components),
+                ::core::convert::Into::into(interp_factor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReplaceData(crate::unity_engine::rendering::volumestack::VolumeStack, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>)` overload"]
+    fn replace_data(
+        self,
+        stack: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+        components: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::volumecomponent::VolumeComponent,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::replace_data(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::convert::Into::into(components),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckBaseTypes()` overload"]
+    fn check_base_types(self) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::check_base_types(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CheckStack(crate::unity_engine::rendering::volumestack::VolumeStack)` overload"]
+    fn check_stack(
+        self,
+        stack: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::check_stack(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update(crate::unity_engine::transform::Transform, crate::unity_engine::layermask::LayerMask)` overload"]
+    fn update(
+        self,
+        trigger: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(trigger),
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update(crate::unity_engine::rendering::volumestack::VolumeStack, crate::unity_engine::transform::Transform, crate::unity_engine::layermask::LayerMask)` overload"]
+    fn update_2(
+        self,
+        stack: impl ::core::convert::Into<crate::unity_engine::rendering::volumestack::VolumeStack>,
+        trigger: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::update_2(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::convert::Into::into(trigger),
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateByVolumeProfile(crate::unity_engine::rendering::volumeprofile::VolumeProfile)` overload"]
+    fn update_by_volume_profile(
+        self,
+        profile: impl ::core::convert::Into<
+            crate::unity_engine::rendering::volumeprofile::VolumeProfile,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::update_by_volume_profile(
+                __receiver,
+                ::core::convert::Into::into(profile),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVolumes(crate::unity_engine::layermask::LayerMask)` overload"]
+    fn get_volumes(
+        self,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::volume::Volume> {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::get_volumes(
+                __receiver,
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GrabVolumes(crate::unity_engine::layermask::LayerMask)` overload"]
+    fn grab_volumes(
+        self,
+        mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::volume::Volume,
+    > {
+        unsafe {
+            let __receiver = <VolumeManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VolumeManager_unity2_raw::grab_volumes(
+                __receiver,
+                ::core::convert::Into::into(mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-volumemanager")]
+impl<__T: IVolumeManager> IVolumeManagerMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-volumemanager")]
 impl VolumeManager {
@@ -221,4 +1750,14 @@ impl VolumeManager {
         <Self as IVolumeManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-volumemanager")]
+pub mod prelude {
+    pub use super::IVolumeManager;
+    pub use super::IVolumeManagerMethods;
+    pub use super::VolumeManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

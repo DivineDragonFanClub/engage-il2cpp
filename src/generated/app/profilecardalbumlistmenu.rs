@@ -13,41 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_DisposeEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardAlbumListMenu.DisposeEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardAlbumListMenu_DisposeEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_DeleteEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardAlbumListMenu.DeleteEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardAlbumListMenu_DeleteEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ProfileCardAlbumListMenu {
-        #[rename(name = "m_ProfileCardRoot")]
-        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
-        #[rename(name = "m_DeleteEventHandler")]
-        pub m_delete_event_handler:
-            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
-        #[rename(name = "m_DisposeEventHandler")]
-        pub m_dispose_event_handler:
-            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
-        #[rename(name = "m_FirstTimeUpdateCardRoot")]
-        pub m_first_time_update_card_root: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -96,6 +61,25 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ProfileCardAlbumListMenu {
+        #[rename(name = "m_ProfileCardRoot")]
+        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+        #[rename(name = "m_DeleteEventHandler")]
+        pub m_delete_event_handler:
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
+        #[rename(name = "m_DisposeEventHandler")]
+        pub m_dispose_event_handler:
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
+        #[rename(name = "m_FirstTimeUpdateCardRoot")]
+        pub m_first_time_update_card_root: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -103,73 +87,66 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardAlbumListMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_DeleteEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardAlbumListMenu.DeleteEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardAlbumListMenu_DeleteEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenu/ProfileCardAlbumListMenu_DisposeEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardAlbumListMenu.DisposeEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardAlbumListMenu_DisposeEventHandler {}
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenu-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardalbumlistmenu")]
-#[::unity2::methods]
-impl ProfileCardAlbumListMenu_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenu")]
-impl ProfileCardAlbumListMenu_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardAlbumListMenu_DisposeEventHandler),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardAlbumListMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenucontent :: ProfileCardAlbumListMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DeleteEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                7,
+                param_types,
+                true,
             )
         });
-        <Self as IProfileCardAlbumListMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenu")]
-#[::unity2::methods]
-impl ProfileCardAlbumListMenu_DeleteEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenu")]
-impl ProfileCardAlbumListMenu_DeleteEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardAlbumListMenu_DeleteEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardAlbumListMenu_DeleteEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenu")]
-#[::unity2::methods]
-impl ProfileCardAlbumListMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 7)]
-    pub fn create_bind(
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         menu_content: crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent,
         profiled_card_root: crate::app::profilecardroot::ProfileCardRoot,
@@ -177,18 +154,120 @@ impl ProfileCardAlbumListMenu {
         decide_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler,
         delete_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DeleteEventHandler,
         dispose_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DisposeEventHandler,
-    ) -> crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu;
-
-    #[doc = "`CreateMenuItem(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` overload"]
-    #[method(name = "CreateMenuItem", args = 1)]
-    pub fn create_menu_item(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent,
+            crate::app::profilecardroot::ProfileCardRoot,
+            i32,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(
+            super_,
+            menu_content,
+            profiled_card_root,
+            initial_index,
+            decide_event_handler,
+            delete_event_handler,
+            dispose_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_menu_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "CreateMenuItem",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateMenuItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_menu_item(
         decide_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
+    {
+        let inner: extern "C" fn(
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_menu_item::get_offset() as isize),
+        );
+        inner(decide_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DeleteEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardAlbumListMenu,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -198,36 +277,555 @@ impl ProfileCardAlbumListMenu {
         decide_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler,
         delete_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DeleteEventHandler,
         dispose_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DisposeEventHandler,
-    ) -> ();
-
-    #[doc = "`OnBuild(bool)` overload"]
-    #[method(name = "OnBuild", args = 1)]
-    pub fn on_build(self, is_first_build: bool) -> ();
-
-    #[doc = "`RebuildMenu()` overload"]
-    #[method(name = "RebuildMenu", args = 0)]
-    pub fn rebuild_menu(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`RemoveProfileCard(i32)` overload"]
-    #[method(name = "RemoveProfileCard", args = 1)]
-    pub fn remove_profile_card(self, index: i32) -> ();
-
-    #[doc = "`UpdateCardRoot(crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "UpdateCardRoot", args = 1)]
-    pub fn update_card_root(self, profile_card: crate::app::profilecard::ProfileCard) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::profilecardroot::ProfileCardRoot,
+            i32,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            profile_card_root,
+            initial_index,
+            decide_event_handler,
+            delete_event_handler,
+            dispose_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "OnBuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "OnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build(
+        this: ProfileCardAlbumListMenu,
+        is_first_build: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardAlbumListMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_build::get_offset() as isize),
+            );
+        inner(this, is_first_build, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "RebuildMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "RebuildMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebuild_menu(
+        this: ProfileCardAlbumListMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardAlbumListMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rebuild_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: ProfileCardAlbumListMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_profile_card {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "RemoveProfileCard",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "RemoveProfileCard",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_profile_card(
+        this: ProfileCardAlbumListMenu,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardAlbumListMenu, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_profile_card::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_card_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "UpdateCardRoot",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCardRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_card_root(
+        this: ProfileCardAlbumListMenu,
+        profile_card: crate::app::profilecard::ProfileCard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu,
+            crate::app::profilecard::ProfileCard,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_card_root::get_offset() as isize),
+        );
+        inner(this, profile_card, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: ProfileCardAlbumListMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: ProfileCardAlbumListMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardAlbumListMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl ProfileCardAlbumListMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        menu_content: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent,
+        >,
+        profiled_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
+        initial_index: impl ::core::convert::Into<i32>,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+        >,
+        delete_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
+        >,
+        dispose_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
+        >,
+    ) -> crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu {
+        unsafe {
+            __ProfileCardAlbumListMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(profiled_card_root),
+                ::core::convert::Into::into(initial_index),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::convert::Into::into(delete_event_handler),
+                ::core::convert::Into::into(dispose_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateMenuItem(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` overload"]
+    pub fn create_menu_item(
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
+    {
+        unsafe {
+            __ProfileCardAlbumListMenu_unity2_raw::create_menu_item(
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+pub trait IProfileCardAlbumListMenuMethods: IProfileCardAlbumListMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
+        initial_index: impl ::core::convert::Into<i32>,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
+        >,
+        delete_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DeleteEventHandler,
+        >,
+        dispose_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DisposeEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(profile_card_root),
+                ::core::convert::Into::into(initial_index),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::convert::Into::into(delete_event_handler),
+                ::core::convert::Into::into(dispose_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBuild(bool)` overload"]
+    fn on_build(self, is_first_build: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::on_build(
+                __receiver,
+                ::core::convert::Into::into(is_first_build),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RebuildMenu()` overload"]
+    fn rebuild_menu(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::rebuild_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RemoveProfileCard(i32)` overload"]
+    fn remove_profile_card(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::remove_profile_card(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateCardRoot(crate::app::profilecard::ProfileCard)` overload"]
+    fn update_card_root(
+        self,
+        profile_card: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::update_card_root(
+                __receiver,
+                ::core::convert::Into::into(profile_card),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardAlbumListMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardAlbumListMenu_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl<__T: IProfileCardAlbumListMenu> IProfileCardAlbumListMenuMethods for __T {}
 
 #[cfg(feature = "app-profilecardalbumlistmenu")]
 impl ProfileCardAlbumListMenu {
@@ -265,19 +863,161 @@ impl ProfileCardAlbumListMenu {
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenu")]
-#[::unity2::methods]
-impl ProfileCardAlbumListMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardAlbumListMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardAlbumListMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_Result2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardAlbumListMenu_DecideEventHandler,
         result: crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2,
         index: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DecideEventHandler,
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+pub trait IProfileCardAlbumListMenu_DecideEventHandlerMethods:
+    IProfileCardAlbumListMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2, i32)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2,
+        >,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl<__T: IProfileCardAlbumListMenu_DecideEventHandler>
+    IProfileCardAlbumListMenu_DecideEventHandlerMethods for __T
+{
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenu")]
@@ -294,4 +1034,366 @@ impl ProfileCardAlbumListMenu_DecideEventHandler {
         <Self as IProfileCardAlbumListMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardAlbumListMenu_DeleteEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DeleteEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DeleteEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardAlbumListMenu_DeleteEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DeleteEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DeleteEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DeleteEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardAlbumListMenu_DeleteEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DeleteEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+pub trait IProfileCardAlbumListMenu_DeleteEventHandlerMethods:
+    IProfileCardAlbumListMenu_DeleteEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DeleteEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DeleteEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DeleteEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DeleteEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl<__T: IProfileCardAlbumListMenu_DeleteEventHandler>
+    IProfileCardAlbumListMenu_DeleteEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl ProfileCardAlbumListMenu_DeleteEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListMenu_DeleteEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListMenu_DeleteEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardAlbumListMenu_DisposeEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardAlbumListMenu_DisposeEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DisposeEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardAlbumListMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardAlbumListMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardAlbumListMenu_DisposeEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+pub trait IProfileCardAlbumListMenu_DisposeEventHandlerMethods:
+    IProfileCardAlbumListMenu_DisposeEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DisposeEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenu_DisposeEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl<__T: IProfileCardAlbumListMenu_DisposeEventHandler>
+    IProfileCardAlbumListMenu_DisposeEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+impl ProfileCardAlbumListMenu_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListMenu_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenu")]
+pub mod prelude {
+    pub use super::IProfileCardAlbumListMenu;
+    pub use super::IProfileCardAlbumListMenuMethods;
+    pub use super::IProfileCardAlbumListMenu_DecideEventHandler;
+    pub use super::IProfileCardAlbumListMenu_DecideEventHandlerMethods;
+    pub use super::IProfileCardAlbumListMenu_DeleteEventHandler;
+    pub use super::IProfileCardAlbumListMenu_DeleteEventHandlerMethods;
+    pub use super::IProfileCardAlbumListMenu_DisposeEventHandler;
+    pub use super::IProfileCardAlbumListMenu_DisposeEventHandlerMethods;
+    pub use super::ProfileCardAlbumListMenu;
+    pub use super::ProfileCardAlbumListMenu_DecideEventHandler;
+    pub use super::ProfileCardAlbumListMenu_DeleteEventHandler;
+    pub use super::ProfileCardAlbumListMenu_DisposeEventHandler;
+    pub use super::ProfileCardAlbumListMenu_Result2;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

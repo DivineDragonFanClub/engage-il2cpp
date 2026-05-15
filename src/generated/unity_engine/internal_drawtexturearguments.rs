@@ -55,3 +55,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-internal_drawtexturearguments-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-internal_drawtexturearguments")]
+pub mod prelude {
+    pub use super::Internal_DrawTextureArguments;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

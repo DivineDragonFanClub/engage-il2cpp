@@ -18,13 +18,10 @@ mod __types {
 # [rename (name = "m_Status")] pub m_status : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationstatus :: AsyncOperationStatus ,
 # [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
 # [rename (name = "m_Version")] pub m_version : i32 ,
-# [rename (name = "m_DestroyedAction")] pub m_destroyed_action : crate :: root :: delegatelist_1 :: DelegateList_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
-# [rename (name = "m_CompletedActionT")] pub m_completed_action_t : crate :: root :: delegatelist_1 :: DelegateList_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > > ,
 # [rename (name = "m_OnDestroyAction")] pub m_on_destroy_action : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
 # [rename (name = "m_dependencyCompleteAction")] pub m_dependency_complete_action : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
 # [rename (name = "HasExecuted")] pub has_executed : bool ,
 # [rename (name = "m_InDeferredCallbackQueue")] pub m_in_deferred_callback_queue : bool ,
-# [rename (name = "m_UpdateCallbacks")] pub m_update_callbacks : crate :: root :: delegatelist_1 :: DelegateList_1 < f32 > ,
 # [rename (name = "m_UpdateCallback")] pub m_update_callback : crate :: system :: action_1 :: Action_1 < f32 > ,
 }
 }
@@ -223,15 +220,6 @@ impl<T0: ::unity2::ClassIdentity> AsyncOperationBase_1<T0> {
         release_dependencies_on_failure: bool,
     ) -> ();
 
-    #[doc = "`Start(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::root::delegatelist_1::DelegateList_1<f32>)` overload"]
-    #[method(name = "Start", args = 3)]
-    pub fn start(
-        self,
-        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
-        update_callbacks: crate::root::delegatelist_1::DelegateList_1<f32>,
-    ) -> ();
-
     #[doc = "`InvokeExecute()` overload"]
     #[method(name = "InvokeExecute", args = 0)]
     pub fn invoke_execute(self) -> ();
@@ -400,18 +388,6 @@ impl<T0: ::unity2::ClassIdentity> AsyncOperationBase_1<T0> {
         self,
     ) -> ();
 
-    #[doc = "`UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation.Start(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::root::delegatelist_1::DelegateList_1<f32>)` overload"]
-    #[method(
-        name = "UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation.Start",
-        args = 3
-    )]
-    pub fn unity_engine_resource_management_async_operations_i_async_operation_start(
-        self,
-        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
-        update_callbacks: crate::root::delegatelist_1::DelegateList_1<f32>,
-    ) -> ();
-
     #[doc = "`ReleaseDependencies()` overload"]
     #[method(name = "ReleaseDependencies", args = 0)]
     pub fn release_dependencies(self) -> ();
@@ -452,4 +428,14 @@ impl<T0: ::unity2::ClassIdentity> AsyncOperationBase_1<T0> {
         <Self as IAsyncOperationBase_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+pub mod prelude {
+    pub use super::AsyncOperationBase_1;
+    pub use super::IAsyncOperationBase_1;
+    pub use super::IAsyncOperationBase_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

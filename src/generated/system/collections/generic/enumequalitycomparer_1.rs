@@ -62,3 +62,16 @@ impl<T0: ::unity2::ClassIdentity> EnumEqualityComparer_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-enumequalitycomparer_1")]
+pub mod prelude {
+    pub use super::EnumEqualityComparer_1;
+    pub use super::IEnumEqualityComparer_1;
+    pub use super::IEnumEqualityComparer_1Methods;
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
+    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

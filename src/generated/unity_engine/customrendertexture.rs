@@ -18,3 +18,21 @@ mod __types {
 
 #[cfg(feature = "unity_engine-customrendertexture-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-customrendertexture")]
+pub mod prelude {
+    pub use super::CustomRenderTexture;
+    pub use super::ICustomRenderTexture;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::rendertexture::IRenderTexture;
+    #[cfg(feature = "unity_engine-rendertexture")]
+    pub use crate::unity_engine::rendertexture::IRenderTextureMethods;
+    pub use crate::unity_engine::texture::ITexture;
+    #[cfg(feature = "unity_engine-texture")]
+    pub use crate::unity_engine::texture::ITextureMethods;
+}

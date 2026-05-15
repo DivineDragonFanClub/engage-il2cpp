@@ -71,10 +71,6 @@ impl<T0: ::unity2::ClassIdentity> SingletonProcInst_1<T0> {
     #[method(name = "get_GlobalAssetPath", args = 0)]
     pub fn get_global_asset_path(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`LoadGlobalAssetAsync()` overload"]
-    #[method(name = "LoadGlobalAssetAsync", args = 0)]
-    pub fn load_global_asset_async(self) -> ();
-
     #[doc = "`IsLoadingGlobalAsset()` overload"]
     #[method(name = "IsLoadingGlobalAsset", args = 0)]
     pub fn is_loading_global_asset(self) -> bool;
@@ -132,4 +128,17 @@ impl<T0: ::unity2::ClassIdentity> SingletonProcInst_1<T0> {
         <Self as ISingletonProcInst_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-singletonprocinst_1")]
+pub mod prelude {
+    pub use super::ISingletonProcInst_1;
+    pub use super::ISingletonProcInst_1Methods;
+    pub use super::SingletonProcInst_1;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

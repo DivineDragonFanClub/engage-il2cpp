@@ -20,13 +20,91 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter")]
-#[::unity2::methods]
-impl ObjectValueConverter {
-    #[doc = "`SerializeObjectToDynValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "SerializeObjectToDynValue", args = 3)]
-    pub fn serialize_object_to_dyn_value(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ObjectValueConverter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize_object_to_dyn_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectValueConverter as ::unity2::ClassIdentity>::class(),
+                "SerializeObjectToDynValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectValueConverter as ::unity2::ClassIdentity>::NAME,
+                    "SerializeObjectToDynValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize_object_to_dyn_value(
         script: crate::moon_sharp::interpreter::script::Script,
         o: crate::system::object::Object,
         value_for_nulls: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize_object_to_dyn_value::get_offset() as isize),
+        );
+        inner(script, o, value_for_nulls, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter")]
+impl ObjectValueConverter {
+    #[doc = "`SerializeObjectToDynValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    pub fn serialize_object_to_dyn_value(
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        o: impl ::core::convert::Into<crate::system::object::Object>,
+        value_for_nulls: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            __ObjectValueConverter_unity2_raw::serialize_object_to_dyn_value(
+                ::core::convert::Into::into(script),
+                ::core::convert::Into::into(o),
+                ::core::convert::Into::into(value_for_nulls),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter")]
+pub mod prelude {
+    pub use super::IObjectValueConverter;
+    pub use super::ObjectValueConverter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

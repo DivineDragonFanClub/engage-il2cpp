@@ -18,12 +18,95 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
-#[::unity2::methods]
-impl TrackColorAttribute {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, r: f32, g: f32, b: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrackColorAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackColorAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackColorAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TrackColorAttribute,
+        r: f32,
+        g: f32,
+        b: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrackColorAttribute,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, r, g, b, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
+pub trait ITrackColorAttributeMethods: ITrackColorAttribute {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    fn ctor(
+        self,
+        r: impl ::core::convert::Into<f32>,
+        g: impl ::core::convert::Into<f32>,
+        b: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TrackColorAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TrackColorAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(r),
+                ::core::convert::Into::into(g),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
+impl<__T: ITrackColorAttribute> ITrackColorAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
 impl TrackColorAttribute {
@@ -39,4 +122,11 @@ impl TrackColorAttribute {
         <Self as ITrackColorAttributeMethods>::ctor(this, r, g, b);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
+pub mod prelude {
+    pub use super::ITrackColorAttribute;
+    pub use super::ITrackColorAttributeMethods;
+    pub use super::TrackColorAttribute;
 }

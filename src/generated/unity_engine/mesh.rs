@@ -73,143 +73,1131 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-mesh")]
-#[::unity2::methods(value)]
-impl Mesh_MeshDataArray {
-    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshImpl", args = 3)]
-    pub fn apply_to_mesh_impl(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mesh_MeshDataArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_mesh_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_mesh_impl(
         mesh: crate::unity_engine::mesh::Mesh,
         data: ::unity2::IntPtr,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`get_Length()` overload"]
-    #[method(name = "get_Length", args = 0)]
-    pub fn get_length(self) -> i32;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshAndDispose", args = 2)]
-    pub fn apply_to_mesh_and_dispose(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::IntPtr,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_mesh_impl::get_offset() as isize),
+        );
+        inner(mesh, data, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "get_Length",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "get_Length",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_length(
+        this: Mesh_MeshDataArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_length::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: Mesh_MeshDataArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_mesh_and_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshAndDispose",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshAndDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_mesh_and_dispose(
+        this: Mesh_MeshDataArray,
         mesh: crate::unity_engine::mesh::Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshesAndDispose", args = 2)]
-    pub fn apply_to_meshes_and_dispose(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            crate::unity_engine::mesh::Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_mesh_and_dispose::get_offset() as isize),
+        );
+        inner(this, mesh, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_meshes_and_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: mesh :: Mesh > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshesAndDispose",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshesAndDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_meshes_and_dispose(
+        this: Mesh_MeshDataArray,
         meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, mesh: crate::unity_engine::mesh::Mesh, check_read_write: bool) -> ();
-
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_meshes_and_dispose::get_offset() as isize),
+        );
+        inner(this, meshes, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Mesh_MeshDataArray,
+        mesh: crate::unity_engine::mesh::Mesh,
+        check_read_write: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            crate::unity_engine::mesh::Mesh,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, mesh, check_read_write, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::mesh::Mesh> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Mesh_MeshDataArray,
         meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
         meshes_count: i32,
         check_read_write: bool,
-    ) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(self, meshes_count: i32) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            meshes,
+            meshes_count,
+            check_read_write,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: Mesh_MeshDataArray,
+        meshes_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh_MeshDataArray, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_3::get_offset() as isize),
+            );
+        inner(this, meshes_count, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-mesh")]
-#[::unity2::methods]
-impl Mesh {
-    #[doc = "`Internal_Create(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = "Internal_Create", args = 1)]
-    pub fn internal_create(mono: crate::unity_engine::mesh::Mesh) -> ();
+impl Mesh_MeshDataArray {
+    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_mesh_impl(
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        data: impl ::core::convert::Into<::unity2::IntPtr>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_impl(
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`FromInstanceID(i32)` overload"]
-    #[method(name = "FromInstanceID", args = 1)]
-    pub fn from_instance_id(id: i32) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`get_indexFormat()` overload"]
-    #[method(name = "get_indexFormat", args = 0)]
-    pub fn get_index_format(self) -> crate::unity_engine::rendering::indexformat::IndexFormat;
-
-    #[doc = "`set_indexFormat(crate::unity_engine::rendering::indexformat::IndexFormat)` overload"]
-    #[method(name = "set_indexFormat", args = 1)]
-    pub fn set_index_format(
+#[cfg(feature = "unity_engine-mesh")]
+impl Mesh_MeshDataArray {
+    #[doc = "`get_Length()` overload"]
+    pub fn get_length(self) -> i32 {
+        unsafe { __Mesh_MeshDataArray_unity2_raw::get_length(self, ::core::option::Option::None) }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Mesh_MeshDataArray_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_mesh_and_dispose(
         self,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_and_dispose(
+                self,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_meshes_and_dispose(
+        self,
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_meshes_and_dispose(
+                self,
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
+    pub fn ctor(
+        self,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        check_read_write: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(check_read_write),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
+    pub fn ctor_2(
+        self,
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+        meshes_count: impl ::core::convert::Into<i32>,
+        check_read_write: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(meshes_count),
+                ::core::convert::Into::into(check_read_write),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor_3(self, meshes_count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor_3(
+                self,
+                ::core::convert::Into::into(meshes_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mesh_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "Internal_Create",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create(
+        mono: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_create::get_offset() as isize),
+            );
+        inner(mono, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_from_instance_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "FromInstanceID",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "FromInstanceID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn from_instance_id(
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_from_instance_id::get_offset() as isize),
+            );
+        inner(id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_indexFormat",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_indexFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_format(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::indexformat::IndexFormat {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::indexformat::IndexFormat = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_index_format::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: indexformat :: IndexFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_indexFormat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_indexFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_index_format(
+        this: Mesh,
         value: crate::unity_engine::rendering::indexformat::IndexFormat,
-    ) -> ();
-
-    #[doc = "`GetTotalIndexCount()` overload"]
-    #[method(name = "GetTotalIndexCount", args = 0)]
-    pub fn get_total_index_count(self) -> u32;
-
-    #[doc = "`SetIndexBufferParams(i32, crate::unity_engine::rendering::indexformat::IndexFormat)` overload"]
-    #[method(name = "SetIndexBufferParams", args = 2)]
-    pub fn set_index_buffer_params(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_index_format::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_total_index_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTotalIndexCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTotalIndexCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_total_index_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_total_index_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index_buffer_params {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: indexformat :: IndexFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndexBufferParams",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndexBufferParams",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_index_buffer_params(
+        this: Mesh,
         index_count: i32,
         format: crate::unity_engine::rendering::indexformat::IndexFormat,
-    ) -> ();
-
-    #[doc = "`InternalSetIndexBufferData(::unity2::IntPtr, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "InternalSetIndexBufferData", args = 6)]
-    pub fn internal_set_index_buffer_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_index_buffer_params::get_offset() as isize),
+        );
+        inner(this, index_count, format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_index_buffer_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "InternalSetIndexBufferData",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetIndexBufferData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_index_buffer_data(
+        this: Mesh,
         data: ::unity2::IntPtr,
         data_start: i32,
         mesh_buffer_start: i32,
         count: i32,
         elem_size: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`InternalSetIndexBufferDataFromArray(::unity2::IlInstance, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "InternalSetIndexBufferDataFromArray", args = 6)]
-    pub fn internal_set_index_buffer_data_from_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_index_buffer_data::get_offset() as isize),
+        );
+        inner(
+            this,
+            data,
+            data_start,
+            mesh_buffer_start,
+            count,
+            elem_size,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_index_buffer_data_from_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "InternalSetIndexBufferDataFromArray",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetIndexBufferDataFromArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_index_buffer_data_from_array(
+        this: Mesh,
         data: ::unity2::IlInstance,
         data_start: i32,
         mesh_buffer_start: i32,
         count: i32,
         elem_size: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetVertexBufferParamsFromPtr(i32, ::unity2::IntPtr, i32)` overload"]
-    #[method(name = "SetVertexBufferParamsFromPtr", args = 3)]
-    pub fn set_vertex_buffer_params_from_ptr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_index_buffer_data_from_array::get_offset() as isize),
+        );
+        inner(
+            this,
+            data,
+            data_start,
+            mesh_buffer_start,
+            count,
+            elem_size,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertex_buffer_params_from_ptr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertexBufferParamsFromPtr",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertexBufferParamsFromPtr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertex_buffer_params_from_ptr(
+        this: Mesh,
         vertex_count: i32,
         attributes_ptr: ::unity2::IntPtr,
         attributes_count: i32,
-    ) -> ();
-
-    #[doc = "`SetVertexBufferParamsFromArray(i32, ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "SetVertexBufferParamsFromArray", args = 2)]
-    pub fn set_vertex_buffer_params_from_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_vertex_buffer_params_from_ptr::get_offset() as isize),
+            );
+        inner(
+            this,
+            vertex_count,
+            attributes_ptr,
+            attributes_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertex_buffer_params_from_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertexBufferParamsFromArray",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertexBufferParamsFromArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertex_buffer_params_from_array(
+        this: Mesh,
         vertex_count: i32,
         attributes: ::unity2::Array<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> ();
-
-    #[doc = "`InternalSetVertexBufferData(i32, ::unity2::IntPtr, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "InternalSetVertexBufferData", args = 7)]
-    pub fn internal_set_vertex_buffer_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (Mesh , i32 , :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_vertex_buffer_params_from_array :: get_offset () as isize) ,) ;
+        inner(this, vertex_count, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_vertex_buffer_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "InternalSetVertexBufferData",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetVertexBufferData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_vertex_buffer_data(
+        this: Mesh,
         stream: i32,
         data: ::unity2::IntPtr,
         data_start: i32,
@@ -217,12 +1205,70 @@ impl Mesh {
         count: i32,
         elem_size: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`InternalSetVertexBufferDataFromArray(i32, ::unity2::IlInstance, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "InternalSetVertexBufferDataFromArray", args = 7)]
-    pub fn internal_set_vertex_buffer_data_from_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_vertex_buffer_data::get_offset() as isize),
+        );
+        inner(
+            this,
+            stream,
+            data,
+            data_start,
+            mesh_buffer_start,
+            count,
+            elem_size,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_vertex_buffer_data_from_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "InternalSetVertexBufferDataFromArray",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetVertexBufferDataFromArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_vertex_buffer_data_from_array(
+        this: Mesh,
         stream: i32,
         data: ::unity2::IlInstance,
         data_start: i32,
@@ -230,69 +1276,583 @@ impl Mesh {
         count: i32,
         elem_size: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetVertexAttributesAlloc()` overload"]
-    #[method(name = "GetVertexAttributesAlloc", args = 0)]
-    pub fn get_vertex_attributes_alloc(self) -> ::unity2::IlInstance;
-
-    #[doc = "`GetVertexAttributesArray(::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "GetVertexAttributesArray", args = 1)]
-    pub fn get_vertex_attributes_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_vertex_buffer_data_from_array::get_offset() as isize),
+        );
+        inner(
+            this,
+            stream,
+            data,
+            data_start,
+            mesh_buffer_start,
+            count,
+            elem_size,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes_alloc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributesAlloc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributesAlloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes_alloc(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IlInstance {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> ::unity2::IlInstance =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_vertex_attributes_alloc::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributesArray",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributesArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes_array(
+        this: Mesh,
         attributes: ::unity2::Array<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> i32;
-
-    #[doc = "`GetVertexAttributesList(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "GetVertexAttributesList", args = 1)]
-    pub fn get_vertex_attributes_list(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (Mesh , :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attributes_array :: get_offset () as isize) ,) ;
+        inner(this, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributesList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributesList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes_list(
+        this: Mesh,
         attributes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> i32;
-
-    #[doc = "`GetVertexAttributeCountImpl()` overload"]
-    #[method(name = "GetVertexAttributeCountImpl", args = 0)]
-    pub fn get_vertex_attribute_count_impl(self) -> i32;
-
-    #[doc = "`GetVertexAttribute(i32)` overload"]
-    #[method(name = "GetVertexAttribute", args = 1)]
-    pub fn get_vertex_attribute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (Mesh , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attributes_list :: get_offset () as isize) ,) ;
+        inner(this, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute_count_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributeCountImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributeCountImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute_count_impl(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_attribute_count_impl::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttribute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute(
+        this: Mesh,
         index: i32,
-    ) -> crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor;
-
-    #[doc = "`GetIndexStartImpl(i32)` overload"]
-    #[method(name = "GetIndexStartImpl", args = 1)]
-    pub fn get_index_start_impl(self, submesh: i32) -> u32;
-
-    #[doc = "`GetIndexCountImpl(i32)` overload"]
-    #[method(name = "GetIndexCountImpl", args = 1)]
-    pub fn get_index_count_impl(self, submesh: i32) -> u32;
-
-    #[doc = "`GetTrianglesCountImpl(i32)` overload"]
-    #[method(name = "GetTrianglesCountImpl", args = 1)]
-    pub fn get_triangles_count_impl(self, submesh: i32) -> u32;
-
-    #[doc = "`GetBaseVertexImpl(i32)` overload"]
-    #[method(name = "GetBaseVertexImpl", args = 1)]
-    pub fn get_base_vertex_impl(self, submesh: i32) -> u32;
-
-    #[doc = "`GetTrianglesImpl(i32, bool)` overload"]
-    #[method(name = "GetTrianglesImpl", args = 2)]
-    pub fn get_triangles_impl(self, submesh: i32, apply_base_vertex: bool) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetIndicesImpl(i32, bool)` overload"]
-    #[method(name = "GetIndicesImpl", args = 2)]
-    pub fn get_indices_impl(self, submesh: i32, apply_base_vertex: bool) -> ::unity2::Array<i32>;
-
-    #[doc = "`SetIndicesImpl(i32, crate::unity_engine::meshtopology::MeshTopology, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IlInstance, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetIndicesImpl", args = 8)]
-    pub fn set_indices_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor {
+        let inner : extern "C" fn (Mesh , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attribute :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_start_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndexStartImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndexStartImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_start_impl(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index_start_impl::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_count_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndexCountImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndexCountImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_count_impl(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index_count_impl::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_count_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTrianglesCountImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTrianglesCountImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_count_impl(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_triangles_count_impl::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_vertex_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBaseVertexImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBaseVertexImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_vertex_impl(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_base_vertex_impl::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTrianglesImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTrianglesImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_impl(
+        this: Mesh,
+        submesh: i32,
+        apply_base_vertex: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_impl::get_offset() as isize),
+        );
+        inner(this, submesh, apply_base_vertex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndicesImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndicesImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_impl(
+        this: Mesh,
+        submesh: i32,
+        apply_base_vertex: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_impl::get_offset() as isize),
+        );
+        inner(this, submesh, apply_base_vertex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: indexformat :: IndexFormat as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndicesImpl",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndicesImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_impl(
+        this: Mesh,
         submesh: i32,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         indices_format: crate::unity_engine::rendering::indexformat::IndexFormat,
@@ -301,12 +1861,72 @@ impl Mesh {
         array_size: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndicesNativeArrayImpl(i32, crate::unity_engine::meshtopology::MeshTopology, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IntPtr, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetIndicesNativeArrayImpl", args = 8)]
-    pub fn set_indices_native_array_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            submesh,
+            topology,
+            indices_format,
+            indices,
+            array_start,
+            array_size,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_native_array_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: indexformat :: IndexFormat as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndicesNativeArrayImpl",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndicesNativeArrayImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_native_array_impl(
+        this: Mesh,
         submesh: i32,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         indices_format: crate::unity_engine::rendering::indexformat::IndexFormat,
@@ -315,76 +1935,512 @@ impl Mesh {
         array_size: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`GetTrianglesNonAllocImpl(::unity2::Array<i32>, i32, bool)` overload"]
-    #[method(name = "GetTrianglesNonAllocImpl", args = 3)]
-    pub fn get_triangles_non_alloc_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_native_array_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            submesh,
+            topology,
+            indices_format,
+            indices,
+            array_start,
+            array_size,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_non_alloc_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTrianglesNonAllocImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTrianglesNonAllocImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_non_alloc_impl(
+        this: Mesh,
         values: ::unity2::Array<i32>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetTrianglesNonAllocImpl16(::unity2::Array<u16>, i32, bool)` overload"]
-    #[method(name = "GetTrianglesNonAllocImpl16", args = 3)]
-    pub fn get_triangles_non_alloc_impl16(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_non_alloc_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            values,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_non_alloc_impl16 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTrianglesNonAllocImpl16",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTrianglesNonAllocImpl16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_non_alloc_impl16(
+        this: Mesh,
         values: ::unity2::Array<u16>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetIndicesNonAllocImpl(::unity2::Array<i32>, i32, bool)` overload"]
-    #[method(name = "GetIndicesNonAllocImpl", args = 3)]
-    pub fn get_indices_non_alloc_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_non_alloc_impl16::get_offset() as isize),
+        );
+        inner(
+            this,
+            values,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_non_alloc_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndicesNonAllocImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndicesNonAllocImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_non_alloc_impl(
+        this: Mesh,
         values: ::unity2::Array<i32>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetIndicesNonAllocImpl16(::unity2::Array<u16>, i32, bool)` overload"]
-    #[method(name = "GetIndicesNonAllocImpl16", args = 3)]
-    pub fn get_indices_non_alloc_impl16(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_non_alloc_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            values,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_non_alloc_impl16 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndicesNonAllocImpl16",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndicesNonAllocImpl16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_non_alloc_impl16(
+        this: Mesh,
         values: ::unity2::Array<u16>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`PrintErrorCantAccessChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
-    #[method(name = "PrintErrorCantAccessChannel", args = 1)]
-    pub fn print_error_cant_access_channel(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_non_alloc_impl16::get_offset() as isize),
+        );
+        inner(
+            this,
+            values,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_print_error_cant_access_channel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "PrintErrorCantAccessChannel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "PrintErrorCantAccessChannel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn print_error_cant_access_channel(
+        this: Mesh,
         ch: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
-    ) -> ();
-
-    #[doc = "`HasVertexAttribute(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
-    #[method(name = "HasVertexAttribute", args = 1)]
-    pub fn has_vertex_attribute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_print_error_cant_access_channel::get_offset() as isize),
+        );
+        inner(this, ch, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_vertex_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "HasVertexAttribute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "HasVertexAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_vertex_attribute(
+        this: Mesh,
         attr: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
-    ) -> bool;
-
-    #[doc = "`GetVertexAttributeDimension(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
-    #[method(name = "GetVertexAttributeDimension", args = 1)]
-    pub fn get_vertex_attribute_dimension(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_vertex_attribute::get_offset() as isize),
+        );
+        inner(this, attr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute_dimension {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributeDimension",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributeDimension",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute_dimension(
+        this: Mesh,
         attr: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
-    ) -> i32;
-
-    #[doc = "`GetVertexAttributeFormat(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
-    #[method(name = "GetVertexAttributeFormat", args = 1)]
-    pub fn get_vertex_attribute_format(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_attribute_dimension::get_offset() as isize),
+        );
+        inner(this, attr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributeFormat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributeFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute_format(
+        this: Mesh,
         attr: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
-    ) -> crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat;
-
-    #[doc = "`SetArrayForChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetArrayForChannelImpl", args = 8)]
-    pub fn set_array_for_channel_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat {
+        let inner : extern "C" fn (Mesh , crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attribute_format :: get_offset () as isize) ,) ;
+        inner(this, attr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_array_for_channel_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetArrayForChannelImpl",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetArrayForChannelImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_array_for_channel_impl(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
@@ -393,12 +2449,72 @@ impl Mesh {
         values_start: i32,
         values_count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetNativeArrayForChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IntPtr, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetNativeArrayForChannelImpl", args = 8)]
-    pub fn set_native_array_for_channel_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_array_for_channel_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            format,
+            dim,
+            values,
+            array_size,
+            values_start,
+            values_count,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_native_array_for_channel_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNativeArrayForChannelImpl",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNativeArrayForChannelImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_native_array_for_channel_impl(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
@@ -407,313 +2523,2649 @@ impl Mesh {
         values_start: i32,
         values_count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetAllocArrayFromChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32)` overload"]
-    #[method(name = "GetAllocArrayFromChannelImpl", args = 3)]
-    pub fn get_alloc_array_from_channel_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_native_array_for_channel_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            format,
+            dim,
+            values,
+            array_size,
+            values_start,
+            values_count,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alloc_array_from_channel_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetAllocArrayFromChannelImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetAllocArrayFromChannelImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alloc_array_from_channel_impl(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
-    ) -> ::unity2::IlInstance;
-
-    #[doc = "`GetArrayFromChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance)` overload"]
-    #[method(name = "GetArrayFromChannelImpl", args = 4)]
-    pub fn get_array_from_channel_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IlInstance {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IlInstance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_alloc_array_from_channel_impl::get_offset() as isize),
+        );
+        inner(this, channel, format, dim, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_array_from_channel_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetArrayFromChannelImpl",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetArrayFromChannelImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_array_from_channel_impl(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
         values: ::unity2::IlInstance,
-    ) -> ();
-
-    #[doc = "`get_vertexBufferCount()` overload"]
-    #[method(name = "get_vertexBufferCount", args = 0)]
-    pub fn get_vertex_buffer_count(self) -> i32;
-
-    #[doc = "`GetNativeVertexBufferPtr(i32)` overload"]
-    #[method(name = "GetNativeVertexBufferPtr", args = 1)]
-    pub fn get_native_vertex_buffer_ptr(self, index: i32) -> ::unity2::IntPtr;
-
-    #[doc = "`GetNativeIndexBufferPtr()` overload"]
-    #[method(name = "GetNativeIndexBufferPtr", args = 0)]
-    pub fn get_native_index_buffer_ptr(self) -> ::unity2::IntPtr;
-
-    #[doc = "`get_blendShapeCount()` overload"]
-    #[method(name = "get_blendShapeCount", args = 0)]
-    pub fn get_blend_shape_count(self) -> i32;
-
-    #[doc = "`ClearBlendShapes()` overload"]
-    #[method(name = "ClearBlendShapes", args = 0)]
-    pub fn clear_blend_shapes(self) -> ();
-
-    #[doc = "`GetBlendShapeName(i32)` overload"]
-    #[method(name = "GetBlendShapeName", args = 1)]
-    pub fn get_blend_shape_name(self, shape_index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetBlendShapeIndex(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetBlendShapeIndex", args = 1)]
-    pub fn get_blend_shape_index(self, blend_shape_name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetBlendShapeFrameCount(i32)` overload"]
-    #[method(name = "GetBlendShapeFrameCount", args = 1)]
-    pub fn get_blend_shape_frame_count(self, shape_index: i32) -> i32;
-
-    #[doc = "`GetBlendShapeFrameWeight(i32, i32)` overload"]
-    #[method(name = "GetBlendShapeFrameWeight", args = 2)]
-    pub fn get_blend_shape_frame_weight(self, shape_index: i32, frame_index: i32) -> f32;
-
-    #[doc = "`GetBlendShapeFrameVertices(i32, i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "GetBlendShapeFrameVertices", args = 5)]
-    pub fn get_blend_shape_frame_vertices(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::IlInstance,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_array_from_channel_impl::get_offset() as isize),
+        );
+        inner(this, channel, format, dim, values, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_buffer_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_vertexBufferCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_vertexBufferCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_buffer_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_buffer_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_native_vertex_buffer_ptr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetNativeVertexBufferPtr",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetNativeVertexBufferPtr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_native_vertex_buffer_ptr(
+        this: Mesh,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_native_vertex_buffer_ptr::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_native_index_buffer_ptr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetNativeIndexBufferPtr",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetNativeIndexBufferPtr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_native_index_buffer_ptr(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_native_index_buffer_ptr::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_blendShapeCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_blendShapeCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_blend_shape_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_blend_shapes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "ClearBlendShapes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "ClearBlendShapes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_blend_shapes(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_blend_shapes::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBlendShapeName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBlendShapeName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_name(
+        this: Mesh,
+        shape_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_blend_shape_name::get_offset() as isize),
+            );
+        inner(this, shape_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBlendShapeIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBlendShapeIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_index(
+        this: Mesh,
+        blend_shape_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_blend_shape_index::get_offset() as isize),
+            );
+        inner(this, blend_shape_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_frame_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBlendShapeFrameCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBlendShapeFrameCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_frame_count(
+        this: Mesh,
+        shape_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_blend_shape_frame_count::get_offset() as isize),
+            );
+        inner(this, shape_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_frame_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBlendShapeFrameWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBlendShapeFrameWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_frame_weight(
+        this: Mesh,
+        shape_index: i32,
+        frame_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Mesh, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_blend_shape_frame_weight::get_offset() as isize),
+            );
+        inner(this, shape_index, frame_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blend_shape_frame_vertices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBlendShapeFrameVertices",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBlendShapeFrameVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_blend_shape_frame_vertices(
+        this: Mesh,
         shape_index: i32,
         frame_index: i32,
         delta_vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         delta_normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         delta_tangents: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`AddBlendShapeFrame(::unity2::Il2CppString, f32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "AddBlendShapeFrame", args = 5)]
-    pub fn add_blend_shape_frame(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_blend_shape_frame_vertices::get_offset() as isize),
+        );
+        inner(
+            this,
+            shape_index,
+            frame_index,
+            delta_vertices,
+            delta_normals,
+            delta_tangents,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_blend_shape_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "AddBlendShapeFrame",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "AddBlendShapeFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_blend_shape_frame(
+        this: Mesh,
         shape_name: ::unity2::Il2CppString,
         frame_weight: f32,
         delta_vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         delta_normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         delta_tangents: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`HasBoneWeights()` overload"]
-    #[method(name = "HasBoneWeights", args = 0)]
-    pub fn has_bone_weights(self) -> bool;
-
-    #[doc = "`GetBoneWeightsImpl()` overload"]
-    #[method(name = "GetBoneWeightsImpl", args = 0)]
-    pub fn get_bone_weights_impl(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>;
-
-    #[doc = "`SetBoneWeightsImpl(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
-    #[method(name = "SetBoneWeightsImpl", args = 1)]
-    pub fn set_bone_weights_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_blend_shape_frame::get_offset() as isize),
+        );
+        inner(
+            this,
+            shape_name,
+            frame_weight,
+            delta_vertices,
+            delta_normals,
+            delta_tangents,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_bone_weights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "HasBoneWeights",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "HasBoneWeights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_bone_weights(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_bone_weights::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_weights_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBoneWeightsImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBoneWeightsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_weights_impl(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bone_weights_impl::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bone_weights_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::boneweight::BoneWeight,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetBoneWeightsImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetBoneWeightsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bone_weights_impl(
+        this: Mesh,
         weights: ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
-    ) -> ();
-
-    #[doc = "`InternalSetBoneWeights(::unity2::IntPtr, i32, ::unity2::IntPtr, i32)` overload"]
-    #[method(name = "InternalSetBoneWeights", args = 4)]
-    pub fn internal_set_bone_weights(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bone_weights_impl::get_offset() as isize),
+        );
+        inner(this, weights, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_set_bone_weights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "InternalSetBoneWeights",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "InternalSetBoneWeights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_set_bone_weights(
+        this: Mesh,
         bones_per_vertex: ::unity2::IntPtr,
         bones_per_vertex_size: i32,
         weights: ::unity2::IntPtr,
         weights_size: i32,
-    ) -> ();
-
-    #[doc = "`GetAllBoneWeightsArraySize()` overload"]
-    #[method(name = "GetAllBoneWeightsArraySize", args = 0)]
-    pub fn get_all_bone_weights_array_size(self) -> i32;
-
-    #[doc = "`GetAllBoneWeightsArray()` overload"]
-    #[method(name = "GetAllBoneWeightsArray", args = 0)]
-    pub fn get_all_bone_weights_array(self) -> ::unity2::IntPtr;
-
-    #[doc = "`GetBonesPerVertexArray()` overload"]
-    #[method(name = "GetBonesPerVertexArray", args = 0)]
-    pub fn get_bones_per_vertex_array(self) -> ::unity2::IntPtr;
-
-    #[doc = "`GetBindposeCount()` overload"]
-    #[method(name = "GetBindposeCount", args = 0)]
-    pub fn get_bindpose_count(self) -> i32;
-
-    #[doc = "`get_bindposes()` overload"]
-    #[method(name = "get_bindposes", args = 0)]
-    pub fn get_bindposes(self) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>;
-
-    #[doc = "`set_bindposes(::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
-    #[method(name = "set_bindposes", args = 1)]
-    pub fn set_bindposes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_set_bone_weights::get_offset() as isize),
+        );
+        inner(
+            this,
+            bones_per_vertex,
+            bones_per_vertex_size,
+            weights,
+            weights_size,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_bone_weights_array_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetAllBoneWeightsArraySize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetAllBoneWeightsArraySize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_bone_weights_array_size(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_all_bone_weights_array_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_bone_weights_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetAllBoneWeightsArray",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetAllBoneWeightsArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_bone_weights_array(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_all_bone_weights_array::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bones_per_vertex_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBonesPerVertexArray",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBonesPerVertexArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bones_per_vertex_array(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bones_per_vertex_array::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bindpose_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBindposeCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBindposeCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bindpose_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bindpose_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bindposes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_bindposes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_bindposes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bindposes(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bindposes::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bindposes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::matrix4x4::Matrix4x4,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_bindposes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_bindposes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bindposes(
+        this: Mesh,
         value: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-    ) -> ();
-
-    #[doc = "`GetBoneWeightsNonAllocImpl(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
-    #[method(name = "GetBoneWeightsNonAllocImpl", args = 1)]
-    pub fn get_bone_weights_non_alloc_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bindposes::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_weights_non_alloc_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::boneweight::BoneWeight,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBoneWeightsNonAllocImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBoneWeightsNonAllocImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_weights_non_alloc_impl(
+        this: Mesh,
         values: ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
-    ) -> ();
-
-    #[doc = "`GetBindposesNonAllocImpl(::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
-    #[method(name = "GetBindposesNonAllocImpl", args = 1)]
-    pub fn get_bindposes_non_alloc_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bone_weights_non_alloc_impl::get_offset() as isize),
+        );
+        inner(this, values, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bindposes_non_alloc_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::matrix4x4::Matrix4x4,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBindposesNonAllocImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBindposesNonAllocImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bindposes_non_alloc_impl(
+        this: Mesh,
         values: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-    ) -> ();
-
-    #[doc = "`get_isReadable()` overload"]
-    #[method(name = "get_isReadable", args = 0)]
-    pub fn get_is_readable(self) -> bool;
-
-    #[doc = "`get_canAccess()` overload"]
-    #[method(name = "get_canAccess", args = 0)]
-    pub fn get_can_access(self) -> bool;
-
-    #[doc = "`get_vertexCount()` overload"]
-    #[method(name = "get_vertexCount", args = 0)]
-    pub fn get_vertex_count(self) -> i32;
-
-    #[doc = "`get_subMeshCount()` overload"]
-    #[method(name = "get_subMeshCount", args = 0)]
-    pub fn get_sub_mesh_count(self) -> i32;
-
-    #[doc = "`set_subMeshCount(i32)` overload"]
-    #[method(name = "set_subMeshCount", args = 1)]
-    pub fn set_sub_mesh_count(self, value: i32) -> ();
-
-    #[doc = "`SetSubMesh(i32, crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMesh", args = 3)]
-    pub fn set_sub_mesh(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bindposes_non_alloc_impl::get_offset() as isize),
+        );
+        inner(this, values, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_readable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_isReadable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_isReadable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_readable(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_readable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_canAccess",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_canAccess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_access(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_can_access::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_vertexCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_vertexCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_mesh_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_subMeshCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_subMeshCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_mesh_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sub_mesh_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_mesh_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_subMeshCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_subMeshCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_mesh_count(
+        this: Mesh,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_sub_mesh_count::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMesh",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_mesh(
+        this: Mesh,
         index: i32,
         desc: crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetSubMesh(i32)` overload"]
-    #[method(name = "GetSubMesh", args = 1)]
-    pub fn get_sub_mesh(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_mesh::get_offset() as isize),
+        );
+        inner(this, index, desc, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetSubMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetSubMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_mesh(
+        this: Mesh,
         index: i32,
-    ) -> crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor;
-
-    #[doc = "`SetAllSubMeshesAtOnceFromArray(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetAllSubMeshesAtOnceFromArray", args = 4)]
-    pub fn set_all_sub_meshes_at_once_from_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor {
+        let inner : extern "C" fn (Mesh , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_sub_mesh :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_all_sub_meshes_at_once_from_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetAllSubMeshesAtOnceFromArray",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetAllSubMeshesAtOnceFromArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_all_sub_meshes_at_once_from_array(
+        this: Mesh,
         desc: ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
         start: i32,
         count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetAllSubMeshesAtOnceFromNativeArray(::unity2::IntPtr, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetAllSubMeshesAtOnceFromNativeArray", args = 4)]
-    pub fn set_all_sub_meshes_at_once_from_native_array(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_all_sub_meshes_at_once_from_array::get_offset() as isize),
+        );
+        inner(this, desc, start, count, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_all_sub_meshes_at_once_from_native_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetAllSubMeshesAtOnceFromNativeArray",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetAllSubMeshesAtOnceFromNativeArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_all_sub_meshes_at_once_from_native_array(
+        this: Mesh,
         desc: ::unity2::IntPtr,
         start: i32,
         count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`get_bounds()` overload"]
-    #[method(name = "get_bounds", args = 0)]
-    pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`set_bounds(crate::unity_engine::bounds::Bounds)` overload"]
-    #[method(name = "set_bounds", args = 1)]
-    pub fn set_bounds(self, value: crate::unity_engine::bounds::Bounds) -> ();
-
-    #[doc = "`ClearImpl(bool)` overload"]
-    #[method(name = "ClearImpl", args = 1)]
-    pub fn clear_impl(self, keep_vertex_layout: bool) -> ();
-
-    #[doc = "`RecalculateBoundsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateBoundsImpl", args = 1)]
-    pub fn recalculate_bounds_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_set_all_sub_meshes_at_once_from_native_array::get_offset() as isize,
+                ),
+        );
+        inner(this, desc, start, count, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_bounds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_bounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bounds(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bounds::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_bounds",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_bounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bounds(
+        this: Mesh,
+        value: crate::unity_engine::bounds::Bounds,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::bounds::Bounds,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bounds::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "ClearImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "ClearImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_impl(
+        this: Mesh,
+        keep_vertex_layout: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_impl::get_offset() as isize),
+            );
+        inner(this, keep_vertex_layout, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_bounds_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateBoundsImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateBoundsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_bounds_impl(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`RecalculateNormalsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateNormalsImpl", args = 1)]
-    pub fn recalculate_normals_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_bounds_impl::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_normals_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateNormalsImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateNormalsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_normals_impl(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`RecalculateTangentsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateTangentsImpl", args = 1)]
-    pub fn recalculate_tangents_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_normals_impl::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_tangents_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateTangentsImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateTangentsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_tangents_impl(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`MarkDynamicImpl()` overload"]
-    #[method(name = "MarkDynamicImpl", args = 0)]
-    pub fn mark_dynamic_impl(self) -> ();
-
-    #[doc = "`MarkModified()` overload"]
-    #[method(name = "MarkModified", args = 0)]
-    pub fn mark_modified(self) -> ();
-
-    #[doc = "`UploadMeshDataImpl(bool)` overload"]
-    #[method(name = "UploadMeshDataImpl", args = 1)]
-    pub fn upload_mesh_data_impl(self, mark_no_longer_readable: bool) -> ();
-
-    #[doc = "`GetTopologyImpl(i32)` overload"]
-    #[method(name = "GetTopologyImpl", args = 1)]
-    pub fn get_topology_impl(self, submesh: i32)
-        -> crate::unity_engine::meshtopology::MeshTopology;
-
-    #[doc = "`RecalculateUVDistributionMetricImpl(i32, f32)` overload"]
-    #[method(name = "RecalculateUVDistributionMetricImpl", args = 2)]
-    pub fn recalculate_uv_distribution_metric_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_tangents_impl::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_dynamic_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "MarkDynamicImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "MarkDynamicImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_dynamic_impl(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_dynamic_impl::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_modified {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "MarkModified",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "MarkModified",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_modified(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_modified::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_mesh_data_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "UploadMeshDataImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "UploadMeshDataImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_mesh_data_impl(
+        this: Mesh,
+        mark_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_mesh_data_impl::get_offset() as isize),
+            );
+        inner(this, mark_no_longer_readable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_topology_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTopologyImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTopologyImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_topology_impl(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshtopology::MeshTopology {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::meshtopology::MeshTopology = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_topology_impl::get_offset() as isize),
+        );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_uv_distribution_metric_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateUVDistributionMetricImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateUVDistributionMetricImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_uv_distribution_metric_impl(
+        this: Mesh,
         uv_set_index: i32,
         uv_area_threshold: f32,
-    ) -> ();
-
-    #[doc = "`RecalculateUVDistributionMetricsImpl(f32)` overload"]
-    #[method(name = "RecalculateUVDistributionMetricsImpl", args = 1)]
-    pub fn recalculate_uv_distribution_metrics_impl(self, uv_area_threshold: f32) -> ();
-
-    #[doc = "`GetUVDistributionMetric(i32)` overload"]
-    #[method(name = "GetUVDistributionMetric", args = 1)]
-    pub fn get_uv_distribution_metric(self, uv_set_index: i32) -> f32;
-
-    #[doc = "`CombineMeshesImpl(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool, bool)` overload"]
-    #[method(name = "CombineMeshesImpl", args = 4)]
-    pub fn combine_meshes_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_recalculate_uv_distribution_metric_impl::get_offset() as isize,
+                    ),
+            );
+        inner(this, uv_set_index, uv_area_threshold, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_uv_distribution_metrics_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateUVDistributionMetricsImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateUVDistributionMetricsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_uv_distribution_metrics_impl(
+        this: Mesh,
+        uv_area_threshold: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_recalculate_uv_distribution_metrics_impl::get_offset() as isize,
+                    ),
+            );
+        inner(this, uv_area_threshold, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv_distribution_metric {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVDistributionMetric",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetUVDistributionMetric",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv_distribution_metric(
+        this: Mesh,
+        uv_set_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_uv_distribution_metric::get_offset() as isize),
+            );
+        inner(this, uv_set_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_meshes_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: combineinstance :: CombineInstance > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CombineMeshesImpl",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CombineMeshesImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_meshes_impl(
+        this: Mesh,
         combine: ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
         merge_sub_meshes: bool,
         use_matrices: bool,
         has_lightmap_data: bool,
-    ) -> ();
-
-    #[doc = "`OptimizeImpl()` overload"]
-    #[method(name = "OptimizeImpl", args = 0)]
-    pub fn optimize_impl(self) -> ();
-
-    #[doc = "`OptimizeIndexBuffersImpl()` overload"]
-    #[method(name = "OptimizeIndexBuffersImpl", args = 0)]
-    pub fn optimize_index_buffers_impl(self) -> ();
-
-    #[doc = "`OptimizeReorderVertexBufferImpl()` overload"]
-    #[method(name = "OptimizeReorderVertexBufferImpl", args = 0)]
-    pub fn optimize_reorder_vertex_buffer_impl(self) -> ();
-
-    #[doc = "`GetUVChannel(i32)` overload"]
-    #[method(name = "GetUVChannel", args = 1)]
-    pub fn get_uv_channel(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+            bool,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_combine_meshes_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            combine,
+            merge_sub_meshes,
+            use_matrices,
+            has_lightmap_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "OptimizeImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_impl(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize_impl::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_index_buffers_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "OptimizeIndexBuffersImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeIndexBuffersImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_index_buffers_impl(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize_index_buffers_impl::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_reorder_vertex_buffer_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "OptimizeReorderVertexBufferImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeReorderVertexBufferImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_reorder_vertex_buffer_impl(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize_reorder_vertex_buffer_impl::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv_channel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVChannel",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetUVChannel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv_channel(
         uv_index: i32,
-    ) -> crate::unity_engine::rendering::vertexattribute::VertexAttribute;
-
-    #[doc = "`DefaultDimensionForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
-    #[method(name = "DefaultDimensionForChannel", args = 1)]
-    pub fn default_dimension_for_channel(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::vertexattribute::VertexAttribute {
+        let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_uv_channel :: get_offset () as isize) ,) ;
+        inner(uv_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_default_dimension_for_channel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "DefaultDimensionForChannel",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "DefaultDimensionForChannel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn default_dimension_for_channel(
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
-    ) -> i32;
-
-    #[doc = "`SetSizedArrayForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSizedArrayForChannel", args = 8)]
-    pub fn set_sized_array_for_channel(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_default_dimension_for_channel::get_offset() as isize),
+        );
+        inner(channel, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sized_array_for_channel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSizedArrayForChannel",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSizedArrayForChannel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sized_array_for_channel(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
@@ -722,12 +5174,72 @@ impl Mesh {
         values_start: i32,
         values_count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetSizedNativeArrayForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IntPtr, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSizedNativeArrayForChannel", args = 8)]
-    pub fn set_sized_native_array_for_channel(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sized_array_for_channel::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            format,
+            dim,
+            values,
+            values_array_length,
+            values_start,
+            values_count,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sized_native_array_for_channel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributeformat :: VertexAttributeFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSizedNativeArrayForChannel",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSizedNativeArrayForChannel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sized_native_array_for_channel(
+        this: Mesh,
         channel: crate::unity_engine::rendering::vertexattribute::VertexAttribute,
         format: crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
         dim: i32,
@@ -736,465 +5248,3403 @@ impl Mesh {
         values_start: i32,
         values_count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`get_vertices()` overload"]
-    #[method(name = "get_vertices", args = 0)]
-    pub fn get_vertices(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`set_vertices(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "set_vertices", args = 1)]
-    pub fn set_vertices(self, value: ::unity2::Array<crate::unity_engine::vector3::Vector3>) -> ();
-
-    #[doc = "`get_normals()` overload"]
-    #[method(name = "get_normals", args = 0)]
-    pub fn get_normals(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`set_normals(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "set_normals", args = 1)]
-    pub fn set_normals(self, value: ::unity2::Array<crate::unity_engine::vector3::Vector3>) -> ();
-
-    #[doc = "`get_tangents()` overload"]
-    #[method(name = "get_tangents", args = 0)]
-    pub fn get_tangents(self) -> ::unity2::Array<crate::unity_engine::vector4::Vector4>;
-
-    #[doc = "`set_tangents(::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "set_tangents", args = 1)]
-    pub fn set_tangents(self, value: ::unity2::Array<crate::unity_engine::vector4::Vector4>) -> ();
-
-    #[doc = "`get_uv()` overload"]
-    #[method(name = "get_uv", args = 0)]
-    pub fn get_uv(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv", args = 1)]
-    pub fn set_uv(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv2()` overload"]
-    #[method(name = "get_uv2", args = 0)]
-    pub fn get_uv2(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv2(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv2", args = 1)]
-    pub fn set_uv2(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv3()` overload"]
-    #[method(name = "get_uv3", args = 0)]
-    pub fn get_uv3(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv3(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv3", args = 1)]
-    pub fn set_uv3(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv4()` overload"]
-    #[method(name = "get_uv4", args = 0)]
-    pub fn get_uv4(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv4(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv4", args = 1)]
-    pub fn set_uv4(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv5()` overload"]
-    #[method(name = "get_uv5", args = 0)]
-    pub fn get_uv5(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv5(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv5", args = 1)]
-    pub fn set_uv5(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv6()` overload"]
-    #[method(name = "get_uv6", args = 0)]
-    pub fn get_uv6(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv6(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv6", args = 1)]
-    pub fn set_uv6(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv7()` overload"]
-    #[method(name = "get_uv7", args = 0)]
-    pub fn get_uv7(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv7(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv7", args = 1)]
-    pub fn set_uv7(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_uv8()` overload"]
-    #[method(name = "get_uv8", args = 0)]
-    pub fn get_uv8(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2>;
-
-    #[doc = "`set_uv8(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "set_uv8", args = 1)]
-    pub fn set_uv8(self, value: ::unity2::Array<crate::unity_engine::vector2::Vector2>) -> ();
-
-    #[doc = "`get_colors()` overload"]
-    #[method(name = "get_colors", args = 0)]
-    pub fn get_colors(self) -> ::unity2::Array<crate::unity_engine::color::Color>;
-
-    #[doc = "`set_colors(::unity2::Array<crate::unity_engine::color::Color>)` overload"]
-    #[method(name = "set_colors", args = 1)]
-    pub fn set_colors(self, value: ::unity2::Array<crate::unity_engine::color::Color>) -> ();
-
-    #[doc = "`get_colors32()` overload"]
-    #[method(name = "get_colors32", args = 0)]
-    pub fn get_colors32(self) -> ::unity2::Array<crate::unity_engine::color32::Color32>;
-
-    #[doc = "`set_colors32(::unity2::Array<crate::unity_engine::color32::Color32>)` overload"]
-    #[method(name = "set_colors32", args = 1)]
-    pub fn set_colors32(self, value: ::unity2::Array<crate::unity_engine::color32::Color32>) -> ();
-
-    #[doc = "`GetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "GetVertices", args = 1)]
-    pub fn get_vertices_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+            i32,
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sized_native_array_for_channel::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            format,
+            dim,
+            values,
+            values_array_length,
+            values_start,
+            values_count,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_vertices",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_vertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertices(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertices::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector3::Vector3,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_vertices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_vertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_normals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_normals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normals(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normals::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector3::Vector3,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_normals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_normals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tangents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_tangents",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_tangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tangents(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector4::Vector4> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_tangents::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector4::Vector4,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_tangents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_tangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv2",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv2(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv2::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv2",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv2(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv2::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv3",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv3",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv3(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv3::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv3",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv3",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv3(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv3::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv4",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv4",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv4(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv4::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv4",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv4",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv4(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv4::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv5",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv5",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv5(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv5::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv5",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv5",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv5(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv5::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv6",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv6",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv6(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv6::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv6",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv6",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv6(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv6::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv7",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv7",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv7(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv7::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv7",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv7",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv7(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv7::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uv8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_uv8",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_uv8",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uv8(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector2::Vector2> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uv8::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uv8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector2::Vector2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_uv8",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_uv8",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uv8(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uv8::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_colors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_colors",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_colors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_colors(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::color::Color> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::unity_engine::color::Color> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_colors::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::color::Color,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_colors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_colors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::color::Color>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_colors32 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_colors32",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_colors32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_colors32(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::color32::Color32> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::color32::Color32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_colors32::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors32 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::color32::Color32,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_colors32",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_colors32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors32(
+        this: Mesh,
+        value: ::unity2::Array<crate::unity_engine::color32::Color32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color32::Color32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors32::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertices_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertices_2(
+        this: Mesh,
         vertices: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "SetVertices", args = 1)]
-    pub fn set_vertices_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertices_2::get_offset() as isize),
+        );
+        inner(this, vertices, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices_2(
+        this: Mesh,
         in_vertices: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetVertices", args = 3)]
-    pub fn set_vertices_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices_2::get_offset() as isize),
+        );
+        inner(this, in_vertices, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices_3(
+        this: Mesh,
         in_vertices: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetVertices", args = 4)]
-    pub fn set_vertices_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices_3::get_offset() as isize),
+        );
+        inner(this, in_vertices, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices_4(
+        this: Mesh,
         in_vertices: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetVertices", args = 3)]
-    pub fn set_vertices_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            in_vertices,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices_5(
+        this: Mesh,
         in_vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetVertices", args = 4)]
-    pub fn set_vertices_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices_5::get_offset() as isize),
+        );
+        inner(this, in_vertices, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices_6(
+        this: Mesh,
         in_vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "GetNormals", args = 1)]
-    pub fn get_normals_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            in_vertices,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetNormals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normals_2(
+        this: Mesh,
         normals: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "SetNormals", args = 1)]
-    pub fn set_normals_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normals_2::get_offset() as isize),
+        );
+        inner(this, normals, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNormals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals_2(
+        this: Mesh,
         in_normals: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetNormals", args = 3)]
-    pub fn set_normals_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals_2::get_offset() as isize),
+        );
+        inner(this, in_normals, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNormals",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals_3(
+        this: Mesh,
         in_normals: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetNormals", args = 4)]
-    pub fn set_normals_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals_3::get_offset() as isize),
+        );
+        inner(this, in_normals, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNormals",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals_4(
+        this: Mesh,
         in_normals: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetNormals(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetNormals", args = 3)]
-    pub fn set_normals_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals_4::get_offset() as isize),
+        );
+        inner(this, in_normals, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNormals",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals_5(
+        this: Mesh,
         in_normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetNormals(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetNormals", args = 4)]
-    pub fn set_normals_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals_5::get_offset() as isize),
+        );
+        inner(this, in_normals, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_normals_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetNormals",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_normals_6(
+        this: Mesh,
         in_normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "GetTangents", args = 1)]
-    pub fn get_tangents_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_normals_6::get_offset() as isize),
+        );
+        inner(this, in_normals, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tangents_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTangents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tangents_2(
+        this: Mesh,
         tangents: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
-    ) -> ();
-
-    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "SetTangents", args = 1)]
-    pub fn set_tangents_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_tangents_2::get_offset() as isize),
+        );
+        inner(this, tangents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTangents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents_2(
+        this: Mesh,
         in_tangents: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
-    ) -> ();
-
-    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
-    #[method(name = "SetTangents", args = 3)]
-    pub fn set_tangents_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents_2::get_offset() as isize),
+        );
+        inner(this, in_tangents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTangents",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents_3(
+        this: Mesh,
         in_tangents: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetTangents", args = 4)]
-    pub fn set_tangents_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents_3::get_offset() as isize),
+        );
+        inner(this, in_tangents, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTangents",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents_4(
+        this: Mesh,
         in_tangents: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetTangents(::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
-    #[method(name = "SetTangents", args = 3)]
-    pub fn set_tangents_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            in_tangents,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTangents",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents_5(
+        this: Mesh,
         in_tangents: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetTangents(::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetTangents", args = 4)]
-    pub fn set_tangents_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents_5::get_offset() as isize),
+        );
+        inner(this, in_tangents, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tangents_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTangents",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tangents_6(
+        this: Mesh,
         in_tangents: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
-    #[method(name = "GetColors", args = 1)]
-    pub fn get_colors_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tangents_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            in_tangents,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_colors_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_colors_2(
+        this: Mesh,
         colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color::Color,
         >,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
-    #[method(name = "SetColors", args = 1)]
-    pub fn set_colors_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_colors_2::get_offset() as isize),
+        );
+        inner(this, colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_2(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color::Color,
         >,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, i32, i32)` overload"]
-    #[method(name = "SetColors", args = 3)]
-    pub fn set_colors_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_2::get_offset() as isize),
+        );
+        inner(this, in_colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_3(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color::Color,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetColors", args = 4)]
-    pub fn set_colors_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_3::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_4(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color::Color,
         >,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color::Color>, i32, i32)` overload"]
-    #[method(name = "SetColors", args = 3)]
-    pub fn set_colors_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_4::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_5(
+        this: Mesh,
         in_colors: ::unity2::Array<crate::unity_engine::color::Color>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color::Color>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetColors", args = 4)]
-    pub fn set_colors_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_5::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_6(
+        this: Mesh,
         in_colors: ::unity2::Array<crate::unity_engine::color::Color>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>)` overload"]
-    #[method(name = "GetColors", args = 1)]
-    pub fn get_colors_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_6::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_colors_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color32::Color32,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_colors_3(
+        this: Mesh,
         colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color32::Color32,
         >,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>)` overload"]
-    #[method(name = "SetColors", args = 1)]
-    pub fn set_colors_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_colors_3::get_offset() as isize),
+        );
+        inner(this, colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color32::Color32,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_7(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color32::Color32,
         >,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>, i32, i32)` overload"]
-    #[method(name = "SetColors", args = 3)]
-    pub fn set_colors_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_7::get_offset() as isize),
+        );
+        inner(this, in_colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color32::Color32,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_8(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color32::Color32,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetColors", args = 4)]
-    pub fn set_colors_9(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_8::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color32 :: Color32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_9(
+        this: Mesh,
         in_colors: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::color32::Color32,
         >,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>)` overload"]
-    #[method(name = "SetColors", args = 1)]
-    pub fn set_colors_10(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_9::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::color32::Color32,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_10(
+        this: Mesh,
         in_colors: ::unity2::Array<crate::unity_engine::color32::Color32>,
-    ) -> ();
-
-    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>, i32, i32)` overload"]
-    #[method(name = "SetColors", args = 3)]
-    pub fn set_colors_11(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color32::Color32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_10::get_offset() as isize),
+        );
+        inner(this, in_colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: color32 :: Color32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_11(
+        this: Mesh,
         in_colors: ::unity2::Array<crate::unity_engine::color32::Color32>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetColors", args = 4)]
-    pub fn set_colors_12(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color32::Color32>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_11::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_colors_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: color32 :: Color32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetColors",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetColors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_colors_12(
+        this: Mesh,
         in_colors: ::unity2::Array<crate::unity_engine::color32::Color32>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::color32::Color32>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_colors_12::get_offset() as isize),
+        );
+        inner(this, in_colors, start, length, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector2::Vector2,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector2::Vector2,
         >,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_2(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_2::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_3(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_3::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector2::Vector2,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_4(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector2::Vector2,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_4::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_5(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector2::Vector2,
@@ -1202,24 +8652,134 @@ impl Mesh {
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_6(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_6::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_7(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
@@ -1227,24 +8787,134 @@ impl Mesh {
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_7::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_8(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_9(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_8::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_9(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
@@ -1252,341 +8922,2420 @@ impl Mesh {
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUvsImpl(i32, i32, ::unity2::IlInstance, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUvsImpl", args = 6)]
-    pub fn set_uvs_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_9::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_uvs_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUvsImpl",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUvsImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_uvs_impl_2(
+        this: Mesh,
         uv_index: i32,
         dim: i32,
         uvs: ::unity2::IlInstance,
         array_start: i32,
         array_size: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs_10(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            i32,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_uvs_impl_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            uv_index,
+            dim,
+            uvs,
+            array_start,
+            array_size,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_10(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs_11(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_10::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_11(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "SetUVs", args = 2)]
-    pub fn set_u_vs_12(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_11::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_12(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_13(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_12::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_13 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_13(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_14(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_13::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_14 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_14(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_15(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_14::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_15 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_15(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_16(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_15::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_16 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_16(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
-    #[method(name = "SetUVs", args = 4)]
-    pub fn set_u_vs_17(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_16::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_17 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_17(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetUVs", args = 5)]
-    pub fn set_u_vs_18(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_17::get_offset() as isize),
+        );
+        inner(this, channel, uvs, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_u_vs_18 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUVs",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_u_vs_18(
+        this: Mesh,
         channel: i32,
         uvs: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         start: i32,
         length: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)` overload"]
-    #[method(name = "GetUVs", args = 2)]
-    pub fn get_u_vs(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_u_vs_18::get_offset() as isize),
+        );
+        inner(
+            this,
+            channel,
+            uvs,
+            start,
+            length,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_u_vs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector2::Vector2,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_u_vs(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector2::Vector2,
         >,
-    ) -> ();
-
-    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "GetUVs", args = 2)]
-    pub fn get_u_vs_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_u_vs::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_u_vs_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_u_vs_2(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
-    ) -> ();
-
-    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "GetUVs", args = 2)]
-    pub fn get_u_vs_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_u_vs_2::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_u_vs_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVs",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetUVs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_u_vs_3(
+        this: Mesh,
         channel: i32,
         uvs: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
-    ) -> ();
-
-    #[doc = "`get_vertexAttributeCount()` overload"]
-    #[method(name = "get_vertexAttributeCount", args = 0)]
-    pub fn get_vertex_attribute_count(self) -> i32;
-
-    #[doc = "`GetVertexAttributes()` overload"]
-    #[method(name = "GetVertexAttributes", args = 0)]
-    pub fn get_vertex_attributes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_u_vs_3::get_offset() as isize),
+        );
+        inner(this, channel, uvs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_vertexAttributeCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_vertexAttributeCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute_count(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_attribute_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<
         crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
-    >;
-
-    #[doc = "`GetVertexAttributes(::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "GetVertexAttributes", args = 1)]
-    pub fn get_vertex_attributes_2(
-        self,
+    > {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertex_attributes::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes_2(
+        this: Mesh,
         attributes: ::unity2::Array<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> i32;
-
-    #[doc = "`GetVertexAttributes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "GetVertexAttributes", args = 1)]
-    pub fn get_vertex_attributes_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (Mesh , :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attributes_2 :: get_offset () as isize) ,) ;
+        inner(this, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attributes_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttributes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttributes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attributes_3(
+        this: Mesh,
         attributes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> i32;
-
-    #[doc = "`SetVertexBufferParams(i32, ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
-    #[method(name = "SetVertexBufferParams", args = 2)]
-    pub fn set_vertex_buffer_params(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (Mesh , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attributes_3 :: get_offset () as isize) ,) ;
+        inner(this, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertex_buffer_params {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertexBufferParams",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetVertexBufferParams",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertex_buffer_params(
+        this: Mesh,
         vertex_count: i32,
         attributes: ::unity2::Array<
             crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
         >,
-    ) -> ();
-
-    #[doc = "`AcquireReadOnlyMeshData(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = "AcquireReadOnlyMeshData", args = 1)]
-    pub fn acquire_read_only_mesh_data(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (Mesh , i32 , :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_vertex_buffer_params :: get_offset () as isize) ,) ;
+        inner(this, vertex_count, attributes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_acquire_read_only_mesh_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "AcquireReadOnlyMeshData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "AcquireReadOnlyMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn acquire_read_only_mesh_data(
         mesh: crate::unity_engine::mesh::Mesh,
-    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray;
-
-    #[doc = "`AcquireReadOnlyMeshData(::unity2::Array<crate::unity_engine::mesh::Mesh>)` overload"]
-    #[method(name = "AcquireReadOnlyMeshData", args = 1)]
-    pub fn acquire_read_only_mesh_data_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh_MeshDataArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_acquire_read_only_mesh_data::get_offset() as isize),
+        );
+        inner(mesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_acquire_read_only_mesh_data_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::mesh::Mesh,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "AcquireReadOnlyMeshData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "AcquireReadOnlyMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn acquire_read_only_mesh_data_2(
         meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray;
-
-    #[doc = "`AcquireReadOnlyMeshData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>)` overload"]
-    #[method(name = "AcquireReadOnlyMeshData", args = 1)]
-    pub fn acquire_read_only_mesh_data_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh_MeshDataArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_acquire_read_only_mesh_data_2::get_offset() as isize),
+        );
+        inner(meshes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_acquire_read_only_mesh_data_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::mesh::Mesh,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "AcquireReadOnlyMeshData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "AcquireReadOnlyMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn acquire_read_only_mesh_data_3(
         meshes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::mesh::Mesh,
         >,
-    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray;
-
-    #[doc = "`AllocateWritableMeshData(i32)` overload"]
-    #[method(name = "AllocateWritableMeshData", args = 1)]
-    pub fn allocate_writable_mesh_data(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh_MeshDataArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_acquire_read_only_mesh_data_3::get_offset() as isize),
+        );
+        inner(meshes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allocate_writable_mesh_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "AllocateWritableMeshData",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "AllocateWritableMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn allocate_writable_mesh_data(
         mesh_count: i32,
-    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray;
-
-    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyAndDisposeWritableMeshData", args = 3)]
-    pub fn apply_and_dispose_writable_mesh_data(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        let inner: extern "C" fn(
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh_MeshDataArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_allocate_writable_mesh_data::get_offset() as isize),
+        );
+        inner(mesh_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_and_dispose_writable_mesh_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh_MeshDataArray as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "ApplyAndDisposeWritableMeshData",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "ApplyAndDisposeWritableMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_and_dispose_writable_mesh_data(
         data: crate::unity_engine::mesh::Mesh_MeshDataArray,
         mesh: crate::unity_engine::mesh::Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, ::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyAndDisposeWritableMeshData", args = 3)]
-    pub fn apply_and_dispose_writable_mesh_data_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh_MeshDataArray,
+            crate::unity_engine::mesh::Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_and_dispose_writable_mesh_data::get_offset() as isize),
+        );
+        inner(data, mesh, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_and_dispose_writable_mesh_data_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh_MeshDataArray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: mesh :: Mesh > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "ApplyAndDisposeWritableMeshData",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "ApplyAndDisposeWritableMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_and_dispose_writable_mesh_data_2(
         data: crate::unity_engine::mesh::Mesh_MeshDataArray,
         meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyAndDisposeWritableMeshData", args = 3)]
-    pub fn apply_and_dispose_writable_mesh_data_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh_MeshDataArray,
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_and_dispose_writable_mesh_data_2::get_offset() as isize),
+        );
+        inner(data, meshes, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_and_dispose_writable_mesh_data_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh_MeshDataArray as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: mesh :: Mesh > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "ApplyAndDisposeWritableMeshData",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "ApplyAndDisposeWritableMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_and_dispose_writable_mesh_data_3(
         data: crate::unity_engine::mesh::Mesh_MeshDataArray,
         meshes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::mesh::Mesh,
         >,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`PrintErrorCantAccessIndices()` overload"]
-    #[method(name = "PrintErrorCantAccessIndices", args = 0)]
-    pub fn print_error_cant_access_indices(self) -> ();
-
-    #[doc = "`CheckCanAccessSubmesh(i32, bool)` overload"]
-    #[method(name = "CheckCanAccessSubmesh", args = 2)]
-    pub fn check_can_access_submesh(self, submesh: i32, error_about_triangles: bool) -> bool;
-
-    #[doc = "`CheckCanAccessSubmeshTriangles(i32)` overload"]
-    #[method(name = "CheckCanAccessSubmeshTriangles", args = 1)]
-    pub fn check_can_access_submesh_triangles(self, submesh: i32) -> bool;
-
-    #[doc = "`CheckCanAccessSubmeshIndices(i32)` overload"]
-    #[method(name = "CheckCanAccessSubmeshIndices", args = 1)]
-    pub fn check_can_access_submesh_indices(self, submesh: i32) -> bool;
-
-    #[doc = "`get_triangles()` overload"]
-    #[method(name = "get_triangles", args = 0)]
-    pub fn get_triangles(self) -> ::unity2::Array<i32>;
-
-    #[doc = "`set_triangles(::unity2::Array<i32>)` overload"]
-    #[method(name = "set_triangles", args = 1)]
-    pub fn set_triangles(self, value: ::unity2::Array<i32>) -> ();
-
-    #[doc = "`GetTriangles(i32)` overload"]
-    #[method(name = "GetTriangles", args = 1)]
-    pub fn get_triangles_2(self, submesh: i32) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetTriangles(i32, bool)` overload"]
-    #[method(name = "GetTriangles", args = 2)]
-    pub fn get_triangles_3(self, submesh: i32, apply_base_vertex: bool) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
-    #[method(name = "GetTriangles", args = 2)]
-    pub fn get_triangles_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh_MeshDataArray,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_and_dispose_writable_mesh_data_3::get_offset() as isize),
+        );
+        inner(data, meshes, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_print_error_cant_access_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "PrintErrorCantAccessIndices",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "PrintErrorCantAccessIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn print_error_cant_access_indices(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_print_error_cant_access_indices::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_can_access_submesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CheckCanAccessSubmesh",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CheckCanAccessSubmesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_can_access_submesh(
+        this: Mesh,
+        submesh: i32,
+        error_about_triangles: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_can_access_submesh::get_offset() as isize),
+            );
+        inner(this, submesh, error_about_triangles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_can_access_submesh_triangles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CheckCanAccessSubmeshTriangles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CheckCanAccessSubmeshTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_can_access_submesh_triangles(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_can_access_submesh_triangles::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_can_access_submesh_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CheckCanAccessSubmeshIndices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CheckCanAccessSubmeshIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_can_access_submesh_indices(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_can_access_submesh_indices::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_triangles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_triangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_triangles::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_triangles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_triangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles(
+        this: Mesh,
+        value: ::unity2::Array<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::Array<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_triangles::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTriangles",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_2(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_triangles_2::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTriangles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_3(
+        this: Mesh,
+        submesh: i32,
+        apply_base_vertex: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_3::get_offset() as isize),
+        );
+        inner(this, submesh, apply_base_vertex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTriangles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_4(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
-    ) -> ();
-
-    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
-    #[method(name = "GetTriangles", args = 3)]
-    pub fn get_triangles_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_4::get_offset() as isize),
+        );
+        inner(this, triangles, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTriangles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_5(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, bool)` overload"]
-    #[method(name = "GetTriangles", args = 3)]
-    pub fn get_triangles_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangles_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTriangles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangles_6(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<u16>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetIndices(i32)` overload"]
-    #[method(name = "GetIndices", args = 1)]
-    pub fn get_indices(self, submesh: i32) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetIndices(i32, bool)` overload"]
-    #[method(name = "GetIndices", args = 2)]
-    pub fn get_indices_2(self, submesh: i32, apply_base_vertex: bool) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
-    #[method(name = "GetIndices", args = 2)]
-    pub fn get_indices_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangles_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_indices::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_2(
+        this: Mesh,
+        submesh: i32,
+        apply_base_vertex: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_2::get_offset() as isize),
+        );
+        inner(this, submesh, apply_base_vertex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_3(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
-    ) -> ();
-
-    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
-    #[method(name = "GetIndices", args = 3)]
-    pub fn get_indices_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_3::get_offset() as isize),
+        );
+        inner(this, indices, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_4(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<u16>, i32, bool)` overload"]
-    #[method(name = "GetIndices", args = 3)]
-    pub fn get_indices_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices_5(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<u16>,
         submesh: i32,
         apply_base_vertex: bool,
-    ) -> ();
-
-    #[doc = "`GetIndexStart(i32)` overload"]
-    #[method(name = "GetIndexStart", args = 1)]
-    pub fn get_index_start(self, submesh: i32) -> u32;
-
-    #[doc = "`GetIndexCount(i32)` overload"]
-    #[method(name = "GetIndexCount", args = 1)]
-    pub fn get_index_count(self, submesh: i32) -> u32;
-
-    #[doc = "`GetBaseVertex(i32)` overload"]
-    #[method(name = "GetBaseVertex", args = 1)]
-    pub fn get_base_vertex(self, submesh: i32) -> u32;
-
-    #[doc = "`CheckIndicesArrayRange(i32, i32, i32)` overload"]
-    #[method(name = "CheckIndicesArrayRange", args = 3)]
-    pub fn check_indices_array_range(self, values_length: i32, start: i32, length: i32) -> ();
-
-    #[doc = "`SetTrianglesImpl(i32, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IlInstance, i32, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetTrianglesImpl", args = 8)]
-    pub fn set_triangles_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            submesh,
+            apply_base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndexStart",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndexStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_start(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index_start::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetIndexCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetIndexCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index_count(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index_count::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_vertex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBaseVertex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBaseVertex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_vertex(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(Mesh, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_base_vertex::get_offset() as isize),
+            );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_indices_array_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CheckIndicesArrayRange",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CheckIndicesArrayRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_indices_array_range(
+        this: Mesh,
+        values_length: i32,
+        start: i32,
+        length: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_check_indices_array_range::get_offset() as isize),
+            );
+        inner(this, values_length, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: indexformat :: IndexFormat as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IlInstance as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTrianglesImpl",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTrianglesImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_impl(
+        this: Mesh,
         submesh: i32,
         indices_format: crate::unity_engine::rendering::indexformat::IndexFormat,
         triangles: ::unity2::IlInstance,
@@ -1595,160 +11344,1042 @@ impl Mesh {
         length: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<i32>, i32)` overload"]
-    #[method(name = "SetTriangles", args = 2)]
-    pub fn set_triangles_2(self, triangles: ::unity2::Array<i32>, submesh: i32) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, bool)` overload"]
-    #[method(name = "SetTriangles", args = 3)]
-    pub fn set_triangles_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+            ::unity2::IlInstance,
+            i32,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_impl::get_offset() as isize),
+        );
+        inner(
+            this,
+            submesh,
+            indices_format,
+            triangles,
+            triangles_array_length,
+            start,
+            length,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_2(
+        this: Mesh,
+        triangles: ::unity2::Array<i32>,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::Array<i32>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_triangles_2::get_offset() as isize),
+            );
+        inner(this, triangles, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_3(
+        this: Mesh,
         triangles: ::unity2::Array<i32>,
         submesh: i32,
         calculate_bounds: bool,
-    ) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 4)]
-    pub fn set_triangles_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_4(
+        this: Mesh,
         triangles: ::unity2::Array<i32>,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 6)]
-    pub fn set_triangles_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_5(
+        this: Mesh,
         triangles: ::unity2::Array<i32>,
         triangles_start: i32,
         triangles_length: i32,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<u16>, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 4)]
-    pub fn set_triangles_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            triangles_start,
+            triangles_length,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_6(
+        this: Mesh,
         triangles: ::unity2::Array<u16>,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(::unity2::Array<u16>, i32, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 6)]
-    pub fn set_triangles_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_7(
+        this: Mesh,
         triangles: ::unity2::Array<u16>,
         triangles_start: i32,
         triangles_length: i32,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
-    #[method(name = "SetTriangles", args = 2)]
-    pub fn set_triangles_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_7::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            triangles_start,
+            triangles_length,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_8(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
-    #[method(name = "SetTriangles", args = 3)]
-    pub fn set_triangles_9(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_8::get_offset() as isize),
+        );
+        inner(this, triangles, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_9(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
         calculate_bounds: bool,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 4)]
-    pub fn set_triangles_10(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_9::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_10(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 6)]
-    pub fn set_triangles_11(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_10::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_11(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         triangles_start: i32,
         triangles_length: i32,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 4)]
-    pub fn set_triangles_12(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_11::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            triangles_start,
+            triangles_length,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_12(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<u16>,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, i32, i32, bool, i32)` overload"]
-    #[method(name = "SetTriangles", args = 6)]
-    pub fn set_triangles_13(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_12::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_triangles_13 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetTriangles",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetTriangles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_triangles_13(
+        this: Mesh,
         triangles: crate::system::collections::generic::list_1::List_1<u16>,
         triangles_start: i32,
         triangles_length: i32,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32)` overload"]
-    #[method(name = "SetIndices", args = 3)]
-    pub fn set_indices(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            i32,
+            i32,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_triangles_13::get_offset() as isize),
+        );
+        inner(
+            this,
+            triangles,
+            triangles_start,
+            triangles_length,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices(
+        this: Mesh,
         indices: ::unity2::Array<i32>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool)` overload"]
-    #[method(name = "SetIndices", args = 4)]
-    pub fn set_indices_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices::get_offset() as isize),
+        );
+        inner(this, indices, topology, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_2(
+        this: Mesh,
         indices: ::unity2::Array<i32>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
         calculate_bounds: bool,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 5)]
-    pub fn set_indices_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            topology,
+            submesh,
+            calculate_bounds,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_3(
+        this: Mesh,
         indices: ::unity2::Array<i32>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<i32>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 7)]
-    pub fn set_indices_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_4(
+        this: Mesh,
         indices: ::unity2::Array<i32>,
         indices_start: i32,
         indices_length: i32,
@@ -1756,23 +12387,149 @@ impl Mesh {
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<u16>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 5)]
-    pub fn set_indices_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<i32>,
+            i32,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            indices_start,
+            indices_length,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_5(
+        this: Mesh,
         indices: ::unity2::Array<u16>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(::unity2::Array<u16>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 7)]
-    pub fn set_indices_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_6(
+        this: Mesh,
         indices: ::unity2::Array<u16>,
         indices_start: i32,
         indices_length: i32,
@@ -1780,23 +12537,135 @@ impl Mesh {
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 5)]
-    pub fn set_indices_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            indices_start,
+            indices_length,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_7(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<i32>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 7)]
-    pub fn set_indices_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_7::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_8(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<i32>,
         indices_start: i32,
         indices_length: i32,
@@ -1804,23 +12673,135 @@ impl Mesh {
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<u16>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 5)]
-    pub fn set_indices_9(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            i32,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_8::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            indices_start,
+            indices_length,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_9(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<u16>,
         topology: crate::unity_engine::meshtopology::MeshTopology,
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<u16>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
-    #[method(name = "SetIndices", args = 7)]
-    pub fn set_indices_10(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_9::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_indices_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndices",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_indices_10(
+        this: Mesh,
         indices: crate::system::collections::generic::list_1::List_1<u16>,
         indices_start: i32,
         indices_length: i32,
@@ -1828,222 +12809,7348 @@ impl Mesh {
         submesh: i32,
         calculate_bounds: bool,
         base_vertex: i32,
-    ) -> ();
-
-    #[doc = "`SetSubMeshes(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMeshes", args = 4)]
-    pub fn set_sub_meshes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<u16>,
+            i32,
+            i32,
+            crate::unity_engine::meshtopology::MeshTopology,
+            i32,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_indices_10::get_offset() as isize),
+        );
+        inner(
+            this,
+            indices,
+            indices_start,
+            indices_length,
+            topology,
+            submesh,
+            calculate_bounds,
+            base_vertex,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_meshes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMeshes",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_meshes(
+        this: Mesh,
         desc: ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
         start: i32,
         count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetSubMeshes(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMeshes", args = 2)]
-    pub fn set_sub_meshes_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_meshes::get_offset() as isize),
+        );
+        inner(this, desc, start, count, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_meshes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMeshes",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_meshes_2(
+        this: Mesh,
         desc: ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetSubMeshes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMeshes", args = 4)]
-    pub fn set_sub_meshes_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_meshes_2::get_offset() as isize),
+        );
+        inner(this, desc, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_meshes_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMeshes",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_meshes_3(
+        this: Mesh,
         desc: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
         >,
         start: i32,
         count: i32,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`SetSubMeshes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMeshes", args = 2)]
-    pub fn set_sub_meshes_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_meshes_3::get_offset() as isize),
+        );
+        inner(this, desc, start, count, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_meshes_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMeshes",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_meshes_4(
+        this: Mesh,
         desc: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
         >,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetBindposes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
-    #[method(name = "GetBindposes", args = 1)]
-    pub fn get_bindposes_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_meshes_4::get_offset() as isize),
+        );
+        inner(this, desc, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bindposes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::matrix4x4::Matrix4x4,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBindposes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBindposes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bindposes_2(
+        this: Mesh,
         bindposes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::matrix4x4::Matrix4x4,
         >,
-    ) -> ();
-
-    #[doc = "`GetBoneWeights(crate::system::collections::generic::list_1::List_1<crate::unity_engine::boneweight::BoneWeight>)` overload"]
-    #[method(name = "GetBoneWeights", args = 1)]
-    pub fn get_bone_weights(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::matrix4x4::Matrix4x4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bindposes_2::get_offset() as isize),
+        );
+        inner(this, bindposes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_weights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::boneweight::BoneWeight,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetBoneWeights",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetBoneWeights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_weights(
+        this: Mesh,
         bone_weights: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::boneweight::BoneWeight,
         >,
-    ) -> ();
-
-    #[doc = "`get_boneWeights()` overload"]
-    #[method(name = "get_boneWeights", args = 0)]
-    pub fn get_bone_weights_2(self)
-        -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>;
-
-    #[doc = "`set_boneWeights(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
-    #[method(name = "set_boneWeights", args = 1)]
-    pub fn set_bone_weights(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::boneweight::BoneWeight,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bone_weights::get_offset() as isize),
+        );
+        inner(this, bone_weights, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_weights_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_boneWeights",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_boneWeights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_weights_2(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bone_weights_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bone_weights {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::boneweight::BoneWeight,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_boneWeights",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_boneWeights",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bone_weights(
+        this: Mesh,
         value: ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
-    ) -> ();
-
-    #[doc = "`Clear(bool)` overload"]
-    #[method(name = "Clear", args = 1)]
-    pub fn clear(self, keep_vertex_layout: bool) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear_2(self) -> ();
-
-    #[doc = "`RecalculateBounds()` overload"]
-    #[method(name = "RecalculateBounds", args = 0)]
-    pub fn recalculate_bounds(self) -> ();
-
-    #[doc = "`RecalculateNormals()` overload"]
-    #[method(name = "RecalculateNormals", args = 0)]
-    pub fn recalculate_normals(self) -> ();
-
-    #[doc = "`RecalculateTangents()` overload"]
-    #[method(name = "RecalculateTangents", args = 0)]
-    pub fn recalculate_tangents(self) -> ();
-
-    #[doc = "`RecalculateBounds(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateBounds", args = 1)]
-    pub fn recalculate_bounds_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bone_weights::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: Mesh,
+        keep_vertex_layout: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, keep_vertex_layout, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_2(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_2::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateBounds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_bounds(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_bounds::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_normals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateNormals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_normals(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_normals::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_tangents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateTangents",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_tangents(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_tangents::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_bounds_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateBounds",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_bounds_2(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`RecalculateNormals(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateNormals", args = 1)]
-    pub fn recalculate_normals_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_bounds_2::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_normals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateNormals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateNormals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_normals_2(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`RecalculateTangents(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "RecalculateTangents", args = 1)]
-    pub fn recalculate_tangents_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_normals_2::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_tangents_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateTangents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateTangents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_tangents_2(
+        this: Mesh,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`RecalculateUVDistributionMetric(i32, f32)` overload"]
-    #[method(name = "RecalculateUVDistributionMetric", args = 2)]
-    pub fn recalculate_uv_distribution_metric(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalculate_tangents_2::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_uv_distribution_metric {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateUVDistributionMetric",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateUVDistributionMetric",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_uv_distribution_metric(
+        this: Mesh,
         uv_set_index: i32,
         uv_area_threshold: f32,
-    ) -> ();
-
-    #[doc = "`RecalculateUVDistributionMetrics(f32)` overload"]
-    #[method(name = "RecalculateUVDistributionMetrics", args = 1)]
-    pub fn recalculate_uv_distribution_metrics(self, uv_area_threshold: f32) -> ();
-
-    #[doc = "`MarkDynamic()` overload"]
-    #[method(name = "MarkDynamic", args = 0)]
-    pub fn mark_dynamic(self) -> ();
-
-    #[doc = "`UploadMeshData(bool)` overload"]
-    #[method(name = "UploadMeshData", args = 1)]
-    pub fn upload_mesh_data(self, mark_no_longer_readable: bool) -> ();
-
-    #[doc = "`Optimize()` overload"]
-    #[method(name = "Optimize", args = 0)]
-    pub fn optimize(self) -> ();
-
-    #[doc = "`OptimizeIndexBuffers()` overload"]
-    #[method(name = "OptimizeIndexBuffers", args = 0)]
-    pub fn optimize_index_buffers(self) -> ();
-
-    #[doc = "`OptimizeReorderVertexBuffer()` overload"]
-    #[method(name = "OptimizeReorderVertexBuffer", args = 0)]
-    pub fn optimize_reorder_vertex_buffer(self) -> ();
-
-    #[doc = "`GetTopology(i32)` overload"]
-    #[method(name = "GetTopology", args = 1)]
-    pub fn get_topology(self, submesh: i32) -> crate::unity_engine::meshtopology::MeshTopology;
-
-    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool, bool)` overload"]
-    #[method(name = "CombineMeshes", args = 4)]
-    pub fn combine_meshes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_recalculate_uv_distribution_metric::get_offset() as isize),
+            );
+        inner(this, uv_set_index, uv_area_threshold, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalculate_uv_distribution_metrics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "RecalculateUVDistributionMetrics",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "RecalculateUVDistributionMetrics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalculate_uv_distribution_metrics(
+        this: Mesh,
+        uv_area_threshold: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_recalculate_uv_distribution_metrics::get_offset() as isize),
+            );
+        inner(this, uv_area_threshold, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mark_dynamic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "MarkDynamic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "MarkDynamic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn mark_dynamic(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_mark_dynamic::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_mesh_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "UploadMeshData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "UploadMeshData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_mesh_data(
+        this: Mesh,
+        mark_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_mesh_data::get_offset() as isize),
+            );
+        inner(this, mark_no_longer_readable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "Optimize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "Optimize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize(this: Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_index_buffers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "OptimizeIndexBuffers",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeIndexBuffers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_index_buffers(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize_index_buffers::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_optimize_reorder_vertex_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "OptimizeReorderVertexBuffer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "OptimizeReorderVertexBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn optimize_reorder_vertex_buffer(
+        this: Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_optimize_reorder_vertex_buffer::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_topology {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetTopology",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetTopology",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_topology(
+        this: Mesh,
+        submesh: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::meshtopology::MeshTopology {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::meshtopology::MeshTopology = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_topology::get_offset() as isize),
+        );
+        inner(this, submesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_meshes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: combineinstance :: CombineInstance > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CombineMeshes",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CombineMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_meshes(
+        this: Mesh,
         combine: ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
         merge_sub_meshes: bool,
         use_matrices: bool,
         has_lightmap_data: bool,
-    ) -> ();
-
-    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool)` overload"]
-    #[method(name = "CombineMeshes", args = 3)]
-    pub fn combine_meshes_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+            bool,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_combine_meshes::get_offset() as isize),
+        );
+        inner(
+            this,
+            combine,
+            merge_sub_meshes,
+            use_matrices,
+            has_lightmap_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_meshes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: combineinstance :: CombineInstance > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CombineMeshes",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CombineMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_meshes_2(
+        this: Mesh,
         combine: ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
         merge_sub_meshes: bool,
         use_matrices: bool,
-    ) -> ();
-
-    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool)` overload"]
-    #[method(name = "CombineMeshes", args = 2)]
-    pub fn combine_meshes_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_combine_meshes_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            combine,
+            merge_sub_meshes,
+            use_matrices,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_meshes_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: combineinstance :: CombineInstance > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CombineMeshes",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CombineMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_meshes_3(
+        this: Mesh,
         combine: ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
         merge_sub_meshes: bool,
-    ) -> ();
-
-    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>)` overload"]
-    #[method(name = "CombineMeshes", args = 1)]
-    pub fn combine_meshes_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_combine_meshes_3::get_offset() as isize),
+        );
+        inner(this, combine, merge_sub_meshes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_meshes_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::combineinstance::CombineInstance,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "CombineMeshes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "CombineMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_meshes_4(
+        this: Mesh,
         combine: ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
-    ) -> ();
-
-    #[doc = "`GetVertexAttribute_Injected(i32, crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor)` overload"]
-    #[method(name = "GetVertexAttribute_Injected", args = 2)]
-    pub fn get_vertex_attribute_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_combine_meshes_4::get_offset() as isize),
+        );
+        inner(this, combine, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_attribute_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetVertexAttribute_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetVertexAttribute_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_attribute_injected(
+        this: Mesh,
         index: i32,
-        ret: crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
-    ) -> ();
-
-    #[doc = "`SetSubMesh_Injected(i32, crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "SetSubMesh_Injected", args = 3)]
-    pub fn set_sub_mesh_injected(
-        self,
+        ret : * mut crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (Mesh , i32 , * mut crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertex_attribute_injected :: get_offset () as isize) ,) ;
+        inner(this, index, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_mesh_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetSubMesh_Injected",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "SetSubMesh_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sub_mesh_injected(
+        this: Mesh,
         index: i32,
-        desc: crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+        desc: *mut crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
         flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`GetSubMesh_Injected(i32, crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor)` overload"]
-    #[method(name = "GetSubMesh_Injected", args = 2)]
-    pub fn get_sub_mesh_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            *mut crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_mesh_injected::get_offset() as isize),
+        );
+        inner(this, index, desc, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_mesh_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetSubMesh_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "GetSubMesh_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_mesh_injected(
+        this: Mesh,
         index: i32,
-        ret: crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
-    ) -> ();
-
-    #[doc = "`get_bounds_Injected(crate::unity_engine::bounds::Bounds)` overload"]
-    #[method(name = "get_bounds_Injected", args = 1)]
-    pub fn get_bounds_injected(self, ret: crate::unity_engine::bounds::Bounds) -> ();
-
-    #[doc = "`set_bounds_Injected(crate::unity_engine::bounds::Bounds)` overload"]
-    #[method(name = "set_bounds_Injected", args = 1)]
-    pub fn set_bounds_injected(self, value: crate::unity_engine::bounds::Bounds) -> ();
+        ret: *mut crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            i32,
+            *mut crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sub_mesh_injected::get_offset() as isize),
+        );
+        inner(this, index, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bounds_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "get_bounds_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "get_bounds_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bounds_injected(
+        this: Mesh,
+        ret: *mut crate::unity_engine::bounds::Bounds,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            *mut crate::unity_engine::bounds::Bounds,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bounds_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bounds_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "set_bounds_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh as ::unity2::ClassIdentity>::NAME,
+                    "set_bounds_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bounds_injected(
+        this: Mesh,
+        value: *mut crate::unity_engine::bounds::Bounds,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh,
+            *mut crate::unity_engine::bounds::Bounds,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bounds_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-mesh")]
+impl Mesh {
+    #[doc = "`Internal_Create(crate::unity_engine::mesh::Mesh)` overload"]
+    pub fn internal_create(
+        mono: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+    ) -> () {
+        unsafe {
+            __Mesh_unity2_raw::internal_create(
+                ::core::convert::Into::into(mono),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FromInstanceID(i32)` overload"]
+    pub fn from_instance_id(
+        id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            __Mesh_unity2_raw::from_instance_id(
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUVChannel(i32)` overload"]
+    pub fn get_uv_channel(
+        uv_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::vertexattribute::VertexAttribute {
+        unsafe {
+            __Mesh_unity2_raw::get_uv_channel(
+                ::core::convert::Into::into(uv_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DefaultDimensionForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
+    pub fn default_dimension_for_channel(
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+    ) -> i32 {
+        unsafe {
+            __Mesh_unity2_raw::default_dimension_for_channel(
+                ::core::convert::Into::into(channel),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AcquireReadOnlyMeshData(crate::unity_engine::mesh::Mesh)` overload"]
+    pub fn acquire_read_only_mesh_data(
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        unsafe {
+            __Mesh_unity2_raw::acquire_read_only_mesh_data(
+                ::core::convert::Into::into(mesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AcquireReadOnlyMeshData(::unity2::Array<crate::unity_engine::mesh::Mesh>)` overload"]
+    pub fn acquire_read_only_mesh_data_2(
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        unsafe {
+            __Mesh_unity2_raw::acquire_read_only_mesh_data_2(
+                ::core::convert::Into::into(meshes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AcquireReadOnlyMeshData(crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>)` overload"]
+    pub fn acquire_read_only_mesh_data_3(
+        meshes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
+        >,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        unsafe {
+            __Mesh_unity2_raw::acquire_read_only_mesh_data_3(
+                ::core::convert::Into::into(meshes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllocateWritableMeshData(i32)` overload"]
+    pub fn allocate_writable_mesh_data(
+        mesh_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::mesh::Mesh_MeshDataArray {
+        unsafe {
+            __Mesh_unity2_raw::allocate_writable_mesh_data(
+                ::core::convert::Into::into(mesh_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_and_dispose_writable_mesh_data(
+        data: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh_MeshDataArray>,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_unity2_raw::apply_and_dispose_writable_mesh_data(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, ::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_and_dispose_writable_mesh_data_2(
+        data: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh_MeshDataArray>,
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_unity2_raw::apply_and_dispose_writable_mesh_data_2(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyAndDisposeWritableMeshData(crate::unity_engine::mesh::Mesh_MeshDataArray, crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_and_dispose_writable_mesh_data_3(
+        data: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh_MeshDataArray>,
+        meshes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
+        >,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_unity2_raw::apply_and_dispose_writable_mesh_data_3(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+pub trait IMeshMethods: IMesh {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_indexFormat()` overload"]
+    fn get_index_format(self) -> crate::unity_engine::rendering::indexformat::IndexFormat {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_index_format(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_indexFormat(crate::unity_engine::rendering::indexformat::IndexFormat)` overload"]
+    fn set_index_format(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::indexformat::IndexFormat>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_index_format(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTotalIndexCount()` overload"]
+    fn get_total_index_count(self) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_total_index_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetIndexBufferParams(i32, crate::unity_engine::rendering::indexformat::IndexFormat)` overload"]
+    fn set_index_buffer_params(
+        self,
+        index_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<crate::unity_engine::rendering::indexformat::IndexFormat>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_index_buffer_params(
+                __receiver,
+                ::core::convert::Into::into(index_count),
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetIndexBufferData(::unity2::IntPtr, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn internal_set_index_buffer_data(
+        self,
+        data: impl ::core::convert::Into<::unity2::IntPtr>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        elem_size: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::internal_set_index_buffer_data(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(elem_size),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetIndexBufferDataFromArray(::unity2::IlInstance, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn internal_set_index_buffer_data_from_array(
+        self,
+        data: impl ::core::convert::Into<::unity2::IlInstance>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        elem_size: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::internal_set_index_buffer_data_from_array(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(elem_size),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertexBufferParamsFromPtr(i32, ::unity2::IntPtr, i32)` overload"]
+    fn set_vertex_buffer_params_from_ptr(
+        self,
+        vertex_count: impl ::core::convert::Into<i32>,
+        attributes_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        attributes_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertex_buffer_params_from_ptr(
+                __receiver,
+                ::core::convert::Into::into(vertex_count),
+                ::core::convert::Into::into(attributes_ptr),
+                ::core::convert::Into::into(attributes_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertexBufferParamsFromArray(i32, ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn set_vertex_buffer_params_from_array(
+        self,
+        vertex_count: impl ::core::convert::Into<i32>,
+        attributes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertex_buffer_params_from_array(
+                __receiver,
+                ::core::convert::Into::into(vertex_count),
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetVertexBufferData(i32, ::unity2::IntPtr, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn internal_set_vertex_buffer_data(
+        self,
+        stream: impl ::core::convert::Into<i32>,
+        data: impl ::core::convert::Into<::unity2::IntPtr>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        elem_size: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::internal_set_vertex_buffer_data(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(elem_size),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetVertexBufferDataFromArray(i32, ::unity2::IlInstance, i32, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn internal_set_vertex_buffer_data_from_array(
+        self,
+        stream: impl ::core::convert::Into<i32>,
+        data: impl ::core::convert::Into<::unity2::IlInstance>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        elem_size: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::internal_set_vertex_buffer_data_from_array(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(elem_size),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributesAlloc()` overload"]
+    fn get_vertex_attributes_alloc(self) -> ::unity2::IlInstance {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes_alloc(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetVertexAttributesArray(::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn get_vertex_attributes_array(
+        self,
+        attributes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes_array(
+                __receiver,
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributesList(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn get_vertex_attributes_list(
+        self,
+        attributes : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes_list(
+                __receiver,
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributeCountImpl()` overload"]
+    fn get_vertex_attribute_count_impl(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attribute_count_impl(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttribute(i32)` overload"]
+    fn get_vertex_attribute(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attribute(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndexStartImpl(i32)` overload"]
+    fn get_index_start_impl(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_index_start_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndexCountImpl(i32)` overload"]
+    fn get_index_count_impl(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_index_count_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTrianglesCountImpl(i32)` overload"]
+    fn get_triangles_count_impl(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_count_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBaseVertexImpl(i32)` overload"]
+    fn get_base_vertex_impl(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_base_vertex_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTrianglesImpl(i32, bool)` overload"]
+    fn get_triangles_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndicesImpl(i32, bool)` overload"]
+    fn get_indices_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndicesImpl(i32, crate::unity_engine::meshtopology::MeshTopology, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IlInstance, i32, i32, bool, i32)` overload"]
+    fn set_indices_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        indices_format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+        >,
+        indices: impl ::core::convert::Into<::unity2::IlInstance>,
+        array_start: impl ::core::convert::Into<i32>,
+        array_size: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(indices_format),
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(array_start),
+                ::core::convert::Into::into(array_size),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndicesNativeArrayImpl(i32, crate::unity_engine::meshtopology::MeshTopology, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IntPtr, i32, i32, bool, i32)` overload"]
+    fn set_indices_native_array_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        indices_format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+        >,
+        indices: impl ::core::convert::Into<::unity2::IntPtr>,
+        array_start: impl ::core::convert::Into<i32>,
+        array_size: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_native_array_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(indices_format),
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(array_start),
+                ::core::convert::Into::into(array_size),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTrianglesNonAllocImpl(::unity2::Array<i32>, i32, bool)` overload"]
+    fn get_triangles_non_alloc_impl(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_non_alloc_impl(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTrianglesNonAllocImpl16(::unity2::Array<u16>, i32, bool)` overload"]
+    fn get_triangles_non_alloc_impl16(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_non_alloc_impl16(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndicesNonAllocImpl(::unity2::Array<i32>, i32, bool)` overload"]
+    fn get_indices_non_alloc_impl(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_non_alloc_impl(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndicesNonAllocImpl16(::unity2::Array<u16>, i32, bool)` overload"]
+    fn get_indices_non_alloc_impl16(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_non_alloc_impl16(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PrintErrorCantAccessChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
+    fn print_error_cant_access_channel(
+        self,
+        ch: impl ::core::convert::Into<crate::unity_engine::rendering::vertexattribute::VertexAttribute>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::print_error_cant_access_channel(
+                __receiver,
+                ::core::convert::Into::into(ch),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasVertexAttribute(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
+    fn has_vertex_attribute(
+        self,
+        attr: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::has_vertex_attribute(
+                __receiver,
+                ::core::convert::Into::into(attr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributeDimension(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
+    fn get_vertex_attribute_dimension(
+        self,
+        attr: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attribute_dimension(
+                __receiver,
+                ::core::convert::Into::into(attr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributeFormat(crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]
+    fn get_vertex_attribute_format(
+        self,
+        attr: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+    ) -> crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attribute_format(
+                __receiver,
+                ::core::convert::Into::into(attr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetArrayForChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_array_for_channel_impl(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::IlInstance>,
+        array_size: impl ::core::convert::Into<i32>,
+        values_start: impl ::core::convert::Into<i32>,
+        values_count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_array_for_channel_impl(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(array_size),
+                ::core::convert::Into::into(values_start),
+                ::core::convert::Into::into(values_count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNativeArrayForChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IntPtr, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_native_array_for_channel_impl(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::IntPtr>,
+        array_size: impl ::core::convert::Into<i32>,
+        values_start: impl ::core::convert::Into<i32>,
+        values_count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_native_array_for_channel_impl(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(array_size),
+                ::core::convert::Into::into(values_start),
+                ::core::convert::Into::into(values_count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAllocArrayFromChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32)` overload"]
+    fn get_alloc_array_from_channel_impl(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::IlInstance {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_alloc_array_from_channel_impl(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetArrayFromChannelImpl(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance)` overload"]
+    fn get_array_from_channel_impl(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::IlInstance>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_array_from_channel_impl(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vertexBufferCount()` overload"]
+    fn get_vertex_buffer_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_buffer_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetNativeVertexBufferPtr(i32)` overload"]
+    fn get_native_vertex_buffer_ptr(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_native_vertex_buffer_ptr(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNativeIndexBufferPtr()` overload"]
+    fn get_native_index_buffer_ptr(self) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_native_index_buffer_ptr(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_blendShapeCount()` overload"]
+    fn get_blend_shape_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearBlendShapes()` overload"]
+    fn clear_blend_shapes(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::clear_blend_shapes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBlendShapeName(i32)` overload"]
+    fn get_blend_shape_name(
+        self,
+        shape_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_name(
+                __receiver,
+                ::core::convert::Into::into(shape_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBlendShapeIndex(::unity2::Il2CppString)` overload"]
+    fn get_blend_shape_index(
+        self,
+        blend_shape_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_index(
+                __receiver,
+                ::core::convert::Into::into(blend_shape_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBlendShapeFrameCount(i32)` overload"]
+    fn get_blend_shape_frame_count(self, shape_index: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_frame_count(
+                __receiver,
+                ::core::convert::Into::into(shape_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBlendShapeFrameWeight(i32, i32)` overload"]
+    fn get_blend_shape_frame_weight(
+        self,
+        shape_index: impl ::core::convert::Into<i32>,
+        frame_index: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_frame_weight(
+                __receiver,
+                ::core::convert::Into::into(shape_index),
+                ::core::convert::Into::into(frame_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBlendShapeFrameVertices(i32, i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_blend_shape_frame_vertices(
+        self,
+        shape_index: impl ::core::convert::Into<i32>,
+        frame_index: impl ::core::convert::Into<i32>,
+        delta_vertices: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+        delta_normals: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+        delta_tangents: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_blend_shape_frame_vertices(
+                __receiver,
+                ::core::convert::Into::into(shape_index),
+                ::core::convert::Into::into(frame_index),
+                ::core::convert::Into::into(delta_vertices),
+                ::core::convert::Into::into(delta_normals),
+                ::core::convert::Into::into(delta_tangents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddBlendShapeFrame(::unity2::Il2CppString, f32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn add_blend_shape_frame(
+        self,
+        shape_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        frame_weight: impl ::core::convert::Into<f32>,
+        delta_vertices: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+        delta_normals: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+        delta_tangents: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::add_blend_shape_frame(
+                __receiver,
+                ::core::convert::Into::into(shape_name),
+                ::core::convert::Into::into(frame_weight),
+                ::core::convert::Into::into(delta_vertices),
+                ::core::convert::Into::into(delta_normals),
+                ::core::convert::Into::into(delta_tangents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasBoneWeights()` overload"]
+    fn has_bone_weights(self) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::has_bone_weights(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBoneWeightsImpl()` overload"]
+    fn get_bone_weights_impl(self) -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bone_weights_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetBoneWeightsImpl(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
+    fn set_bone_weights_impl(
+        self,
+        weights: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::boneweight::BoneWeight>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_bone_weights_impl(
+                __receiver,
+                ::core::convert::Into::into(weights),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalSetBoneWeights(::unity2::IntPtr, i32, ::unity2::IntPtr, i32)` overload"]
+    fn internal_set_bone_weights(
+        self,
+        bones_per_vertex: impl ::core::convert::Into<::unity2::IntPtr>,
+        bones_per_vertex_size: impl ::core::convert::Into<i32>,
+        weights: impl ::core::convert::Into<::unity2::IntPtr>,
+        weights_size: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::internal_set_bone_weights(
+                __receiver,
+                ::core::convert::Into::into(bones_per_vertex),
+                ::core::convert::Into::into(bones_per_vertex_size),
+                ::core::convert::Into::into(weights),
+                ::core::convert::Into::into(weights_size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAllBoneWeightsArraySize()` overload"]
+    fn get_all_bone_weights_array_size(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_all_bone_weights_array_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAllBoneWeightsArray()` overload"]
+    fn get_all_bone_weights_array(self) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_all_bone_weights_array(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBonesPerVertexArray()` overload"]
+    fn get_bones_per_vertex_array(self) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bones_per_vertex_array(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBindposeCount()` overload"]
+    fn get_bindpose_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bindpose_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_bindposes()` overload"]
+    fn get_bindposes(self) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bindposes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_bindposes(::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
+    fn set_bindposes(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_bindposes(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBoneWeightsNonAllocImpl(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
+    fn get_bone_weights_non_alloc_impl(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::boneweight::BoneWeight>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bone_weights_non_alloc_impl(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBindposesNonAllocImpl(::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
+    fn get_bindposes_non_alloc_impl(
+        self,
+        values: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bindposes_non_alloc_impl(
+                __receiver,
+                ::core::convert::Into::into(values),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isReadable()` overload"]
+    fn get_is_readable(self) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canAccess()` overload"]
+    fn get_can_access(self) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_can_access(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_vertexCount()` overload"]
+    fn get_vertex_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_subMeshCount()` overload"]
+    fn get_sub_mesh_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_subMeshCount(i32)` overload"]
+    fn set_sub_mesh_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_mesh_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSubMesh(i32, crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_mesh(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        desc: impl ::core::convert::Into<
+            crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+        >,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_mesh(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSubMesh(i32)` overload"]
+    fn get_sub_mesh(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_sub_mesh(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAllSubMeshesAtOnceFromArray(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_all_sub_meshes_at_once_from_array(
+        self,
+        desc: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_all_sub_meshes_at_once_from_array(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAllSubMeshesAtOnceFromNativeArray(::unity2::IntPtr, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_all_sub_meshes_at_once_from_native_array(
+        self,
+        desc: impl ::core::convert::Into<::unity2::IntPtr>,
+        start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_all_sub_meshes_at_once_from_native_array(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_bounds()` overload"]
+    fn get_bounds(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bounds(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_bounds(crate::unity_engine::bounds::Bounds)` overload"]
+    fn set_bounds(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_bounds(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearImpl(bool)` overload"]
+    fn clear_impl(self, keep_vertex_layout: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::clear_impl(
+                __receiver,
+                ::core::convert::Into::into(keep_vertex_layout),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateBoundsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_bounds_impl(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_bounds_impl(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateNormalsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_normals_impl(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_normals_impl(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateTangentsImpl(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_tangents_impl(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_tangents_impl(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkDynamicImpl()` overload"]
+    fn mark_dynamic_impl(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::mark_dynamic_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MarkModified()` overload"]
+    fn mark_modified(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::mark_modified(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UploadMeshDataImpl(bool)` overload"]
+    fn upload_mesh_data_impl(
+        self,
+        mark_no_longer_readable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::upload_mesh_data_impl(
+                __receiver,
+                ::core::convert::Into::into(mark_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTopologyImpl(i32)` overload"]
+    fn get_topology_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::meshtopology::MeshTopology {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_topology_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateUVDistributionMetricImpl(i32, f32)` overload"]
+    fn recalculate_uv_distribution_metric_impl(
+        self,
+        uv_set_index: impl ::core::convert::Into<i32>,
+        uv_area_threshold: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_uv_distribution_metric_impl(
+                __receiver,
+                ::core::convert::Into::into(uv_set_index),
+                ::core::convert::Into::into(uv_area_threshold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateUVDistributionMetricsImpl(f32)` overload"]
+    fn recalculate_uv_distribution_metrics_impl(
+        self,
+        uv_area_threshold: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_uv_distribution_metrics_impl(
+                __receiver,
+                ::core::convert::Into::into(uv_area_threshold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUVDistributionMetric(i32)` overload"]
+    fn get_uv_distribution_metric(self, uv_set_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv_distribution_metric(
+                __receiver,
+                ::core::convert::Into::into(uv_set_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CombineMeshesImpl(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool, bool)` overload"]
+    fn combine_meshes_impl(
+        self,
+        combine: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+        >,
+        merge_sub_meshes: impl ::core::convert::Into<bool>,
+        use_matrices: impl ::core::convert::Into<bool>,
+        has_lightmap_data: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::combine_meshes_impl(
+                __receiver,
+                ::core::convert::Into::into(combine),
+                ::core::convert::Into::into(merge_sub_meshes),
+                ::core::convert::Into::into(use_matrices),
+                ::core::convert::Into::into(has_lightmap_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OptimizeImpl()` overload"]
+    fn optimize_impl(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OptimizeIndexBuffersImpl()` overload"]
+    fn optimize_index_buffers_impl(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize_index_buffers_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OptimizeReorderVertexBufferImpl()` overload"]
+    fn optimize_reorder_vertex_buffer_impl(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize_reorder_vertex_buffer_impl(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_alloc_array_from_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetAllocArrayFromChannel",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "GetAllocArrayFromChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_alloc_array_from_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetAllocArrayFromChannel",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "GetAllocArrayFromChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`SetSizedArrayForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IlInstance, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sized_array_for_channel(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::IlInstance>,
+        values_array_length: impl ::core::convert::Into<i32>,
+        values_start: impl ::core::convert::Into<i32>,
+        values_count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sized_array_for_channel(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(values_array_length),
+                ::core::convert::Into::into(values_start),
+                ::core::convert::Into::into(values_count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSizedNativeArrayForChannel(crate::unity_engine::rendering::vertexattribute::VertexAttribute, crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat, i32, ::unity2::IntPtr, i32, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sized_native_array_for_channel(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::IntPtr>,
+        values_array_length: impl ::core::convert::Into<i32>,
+        values_start: impl ::core::convert::Into<i32>,
+        values_count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sized_native_array_for_channel(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(values_array_length),
+                ::core::convert::Into::into(values_start),
+                ::core::convert::Into::into(values_count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_array_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<::unity2::Array<M0>>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetArrayForChannel",
+                5,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetArrayForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+                i32,
+                ::unity2::Array<M0>,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_array_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        values: impl ::core::convert::Into<::unity2::Array<M0>>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetArrayForChannel",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetArrayForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                ::unity2::Array<M0>,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_list_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetListForChannel",
+                7,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetListForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+                i32,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_list_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetListForChannel",
+                5,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetListForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(values),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_list_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        buffer: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        capacity: impl ::core::convert::Into<i32>,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetListForChannel",
+                4,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "GetListForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(buffer),
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(dim),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn get_list_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        buffer: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        capacity: impl ::core::convert::Into<i32>,
+        channel: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+        >,
+        dim: impl ::core::convert::Into<i32>,
+        channel_type: impl ::core::convert::Into<
+            crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetListForChannel",
+                5,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "GetListForChannel",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                crate::unity_engine::rendering::vertexattribute::VertexAttribute,
+                i32,
+                crate::unity_engine::rendering::vertexattributeformat::VertexAttributeFormat,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(buffer),
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(channel_type),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`get_vertices()` overload"]
+    fn get_vertices(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertices(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_vertices(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_vertices(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_normals()` overload"]
+    fn get_normals(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_normals(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_normals(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_normals(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_tangents()` overload"]
+    fn get_tangents(self) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_tangents(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_tangents(::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn set_tangents(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv()` overload"]
+    fn get_uv(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv2()` overload"]
+    fn get_uv2(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv2(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv2(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv2(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv3()` overload"]
+    fn get_uv3(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv3(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv3(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv3(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv3(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv4()` overload"]
+    fn get_uv4(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv4(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv4(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv4(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv4(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv5()` overload"]
+    fn get_uv5(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv5(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv5(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv5(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv5(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv6()` overload"]
+    fn get_uv6(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv6(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv6(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv6(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv6(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv7()` overload"]
+    fn get_uv7(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv7(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv7(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv7(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv7(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_uv8()` overload"]
+    fn get_uv8(self) -> ::unity2::Array<crate::unity_engine::vector2::Vector2> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_uv8(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_uv8(::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_uv8(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uv8(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colors()` overload"]
+    fn get_colors(self) -> ::unity2::Array<crate::unity_engine::color::Color> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_colors(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_colors(::unity2::Array<crate::unity_engine::color::Color>)` overload"]
+    fn set_colors(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colors32()` overload"]
+    fn get_colors32(self) -> ::unity2::Array<crate::unity_engine::color32::Color32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_colors32(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_colors32(::unity2::Array<crate::unity_engine::color32::Color32>)` overload"]
+    fn set_colors32(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color32::Color32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors32(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_vertices_2(
+        self,
+        vertices: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertices_2(
+                __receiver,
+                ::core::convert::Into::into(vertices),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_vertices_2(
+        self,
+        in_vertices: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices_2(
+                __receiver,
+                ::core::convert::Into::into(in_vertices),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_vertices_3(
+        self,
+        in_vertices: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices_3(
+                __receiver,
+                ::core::convert::Into::into(in_vertices),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_vertices_4(
+        self,
+        in_vertices: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices_4(
+                __receiver,
+                ::core::convert::Into::into(in_vertices),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_vertices_5(
+        self,
+        in_vertices: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices_5(
+                __receiver,
+                ::core::convert::Into::into(in_vertices),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_vertices_6(
+        self,
+        in_vertices: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertices_6(
+                __receiver,
+                ::core::convert::Into::into(in_vertices),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_normals_2(
+        self,
+        normals: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_normals_2(
+                __receiver,
+                ::core::convert::Into::into(normals),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_normals_2(
+        self,
+        in_normals: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals_2(
+                __receiver,
+                ::core::convert::Into::into(in_normals),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_normals_3(
+        self,
+        in_normals: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals_3(
+                __receiver,
+                ::core::convert::Into::into(in_normals),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNormals(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_normals_4(
+        self,
+        in_normals: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals_4(
+                __receiver,
+                ::core::convert::Into::into(in_normals),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNormals(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_normals_5(
+        self,
+        in_normals: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals_5(
+                __receiver,
+                ::core::convert::Into::into(in_normals),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNormals(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_normals_6(
+        self,
+        in_normals: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_normals_6(
+                __receiver,
+                ::core::convert::Into::into(in_normals),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn get_tangents_2(
+        self,
+        tangents: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_tangents_2(
+                __receiver,
+                ::core::convert::Into::into(tangents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn set_tangents_2(
+        self,
+        in_tangents: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents_2(
+                __receiver,
+                ::core::convert::Into::into(in_tangents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
+    fn set_tangents_3(
+        self,
+        in_tangents: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents_3(
+                __receiver,
+                ::core::convert::Into::into(in_tangents),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTangents(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_tangents_4(
+        self,
+        in_tangents: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents_4(
+                __receiver,
+                ::core::convert::Into::into(in_tangents),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTangents(::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
+    fn set_tangents_5(
+        self,
+        in_tangents: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents_5(
+                __receiver,
+                ::core::convert::Into::into(in_tangents),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTangents(::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_tangents_6(
+        self,
+        in_tangents: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_tangents_6(
+                __receiver,
+                ::core::convert::Into::into(in_tangents),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
+    fn get_colors_2(
+        self,
+        colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_colors_2(
+                __receiver,
+                ::core::convert::Into::into(colors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
+    fn set_colors_2(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_2(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, i32, i32)` overload"]
+    fn set_colors_3(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_3(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_colors_4(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_4(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color::Color>, i32, i32)` overload"]
+    fn set_colors_5(
+        self,
+        in_colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_5(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color::Color>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_colors_6(
+        self,
+        in_colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_6(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>)` overload"]
+    fn get_colors_3(
+        self,
+        colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_colors_3(
+                __receiver,
+                ::core::convert::Into::into(colors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>)` overload"]
+    fn set_colors_7(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_7(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>, i32, i32)` overload"]
+    fn set_colors_8(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_8(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_colors_9(
+        self,
+        in_colors: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color32::Color32,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_9(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>)` overload"]
+    fn set_colors_10(
+        self,
+        in_colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color32::Color32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_10(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>, i32, i32)` overload"]
+    fn set_colors_11(
+        self,
+        in_colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color32::Color32>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_11(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetColors(::unity2::Array<crate::unity_engine::color32::Color32>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_colors_12(
+        self,
+        in_colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color32::Color32>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_colors_12(
+                __receiver,
+                ::core::convert::Into::into(in_colors),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_uvs_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        uv_index: impl ::core::convert::Into<i32>,
+        dim: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetUvsImpl",
+                6,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetUvsImpl",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                i32,
+                i32,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(uv_index),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_u_vs(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_u_vs_2(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_2(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn set_u_vs_3(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_3(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, i32, i32)` overload"]
+    fn set_u_vs_4(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_4(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_5(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_5(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_u_vs_6(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_6(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_7(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_7(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
+    fn set_u_vs_8(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_8(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_9(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_9(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUvsImpl(i32, i32, ::unity2::IlInstance, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_uvs_impl_2(
+        self,
+        uv_index: impl ::core::convert::Into<i32>,
+        dim: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::IlInstance>,
+        array_start: impl ::core::convert::Into<i32>,
+        array_size: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_uvs_impl_2(
+                __receiver,
+                ::core::convert::Into::into(uv_index),
+                ::core::convert::Into::into(dim),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(array_start),
+                ::core::convert::Into::into(array_size),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn set_u_vs_10(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_10(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_u_vs_11(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_11(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn set_u_vs_12(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_12(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>, i32, i32)` overload"]
+    fn set_u_vs_13(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_13(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector2::Vector2>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_14(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_14(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32)` overload"]
+    fn set_u_vs_15(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_15(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_16(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_16(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32)` overload"]
+    fn set_u_vs_17(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_17(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUVs(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_u_vs_18(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_u_vs_18(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_u_vs_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        uv_index: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        dim: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "GetUVsImpl",
+                3,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "GetUVsImpl",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                i32,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(uv_index),
+                ::core::convert::Into::into(uvs),
+                ::core::convert::Into::into(dim),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)` overload"]
+    fn get_u_vs(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_u_vs(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_u_vs_2(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_u_vs_2(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUVs(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
+    fn get_u_vs_3(
+        self,
+        channel: impl ::core::convert::Into<i32>,
+        uvs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_u_vs_3(
+                __receiver,
+                ::core::convert::Into::into(channel),
+                ::core::convert::Into::into(uvs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vertexAttributeCount()` overload"]
+    fn get_vertex_attribute_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attribute_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetVertexAttributes()` overload"]
+    fn get_vertex_attributes(
+        self,
+    ) -> ::unity2::Array<
+        crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor,
+    > {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetVertexAttributes(::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn get_vertex_attributes_2(
+        self,
+        attributes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes_2(
+                __receiver,
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttributes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn get_vertex_attributes_3(
+        self,
+        attributes : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_vertex_attributes_3(
+                __receiver,
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertexBufferParams(i32, ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>)` overload"]
+    fn set_vertex_buffer_params(
+        self,
+        vertex_count: impl ::core::convert::Into<i32>,
+        attributes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_vertex_buffer_params(
+                __receiver,
+                ::core::convert::Into::into(vertex_count),
+                ::core::convert::Into::into(attributes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_vertex_buffer_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        data: impl ::core::convert::Into<::unity2::Array<M0>>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        stream: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertexBufferData",
+                6,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetVertexBufferData",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                ::unity2::Array<M0>,
+                i32,
+                i32,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_vertex_buffer_data_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        data: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        stream: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetVertexBufferData",
+                6,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetVertexBufferData",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                i32,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`PrintErrorCantAccessIndices()` overload"]
+    fn print_error_cant_access_indices(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::print_error_cant_access_indices(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckCanAccessSubmesh(i32, bool)` overload"]
+    fn check_can_access_submesh(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        error_about_triangles: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::check_can_access_submesh(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(error_about_triangles),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckCanAccessSubmeshTriangles(i32)` overload"]
+    fn check_can_access_submesh_triangles(self, submesh: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::check_can_access_submesh_triangles(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckCanAccessSubmeshIndices(i32)` overload"]
+    fn check_can_access_submesh_indices(self, submesh: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::check_can_access_submesh_indices(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_triangles()` overload"]
+    fn get_triangles(self) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_triangles(::unity2::Array<i32>)` overload"]
+    fn set_triangles(self, value: impl ::core::convert::Into<::unity2::Array<i32>>) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTriangles(i32)` overload"]
+    fn get_triangles_2(self, submesh: impl ::core::convert::Into<i32>) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_2(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTriangles(i32, bool)` overload"]
+    fn get_triangles_3(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_3(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
+    fn get_triangles_4(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_4(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
+    fn get_triangles_5(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_5(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, bool)` overload"]
+    fn get_triangles_6(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_triangles_6(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndices(i32)` overload"]
+    fn get_indices(self, submesh: impl ::core::convert::Into<i32>) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndices(i32, bool)` overload"]
+    fn get_indices_2(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_2(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
+    fn get_indices_3(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_3(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
+    fn get_indices_4(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_4(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndices(crate::system::collections::generic::list_1::List_1<u16>, i32, bool)` overload"]
+    fn get_indices_5(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        apply_base_vertex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_indices_5(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(apply_base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_index_buffer_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        data: impl ::core::convert::Into<::unity2::Array<M0>>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndexBufferData",
+                5,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetIndexBufferData",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                ::unity2::Array<M0>,
+                i32,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_index_buffer_data_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        data: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        data_start: impl ::core::convert::Into<i32>,
+        mesh_buffer_start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Mesh as ::unity2::ClassIdentity>::class(),
+                "SetIndexBufferData",
+                5,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Mesh as ::unity2::ClassIdentity>::NAME,
+                "SetIndexBufferData",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                Mesh,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                i32,
+                i32,
+                i32,
+                crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_start),
+                ::core::convert::Into::into(mesh_buffer_start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetIndexStart(i32)` overload"]
+    fn get_index_start(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_index_start(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIndexCount(i32)` overload"]
+    fn get_index_count(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_index_count(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBaseVertex(i32)` overload"]
+    fn get_base_vertex(self, submesh: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_base_vertex(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckIndicesArrayRange(i32, i32, i32)` overload"]
+    fn check_indices_array_range(
+        self,
+        values_length: impl ::core::convert::Into<i32>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::check_indices_array_range(
+                __receiver,
+                ::core::convert::Into::into(values_length),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTrianglesImpl(i32, crate::unity_engine::rendering::indexformat::IndexFormat, ::unity2::IlInstance, i32, i32, i32, bool, i32)` overload"]
+    fn set_triangles_impl(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+        indices_format: impl ::core::convert::Into<
+            crate::unity_engine::rendering::indexformat::IndexFormat,
+        >,
+        triangles: impl ::core::convert::Into<::unity2::IlInstance>,
+        triangles_array_length: impl ::core::convert::Into<i32>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_impl(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(indices_format),
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(triangles_array_length),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<i32>, i32)` overload"]
+    fn set_triangles_2(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_2(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, bool)` overload"]
+    fn set_triangles_3(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_3(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, bool, i32)` overload"]
+    fn set_triangles_4(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_4(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<i32>, i32, i32, i32, bool, i32)` overload"]
+    fn set_triangles_5(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<i32>>,
+        triangles_start: impl ::core::convert::Into<i32>,
+        triangles_length: impl ::core::convert::Into<i32>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_5(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(triangles_start),
+                ::core::convert::Into::into(triangles_length),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<u16>, i32, bool, i32)` overload"]
+    fn set_triangles_6(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_6(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(::unity2::Array<u16>, i32, i32, i32, bool, i32)` overload"]
+    fn set_triangles_7(
+        self,
+        triangles: impl ::core::convert::Into<::unity2::Array<u16>>,
+        triangles_start: impl ::core::convert::Into<i32>,
+        triangles_length: impl ::core::convert::Into<i32>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_7(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(triangles_start),
+                ::core::convert::Into::into(triangles_length),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32)` overload"]
+    fn set_triangles_8(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_8(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool)` overload"]
+    fn set_triangles_9(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_9(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, bool, i32)` overload"]
+    fn set_triangles_10(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_10(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<i32>, i32, i32, i32, bool, i32)` overload"]
+    fn set_triangles_11(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        triangles_start: impl ::core::convert::Into<i32>,
+        triangles_length: impl ::core::convert::Into<i32>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_11(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(triangles_start),
+                ::core::convert::Into::into(triangles_length),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, bool, i32)` overload"]
+    fn set_triangles_12(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_12(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriangles(crate::system::collections::generic::list_1::List_1<u16>, i32, i32, i32, bool, i32)` overload"]
+    fn set_triangles_13(
+        self,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        triangles_start: impl ::core::convert::Into<i32>,
+        triangles_length: impl ::core::convert::Into<i32>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_triangles_13(
+                __receiver,
+                ::core::convert::Into::into(triangles),
+                ::core::convert::Into::into(triangles_start),
+                ::core::convert::Into::into(triangles_length),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32)` overload"]
+    fn set_indices(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<i32>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool)` overload"]
+    fn set_indices_2(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<i32>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_2(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_3(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<i32>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_3(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<i32>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_4(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<i32>>,
+        indices_start: impl ::core::convert::Into<i32>,
+        indices_length: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_4(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(indices_start),
+                ::core::convert::Into::into(indices_length),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<u16>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_5(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<u16>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_5(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(::unity2::Array<u16>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_6(
+        self,
+        indices: impl ::core::convert::Into<::unity2::Array<u16>>,
+        indices_start: impl ::core::convert::Into<i32>,
+        indices_length: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_6(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(indices_start),
+                ::core::convert::Into::into(indices_length),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<i32>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_7(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_7(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<i32>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_8(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        indices_start: impl ::core::convert::Into<i32>,
+        indices_length: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_8(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(indices_start),
+                ::core::convert::Into::into(indices_length),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<u16>, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_9(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_9(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIndices(crate::system::collections::generic::list_1::List_1<u16>, i32, i32, crate::unity_engine::meshtopology::MeshTopology, i32, bool, i32)` overload"]
+    fn set_indices_10(
+        self,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u16>>,
+        indices_start: impl ::core::convert::Into<i32>,
+        indices_length: impl ::core::convert::Into<i32>,
+        topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
+        submesh: impl ::core::convert::Into<i32>,
+        calculate_bounds: impl ::core::convert::Into<bool>,
+        base_vertex: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_indices_10(
+                __receiver,
+                ::core::convert::Into::into(indices),
+                ::core::convert::Into::into(indices_start),
+                ::core::convert::Into::into(indices_length),
+                ::core::convert::Into::into(topology),
+                ::core::convert::Into::into(submesh),
+                ::core::convert::Into::into(calculate_bounds),
+                ::core::convert::Into::into(base_vertex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSubMeshes(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_meshes(
+        self,
+        desc: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_meshes(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSubMeshes(::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_meshes_2(
+        self,
+        desc: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>,
+        >,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_meshes_2(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSubMeshes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, i32, i32, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_meshes_3(
+        self,
+        desc: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >,
+        >,
+        start: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_meshes_3(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSubMeshes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_meshes_4(
+        self,
+        desc: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >,
+        >,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_sub_meshes_4(
+                __receiver,
+                ::core::convert::Into::into(desc),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBindposes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
+    fn get_bindposes_2(
+        self,
+        bindposes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::matrix4x4::Matrix4x4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bindposes_2(
+                __receiver,
+                ::core::convert::Into::into(bindposes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBoneWeights(crate::system::collections::generic::list_1::List_1<crate::unity_engine::boneweight::BoneWeight>)` overload"]
+    fn get_bone_weights(
+        self,
+        bone_weights: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::boneweight::BoneWeight,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bone_weights(
+                __receiver,
+                ::core::convert::Into::into(bone_weights),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_boneWeights()` overload"]
+    fn get_bone_weights_2(self) -> ::unity2::Array<crate::unity_engine::boneweight::BoneWeight> {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_bone_weights_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_boneWeights(::unity2::Array<crate::unity_engine::boneweight::BoneWeight>)` overload"]
+    fn set_bone_weights(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::boneweight::BoneWeight>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::set_bone_weights(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear(bool)` overload"]
+    fn clear(self, keep_vertex_layout: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::clear(
+                __receiver,
+                ::core::convert::Into::into(keep_vertex_layout),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear_2(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::clear_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RecalculateBounds()` overload"]
+    fn recalculate_bounds(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_bounds(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RecalculateNormals()` overload"]
+    fn recalculate_normals(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_normals(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RecalculateTangents()` overload"]
+    fn recalculate_tangents(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_tangents(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RecalculateBounds(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_bounds_2(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_bounds_2(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateNormals(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_normals_2(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_normals_2(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateTangents(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn recalculate_tangents_2(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_tangents_2(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateUVDistributionMetric(i32, f32)` overload"]
+    fn recalculate_uv_distribution_metric(
+        self,
+        uv_set_index: impl ::core::convert::Into<i32>,
+        uv_area_threshold: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_uv_distribution_metric(
+                __receiver,
+                ::core::convert::Into::into(uv_set_index),
+                ::core::convert::Into::into(uv_area_threshold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RecalculateUVDistributionMetrics(f32)` overload"]
+    fn recalculate_uv_distribution_metrics(
+        self,
+        uv_area_threshold: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::recalculate_uv_distribution_metrics(
+                __receiver,
+                ::core::convert::Into::into(uv_area_threshold),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MarkDynamic()` overload"]
+    fn mark_dynamic(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::mark_dynamic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UploadMeshData(bool)` overload"]
+    fn upload_mesh_data(self, mark_no_longer_readable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::upload_mesh_data(
+                __receiver,
+                ::core::convert::Into::into(mark_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Optimize()` overload"]
+    fn optimize(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OptimizeIndexBuffers()` overload"]
+    fn optimize_index_buffers(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize_index_buffers(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OptimizeReorderVertexBuffer()` overload"]
+    fn optimize_reorder_vertex_buffer(self) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::optimize_reorder_vertex_buffer(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTopology(i32)` overload"]
+    fn get_topology(
+        self,
+        submesh: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::meshtopology::MeshTopology {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::get_topology(
+                __receiver,
+                ::core::convert::Into::into(submesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool, bool)` overload"]
+    fn combine_meshes(
+        self,
+        combine: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+        >,
+        merge_sub_meshes: impl ::core::convert::Into<bool>,
+        use_matrices: impl ::core::convert::Into<bool>,
+        has_lightmap_data: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::combine_meshes(
+                __receiver,
+                ::core::convert::Into::into(combine),
+                ::core::convert::Into::into(merge_sub_meshes),
+                ::core::convert::Into::into(use_matrices),
+                ::core::convert::Into::into(has_lightmap_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool, bool)` overload"]
+    fn combine_meshes_2(
+        self,
+        combine: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+        >,
+        merge_sub_meshes: impl ::core::convert::Into<bool>,
+        use_matrices: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::combine_meshes_2(
+                __receiver,
+                ::core::convert::Into::into(combine),
+                ::core::convert::Into::into(merge_sub_meshes),
+                ::core::convert::Into::into(use_matrices),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>, bool)` overload"]
+    fn combine_meshes_3(
+        self,
+        combine: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+        >,
+        merge_sub_meshes: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::combine_meshes_3(
+                __receiver,
+                ::core::convert::Into::into(combine),
+                ::core::convert::Into::into(merge_sub_meshes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CombineMeshes(::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>)` overload"]
+    fn combine_meshes_4(
+        self,
+        combine: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::combineinstance::CombineInstance>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Mesh_unity2_raw::combine_meshes_4(
+                __receiver,
+                ::core::convert::Into::into(combine),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVertexAttribute_Injected(i32, *mutcrate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor)` overload"]
+    fn get_vertex_attribute_injected(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > :: uninit () ;
+            __Mesh_unity2_raw::get_vertex_attribute_injected(
+                __receiver,
+                ::core::convert::Into::into(index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetSubMesh_Injected(i32, *mutcrate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    fn set_sub_mesh_injected(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >::uninit();
+            __Mesh_unity2_raw::set_sub_mesh_injected(
+                __receiver,
+                ::core::convert::Into::into(index),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetSubMesh_Injected(i32, *mutcrate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor)` overload"]
+    fn get_sub_mesh_injected(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::submeshdescriptor::SubMeshDescriptor,
+            >::uninit();
+            __Mesh_unity2_raw::get_sub_mesh_injected(
+                __receiver,
+                ::core::convert::Into::into(index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_bounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
+    fn get_bounds_injected(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __Mesh_unity2_raw::get_bounds_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_bounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
+    fn set_bounds_injected(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <Mesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __Mesh_unity2_raw::set_bounds_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+impl<__T: IMesh> IMeshMethods for __T {}
 
 #[cfg(feature = "unity_engine-mesh")]
 impl Mesh {
@@ -2059,4 +20166,22 @@ impl Mesh {
         <Self as IMeshMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+pub mod prelude {
+    pub use super::IMesh;
+    pub use super::IMeshMethods;
+    pub use super::Mesh;
+    pub use super::Mesh_MeshData;
+    pub use super::Mesh_MeshDataArray;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

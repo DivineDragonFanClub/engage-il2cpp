@@ -42,20 +42,150 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-#[::unity2::methods]
-impl ByteCode_SourceCodeStackGuard {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ByteCode_SourceCodeStackGuard_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ByteCode_SourceCodeStackGuard,
         sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode_SourceCodeStackGuard,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, sref, bc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: ByteCode_SourceCodeStackGuard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ByteCode_SourceCodeStackGuard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+pub trait IByteCode_SourceCodeStackGuardMethods: IByteCode_SourceCodeStackGuard {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn ctor(
+        self,
+        sref: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+        bc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ByteCode_SourceCodeStackGuard_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(sref),
+                ::core::convert::Into::into(bc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ByteCode_SourceCodeStackGuard_unity2_raw::dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+impl<__T: IByteCode_SourceCodeStackGuard> IByteCode_SourceCodeStackGuardMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
 impl ByteCode_SourceCodeStackGuard {
@@ -77,292 +207,2688 @@ impl ByteCode_SourceCodeStackGuard {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-#[::unity2::methods]
-impl ByteCode {
-    #[doc = "`get_Script()` overload"]
-    #[method(name = "get_Script", args = 0)]
-    pub fn get_script(self) -> crate::moon_sharp::interpreter::script::Script;
-
-    #[doc = "`set_Script(crate::moon_sharp::interpreter::script::Script)` overload"]
-    #[method(name = "set_Script", args = 1)]
-    pub fn set_script(self, value: crate::moon_sharp::interpreter::script::Script) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, script: crate::moon_sharp::interpreter::script::Script) -> ();
-
-    #[doc = "`PushSourceRef(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]
-    #[method(name = "PushSourceRef", args = 1)]
-    pub fn push_source_ref(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ByteCode_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "get_Script",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "get_Script",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_script(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::script::Script {
+        let inner: extern "C" fn(
+            ByteCode,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::script::Script = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_script::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "set_Script",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "set_Script",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_script(
+        this: ByteCode,
+        value: crate::moon_sharp::interpreter::script::Script,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode,
+            crate::moon_sharp::interpreter::script::Script,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_script::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ByteCode,
+        script: crate::moon_sharp::interpreter::script::Script,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode,
+            crate::moon_sharp::interpreter::script::Script,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, script, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push_source_ref {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "PushSourceRef",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "PushSourceRef",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push_source_ref(
+        this: ByteCode,
         sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    ) -> ();
-
-    #[doc = "`PopSourceRef()` overload"]
-    #[method(name = "PopSourceRef", args = 0)]
-    pub fn pop_source_ref(self) -> ();
-
-    #[doc = "`Dump(::unity2::Il2CppString)` overload"]
-    #[method(name = "Dump", args = 1)]
-    pub fn dump(self, file: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetJumpPointForNextInstruction()` overload"]
-    #[method(name = "GetJumpPointForNextInstruction", args = 0)]
-    pub fn get_jump_point_for_next_instruction(self) -> i32;
-
-    #[doc = "`GetJumpPointForLastInstruction()` overload"]
-    #[method(name = "GetJumpPointForLastInstruction", args = 0)]
-    pub fn get_jump_point_for_last_instruction(self) -> i32;
-
-    #[doc = "`GetLastInstruction()` overload"]
-    #[method(name = "GetLastInstruction", args = 0)]
-    pub fn get_last_instruction(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`AppendInstruction(crate::moon_sharp::interpreter::execution::vm::instruction::Instruction)` overload"]
-    #[method(name = "AppendInstruction", args = 1)]
-    pub fn append_instruction(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_push_source_ref::get_offset() as isize),
+        );
+        inner(this, sref, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop_source_ref {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "PopSourceRef",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "PopSourceRef",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop_source_ref(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ByteCode, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pop_source_ref::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Dump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump(
+        this: ByteCode,
+        file: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ByteCode, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dump::get_offset() as isize),
+            );
+        inner(this, file, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_jump_point_for_next_instruction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "GetJumpPointForNextInstruction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "GetJumpPointForNextInstruction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_jump_point_for_next_instruction(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ByteCode, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_jump_point_for_next_instruction::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_jump_point_for_last_instruction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "GetJumpPointForLastInstruction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "GetJumpPointForLastInstruction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_jump_point_for_last_instruction(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ByteCode, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_jump_point_for_last_instruction::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_last_instruction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "GetLastInstruction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "GetLastInstruction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_last_instruction(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_last_instruction :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_append_instruction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "AppendInstruction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "AppendInstruction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn append_instruction(
+        this: ByteCode,
         c: crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Nop(::unity2::Il2CppString)` overload"]
-    #[method(name = "Emit_Nop", args = 1)]
-    pub fn emit_nop(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_append_instruction :: get_offset () as isize) ,) ;
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_nop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Nop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Nop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_nop(
+        this: ByteCode,
         comment: ::unity2::Il2CppString,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Invalid(::unity2::Il2CppString)` overload"]
-    #[method(name = "Emit_Invalid", args = 1)]
-    pub fn emit_invalid(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_nop :: get_offset () as isize) ,) ;
+        inner(this, comment, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_invalid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Invalid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Invalid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_invalid(
+        this: ByteCode,
         r#type: ::unity2::Il2CppString,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Pop(i32)` overload"]
-    #[method(name = "Emit_Pop", args = 1)]
-    pub fn emit_pop(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_invalid :: get_offset () as isize) ,) ;
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_pop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Pop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Pop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_pop(
+        this: ByteCode,
         num: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Call(i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Emit_Call", args = 2)]
-    pub fn emit_call(self, arg_count: i32, debug_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Emit_ThisCall(i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Emit_ThisCall", args = 2)]
-    pub fn emit_this_call(self, arg_count: i32, debug_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Emit_Literal(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "Emit_Literal", args = 1)]
-    pub fn emit_literal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_pop :: get_offset () as isize) ,) ;
+        inner(this, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Call",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Call",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_call(
+        this: ByteCode,
+        arg_count: i32,
+        debug_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_call::get_offset() as isize),
+        );
+        inner(this, arg_count, debug_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_this_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_ThisCall",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_ThisCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_this_call(
+        this: ByteCode,
+        arg_count: i32,
+        debug_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_this_call::get_offset() as isize),
+        );
+        inner(this, arg_count, debug_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_literal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Literal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Literal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_literal(
+        this: ByteCode,
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Jump(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode, i32, i32)` overload"]
-    #[method(name = "Emit_Jump", args = 3)]
-    pub fn emit_jump(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_literal :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_jump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Jump",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Jump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_jump(
+        this: ByteCode,
         jump_op_code: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
         idx: i32,
         opt_par: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_MkTuple(i32)` overload"]
-    #[method(name = "Emit_MkTuple", args = 1)]
-    pub fn emit_mk_tuple(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_jump :: get_offset () as isize) ,) ;
+        inner(this, jump_op_code, idx, opt_par, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_mk_tuple {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_MkTuple",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_MkTuple",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_mk_tuple(
+        this: ByteCode,
         cnt: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Operator(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)` overload"]
-    #[method(name = "Emit_Operator", args = 1)]
-    pub fn emit_operator(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_mk_tuple :: get_offset () as isize) ,) ;
+        inner(this, cnt, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_operator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Operator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Operator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_operator(
+        this: ByteCode,
         opcode: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Debug(::unity2::Il2CppString)` overload"]
-    #[method(name = "Emit_Debug", args = 1)]
-    pub fn emit_debug(self, str: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Emit_Enter(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
-    #[method(name = "Emit_Enter", args = 1)]
-    pub fn emit_enter(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_operator :: get_offset () as isize) ,) ;
+        inner(this, opcode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_debug {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Debug",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Debug",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_debug(
+        this: ByteCode,
+        str: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ByteCode, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_emit_debug::get_offset() as isize),
+            );
+        inner(this, str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Enter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Enter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_enter(
+        this: ByteCode,
         runtime_scope_block : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Leave(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
-    #[method(name = "Emit_Leave", args = 1)]
-    pub fn emit_leave(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_enter :: get_offset () as isize) ,) ;
+        inner(this, runtime_scope_block, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_leave {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Leave",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Leave",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_leave(
+        this: ByteCode,
         runtime_scope_block : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Exit(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
-    #[method(name = "Emit_Exit", args = 1)]
-    pub fn emit_exit(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_leave :: get_offset () as isize) ,) ;
+        inner(this, runtime_scope_block, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Exit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Exit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_exit(
+        this: ByteCode,
         runtime_scope_block : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Clean(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
-    #[method(name = "Emit_Clean", args = 1)]
-    pub fn emit_clean(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_exit :: get_offset () as isize) ,) ;
+        inner(this, runtime_scope_block, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_clean {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Clean",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Clean",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_clean(
+        this: ByteCode,
         runtime_scope_block : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Closure(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, i32)` overload"]
-    #[method(name = "Emit_Closure", args = 2)]
-    pub fn emit_closure(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_clean :: get_offset () as isize) ,) ;
+        inner(this, runtime_scope_block, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_closure {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Closure",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Closure",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_closure(
+        this: ByteCode,
         symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
         jmpnum: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Args(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]
-    #[method(name = "Emit_Args", args = 1)]
-    pub fn emit_args(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_closure :: get_offset () as isize) ,) ;
+        inner(this, symbols, jmpnum, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::moon_sharp::interpreter::symbolref::SymbolRef,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Args",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Args",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_args(
+        this: ByteCode,
         symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Ret(i32)` overload"]
-    #[method(name = "Emit_Ret", args = 1)]
-    pub fn emit_ret(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_args :: get_offset () as isize) ,) ;
+        inner(this, symbols, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_ret {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Ret",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Ret",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_ret(
+        this: ByteCode,
         retvals: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_ToNum(i32)` overload"]
-    #[method(name = "Emit_ToNum", args = 1)]
-    pub fn emit_to_num(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_ret :: get_offset () as isize) ,) ;
+        inner(this, retvals, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_to_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_ToNum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_ToNum",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_to_num(
+        this: ByteCode,
         stage: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Incr(i32)` overload"]
-    #[method(name = "Emit_Incr", args = 1)]
-    pub fn emit_incr(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_to_num :: get_offset () as isize) ,) ;
+        inner(this, stage, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_incr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Incr",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Incr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_incr(
+        this: ByteCode,
         i: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_NewTable(bool)` overload"]
-    #[method(name = "Emit_NewTable", args = 1)]
-    pub fn emit_new_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_incr :: get_offset () as isize) ,) ;
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_new_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_NewTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_NewTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_new_table(
+        this: ByteCode,
         shared: bool,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_IterPrep()` overload"]
-    #[method(name = "Emit_IterPrep", args = 0)]
-    pub fn emit_iter_prep(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_ExpTuple(i32)` overload"]
-    #[method(name = "Emit_ExpTuple", args = 1)]
-    pub fn emit_exp_tuple(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_new_table :: get_offset () as isize) ,) ;
+        inner(this, shared, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_iter_prep {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_IterPrep",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_IterPrep",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_iter_prep(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_iter_prep :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_exp_tuple {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_ExpTuple",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_ExpTuple",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_exp_tuple(
+        this: ByteCode,
         stack_offset: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_IterUpd()` overload"]
-    #[method(name = "Emit_IterUpd", args = 0)]
-    pub fn emit_iter_upd(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Meta(::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::vm::opcodemetadatatype::OpCodeMetadataType, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "Emit_Meta", args = 3)]
-    pub fn emit_meta(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_exp_tuple :: get_offset () as isize) ,) ;
+        inner(this, stack_offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_iter_upd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_IterUpd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_IterUpd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_iter_upd(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_iter_upd :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_meta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: opcodemetadatatype :: OpCodeMetadataType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Meta",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Meta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_meta(
+        this: ByteCode,
         func_name: ::unity2::Il2CppString,
         meta_type : crate :: moon_sharp :: interpreter :: execution :: vm :: opcodemetadatatype :: OpCodeMetadataType,
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_BeginFn(crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame)` overload"]
-    #[method(name = "Emit_BeginFn", args = 1)]
-    pub fn emit_begin_fn(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: execution :: vm :: opcodemetadatatype :: OpCodeMetadataType , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_meta :: get_offset () as isize) ,) ;
+        inner(this, func_name, meta_type, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_begin_fn {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeframe :: RuntimeScopeFrame as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_BeginFn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_BeginFn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_begin_fn(
+        this: ByteCode,
         stack_frame : crate :: moon_sharp :: interpreter :: execution :: runtimescopeframe :: RuntimeScopeFrame,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Scalar()` overload"]
-    #[method(name = "Emit_Scalar", args = 0)]
-    pub fn emit_scalar(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Load(crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]
-    #[method(name = "Emit_Load", args = 1)]
-    pub fn emit_load(self, sym: crate::moon_sharp::interpreter::symbolref::SymbolRef) -> i32;
-
-    #[doc = "`Emit_Store(crate::moon_sharp::interpreter::symbolref::SymbolRef, i32, i32)` overload"]
-    #[method(name = "Emit_Store", args = 3)]
-    pub fn emit_store(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: execution :: runtimescopeframe :: RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_begin_fn :: get_offset () as isize) ,) ;
+        inner(this, stack_frame, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_scalar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Scalar",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Scalar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_scalar(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_scalar :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::symbolref::SymbolRef as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Load",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Load",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_load(
+        this: ByteCode,
+        sym: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ByteCode,
+            crate::moon_sharp::interpreter::symbolref::SymbolRef,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_load::get_offset() as isize),
+        );
+        inner(this, sym, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_store {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::symbolref::SymbolRef as ::unity2::IlType>::il_type(
+                ),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Store",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Store",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_store(
+        this: ByteCode,
         sym: crate::moon_sharp::interpreter::symbolref::SymbolRef,
         stackofs: i32,
         tupleidx: i32,
-    ) -> i32;
-
-    #[doc = "`Emit_TblInitN()` overload"]
-    #[method(name = "Emit_TblInitN", args = 0)]
-    pub fn emit_tbl_init_n(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_TblInitI(bool)` overload"]
-    #[method(name = "Emit_TblInitI", args = 1)]
-    pub fn emit_tbl_init_i(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ByteCode,
+            crate::moon_sharp::interpreter::symbolref::SymbolRef,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_emit_store::get_offset() as isize),
+        );
+        inner(this, sym, stackofs, tupleidx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_tbl_init_n {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_TblInitN",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_TblInitN",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_tbl_init_n(
+        this: ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_tbl_init_n :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_tbl_init_i {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_TblInitI",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_TblInitI",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_tbl_init_i(
+        this: ByteCode,
         lastpos: bool,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Index(crate::moon_sharp::interpreter::dynvalue::DynValue, bool, bool)` overload"]
-    #[method(name = "Emit_Index", args = 3)]
-    pub fn emit_index(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_tbl_init_i :: get_offset () as isize) ,) ;
+        inner(this, lastpos, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Index",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_index(
+        this: ByteCode,
         index: crate::moon_sharp::interpreter::dynvalue::DynValue,
         is_name_index: bool,
         is_exp_list: bool,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_IndexSet(i32, i32, crate::moon_sharp::interpreter::dynvalue::DynValue, bool, bool)` overload"]
-    #[method(name = "Emit_IndexSet", args = 5)]
-    pub fn emit_index_set(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_index :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            index,
+            is_name_index,
+            is_exp_list,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_index_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_IndexSet",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_IndexSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_index_set(
+        this: ByteCode,
         stackofs: i32,
         tupleidx: i32,
         index: crate::moon_sharp::interpreter::dynvalue::DynValue,
         is_name_index: bool,
         is_exp_list: bool,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Copy(i32)` overload"]
-    #[method(name = "Emit_Copy", args = 1)]
-    pub fn emit_copy(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , i32 , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_index_set :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            stackofs,
+            tupleidx,
+            index,
+            is_name_index,
+            is_exp_list,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_copy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Copy",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Copy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_copy(
+        this: ByteCode,
         numval: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
-
-    #[doc = "`Emit_Swap(i32, i32)` overload"]
-    #[method(name = "Emit_Swap", args = 2)]
-    pub fn emit_swap(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_copy :: get_offset () as isize) ,) ;
+        inner(this, numval, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_emit_swap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode as ::unity2::ClassIdentity>::class(),
+                "Emit_Swap",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode as ::unity2::ClassIdentity>::NAME,
+                    "Emit_Swap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn emit_swap(
+        this: ByteCode,
         p1: i32,
         p2: i32,
-    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        let inner : extern "C" fn (ByteCode , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_emit_swap :: get_offset () as isize) ,) ;
+        inner(this, p1, p2, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+pub trait IByteCodeMethods: IByteCode {
+    #[doc = "`get_Script()` overload"]
+    fn get_script(self) -> crate::moon_sharp::interpreter::script::Script {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::get_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Script(crate::moon_sharp::interpreter::script::Script)` overload"]
+    fn set_script(
+        self,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::set_script(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"]
+    fn ctor(
+        self,
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(script),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PushSourceRef(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]
+    fn push_source_ref(
+        self,
+        sref: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::push_source_ref(
+                __receiver,
+                ::core::convert::Into::into(sref),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopSourceRef()` overload"]
+    fn pop_source_ref(self) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::pop_source_ref(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dump(::unity2::Il2CppString)` overload"]
+    fn dump(self, file: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::dump(
+                __receiver,
+                ::core::convert::Into::into(file),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetJumpPointForNextInstruction()` overload"]
+    fn get_jump_point_for_next_instruction(self) -> i32 {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::get_jump_point_for_next_instruction(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetJumpPointForLastInstruction()` overload"]
+    fn get_jump_point_for_last_instruction(self) -> i32 {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::get_jump_point_for_last_instruction(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLastInstruction()` overload"]
+    fn get_last_instruction(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::get_last_instruction(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AppendInstruction(crate::moon_sharp::interpreter::execution::vm::instruction::Instruction)` overload"]
+    fn append_instruction(
+        self,
+        c: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::append_instruction(
+                __receiver,
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Nop(::unity2::Il2CppString)` overload"]
+    fn emit_nop(
+        self,
+        comment: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_nop(
+                __receiver,
+                ::core::convert::Into::into(comment),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Invalid(::unity2::Il2CppString)` overload"]
+    fn emit_invalid(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_invalid(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Pop(i32)` overload"]
+    fn emit_pop(
+        self,
+        num: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_pop(
+                __receiver,
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Call(i32, ::unity2::Il2CppString)` overload"]
+    fn emit_call(
+        self,
+        arg_count: impl ::core::convert::Into<i32>,
+        debug_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_call(
+                __receiver,
+                ::core::convert::Into::into(arg_count),
+                ::core::convert::Into::into(debug_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_ThisCall(i32, ::unity2::Il2CppString)` overload"]
+    fn emit_this_call(
+        self,
+        arg_count: impl ::core::convert::Into<i32>,
+        debug_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_this_call(
+                __receiver,
+                ::core::convert::Into::into(arg_count),
+                ::core::convert::Into::into(debug_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Literal(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    fn emit_literal(
+        self,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_literal(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Jump(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode, i32, i32)` overload"]
+    fn emit_jump(
+        self,
+        jump_op_code: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
+        >,
+        idx: impl ::core::convert::Into<i32>,
+        opt_par: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_jump(
+                __receiver,
+                ::core::convert::Into::into(jump_op_code),
+                ::core::convert::Into::into(idx),
+                ::core::convert::Into::into(opt_par),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_MkTuple(i32)` overload"]
+    fn emit_mk_tuple(
+        self,
+        cnt: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_mk_tuple(
+                __receiver,
+                ::core::convert::Into::into(cnt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Operator(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)` overload"]
+    fn emit_operator(
+        self,
+        opcode: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_operator(
+                __receiver,
+                ::core::convert::Into::into(opcode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Debug(::unity2::Il2CppString)` overload"]
+    fn emit_debug(self, str: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_debug(
+                __receiver,
+                ::core::convert::Into::into(str),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Enter(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
+    fn emit_enter(
+        self,
+        runtime_scope_block: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_enter(
+                __receiver,
+                ::core::convert::Into::into(runtime_scope_block),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Leave(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
+    fn emit_leave(
+        self,
+        runtime_scope_block: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_leave(
+                __receiver,
+                ::core::convert::Into::into(runtime_scope_block),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Exit(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
+    fn emit_exit(
+        self,
+        runtime_scope_block: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_exit(
+                __receiver,
+                ::core::convert::Into::into(runtime_scope_block),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Clean(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
+    fn emit_clean(
+        self,
+        runtime_scope_block: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_clean(
+                __receiver,
+                ::core::convert::Into::into(runtime_scope_block),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Closure(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>, i32)` overload"]
+    fn emit_closure(
+        self,
+        symbols: impl ::core::convert::Into<
+            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        >,
+        jmpnum: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_closure(
+                __receiver,
+                ::core::convert::Into::into(symbols),
+                ::core::convert::Into::into(jmpnum),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Args(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]
+    fn emit_args(
+        self,
+        symbols: impl ::core::convert::Into<
+            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_args(
+                __receiver,
+                ::core::convert::Into::into(symbols),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Ret(i32)` overload"]
+    fn emit_ret(
+        self,
+        retvals: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_ret(
+                __receiver,
+                ::core::convert::Into::into(retvals),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_ToNum(i32)` overload"]
+    fn emit_to_num(
+        self,
+        stage: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_to_num(
+                __receiver,
+                ::core::convert::Into::into(stage),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Incr(i32)` overload"]
+    fn emit_incr(
+        self,
+        i: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_incr(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_NewTable(bool)` overload"]
+    fn emit_new_table(
+        self,
+        shared: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_new_table(
+                __receiver,
+                ::core::convert::Into::into(shared),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_IterPrep()` overload"]
+    fn emit_iter_prep(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_iter_prep(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Emit_ExpTuple(i32)` overload"]
+    fn emit_exp_tuple(
+        self,
+        stack_offset: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_exp_tuple(
+                __receiver,
+                ::core::convert::Into::into(stack_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_IterUpd()` overload"]
+    fn emit_iter_upd(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_iter_upd(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Emit_Meta(::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::vm::opcodemetadatatype::OpCodeMetadataType, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    fn emit_meta(
+        self,
+        func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        meta_type: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::opcodemetadatatype::OpCodeMetadataType,
+        >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_meta(
+                __receiver,
+                ::core::convert::Into::into(func_name),
+                ::core::convert::Into::into(meta_type),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_BeginFn(crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame)` overload"]
+    fn emit_begin_fn(
+        self,
+        stack_frame: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
+        >,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_begin_fn(
+                __receiver,
+                ::core::convert::Into::into(stack_frame),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Scalar()` overload"]
+    fn emit_scalar(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_scalar(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Emit_Load(crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]
+    fn emit_load(
+        self,
+        sym: impl ::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_load(
+                __receiver,
+                ::core::convert::Into::into(sym),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Store(crate::moon_sharp::interpreter::symbolref::SymbolRef, i32, i32)` overload"]
+    fn emit_store(
+        self,
+        sym: impl ::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        stackofs: impl ::core::convert::Into<i32>,
+        tupleidx: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_store(
+                __receiver,
+                ::core::convert::Into::into(sym),
+                ::core::convert::Into::into(stackofs),
+                ::core::convert::Into::into(tupleidx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_TblInitN()` overload"]
+    fn emit_tbl_init_n(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_tbl_init_n(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Emit_TblInitI(bool)` overload"]
+    fn emit_tbl_init_i(
+        self,
+        lastpos: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_tbl_init_i(
+                __receiver,
+                ::core::convert::Into::into(lastpos),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Index(crate::moon_sharp::interpreter::dynvalue::DynValue, bool, bool)` overload"]
+    fn emit_index(
+        self,
+        index: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        is_name_index: impl ::core::convert::Into<bool>,
+        is_exp_list: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_index(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(is_name_index),
+                ::core::convert::Into::into(is_exp_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_IndexSet(i32, i32, crate::moon_sharp::interpreter::dynvalue::DynValue, bool, bool)` overload"]
+    fn emit_index_set(
+        self,
+        stackofs: impl ::core::convert::Into<i32>,
+        tupleidx: impl ::core::convert::Into<i32>,
+        index: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        is_name_index: impl ::core::convert::Into<bool>,
+        is_exp_list: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_index_set(
+                __receiver,
+                ::core::convert::Into::into(stackofs),
+                ::core::convert::Into::into(tupleidx),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(is_name_index),
+                ::core::convert::Into::into(is_exp_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Copy(i32)` overload"]
+    fn emit_copy(
+        self,
+        numval: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_copy(
+                __receiver,
+                ::core::convert::Into::into(numval),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Emit_Swap(i32, i32)` overload"]
+    fn emit_swap(
+        self,
+        p1: impl ::core::convert::Into<i32>,
+        p2: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
+        unsafe {
+            let __receiver = <ByteCode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ByteCode_unity2_raw::emit_swap(
+                __receiver,
+                ::core::convert::Into::into(p1),
+                ::core::convert::Into::into(p2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+impl<__T: IByteCode> IByteCodeMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
 impl ByteCode {
@@ -378,4 +2904,20 @@ impl ByteCode {
         <Self as IByteCodeMethods>::ctor(this, script);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+pub mod prelude {
+    pub use super::ByteCode;
+    pub use super::ByteCode_SourceCodeStackGuard;
+    pub use super::IByteCode;
+    pub use super::IByteCodeMethods;
+    pub use super::IByteCode_SourceCodeStackGuard;
+    pub use super::IByteCode_SourceCodeStackGuardMethods;
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    #[cfg(feature = "moon_sharp-interpreter-refidobject")]
+    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

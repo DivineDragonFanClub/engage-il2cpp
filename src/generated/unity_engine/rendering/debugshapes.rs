@@ -29,85 +29,866 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-debugshapes")]
-#[::unity2::methods]
-impl DebugShapes {
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::unity_engine::rendering::debugshapes::DebugShapes;
-
-    #[doc = "`BuildSphere(crate::unity_engine::mesh::Mesh, f32, u32, u32)` overload"]
-    #[method(name = "BuildSphere", args = 4)]
-    pub fn build_sphere(
-        self,
-        output_mesh: crate::unity_engine::mesh::Mesh,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugShapes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "get_instance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "get_instance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_instance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::debugshapes::DebugShapes {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::debugshapes::DebugShapes = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_instance::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_sphere {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "BuildSphere",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "BuildSphere",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_sphere(
+        this: DebugShapes,
+        output_mesh: *mut crate::unity_engine::mesh::Mesh,
         radius: f32,
         long_subdiv: u32,
         lat_subdiv: u32,
-    ) -> ();
-
-    #[doc = "`BuildBox(crate::unity_engine::mesh::Mesh, f32, f32, f32)` overload"]
-    #[method(name = "BuildBox", args = 4)]
-    pub fn build_box(
-        self,
-        output_mesh: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugShapes,
+            *mut crate::unity_engine::mesh::Mesh,
+            f32,
+            u32,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_sphere::get_offset() as isize),
+        );
+        inner(
+            this,
+            output_mesh,
+            radius,
+            long_subdiv,
+            lat_subdiv,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_box {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "BuildBox",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "BuildBox",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_box(
+        this: DebugShapes,
+        output_mesh: *mut crate::unity_engine::mesh::Mesh,
         length: f32,
         width: f32,
         height: f32,
-    ) -> ();
-
-    #[doc = "`BuildCone(crate::unity_engine::mesh::Mesh, f32, f32, f32, i32)` overload"]
-    #[method(name = "BuildCone", args = 5)]
-    pub fn build_cone(
-        self,
-        output_mesh: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugShapes,
+            *mut crate::unity_engine::mesh::Mesh,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_box::get_offset() as isize),
+        );
+        inner(
+            this,
+            output_mesh,
+            length,
+            width,
+            height,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_cone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "BuildCone",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "BuildCone",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_cone(
+        this: DebugShapes,
+        output_mesh: *mut crate::unity_engine::mesh::Mesh,
         height: f32,
         top_radius: f32,
         bottom_radius: f32,
         nb_sides: i32,
-    ) -> ();
-
-    #[doc = "`BuildPyramid(crate::unity_engine::mesh::Mesh, f32, f32, f32)` overload"]
-    #[method(name = "BuildPyramid", args = 4)]
-    pub fn build_pyramid(
-        self,
-        output_mesh: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugShapes,
+            *mut crate::unity_engine::mesh::Mesh,
+            f32,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_cone::get_offset() as isize),
+        );
+        inner(
+            this,
+            output_mesh,
+            height,
+            top_radius,
+            bottom_radius,
+            nb_sides,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_pyramid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "BuildPyramid",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "BuildPyramid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_pyramid(
+        this: DebugShapes,
+        output_mesh: *mut crate::unity_engine::mesh::Mesh,
         width: f32,
         height: f32,
         depth: f32,
-    ) -> ();
-
-    #[doc = "`BuildShapes()` overload"]
-    #[method(name = "BuildShapes", args = 0)]
-    pub fn build_shapes(self) -> ();
-
-    #[doc = "`RebuildResources()` overload"]
-    #[method(name = "RebuildResources", args = 0)]
-    pub fn rebuild_resources(self) -> ();
-
-    #[doc = "`RequestSphereMesh()` overload"]
-    #[method(name = "RequestSphereMesh", args = 0)]
-    pub fn request_sphere_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`RequestBoxMesh()` overload"]
-    #[method(name = "RequestBoxMesh", args = 0)]
-    pub fn request_box_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`RequestConeMesh()` overload"]
-    #[method(name = "RequestConeMesh", args = 0)]
-    pub fn request_cone_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`RequestPyramidMesh()` overload"]
-    #[method(name = "RequestPyramidMesh", args = 0)]
-    pub fn request_pyramid_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugShapes,
+            *mut crate::unity_engine::mesh::Mesh,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_pyramid::get_offset() as isize),
+        );
+        inner(
+            this,
+            output_mesh,
+            width,
+            height,
+            depth,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_shapes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "BuildShapes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "BuildShapes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_shapes(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugShapes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_build_shapes::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "RebuildResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "RebuildResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebuild_resources(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugShapes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rebuild_resources::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_sphere_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "RequestSphereMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "RequestSphereMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_sphere_mesh(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            DebugShapes,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_request_sphere_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_box_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "RequestBoxMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "RequestBoxMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_box_mesh(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            DebugShapes,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_request_box_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_cone_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "RequestConeMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "RequestConeMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_cone_mesh(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            DebugShapes,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_request_cone_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_pyramid_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                "RequestPyramidMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    "RequestPyramidMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_pyramid_mesh(
+        this: DebugShapes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            DebugShapes,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_request_pyramid_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: DebugShapes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugShapes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugShapes as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugShapes as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-debugshapes")]
+impl DebugShapes {
+    #[doc = "`get_instance()` overload"]
+    pub fn get_instance() -> crate::unity_engine::rendering::debugshapes::DebugShapes {
+        unsafe { __DebugShapes_unity2_raw::get_instance(::core::option::Option::None) }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DebugShapes_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugshapes")]
+pub trait IDebugShapesMethods: IDebugShapes {
+    #[doc = "`BuildSphere(*mutcrate::unity_engine::mesh::Mesh, f32, u32, u32)` overload"]
+    fn build_sphere(
+        self,
+        radius: impl ::core::convert::Into<f32>,
+        long_subdiv: impl ::core::convert::Into<u32>,
+        lat_subdiv: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::mesh::Mesh>::uninit();
+            __DebugShapes_unity2_raw::build_sphere(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(radius),
+                ::core::convert::Into::into(long_subdiv),
+                ::core::convert::Into::into(lat_subdiv),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`BuildBox(*mutcrate::unity_engine::mesh::Mesh, f32, f32, f32)` overload"]
+    fn build_box(
+        self,
+        length: impl ::core::convert::Into<f32>,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::mesh::Mesh>::uninit();
+            __DebugShapes_unity2_raw::build_box(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(length),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`BuildCone(*mutcrate::unity_engine::mesh::Mesh, f32, f32, f32, i32)` overload"]
+    fn build_cone(
+        self,
+        height: impl ::core::convert::Into<f32>,
+        top_radius: impl ::core::convert::Into<f32>,
+        bottom_radius: impl ::core::convert::Into<f32>,
+        nb_sides: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::mesh::Mesh>::uninit();
+            __DebugShapes_unity2_raw::build_cone(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(top_radius),
+                ::core::convert::Into::into(bottom_radius),
+                ::core::convert::Into::into(nb_sides),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`BuildPyramid(*mutcrate::unity_engine::mesh::Mesh, f32, f32, f32)` overload"]
+    fn build_pyramid(
+        self,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+        depth: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::mesh::Mesh>::uninit();
+            __DebugShapes_unity2_raw::build_pyramid(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(depth),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`BuildShapes()` overload"]
+    fn build_shapes(self) -> () {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::build_shapes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RebuildResources()` overload"]
+    fn rebuild_resources(self) -> () {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::rebuild_resources(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RequestSphereMesh()` overload"]
+    fn request_sphere_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::request_sphere_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RequestBoxMesh()` overload"]
+    fn request_box_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::request_box_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RequestConeMesh()` overload"]
+    fn request_cone_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::request_cone_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RequestPyramidMesh()` overload"]
+    fn request_pyramid_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::request_pyramid_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DebugShapes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugShapes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugshapes")]
+impl<__T: IDebugShapes> IDebugShapesMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-debugshapes")]
 impl DebugShapes {
@@ -123,4 +904,14 @@ impl DebugShapes {
         <Self as IDebugShapesMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugshapes")]
+pub mod prelude {
+    pub use super::DebugShapes;
+    pub use super::IDebugShapes;
+    pub use super::IDebugShapesMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

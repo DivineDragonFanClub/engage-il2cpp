@@ -21,43 +21,361 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-#[::unity2::methods]
-impl SceneManagerAPI {
-    #[doc = "`get_ActiveAPI()` overload"]
-    #[method(name = "get_ActiveAPI", args = 0)]
-    pub fn get_active_api(
-    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI;
-
-    #[doc = "`get_overrideAPI()` overload"]
-    #[method(name = "get_overrideAPI", args = 0)]
-    pub fn get_override_api(
-    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]
-    #[method(name = "LoadSceneAsyncByNameOrIndex", args = 4)]
-    pub fn load_scene_async_by_name_or_index(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SceneManagerAPI_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active_api {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                "get_ActiveAPI",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    "get_ActiveAPI",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active_api(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_active_api :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_override_api {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                "get_overrideAPI",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    "get_overrideAPI",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_override_api(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_override_api :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SceneManagerAPI,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SceneManagerAPI, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_scene_async_by_name_or_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                "LoadSceneAsyncByNameOrIndex",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    "LoadSceneAsyncByNameOrIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_scene_async_by_name_or_index(
+        this: SceneManagerAPI,
         scene_name: ::unity2::Il2CppString,
         scene_build_index: i32,
         parameters: crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
         must_complete_next_frame: bool,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation;
-
-    #[doc = "`LoadFirstScene(bool)` overload"]
-    #[method(name = "LoadFirstScene", args = 1)]
-    pub fn load_first_scene(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
+        let inner: extern "C" fn(
+            SceneManagerAPI,
+            ::unity2::Il2CppString,
+            i32,
+            crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::asyncoperation::AsyncOperation = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_scene_async_by_name_or_index::get_offset() as isize),
+        );
+        inner(
+            this,
+            scene_name,
+            scene_build_index,
+            parameters,
+            must_complete_next_frame,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_first_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                "LoadFirstScene",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    "LoadFirstScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_first_scene(
+        this: SceneManagerAPI,
         must_load_async: bool,
-    ) -> crate::unity_engine::asyncoperation::AsyncOperation;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
+        let inner: extern "C" fn(
+            SceneManagerAPI,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::asyncoperation::AsyncOperation = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_first_scene::get_offset() as isize),
+        );
+        inner(this, must_load_async, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneManagerAPI as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SceneManagerAPI as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+impl SceneManagerAPI {
+    #[doc = "`get_ActiveAPI()` overload"]
+    pub fn get_active_api(
+    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
+        unsafe { __SceneManagerAPI_unity2_raw::get_active_api(::core::option::Option::None) }
+    }
+    #[doc = "`get_overrideAPI()` overload"]
+    pub fn get_override_api(
+    ) -> crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI {
+        unsafe { __SceneManagerAPI_unity2_raw::get_override_api(::core::option::Option::None) }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SceneManagerAPI_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+pub trait ISceneManagerAPIMethods: ISceneManagerAPI {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SceneManagerAPI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]
+    fn load_scene_async_by_name_or_index(
+        self,
+        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        scene_build_index: impl ::core::convert::Into<i32>,
+        parameters: impl ::core::convert::Into<
+            crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
+        >,
+        must_complete_next_frame: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
+        unsafe {
+            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SceneManagerAPI_unity2_raw::load_scene_async_by_name_or_index(
+                __receiver,
+                ::core::convert::Into::into(scene_name),
+                ::core::convert::Into::into(scene_build_index),
+                ::core::convert::Into::into(parameters),
+                ::core::convert::Into::into(must_complete_next_frame),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFirstScene(bool)` overload"]
+    fn load_first_scene(
+        self,
+        must_load_async: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation {
+        unsafe {
+            let __receiver = <SceneManagerAPI as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SceneManagerAPI_unity2_raw::load_first_scene(
+                __receiver,
+                ::core::convert::Into::into(must_load_async),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+impl<__T: ISceneManagerAPI> ISceneManagerAPIMethods for __T {}
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
 impl SceneManagerAPI {
@@ -73,4 +391,14 @@ impl SceneManagerAPI {
         <Self as ISceneManagerAPIMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
+pub mod prelude {
+    pub use super::ISceneManagerAPI;
+    pub use super::ISceneManagerAPIMethods;
+    pub use super::SceneManagerAPI;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

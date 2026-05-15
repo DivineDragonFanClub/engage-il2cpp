@@ -11,23 +11,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameSaveDataHeaderReader {
-        #[rename(name = "m_Handles")]
-        pub m_handles: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_HandleList,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_Handle.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.Handle")]
     #[parent(crate::system::object::Object)]
     pub struct GameSaveDataHeaderReader_Handle {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_HandleList.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.HandleList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle >)]
-    pub struct GameSaveDataHeaderReader_HandleList {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRelease.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.ProcRelease")]
@@ -47,6 +34,14 @@ mod __types {
         pub m_handle: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
         #[rename(name = "m_SaveDataHandle")]
         pub m_save_data_handle: crate::app::savedatareadhandle::SaveDataReadHandle,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameSaveDataHeaderReader {
+        #[rename(name = "m_Handles")]
+        pub m_handles: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_HandleList,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_States.md"))]
@@ -100,125 +95,840 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_HandleList.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.HandleList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle >)]
+    pub struct GameSaveDataHeaderReader_HandleList {}
 }
 
 #[cfg(feature = "app-gamesavedataheaderreader-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader {
-    #[doc = "`ReadAsync(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    #[method(name = "ReadAsync", args = 1)]
-    pub fn read_async(self, r#type: crate::app::gamesavedata::GameSaveData_Types) -> ();
-
-    #[doc = "`ReadAsyncAutoAndManual()` overload"]
-    #[method(name = "ReadAsyncAutoAndManual", args = 0)]
-    pub fn read_async_auto_and_manual(self) -> ();
-
-    #[doc = "`ReadAsyncForIdentifier()` overload"]
-    #[method(name = "ReadAsyncForIdentifier", args = 0)]
-    pub fn read_async_for_identifier(self) -> ();
-
-    #[doc = "`ReadAsyncForDebug(::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>)` overload"]
-    #[method(name = "ReadAsyncForDebug", args = 1)]
-    pub fn read_async_for_debug(
-        self,
-        types: ::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>,
-    ) -> ();
-
-    #[doc = "`ReleaseAsync()` overload"]
-    #[method(name = "ReleaseAsync", args = 0)]
-    pub fn release_async(self) -> ();
-
-    #[doc = "`get_Handles()` overload"]
-    #[method(name = "get_Handles", args = 0)]
-    pub fn get_handles(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    >;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-impl GameSaveDataHeaderReader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataHeaderReader),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataHeaderReader_Handle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
             )
         });
-        <Self as IGameSaveDataHeaderReaderMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataHeaderReader_Handle,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, r#type, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_running {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "IsRunning",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "IsRunning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_running(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_running::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_no_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "IsNoData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "IsNoData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_no_data(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_no_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "IsSucceeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "IsSucceeded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_succeeded(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_succeeded::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_failed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "IsFailed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "IsFailed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_failed(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_failed::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "get_Type",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "get_Type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_type(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamesavedata::GameSaveData_Types {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::gamesavedata::GameSaveData_Types = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "set_Type",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "set_Type",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_type(
+        this: GameSaveDataHeaderReader_Handle,
+        value: crate::app::gamesavedata::GameSaveData_Types,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedata::GameSaveData_Types,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "get_Index",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "get_Index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GameSaveDataHeaderReader_Handle, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "set_Index",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "set_Index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_index(
+        this: GameSaveDataHeaderReader_Handle,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_index::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "get_State",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "get_State",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_state(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States {
+        let inner : extern "C" fn (GameSaveDataHeaderReader_Handle , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_States = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_state :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_States as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "set_State",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "set_State",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_state(
+        this: GameSaveDataHeaderReader_Handle,
+        value: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_state::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_header {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "get_Header",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "get_Header",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_header(
+        this: GameSaveDataHeaderReader_Handle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamesavedataheader::GameSaveDataHeader {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::gamesavedataheader::GameSaveDataHeader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_header::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_header {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::class(),
+                "set_Header",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_Handle as ::unity2::ClassIdentity>::NAME,
+                    "set_Header",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_header(
+        this: GameSaveDataHeaderReader_Handle,
+        value: crate::app::gamesavedataheader::GameSaveDataHeader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_Handle,
+            crate::app::gamesavedataheader::GameSaveDataHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_header::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_Handle {
+pub trait IGameSaveDataHeaderReader_HandleMethods: IGameSaveDataHeaderReader_Handle {
     #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, r#type: crate::app::gamesavedata::GameSaveData_Types, index: i32) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`IsNoData()` overload"]
-    #[method(name = "IsNoData", args = 0)]
-    pub fn is_no_data(self) -> bool;
-
-    #[doc = "`IsSucceeded()` overload"]
-    #[method(name = "IsSucceeded", args = 0)]
-    pub fn is_succeeded(self) -> bool;
-
-    #[doc = "`IsFailed()` overload"]
-    #[method(name = "IsFailed", args = 0)]
-    pub fn is_failed(self) -> bool;
-
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> crate::app::gamesavedata::GameSaveData_Types;
-
-    #[doc = "`set_Type(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    #[method(name = "set_Type", args = 1)]
-    pub fn set_type(self, value: crate::app::gamesavedata::GameSaveData_Types) -> ();
-
-    #[doc = "`get_Index()` overload"]
-    #[method(name = "get_Index", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`set_Index(i32)` overload"]
-    #[method(name = "set_Index", args = 1)]
-    pub fn set_index(self, value: i32) -> ();
-
-    #[doc = "`get_State()` overload"]
-    #[method(name = "get_State", args = 0)]
-    pub fn get_state(self)
-        -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States;
-
-    #[doc = "`set_State(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States)` overload"]
-    #[method(name = "set_State", args = 1)]
-    pub fn set_state(
+    fn ctor(
         self,
-        value: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
-    ) -> ();
-
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRunning()` overload"]
+    fn is_running(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::is_running(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNoData()` overload"]
+    fn is_no_data(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::is_no_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSucceeded()` overload"]
+    fn is_succeeded(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::is_succeeded(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsFailed()` overload"]
+    fn is_failed(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::is_failed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Type()` overload"]
+    fn get_type(self) -> crate::app::gamesavedata::GameSaveData_Types {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::get_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Type(crate::app::gamesavedata::GameSaveData_Types)` overload"]
+    fn set_type(
+        self,
+        value: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::set_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Index()` overload"]
+    fn get_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::get_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Index(i32)` overload"]
+    fn set_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::set_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_State()` overload"]
+    fn get_state(self) -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::get_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_State(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States)` overload"]
+    fn set_state(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::set_state(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Header()` overload"]
-    #[method(name = "get_Header", args = 0)]
-    pub fn get_header(self) -> crate::app::gamesavedataheader::GameSaveDataHeader;
-
+    fn get_header(self) -> crate::app::gamesavedataheader::GameSaveDataHeader {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::get_header(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_Header(crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
-    #[method(name = "set_Header", args = 1)]
-    pub fn set_header(self, value: crate::app::gamesavedataheader::GameSaveDataHeader) -> ();
+    fn set_header(
+        self,
+        value: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_Handle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_Handle_unity2_raw::set_header(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl<__T: IGameSaveDataHeaderReader_Handle> IGameSaveDataHeaderReader_HandleMethods for __T {}
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
 impl GameSaveDataHeaderReader_Handle {
@@ -237,61 +947,289 @@ impl GameSaveDataHeaderReader_Handle {
 }
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_HandleList {
-    #[doc = "`AddAndReadAsync(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    #[method(name = "AddAndReadAsync", args = 1)]
-    pub fn add_and_read_async(self, r#type: crate::app::gamesavedata::GameSaveData_Types) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-impl GameSaveDataHeaderReader_HandleList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataHeaderReader_HandleList),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataHeaderReader_ProcRelease_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
             )
         });
-        <Self as IGameSaveDataHeaderReader_HandleListMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_ProcRelease {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(
+    pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
         handles: crate::system::collections::generic::list_1::List_1<
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
         >,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(super_, handles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataHeaderReader_ProcRelease,
         handles: crate::system::collections::generic::list_1::List_1<
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
         >,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRelease,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, handles, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: GameSaveDataHeaderReader_ProcRelease,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRelease,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRelease as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: GameSaveDataHeaderReader_ProcRelease,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRelease,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_tick::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader_ProcRelease {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        handles: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __GameSaveDataHeaderReader_ProcRelease_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(handles),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+pub trait IGameSaveDataHeaderReader_ProcReleaseMethods:
+    IGameSaveDataHeaderReader_ProcRelease
+{
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
+    fn ctor(
+        self,
+        handles: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < GameSaveDataHeaderReader_ProcRelease as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GameSaveDataHeaderReader_ProcRelease_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(handles),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = < GameSaveDataHeaderReader_ProcRelease as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GameSaveDataHeaderReader_ProcRelease_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = < GameSaveDataHeaderReader_ProcRelease as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GameSaveDataHeaderReader_ProcRelease_unity2_raw::on_tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl<__T: IGameSaveDataHeaderReader_ProcRelease> IGameSaveDataHeaderReader_ProcReleaseMethods
+    for __T
+{
 }
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
@@ -315,34 +1253,334 @@ impl GameSaveDataHeaderReader_ProcRelease {
 }
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_ProcRead {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataHeaderReader_ProcRead_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
         handle: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(super_, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataHeaderReader_ProcRead,
         handle: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`Result()` overload"]
-    #[method(name = "Result", args = 0)]
-    pub fn result(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRead,
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::class(),
+                "Read",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::NAME,
+                    "Read",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read(
+        this: GameSaveDataHeaderReader_ProcRead,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRead,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_running {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::class(),
+                "IsRunning",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::NAME,
+                    "IsRunning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_running(
+        this: GameSaveDataHeaderReader_ProcRead,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRead,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_running::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::class(),
+                "Result",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_ProcRead as ::unity2::ClassIdentity>::NAME,
+                    "Result",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn result(
+        this: GameSaveDataHeaderReader_ProcRead,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_ProcRead,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_result::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader_ProcRead {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            __GameSaveDataHeaderReader_ProcRead_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+pub trait IGameSaveDataHeaderReader_ProcReadMethods: IGameSaveDataHeaderReader_ProcRead {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    fn ctor(
+        self,
+        handle: impl ::core::convert::Into<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_ProcRead_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Read()` overload"]
+    fn read(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_ProcRead_unity2_raw::read(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRunning()` overload"]
+    fn is_running(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_ProcRead_unity2_raw::is_running(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Result()` overload"]
+    fn result(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_ProcRead as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_ProcRead_unity2_raw::result(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl<__T: IGameSaveDataHeaderReader_ProcRead> IGameSaveDataHeaderReader_ProcReadMethods for __T {}
 
 #[cfg(feature = "app-gamesavedataheaderreader")]
 impl GameSaveDataHeaderReader_ProcRead {
@@ -360,4 +1598,664 @@ impl GameSaveDataHeaderReader_ProcRead {
         <Self as IGameSaveDataHeaderReader_ProcReadMethods>::ctor(this, handle);
         this
     }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataHeaderReader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "ReadAsync",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "ReadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_async(
+        this: GameSaveDataHeaderReader,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader,
+            crate::app::gamesavedata::GameSaveData_Types,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_async::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_async_auto_and_manual {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "ReadAsyncAutoAndManual",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "ReadAsyncAutoAndManual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_async_auto_and_manual(
+        this: GameSaveDataHeaderReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataHeaderReader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_read_async_auto_and_manual::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_async_for_identifier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "ReadAsyncForIdentifier",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "ReadAsyncForIdentifier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_async_for_identifier(
+        this: GameSaveDataHeaderReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataHeaderReader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_read_async_for_identifier::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_async_for_debug {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::app::gamesavedata::GameSaveData_Types,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "ReadAsyncForDebug",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "ReadAsyncForDebug",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_async_for_debug(
+        this: GameSaveDataHeaderReader,
+        types: ::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader,
+            ::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_async_for_debug::get_offset() as isize),
+        );
+        inner(this, types, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "ReleaseAsync",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "ReleaseAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release_async(
+        this: GameSaveDataHeaderReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataHeaderReader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release_async::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handles {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                "get_Handles",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    "get_Handles",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handles(
+        this: GameSaveDataHeaderReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    > {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_handles::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataHeaderReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataHeaderReader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+pub trait IGameSaveDataHeaderReaderMethods: IGameSaveDataHeaderReader {
+    #[doc = "`ReadAsync(crate::app::gamesavedata::GameSaveData_Types)` overload"]
+    fn read_async(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::read_async(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAsyncAutoAndManual()` overload"]
+    fn read_async_auto_and_manual(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::read_async_auto_and_manual(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAsyncForIdentifier()` overload"]
+    fn read_async_for_identifier(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::read_async_for_identifier(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAsyncForDebug(::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>)` overload"]
+    fn read_async_for_debug(
+        self,
+        types: impl ::core::convert::Into<::unity2::Array<crate::app::gamesavedata::GameSaveData_Types>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::read_async_for_debug(
+                __receiver,
+                ::core::convert::Into::into(types),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReleaseAsync()` overload"]
+    fn release_async(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::release_async(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Handles()` overload"]
+    fn get_handles(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    > {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::get_handles(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl<__T: IGameSaveDataHeaderReader> IGameSaveDataHeaderReaderMethods for __T {}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataHeaderReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataHeaderReaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataHeaderReader_HandleList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_and_read_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesavedata::GameSaveData_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_HandleList as ::unity2::ClassIdentity>::class(),
+                "AddAndReadAsync",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_HandleList as ::unity2::ClassIdentity>::NAME,
+                    "AddAndReadAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_and_read_async(
+        this: GameSaveDataHeaderReader_HandleList,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_HandleList,
+            crate::app::gamesavedata::GameSaveData_Types,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_and_read_async::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataHeaderReader_HandleList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataHeaderReader_HandleList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataHeaderReader_HandleList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataHeaderReader_HandleList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+pub trait IGameSaveDataHeaderReader_HandleListMethods:
+    IGameSaveDataHeaderReader_HandleList
+{
+    #[doc = "`AddAndReadAsync(crate::app::gamesavedata::GameSaveData_Types)` overload"]
+    fn add_and_read_async(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_HandleList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_HandleList_unity2_raw::add_and_read_async(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataHeaderReader_HandleList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataHeaderReader_HandleList_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl<__T: IGameSaveDataHeaderReader_HandleList> IGameSaveDataHeaderReader_HandleListMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader_HandleList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataHeaderReader_HandleList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataHeaderReader_HandleListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+pub mod prelude {
+    pub use super::GameSaveDataHeaderReader;
+    pub use super::GameSaveDataHeaderReader_Handle;
+    pub use super::GameSaveDataHeaderReader_HandleList;
+    pub use super::GameSaveDataHeaderReader_ProcRead;
+    pub use super::GameSaveDataHeaderReader_ProcRelease;
+    pub use super::GameSaveDataHeaderReader_States;
+    pub use super::IGameSaveDataHeaderReader;
+    pub use super::IGameSaveDataHeaderReaderMethods;
+    pub use super::IGameSaveDataHeaderReader_Handle;
+    pub use super::IGameSaveDataHeaderReader_HandleList;
+    pub use super::IGameSaveDataHeaderReader_HandleListMethods;
+    pub use super::IGameSaveDataHeaderReader_HandleMethods;
+    pub use super::IGameSaveDataHeaderReader_ProcRead;
+    pub use super::IGameSaveDataHeaderReader_ProcReadMethods;
+    pub use super::IGameSaveDataHeaderReader_ProcRelease;
+    pub use super::IGameSaveDataHeaderReader_ProcReleaseMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

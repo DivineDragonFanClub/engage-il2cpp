@@ -26,25 +26,209 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
-#[::unity2::methods]
-impl RuntimeInitializeOnLoadMethodAttribute {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RuntimeInitializeOnLoadMethodAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RuntimeInitializeOnLoadMethodAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RuntimeInitializeOnLoadMethodAttribute,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: RuntimeInitializeOnLoadMethodAttribute,
         load_type: crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
-    ) -> ();
-
-    #[doc = "`set_loadType(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]
-    #[method(name = "set_loadType", args = 1)]
-    pub fn set_load_type(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RuntimeInitializeOnLoadMethodAttribute,
+            crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, load_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_load_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::class(),
+                "set_loadType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeInitializeOnLoadMethodAttribute as ::unity2::ClassIdentity>::NAME,
+                    "set_loadType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_load_type(
+        this: RuntimeInitializeOnLoadMethodAttribute,
         value: crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RuntimeInitializeOnLoadMethodAttribute,
+            crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_load_type::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
+pub trait IRuntimeInitializeOnLoadMethodAttributeMethods:
+    IRuntimeInitializeOnLoadMethodAttribute
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RuntimeInitializeOnLoadMethodAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]
+    fn ctor_2(
+        self,
+        load_type: impl ::core::convert::Into<
+            crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RuntimeInitializeOnLoadMethodAttribute_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(load_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_loadType(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]
+    fn set_load_type(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RuntimeInitializeOnLoadMethodAttribute_unity2_raw::set_load_type(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
+impl<__T: IRuntimeInitializeOnLoadMethodAttribute> IRuntimeInitializeOnLoadMethodAttributeMethods
+    for __T
+{
 }
 
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
@@ -76,4 +260,17 @@ impl RuntimeInitializeOnLoadMethodAttribute {
         <Self as IRuntimeInitializeOnLoadMethodAttributeMethods>::ctor_2(this, load_type);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
+pub mod prelude {
+    pub use super::IRuntimeInitializeOnLoadMethodAttribute;
+    pub use super::IRuntimeInitializeOnLoadMethodAttributeMethods;
+    pub use super::RuntimeInitializeOnLoadMethodAttribute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::scripting::preserveattribute::IPreserveAttribute;
+    #[cfg(feature = "unity_engine-scripting-preserveattribute")]
+    pub use crate::unity_engine::scripting::preserveattribute::IPreserveAttributeMethods;
 }

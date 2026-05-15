@@ -23,3 +23,10 @@ impl<T0: ::unity2::ClassIdentity> IEnumerable_1<T0> {
         self,
     ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 }
+
+#[cfg(feature = "system-collections-generic-ienumerable_1")]
+pub mod prelude {
+    pub use super::IEnumerable_1;
+    pub use super::IIEnumerable_1;
+    pub use super::IIEnumerable_1Methods;
+}

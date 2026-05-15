@@ -18,19 +18,135 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-procdescyield")]
-#[::unity2::methods]
-impl ProcDescYield {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Execute", args = 1)]
-    pub fn execute(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProcDescYield_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcDescYield as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcDescYield as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: ProcDescYield, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProcDescYield, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProcDescYield as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProcDescYield as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: ProcDescYield,
         inst: crate::app::procinst::ProcInst,
-    ) -> crate::app::procdesc::ProcDesc_Result;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::procdesc::ProcDesc_Result {
+        let inner: extern "C" fn(
+            ProcDescYield,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute::get_offset() as isize),
+        );
+        inner(this, inst, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-procdescyield")]
+pub trait IProcDescYieldMethods: IProcDescYield {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ProcDescYield as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcDescYield_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
+    fn execute(
+        self,
+        inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::procdesc::ProcDesc_Result {
+        unsafe {
+            let __receiver = <ProcDescYield as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProcDescYield_unity2_raw::execute(
+                __receiver,
+                ::core::convert::Into::into(inst),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-procdescyield")]
+impl<__T: IProcDescYield> IProcDescYieldMethods for __T {}
 
 #[cfg(feature = "app-procdescyield")]
 impl ProcDescYield {
@@ -46,4 +162,17 @@ impl ProcDescYield {
         <Self as IProcDescYieldMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-procdescyield")]
+pub mod prelude {
+    pub use super::IProcDescYield;
+    pub use super::IProcDescYieldMethods;
+    pub use super::ProcDescYield;
+    pub use crate::app::procdesc::IProcDesc;
+    #[cfg(feature = "app-procdesc")]
+    pub use crate::app::procdesc::IProcDescMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -41,127 +41,1497 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-discretetime")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiscreteTime_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tick_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "get_tickValue",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "get_tickValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tick_value(__unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_tick_value::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiscreteTime,
+        time: i64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscreteTime, i64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: DiscreteTime,
+        time: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscreteTime, f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: DiscreteTime,
+        time: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscreteTime, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_3::get_offset() as isize),
+            );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_one_tick_before {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "OneTickBefore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "OneTickBefore",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn one_tick_before(
+        this: DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            DiscreteTime,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_one_tick_before::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_one_tick_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "OneTickAfter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "OneTickAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn one_tick_after(
+        this: DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            DiscreteTime,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_one_tick_after::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_from_ticks {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "FromTicks",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "FromTicks",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn from_ticks(
+        ticks: i64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            i64,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_from_ticks::get_offset() as isize),
+        );
+        inner(ticks, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "CompareTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "CompareTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_to(
+        this: DiscreteTime,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DiscreteTime,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_to::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: DiscreteTime,
+        other: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
+        this: DiscreteTime,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            DiscreteTime,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_double_to_discrete_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "DoubleToDiscreteTime",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "DoubleToDiscreteTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn double_to_discrete_time(
+        time: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(f64, ::unity2::OptionalMethod) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_double_to_discrete_time::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_int_to_discrete_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "IntToDiscreteTime",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "IntToDiscreteTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn int_to_discrete_time(
+        time: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_int_to_discrete_time::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_double {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "ToDouble",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "ToDouble",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_double(time: i64, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(i64, ::unity2::OptionalMethod) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_double::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_explicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Explicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Explicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_explicit(
+        b: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_explicit::get_offset() as isize),
+        );
+        inner(b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_explicit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Explicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Explicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_explicit_2(
+        time: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            f64,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_explicit_2::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        time: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_implicit::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_equality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Equality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Equality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_equality(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_equality::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_inequality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Inequality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Inequality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_inequality(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_inequality::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_less_than_or_equal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_LessThanOrEqual",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_LessThanOrEqual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_less_than_or_equal(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_less_than_or_equal::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_greater_than_or_equal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_GreaterThanOrEqual",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_GreaterThanOrEqual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_greater_than_or_equal(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_greater_than_or_equal::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_subtraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "op_Subtraction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "op_Subtraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_subtraction(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_subtraction::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DiscreteTime, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_to_string::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DiscreteTime, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "Max",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "Max",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn max(
+        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            crate::unity_engine::timeline::discretetime::DiscreteTime,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::discretetime::DiscreteTime = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_max::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_nearest_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                "GetNearestTick",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    "GetNearestTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_nearest_tick(
+        time: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(f64, ::unity2::OptionalMethod) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_nearest_tick::get_offset() as isize),
+        );
+        inner(time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscreteTime as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DiscreteTime as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-discretetime")]
 impl DiscreteTime {
     #[doc = "`get_tickValue()` overload"]
-    #[method(name = "get_tickValue", args = 0)]
-    pub fn get_tick_value() -> f64;
-
-    #[doc = "`.ctor(i64)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, time: i64) -> ();
-
-    #[doc = "`.ctor(f64)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, time: f64) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(self, time: i32) -> ();
-
-    #[doc = "`OneTickBefore()` overload"]
-    #[method(name = "OneTickBefore", args = 0)]
-    pub fn one_tick_before(self) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
-    #[doc = "`OneTickAfter()` overload"]
-    #[method(name = "OneTickAfter", args = 0)]
-    pub fn one_tick_after(self) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
+    pub fn get_tick_value() -> f64 {
+        unsafe { __DiscreteTime_unity2_raw::get_tick_value(::core::option::Option::None) }
+    }
     #[doc = "`FromTicks(i64)` overload"]
-    #[method(name = "FromTicks", args = 1)]
-    pub fn from_ticks(ticks: i64) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
-    #[doc = "`CompareTo(crate::system::object::Object)` overload"]
-    #[method(name = "CompareTo", args = 1)]
-    pub fn compare_to(self, obj: crate::system::object::Object) -> i32;
-
-    #[doc = "`Equals(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, other: crate::unity_engine::timeline::discretetime::DiscreteTime) -> bool;
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
-
+    pub fn from_ticks(
+        ticks: impl ::core::convert::Into<i64>,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe {
+            __DiscreteTime_unity2_raw::from_ticks(
+                ::core::convert::Into::into(ticks),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`DoubleToDiscreteTime(f64)` overload"]
-    #[method(name = "DoubleToDiscreteTime", args = 1)]
-    pub fn double_to_discrete_time(time: f64) -> i64;
-
+    pub fn double_to_discrete_time(time: impl ::core::convert::Into<f64>) -> i64 {
+        unsafe {
+            __DiscreteTime_unity2_raw::double_to_discrete_time(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IntToDiscreteTime(i32)` overload"]
-    #[method(name = "IntToDiscreteTime", args = 1)]
-    pub fn int_to_discrete_time(time: i32) -> i64;
-
+    pub fn int_to_discrete_time(time: impl ::core::convert::Into<i32>) -> i64 {
+        unsafe {
+            __DiscreteTime_unity2_raw::int_to_discrete_time(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ToDouble(i64)` overload"]
-    #[method(name = "ToDouble", args = 1)]
-    pub fn to_double(time: i64) -> f64;
-
+    pub fn to_double(time: impl ::core::convert::Into<i64>) -> f64 {
+        unsafe {
+            __DiscreteTime_unity2_raw::to_double(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Explicit(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_Explicit", args = 1)]
-    pub fn op_explicit(b: crate::unity_engine::timeline::discretetime::DiscreteTime) -> f64;
-
+    pub fn op_explicit(
+        b: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> f64 {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_explicit(
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Explicit(f64)` overload"]
-    #[method(name = "op_Explicit", args = 1)]
-    pub fn op_explicit_2(time: f64) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
+    pub fn op_explicit_2(
+        time: impl ::core::convert::Into<f64>,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_explicit_2(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Implicit(i32)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(time: i32) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
+    pub fn op_implicit(
+        time: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_implicit(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Equality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_Equality", args = 2)]
     pub fn op_equality(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_equality(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Inequality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_Inequality", args = 2)]
     pub fn op_inequality(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_inequality(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_LessThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_LessThanOrEqual", args = 2)]
     pub fn op_less_than_or_equal(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_less_than_or_equal(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_GreaterThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_GreaterThanOrEqual", args = 2)]
     pub fn op_greater_than_or_equal(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> bool;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_greater_than_or_equal(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`op_Subtraction(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "op_Subtraction", args = 2)]
     pub fn op_subtraction(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe {
+            __DiscreteTime_unity2_raw::op_subtraction(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Max(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
-    #[method(name = "Max", args = 2)]
     pub fn max(
-        lhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        rhs: crate::unity_engine::timeline::discretetime::DiscreteTime,
-    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime;
-
+        lhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe {
+            __DiscreteTime_unity2_raw::max(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNearestTick(f64)` overload"]
-    #[method(name = "GetNearestTick", args = 1)]
-    pub fn get_nearest_tick(time: f64) -> i64;
-
+    pub fn get_nearest_tick(time: impl ::core::convert::Into<f64>) -> i64 {
+        unsafe {
+            __DiscreteTime_unity2_raw::get_nearest_tick(
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __DiscreteTime_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-discretetime")]
+impl DiscreteTime {
+    #[doc = "`.ctor(i64)` overload"]
+    pub fn ctor(self, time: impl ::core::convert::Into<i64>) -> () {
+        unsafe {
+            __DiscreteTime_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(f64)` overload"]
+    pub fn ctor_2(self, time: impl ::core::convert::Into<f64>) -> () {
+        unsafe {
+            __DiscreteTime_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor_3(self, time: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __DiscreteTime_unity2_raw::ctor_3(
+                self,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OneTickBefore()` overload"]
+    pub fn one_tick_before(self) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe { __DiscreteTime_unity2_raw::one_tick_before(self, ::core::option::Option::None) }
+    }
+    #[doc = "`OneTickAfter()` overload"]
+    pub fn one_tick_after(self) -> crate::unity_engine::timeline::discretetime::DiscreteTime {
+        unsafe { __DiscreteTime_unity2_raw::one_tick_after(self, ::core::option::Option::None) }
+    }
+    #[doc = "`CompareTo(crate::system::object::Object)` overload"]
+    pub fn compare_to(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe {
+            __DiscreteTime_unity2_raw::compare_to(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]
+    pub fn equals(
+        self,
+        other: impl ::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>,
+    ) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __DiscreteTime_unity2_raw::equals_2(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe { __DiscreteTime_unity2_raw::to_string(self, ::core::option::Option::None) }
+    }
+    #[doc = "`GetHashCode()` overload"]
+    pub fn get_hash_code(self) -> i32 {
+        unsafe { __DiscreteTime_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-discretetime")]
+pub mod prelude {
+    pub use super::DiscreteTime;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

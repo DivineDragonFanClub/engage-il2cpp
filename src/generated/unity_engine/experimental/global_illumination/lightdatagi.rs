@@ -59,49 +59,428 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LightDataGI_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: LightDataGI,
+        light : * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight,
+        cookie: *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init :: get_offset () as isize) ,) ;
+        inner(this, light, cookie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: global_illumination :: pointlight :: PointLight as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_2(
+        this: LightDataGI,
+        light: *mut crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
+        cookie: *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightDataGI,
+            *mut crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
+            *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_2::get_offset() as isize),
+        );
+        inner(this, light, cookie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: global_illumination :: spotlight :: SpotLight as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_3(
+        this: LightDataGI,
+        light: *mut crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
+        cookie: *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightDataGI,
+            *mut crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
+            *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_3::get_offset() as isize),
+        );
+        inner(this, light, cookie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_4(
+        this: LightDataGI,
+        light : * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight,
+        cookie: *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init_4 :: get_offset () as isize) ,) ;
+        inner(this, light, cookie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: experimental :: global_illumination :: disclight :: DiscLight as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "Init",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_5(
+        this: LightDataGI,
+        light: *mut crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
+        cookie: *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightDataGI,
+            *mut crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
+            *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init_5::get_offset() as isize),
+        );
+        inner(this, light, cookie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_no_bake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightDataGI as ::unity2::ClassIdentity>::class(),
+                "InitNoBake",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightDataGI as ::unity2::ClassIdentity>::NAME,
+                    "InitNoBake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_no_bake(
+        this: LightDataGI,
+        light_instance_id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LightDataGI, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_no_bake::get_offset() as isize),
+            );
+        inner(this, light_instance_id, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
 impl LightDataGI {
-    #[doc = "`Init(crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight, crate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
-    #[method(name = "Init", args = 2)]
+    #[doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn init(
         self,
-        light : crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight,
-        cookie: crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-    ) -> ();
-
-    #[doc = "`Init(crate::unity_engine::experimental::global_illumination::pointlight::PointLight, crate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
-    #[method(name = "Init", args = 2)]
+    ) -> (
+        crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight,
+        crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+    ) {
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight > :: uninit () ;
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            >::uninit();
+            __LightDataGI_unity2_raw::init(
+                self,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::pointlight::PointLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn init_2(
         self,
-        light: crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
-        cookie: crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-    ) -> ();
-
-    #[doc = "`Init(crate::unity_engine::experimental::global_illumination::spotlight::SpotLight, crate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
-    #[method(name = "Init", args = 2)]
+    ) -> (
+        crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
+        crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            >::uninit();
+            __LightDataGI_unity2_raw::init_2(
+                self,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::spotlight::SpotLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn init_3(
         self,
-        light: crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
-        cookie: crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-    ) -> ();
-
-    #[doc = "`Init(crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight, crate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
-    #[method(name = "Init", args = 2)]
+    ) -> (
+        crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
+        crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            >::uninit();
+            __LightDataGI_unity2_raw::init_3(
+                self,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn init_4(
         self,
-        light : crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight,
-        cookie: crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-    ) -> ();
-
-    #[doc = "`Init(crate::unity_engine::experimental::global_illumination::disclight::DiscLight, crate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
-    #[method(name = "Init", args = 2)]
+    ) -> (
+        crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight,
+        crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+    ) {
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight > :: uninit () ;
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            >::uninit();
+            __LightDataGI_unity2_raw::init_4(
+                self,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::disclight::DiscLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn init_5(
         self,
-        light: crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
-        cookie: crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-    ) -> ();
-
+    ) -> (
+        crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
+        crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
+            >::uninit();
+            __LightDataGI_unity2_raw::init_5(
+                self,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
     #[doc = "`InitNoBake(i32)` overload"]
-    #[method(name = "InitNoBake", args = 1)]
-    pub fn init_no_bake(self, light_instance_id: i32) -> ();
+    pub fn init_no_bake(self, light_instance_id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __LightDataGI_unity2_raw::init_no_bake(
+                self,
+                ::core::convert::Into::into(light_instance_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
+pub mod prelude {
+    pub use super::LightDataGI;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

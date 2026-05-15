@@ -182,272 +182,2177 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontasset")]
-#[::unity2::methods]
-impl TMP_FontAsset {
-    #[doc = "`get_version()` overload"]
-    #[method(name = "get_version", args = 0)]
-    pub fn get_version(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_version(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_version", args = 1)]
-    pub fn set_version(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_sourceFontFile()` overload"]
-    #[method(name = "get_sourceFontFile", args = 0)]
-    pub fn get_source_font_file(self) -> crate::unity_engine::font::Font;
-
-    #[doc = "`set_sourceFontFile(crate::unity_engine::font::Font)` overload"]
-    #[method(name = "set_sourceFontFile", args = 1)]
-    pub fn set_source_font_file(self, value: crate::unity_engine::font::Font) -> ();
-
-    #[doc = "`get_atlasPopulationMode()` overload"]
-    #[method(name = "get_atlasPopulationMode", args = 0)]
-    pub fn get_atlas_population_mode(
-        self,
-    ) -> crate::tm_pro::atlaspopulationmode::AtlasPopulationMode;
-
-    #[doc = "`set_atlasPopulationMode(crate::tm_pro::atlaspopulationmode::AtlasPopulationMode)` overload"]
-    #[method(name = "set_atlasPopulationMode", args = 1)]
-    pub fn set_atlas_population_mode(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_FontAsset_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_version::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_version",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_version(
+        this: TMP_FontAsset,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_version::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_source_font_file {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_sourceFontFile",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_sourceFontFile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_source_font_file(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::font::Font {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::font::Font = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_source_font_file::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_source_font_file {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::font::Font as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_sourceFontFile",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_sourceFontFile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_source_font_file(
+        this: TMP_FontAsset,
+        value: crate::unity_engine::font::Font,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::unity_engine::font::Font,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_source_font_file::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_population_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasPopulationMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasPopulationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_population_mode(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::atlaspopulationmode::AtlasPopulationMode {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::atlaspopulationmode::AtlasPopulationMode = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_atlas_population_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_population_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: atlaspopulationmode :: AtlasPopulationMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasPopulationMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasPopulationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_population_mode(
+        this: TMP_FontAsset,
         value: crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
-    ) -> ();
-
-    #[doc = "`get_faceInfo()` overload"]
-    #[method(name = "get_faceInfo", args = 0)]
-    pub fn get_face_info(self) -> crate::unity_engine::text_core::faceinfo::FaceInfo;
-
-    #[doc = "`set_faceInfo(crate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
-    #[method(name = "set_faceInfo", args = 1)]
-    pub fn set_face_info(self, value: crate::unity_engine::text_core::faceinfo::FaceInfo) -> ();
-
-    #[doc = "`get_glyphTable()` overload"]
-    #[method(name = "get_glyphTable", args = 0)]
-    pub fn get_glyph_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_atlas_population_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_face_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_faceInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_faceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_face_info(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::faceinfo::FaceInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_face_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::text_core::faceinfo::FaceInfo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_faceInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_faceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_face_info(
+        this: TMP_FontAsset,
+        value: crate::unity_engine::text_core::faceinfo::FaceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::unity_engine::text_core::faceinfo::FaceInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_face_info::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_glyphTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::unity_engine::text_core::glyph::Glyph,
-    >;
-
-    #[doc = "`set_glyphTable(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyph::Glyph>)` overload"]
-    #[method(name = "set_glyphTable", args = 1)]
-    pub fn set_glyph_table(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyph::Glyph,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_glyph_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::text_core::glyph::Glyph,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_glyphTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_glyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_glyph_table(
+        this: TMP_FontAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::text_core::glyph::Glyph,
         >,
-    ) -> ();
-
-    #[doc = "`get_glyphLookupTable()` overload"]
-    #[method(name = "get_glyphLookupTable", args = 0)]
-    pub fn get_glyph_lookup_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyph::Glyph,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_glyph_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_lookup_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_glyphLookupTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_glyphLookupTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_lookup_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         u32,
         crate::unity_engine::text_core::glyph::Glyph,
-    >;
-
-    #[doc = "`get_characterTable()` overload"]
-    #[method(name = "get_characterTable", args = 0)]
-    pub fn get_character_table(
-        self,
+    > {
+        let inner : extern "C" fn (TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: unity_engine :: text_core :: glyph :: Glyph > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_glyph_lookup_table :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_characterTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_characterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::tm_pro::tmp_character::TMP_Character,
-    >;
-
-    #[doc = "`set_characterTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_character::TMP_Character>)` overload"]
-    #[method(name = "set_characterTable", args = 1)]
-    pub fn set_character_table(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_character::TMP_Character,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_character::TMP_Character,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_characterTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_characterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_table(
+        this: TMP_FontAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_character::TMP_Character,
         >,
-    ) -> ();
-
-    #[doc = "`get_characterLookupTable()` overload"]
-    #[method(name = "get_characterLookupTable", args = 0)]
-    pub fn get_character_lookup_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_character::TMP_Character,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_character_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_lookup_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_characterLookupTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_characterLookupTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_lookup_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         u32,
         crate::tm_pro::tmp_character::TMP_Character,
-    >;
-
-    #[doc = "`get_atlasTexture()` overload"]
-    #[method(name = "get_atlasTexture", args = 0)]
-    pub fn get_atlas_texture(self) -> crate::unity_engine::texture2d::Texture2D;
-
-    #[doc = "`get_atlasTextures()` overload"]
-    #[method(name = "get_atlasTextures", args = 0)]
-    pub fn get_atlas_textures(self) -> ::unity2::Array<crate::unity_engine::texture2d::Texture2D>;
-
-    #[doc = "`set_atlasTextures(::unity2::Array<crate::unity_engine::texture2d::Texture2D>)` overload"]
-    #[method(name = "set_atlasTextures", args = 1)]
-    pub fn set_atlas_textures(
-        self,
+    > {
+        let inner : extern "C" fn (TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: tm_pro :: tmp_character :: TMP_Character > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_character_lookup_table :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_texture(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::texture2d::Texture2D {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_atlas_texture::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasTextures",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_textures(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::texture2d::Texture2D> {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::texture2d::Texture2D> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_atlas_textures::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::texture2d::Texture2D,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasTextures",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_textures(
+        this: TMP_FontAsset,
         value: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
-    ) -> ();
-
-    #[doc = "`get_atlasTextureCount()` overload"]
-    #[method(name = "get_atlasTextureCount", args = 0)]
-    pub fn get_atlas_texture_count(self) -> i32;
-
-    #[doc = "`get_isMultiAtlasTexturesEnabled()` overload"]
-    #[method(name = "get_isMultiAtlasTexturesEnabled", args = 0)]
-    pub fn get_is_multi_atlas_textures_enabled(self) -> bool;
-
-    #[doc = "`set_isMultiAtlasTexturesEnabled(bool)` overload"]
-    #[method(name = "set_isMultiAtlasTexturesEnabled", args = 1)]
-    pub fn set_is_multi_atlas_textures_enabled(self, value: bool) -> ();
-
-    #[doc = "`get_clearDynamicDataOnBuild()` overload"]
-    #[method(name = "get_clearDynamicDataOnBuild", args = 0)]
-    pub fn get_clear_dynamic_data_on_build(self) -> bool;
-
-    #[doc = "`set_clearDynamicDataOnBuild(bool)` overload"]
-    #[method(name = "set_clearDynamicDataOnBuild", args = 1)]
-    pub fn set_clear_dynamic_data_on_build(self, value: bool) -> ();
-
-    #[doc = "`get_usedGlyphRects()` overload"]
-    #[method(name = "get_usedGlyphRects", args = 0)]
-    pub fn get_used_glyph_rects(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_atlas_textures::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_texture_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasTextureCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasTextureCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_texture_count(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_atlas_texture_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_multi_atlas_textures_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_isMultiAtlasTexturesEnabled",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_isMultiAtlasTexturesEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_multi_atlas_textures_enabled(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_multi_atlas_textures_enabled::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_multi_atlas_textures_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_isMultiAtlasTexturesEnabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_isMultiAtlasTexturesEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_multi_atlas_textures_enabled(
+        this: TMP_FontAsset,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_multi_atlas_textures_enabled::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clear_dynamic_data_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_clearDynamicDataOnBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_clearDynamicDataOnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_clear_dynamic_data_on_build(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_clear_dynamic_data_on_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_clear_dynamic_data_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_clearDynamicDataOnBuild",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_clearDynamicDataOnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_clear_dynamic_data_on_build(
+        this: TMP_FontAsset,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_clear_dynamic_data_on_build::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_used_glyph_rects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_usedGlyphRects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_usedGlyphRects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_used_glyph_rects(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::unity_engine::text_core::glyphrect::GlyphRect,
-    >;
-
-    #[doc = "`set_usedGlyphRects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>)` overload"]
-    #[method(name = "set_usedGlyphRects", args = 1)]
-    pub fn set_used_glyph_rects(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_used_glyph_rects::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_used_glyph_rects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::text_core::glyphrect::GlyphRect,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_usedGlyphRects",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_usedGlyphRects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_used_glyph_rects(
+        this: TMP_FontAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::text_core::glyphrect::GlyphRect,
         >,
-    ) -> ();
-
-    #[doc = "`get_freeGlyphRects()` overload"]
-    #[method(name = "get_freeGlyphRects", args = 0)]
-    pub fn get_free_glyph_rects(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_used_glyph_rects::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_free_glyph_rects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_freeGlyphRects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_freeGlyphRects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_free_glyph_rects(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::unity_engine::text_core::glyphrect::GlyphRect,
-    >;
-
-    #[doc = "`set_freeGlyphRects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>)` overload"]
-    #[method(name = "set_freeGlyphRects", args = 1)]
-    pub fn set_free_glyph_rects(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_free_glyph_rects::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_free_glyph_rects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::text_core::glyphrect::GlyphRect,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_freeGlyphRects",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_freeGlyphRects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_free_glyph_rects(
+        this: TMP_FontAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::text_core::glyphrect::GlyphRect,
         >,
-    ) -> ();
-
-    #[doc = "`get_fontInfo()` overload"]
-    #[method(name = "get_fontInfo", args = 0)]
-    pub fn get_font_info(self) -> crate::tm_pro::faceinfo_legacy::FaceInfo_Legacy;
-
-    #[doc = "`get_atlasWidth()` overload"]
-    #[method(name = "get_atlasWidth", args = 0)]
-    pub fn get_atlas_width(self) -> i32;
-
-    #[doc = "`set_atlasWidth(i32)` overload"]
-    #[method(name = "set_atlasWidth", args = 1)]
-    pub fn set_atlas_width(self, value: i32) -> ();
-
-    #[doc = "`get_atlasHeight()` overload"]
-    #[method(name = "get_atlasHeight", args = 0)]
-    pub fn get_atlas_height(self) -> i32;
-
-    #[doc = "`set_atlasHeight(i32)` overload"]
-    #[method(name = "set_atlasHeight", args = 1)]
-    pub fn set_atlas_height(self, value: i32) -> ();
-
-    #[doc = "`get_atlasPadding()` overload"]
-    #[method(name = "get_atlasPadding", args = 0)]
-    pub fn get_atlas_padding(self) -> i32;
-
-    #[doc = "`set_atlasPadding(i32)` overload"]
-    #[method(name = "set_atlasPadding", args = 1)]
-    pub fn set_atlas_padding(self, value: i32) -> ();
-
-    #[doc = "`get_atlasRenderMode()` overload"]
-    #[method(name = "get_atlasRenderMode", args = 0)]
-    pub fn get_atlas_render_mode(
-        self,
-    ) -> crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode;
-
-    #[doc = "`set_atlasRenderMode(crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode)` overload"]
-    #[method(name = "set_atlasRenderMode", args = 1)]
-    pub fn set_atlas_render_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_free_glyph_rects::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_fontInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_fontInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_info(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::faceinfo_legacy::FaceInfo_Legacy {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::faceinfo_legacy::FaceInfo_Legacy = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_width(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_atlas_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_width(
+        this: TMP_FontAsset,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_atlas_width::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_height(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_atlas_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasHeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_height(
+        this: TMP_FontAsset,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_atlas_height::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasPadding",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_padding(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_atlas_padding::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasPadding",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_padding(
+        this: TMP_FontAsset,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_atlas_padding::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_atlas_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_atlasRenderMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_atlasRenderMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_atlas_render_mode(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode {
+        let inner : extern "C" fn (TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_atlas_render_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_atlas_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_atlasRenderMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_atlasRenderMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_atlas_render_mode(
+        this: TMP_FontAsset,
         value: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
-    ) -> ();
-
-    #[doc = "`get_fontFeatureTable()` overload"]
-    #[method(name = "get_fontFeatureTable", args = 0)]
-    pub fn get_font_feature_table(
-        self,
-    ) -> crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable;
-
-    #[doc = "`set_fontFeatureTable(crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable)` overload"]
-    #[method(name = "set_fontFeatureTable", args = 1)]
-    pub fn set_font_feature_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_atlas_render_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_feature_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_fontFeatureTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_fontFeatureTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_feature_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_feature_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_feature_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_fontfeaturetable :: TMP_FontFeatureTable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_fontFeatureTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_fontFeatureTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_feature_table(
+        this: TMP_FontAsset,
         value: crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable,
-    ) -> ();
-
-    #[doc = "`get_fallbackFontAssetTable()` overload"]
-    #[method(name = "get_fallbackFontAssetTable", args = 0)]
-    pub fn get_fallback_font_asset_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_feature_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fallback_font_asset_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_fallbackFontAssetTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_fallbackFontAssetTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fallback_font_asset_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    >;
-
-    #[doc = "`set_fallbackFontAssetTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
-    #[method(name = "set_fallbackFontAssetTable", args = 1)]
-    pub fn set_fallback_font_asset_table(
-        self,
+    > {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fallback_font_asset_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fallback_font_asset_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_fallbackFontAssetTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_fallbackFontAssetTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fallback_font_asset_table(
+        this: TMP_FontAsset,
         value: crate::system::collections::generic::list_1::List_1<
             crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         >,
-    ) -> ();
-
-    #[doc = "`get_creationSettings()` overload"]
-    #[method(name = "get_creationSettings", args = 0)]
-    pub fn get_creation_settings(
-        self,
-    ) -> crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings;
-
-    #[doc = "`set_creationSettings(crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings)` overload"]
-    #[method(name = "set_creationSettings", args = 1)]
-    pub fn set_creation_settings(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fallback_font_asset_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_creation_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_creationSettings",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_creationSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_creation_settings(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings {
+        let inner : extern "C" fn (TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: fontassetcreationsettings :: FontAssetCreationSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_creation_settings :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_creation_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: fontassetcreationsettings :: FontAssetCreationSettings as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_creationSettings",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_creationSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_creation_settings(
+        this: TMP_FontAsset,
         value: crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings,
-    ) -> ();
-
-    #[doc = "`get_fontWeightTable()` overload"]
-    #[method(name = "get_fontWeightTable", args = 0)]
-    pub fn get_font_weight_table(
-        self,
-    ) -> ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>;
-
-    #[doc = "`set_fontWeightTable(::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>)` overload"]
-    #[method(name = "set_fontWeightTable", args = 1)]
-    pub fn set_font_weight_table(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_creation_settings::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_weight_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "get_fontWeightTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "get_fontWeightTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_weight_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair> {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_weight_table::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_weight_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "set_fontWeightTable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "set_fontWeightTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_weight_table(
+        this: TMP_FontAsset,
         value: ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>,
-    ) -> ();
-
-    #[doc = "`CreateFontAsset(crate::unity_engine::font::Font)` overload"]
-    #[method(name = "CreateFontAsset", args = 1)]
-    pub fn create_font_asset(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_weight_table::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::font::Font as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "CreateFontAsset",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "CreateFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_font_asset(
         font: crate::unity_engine::font::Font,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`CreateFontAsset(crate::unity_engine::font::Font, i32, i32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, i32, i32, crate::tm_pro::atlaspopulationmode::AtlasPopulationMode, bool)` overload"]
-    #[method(name = "CreateFontAsset", args = 8)]
-    pub fn create_font_asset_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::unity_engine::font::Font,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_font_asset::get_offset() as isize),
+        );
+        inner(font, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_font_asset_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: font :: Font as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: atlaspopulationmode :: AtlasPopulationMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "CreateFontAsset",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "CreateFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_font_asset_2(
         font: crate::unity_engine::font::Font,
         sampling_point_size: i32,
         atlas_padding: i32,
@@ -456,277 +2361,3845 @@ impl TMP_FontAsset {
         atlas_height: i32,
         atlas_population_mode: crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
         enable_multi_atlas_support: bool,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`ReadFontAssetDefinition()` overload"]
-    #[method(name = "ReadFontAssetDefinition", args = 0)]
-    pub fn read_font_asset_definition(self) -> ();
-
-    #[doc = "`InitializeDictionaryLookupTables()` overload"]
-    #[method(name = "InitializeDictionaryLookupTables", args = 0)]
-    pub fn initialize_dictionary_lookup_tables(self) -> ();
-
-    #[doc = "`InitializeGlyphLookupDictionary()` overload"]
-    #[method(name = "InitializeGlyphLookupDictionary", args = 0)]
-    pub fn initialize_glyph_lookup_dictionary(self) -> ();
-
-    #[doc = "`InitializeCharacterLookupDictionary()` overload"]
-    #[method(name = "InitializeCharacterLookupDictionary", args = 0)]
-    pub fn initialize_character_lookup_dictionary(self) -> ();
-
-    #[doc = "`InitializeGlyphPaidAdjustmentRecordsLookupDictionary()` overload"]
-    #[method(
-        name = "InitializeGlyphPaidAdjustmentRecordsLookupDictionary",
-        args = 0
-    )]
-    pub fn initialize_glyph_paid_adjustment_records_lookup_dictionary(self) -> ();
-
-    #[doc = "`AddSynthesizedCharactersAndFaceMetrics()` overload"]
-    #[method(name = "AddSynthesizedCharactersAndFaceMetrics", args = 0)]
-    pub fn add_synthesized_characters_and_face_metrics(self) -> ();
-
-    #[doc = "`AddSynthesizedCharacter(u32, bool, bool)` overload"]
-    #[method(name = "AddSynthesizedCharacter", args = 3)]
-    pub fn add_synthesized_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            crate::unity_engine::font::Font,
+            i32,
+            i32,
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+            i32,
+            i32,
+            crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_font_asset_2::get_offset() as isize),
+        );
+        inner(
+            font,
+            sampling_point_size,
+            atlas_padding,
+            render_mode,
+            atlas_width,
+            atlas_height,
+            atlas_population_mode,
+            enable_multi_atlas_support,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "Awake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "Awake",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn awake(this: TMP_FontAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_awake::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_font_asset_definition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "ReadFontAssetDefinition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "ReadFontAssetDefinition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_font_asset_definition(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_read_font_asset_definition::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_dictionary_lookup_tables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "InitializeDictionaryLookupTables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "InitializeDictionaryLookupTables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_dictionary_lookup_tables(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_initialize_dictionary_lookup_tables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_glyph_lookup_dictionary {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "InitializeGlyphLookupDictionary",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "InitializeGlyphLookupDictionary",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_glyph_lookup_dictionary(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_initialize_glyph_lookup_dictionary::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_character_lookup_dictionary {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "InitializeCharacterLookupDictionary",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "InitializeCharacterLookupDictionary",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_character_lookup_dictionary(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_initialize_character_lookup_dictionary::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_glyph_paid_adjustment_records_lookup_dictionary {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "InitializeGlyphPaidAdjustmentRecordsLookupDictionary",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "InitializeGlyphPaidAdjustmentRecordsLookupDictionary",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_glyph_paid_adjustment_records_lookup_dictionary(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_initialize_glyph_paid_adjustment_records_lookup_dictionary :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_synthesized_characters_and_face_metrics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "AddSynthesizedCharactersAndFaceMetrics",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "AddSynthesizedCharactersAndFaceMetrics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_synthesized_characters_and_face_metrics(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_add_synthesized_characters_and_face_metrics::get_offset() as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_synthesized_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "AddSynthesizedCharacter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "AddSynthesizedCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_synthesized_character(
+        this: TMP_FontAsset,
         unicode: u32,
         is_font_face_loaded: bool,
         add_immediately: bool,
-    ) -> ();
-
-    #[doc = "`AddCharacterToLookupCache(u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "AddCharacterToLookupCache", args = 2)]
-    pub fn add_character_to_lookup_cache(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, u32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_synthesized_character::get_offset() as isize),
+            );
+        inner(
+            this,
+            unicode,
+            is_font_face_loaded,
+            add_immediately,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_character_to_lookup_cache {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "AddCharacterToLookupCache",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "AddCharacterToLookupCache",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_character_to_lookup_cache(
+        this: TMP_FontAsset,
         unicode: u32,
         character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> ();
-
-    #[doc = "`SortCharacterTable()` overload"]
-    #[method(name = "SortCharacterTable", args = 0)]
-    pub fn sort_character_table(self) -> ();
-
-    #[doc = "`SortGlyphTable()` overload"]
-    #[method(name = "SortGlyphTable", args = 0)]
-    pub fn sort_glyph_table(self) -> ();
-
-    #[doc = "`SortFontFeatureTable()` overload"]
-    #[method(name = "SortFontFeatureTable", args = 0)]
-    pub fn sort_font_feature_table(self) -> ();
-
-    #[doc = "`SortAllTables()` overload"]
-    #[method(name = "SortAllTables", args = 0)]
-    pub fn sort_all_tables(self) -> ();
-
-    #[doc = "`HasCharacter(i32)` overload"]
-    #[method(name = "HasCharacter", args = 1)]
-    pub fn has_character(self, character: i32) -> bool;
-
-    #[doc = "`HasCharacter(u16, bool, bool)` overload"]
-    #[method(name = "HasCharacter", args = 3)]
-    pub fn has_character_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            u32,
+            crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_character_to_lookup_cache::get_offset() as isize),
+        );
+        inner(this, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_character_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "SortCharacterTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortCharacterTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_character_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_character_table::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_glyph_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "SortGlyphTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortGlyphTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_glyph_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_glyph_table::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_font_feature_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "SortFontFeatureTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortFontFeatureTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_font_feature_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_font_feature_table::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_all_tables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "SortAllTables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "SortAllTables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort_all_tables(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort_all_tables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_character(
+        this: TMP_FontAsset,
+        character: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_character::get_offset() as isize),
+            );
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_character_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_character_2(
+        this: TMP_FontAsset,
         character: u16,
         search_fallbacks: bool,
         try_add_character: bool,
-    ) -> bool;
-
-    #[doc = "`HasCharacter_Internal(u32, bool, bool)` overload"]
-    #[method(name = "HasCharacter_Internal", args = 3)]
-    pub fn has_character_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, u16, bool, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_character_2::get_offset() as isize),
+            );
+        inner(
+            this,
+            character,
+            search_fallbacks,
+            try_add_character,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_character_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacter_Internal",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacter_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_character_internal(
+        this: TMP_FontAsset,
         character: u32,
         search_fallbacks: bool,
         try_add_character: bool,
-    ) -> bool;
-
-    #[doc = "`HasCharacters(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<u16>)` overload"]
-    #[method(name = "HasCharacters", args = 2)]
-    pub fn has_characters(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, u32, bool, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_character_internal::get_offset() as isize),
+            );
+        inner(
+            this,
+            character,
+            search_fallbacks,
+            try_add_character,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacters",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_characters(
+        this: TMP_FontAsset,
         text: ::unity2::Il2CppString,
-        missing_characters: crate::system::collections::generic::list_1::List_1<u16>,
-    ) -> bool;
-
-    #[doc = "`HasCharacters(::unity2::Il2CppString, ::unity2::Array<u32>, bool, bool)` overload"]
-    #[method(name = "HasCharacters", args = 4)]
-    pub fn has_characters_2(
-        self,
+        missing_characters: *mut crate::system::collections::generic::list_1::List_1<u16>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            *mut crate::system::collections::generic::list_1::List_1<u16>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_characters::get_offset() as isize),
+        );
+        inner(this, text, missing_characters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_characters_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacters",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_characters_2(
+        this: TMP_FontAsset,
         text: ::unity2::Il2CppString,
-        missing_characters: ::unity2::Array<u32>,
+        missing_characters: *mut ::unity2::Array<u32>,
         search_fallbacks: bool,
         try_add_character: bool,
-    ) -> bool;
-
-    #[doc = "`HasCharacters(::unity2::Il2CppString)` overload"]
-    #[method(name = "HasCharacters", args = 1)]
-    pub fn has_characters_3(self, text: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`GetCharacters(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "GetCharacters", args = 1)]
-    pub fn get_characters(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            *mut ::unity2::Array<u32>,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_characters_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            text,
+            missing_characters,
+            search_fallbacks,
+            try_add_character,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_characters_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "HasCharacters",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_characters_3(
+        this: TMP_FontAsset,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_characters_3::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "GetCharacters",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_characters(
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetCharactersArray(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "GetCharactersArray", args = 1)]
-    pub fn get_characters_array(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_characters::get_offset() as isize),
+        );
+        inner(font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_characters_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "GetCharactersArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetCharactersArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_characters_array(
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ::unity2::Array<i32>;
-
-    #[doc = "`GetGlyphIndex(u32)` overload"]
-    #[method(name = "GetGlyphIndex", args = 1)]
-    pub fn get_glyph_index(self, unicode: u32) -> u32;
-
-    #[doc = "`RegisterFontAssetForFontFeatureUpdate(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "RegisterFontAssetForFontFeatureUpdate", args = 1)]
-    pub fn register_font_asset_for_font_feature_update(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_characters_array::get_offset() as isize),
+        );
+        inner(font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "GetGlyphIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "GetGlyphIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_index(
+        this: TMP_FontAsset,
+        unicode: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(TMP_FontAsset, u32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_glyph_index::get_offset() as isize),
+            );
+        inner(this, unicode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_font_asset_for_font_feature_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "RegisterFontAssetForFontFeatureUpdate",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "RegisterFontAssetForFontFeatureUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_font_asset_for_font_feature_update(
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
-    #[doc = "`UpdateFontFeaturesForFontAssetsInQueue()` overload"]
-    #[method(name = "UpdateFontFeaturesForFontAssetsInQueue", args = 0)]
-    pub fn update_font_features_for_font_assets_in_queue() -> ();
-
-    #[doc = "`RegisterFontAssetForAtlasTextureUpdate(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "RegisterFontAssetForAtlasTextureUpdate", args = 1)]
-    pub fn register_font_asset_for_atlas_texture_update(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_register_font_asset_for_font_feature_update::get_offset() as isize,
+                ),
+        );
+        inner(font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_font_features_for_font_assets_in_queue {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateFontFeaturesForFontAssetsInQueue",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFontFeaturesForFontAssetsInQueue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_font_features_for_font_assets_in_queue(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_update_font_features_for_font_assets_in_queue::get_offset() as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register_font_asset_for_atlas_texture_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "RegisterFontAssetForAtlasTextureUpdate",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "RegisterFontAssetForAtlasTextureUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register_font_asset_for_atlas_texture_update(
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
-    #[doc = "`UpdateAtlasTexturesForFontAssetsInQueue()` overload"]
-    #[method(name = "UpdateAtlasTexturesForFontAssetsInQueue", args = 0)]
-    pub fn update_atlas_textures_for_font_assets_in_queue() -> ();
-
-    #[doc = "`TryAddCharacters(::unity2::Array<u32>, bool)` overload"]
-    #[method(name = "TryAddCharacters", args = 2)]
-    pub fn try_add_characters(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_register_font_asset_for_atlas_texture_update::get_offset() as isize,
+                ),
+        );
+        inner(font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_atlas_textures_for_font_assets_in_queue {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateAtlasTexturesForFontAssetsInQueue",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateAtlasTexturesForFontAssetsInQueue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_atlas_textures_for_font_assets_in_queue(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_update_atlas_textures_for_font_assets_in_queue::get_offset() as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddCharacters",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_characters(
+        this: TMP_FontAsset,
         unicodes: ::unity2::Array<u32>,
         include_font_features: bool,
-    ) -> bool;
-
-    #[doc = "`TryAddCharacters(::unity2::Array<u32>, ::unity2::Array<u32>, bool)` overload"]
-    #[method(name = "TryAddCharacters", args = 3)]
-    pub fn try_add_characters_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Array<u32>,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_characters::get_offset() as isize),
+        );
+        inner(this, unicodes, include_font_features, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_characters_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddCharacters",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_characters_2(
+        this: TMP_FontAsset,
         unicodes: ::unity2::Array<u32>,
-        missing_unicodes: ::unity2::Array<u32>,
+        missing_unicodes: *mut ::unity2::Array<u32>,
         include_font_features: bool,
-    ) -> bool;
-
-    #[doc = "`TryAddCharacters(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "TryAddCharacters", args = 2)]
-    pub fn try_add_characters_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Array<u32>,
+            *mut ::unity2::Array<u32>,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_characters_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            unicodes,
+            missing_unicodes,
+            include_font_features,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_characters_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddCharacters",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_characters_3(
+        this: TMP_FontAsset,
         characters: ::unity2::Il2CppString,
         include_font_features: bool,
-    ) -> bool;
-
-    #[doc = "`TryAddCharacters(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "TryAddCharacters", args = 3)]
-    pub fn try_add_characters_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_characters_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            characters,
+            include_font_features,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_characters_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddCharacters",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_characters_4(
+        this: TMP_FontAsset,
         characters: ::unity2::Il2CppString,
-        missing_characters: ::unity2::Il2CppString,
+        missing_characters: *mut ::unity2::Il2CppString,
         include_font_features: bool,
-    ) -> bool;
-
-    #[doc = "`TryAddCharacterInternal(u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "TryAddCharacterInternal", args = 2)]
-    pub fn try_add_character_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_characters_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            characters,
+            missing_characters,
+            include_font_features,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_character_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddCharacterInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddCharacterInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_character_internal(
+        this: TMP_FontAsset,
         unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> bool;
-
-    #[doc = "`TryGetCharacter_and_QueueRenderToTexture(u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
-    #[method(name = "TryGetCharacter_and_QueueRenderToTexture", args = 2)]
-    pub fn try_get_character_and_queue_render_to_texture(
-        self,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_character_internal::get_offset() as isize),
+        );
+        inner(this, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_character_and_queue_render_to_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryGetCharacter_and_QueueRenderToTexture",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryGetCharacter_and_QueueRenderToTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_character_and_queue_render_to_texture(
+        this: TMP_FontAsset,
         unicode: u32,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-    ) -> bool;
-
-    #[doc = "`TryAddGlyphsToAtlasTextures()` overload"]
-    #[method(name = "TryAddGlyphsToAtlasTextures", args = 0)]
-    pub fn try_add_glyphs_to_atlas_textures(self) -> ();
-
-    #[doc = "`TryAddGlyphsToNewAtlasTexture()` overload"]
-    #[method(name = "TryAddGlyphsToNewAtlasTexture", args = 0)]
-    pub fn try_add_glyphs_to_new_atlas_texture(self) -> bool;
-
-    #[doc = "`SetupNewAtlasTexture()` overload"]
-    #[method(name = "SetupNewAtlasTexture", args = 0)]
-    pub fn setup_new_atlas_texture(self) -> ();
-
-    #[doc = "`UpdateAtlasTexture()` overload"]
-    #[method(name = "UpdateAtlasTexture", args = 0)]
-    pub fn update_atlas_texture(self) -> ();
-
-    #[doc = "`UpdateGlyphAdjustmentRecords()` overload"]
-    #[method(name = "UpdateGlyphAdjustmentRecords", args = 0)]
-    pub fn update_glyph_adjustment_records(self) -> ();
-
-    #[doc = "`UpdateGlyphAdjustmentRecords(::unity2::Array<u32>)` overload"]
-    #[method(name = "UpdateGlyphAdjustmentRecords", args = 1)]
-    pub fn update_glyph_adjustment_records_2(self, glyph_indexes: ::unity2::Array<u32>) -> ();
-
-    #[doc = "`UpdateGlyphAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>)` overload"]
-    #[method(name = "UpdateGlyphAdjustmentRecords", args = 1)]
-    pub fn update_glyph_adjustment_records_3(
-        self,
+        character: *mut crate::tm_pro::tmp_character::TMP_Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            u32,
+            *mut crate::tm_pro::tmp_character::TMP_Character,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_try_get_character_and_queue_render_to_texture::get_offset() as isize,
+                ),
+        );
+        inner(this, unicode, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyphs_to_atlas_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphsToAtlasTextures",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphsToAtlasTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyphs_to_atlas_textures(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_add_glyphs_to_atlas_textures::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyphs_to_new_atlas_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphsToNewAtlasTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphsToNewAtlasTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyphs_to_new_atlas_texture(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_add_glyphs_to_new_atlas_texture::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_new_atlas_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "SetupNewAtlasTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "SetupNewAtlasTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup_new_atlas_texture(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup_new_atlas_texture::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_atlas_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateAtlasTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateAtlasTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_atlas_texture(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_atlas_texture::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_glyph_adjustment_records {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateGlyphAdjustmentRecords",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateGlyphAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_glyph_adjustment_records(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_glyph_adjustment_records::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_glyph_adjustment_records_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateGlyphAdjustmentRecords",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateGlyphAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_glyph_adjustment_records_2(
+        this: TMP_FontAsset,
+        glyph_indexes: ::unity2::Array<u32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            ::unity2::Array<u32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_glyph_adjustment_records_2::get_offset() as isize),
+        );
+        inner(this, glyph_indexes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_glyph_adjustment_records_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateGlyphAdjustmentRecords",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateGlyphAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_glyph_adjustment_records_3(
+        this: TMP_FontAsset,
         glyph_indexes: crate::system::collections::generic::list_1::List_1<u32>,
-    ) -> ();
-
-    #[doc = "`UpdateGlyphAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>, crate::system::collections::generic::list_1::List_1<u32>)` overload"]
-    #[method(name = "UpdateGlyphAdjustmentRecords", args = 2)]
-    pub fn update_glyph_adjustment_records_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<u32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_glyph_adjustment_records_3::get_offset() as isize),
+        );
+        inner(this, glyph_indexes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_glyph_adjustment_records_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateGlyphAdjustmentRecords",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateGlyphAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_glyph_adjustment_records_4(
+        this: TMP_FontAsset,
         new_glyph_indexes: crate::system::collections::generic::list_1::List_1<u32>,
         all_glyph_indexes: crate::system::collections::generic::list_1::List_1<u32>,
-    ) -> ();
-
-    #[doc = "`ClearFontAssetData(bool)` overload"]
-    #[method(name = "ClearFontAssetData", args = 1)]
-    pub fn clear_font_asset_data(self, set_atlas_size_to_zero: bool) -> ();
-
-    #[doc = "`ClearFontAssetDataInternal()` overload"]
-    #[method(name = "ClearFontAssetDataInternal", args = 0)]
-    pub fn clear_font_asset_data_internal(self) -> ();
-
-    #[doc = "`UpdateFontAssetData()` overload"]
-    #[method(name = "UpdateFontAssetData", args = 0)]
-    pub fn update_font_asset_data(self) -> ();
-
-    #[doc = "`ClearFontAssetTables()` overload"]
-    #[method(name = "ClearFontAssetTables", args = 0)]
-    pub fn clear_font_asset_tables(self) -> ();
-
-    #[doc = "`ClearAtlasTextures(bool)` overload"]
-    #[method(name = "ClearAtlasTextures", args = 1)]
-    pub fn clear_atlas_textures(self, set_atlas_size_to_zero: bool) -> ();
-
-    #[doc = "`UpgradeFontAsset()` overload"]
-    #[method(name = "UpgradeFontAsset", args = 0)]
-    pub fn upgrade_font_asset(self) -> ();
-
-    #[doc = "`UpgradeGlyphAdjustmentTableToFontFeatureTable()` overload"]
-    #[method(name = "UpgradeGlyphAdjustmentTableToFontFeatureTable", args = 0)]
-    pub fn upgrade_glyph_adjustment_table_to_font_feature_table(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_FontAsset,
+            crate::system::collections::generic::list_1::List_1<u32>,
+            crate::system::collections::generic::list_1::List_1<u32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_glyph_adjustment_records_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            new_glyph_indexes,
+            all_glyph_indexes,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_font_asset_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "ClearFontAssetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "ClearFontAssetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_font_asset_data(
+        this: TMP_FontAsset,
+        set_atlas_size_to_zero: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_font_asset_data::get_offset() as isize),
+            );
+        inner(this, set_atlas_size_to_zero, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_font_asset_data_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "ClearFontAssetDataInternal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "ClearFontAssetDataInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_font_asset_data_internal(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_font_asset_data_internal::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_font_asset_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpdateFontAssetData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpdateFontAssetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_font_asset_data(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_font_asset_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_font_asset_tables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "ClearFontAssetTables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "ClearFontAssetTables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_font_asset_tables(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_font_asset_tables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_atlas_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "ClearAtlasTextures",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "ClearAtlasTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_atlas_textures(
+        this: TMP_FontAsset,
+        set_atlas_size_to_zero: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_atlas_textures::get_offset() as isize),
+            );
+        inner(this, set_atlas_size_to_zero, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upgrade_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpgradeFontAsset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpgradeFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upgrade_font_asset(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upgrade_font_asset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upgrade_glyph_adjustment_table_to_font_feature_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "UpgradeGlyphAdjustmentTableToFontFeatureTable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    "UpgradeGlyphAdjustmentTableToFontFeatureTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upgrade_glyph_adjustment_table_to_font_feature_table(
+        this: TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_upgrade_glyph_adjustment_table_to_font_feature_table::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_FontAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_fontasset")]
+impl TMP_FontAsset {
+    #[doc = "`CreateFontAsset(crate::unity_engine::font::Font)` overload"]
+    pub fn create_font_asset(
+        font: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::create_font_asset(
+                ::core::convert::Into::into(font),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateFontAsset(crate::unity_engine::font::Font, i32, i32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, i32, i32, crate::tm_pro::atlaspopulationmode::AtlasPopulationMode, bool)` overload"]
+    pub fn create_font_asset_2(
+        font: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+        sampling_point_size: impl ::core::convert::Into<i32>,
+        atlas_padding: impl ::core::convert::Into<i32>,
+        render_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+        atlas_width: impl ::core::convert::Into<i32>,
+        atlas_height: impl ::core::convert::Into<i32>,
+        atlas_population_mode: impl ::core::convert::Into<
+            crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
+        >,
+        enable_multi_atlas_support: impl ::core::convert::Into<bool>,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::create_font_asset_2(
+                ::core::convert::Into::into(font),
+                ::core::convert::Into::into(sampling_point_size),
+                ::core::convert::Into::into(atlas_padding),
+                ::core::convert::Into::into(render_mode),
+                ::core::convert::Into::into(atlas_width),
+                ::core::convert::Into::into(atlas_height),
+                ::core::convert::Into::into(atlas_population_mode),
+                ::core::convert::Into::into(enable_multi_atlas_support),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacters(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    pub fn get_characters(
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::get_characters(
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharactersArray(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    pub fn get_characters_array(
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> ::unity2::Array<i32> {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::get_characters_array(
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RegisterFontAssetForFontFeatureUpdate(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    pub fn register_font_asset_for_font_feature_update(
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::register_font_asset_for_font_feature_update(
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFontFeaturesForFontAssetsInQueue()` overload"]
+    pub fn update_font_features_for_font_assets_in_queue() -> () {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::update_font_features_for_font_assets_in_queue(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RegisterFontAssetForAtlasTextureUpdate(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    pub fn register_font_asset_for_atlas_texture_update(
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::register_font_asset_for_atlas_texture_update(
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateAtlasTexturesForFontAssetsInQueue()` overload"]
+    pub fn update_atlas_textures_for_font_assets_in_queue() -> () {
+        unsafe {
+            __TMP_FontAsset_unity2_raw::update_atlas_textures_for_font_assets_in_queue(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __TMP_FontAsset_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontasset")]
+pub trait ITMP_FontAssetMethods: ITMP_FontAsset {
+    #[doc = "`get_version()` overload"]
+    fn get_version(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_version(::unity2::Il2CppString)` overload"]
+    fn set_version(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_version(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_sourceFontFile()` overload"]
+    fn get_source_font_file(self) -> crate::unity_engine::font::Font {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_source_font_file(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_sourceFontFile(crate::unity_engine::font::Font)` overload"]
+    fn set_source_font_file(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_source_font_file(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasPopulationMode()` overload"]
+    fn get_atlas_population_mode(self) -> crate::tm_pro::atlaspopulationmode::AtlasPopulationMode {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_population_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_atlasPopulationMode(crate::tm_pro::atlaspopulationmode::AtlasPopulationMode)` overload"]
+    fn set_atlas_population_mode(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::atlaspopulationmode::AtlasPopulationMode>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_population_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_faceInfo()` overload"]
+    fn get_face_info(self) -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_face_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_faceInfo(crate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
+    fn set_face_info(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::text_core::faceinfo::FaceInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_face_info(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_glyphTable()` overload"]
+    fn get_glyph_table(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::text_core::glyph::Glyph,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_glyph_table(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_glyphTable(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyph::Glyph>)` overload"]
+    fn set_glyph_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyph::Glyph,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_glyph_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_glyphLookupTable()` overload"]
+    fn get_glyph_lookup_table(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        u32,
+        crate::unity_engine::text_core::glyph::Glyph,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_glyph_lookup_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_characterTable()` overload"]
+    fn get_character_table(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_character::TMP_Character,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_character_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_characterTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_character::TMP_Character>)` overload"]
+    fn set_character_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_character::TMP_Character,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_character_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_characterLookupTable()` overload"]
+    fn get_character_lookup_table(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        u32,
+        crate::tm_pro::tmp_character::TMP_Character,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_character_lookup_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasTexture()` overload"]
+    fn get_atlas_texture(self) -> crate::unity_engine::texture2d::Texture2D {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_texture(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_atlasTextures()` overload"]
+    fn get_atlas_textures(self) -> ::unity2::Array<crate::unity_engine::texture2d::Texture2D> {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_textures(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_atlasTextures(::unity2::Array<crate::unity_engine::texture2d::Texture2D>)` overload"]
+    fn set_atlas_textures(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::texture2d::Texture2D>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_textures(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasTextureCount()` overload"]
+    fn get_atlas_texture_count(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_texture_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isMultiAtlasTexturesEnabled()` overload"]
+    fn get_is_multi_atlas_textures_enabled(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_is_multi_atlas_textures_enabled(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_isMultiAtlasTexturesEnabled(bool)` overload"]
+    fn set_is_multi_atlas_textures_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_is_multi_atlas_textures_enabled(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_clearDynamicDataOnBuild()` overload"]
+    fn get_clear_dynamic_data_on_build(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_clear_dynamic_data_on_build(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_clearDynamicDataOnBuild(bool)` overload"]
+    fn set_clear_dynamic_data_on_build(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_clear_dynamic_data_on_build(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_usedGlyphRects()` overload"]
+    fn get_used_glyph_rects(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::text_core::glyphrect::GlyphRect,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_used_glyph_rects(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_usedGlyphRects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>)` overload"]
+    fn set_used_glyph_rects(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_used_glyph_rects(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_freeGlyphRects()` overload"]
+    fn get_free_glyph_rects(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::text_core::glyphrect::GlyphRect,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_free_glyph_rects(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_freeGlyphRects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>)` overload"]
+    fn set_free_glyph_rects(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_free_glyph_rects(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontInfo()` overload"]
+    fn get_font_info(self) -> crate::tm_pro::faceinfo_legacy::FaceInfo_Legacy {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_font_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_atlasWidth()` overload"]
+    fn get_atlas_width(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_atlasWidth(i32)` overload"]
+    fn set_atlas_width(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_width(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasHeight()` overload"]
+    fn get_atlas_height(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_atlasHeight(i32)` overload"]
+    fn set_atlas_height(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_height(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasPadding()` overload"]
+    fn get_atlas_padding(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_padding(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_atlasPadding(i32)` overload"]
+    fn set_atlas_padding(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_padding(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_atlasRenderMode()` overload"]
+    fn get_atlas_render_mode(
+        self,
+    ) -> crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_atlas_render_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_atlasRenderMode(crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode)` overload"]
+    fn set_atlas_render_mode(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_atlas_render_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontFeatureTable()` overload"]
+    fn get_font_feature_table(self) -> crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_font_feature_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_fontFeatureTable(crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable)` overload"]
+    fn set_font_feature_table(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_font_feature_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fallbackFontAssetTable()` overload"]
+    fn get_fallback_font_asset_table(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    > {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_fallback_font_asset_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_fallbackFontAssetTable(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
+    fn set_fallback_font_asset_table(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_fallback_font_asset_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_creationSettings()` overload"]
+    fn get_creation_settings(
+        self,
+    ) -> crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_creation_settings(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_creationSettings(crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings)` overload"]
+    fn set_creation_settings(
+        self,
+        value: impl ::core::convert::Into<
+            crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_creation_settings(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontWeightTable()` overload"]
+    fn get_font_weight_table(
+        self,
+    ) -> ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair> {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_font_weight_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_fontWeightTable(::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>)` overload"]
+    fn set_font_weight_table(
+        self,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::set_font_weight_table(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReadFontAssetDefinition()` overload"]
+    fn read_font_asset_definition(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::read_font_asset_definition(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeDictionaryLookupTables()` overload"]
+    fn initialize_dictionary_lookup_tables(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::initialize_dictionary_lookup_tables(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeGlyphLookupDictionary()` overload"]
+    fn initialize_glyph_lookup_dictionary(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::initialize_glyph_lookup_dictionary(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeCharacterLookupDictionary()` overload"]
+    fn initialize_character_lookup_dictionary(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::initialize_character_lookup_dictionary(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeGlyphPaidAdjustmentRecordsLookupDictionary()` overload"]
+    fn initialize_glyph_paid_adjustment_records_lookup_dictionary(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::initialize_glyph_paid_adjustment_records_lookup_dictionary(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddSynthesizedCharactersAndFaceMetrics()` overload"]
+    fn add_synthesized_characters_and_face_metrics(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::add_synthesized_characters_and_face_metrics(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddSynthesizedCharacter(u32, bool, bool)` overload"]
+    fn add_synthesized_character(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        is_font_face_loaded: impl ::core::convert::Into<bool>,
+        add_immediately: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::add_synthesized_character(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(is_font_face_loaded),
+                ::core::convert::Into::into(add_immediately),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCharacterToLookupCache(u32, crate::tm_pro::tmp_character::TMP_Character)` overload"]
+    fn add_character_to_lookup_cache(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::add_character_to_lookup_cache(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortCharacterTable()` overload"]
+    fn sort_character_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::sort_character_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortGlyphTable()` overload"]
+    fn sort_glyph_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::sort_glyph_table(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SortFontFeatureTable()` overload"]
+    fn sort_font_feature_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::sort_font_feature_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SortAllTables()` overload"]
+    fn sort_all_tables(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::sort_all_tables(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasCharacter(i32)` overload"]
+    fn has_character(self, character: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::has_character(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasCharacter(u16, bool, bool)` overload"]
+    fn has_character_2(
+        self,
+        character: impl ::core::convert::Into<u16>,
+        search_fallbacks: impl ::core::convert::Into<bool>,
+        try_add_character: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::has_character_2(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(search_fallbacks),
+                ::core::convert::Into::into(try_add_character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasCharacter_Internal(u32, bool, bool)` overload"]
+    fn has_character_internal(
+        self,
+        character: impl ::core::convert::Into<u32>,
+        search_fallbacks: impl ::core::convert::Into<bool>,
+        try_add_character: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::has_character_internal(
+                __receiver,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(search_fallbacks),
+                ::core::convert::Into::into(try_add_character),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasCharacters(::unity2::Il2CppString, *mutcrate::system::collections::generic::list_1::List_1<u16>)` overload"]
+    fn has_characters(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> (
+        bool,
+        crate::system::collections::generic::list_1::List_1<u16>,
+    ) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<u16>,
+            >::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::has_characters(
+                    __receiver,
+                    ::core::convert::Into::into(text),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`HasCharacters(::unity2::Il2CppString, *mut::unity2::Array<u32>, bool, bool)` overload"]
+    fn has_characters_2(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_fallbacks: impl ::core::convert::Into<bool>,
+        try_add_character: impl ::core::convert::Into<bool>,
+    ) -> (bool, ::unity2::Array<u32>) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<u32>>::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::has_characters_2(
+                    __receiver,
+                    ::core::convert::Into::into(text),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(search_fallbacks),
+                    ::core::convert::Into::into(try_add_character),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`HasCharacters(::unity2::Il2CppString)` overload"]
+    fn has_characters_3(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::has_characters_3(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGlyphIndex(u32)` overload"]
+    fn get_glyph_index(self, unicode: impl ::core::convert::Into<u32>) -> u32 {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::get_glyph_index(
+                __receiver,
+                ::core::convert::Into::into(unicode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryAddCharacters(::unity2::Array<u32>, bool)` overload"]
+    fn try_add_characters(
+        self,
+        unicodes: impl ::core::convert::Into<::unity2::Array<u32>>,
+        include_font_features: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::try_add_characters(
+                __receiver,
+                ::core::convert::Into::into(unicodes),
+                ::core::convert::Into::into(include_font_features),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryAddCharacters(::unity2::Array<u32>, *mut::unity2::Array<u32>, bool)` overload"]
+    fn try_add_characters_2(
+        self,
+        unicodes: impl ::core::convert::Into<::unity2::Array<u32>>,
+        include_font_features: impl ::core::convert::Into<bool>,
+    ) -> (bool, ::unity2::Array<u32>) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<u32>>::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::try_add_characters_2(
+                    __receiver,
+                    ::core::convert::Into::into(unicodes),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(include_font_features),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddCharacters(::unity2::Il2CppString, bool)` overload"]
+    fn try_add_characters_3(
+        self,
+        characters: impl ::core::convert::Into<::unity2::Il2CppString>,
+        include_font_features: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::try_add_characters_3(
+                __receiver,
+                ::core::convert::Into::into(characters),
+                ::core::convert::Into::into(include_font_features),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryAddCharacters(::unity2::Il2CppString, *mut::unity2::Il2CppString, bool)` overload"]
+    fn try_add_characters_4(
+        self,
+        characters: impl ::core::convert::Into<::unity2::Il2CppString>,
+        include_font_features: impl ::core::convert::Into<bool>,
+    ) -> (bool, ::unity2::Il2CppString) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::try_add_characters_4(
+                    __receiver,
+                    ::core::convert::Into::into(characters),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(include_font_features),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddCharacterInternal(u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
+    fn try_add_character_internal(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (bool, crate::tm_pro::tmp_character::TMP_Character) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::try_add_character_internal(
+                    __receiver,
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetCharacter_and_QueueRenderToTexture(u32, *mutcrate::tm_pro::tmp_character::TMP_Character)` overload"]
+    fn try_get_character_and_queue_render_to_texture(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> (bool, crate::tm_pro::tmp_character::TMP_Character) {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::tmp_character::TMP_Character>::uninit();
+            let __ret = {
+                __TMP_FontAsset_unity2_raw::try_get_character_and_queue_render_to_texture(
+                    __receiver,
+                    ::core::convert::Into::into(unicode),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddGlyphsToAtlasTextures()` overload"]
+    fn try_add_glyphs_to_atlas_textures(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::try_add_glyphs_to_atlas_textures(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryAddGlyphsToNewAtlasTexture()` overload"]
+    fn try_add_glyphs_to_new_atlas_texture(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::try_add_glyphs_to_new_atlas_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetupNewAtlasTexture()` overload"]
+    fn setup_new_atlas_texture(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::setup_new_atlas_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateAtlasTexture()` overload"]
+    fn update_atlas_texture(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_atlas_texture(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateGlyphAdjustmentRecords()` overload"]
+    fn update_glyph_adjustment_records(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_glyph_adjustment_records(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateGlyphAdjustmentRecords(::unity2::Array<u32>)` overload"]
+    fn update_glyph_adjustment_records_2(
+        self,
+        glyph_indexes: impl ::core::convert::Into<::unity2::Array<u32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_glyph_adjustment_records_2(
+                __receiver,
+                ::core::convert::Into::into(glyph_indexes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateGlyphAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>)` overload"]
+    fn update_glyph_adjustment_records_3(
+        self,
+        glyph_indexes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u32>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_glyph_adjustment_records_3(
+                __receiver,
+                ::core::convert::Into::into(glyph_indexes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateGlyphAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>, crate::system::collections::generic::list_1::List_1<u32>)` overload"]
+    fn update_glyph_adjustment_records_4(
+        self,
+        new_glyph_indexes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u32>,
+        >,
+        all_glyph_indexes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u32>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_glyph_adjustment_records_4(
+                __receiver,
+                ::core::convert::Into::into(new_glyph_indexes),
+                ::core::convert::Into::into(all_glyph_indexes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn copy_list_data_to_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        src_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        dst_array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
+                "CopyListDataToArray",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <TMP_FontAsset as ::unity2::ClassIdentity>::NAME,
+                "CopyListDataToArray",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                TMP_FontAsset,
+                crate::system::collections::generic::list_1::List_1<M0>,
+                *mut ::unity2::Array<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(src_list),
+                ::core::convert::Into::into(dst_array),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`ClearFontAssetData(bool)` overload"]
+    fn clear_font_asset_data(self, set_atlas_size_to_zero: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::clear_font_asset_data(
+                __receiver,
+                ::core::convert::Into::into(set_atlas_size_to_zero),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearFontAssetDataInternal()` overload"]
+    fn clear_font_asset_data_internal(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::clear_font_asset_data_internal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateFontAssetData()` overload"]
+    fn update_font_asset_data(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::update_font_asset_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearFontAssetTables()` overload"]
+    fn clear_font_asset_tables(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::clear_font_asset_tables(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearAtlasTextures(bool)` overload"]
+    fn clear_atlas_textures(self, set_atlas_size_to_zero: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::clear_atlas_textures(
+                __receiver,
+                ::core::convert::Into::into(set_atlas_size_to_zero),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpgradeFontAsset()` overload"]
+    fn upgrade_font_asset(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::upgrade_font_asset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpgradeGlyphAdjustmentTableToFontFeatureTable()` overload"]
+    fn upgrade_glyph_adjustment_table_to_font_feature_table(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::upgrade_glyph_adjustment_table_to_font_feature_table(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_FontAsset as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_FontAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontasset")]
+impl<__T: ITMP_FontAsset> ITMP_FontAssetMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_fontasset")]
 impl TMP_FontAsset {
@@ -742,4 +6215,23 @@ impl TMP_FontAsset {
         <Self as ITMP_FontAssetMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_fontasset")]
+pub mod prelude {
+    pub use super::ITMP_FontAsset;
+    pub use super::ITMP_FontAssetMethods;
+    pub use super::TMP_FontAsset;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::tm_pro::tmp_asset::ITMP_Asset;
+    #[cfg(feature = "tm_pro-tmp_asset")]
+    pub use crate::tm_pro::tmp_asset::ITMP_AssetMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

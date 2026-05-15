@@ -17,9 +17,87 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-trex")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TREx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <*mut crate::combat::tr::TR as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TREx as ::unity2::ClassIdentity>::class(),
+                "SetTR",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TREx as ::unity2::ClassIdentity>::NAME,
+                    "SetTR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tr(
+        t: crate::unity_engine::transform::Transform,
+        tr: *mut crate::combat::tr::TR,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            *mut crate::combat::tr::TR,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tr::get_offset() as isize),
+        );
+        inner(t, tr, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-trex")]
 impl TREx {
-    #[doc = "`SetTR(crate::unity_engine::transform::Transform, crate::combat::tr::TR)` overload"]
-    #[method(name = "SetTR", args = 2)]
-    pub fn set_tr(t: crate::unity_engine::transform::Transform, tr: crate::combat::tr::TR) -> ();
+    #[doc = "`SetTR(crate::unity_engine::transform::Transform, *mutcrate::combat::tr::TR)` overload"]
+    pub fn set_tr(
+        t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::combat::tr::TR>::uninit();
+            __TREx_unity2_raw::set_tr(
+                ::core::convert::Into::into(t),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "combat-trex")]
+pub mod prelude {
+    pub use super::ITREx;
+    pub use super::TREx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

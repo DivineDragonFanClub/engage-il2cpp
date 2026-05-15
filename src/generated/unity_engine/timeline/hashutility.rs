@@ -17,25 +17,371 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-hashutility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HashUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtility as ::unity2::ClassIdentity>::class(),
+                "CombineHash",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtility as ::unity2::ClassIdentity>::NAME,
+                    "CombineHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_hash(
+        h1: i32,
+        h2: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_combine_hash::get_offset() as isize),
+            );
+        inner(h1, h2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_hash_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtility as ::unity2::ClassIdentity>::class(),
+                "CombineHash",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtility as ::unity2::ClassIdentity>::NAME,
+                    "CombineHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_hash_2(
+        h1: i32,
+        h2: i32,
+        h3: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_combine_hash_2::get_offset() as isize),
+            );
+        inner(h1, h2, h3, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_hash_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtility as ::unity2::ClassIdentity>::class(),
+                "CombineHash",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtility as ::unity2::ClassIdentity>::NAME,
+                    "CombineHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_hash_3(
+        h1: i32,
+        h2: i32,
+        h3: i32,
+        h4: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_combine_hash_3::get_offset() as isize),
+            );
+        inner(h1, h2, h3, h4, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_hash_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtility as ::unity2::ClassIdentity>::class(),
+                "CombineHash",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtility as ::unity2::ClassIdentity>::NAME,
+                    "CombineHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_hash_4(
+        h1: i32,
+        h2: i32,
+        h3: i32,
+        h4: i32,
+        h5: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_combine_hash_4::get_offset() as isize),
+            );
+        inner(h1, h2, h3, h4, h5, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_combine_hash_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtility as ::unity2::ClassIdentity>::class(),
+                "CombineHash",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtility as ::unity2::ClassIdentity>::NAME,
+                    "CombineHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn combine_hash_5(
+        h1: i32,
+        h2: i32,
+        h3: i32,
+        h4: i32,
+        h5: i32,
+        h6: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_combine_hash_5::get_offset() as isize),
+            );
+        inner(h1, h2, h3, h4, h5, h6, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-hashutility")]
 impl HashUtility {
     #[doc = "`CombineHash(i32, i32)` overload"]
-    #[method(name = "CombineHash", args = 2)]
-    pub fn combine_hash(h1: i32, h2: i32) -> i32;
-
+    pub fn combine_hash(
+        h1: impl ::core::convert::Into<i32>,
+        h2: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HashUtility_unity2_raw::combine_hash(
+                ::core::convert::Into::into(h1),
+                ::core::convert::Into::into(h2),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CombineHash(i32, i32, i32)` overload"]
-    #[method(name = "CombineHash", args = 3)]
-    pub fn combine_hash_2(h1: i32, h2: i32, h3: i32) -> i32;
-
+    pub fn combine_hash_2(
+        h1: impl ::core::convert::Into<i32>,
+        h2: impl ::core::convert::Into<i32>,
+        h3: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HashUtility_unity2_raw::combine_hash_2(
+                ::core::convert::Into::into(h1),
+                ::core::convert::Into::into(h2),
+                ::core::convert::Into::into(h3),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CombineHash(i32, i32, i32, i32)` overload"]
-    #[method(name = "CombineHash", args = 4)]
-    pub fn combine_hash_3(h1: i32, h2: i32, h3: i32, h4: i32) -> i32;
-
+    pub fn combine_hash_3(
+        h1: impl ::core::convert::Into<i32>,
+        h2: impl ::core::convert::Into<i32>,
+        h3: impl ::core::convert::Into<i32>,
+        h4: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HashUtility_unity2_raw::combine_hash_3(
+                ::core::convert::Into::into(h1),
+                ::core::convert::Into::into(h2),
+                ::core::convert::Into::into(h3),
+                ::core::convert::Into::into(h4),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CombineHash(i32, i32, i32, i32, i32)` overload"]
-    #[method(name = "CombineHash", args = 5)]
-    pub fn combine_hash_4(h1: i32, h2: i32, h3: i32, h4: i32, h5: i32) -> i32;
-
+    pub fn combine_hash_4(
+        h1: impl ::core::convert::Into<i32>,
+        h2: impl ::core::convert::Into<i32>,
+        h3: impl ::core::convert::Into<i32>,
+        h4: impl ::core::convert::Into<i32>,
+        h5: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HashUtility_unity2_raw::combine_hash_4(
+                ::core::convert::Into::into(h1),
+                ::core::convert::Into::into(h2),
+                ::core::convert::Into::into(h3),
+                ::core::convert::Into::into(h4),
+                ::core::convert::Into::into(h5),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CombineHash(i32, i32, i32, i32, i32, i32)` overload"]
-    #[method(name = "CombineHash", args = 6)]
-    pub fn combine_hash_5(h1: i32, h2: i32, h3: i32, h4: i32, h5: i32, h6: i32) -> i32;
+    pub fn combine_hash_5(
+        h1: impl ::core::convert::Into<i32>,
+        h2: impl ::core::convert::Into<i32>,
+        h3: impl ::core::convert::Into<i32>,
+        h4: impl ::core::convert::Into<i32>,
+        h5: impl ::core::convert::Into<i32>,
+        h6: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HashUtility_unity2_raw::combine_hash_5(
+                ::core::convert::Into::into(h1),
+                ::core::convert::Into::into(h2),
+                ::core::convert::Into::into(h3),
+                ::core::convert::Into::into(h4),
+                ::core::convert::Into::into(h5),
+                ::core::convert::Into::into(h6),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-hashutility")]
+pub mod prelude {
+    pub use super::HashUtility;
+    pub use super::IHashUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

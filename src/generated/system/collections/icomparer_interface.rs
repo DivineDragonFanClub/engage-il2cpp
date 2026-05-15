@@ -15,10 +15,94 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-icomparer_interface")]
-#[::unity2::methods]
-impl IComparer_Interface {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IComparer_Interface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IComparer_Interface as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IComparer_Interface as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: IComparer_Interface,
+        x: crate::system::object::Object,
+        y: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            IComparer_Interface,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-icomparer_interface")]
+pub trait IIComparer_InterfaceMethods: IIComparer_Interface {
     #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(self, x: crate::system::object::Object, y: crate::system::object::Object)
-        -> i32;
+    fn compare(
+        self,
+        x: impl ::core::convert::Into<crate::system::object::Object>,
+        y: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <IComparer_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IComparer_Interface_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-icomparer_interface")]
+impl<__T: IIComparer_Interface> IIComparer_InterfaceMethods for __T {}
+
+#[cfg(feature = "system-collections-icomparer_interface")]
+pub mod prelude {
+    pub use super::IComparer_Interface;
+    pub use super::IIComparer_Interface;
+    pub use super::IIComparer_InterfaceMethods;
 }

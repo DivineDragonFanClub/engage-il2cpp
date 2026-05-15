@@ -39,3 +39,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-animations-animationhumanstream-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-animations-animationhumanstream")]
+pub mod prelude {
+    pub use super::AnimationHumanStream;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

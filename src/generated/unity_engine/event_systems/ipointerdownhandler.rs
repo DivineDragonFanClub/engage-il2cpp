@@ -15,12 +15,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
-#[::unity2::methods]
-impl IPointerDownHandler {
-    #[doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "OnPointerDown", args = 1)]
-    pub fn on_pointer_down(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPointerDownHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_pointer_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPointerDownHandler as ::unity2::ClassIdentity>::class(),
+                "OnPointerDown",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPointerDownHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnPointerDown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_pointer_down(
+        this: IPointerDownHandler,
         event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPointerDownHandler,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_pointer_down::get_offset() as isize),
+        );
+        inner(this, event_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
+pub trait IIPointerDownHandlerMethods: IIPointerDownHandler {
+    #[doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    fn on_pointer_down(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <IPointerDownHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPointerDownHandler_unity2_raw::on_pointer_down(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
+impl<__T: IIPointerDownHandler> IIPointerDownHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
+pub mod prelude {
+    pub use super::IIPointerDownHandler;
+    pub use super::IIPointerDownHandlerMethods;
+    pub use super::IPointerDownHandler;
 }

@@ -55,17 +55,17 @@ impl<T0: ::unity2::ClassIdentity> ListBuffer_1<T0> {
     #[method(name = "get_Capacity", args = 0)]
     pub fn get_capacity(self) -> i32;
 
-    #[doc = "`get_Item(i32)` overload"]
+    #[doc = "`get_Item(*muti32)` overload"]
     #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> T0;
+    pub fn get_item(self, index: *mut i32) -> *mut T0;
 
-    #[doc = "`GetUnchecked(i32)` overload"]
+    #[doc = "`GetUnchecked(*muti32)` overload"]
     #[method(name = "GetUnchecked", args = 1)]
-    pub fn get_unchecked(self, index: i32) -> T0;
+    pub fn get_unchecked(self, index: *mut i32) -> *mut T0;
 
-    #[doc = "`TryAdd(T0)` overload"]
+    #[doc = "`TryAdd(*mutT0)` overload"]
     #[method(name = "TryAdd", args = 1)]
-    pub fn try_add(self, value: T0) -> bool;
+    pub fn try_add(self, value: *mut T0) -> bool;
 
     #[doc = "`TryCopyTo(crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<T0>)` overload"]
     #[method(name = "TryCopyTo", args = 1)]
@@ -73,4 +73,15 @@ impl<T0: ::unity2::ClassIdentity> ListBuffer_1<T0> {
         self,
         other: crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<T0>,
     ) -> bool;
+}
+
+#[cfg(feature = "unity_engine-rendering-listbuffer_1")]
+pub mod prelude {
+    pub use super::ListBuffer_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

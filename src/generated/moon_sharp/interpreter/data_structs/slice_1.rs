@@ -140,3 +140,13 @@ impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-slice_1")]
+pub mod prelude {
+    pub use super::ISlice_1;
+    pub use super::ISlice_1Methods;
+    pub use super::Slice_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

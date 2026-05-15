@@ -17,7 +17,27 @@ mod __types {
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: profilecardcolor :: ProfileCardColor >)]
     pub struct ProfileCardColor {
         #[rename(name = "黒")]
-        pub _unnamed: crate::unity_engine::color::Color,
+        pub 黒: crate::unity_engine::color::Color,
+        #[rename(name = "灰")]
+        pub 灰: crate::unity_engine::color::Color,
+        #[rename(name = "赤")]
+        pub 赤: crate::unity_engine::color::Color,
+        #[rename(name = "桃")]
+        pub 桃: crate::unity_engine::color::Color,
+        #[rename(name = "紫")]
+        pub 紫: crate::unity_engine::color::Color,
+        #[rename(name = "青")]
+        pub 青: crate::unity_engine::color::Color,
+        #[rename(name = "群青")]
+        pub 群青: crate::unity_engine::color::Color,
+        #[rename(name = "緑")]
+        pub 緑: crate::unity_engine::color::Color,
+        #[rename(name = "黄緑")]
+        pub 黄緑: crate::unity_engine::color::Color,
+        #[rename(name = "茶色")]
+        pub 茶色: crate::unity_engine::color::Color,
+        #[rename(name = "橙")]
+        pub 橙: crate::unity_engine::color::Color,
     }
 }
 
@@ -25,16 +45,138 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardcolor")]
-#[::unity2::methods]
-impl ProfileCardColor {
-    #[doc = "`GetColor(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetColor", args = 1)]
-    pub fn get_color(self, color: ::unity2::Il2CppString) -> crate::unity_engine::color::Color;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardColor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardColor as ::unity2::ClassIdentity>::class(),
+                "GetColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardColor as ::unity2::ClassIdentity>::NAME,
+                    "GetColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color(
+        this: ProfileCardColor,
+        color: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            ProfileCardColor,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color::get_offset() as isize),
+        );
+        inner(this, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardColor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardColor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardColor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardColor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-profilecardcolor")]
+pub trait IProfileCardColorMethods: IProfileCardColor {
+    #[doc = "`GetColor(::unity2::Il2CppString)` overload"]
+    fn get_color(
+        self,
+        color: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <ProfileCardColor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardColor_unity2_raw::get_color(
+                __receiver,
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardColor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardColor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardcolor")]
+impl<__T: IProfileCardColor> IProfileCardColorMethods for __T {}
 
 #[cfg(feature = "app-profilecardcolor")]
 impl ProfileCardColor {
@@ -50,4 +192,23 @@ impl ProfileCardColor {
         <Self as IProfileCardColorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-profilecardcolor")]
+pub mod prelude {
+    pub use super::IProfileCardColor;
+    pub use super::IProfileCardColorMethods;
+    pub use super::ProfileCardColor;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    #[cfg(feature = "app-singletonscriptableobject_1")]
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

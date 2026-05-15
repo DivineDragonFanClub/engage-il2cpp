@@ -39,13 +39,91 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
-#[::unity2::methods(value)]
-impl VFXOutputEventArgs {
-    #[doc = "`.ctor(i32, crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VFXOutputEventArgs_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VFXOutputEventArgs as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VFXOutputEventArgs as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VFXOutputEventArgs,
         name_id: i32,
         event_attribute: crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VFXOutputEventArgs,
+            i32,
+            crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name_id, event_attribute, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
+impl VFXOutputEventArgs {
+    #[doc = "`.ctor(i32, crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)` overload"]
+    pub fn ctor(
+        self,
+        name_id: impl ::core::convert::Into<i32>,
+        event_attribute: impl ::core::convert::Into<
+            crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
+        >,
+    ) -> () {
+        unsafe {
+            __VFXOutputEventArgs_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(name_id),
+                ::core::convert::Into::into(event_attribute),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
+pub mod prelude {
+    pub use super::VFXOutputEventArgs;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

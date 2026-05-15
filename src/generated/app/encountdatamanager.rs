@@ -22,88 +22,773 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-encountdatamanager")]
-#[::unity2::methods]
-impl EncountDataManager {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`GetWeapons(i32, crate::app::weaponmask::WeaponMask)` overload"]
-    #[method(name = "GetWeapons", args = 2)]
-    pub fn get_weapons(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EncountDataManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: EncountDataManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountDataManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: EncountDataManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountDataManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_weapons {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetWeapons",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetWeapons",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_weapons(
+        this: EncountDataManager,
         rank: i32,
         weapon_mask: crate::app::weaponmask::WeaponMask,
-    ) -> ::unity2::Array<crate::app::itemdata::ItemData>;
-
-    #[doc = "`GetNormalWeapon(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
-    #[method(name = "GetNormalWeapon", args = 2)]
-    pub fn get_normal_weapon(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::itemdata::ItemData> {
+        let inner: extern "C" fn(
+            EncountDataManager,
+            i32,
+            crate::app::weaponmask::WeaponMask,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::itemdata::ItemData> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_weapons::get_offset() as isize),
+        );
+        inner(this, rank, weapon_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetNormalWeapon",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalWeapon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_weapon(
+        this: EncountDataManager,
         rank: i32,
         kinds: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`GetAppendWeaponList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
-    #[method(name = "GetAppendWeaponList", args = 2)]
-    pub fn get_append_weapon_list(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(
+            EncountDataManager,
+            i32,
+            ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normal_weapon::get_offset() as isize),
+        );
+        inner(this, rank, kinds, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_append_weapon_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetAppendWeaponList",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetAppendWeaponList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_append_weapon_list(
+        this: EncountDataManager,
         rank: i32,
         kinds: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`GetNormalWeaponArrayList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
-    #[method(name = "GetNormalWeaponArrayList", args = 2)]
-    pub fn get_normal_weapon_array_list(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(
+            EncountDataManager,
+            i32,
+            ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_append_weapon_list::get_offset() as isize),
+        );
+        inner(this, rank, kinds, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_normal_weapon_array_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetNormalWeaponArrayList",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetNormalWeaponArrayList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_normal_weapon_array_list(
+        this: EncountDataManager,
         rank: i32,
         kinds: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<
         crate::app::encountweaponcategorydata::EncountWeaponCategoryData,
-    >;
-
-    #[doc = "`GetData(i32)` overload"]
-    #[method(name = "GetData", args = 1)]
-    pub fn get_data(
-        self,
+    > {
+        let inner: extern "C" fn(
+            EncountDataManager,
+            i32,
+            ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::structdataarraylist_1::StructDataArrayList_1<
+            crate::app::encountweaponcategorydata::EncountWeaponCategoryData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_normal_weapon_array_list::get_offset() as isize),
+        );
+        inner(this, rank, kinds, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: EncountDataManager,
         rank: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<
         crate::app::encountequipdata::EncountEquipData,
-    >;
-
-    #[doc = "`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)` overload"]
-    #[method(name = "ReductDispos", args = 1)]
-    pub fn reduct_dispos(
+    > {
+        let inner: extern "C" fn(
+            EncountDataManager,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::structdataarraylist_1::StructDataArrayList_1<
+            crate::app::encountequipdata::EncountEquipData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
+        );
+        inner(this, rank, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reduct_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::encountunitdata::EncountUnitData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "ReductDispos",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "ReductDispos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reduct_dispos(
         encount_unit_data_list: crate::system::collections::generic::list_1::List_1<
             crate::app::encountunitdata::EncountUnitData,
         >,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::encountunitdata::EncountUnitData,
-    >;
-
-    #[doc = "`GetReductRate()` overload"]
-    #[method(name = "GetReductRate", args = 0)]
-    pub fn get_reduct_rate() -> f32;
-
-    #[doc = "`TryGetRareMoneyItem(crate::app::difficulty::Difficulty, i32)` overload"]
-    #[method(name = "TryGetRareMoneyItem", args = 2)]
-    pub fn try_get_rare_money_item(
+    > {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::encountunitdata::EncountUnitData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::encountunitdata::EncountUnitData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reduct_dispos::get_offset() as isize),
+        );
+        inner(encount_unit_data_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reduct_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "GetReductRate",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "GetReductRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_reduct_rate(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_reduct_rate::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_rare_money_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                "TryGetRareMoneyItem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    "TryGetRareMoneyItem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_rare_money_item(
         difficulty: crate::app::difficulty::Difficulty,
         nation_level: i32,
-    ) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(
+            crate::app::difficulty::Difficulty,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_rare_money_item::get_offset() as isize),
+        );
+        inner(difficulty, nation_level, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EncountDataManager,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EncountDataManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EncountDataManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EncountDataManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-encountdatamanager")]
+impl EncountDataManager {
+    #[doc = "`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)` overload"]
+    pub fn reduct_dispos(
+        encount_unit_data_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::encountunitdata::EncountUnitData,
+            >,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::encountunitdata::EncountUnitData,
+    > {
+        unsafe {
+            __EncountDataManager_unity2_raw::reduct_dispos(
+                ::core::convert::Into::into(encount_unit_data_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetReductRate()` overload"]
+    pub fn get_reduct_rate() -> f32 {
+        unsafe { __EncountDataManager_unity2_raw::get_reduct_rate(::core::option::Option::None) }
+    }
+    #[doc = "`TryGetRareMoneyItem(crate::app::difficulty::Difficulty, i32)` overload"]
+    pub fn try_get_rare_money_item(
+        difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>,
+        nation_level: impl ::core::convert::Into<i32>,
+    ) -> crate::app::itemdata::ItemData {
+        unsafe {
+            __EncountDataManager_unity2_raw::try_get_rare_money_item(
+                ::core::convert::Into::into(difficulty),
+                ::core::convert::Into::into(nation_level),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __EncountDataManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-encountdatamanager")]
+pub trait IEncountDataManagerMethods: IEncountDataManager {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetWeapons(i32, crate::app::weaponmask::WeaponMask)` overload"]
+    fn get_weapons(
+        self,
+        rank: impl ::core::convert::Into<i32>,
+        weapon_mask: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
+    ) -> ::unity2::Array<crate::app::itemdata::ItemData> {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::get_weapons(
+                __receiver,
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(weapon_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNormalWeapon(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
+    fn get_normal_weapon(
+        self,
+        rank: impl ::core::convert::Into<i32>,
+        kinds: impl ::core::convert::Into<::unity2::Array<crate::app::itemdata::ItemData_Kinds>>,
+    ) -> crate::app::itemdata::ItemData {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::get_normal_weapon(
+                __receiver,
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(kinds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAppendWeaponList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
+    fn get_append_weapon_list(
+        self,
+        rank: impl ::core::convert::Into<i32>,
+        kinds: impl ::core::convert::Into<::unity2::Array<crate::app::itemdata::ItemData_Kinds>>,
+    ) -> crate::app::itemdata::ItemData {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::get_append_weapon_list(
+                __receiver,
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(kinds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNormalWeaponArrayList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
+    fn get_normal_weapon_array_list(
+        self,
+        rank: impl ::core::convert::Into<i32>,
+        kinds: impl ::core::convert::Into<::unity2::Array<crate::app::itemdata::ItemData_Kinds>>,
+    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<
+        crate::app::encountweaponcategorydata::EncountWeaponCategoryData,
+    > {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::get_normal_weapon_array_list(
+                __receiver,
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(kinds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetData(i32)` overload"]
+    fn get_data(
+        self,
+        rank: impl ::core::convert::Into<i32>,
+    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<
+        crate::app::encountequipdata::EncountEquipData,
+    > {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::get_data(
+                __receiver,
+                ::core::convert::Into::into(rank),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EncountDataManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EncountDataManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-encountdatamanager")]
+impl<__T: IEncountDataManager> IEncountDataManagerMethods for __T {}
 
 #[cfg(feature = "app-encountdatamanager")]
 impl EncountDataManager {
@@ -119,4 +804,17 @@ impl EncountDataManager {
         <Self as IEncountDataManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-encountdatamanager")]
+pub mod prelude {
+    pub use super::EncountDataManager;
+    pub use super::IEncountDataManager;
+    pub use super::IEncountDataManagerMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -22,12 +22,81 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-helpurlattribute")]
-#[::unity2::methods]
-impl HelpURLAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, url: ::unity2::Il2CppString) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HelpURLAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpURLAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpURLAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HelpURLAttribute,
+        url: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpURLAttribute,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, url, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-helpurlattribute")]
+pub trait IHelpURLAttributeMethods: IHelpURLAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, url: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HelpURLAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpURLAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(url),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-helpurlattribute")]
+impl<__T: IHelpURLAttribute> IHelpURLAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-helpurlattribute")]
 impl HelpURLAttribute {
@@ -43,4 +112,11 @@ impl HelpURLAttribute {
         <Self as IHelpURLAttributeMethods>::ctor(this, url);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-helpurlattribute")]
+pub mod prelude {
+    pub use super::HelpURLAttribute;
+    pub use super::IHelpURLAttribute;
+    pub use super::IHelpURLAttributeMethods;
 }

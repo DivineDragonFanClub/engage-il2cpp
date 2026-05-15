@@ -15,9 +15,78 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
-#[::unity2::methods]
-impl IReflectableType {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IReflectableType_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IReflectableType as ::unity2::ClassIdentity>::class(),
+                "GetTypeInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IReflectableType as ::unity2::ClassIdentity>::NAME,
+                    "GetTypeInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_type_info(
+        this: IReflectableType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::typeinfo::TypeInfo {
+        let inner: extern "C" fn(
+            IReflectableType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::typeinfo::TypeInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_type_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-reflection-ireflectabletype")]
+pub trait IIReflectableTypeMethods: IIReflectableType {
     #[doc = "`GetTypeInfo()` overload"]
-    #[method(name = "GetTypeInfo", args = 0)]
-    pub fn get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo;
+    fn get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo {
+        unsafe {
+            let __receiver = <IReflectableType as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IReflectableType_unity2_raw::get_type_info(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-ireflectabletype")]
+impl<__T: IIReflectableType> IIReflectableTypeMethods for __T {}
+
+#[cfg(feature = "system-reflection-ireflectabletype")]
+pub mod prelude {
+    pub use super::IIReflectableType;
+    pub use super::IIReflectableTypeMethods;
+    pub use super::IReflectableType;
 }

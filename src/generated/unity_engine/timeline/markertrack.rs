@@ -21,20 +21,124 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-markertrack")]
-#[::unity2::methods]
-impl MarkerTrack {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MarkerTrack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_outputs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MarkerTrack as ::unity2::ClassIdentity>::class(),
+                "get_outputs",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MarkerTrack as ::unity2::ClassIdentity>::NAME,
+                    "get_outputs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_outputs(
+        this: MarkerTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::playables::playablebinding::PlayableBinding,
+    > {
+        let inner : extern "C" fn (MarkerTrack , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_outputs :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MarkerTrack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MarkerTrack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MarkerTrack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MarkerTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-markertrack")]
+pub trait IMarkerTrackMethods: IMarkerTrack {
     #[doc = "`get_outputs()` overload"]
-    #[method(name = "get_outputs", args = 0)]
-    pub fn get_outputs(
+    fn get_outputs(
         self,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::unity_engine::playables::playablebinding::PlayableBinding,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <MarkerTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MarkerTrack_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MarkerTrack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MarkerTrack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-markertrack")]
+impl<__T: IMarkerTrack> IMarkerTrackMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-markertrack")]
 impl MarkerTrack {
@@ -50,4 +154,26 @@ impl MarkerTrack {
         <Self as IMarkerTrackMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-markertrack")]
+pub mod prelude {
+    pub use super::IMarkerTrack;
+    pub use super::IMarkerTrackMethods;
+    pub use super::MarkerTrack;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
+    #[cfg(feature = "unity_engine-playables-playableasset")]
+    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::unity_engine::timeline::trackasset::ITrackAsset;
+    #[cfg(feature = "unity_engine-timeline-trackasset")]
+    pub use crate::unity_engine::timeline::trackasset::ITrackAssetMethods;
 }

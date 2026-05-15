@@ -15,6 +15,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject.Coroutine")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ResourceObject_Coroutine {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
     #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -52,10 +57,53 @@ mod __types {
         pub m_sound_label: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject.Coroutine")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ResourceObject_Coroutine {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ResourceObject_Sequence {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ResourceObject.Sequence";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ResourceObject_Sequence {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ResourceObject_Sequence {
+        pub fn start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Flags.md"))]
     #[repr(C)]
@@ -112,70 +160,334 @@ mod __types {
             Self { value: 16 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ResourceObject_Sequence {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ResourceObject.Sequence";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ResourceObject_Sequence {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ResourceObject_Sequence {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-resourceobject-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-resourceobject")]
-#[::unity2::methods]
-impl ResourceObject_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, go: crate::unity_engine::gameobject::GameObject) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceObject_Coroutine_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Coroutine as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Coroutine as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ResourceObject_Coroutine,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceObject_Coroutine,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Coroutine as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Coroutine as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ResourceObject_Coroutine,
+        go: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            ResourceObject_Coroutine,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, go, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-resourceobject")]
+pub trait IResourceObject_CoroutineMethods: IResourceObject_Coroutine {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Coroutine as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Coroutine_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn invoke(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Coroutine as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Coroutine_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+impl<__T: IResourceObject_Coroutine> IResourceObject_CoroutineMethods for __T {}
+
+#[cfg(feature = "app-resourceobject")]
+impl ResourceObject_Coroutine {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceObject_Coroutine),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceObject_CoroutineMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceObject_Callback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ResourceObject_Callback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceObject_Callback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ResourceObject_Callback,
+        go: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceObject_Callback,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, go, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+pub trait IResourceObject_CallbackMethods: IResourceObject_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Callback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn invoke(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Callback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+impl<__T: IResourceObject_Callback> IResourceObject_CallbackMethods for __T {}
 
 #[cfg(feature = "app-resourceobject")]
 impl ResourceObject_Callback {
@@ -194,235 +506,2608 @@ impl ResourceObject_Callback {
 }
 
 #[cfg(feature = "app-resourceobject")]
-#[::unity2::methods]
-impl ResourceObject {
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create(self) -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`CanSkip()` overload"]
-    #[method(name = "CanSkip", args = 0)]
-    pub fn can_skip(self) -> bool;
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> bool;
-
-    #[doc = "`TickBind()` overload"]
-    #[method(name = "TickBind", args = 0)]
-    pub fn tick_bind(self) -> ();
-
-    #[doc = "`IsTerminated()` overload"]
-    #[method(name = "IsTerminated", args = 0)]
-    pub fn is_terminated(self) -> bool;
-
-    #[doc = "`SetStartCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
-    #[method(name = "SetStartCallback", args = 1)]
-    pub fn set_start_callback(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "OnDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "OnDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_destroy(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_release::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_skip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CanSkip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CanSkip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_skip(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_can_skip::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TickBind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TickBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick_bind(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick_bind::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_terminated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "IsTerminated",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "IsTerminated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_terminated(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_terminated::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_start_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::resourceobject::ResourceObject_Callback as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetStartCallback",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetStartCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_start_callback(
+        this: ResourceObject,
         callback: crate::app::resourceobject::ResourceObject_Callback,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetTickCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
-    #[method(name = "SetTickCallback", args = 1)]
-    pub fn set_tick_callback(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::resourceobject::ResourceObject_Callback,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_start_callback::get_offset() as isize),
+        );
+        inner(this, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tick_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::resourceobject::ResourceObject_Callback as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetTickCallback",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetTickCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tick_callback(
+        this: ResourceObject,
         callback: crate::app::resourceobject::ResourceObject_Callback,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetEndCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
-    #[method(name = "SetEndCallback", args = 1)]
-    pub fn set_end_callback(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::resourceobject::ResourceObject_Callback,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_tick_callback::get_offset() as isize),
+        );
+        inner(this, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_end_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::resourceobject::ResourceObject_Callback as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetEndCallback",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetEndCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_end_callback(
+        this: ResourceObject,
         callback: crate::app::resourceobject::ResourceObject_Callback,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetCoroutine(crate::app::resourceobject::ResourceObject_Coroutine)` overload"]
-    #[method(name = "SetCoroutine", args = 1)]
-    pub fn set_coroutine(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::resourceobject::ResourceObject_Callback,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_end_callback::get_offset() as isize),
+        );
+        inner(this, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_coroutine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::resourceobject::ResourceObject_Coroutine as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetCoroutine",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetCoroutine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_coroutine(
+        this: ResourceObject,
         coroutine: crate::app::resourceobject::ResourceObject_Coroutine,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetPosition", args = 1)]
-    pub fn set_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::resourceobject::ResourceObject_Coroutine,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_coroutine::get_offset() as isize),
+        );
+        inner(this, coroutine, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position(
+        this: ResourceObject,
         position: crate::unity_engine::vector3::Vector3,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetPosition(f32, f32, f32)` overload"]
-    #[method(name = "SetPosition", args = 3)]
-    pub fn set_position_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position::get_offset() as isize),
+        );
+        inner(this, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_position_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetPosition",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_position_2(
+        this: ResourceObject,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetRotation", args = 1)]
-    pub fn set_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_position_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation(
+        this: ResourceObject,
         rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetRotation(f32, f32, f32)` overload"]
-    #[method(name = "SetRotation", args = 3)]
-    pub fn set_rotation_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation::get_offset() as isize),
+        );
+        inner(this, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rotation_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetRotation",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rotation_2(
+        this: ResourceObject,
         x: f32,
         y: f32,
         z: f32,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetScale(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetScale", args = 1)]
-    pub fn set_scale(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rotation_2::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetScale",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scale(
+        this: ResourceObject,
         scale: crate::unity_engine::vector3::Vector3,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetScale(f32)` overload"]
-    #[method(name = "SetScale", args = 1)]
-    pub fn set_scale_2(self, scale: f32) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetScale(f32, f32, f32)` overload"]
-    #[method(name = "SetScale", args = 3)]
-    pub fn set_scale_3(self, x: f32, y: f32, z: f32) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetSound(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetSound", args = 1)]
-    pub fn set_sound(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scale::get_offset() as isize),
+        );
+        inner(this, scale, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scale_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetScale",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scale_2(
+        this: ResourceObject,
+        scale: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scale_2::get_offset() as isize),
+        );
+        inner(this, scale, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scale_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetScale",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scale_3(
+        this: ResourceObject,
+        x: f32,
+        y: f32,
+        z: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scale_3::get_offset() as isize),
+        );
+        inner(this, x, y, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sound {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetSound",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetSound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sound(
+        this: ResourceObject,
         sound_label: ::unity2::Il2CppString,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetEndless(bool)` overload"]
-    #[method(name = "SetEndless", args = 1)]
-    pub fn set_endless(self, enable: bool) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetCanSkip(bool)` overload"]
-    #[method(name = "SetCanSkip", args = 1)]
-    pub fn set_can_skip(self, enable: bool) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`SetLife(f32)` overload"]
-    #[method(name = "SetLife", args = 1)]
-    pub fn set_life(self, time: f32) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`IsEndless()` overload"]
-    #[method(name = "IsEndless", args = 0)]
-    pub fn is_endless(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`SetDelayTime(f32)` overload"]
-    #[method(name = "SetDelayTime", args = 1)]
-    pub fn set_delay_time(self, time: f32) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryStartCallback()` overload"]
-    #[method(name = "TryStartCallback", args = 0)]
-    pub fn try_start_callback(self) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryEndCallback()` overload"]
-    #[method(name = "TryEndCallback", args = 0)]
-    pub fn try_end_callback(self) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "TryBind", args = 1)]
-    pub fn try_bind(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sound::get_offset() as isize),
+        );
+        inner(this, sound_label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_endless {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetEndless",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetEndless",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_endless(
+        this: ResourceObject,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_endless::get_offset() as isize),
+        );
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_can_skip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetCanSkip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetCanSkip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_can_skip(
+        this: ResourceObject,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_can_skip::get_offset() as isize),
+        );
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_life {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetLife",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetLife",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_life(
+        this: ResourceObject,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_life::get_offset() as isize),
+        );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_endless {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "IsEndless",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "IsEndless",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_endless(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_endless::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_delay_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "SetDelayTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "SetDelayTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_delay_time(
+        this: ResourceObject,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_delay_time::get_offset() as isize),
+        );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_start_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryStartCallback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryStartCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_start_callback(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_start_callback::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_end_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryEndCallback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryEndCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_end_callback(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_end_callback::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryBind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_bind(
+        this: ResourceObject,
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryBind(crate::app::bindholder::BindHolder)` overload"]
-    #[method(name = "TryBind", args = 1)]
-    pub fn try_bind_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_bind::get_offset() as isize),
+        );
+        inner(this, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::bindholder::BindHolder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryBind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_bind_2(
+        this: ResourceObject,
         binder: crate::app::bindholder::BindHolder,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryBind(crate::app::procinst::ProcInst, f32)` overload"]
-    #[method(name = "TryBind", args = 2)]
-    pub fn try_bind_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::bindholder::BindHolder,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_bind_2::get_offset() as isize),
+        );
+        inner(this, binder, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_bind_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryBind",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_bind_3(
+        this: ResourceObject,
         super_: crate::app::procinst::ProcInst,
         time: f32,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryBind(crate::app::bindholder::BindHolder, f32)` overload"]
-    #[method(name = "TryBind", args = 2)]
-    pub fn try_bind_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::procinst::ProcInst,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_bind_3::get_offset() as isize),
+        );
+        inner(this, super_, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_bind_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::bindholder::BindHolder as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryBind",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_bind_4(
+        this: ResourceObject,
         binder: crate::app::bindholder::BindHolder,
         time: f32,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`TryUnbind()` overload"]
-    #[method(name = "TryUnbind", args = 0)]
-    pub fn try_unbind(self) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`CreateObjectImpl(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateObjectImpl", args = 3)]
-    pub fn create_object_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            crate::app::bindholder::BindHolder,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_bind_4::get_offset() as isize),
+        );
+        inner(this, binder, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_unbind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "TryUnbind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "TryUnbind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_unbind(
+        this: ResourceObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ResourceObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_unbind::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_object_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CreateObjectImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateObjectImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_object_impl(
         parent: crate::unity_engine::transform::Transform,
         name: ::unity2::Il2CppString,
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateAsync", args = 3)]
-    pub fn create_async(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            crate::unity_engine::transform::Transform,
+            ::unity2::Il2CppString,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_object_impl::get_offset() as isize),
+        );
+        inner(parent, name, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CreateAsync",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_async(
         path: ::unity2::Il2CppString,
         parent: crate::unity_engine::gameobject::GameObject,
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::unity_engine::transform::Transform, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateAsync", args = 3)]
-    pub fn create_async_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_async::get_offset() as isize),
+        );
+        inner(path, parent, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_async_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CreateAsync",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_async_2(
         path: ::unity2::Il2CppString,
         parent: crate::unity_engine::transform::Transform,
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateAsync", args = 2)]
-    pub fn create_async_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::transform::Transform,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_async_2::get_offset() as isize),
+        );
+        inner(path, parent, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_async_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CreateAsync",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_async_3(
         path: ::unity2::Il2CppString,
         super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`CreateAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateAsync", args = 1)]
-    pub fn create_async_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_async_3::get_offset() as isize),
+        );
+        inner(path, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_async_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "CreateAsync",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "CreateAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_async_4(
         path: ::unity2::Il2CppString,
-    ) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`op_Implicit(crate::app::resourceobject::ResourceObject)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_async_4::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::resourceobject::ResourceObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
         res: crate::app::resourceobject::ResourceObject,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            crate::app::resourceobject::ResourceObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_implicit::get_offset() as isize),
+        );
+        inner(res, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: ResourceObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ResourceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-resourceobject")]
+impl ResourceObject {
+    #[doc = "`CreateObjectImpl(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
+    pub fn create_object_impl(
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __ResourceObject_unity2_raw::create_object_impl(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, crate::app::procinst::ProcInst)` overload"]
+    pub fn create_async(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __ResourceObject_unity2_raw::create_async(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::unity_engine::transform::Transform, crate::app::procinst::ProcInst)` overload"]
+    pub fn create_async_2(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __ResourceObject_unity2_raw::create_async_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAsync(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
+    pub fn create_async_3(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __ResourceObject_unity2_raw::create_async_3(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAsync(::unity2::Il2CppString)` overload"]
+    pub fn create_async_4(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __ResourceObject_unity2_raw::create_async_4(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Implicit(crate::app::resourceobject::ResourceObject)` overload"]
+    pub fn op_implicit(
+        res: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            __ResourceObject_unity2_raw::op_implicit(
+                ::core::convert::Into::into(res),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+pub trait IResourceObjectMethods: IResourceObject {
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDestroy()` overload"]
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Create()` overload"]
+    fn create(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::release(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CanSkip()` overload"]
+    fn can_skip(self) -> bool {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::can_skip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> bool {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TickBind()` overload"]
+    fn tick_bind(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::tick_bind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsTerminated()` overload"]
+    fn is_terminated(self) -> bool {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::is_terminated(__receiver, ::core::option::Option::None)
+        }
+    }
+    pub fn load_async<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ResourceObject as ::unity2::ClassIdentity>::class(),
+                "LoadAsync",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ResourceObject as ::unity2::ClassIdentity>::NAME,
+                "LoadAsync",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                ResourceObject,
+                ::unity2::Il2CppString,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(path),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`SetStartCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
+    fn set_start_callback(
+        self,
+        callback: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Callback>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_start_callback(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTickCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
+    fn set_tick_callback(
+        self,
+        callback: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Callback>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_tick_callback(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEndCallback(crate::app::resourceobject::ResourceObject_Callback)` overload"]
+    fn set_end_callback(
+        self,
+        callback: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Callback>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_end_callback(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCoroutine(crate::app::resourceobject::ResourceObject_Coroutine)` overload"]
+    fn set_coroutine(
+        self,
+        coroutine: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Coroutine>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_coroutine(
+                __receiver,
+                ::core::convert::Into::into(coroutine),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_position(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_position(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPosition(f32, f32, f32)` overload"]
+    fn set_position_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_position_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_rotation(
+        self,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_rotation(
+                __receiver,
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRotation(f32, f32, f32)` overload"]
+    fn set_rotation_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_rotation_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetScale(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_scale(
+        self,
+        scale: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_scale(
+                __receiver,
+                ::core::convert::Into::into(scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetScale(f32)` overload"]
+    fn set_scale_2(
+        self,
+        scale: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_scale_2(
+                __receiver,
+                ::core::convert::Into::into(scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetScale(f32, f32, f32)` overload"]
+    fn set_scale_3(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        z: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_scale_3(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSound(::unity2::Il2CppString)` overload"]
+    fn set_sound(
+        self,
+        sound_label: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_sound(
+                __receiver,
+                ::core::convert::Into::into(sound_label),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEndless(bool)` overload"]
+    fn set_endless(
+        self,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_endless(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCanSkip(bool)` overload"]
+    fn set_can_skip(
+        self,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_can_skip(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLife(f32)` overload"]
+    fn set_life(
+        self,
+        time: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_life(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEndless()` overload"]
+    fn is_endless(self) -> bool {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::is_endless(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetDelayTime(f32)` overload"]
+    fn set_delay_time(
+        self,
+        time: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::set_delay_time(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryStartCallback()` overload"]
+    fn try_start_callback(self) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_start_callback(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryEndCallback()` overload"]
+    fn try_end_callback(self) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_end_callback(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryBind(crate::app::procinst::ProcInst)` overload"]
+    fn try_bind(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_bind(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryBind(crate::app::bindholder::BindHolder)` overload"]
+    fn try_bind_2(
+        self,
+        binder: impl ::core::convert::Into<crate::app::bindholder::BindHolder>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_bind_2(
+                __receiver,
+                ::core::convert::Into::into(binder),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryBind(crate::app::procinst::ProcInst, f32)` overload"]
+    fn try_bind_3(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        time: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_bind_3(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryBind(crate::app::bindholder::BindHolder, f32)` overload"]
+    fn try_bind_4(
+        self,
+        binder: impl ::core::convert::Into<crate::app::bindholder::BindHolder>,
+        time: impl ::core::convert::Into<f32>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_bind_4(
+                __receiver,
+                ::core::convert::Into::into(binder),
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryUnbind()` overload"]
+    fn try_unbind(self) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::try_unbind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ResourceObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ResourceObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+impl<__T: IResourceObject> IResourceObjectMethods for __T {}
 
 #[cfg(feature = "app-resourceobject")]
 impl ResourceObject {
@@ -441,32 +3126,43 @@ impl ResourceObject {
 }
 
 #[cfg(feature = "app-resourceobject")]
-#[::unity2::methods]
-impl ResourceObject_Coroutine {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        go: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "app-resourceobject")]
-impl ResourceObject_Coroutine {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceObject_Coroutine),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceObject_CoroutineMethods>::ctor(this, object, method);
-        this
-    }
+pub mod prelude {
+    pub use super::IResourceObject;
+    pub use super::IResourceObjectMethods;
+    pub use super::IResourceObject_Callback;
+    pub use super::IResourceObject_CallbackMethods;
+    pub use super::IResourceObject_Coroutine;
+    pub use super::IResourceObject_CoroutineMethods;
+    pub use super::ResourceObject;
+    pub use super::ResourceObject_Callback;
+    pub use super::ResourceObject_Coroutine;
+    pub use super::ResourceObject_Flags;
+    pub use super::ResourceObject_Sequence;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

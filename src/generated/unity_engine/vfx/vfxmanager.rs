@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "unity_engine-vfx-vfxmanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-vfx-vfxmanager")]
+pub mod prelude {
+    pub use super::IVFXManager;
+    pub use super::VFXManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

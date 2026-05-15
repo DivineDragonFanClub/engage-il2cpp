@@ -70,3 +70,14 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> KeyValuePair_2<T0
     #[method(name = "ToString", args = 0)]
     pub fn to_string(self) -> ::unity2::Il2CppString;
 }
+
+#[cfg(feature = "system-collections-generic-keyvaluepair_2")]
+pub mod prelude {
+    pub use super::KeyValuePair_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

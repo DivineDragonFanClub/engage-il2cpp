@@ -73,3 +73,23 @@ impl<T0: ::unity2::ClassIdentity> FloatItem_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-floatitem_1")]
+pub mod prelude {
+    pub use super::FloatItem_1;
+    pub use super::IFloatItem_1;
+    pub use super::IFloatItem_1Methods;
+    pub use crate::app::instanceitem_1::IInstanceItem_1;
+    #[cfg(feature = "app-instanceitem_1")]
+    pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
+    pub use crate::app::instanceitem_1::InstanceItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    #[cfg(feature = "app-menuitem")]
+    pub use crate::app::menuitem::IMenuItemMethods;
+    pub use crate::app::paramitem::IParamItem;
+    #[cfg(feature = "app-paramitem")]
+    pub use crate::app::paramitem::IParamItemMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

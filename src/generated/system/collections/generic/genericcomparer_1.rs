@@ -53,3 +53,16 @@ impl<T0: ::unity2::ClassIdentity> GenericComparer_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-genericcomparer_1")]
+pub mod prelude {
+    pub use super::GenericComparer_1;
+    pub use super::IGenericComparer_1;
+    pub use super::IGenericComparer_1Methods;
+    pub use crate::system::collections::generic::comparer_1::IComparer_1;
+    #[cfg(feature = "system-collections-generic-comparer_1")]
+    pub use crate::system::collections::generic::comparer_1::IComparer_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

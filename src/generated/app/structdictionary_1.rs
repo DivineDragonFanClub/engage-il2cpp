@@ -95,3 +95,13 @@ impl<T0: ::unity2::ClassIdentity> StructDictionary_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-structdictionary_1")]
+pub mod prelude {
+    pub use super::IStructDictionary_1;
+    pub use super::IStructDictionary_1Methods;
+    pub use super::StructDictionary_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -54,3 +54,16 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SerializedDiction
         this
     }
 }
+
+#[cfg(feature = "unity_engine-rendering-serializeddictionary_2")]
+pub mod prelude {
+    pub use super::ISerializedDictionary_2;
+    pub use super::ISerializedDictionary_2Methods;
+    pub use super::SerializedDictionary_2;
+    pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
+    #[cfg(feature = "system-collections-generic-dictionary_2")]
+    pub use crate::system::collections::generic::dictionary_2::IDictionary_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

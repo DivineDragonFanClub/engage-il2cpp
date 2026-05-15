@@ -21,13 +21,90 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-layermaskparameter")]
-#[::unity2::methods]
-impl LayerMaskParameter {
-    #[doc = "`.ctor(crate::unity_engine::layermask::LayerMask, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, value: crate::unity_engine::layermask::LayerMask, override_state: bool)
-        -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LayerMaskParameter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayerMaskParameter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayerMaskParameter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LayerMaskParameter,
+        value: crate::unity_engine::layermask::LayerMask,
+        override_state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LayerMaskParameter,
+            crate::unity_engine::layermask::LayerMask,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, value, override_state, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
+pub trait ILayerMaskParameterMethods: ILayerMaskParameter {
+    #[doc = "`.ctor(crate::unity_engine::layermask::LayerMask, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <LayerMaskParameter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LayerMaskParameter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(override_state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
+impl<__T: ILayerMaskParameter> ILayerMaskParameterMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-layermaskparameter")]
 impl LayerMaskParameter {
@@ -43,4 +120,20 @@ impl LayerMaskParameter {
         <Self as ILayerMaskParameterMethods>::ctor(this, value, override_state);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
+pub mod prelude {
+    pub use super::ILayerMaskParameter;
+    pub use super::ILayerMaskParameterMethods;
+    pub use super::LayerMaskParameter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
 }

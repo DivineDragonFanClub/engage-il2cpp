@@ -36,79 +36,713 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-characterjump")]
-#[::unity2::methods]
-impl CharacterJump {
-    #[doc = "`get_IsEnd()` overload"]
-    #[method(name = "get_IsEnd", args = 0)]
-    pub fn get_is_end(self) -> bool;
-
-    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool)` overload"]
-    #[method(name = "ClampToBorder", args = 3)]
-    pub fn clamp_to_border(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterJump_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "get_IsEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "get_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_end(
+        this: CharacterJump,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CharacterJump, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamp_to_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "ClampToBorder",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "ClampToBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamp_to_border(
         start: crate::unity_engine::vector3::Vector3,
         goal: crate::unity_engine::vector3::Vector3,
         is_big: bool,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "ClampToBorder", args = 3)]
-    pub fn clamp_to_border_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clamp_to_border::get_offset() as isize),
+        );
+        inner(start, goal, is_big, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamp_to_border_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "ClampToBorder",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "ClampToBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamp_to_border_2(
         start: crate::unity_engine::vector3::Vector3,
         goal: crate::unity_engine::vector3::Vector3,
         radius: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::combat::character::Character)` overload"]
-    #[method(name = "ClampToBorder", args = 3)]
-    pub fn clamp_to_border_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clamp_to_border_2::get_offset() as isize),
+        );
+        inner(start, goal, radius, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamp_to_border_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "ClampToBorder",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "ClampToBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamp_to_border_3(
         start: crate::unity_engine::vector3::Vector3,
         goal: crate::unity_engine::vector3::Vector3,
         chr: crate::combat::character::Character,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "ClampToBorder", args = 4)]
-    pub fn clamp_to_border_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clamp_to_border_3::get_offset() as isize),
+        );
+        inner(start, goal, chr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clamp_to_border_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "ClampToBorder",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "ClampToBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clamp_to_border_4(
         start: crate::unity_engine::vector3::Vector3,
         goal: crate::unity_engine::vector3::Vector3,
         radius: f32,
         offset: crate::unity_engine::vector3::Vector3,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`JumpTo(crate::combat::character::Character, crate::unity_engine::vector3::Vector3, f32, f32, bool)` overload"]
-    #[method(name = "JumpTo", args = 5)]
-    pub fn jump_to(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clamp_to_border_4::get_offset() as isize),
+        );
+        inner(start, goal, radius, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "JumpTo",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "JumpTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to(
+        this: CharacterJump,
         chr: crate::combat::character::Character,
         goal: crate::unity_engine::vector3::Vector3,
         pull_offset: f32,
         duration: f32,
         is_grounding: bool,
-    ) -> ();
-
-    #[doc = "`JumpTo(crate::combat::character::Character, crate::unity_engine::transform::Transform, f32, f32, bool)` overload"]
-    #[method(name = "JumpTo", args = 5)]
-    pub fn jump_to_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterJump,
+            crate::combat::character::Character,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to::get_offset() as isize),
+        );
+        inner(
+            this,
+            chr,
+            goal,
+            pull_offset,
+            duration,
+            is_grounding,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "JumpTo",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "JumpTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to_2(
+        this: CharacterJump,
         chr: crate::combat::character::Character,
         target: crate::unity_engine::transform::Transform,
         pull_offset: f32,
         duration: f32,
         is_grounding: bool,
-    ) -> ();
-
-    #[doc = "`Stop()` overload"]
-    #[method(name = "Stop", args = 0)]
-    pub fn stop(self) -> ();
-
-    #[doc = "`Update(f32)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(self, delta_time: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CharacterJump,
+            crate::combat::character::Character,
+            crate::unity_engine::transform::Transform,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            chr,
+            target,
+            pull_offset,
+            duration,
+            is_grounding,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "Stop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "Stop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop(this: CharacterJump, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharacterJump, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_stop::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                "Update",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: CharacterJump,
+        delta_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CharacterJump, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterJump as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterJump as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: CharacterJump, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharacterJump, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-characterjump")]
+impl CharacterJump {
+    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool)` overload"]
+    pub fn clamp_to_border(
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        is_big: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __CharacterJump_unity2_raw::clamp_to_border(
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(is_big),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn clamp_to_border_2(
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        radius: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __CharacterJump_unity2_raw::clamp_to_border_2(
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(radius),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::combat::character::Character)` overload"]
+    pub fn clamp_to_border_3(
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __CharacterJump_unity2_raw::clamp_to_border_3(
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(chr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClampToBorder(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn clamp_to_border_4(
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        radius: impl ::core::convert::Into<f32>,
+        offset: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __CharacterJump_unity2_raw::clamp_to_border_4(
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(radius),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-characterjump")]
+pub trait ICharacterJumpMethods: ICharacterJump {
+    #[doc = "`get_IsEnd()` overload"]
+    fn get_is_end(self) -> bool {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::get_is_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`JumpTo(crate::combat::character::Character, crate::unity_engine::vector3::Vector3, f32, f32, bool)` overload"]
+    fn jump_to(
+        self,
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        pull_offset: impl ::core::convert::Into<f32>,
+        duration: impl ::core::convert::Into<f32>,
+        is_grounding: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::jump_to(
+                __receiver,
+                ::core::convert::Into::into(chr),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(pull_offset),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(is_grounding),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`JumpTo(crate::combat::character::Character, crate::unity_engine::transform::Transform, f32, f32, bool)` overload"]
+    fn jump_to_2(
+        self,
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+        target: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        pull_offset: impl ::core::convert::Into<f32>,
+        duration: impl ::core::convert::Into<f32>,
+        is_grounding: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::jump_to_2(
+                __receiver,
+                ::core::convert::Into::into(chr),
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(pull_offset),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(is_grounding),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop(self) -> () {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::stop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update(f32)` overload"]
+    fn update(self, delta_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CharacterJump as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterJump_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-characterjump")]
+impl<__T: ICharacterJump> ICharacterJumpMethods for __T {}
 
 #[cfg(feature = "combat-characterjump")]
 impl CharacterJump {
@@ -124,4 +758,14 @@ impl CharacterJump {
         <Self as ICharacterJumpMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-characterjump")]
+pub mod prelude {
+    pub use super::CharacterJump;
+    pub use super::ICharacterJump;
+    pub use super::ICharacterJumpMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

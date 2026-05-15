@@ -2,3 +2,13 @@
 
 #[cfg(any(feature = "unity_engine-asset_graph-assetbundlebuildmap-types"))]
 pub mod assetbundlebuildmap;
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap-types")]
+pub use assetbundlebuildmap::{
+    AssetBundleBuildMap, AssetBundleBuildMap_AssetBundleEntry,
+    AssetBundleBuildMap_AssetBundleEntry_AssetPathString, IAssetBundleBuildMap,
+    IAssetBundleBuildMap_AssetBundleEntry,
+};
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+pub use assetbundlebuildmap::{
+    IAssetBundleBuildMapMethods, IAssetBundleBuildMap_AssetBundleEntryMethods,
+};

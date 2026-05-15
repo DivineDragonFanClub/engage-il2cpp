@@ -17,36 +17,289 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
-#[::unity2::methods]
-impl TimelineCreateUtilities {
-    #[doc = "`GenerateUniqueActorName(crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GenerateUniqueActorName", args = 2)]
-    pub fn generate_unique_actor_name(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimelineCreateUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_unique_actor_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::scriptableobject::ScriptableObject,
+                > as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineCreateUtilities as ::unity2::ClassIdentity>::class(),
+                "GenerateUniqueActorName",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimelineCreateUtilities as ::unity2::ClassIdentity>::NAME,
+                    "GenerateUniqueActorName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_unique_actor_name(
         tracks: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::scriptableobject::ScriptableObject,
         >,
         name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`SaveAssetIntoObject(crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "SaveAssetIntoObject", args = 2)]
-    pub fn save_asset_into_object(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::scriptableobject::ScriptableObject,
+            >,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_unique_actor_name::get_offset() as isize),
+        );
+        inner(tracks, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_asset_into_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineCreateUtilities as ::unity2::ClassIdentity>::class(),
+                "SaveAssetIntoObject",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimelineCreateUtilities as ::unity2::ClassIdentity>::NAME,
+                    "SaveAssetIntoObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_asset_into_object(
         child_asset: crate::unity_engine::object_2::Object_2,
         master_asset: crate::unity_engine::object_2::Object_2,
-    ) -> ();
-
-    #[doc = "`CreateAnimationClipForTrack(::unity2::Il2CppString, crate::unity_engine::timeline::trackasset::TrackAsset, bool)` overload"]
-    #[method(name = "CreateAnimationClipForTrack", args = 3)]
-    pub fn create_animation_clip_for_track(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::object_2::Object_2,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_asset_into_object::get_offset() as isize),
+        );
+        inner(child_asset, master_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_animation_clip_for_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineCreateUtilities as ::unity2::ClassIdentity>::class(),
+                "CreateAnimationClipForTrack",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimelineCreateUtilities as ::unity2::ClassIdentity>::NAME,
+                    "CreateAnimationClipForTrack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_animation_clip_for_track(
         name: ::unity2::Il2CppString,
         track: crate::unity_engine::timeline::trackasset::TrackAsset,
         is_legacy: bool,
-    ) -> crate::unity_engine::animationclip::AnimationClip;
-
-    #[doc = "`ValidateParentTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::SystemType)` overload"]
-    #[method(name = "ValidateParentTrack", args = 2)]
-    pub fn validate_parent_track(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_animation_clip_for_track::get_offset() as isize),
+        );
+        inner(name, track, is_legacy, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_parent_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineCreateUtilities as ::unity2::ClassIdentity>::class(),
+                "ValidateParentTrack",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TimelineCreateUtilities as ::unity2::ClassIdentity>::NAME,
+                    "ValidateParentTrack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_parent_track(
         parent: crate::unity_engine::timeline::trackasset::TrackAsset,
         child_type: ::unity2::SystemType,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_parent_track::get_offset() as isize),
+        );
+        inner(parent, child_type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
+impl TimelineCreateUtilities {
+    #[doc = "`GenerateUniqueActorName(crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>, ::unity2::Il2CppString)` overload"]
+    pub fn generate_unique_actor_name(
+        tracks: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::scriptableobject::ScriptableObject,
+            >,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __TimelineCreateUtilities_unity2_raw::generate_unique_actor_name(
+                ::core::convert::Into::into(tracks),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveAssetIntoObject(crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn save_asset_into_object(
+        child_asset: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+        master_asset: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> () {
+        unsafe {
+            __TimelineCreateUtilities_unity2_raw::save_asset_into_object(
+                ::core::convert::Into::into(child_asset),
+                ::core::convert::Into::into(master_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAnimationClipForTrack(::unity2::Il2CppString, crate::unity_engine::timeline::trackasset::TrackAsset, bool)` overload"]
+    pub fn create_animation_clip_for_track(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        track: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        is_legacy: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            __TimelineCreateUtilities_unity2_raw::create_animation_clip_for_track(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(track),
+                ::core::convert::Into::into(is_legacy),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidateParentTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::SystemType)` overload"]
+    pub fn validate_parent_track(
+        parent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        child_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> bool {
+        unsafe {
+            __TimelineCreateUtilities_unity2_raw::validate_parent_track(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(child_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
+pub mod prelude {
+    pub use super::ITimelineCreateUtilities;
+    pub use super::TimelineCreateUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

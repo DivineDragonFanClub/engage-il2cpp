@@ -35,3 +35,12 @@ impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1<T0> {
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
 }
+
+#[cfg(feature = "unity_engine-rendering-componentsingleton_1")]
+pub mod prelude {
+    pub use super::ComponentSingleton_1;
+    pub use super::IComponentSingleton_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

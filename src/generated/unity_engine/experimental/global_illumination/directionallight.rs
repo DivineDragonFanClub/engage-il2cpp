@@ -48,3 +48,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-directionallight-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-directionallight")]
+pub mod prelude {
+    pub use super::DirectionalLight;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

@@ -17,35 +17,289 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadjoyleft")]
-#[::unity2::methods]
-impl NpadJoyLeft {
-    #[doc = "`GetState(crate::nn::hid::npadjoyleftstate::NpadJoyLeftState, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetState", args = 2)]
-    pub fn get_state(
-        p_out_value: crate::nn::hid::npadjoyleftstate::NpadJoyLeftState,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NpadJoyLeft_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: npadjoyleftstate :: NpadJoyLeftState as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoyLeft as ::unity2::ClassIdentity>::class(),
+                "GetState",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoyLeft as ::unity2::ClassIdentity>::NAME,
+                    "GetState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_state(
+        p_out_value: *mut crate::nn::hid::npadjoyleftstate::NpadJoyLeftState,
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> ();
-
-    #[doc = "`GetState(crate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetState", args = 2)]
-    pub fn get_state_2(
-        p_out_value: crate::nn::hid::npadstate::NpadState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::npadjoyleftstate::NpadJoyLeftState,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_state::get_offset() as isize),
+        );
+        inner(p_out_value, npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoyLeft as ::unity2::ClassIdentity>::class(),
+                "GetState",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoyLeft as ::unity2::ClassIdentity>::NAME,
+                    "GetState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_state_2(
+        p_out_value: *mut crate::nn::hid::npadstate::NpadState,
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> ();
-
-    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadjoyleftstate::NpadJoyLeftState>, i32, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetStates", args = 3)]
-    pub fn get_states(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::npadstate::NpadState,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_state_2::get_offset() as isize),
+        );
+        inner(p_out_value, npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_states {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: npadjoyleftstate :: NpadJoyLeftState > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoyLeft as ::unity2::ClassIdentity>::class(),
+                "GetStates",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoyLeft as ::unity2::ClassIdentity>::NAME,
+                    "GetStates",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_states(
         p_out_values: ::unity2::Array<crate::nn::hid::npadjoyleftstate::NpadJoyLeftState>,
         count: i32,
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> i32;
-
-    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetStates", args = 3)]
-    pub fn get_states_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::npadjoyleftstate::NpadJoyLeftState>,
+            i32,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_states::get_offset() as isize),
+        );
+        inner(p_out_values, count, npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_states_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: npadstatearrayitem :: NpadStateArrayItem > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoyLeft as ::unity2::ClassIdentity>::class(),
+                "GetStates",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoyLeft as ::unity2::ClassIdentity>::NAME,
+                    "GetStates",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_states_2(
         p_out_values: ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
         count: i32,
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
+            i32,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_states_2::get_offset() as isize),
+        );
+        inner(p_out_values, count, npad_id, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nn-hid-npadjoyleft")]
+impl NpadJoyLeft {
+    #[doc = "`GetState(*mutcrate::nn::hid::npadjoyleftstate::NpadJoyLeftState, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_state(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> crate::nn::hid::npadjoyleftstate::NpadJoyLeftState {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::npadjoyleftstate::NpadJoyLeftState,
+            >::uninit();
+            __NpadJoyLeft_unity2_raw::get_state(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetState(*mutcrate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_state_2(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> crate::nn::hid::npadstate::NpadState {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::nn::hid::npadstate::NpadState>::uninit();
+            __NpadJoyLeft_unity2_raw::get_state_2(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadjoyleftstate::NpadJoyLeftState>, i32, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_states(
+        p_out_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::npadjoyleftstate::NpadJoyLeftState>,
+        >,
+        count: impl ::core::convert::Into<i32>,
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> i32 {
+        unsafe {
+            __NpadJoyLeft_unity2_raw::get_states(
+                ::core::convert::Into::into(p_out_values),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_states_2(
+        p_out_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
+        >,
+        count: impl ::core::convert::Into<i32>,
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> i32 {
+        unsafe {
+            __NpadJoyLeft_unity2_raw::get_states_2(
+                ::core::convert::Into::into(p_out_values),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nn-hid-npadjoyleft")]
+pub mod prelude {
+    pub use super::INpadJoyLeft;
+    pub use super::NpadJoyLeft;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

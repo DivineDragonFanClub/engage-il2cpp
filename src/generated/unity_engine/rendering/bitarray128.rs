@@ -42,100 +42,1073 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-bitarray128")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BitArray128_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "get_capacity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "get_capacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_capacity(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(BitArray128, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_capacity::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_false {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "get_allFalse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "get_allFalse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_false(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BitArray128, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_all_false::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_true {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "get_allTrue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "get_allTrue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_true(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BitArray128, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_all_true::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_humanized_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "get_humanizedData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "get_humanizedData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_humanized_data(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(BitArray128, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_humanized_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: BitArray128,
+        index: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BitArray128, u32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_item::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "set_Item",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "set_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item(
+        this: BitArray128,
+        index: u32,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BitArray128, u32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_item::get_offset() as isize),
+            );
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BitArray128,
+        init_value1: u64,
+        init_value2: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BitArray128, u64, u64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, init_value1, init_value2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < u32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: BitArray128,
+        bit_index_true: crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BitArray128,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, bit_index_true, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_ones_complement {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "op_OnesComplement",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "op_OnesComplement",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_ones_complement(
+        a: crate::unity_engine::rendering::bitarray128::BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::bitarray128::BitArray128 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_ones_complement::get_offset() as isize),
+        );
+        inner(a, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_bitwise_or {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "op_BitwiseOr",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "op_BitwiseOr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_bitwise_or(
+        a: crate::unity_engine::rendering::bitarray128::BitArray128,
+        b: crate::unity_engine::rendering::bitarray128::BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::bitarray128::BitArray128 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_bitwise_or::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_bitwise_and {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "op_BitwiseAnd",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "op_BitwiseAnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_bitwise_and(
+        a: crate::unity_engine::rendering::bitarray128::BitArray128,
+        b: crate::unity_engine::rendering::bitarray128::BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::bitarray128::BitArray128 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_bitwise_and::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bit_and {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::ibitarray::IBitArray as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "BitAnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "BitAnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bit_and(
+        this: BitArray128,
+        other: crate::unity_engine::rendering::ibitarray::IBitArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        let inner: extern "C" fn(
+            BitArray128,
+            crate::unity_engine::rendering::ibitarray::IBitArray,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::ibitarray::IBitArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bit_and::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bit_or {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::ibitarray::IBitArray as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "BitOr",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "BitOr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bit_or(
+        this: BitArray128,
+        other: crate::unity_engine::rendering::ibitarray::IBitArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        let inner: extern "C" fn(
+            BitArray128,
+            crate::unity_engine::rendering::ibitarray::IBitArray,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::ibitarray::IBitArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bit_or::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bit_not {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "BitNot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "BitNot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bit_not(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        let inner: extern "C" fn(
+            BitArray128,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::ibitarray::IBitArray = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_bit_not::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_equality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "op_Equality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "op_Equality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_equality(
+        a: crate::unity_engine::rendering::bitarray128::BitArray128,
+        b: crate::unity_engine::rendering::bitarray128::BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_equality::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_inequality {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: bitarray128 :: BitArray128 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "op_Inequality",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "op_Inequality",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_inequality(
+        a: crate::unity_engine::rendering::bitarray128::BitArray128,
+        b: crate::unity_engine::rendering::bitarray128::BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            crate::unity_engine::rendering::bitarray128::BitArray128,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_inequality::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: BitArray128,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BitArray128,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray128 as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BitArray128 as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: BitArray128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BitArray128, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-bitarray128")]
+impl BitArray128 {
+    #[doc = "`op_OnesComplement(crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
+    pub fn op_ones_complement(
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        unsafe {
+            __BitArray128_unity2_raw::op_ones_complement(
+                ::core::convert::Into::into(a),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_BitwiseOr(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
+    pub fn op_bitwise_or(
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+        b: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        unsafe {
+            __BitArray128_unity2_raw::op_bitwise_or(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_BitwiseAnd(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
+    pub fn op_bitwise_and(
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+        b: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+    ) -> crate::unity_engine::rendering::bitarray128::BitArray128 {
+        unsafe {
+            __BitArray128_unity2_raw::op_bitwise_and(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Equality(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
+    pub fn op_equality(
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+        b: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+    ) -> bool {
+        unsafe {
+            __BitArray128_unity2_raw::op_equality(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Inequality(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
+    pub fn op_inequality(
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+        b: impl ::core::convert::Into<crate::unity_engine::rendering::bitarray128::BitArray128>,
+    ) -> bool {
+        unsafe {
+            __BitArray128_unity2_raw::op_inequality(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-bitarray128")]
 impl BitArray128 {
     #[doc = "`get_capacity()` overload"]
-    #[method(name = "get_capacity", args = 0)]
-    pub fn get_capacity(self) -> u32;
-
+    pub fn get_capacity(self) -> u32 {
+        unsafe { __BitArray128_unity2_raw::get_capacity(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_allFalse()` overload"]
-    #[method(name = "get_allFalse", args = 0)]
-    pub fn get_all_false(self) -> bool;
-
+    pub fn get_all_false(self) -> bool {
+        unsafe { __BitArray128_unity2_raw::get_all_false(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_allTrue()` overload"]
-    #[method(name = "get_allTrue", args = 0)]
-    pub fn get_all_true(self) -> bool;
-
+    pub fn get_all_true(self) -> bool {
+        unsafe { __BitArray128_unity2_raw::get_all_true(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_humanizedData()` overload"]
-    #[method(name = "get_humanizedData", args = 0)]
-    pub fn get_humanized_data(self) -> ::unity2::Il2CppString;
-
+    pub fn get_humanized_data(self) -> ::unity2::Il2CppString {
+        unsafe { __BitArray128_unity2_raw::get_humanized_data(self, ::core::option::Option::None) }
+    }
     #[doc = "`get_Item(u32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: u32) -> bool;
-
+    pub fn get_item(self, index: impl ::core::convert::Into<u32>) -> bool {
+        unsafe {
+            __BitArray128_unity2_raw::get_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`set_Item(u32, bool)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, index: u32, value: bool) -> ();
-
+    pub fn set_item(
+        self,
+        index: impl ::core::convert::Into<u32>,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __BitArray128_unity2_raw::set_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor(u64, u64)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, init_value1: u64, init_value2: u64) -> ();
-
+    pub fn ctor(
+        self,
+        init_value1: impl ::core::convert::Into<u64>,
+        init_value2: impl ::core::convert::Into<u64>,
+    ) -> () {
+        unsafe {
+            __BitArray128_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(init_value1),
+                ::core::convert::Into::into(init_value2),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>)` overload"]
-    #[method(name = ".ctor", args = 1)]
     pub fn ctor_2(
         self,
-        bit_index_true: crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>,
-    ) -> ();
-
-    #[doc = "`op_OnesComplement(crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
-    #[method(name = "op_OnesComplement", args = 1)]
-    pub fn op_ones_complement(
-        a: crate::unity_engine::rendering::bitarray128::BitArray128,
-    ) -> crate::unity_engine::rendering::bitarray128::BitArray128;
-
-    #[doc = "`op_BitwiseOr(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
-    #[method(name = "op_BitwiseOr", args = 2)]
-    pub fn op_bitwise_or(
-        a: crate::unity_engine::rendering::bitarray128::BitArray128,
-        b: crate::unity_engine::rendering::bitarray128::BitArray128,
-    ) -> crate::unity_engine::rendering::bitarray128::BitArray128;
-
-    #[doc = "`op_BitwiseAnd(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
-    #[method(name = "op_BitwiseAnd", args = 2)]
-    pub fn op_bitwise_and(
-        a: crate::unity_engine::rendering::bitarray128::BitArray128,
-        b: crate::unity_engine::rendering::bitarray128::BitArray128,
-    ) -> crate::unity_engine::rendering::bitarray128::BitArray128;
-
+        bit_index_true: impl ::core::convert::Into<
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>,
+        >,
+    ) -> () {
+        unsafe {
+            __BitArray128_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(bit_index_true),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`BitAnd(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]
-    #[method(name = "BitAnd", args = 1)]
     pub fn bit_and(
         self,
-        other: crate::unity_engine::rendering::ibitarray::IBitArray,
-    ) -> crate::unity_engine::rendering::ibitarray::IBitArray;
-
+        other: impl ::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>,
+    ) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        unsafe {
+            __BitArray128_unity2_raw::bit_and(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`BitOr(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]
-    #[method(name = "BitOr", args = 1)]
     pub fn bit_or(
         self,
-        other: crate::unity_engine::rendering::ibitarray::IBitArray,
-    ) -> crate::unity_engine::rendering::ibitarray::IBitArray;
-
+        other: impl ::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>,
+    ) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        unsafe {
+            __BitArray128_unity2_raw::bit_or(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`BitNot()` overload"]
-    #[method(name = "BitNot", args = 0)]
-    pub fn bit_not(self) -> crate::unity_engine::rendering::ibitarray::IBitArray;
-
-    #[doc = "`op_Equality(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
-    #[method(name = "op_Equality", args = 2)]
-    pub fn op_equality(
-        a: crate::unity_engine::rendering::bitarray128::BitArray128,
-        b: crate::unity_engine::rendering::bitarray128::BitArray128,
-    ) -> bool;
-
-    #[doc = "`op_Inequality(crate::unity_engine::rendering::bitarray128::BitArray128, crate::unity_engine::rendering::bitarray128::BitArray128)` overload"]
-    #[method(name = "op_Inequality", args = 2)]
-    pub fn op_inequality(
-        a: crate::unity_engine::rendering::bitarray128::BitArray128,
-        b: crate::unity_engine::rendering::bitarray128::BitArray128,
-    ) -> bool;
-
+    pub fn bit_not(self) -> crate::unity_engine::rendering::ibitarray::IBitArray {
+        unsafe { __BitArray128_unity2_raw::bit_not(self, ::core::option::Option::None) }
+    }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, obj: crate::system::object::Object) -> bool;
-
+    pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __BitArray128_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
+    pub fn get_hash_code(self) -> i32 {
+        unsafe { __BitArray128_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-bitarray128")]
+pub mod prelude {
+    pub use super::BitArray128;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -46,3 +46,14 @@ mod __types {
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphparameters-types"
 )]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphparameters")]
+pub mod prelude {
+    pub use super::RenderGraphParameters;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

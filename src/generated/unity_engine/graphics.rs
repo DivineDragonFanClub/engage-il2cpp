@@ -21,59 +21,565 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-graphics")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Graphics_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_max_draw_mesh_instance_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "Internal_GetMaxDrawMeshInstanceCount",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "Internal_GetMaxDrawMeshInstanceCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_get_max_draw_mesh_instance_count(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_get_max_draw_mesh_instance_count::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_active_tier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "get_activeTier",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "get_activeTier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_active_tier(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::graphicstier::GraphicsTier {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::graphicstier::GraphicsTier = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_active_tier::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active_tier {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "set_activeTier",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "set_activeTier",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active_tier(
+        value: crate::unity_engine::rendering::graphicstier::GraphicsTier,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::graphicstier::GraphicsTier,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_active_tier::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preserve_framebuffer_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "GetPreserveFramebufferAlpha",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "GetPreserveFramebufferAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preserve_framebuffer_alpha(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preserve_framebuffer_alpha::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_open_gles_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "GetMinOpenGLESVersion",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "GetMinOpenGLESVersion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_open_gles_version(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::openglesversion::OpenGLESVersion {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: openglesversion :: OpenGLESVersion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_min_open_gles_version :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_texture_slice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "CopyTexture_Slice",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "CopyTexture_Slice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_texture_slice(
+        src: crate::unity_engine::texture::Texture,
+        src_element: i32,
+        src_mip: i32,
+        dst: crate::unity_engine::texture::Texture,
+        dst_element: i32,
+        dst_mip: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture::Texture,
+            i32,
+            i32,
+            crate::unity_engine::texture::Texture,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_texture_slice::get_offset() as isize),
+        );
+        inner(
+            src,
+            src_element,
+            src_mip,
+            dst,
+            dst_element,
+            dst_mip,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_draw_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: internal_drawtexturearguments :: Internal_DrawTextureArguments as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "Internal_DrawTexture",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "Internal_DrawTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_draw_texture(
+        args : * mut crate :: unity_engine :: internal_drawtexturearguments :: Internal_DrawTextureArguments,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_draw_texture::get_offset() as isize),
+        );
+        inner(args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                "CopyTexture",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    "CopyTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_texture(
+        src: crate::unity_engine::texture::Texture,
+        src_element: i32,
+        src_mip: i32,
+        dst: crate::unity_engine::texture::Texture,
+        dst_element: i32,
+        dst_mip: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture::Texture,
+            i32,
+            i32,
+            crate::unity_engine::texture::Texture,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_texture::get_offset() as isize),
+        );
+        inner(
+            src,
+            src_element,
+            src_mip,
+            dst,
+            dst_element,
+            dst_mip,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Graphics as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Graphics as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-graphics")]
 impl Graphics {
     #[doc = "`Internal_GetMaxDrawMeshInstanceCount()` overload"]
-    #[method(name = "Internal_GetMaxDrawMeshInstanceCount", args = 0)]
-    pub fn internal_get_max_draw_mesh_instance_count() -> i32;
-
+    pub fn internal_get_max_draw_mesh_instance_count() -> i32 {
+        unsafe {
+            __Graphics_unity2_raw::internal_get_max_draw_mesh_instance_count(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_activeTier()` overload"]
-    #[method(name = "get_activeTier", args = 0)]
-    pub fn get_active_tier() -> crate::unity_engine::rendering::graphicstier::GraphicsTier;
-
+    pub fn get_active_tier() -> crate::unity_engine::rendering::graphicstier::GraphicsTier {
+        unsafe { __Graphics_unity2_raw::get_active_tier(::core::option::Option::None) }
+    }
     #[doc = "`set_activeTier(crate::unity_engine::rendering::graphicstier::GraphicsTier)` overload"]
-    #[method(name = "set_activeTier", args = 1)]
-    pub fn set_active_tier(value: crate::unity_engine::rendering::graphicstier::GraphicsTier)
-        -> ();
-
+    pub fn set_active_tier(
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::graphicstier::GraphicsTier>,
+    ) -> () {
+        unsafe {
+            __Graphics_unity2_raw::set_active_tier(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPreserveFramebufferAlpha()` overload"]
-    #[method(name = "GetPreserveFramebufferAlpha", args = 0)]
-    pub fn get_preserve_framebuffer_alpha() -> bool;
-
+    pub fn get_preserve_framebuffer_alpha() -> bool {
+        unsafe {
+            __Graphics_unity2_raw::get_preserve_framebuffer_alpha(::core::option::Option::None)
+        }
+    }
     #[doc = "`GetMinOpenGLESVersion()` overload"]
-    #[method(name = "GetMinOpenGLESVersion", args = 0)]
     pub fn get_min_open_gles_version(
-    ) -> crate::unity_engine::rendering::openglesversion::OpenGLESVersion;
-
+    ) -> crate::unity_engine::rendering::openglesversion::OpenGLESVersion {
+        unsafe { __Graphics_unity2_raw::get_min_open_gles_version(::core::option::Option::None) }
+    }
     #[doc = "`CopyTexture_Slice(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"]
-    #[method(name = "CopyTexture_Slice", args = 6)]
     pub fn copy_texture_slice(
-        src: crate::unity_engine::texture::Texture,
-        src_element: i32,
-        src_mip: i32,
-        dst: crate::unity_engine::texture::Texture,
-        dst_element: i32,
-        dst_mip: i32,
-    ) -> ();
-
-    #[doc = "`Internal_DrawTexture(crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments)` overload"]
-    #[method(name = "Internal_DrawTexture", args = 1)]
+        src: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        src_element: impl ::core::convert::Into<i32>,
+        src_mip: impl ::core::convert::Into<i32>,
+        dst: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        dst_element: impl ::core::convert::Into<i32>,
+        dst_mip: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __Graphics_unity2_raw::copy_texture_slice(
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(src_element),
+                ::core::convert::Into::into(src_mip),
+                ::core::convert::Into::into(dst),
+                ::core::convert::Into::into(dst_element),
+                ::core::convert::Into::into(dst_mip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_DrawTexture(*mutcrate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments)` overload"]
     pub fn internal_draw_texture(
-        args: crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments,
-    ) -> ();
-
+    ) -> crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments,
+            >::uninit();
+            __Graphics_unity2_raw::internal_draw_texture(
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
     #[doc = "`CopyTexture(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"]
-    #[method(name = "CopyTexture", args = 6)]
     pub fn copy_texture(
-        src: crate::unity_engine::texture::Texture,
-        src_element: i32,
-        src_mip: i32,
-        dst: crate::unity_engine::texture::Texture,
-        dst_element: i32,
-        dst_mip: i32,
-    ) -> ();
-
+        src: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        src_element: impl ::core::convert::Into<i32>,
+        src_mip: impl ::core::convert::Into<i32>,
+        dst: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+        dst_element: impl ::core::convert::Into<i32>,
+        dst_mip: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __Graphics_unity2_raw::copy_texture(
+                ::core::convert::Into::into(src),
+                ::core::convert::Into::into(src_element),
+                ::core::convert::Into::into(src_mip),
+                ::core::convert::Into::into(dst),
+                ::core::convert::Into::into(dst_element),
+                ::core::convert::Into::into(dst_mip),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __Graphics_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-graphics")]
+pub mod prelude {
+    pub use super::Graphics;
+    pub use super::IGraphics;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

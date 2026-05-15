@@ -25,3 +25,10 @@ impl<T0: ::unity2::ClassIdentity> IEqualityComparer_1_Interface<T0> {
     #[method(name = "GetHashCode", args = 1)]
     pub fn get_hash_code(self, obj: T0) -> i32;
 }
+
+#[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface")]
+pub mod prelude {
+    pub use super::IEqualityComparer_1_Interface;
+    pub use super::IIEqualityComparer_1_Interface;
+    pub use super::IIEqualityComparer_1_InterfaceMethods;
+}

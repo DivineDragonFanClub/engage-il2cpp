@@ -17,11 +17,52 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-filesystemenumerablefactory")]
-#[::unity2::methods]
-impl FileSystemEnumerableFactory {
-    #[doc = "`CreateFileNameIterator(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool, crate::system::io::searchoption::SearchOption, bool)` overload"]
-    #[method(name = "CreateFileNameIterator", args = 7)]
-    pub fn create_file_name_iterator(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FileSystemEnumerableFactory_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_file_name_iterator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FileSystemEnumerableFactory as ::unity2::ClassIdentity>::class(),
+                "CreateFileNameIterator",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FileSystemEnumerableFactory as ::unity2::ClassIdentity>::NAME,
+                    "CreateFileNameIterator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_file_name_iterator(
         path: ::unity2::Il2CppString,
         original_user_path: ::unity2::Il2CppString,
         search_pattern: ::unity2::Il2CppString,
@@ -29,5 +70,56 @@ impl FileSystemEnumerableFactory {
         include_dirs: bool,
         search_option: crate::system::io::searchoption::SearchOption,
         check_host: bool,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
+    {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , bool , crate :: system :: io :: searchoption :: SearchOption , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_file_name_iterator :: get_offset () as isize) ,) ;
+        inner(
+            path,
+            original_user_path,
+            search_pattern,
+            include_files,
+            include_dirs,
+            search_option,
+            check_host,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "system-io-filesystemenumerablefactory")]
+impl FileSystemEnumerableFactory {
+    #[doc = "`CreateFileNameIterator(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool, crate::system::io::searchoption::SearchOption, bool)` overload"]
+    pub fn create_file_name_iterator(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        original_user_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        include_files: impl ::core::convert::Into<bool>,
+        include_dirs: impl ::core::convert::Into<bool>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+        check_host: impl ::core::convert::Into<bool>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
+    {
+        unsafe {
+            __FileSystemEnumerableFactory_unity2_raw::create_file_name_iterator(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(original_user_path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(include_files),
+                ::core::convert::Into::into(include_dirs),
+                ::core::convert::Into::into(search_option),
+                ::core::convert::Into::into(check_host),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-filesystemenumerablefactory")]
+pub mod prelude {
+    pub use super::FileSystemEnumerableFactory;
+    pub use super::IFileSystemEnumerableFactory;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

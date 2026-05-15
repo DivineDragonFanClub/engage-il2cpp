@@ -67,30 +67,263 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-accessoryshoputility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryShopUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_private_dress_aid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopUtility as ::unity2::ClassIdentity>::class(),
+                "GetPrivateDressAid",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetPrivateDressAid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_private_dress_aid(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_private_dress_aid::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_accessory_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopUtility as ::unity2::ClassIdentity>::class(),
+                "GetAccessoryName",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetAccessoryName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_accessory_name(
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::accessorydata::AccessoryData,
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_accessory_name::get_offset() as isize),
+        );
+        inner(accessory_data, female, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_accessory_help {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopUtility as ::unity2::ClassIdentity>::class(),
+                "GetAccessoryHelp",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetAccessoryHelp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_accessory_help(
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::accessorydata::AccessoryData,
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_accessory_help::get_offset() as isize),
+        );
+        inner(accessory_data, female, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryShopUtility as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AccessoryShopUtility as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AccessoryShopUtility,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AccessoryShopUtility, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-accessoryshoputility")]
 impl AccessoryShopUtility {
     #[doc = "`GetPrivateDressAid(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetPrivateDressAid", args = 1)]
-    pub fn get_private_dress_aid(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
-
+    pub fn get_private_dress_aid(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AccessoryShopUtility_unity2_raw::get_private_dress_aid(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetAccessoryName(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"]
-    #[method(name = "GetAccessoryName", args = 2)]
     pub fn get_accessory_name(
-        accessory_data: crate::app::accessorydata::AccessoryData,
-        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
-    ) -> ::unity2::Il2CppString;
-
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        female: impl ::core::convert::Into<
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AccessoryShopUtility_unity2_raw::get_accessory_name(
+                ::core::convert::Into::into(accessory_data),
+                ::core::convert::Into::into(female),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetAccessoryHelp(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"]
-    #[method(name = "GetAccessoryHelp", args = 2)]
     pub fn get_accessory_help(
-        accessory_data: crate::app::accessorydata::AccessoryData,
-        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        female: impl ::core::convert::Into<
+            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+        >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __AccessoryShopUtility_unity2_raw::get_accessory_help(
+                ::core::convert::Into::into(accessory_data),
+                ::core::convert::Into::into(female),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-accessoryshoputility")]
+pub trait IAccessoryShopUtilityMethods: IAccessoryShopUtility {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AccessoryShopUtility as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AccessoryShopUtility_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-accessoryshoputility")]
+impl<__T: IAccessoryShopUtility> IAccessoryShopUtilityMethods for __T {}
 
 #[cfg(feature = "app-accessoryshoputility")]
 impl AccessoryShopUtility {
@@ -106,4 +339,21 @@ impl AccessoryShopUtility {
         <Self as IAccessoryShopUtilityMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-accessoryshoputility")]
+pub mod prelude {
+    pub use super::AccessoryShopUtility;
+    pub use super::AccessoryShopUtility_Female;
+    pub use super::IAccessoryShopUtility;
+    pub use super::IAccessoryShopUtilityMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

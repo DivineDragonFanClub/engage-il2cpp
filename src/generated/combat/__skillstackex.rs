@@ -17,48 +17,537 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-__skillstackex")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod ____SkillStackEx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_not_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "IsNotNull",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "IsNotNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_not_null(
+        ss: crate::combat::skillstack::SkillStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_not_null::get_offset() as isize),
+        );
+        inner(ss, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "IsNull",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "IsNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_null(
+        ss: crate::combat::skillstack::SkillStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_null::get_offset() as isize),
+        );
+        inner(ss, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_not_null_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "IsNotNull",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "IsNotNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_not_null_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_not_null_2::get_offset() as isize),
+        );
+        inner(ss, from_side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_null_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "IsNull",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "IsNull",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_null_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_null_2::get_offset() as isize),
+        );
+        inner(ss, from_side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "Has",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "Has",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has(
+        ss: crate::combat::skillstack::SkillStack,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has::get_offset() as isize),
+        );
+        inner(ss, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "Get",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        ss: crate::combat::skillstack::SkillStack,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::skillstack::SkillStack_Packet {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::skillstack::SkillStack_Packet = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(ss, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "Has",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "Has",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_2::get_offset() as isize),
+        );
+        inner(ss, from_side, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <__SkillStackEx as ::unity2::ClassIdentity>::class(),
+                "Get",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <__SkillStackEx as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(
+            crate::combat::skillstack::SkillStack,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_2::get_offset() as isize),
+        );
+        inner(ss, from_side, name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-__skillstackex")]
 impl __SkillStackEx {
     #[doc = "`IsNotNull(crate::combat::skillstack::SkillStack)` overload"]
-    #[method(name = "IsNotNull", args = 1)]
-    pub fn is_not_null(ss: crate::combat::skillstack::SkillStack) -> bool;
-
+    pub fn is_not_null(
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+    ) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::is_not_null(
+                ::core::convert::Into::into(ss),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsNull(crate::combat::skillstack::SkillStack)` overload"]
-    #[method(name = "IsNull", args = 1)]
-    pub fn is_null(ss: crate::combat::skillstack::SkillStack) -> bool;
-
+    pub fn is_null(ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::is_null(
+                ::core::convert::Into::into(ss),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsNotNull(crate::combat::skillstack::SkillStack, i32)` overload"]
-    #[method(name = "IsNotNull", args = 2)]
-    pub fn is_not_null_2(ss: crate::combat::skillstack::SkillStack, from_side: i32) -> bool;
-
+    pub fn is_not_null_2(
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        from_side: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::is_not_null_2(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(from_side),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsNull(crate::combat::skillstack::SkillStack, i32)` overload"]
-    #[method(name = "IsNull", args = 2)]
-    pub fn is_null_2(ss: crate::combat::skillstack::SkillStack, from_side: i32) -> bool;
-
+    pub fn is_null_2(
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        from_side: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::is_null_2(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(from_side),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Has(crate::combat::skillstack::SkillStack, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Has", args = 2)]
-    pub fn has(ss: crate::combat::skillstack::SkillStack, name: ::unity2::Il2CppString) -> bool;
-
+    pub fn has(
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::has(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Get(crate::combat::skillstack::SkillStack, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Get", args = 2)]
     pub fn get(
-        ss: crate::combat::skillstack::SkillStack,
-        name: ::unity2::Il2CppString,
-    ) -> crate::combat::skillstack::SkillStack_Packet;
-
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::combat::skillstack::SkillStack_Packet {
+        unsafe {
+            ____SkillStackEx_unity2_raw::get(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Has(crate::combat::skillstack::SkillStack, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Has", args = 3)]
     pub fn has_2(
-        ss: crate::combat::skillstack::SkillStack,
-        from_side: i32,
-        name: ::unity2::Il2CppString,
-    ) -> bool;
-
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        from_side: impl ::core::convert::Into<i32>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            ____SkillStackEx_unity2_raw::has_2(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(from_side),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Get(crate::combat::skillstack::SkillStack, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Get", args = 3)]
     pub fn get_2(
-        ss: crate::combat::skillstack::SkillStack,
-        from_side: i32,
-        name: ::unity2::Il2CppString,
-    ) -> crate::app::skilldata::SkillData;
+        ss: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
+        from_side: impl ::core::convert::Into<i32>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::skilldata::SkillData {
+        unsafe {
+            ____SkillStackEx_unity2_raw::get_2(
+                ::core::convert::Into::into(ss),
+                ::core::convert::Into::into(from_side),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-__skillstackex")]
+pub mod prelude {
+    pub use super::I__SkillStackEx;
+    pub use super::__SkillStackEx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

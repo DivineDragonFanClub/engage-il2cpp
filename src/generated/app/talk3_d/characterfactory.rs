@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "app-talk3_d-characterfactory-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-talk3_d-characterfactory")]
+pub mod prelude {
+    pub use super::CharacterFactory;
+    pub use super::ICharacterFactory;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

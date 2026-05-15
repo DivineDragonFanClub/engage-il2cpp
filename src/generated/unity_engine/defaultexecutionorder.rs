@@ -18,16 +18,132 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-defaultexecutionorder")]
-#[::unity2::methods]
-impl DefaultExecutionOrder {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, order: i32) -> ();
-
-    #[doc = "`get_order()` overload"]
-    #[method(name = "get_order", args = 0)]
-    pub fn get_order(self) -> i32;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DefaultExecutionOrder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DefaultExecutionOrder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DefaultExecutionOrder as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DefaultExecutionOrder,
+        order: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DefaultExecutionOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DefaultExecutionOrder as ::unity2::ClassIdentity>::class(),
+                "get_order",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DefaultExecutionOrder as ::unity2::ClassIdentity>::NAME,
+                    "get_order",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_order(
+        this: DefaultExecutionOrder,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DefaultExecutionOrder, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_order::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+pub trait IDefaultExecutionOrderMethods: IDefaultExecutionOrder {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, order: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <DefaultExecutionOrder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DefaultExecutionOrder_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_order()` overload"]
+    fn get_order(self) -> i32 {
+        unsafe {
+            let __receiver = <DefaultExecutionOrder as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DefaultExecutionOrder_unity2_raw::get_order(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+impl<__T: IDefaultExecutionOrder> IDefaultExecutionOrderMethods for __T {}
 
 #[cfg(feature = "unity_engine-defaultexecutionorder")]
 impl DefaultExecutionOrder {
@@ -43,4 +159,11 @@ impl DefaultExecutionOrder {
         <Self as IDefaultExecutionOrderMethods>::ctor(this, order);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+pub mod prelude {
+    pub use super::DefaultExecutionOrder;
+    pub use super::IDefaultExecutionOrder;
+    pub use super::IDefaultExecutionOrderMethods;
 }

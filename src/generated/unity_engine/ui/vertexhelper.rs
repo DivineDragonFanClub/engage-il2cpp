@@ -60,52 +60,526 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-vertexhelper")]
-#[::unity2::methods]
-impl VertexHelper {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, m: crate::unity_engine::mesh::Mesh) -> ();
-
-    #[doc = "`InitializeListIfRequired()` overload"]
-    #[method(name = "InitializeListIfRequired", args = 0)]
-    pub fn initialize_list_if_required(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_currentVertCount()` overload"]
-    #[method(name = "get_currentVertCount", args = 0)]
-    pub fn get_current_vert_count(self) -> i32;
-
-    #[doc = "`get_currentIndexCount()` overload"]
-    #[method(name = "get_currentIndexCount", args = 0)]
-    pub fn get_current_index_count(self) -> i32;
-
-    #[doc = "`PopulateUIVertex(crate::unity_engine::uivertex::UIVertex, i32)` overload"]
-    #[method(name = "PopulateUIVertex", args = 2)]
-    pub fn populate_ui_vertex(self, vertex: crate::unity_engine::uivertex::UIVertex, i: i32) -> ();
-
-    #[doc = "`SetUIVertex(crate::unity_engine::uivertex::UIVertex, i32)` overload"]
-    #[method(name = "SetUIVertex", args = 2)]
-    pub fn set_ui_vertex(self, vertex: crate::unity_engine::uivertex::UIVertex, i: i32) -> ();
-
-    #[doc = "`FillMesh(crate::unity_engine::mesh::Mesh)` overload"]
-    #[method(name = "FillMesh", args = 1)]
-    pub fn fill_mesh(self, mesh: crate::unity_engine::mesh::Mesh) -> ();
-
-    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "AddVert", args = 8)]
-    pub fn add_vert(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VertexHelper_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: VertexHelper, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: VertexHelper,
+        m: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, m, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_list_if_required {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "InitializeListIfRequired",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "InitializeListIfRequired",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_list_if_required(
+        this: VertexHelper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_initialize_list_if_required::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: VertexHelper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: VertexHelper, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_vert_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "get_currentVertCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "get_currentVertCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_vert_count(
+        this: VertexHelper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_current_vert_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_index_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "get_currentIndexCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "get_currentIndexCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_index_count(
+        this: VertexHelper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(VertexHelper, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_current_index_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_ui_vertex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::uivertex::UIVertex as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "PopulateUIVertex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "PopulateUIVertex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_ui_vertex(
+        this: VertexHelper,
+        vertex: *mut crate::unity_engine::uivertex::UIVertex,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            *mut crate::unity_engine::uivertex::UIVertex,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_populate_ui_vertex::get_offset() as isize),
+        );
+        inner(this, vertex, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ui_vertex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::uivertex::UIVertex as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "SetUIVertex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "SetUIVertex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ui_vertex(
+        this: VertexHelper,
+        vertex: crate::unity_engine::uivertex::UIVertex,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::uivertex::UIVertex,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ui_vertex::get_offset() as isize),
+        );
+        inner(this, vertex, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "FillMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "FillMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_mesh(
+        this: VertexHelper,
+        mesh: crate::unity_engine::mesh::Mesh,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fill_mesh::get_offset() as isize),
+        );
+        inner(this, mesh, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_vert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddVert",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddVert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_vert(
+        this: VertexHelper,
         position: crate::unity_engine::vector3::Vector3,
         color: crate::unity_engine::color32::Color32,
         uv0: crate::unity_engine::vector4::Vector4,
@@ -114,76 +588,864 @@ impl VertexHelper {
         uv3: crate::unity_engine::vector4::Vector4,
         normal: crate::unity_engine::vector3::Vector3,
         tangent: crate::unity_engine::vector4::Vector4,
-    ) -> ();
-
-    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "AddVert", args = 6)]
-    pub fn add_vert_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color32::Color32,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_vert::get_offset() as isize),
+        );
+        inner(
+            this,
+            position,
+            color,
+            uv0,
+            uv1,
+            uv2,
+            uv3,
+            normal,
+            tangent,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_vert_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddVert",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddVert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_vert_2(
+        this: VertexHelper,
         position: crate::unity_engine::vector3::Vector3,
         color: crate::unity_engine::color32::Color32,
         uv0: crate::unity_engine::vector4::Vector4,
         uv1: crate::unity_engine::vector4::Vector4,
         normal: crate::unity_engine::vector3::Vector3,
         tangent: crate::unity_engine::vector4::Vector4,
-    ) -> ();
-
-    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "AddVert", args = 3)]
-    pub fn add_vert_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color32::Color32,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector4::Vector4,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_vert_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            position,
+            color,
+            uv0,
+            uv1,
+            normal,
+            tangent,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_vert_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddVert",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddVert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_vert_3(
+        this: VertexHelper,
         position: crate::unity_engine::vector3::Vector3,
         color: crate::unity_engine::color32::Color32,
         uv0: crate::unity_engine::vector4::Vector4,
-    ) -> ();
-
-    #[doc = "`AddVert(crate::unity_engine::uivertex::UIVertex)` overload"]
-    #[method(name = "AddVert", args = 1)]
-    pub fn add_vert_4(self, v: crate::unity_engine::uivertex::UIVertex) -> ();
-
-    #[doc = "`AddTriangle(i32, i32, i32)` overload"]
-    #[method(name = "AddTriangle", args = 3)]
-    pub fn add_triangle(self, idx0: i32, idx1: i32, idx2: i32) -> ();
-
-    #[doc = "`AddUIVertexQuad(::unity2::Array<crate::unity_engine::uivertex::UIVertex>)` overload"]
-    #[method(name = "AddUIVertexQuad", args = 1)]
-    pub fn add_ui_vertex_quad(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color32::Color32,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_vert_3::get_offset() as isize),
+        );
+        inner(this, position, color, uv0, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_vert_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::uivertex::UIVertex as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddVert",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddVert",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_vert_4(
+        this: VertexHelper,
+        v: crate::unity_engine::uivertex::UIVertex,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::unity_engine::uivertex::UIVertex,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_vert_4::get_offset() as isize),
+        );
+        inner(this, v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_triangle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddTriangle",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddTriangle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_triangle(
+        this: VertexHelper,
+        idx0: i32,
+        idx1: i32,
+        idx2: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VertexHelper, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_triangle::get_offset() as isize),
+            );
+        inner(this, idx0, idx1, idx2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_ui_vertex_quad {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::uivertex::UIVertex,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddUIVertexQuad",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddUIVertexQuad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_ui_vertex_quad(
+        this: VertexHelper,
         verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
-    ) -> ();
-
-    #[doc = "`AddUIVertexStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::system::collections::generic::list_1::List_1<i32>)` overload"]
-    #[method(name = "AddUIVertexStream", args = 2)]
-    pub fn add_ui_vertex_stream(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_ui_vertex_quad::get_offset() as isize),
+        );
+        inner(this, verts, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_ui_vertex_stream {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddUIVertexStream",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddUIVertexStream",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_ui_vertex_stream(
+        this: VertexHelper,
         verts: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::uivertex::UIVertex,
         >,
         indices: crate::system::collections::generic::list_1::List_1<i32>,
-    ) -> ();
-
-    #[doc = "`AddUIVertexTriangleStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
-    #[method(name = "AddUIVertexTriangleStream", args = 1)]
-    pub fn add_ui_vertex_triangle_stream(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_ui_vertex_stream::get_offset() as isize),
+        );
+        inner(this, verts, indices, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_ui_vertex_triangle_stream {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::uivertex::UIVertex,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "AddUIVertexTriangleStream",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "AddUIVertexTriangleStream",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_ui_vertex_triangle_stream(
+        this: VertexHelper,
         verts: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::uivertex::UIVertex,
         >,
-    ) -> ();
-
-    #[doc = "`GetUIVertexStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
-    #[method(name = "GetUIVertexStream", args = 1)]
-    pub fn get_ui_vertex_stream(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_ui_vertex_triangle_stream::get_offset() as isize),
+        );
+        inner(this, verts, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ui_vertex_stream {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::uivertex::UIVertex,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                "GetUIVertexStream",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    "GetUIVertexStream",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ui_vertex_stream(
+        this: VertexHelper,
         stream: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::uivertex::UIVertex,
         >,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VertexHelper,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ui_vertex_stream::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VertexHelper as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VertexHelper as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-vertexhelper")]
+impl VertexHelper {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __VertexHelper_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-vertexhelper")]
+pub trait IVertexHelperMethods: IVertexHelper {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh)` overload"]
+    fn ctor_2(self, m: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(m),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InitializeListIfRequired()` overload"]
+    fn initialize_list_if_required(self) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::initialize_list_if_required(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_currentVertCount()` overload"]
+    fn get_current_vert_count(self) -> i32 {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::get_current_vert_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_currentIndexCount()` overload"]
+    fn get_current_index_count(self) -> i32 {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::get_current_index_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopulateUIVertex(*mutcrate::unity_engine::uivertex::UIVertex, i32)` overload"]
+    fn populate_ui_vertex(
+        self,
+        i: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::uivertex::UIVertex {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::uivertex::UIVertex>::uninit();
+            __VertexHelper_unity2_raw::populate_ui_vertex(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetUIVertex(crate::unity_engine::uivertex::UIVertex, i32)` overload"]
+    fn set_ui_vertex(
+        self,
+        vertex: impl ::core::convert::Into<crate::unity_engine::uivertex::UIVertex>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::set_ui_vertex(
+                __receiver,
+                ::core::convert::Into::into(vertex),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillMesh(crate::unity_engine::mesh::Mesh)` overload"]
+    fn fill_mesh(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::fill_mesh(
+                __receiver,
+                ::core::convert::Into::into(mesh),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector4::Vector4)` overload"]
+    fn add_vert(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        uv1: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        uv2: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        uv3: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        normal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        tangent: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_vert(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv1),
+                ::core::convert::Into::into(uv2),
+                ::core::convert::Into::into(uv3),
+                ::core::convert::Into::into(normal),
+                ::core::convert::Into::into(tangent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector4::Vector4)` overload"]
+    fn add_vert_2(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        uv1: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+        normal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        tangent: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_vert_2(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv1),
+                ::core::convert::Into::into(normal),
+                ::core::convert::Into::into(tangent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddVert(crate::unity_engine::vector3::Vector3, crate::unity_engine::color32::Color32, crate::unity_engine::vector4::Vector4)` overload"]
+    fn add_vert_3(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_vert_3(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv0),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddVert(crate::unity_engine::uivertex::UIVertex)` overload"]
+    fn add_vert_4(
+        self,
+        v: impl ::core::convert::Into<crate::unity_engine::uivertex::UIVertex>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_vert_4(
+                __receiver,
+                ::core::convert::Into::into(v),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddTriangle(i32, i32, i32)` overload"]
+    fn add_triangle(
+        self,
+        idx0: impl ::core::convert::Into<i32>,
+        idx1: impl ::core::convert::Into<i32>,
+        idx2: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_triangle(
+                __receiver,
+                ::core::convert::Into::into(idx0),
+                ::core::convert::Into::into(idx1),
+                ::core::convert::Into::into(idx2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddUIVertexQuad(::unity2::Array<crate::unity_engine::uivertex::UIVertex>)` overload"]
+    fn add_ui_vertex_quad(
+        self,
+        verts: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::uivertex::UIVertex>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_ui_vertex_quad(
+                __receiver,
+                ::core::convert::Into::into(verts),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddUIVertexStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::system::collections::generic::list_1::List_1<i32>)` overload"]
+    fn add_ui_vertex_stream(
+        self,
+        verts: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+        >,
+        indices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_ui_vertex_stream(
+                __receiver,
+                ::core::convert::Into::into(verts),
+                ::core::convert::Into::into(indices),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddUIVertexTriangleStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
+    fn add_ui_vertex_triangle_stream(
+        self,
+        verts: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::add_ui_vertex_triangle_stream(
+                __receiver,
+                ::core::convert::Into::into(verts),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUIVertexStream(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
+    fn get_ui_vertex_stream(
+        self,
+        stream: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <VertexHelper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VertexHelper_unity2_raw::get_ui_vertex_stream(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-vertexhelper")]
+impl<__T: IVertexHelper> IVertexHelperMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-vertexhelper")]
 impl VertexHelper {
@@ -212,4 +1474,14 @@ impl VertexHelper {
         <Self as IVertexHelperMethods>::ctor_2(this, m);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-vertexhelper")]
+pub mod prelude {
+    pub use super::IVertexHelper;
+    pub use super::IVertexHelperMethods;
+    pub use super::VertexHelper;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

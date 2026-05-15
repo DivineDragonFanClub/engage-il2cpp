@@ -15,20 +15,160 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-istructuralequatable")]
-#[::unity2::methods]
-impl IStructuralEquatable {
-    #[doc = "`Equals(crate::system::object::Object, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
-    #[method(name = "Equals", args = 2)]
-    pub fn equals(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IStructuralEquatable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IStructuralEquatable as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IStructuralEquatable as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: IStructuralEquatable,
         other: crate::system::object::Object,
         comparer: crate::system::collections::iequalitycomparer::IEqualityComparer,
-    ) -> bool;
-
-    #[doc = "`GetHashCode(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
-    #[method(name = "GetHashCode", args = 1)]
-    pub fn get_hash_code(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            IStructuralEquatable,
+            crate::system::object::Object,
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, comparer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: iequalitycomparer :: IEqualityComparer as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IStructuralEquatable as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IStructuralEquatable as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: IStructuralEquatable,
         comparer: crate::system::collections::iequalitycomparer::IEqualityComparer,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            IStructuralEquatable,
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hash_code::get_offset() as isize),
+        );
+        inner(this, comparer, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-istructuralequatable")]
+pub trait IIStructuralEquatableMethods: IIStructuralEquatable {
+    #[doc = "`Equals(crate::system::object::Object, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
+    fn equals(
+        self,
+        other: impl ::core::convert::Into<crate::system::object::Object>,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = <IStructuralEquatable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IStructuralEquatable_unity2_raw::equals(
+                __receiver,
+                ::core::convert::Into::into(other),
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHashCode(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]
+    fn get_hash_code(
+        self,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::iequalitycomparer::IEqualityComparer,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <IStructuralEquatable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IStructuralEquatable_unity2_raw::get_hash_code(
+                __receiver,
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-istructuralequatable")]
+impl<__T: IIStructuralEquatable> IIStructuralEquatableMethods for __T {}
+
+#[cfg(feature = "system-collections-istructuralequatable")]
+pub mod prelude {
+    pub use super::IIStructuralEquatable;
+    pub use super::IIStructuralEquatableMethods;
+    pub use super::IStructuralEquatable;
 }

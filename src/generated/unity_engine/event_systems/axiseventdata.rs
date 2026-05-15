@@ -21,34 +21,323 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-axiseventdata")]
-#[::unity2::methods]
-impl AxisEventData {
-    #[doc = "`get_moveVector()` overload"]
-    #[method(name = "get_moveVector", args = 0)]
-    pub fn get_move_vector(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`set_moveVector(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "set_moveVector", args = 1)]
-    pub fn set_move_vector(self, value: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`get_moveDir()` overload"]
-    #[method(name = "get_moveDir", args = 0)]
-    pub fn get_move_dir(self) -> crate::unity_engine::event_systems::movedirection::MoveDirection;
-
-    #[doc = "`set_moveDir(crate::unity_engine::event_systems::movedirection::MoveDirection)` overload"]
-    #[method(name = "set_moveDir", args = 1)]
-    pub fn set_move_dir(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AxisEventData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AxisEventData as ::unity2::ClassIdentity>::class(),
+                "get_moveVector",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AxisEventData as ::unity2::ClassIdentity>::NAME,
+                    "get_moveVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_move_vector(
+        this: AxisEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            AxisEventData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_move_vector::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AxisEventData as ::unity2::ClassIdentity>::class(),
+                "set_moveVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AxisEventData as ::unity2::ClassIdentity>::NAME,
+                    "set_moveVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_move_vector(
+        this: AxisEventData,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AxisEventData,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_move_vector::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AxisEventData as ::unity2::ClassIdentity>::class(),
+                "get_moveDir",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AxisEventData as ::unity2::ClassIdentity>::NAME,
+                    "get_moveDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_move_dir(
+        this: AxisEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        let inner : extern "C" fn (AxisEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_move_dir :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: movedirection :: MoveDirection as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AxisEventData as ::unity2::ClassIdentity>::class(),
+                "set_moveDir",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AxisEventData as ::unity2::ClassIdentity>::NAME,
+                    "set_moveDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_move_dir(
+        this: AxisEventData,
         value: crate::unity_engine::event_systems::movedirection::MoveDirection,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AxisEventData,
+            crate::unity_engine::event_systems::movedirection::MoveDirection,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_move_dir::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: eventsystem :: EventSystem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AxisEventData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AxisEventData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AxisEventData,
         event_system: crate::unity_engine::event_systems::eventsystem::EventSystem,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AxisEventData,
+            crate::unity_engine::event_systems::eventsystem::EventSystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, event_system, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
+pub trait IAxisEventDataMethods: IAxisEventData {
+    #[doc = "`get_moveVector()` overload"]
+    fn get_move_vector(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <AxisEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AxisEventData_unity2_raw::get_move_vector(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_moveVector(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_move_vector(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AxisEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AxisEventData_unity2_raw::set_move_vector(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_moveDir()` overload"]
+    fn get_move_dir(self) -> crate::unity_engine::event_systems::movedirection::MoveDirection {
+        unsafe {
+            let __receiver = <AxisEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AxisEventData_unity2_raw::get_move_dir(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_moveDir(crate::unity_engine::event_systems::movedirection::MoveDirection)` overload"]
+    fn set_move_dir(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::movedirection::MoveDirection,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AxisEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AxisEventData_unity2_raw::set_move_dir(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]
+    fn ctor(
+        self,
+        event_system: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::eventsystem::EventSystem,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <AxisEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AxisEventData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(event_system),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
+impl<__T: IAxisEventData> IAxisEventDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-axiseventdata")]
 impl AxisEventData {
@@ -64,4 +353,20 @@ impl AxisEventData {
         <Self as IAxisEventDataMethods>::ctor(this, event_system);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
+pub mod prelude {
+    pub use super::AxisEventData;
+    pub use super::IAxisEventData;
+    pub use super::IAxisEventDataMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::event_systems::abstracteventdata::IAbstractEventData;
+    #[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
+    pub use crate::unity_engine::event_systems::abstracteventdata::IAbstractEventDataMethods;
+    pub use crate::unity_engine::event_systems::baseeventdata::IBaseEventData;
+    #[cfg(feature = "unity_engine-event_systems-baseeventdata")]
+    pub use crate::unity_engine::event_systems::baseeventdata::IBaseEventDataMethods;
 }

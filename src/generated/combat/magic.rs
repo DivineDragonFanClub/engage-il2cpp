@@ -21,15 +21,27 @@ mod __types {
         #[rename(name = "m_SignalProcessor")]
         pub m_signal_processor: crate::combat::magicsignalprocessor::MagicSignalProcessor,
         #[rename(name = "Track開始時処理")]
-        pub track_____: crate::combat::magicsignaltrack::MagicSignalTrack,
+        pub track開始時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
         #[rename(name = "Track魔法動作1処理")]
-        pub track____1__: crate::combat::magicsignaltrack::MagicSignalTrack,
+        pub track魔法動作1処理: crate::combat::magicsignaltrack::MagicSignalTrack,
         #[rename(name = "Track魔法動作2処理")]
-        pub track____2__: crate::combat::magicsignaltrack::MagicSignalTrack,
+        pub track魔法動作2処理: crate::combat::magicsignaltrack::MagicSignalTrack,
         #[rename(name = "Track魔法動作3処理")]
-        pub track____3__: crate::combat::magicsignaltrack::MagicSignalTrack,
+        pub track魔法動作3処理: crate::combat::magicsignaltrack::MagicSignalTrack,
         #[rename(name = "Trackヒット時処理")]
-        pub track______: crate::combat::magicsignaltrack::MagicSignalTrack,
+        pub trackヒット時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Trackミス時処理")]
+        pub trackミス時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Trackガード時処理")]
+        pub trackガード時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Trackパリィ時処理")]
+        pub trackパリィ時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Track衝突時処理")]
+        pub track衝突時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Track自然消滅処理")]
+        pub track自然消滅処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[rename(name = "Track打撃命中処理")]
+        pub track打撃命中処理: crate::combat::magicsignaltrack::MagicSignalTrack,
         #[rename(name = "_homeNode")]
         pub home_node: crate::unity_engine::transform::Transform,
         #[rename(name = "_targetNode")]
@@ -41,68 +53,892 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-magic")]
-#[::unity2::methods]
-impl Magic {
-    #[doc = "`get_InitialStartPos()` overload"]
-    #[method(name = "get_InitialStartPos", args = 0)]
-    pub fn get_initial_start_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_InitialStartPos(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_InitialStartPos", args = 1)]
-    pub fn set_initial_start_pos(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_InitialEndPos()` overload"]
-    #[method(name = "get_InitialEndPos", args = 0)]
-    pub fn get_initial_end_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_InitialEndPos(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_InitialEndPos", args = 1)]
-    pub fn set_initial_end_pos(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`Track(i32)` overload"]
-    #[method(name = "Track", args = 1)]
-    pub fn track(self, i: i32) -> crate::combat::magicsignaltrack::MagicSignalTrack;
-
-    #[doc = "`get_HomeNode()` overload"]
-    #[method(name = "get_HomeNode", args = 0)]
-    pub fn get_home_node(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_TargetNode()` overload"]
-    #[method(name = "get_TargetNode", args = 0)]
-    pub fn get_target_node(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_TargetPosition()` overload"]
-    #[method(name = "get_TargetPosition", args = 0)]
-    pub fn get_target_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`RecalcFlyingTime()` overload"]
-    #[method(name = "RecalcFlyingTime", args = 0)]
-    pub fn recalc_flying_time(self) -> ();
-
-    #[doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"]
-    #[method(name = "OnCharacterSetup", args = 1)]
-    pub fn on_character_setup(self, owner: crate::combat::character::Character) -> ();
-
-    #[doc = "`OnEnterAttack()` overload"]
-    #[method(name = "OnEnterAttack", args = 0)]
-    pub fn on_enter_attack(self) -> ();
-
-    #[doc = "`OnHitTimePredicted(f32)` overload"]
-    #[method(name = "OnHitTimePredicted", args = 1)]
-    pub fn on_hit_time_predicted(self, world_hit_time: f32) -> ();
-
-    #[doc = "`OnHitMagicSwordHit()` overload"]
-    #[method(name = "OnHitMagicSwordHit", args = 0)]
-    pub fn on_hit_magic_sword_hit(self) -> ();
-
-    #[doc = "`GetIceRockSkippedPrefab仕方なく()` overload"]
-    #[method(name = "GetIceRockSkippedPrefab仕方なく", args = 0)]
-    pub fn get_ice_rock_skipped_prefab____(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Magic_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_initial_start_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "get_InitialStartPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "get_InitialStartPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_initial_start_pos(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_initial_start_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_initial_start_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "set_InitialStartPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "set_InitialStartPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_initial_start_pos(
+        this: Magic,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Magic,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_initial_start_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_initial_end_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "get_InitialEndPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "get_InitialEndPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_initial_end_pos(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_initial_end_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_initial_end_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "set_InitialEndPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "set_InitialEndPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_initial_end_pos(
+        this: Magic,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Magic,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_initial_end_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "Track",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "Track",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn track(
+        this: Magic,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::magicsignaltrack::MagicSignalTrack {
+        let inner: extern "C" fn(
+            Magic,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::magicsignaltrack::MagicSignalTrack = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_track::get_offset() as isize),
+        );
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_home_node {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "get_HomeNode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "get_HomeNode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_home_node(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_home_node::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_node {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "get_TargetNode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "get_TargetNode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_node(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_node::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "get_TargetPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "get_TargetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_position(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recalc_flying_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "RecalcFlyingTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "RecalcFlyingTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn recalc_flying_time(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Magic, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_recalc_flying_time::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_character_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "OnCharacterSetup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "OnCharacterSetup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_character_setup(
+        this: Magic,
+        owner: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Magic,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_character_setup::get_offset() as isize),
+        );
+        inner(this, owner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enter_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "OnEnterAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "OnEnterAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enter_attack(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Magic, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_enter_attack::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_hit_time_predicted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "OnHitTimePredicted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "OnHitTimePredicted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_hit_time_predicted(
+        this: Magic,
+        world_hit_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Magic, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_hit_time_predicted::get_offset() as isize),
+            );
+        inner(this, world_hit_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_hit_magic_sword_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "OnHitMagicSwordHit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "OnHitMagicSwordHit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_hit_magic_sword_hit(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Magic, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_hit_magic_sword_hit::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ice_rock_skipped_prefab仕方なく {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                "GetIceRockSkippedPrefab仕方なく",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    "GetIceRockSkippedPrefab仕方なく",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ice_rock_skipped_prefab仕方なく(
+        this: Magic,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            Magic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ice_rock_skipped_prefab仕方なく::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Magic as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Magic as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Magic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Magic, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-magic")]
+pub trait IMagicMethods: IMagic {
+    #[doc = "`get_InitialStartPos()` overload"]
+    fn get_initial_start_pos(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_initial_start_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_InitialStartPos(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_initial_start_pos(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::set_initial_start_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_InitialEndPos()` overload"]
+    fn get_initial_end_pos(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_initial_end_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_InitialEndPos(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_initial_end_pos(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::set_initial_end_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Track(i32)` overload"]
+    fn track(
+        self,
+        i: impl ::core::convert::Into<i32>,
+    ) -> crate::combat::magicsignaltrack::MagicSignalTrack {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::track(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HomeNode()` overload"]
+    fn get_home_node(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_home_node(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_TargetNode()` overload"]
+    fn get_target_node(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_target_node(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_TargetPosition()` overload"]
+    fn get_target_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_target_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RecalcFlyingTime()` overload"]
+    fn recalc_flying_time(self) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::recalc_flying_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"]
+    fn on_character_setup(
+        self,
+        owner: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::on_character_setup(
+                __receiver,
+                ::core::convert::Into::into(owner),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnEnterAttack()` overload"]
+    fn on_enter_attack(self) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnHitTimePredicted(f32)` overload"]
+    fn on_hit_time_predicted(self, world_hit_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::on_hit_time_predicted(
+                __receiver,
+                ::core::convert::Into::into(world_hit_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnHitMagicSwordHit()` overload"]
+    fn on_hit_magic_sword_hit(self) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::on_hit_magic_sword_hit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetIceRockSkippedPrefab仕方なく()` overload"]
+    fn get_ice_rock_skipped_prefab仕方なく(
+        self,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::get_ice_rock_skipped_prefab仕方なく(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Magic as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Magic_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-magic")]
+impl<__T: IMagic> IMagicMethods for __T {}
 
 #[cfg(feature = "combat-magic")]
 impl Magic {
@@ -118,4 +954,29 @@ impl Magic {
         <Self as IMagicMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-magic")]
+pub mod prelude {
+    pub use super::IMagic;
+    pub use super::IMagicMethods;
+    pub use super::Magic;
+    pub use crate::combat::launchbehaviour::ILaunchBehaviour;
+    #[cfg(feature = "combat-launchbehaviour")]
+    pub use crate::combat::launchbehaviour::ILaunchBehaviourMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

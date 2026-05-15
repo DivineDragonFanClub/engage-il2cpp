@@ -65,3 +65,23 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1
         this
     }
 }
+
+#[cfg(feature = "app-enumitem_2")]
+pub mod prelude {
+    pub use super::EnumItem_2;
+    pub use super::IEnumItem_2;
+    pub use super::IEnumItem_2Methods;
+    pub use crate::app::instanceitem_1::IInstanceItem_1;
+    #[cfg(feature = "app-instanceitem_1")]
+    pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
+    pub use crate::app::instanceitem_1::InstanceItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    #[cfg(feature = "app-menuitem")]
+    pub use crate::app::menuitem::IMenuItemMethods;
+    pub use crate::app::paramitem::IParamItem;
+    #[cfg(feature = "app-paramitem")]
+    pub use crate::app::paramitem::IParamItemMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

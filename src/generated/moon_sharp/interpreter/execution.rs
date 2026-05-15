@@ -2,22 +2,56 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-execution-buildtimescope-types"))]
 pub mod buildtimescope;
+#[cfg(feature = "moon_sharp-interpreter-execution-buildtimescope")]
+pub use buildtimescope::IBuildTimeScopeMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-buildtimescope-types")]
+pub use buildtimescope::{BuildTimeScope, IBuildTimeScope};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-closurecontext-types"))]
 pub mod closurecontext;
+#[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
+pub use closurecontext::IClosureContextMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-closurecontext-types")]
+pub use closurecontext::{ClosureContext, IClosureContext};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-iclosurebuilder-types"))]
 pub mod iclosurebuilder;
+#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
+pub use iclosurebuilder::IIClosureBuilderMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder-types")]
+pub use iclosurebuilder::{IClosureBuilder, IIClosureBuilder};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-iloop-types"))]
 pub mod iloop;
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+pub use iloop::IILoopMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop-types")]
+pub use iloop::{IILoop, ILoop};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-instructionfieldusage-types"))]
 pub mod instructionfieldusage;
+#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage-types")]
+pub use instructionfieldusage::InstructionFieldUsage;
 #[cfg(any(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions-types"))]
 pub mod instructionfieldusage_extensions;
+#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions-types")]
+pub use instructionfieldusage_extensions::{
+    IInstructionFieldUsage_Extensions, InstructionFieldUsage_Extensions,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-looptracker-types"))]
 pub mod looptracker;
+#[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
+pub use looptracker::ILoopTrackerMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-looptracker-types")]
+pub use looptracker::{ILoopTracker, LoopTracker};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-runtimescopeblock-types"))]
 pub mod runtimescopeblock;
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeblock")]
+pub use runtimescopeblock::IRuntimeScopeBlockMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeblock-types")]
+pub use runtimescopeblock::{IRuntimeScopeBlock, RuntimeScopeBlock};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-runtimescopeframe-types"))]
 pub mod runtimescopeframe;
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
+pub use runtimescopeframe::IRuntimeScopeFrameMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe-types")]
+pub use runtimescopeframe::{IRuntimeScopeFrame, RuntimeScopeFrame};
 #[cfg(any(
     feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock-types",
     feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe-types"
@@ -25,6 +59,10 @@ pub mod runtimescopeframe;
 pub mod scopes;
 #[cfg(any(feature = "moon_sharp-interpreter-execution-scriptloadingcontext-types"))]
 pub mod scriptloadingcontext;
+#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
+pub use scriptloadingcontext::IScriptLoadingContextMethods;
+#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext-types")]
+pub use scriptloadingcontext::{IScriptLoadingContext, ScriptLoadingContext};
 #[cfg(any(
     feature = "moon_sharp-interpreter-execution-vm-bytecode-types",
     feature = "moon_sharp-interpreter-execution-vm-callstackitem-types",

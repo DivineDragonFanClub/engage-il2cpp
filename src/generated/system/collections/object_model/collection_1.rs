@@ -194,3 +194,13 @@ impl<T0: ::unity2::ClassIdentity> Collection_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-object_model-collection_1")]
+pub mod prelude {
+    pub use super::Collection_1;
+    pub use super::ICollection_1;
+    pub use super::ICollection_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

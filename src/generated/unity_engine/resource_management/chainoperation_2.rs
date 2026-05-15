@@ -119,3 +119,16 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ChainOperation_2<
         this
     }
 }
+
+#[cfg(feature = "unity_engine-resource_management-chainoperation_2")]
+pub mod prelude {
+    pub use super::ChainOperation_2;
+    pub use super::IChainOperation_2;
+    pub use super::IChainOperation_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+}

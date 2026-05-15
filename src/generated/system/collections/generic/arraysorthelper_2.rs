@@ -157,3 +157,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         this
     }
 }
+
+#[cfg(feature = "system-collections-generic-arraysorthelper_2")]
+pub mod prelude {
+    pub use super::ArraySortHelper_2;
+    pub use super::IArraySortHelper_2;
+    pub use super::IArraySortHelper_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

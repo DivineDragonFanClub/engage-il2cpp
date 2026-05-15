@@ -24,3 +24,10 @@ impl<T0: ::unity2::ClassIdentity> IReadOnlyCollection_1<T0> {
     #[method(name = "get_Count", args = 0)]
     pub fn get_count(self) -> i32;
 }
+
+#[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
+pub mod prelude {
+    pub use super::IIReadOnlyCollection_1;
+    pub use super::IIReadOnlyCollection_1Methods;
+    pub use super::IReadOnlyCollection_1;
+}

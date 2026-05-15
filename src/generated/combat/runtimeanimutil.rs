@@ -17,44 +17,494 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-runtimeanimutil")]
-#[::unity2::methods]
-impl RuntimeAnimUtil {
-    #[doc = "`IsAttack(i32)` overload"]
-    #[method(name = "IsAttack", args = 1)]
-    pub fn is_attack(hash: i32) -> bool;
-
-    #[doc = "`IsDamage(i32)` overload"]
-    #[method(name = "IsDamage", args = 1)]
-    pub fn is_damage(hash: i32) -> bool;
-
-    #[doc = "`IsDamageMid(i32)` overload"]
-    #[method(name = "IsDamageMid", args = 1)]
-    pub fn is_damage_mid(hash: i32) -> bool;
-
-    #[doc = "`IsGuard(i32)` overload"]
-    #[method(name = "IsGuard", args = 1)]
-    pub fn is_guard(hash: i32) -> bool;
-
-    #[doc = "`IsParry(i32)` overload"]
-    #[method(name = "IsParry", args = 1)]
-    pub fn is_parry(hash: i32) -> bool;
-
-    #[doc = "`IsEvasion(i32)` overload"]
-    #[method(name = "IsEvasion", args = 1)]
-    pub fn is_evasion(hash: i32) -> bool;
-
-    #[doc = "`IsDie(i32)` overload"]
-    #[method(name = "IsDie", args = 1)]
-    pub fn is_die(hash: i32) -> bool;
-
-    #[doc = "`IsDamageSideAll(i32)` overload"]
-    #[method(name = "IsDamageSideAll", args = 1)]
-    pub fn is_damage_side_all(hash: i32) -> bool;
-
-    #[doc = "`IsIdle(crate::unity_engine::animatorstateinfo::AnimatorStateInfo, f32)` overload"]
-    #[method(name = "IsIdle", args = 2)]
-    pub fn is_idle(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RuntimeAnimUtil_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsAttack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_attack(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_attack::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsDamage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsDamage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_damage(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_damage::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_damage_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsDamageMid",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsDamageMid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_damage_mid(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_damage_mid::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_guard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsGuard",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsGuard",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_guard(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_guard::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_parry {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsParry",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsParry",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_parry(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_parry::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_evasion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsEvasion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsEvasion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_evasion(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_evasion::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_die {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsDie",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsDie",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_die(hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_die::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_damage_side_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsDamageSideAll",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsDamageSideAll",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_damage_side_all(
+        hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_damage_side_all::get_offset() as isize),
+        );
+        inner(hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RuntimeAnimUtil as ::unity2::ClassIdentity>::class(),
+                "IsIdle",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RuntimeAnimUtil as ::unity2::ClassIdentity>::NAME,
+                    "IsIdle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_idle(
         state: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         backward_cancel_nt: f32,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_idle::get_offset() as isize),
+        );
+        inner(state, backward_cancel_nt, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-runtimeanimutil")]
+impl RuntimeAnimUtil {
+    #[doc = "`IsAttack(i32)` overload"]
+    pub fn is_attack(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_attack(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDamage(i32)` overload"]
+    pub fn is_damage(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_damage(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDamageMid(i32)` overload"]
+    pub fn is_damage_mid(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_damage_mid(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsGuard(i32)` overload"]
+    pub fn is_guard(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_guard(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsParry(i32)` overload"]
+    pub fn is_parry(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_parry(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEvasion(i32)` overload"]
+    pub fn is_evasion(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_evasion(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDie(i32)` overload"]
+    pub fn is_die(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_die(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsDamageSideAll(i32)` overload"]
+    pub fn is_damage_side_all(hash: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_damage_side_all(
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsIdle(crate::unity_engine::animatorstateinfo::AnimatorStateInfo, f32)` overload"]
+    pub fn is_idle(
+        state: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
+        backward_cancel_nt: impl ::core::convert::Into<f32>,
+    ) -> bool {
+        unsafe {
+            __RuntimeAnimUtil_unity2_raw::is_idle(
+                ::core::convert::Into::into(state),
+                ::core::convert::Into::into(backward_cancel_nt),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-runtimeanimutil")]
+pub mod prelude {
+    pub use super::IRuntimeAnimUtil;
+    pub use super::RuntimeAnimUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

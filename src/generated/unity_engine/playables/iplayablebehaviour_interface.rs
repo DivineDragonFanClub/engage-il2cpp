@@ -15,61 +15,595 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
-#[::unity2::methods]
-impl IPlayableBehaviour_Interface {
-    #[doc = "`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "OnGraphStart", args = 1)]
-    pub fn on_graph_start(self, playable: crate::unity_engine::playables::playable::Playable)
-        -> ();
-
-    #[doc = "`OnGraphStop(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "OnGraphStop", args = 1)]
-    pub fn on_graph_stop(self, playable: crate::unity_engine::playables::playable::Playable) -> ();
-
-    #[doc = "`OnPlayableCreate(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "OnPlayableCreate", args = 1)]
-    pub fn on_playable_create(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPlayableBehaviour_Interface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_graph_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnGraphStart",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnGraphStart",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_graph_start(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
-    ) -> ();
-
-    #[doc = "`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "OnPlayableDestroy", args = 1)]
-    pub fn on_playable_destroy(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_graph_start::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_graph_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnGraphStop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnGraphStop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_graph_stop(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
-    ) -> ();
-
-    #[doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    #[method(name = "OnBehaviourPlay", args = 2)]
-    pub fn on_behaviour_play(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_graph_stop::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_playable_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnPlayableCreate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnPlayableCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_playable_create(
+        this: IPlayableBehaviour_Interface,
+        playable: crate::unity_engine::playables::playable::Playable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_playable_create::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_playable_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnPlayableDestroy",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnPlayableDestroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_playable_destroy(
+        this: IPlayableBehaviour_Interface,
+        playable: crate::unity_engine::playables::playable::Playable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_playable_destroy::get_offset() as isize),
+        );
+        inner(this, playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_behaviour_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnBehaviourPlay",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnBehaviourPlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_behaviour_play(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
-    ) -> ();
-
-    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    #[method(name = "OnBehaviourPause", args = 2)]
-    pub fn on_behaviour_pause(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_behaviour_play::get_offset() as isize),
+        );
+        inner(this, playable, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_behaviour_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "OnBehaviourPause",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "OnBehaviourPause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_behaviour_pause(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
-    ) -> ();
-
-    #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
-    #[method(name = "PrepareFrame", args = 2)]
-    pub fn prepare_frame(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_behaviour_pause::get_offset() as isize),
+        );
+        inner(this, playable, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "PrepareFrame",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "PrepareFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare_frame(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
-    ) -> ();
-
-    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
-    #[method(name = "ProcessFrame", args = 3)]
-    pub fn process_frame(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_prepare_frame::get_offset() as isize),
+        );
+        inner(this, playable, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
+                ),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::class(),
+                "ProcessFrame",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayableBehaviour_Interface as ::unity2::ClassIdentity>::NAME,
+                    "ProcessFrame",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process_frame(
+        this: IPlayableBehaviour_Interface,
         playable: crate::unity_engine::playables::playable::Playable,
         info: crate::unity_engine::playables::framedata::FrameData,
         player_data: crate::system::object::Object,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPlayableBehaviour_Interface,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process_frame::get_offset() as isize),
+        );
+        inner(this, playable, info, player_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
+pub trait IIPlayableBehaviour_InterfaceMethods: IIPlayableBehaviour_Interface {
+    #[doc = "`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn on_graph_start(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_graph_start(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnGraphStop(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn on_graph_stop(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_graph_stop(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnPlayableCreate(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn on_playable_create(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_playable_create(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]
+    fn on_playable_destroy(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_playable_destroy(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
+    fn on_behaviour_play(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_behaviour_play(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
+    fn on_behaviour_pause(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::on_behaviour_pause(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
+    fn prepare_frame(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::prepare_frame(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
+    fn process_frame(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+        player_data: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <IPlayableBehaviour_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IPlayableBehaviour_Interface_unity2_raw::process_frame(
+                __receiver,
+                ::core::convert::Into::into(playable),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(player_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
+impl<__T: IIPlayableBehaviour_Interface> IIPlayableBehaviour_InterfaceMethods for __T {}
+
+#[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
+pub mod prelude {
+    pub use super::IIPlayableBehaviour_Interface;
+    pub use super::IIPlayableBehaviour_InterfaceMethods;
+    pub use super::IPlayableBehaviour_Interface;
 }

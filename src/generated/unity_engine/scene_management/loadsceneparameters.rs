@@ -43,12 +43,87 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LoadSceneParameters_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_load_scene_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadSceneParameters as ::unity2::ClassIdentity>::class(),
+                "set_loadSceneMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LoadSceneParameters as ::unity2::ClassIdentity>::NAME,
+                    "set_loadSceneMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_load_scene_mode(
+        this: LoadSceneParameters,
+        value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LoadSceneParameters,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_load_scene_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
 impl LoadSceneParameters {
     #[doc = "`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    #[method(name = "set_loadSceneMode", args = 1)]
     pub fn set_load_scene_mode(
         self,
-        value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
+        value: impl ::core::convert::Into<
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        >,
+    ) -> () {
+        unsafe {
+            __LoadSceneParameters_unity2_raw::set_load_scene_mode(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
+pub mod prelude {
+    pub use super::LoadSceneParameters;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

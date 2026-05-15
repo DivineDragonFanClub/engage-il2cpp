@@ -21,3 +21,10 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IProxyFactory_2<T
     #[method(name = "CreateProxyObject", args = 1)]
     pub fn create_proxy_object(self, target: T1) -> T0;
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]
+pub mod prelude {
+    pub use super::IIProxyFactory_2;
+    pub use super::IIProxyFactory_2Methods;
+    pub use super::IProxyFactory_2;
+}

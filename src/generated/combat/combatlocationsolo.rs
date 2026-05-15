@@ -31,49 +31,528 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-combatlocationsolo")]
-#[::unity2::methods]
-impl CombatLocationSolo {
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, rec: crate::combat::combatrecord::CombatRecord) -> ();
-
-    #[doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CombatLocationSolo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CombatLocationSolo,
+        rec: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CombatLocationSolo,
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, rec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::charactergamestatus::CharacterGameStatus,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: CombatLocationSolo,
         gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`get_RoughPosCount()` overload"]
-    #[method(name = "get_RoughPosCount", args = 0)]
-    pub fn get_rough_pos_count(self) -> i32;
-
-    #[doc = "`SetRoughPos(i32)` overload"]
-    #[method(name = "SetRoughPos", args = 1)]
-    pub fn set_rough_pos(self, try_count: i32) -> ();
-
-    #[doc = "`get_PatternCount()` overload"]
-    #[method(name = "get_PatternCount", args = 0)]
-    pub fn get_pattern_count(self) -> i32;
-
-    #[doc = "`SetBattlePatern(i32)` overload"]
-    #[method(name = "SetBattlePatern", args = 1)]
-    pub fn set_battle_patern(self, pattern: i32) -> ();
-
-    #[doc = "`CalcLocation()` overload"]
-    #[method(name = "CalcLocation", args = 0)]
-    pub fn calc_location(self) -> ();
-
-    #[doc = "`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
-    #[method(name = "LocateEmblem", args = 4)]
-    pub fn locate_emblem(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CombatLocationSolo,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup::get_offset() as isize),
+        );
+        inner(this, gs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rough_pos_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "get_RoughPosCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "get_RoughPosCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rough_pos_count(
+        this: CombatLocationSolo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(CombatLocationSolo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rough_pos_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rough_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "SetRoughPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "SetRoughPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rough_pos(
+        this: CombatLocationSolo,
+        try_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CombatLocationSolo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rough_pos::get_offset() as isize),
+            );
+        inner(this, try_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pattern_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "get_PatternCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "get_PatternCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pattern_count(
+        this: CombatLocationSolo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(CombatLocationSolo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_pattern_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_patern {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "SetBattlePatern",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "SetBattlePatern",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_patern(
+        this: CombatLocationSolo,
+        pattern: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CombatLocationSolo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_battle_patern::get_offset() as isize),
+            );
+        inner(this, pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_location {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "CalcLocation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "CalcLocation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_location(
+        this: CombatLocationSolo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CombatLocationSolo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_location::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_emblem {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_LocateStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CombatLocationSolo as ::unity2::ClassIdentity>::class(),
+                "LocateEmblem",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CombatLocationSolo as ::unity2::ClassIdentity>::NAME,
+                    "LocateEmblem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_emblem(
+        this: CombatLocationSolo,
         master_side: i32,
         master: crate::combat::character::Character,
         emblem: crate::combat::character::Character,
         locate_style: crate::combat::locationparams::LocationParams_LocateStyle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CombatLocationSolo,
+            i32,
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            crate::combat::locationparams::LocationParams_LocateStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_emblem::get_offset() as isize),
+        );
+        inner(
+            this,
+            master_side,
+            master,
+            emblem,
+            locate_style,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "combat-combatlocationsolo")]
+pub trait ICombatLocationSoloMethods: ICombatLocationSolo {
+    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
+    fn ctor(
+        self,
+        rec: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(rec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn setup(
+        self,
+        gs: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::setup(
+                __receiver,
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RoughPosCount()` overload"]
+    fn get_rough_pos_count(self) -> i32 {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::get_rough_pos_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRoughPos(i32)` overload"]
+    fn set_rough_pos(self, try_count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::set_rough_pos(
+                __receiver,
+                ::core::convert::Into::into(try_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PatternCount()` overload"]
+    fn get_pattern_count(self) -> i32 {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::get_pattern_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBattlePatern(i32)` overload"]
+    fn set_battle_patern(self, pattern: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::set_battle_patern(
+                __receiver,
+                ::core::convert::Into::into(pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcLocation()` overload"]
+    fn calc_location(self) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::calc_location(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
+    fn locate_emblem(
+        self,
+        master_side: impl ::core::convert::Into<i32>,
+        master: impl ::core::convert::Into<crate::combat::character::Character>,
+        emblem: impl ::core::convert::Into<crate::combat::character::Character>,
+        locate_style: impl ::core::convert::Into<
+            crate::combat::locationparams::LocationParams_LocateStyle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CombatLocationSolo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CombatLocationSolo_unity2_raw::locate_emblem(
+                __receiver,
+                ::core::convert::Into::into(master_side),
+                ::core::convert::Into::into(master),
+                ::core::convert::Into::into(emblem),
+                ::core::convert::Into::into(locate_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-combatlocationsolo")]
+impl<__T: ICombatLocationSolo> ICombatLocationSoloMethods for __T {}
 
 #[cfg(feature = "combat-combatlocationsolo")]
 impl CombatLocationSolo {
@@ -89,4 +568,17 @@ impl CombatLocationSolo {
         <Self as ICombatLocationSoloMethods>::ctor(this, rec);
         this
     }
+}
+
+#[cfg(feature = "combat-combatlocationsolo")]
+pub mod prelude {
+    pub use super::CombatLocationSolo;
+    pub use super::ICombatLocationSolo;
+    pub use super::ICombatLocationSoloMethods;
+    pub use crate::combat::basecombatlocation::IBaseCombatLocation;
+    #[cfg(feature = "combat-basecombatlocation")]
+    pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

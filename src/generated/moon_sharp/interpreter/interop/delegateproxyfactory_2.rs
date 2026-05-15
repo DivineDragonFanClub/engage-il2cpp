@@ -64,3 +64,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DelegateProxyFact
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-delegateproxyfactory_2")]
+pub mod prelude {
+    pub use super::DelegateProxyFactory_2;
+    pub use super::IDelegateProxyFactory_2;
+    pub use super::IDelegateProxyFactory_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

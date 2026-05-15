@@ -17,12 +17,91 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-hashutilities")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HashUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_append_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HashUtilities as ::unity2::ClassIdentity>::class(),
+                "AppendHash",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HashUtilities as ::unity2::ClassIdentity>::NAME,
+                    "AppendHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn append_hash(
+        in_hash: *mut crate::unity_engine::hash128::Hash128,
+        out_hash: *mut crate::unity_engine::hash128::Hash128,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::hash128::Hash128,
+            *mut crate::unity_engine::hash128::Hash128,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_append_hash::get_offset() as isize),
+        );
+        inner(in_hash, out_hash, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-hashutilities")]
 impl HashUtilities {
-    #[doc = "`AppendHash(crate::unity_engine::hash128::Hash128, crate::unity_engine::hash128::Hash128)` overload"]
-    #[method(name = "AppendHash", args = 2)]
-    pub fn append_hash(
-        in_hash: crate::unity_engine::hash128::Hash128,
-        out_hash: crate::unity_engine::hash128::Hash128,
-    ) -> ();
+    #[doc = "`AppendHash(*mutcrate::unity_engine::hash128::Hash128, *mutcrate::unity_engine::hash128::Hash128)` overload"]
+    pub fn append_hash() -> (
+        crate::unity_engine::hash128::Hash128,
+        crate::unity_engine::hash128::Hash128,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
+            __HashUtilities_unity2_raw::append_hash(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-hashutilities")]
+pub mod prelude {
+    pub use super::HashUtilities;
+    pub use super::IHashUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

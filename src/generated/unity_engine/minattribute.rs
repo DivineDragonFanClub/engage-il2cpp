@@ -21,12 +21,78 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-minattribute")]
-#[::unity2::methods]
-impl MinAttribute {
-    #[doc = "`.ctor(f32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, min: f32) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MinAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MinAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MinAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MinAttribute,
+        min: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MinAttribute, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, min, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-minattribute")]
+pub trait IMinAttributeMethods: IMinAttribute {
+    #[doc = "`.ctor(f32)` overload"]
+    fn ctor(self, min: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MinAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MinAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(min),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-minattribute")]
+impl<__T: IMinAttribute> IMinAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-minattribute")]
 impl MinAttribute {
@@ -42,4 +108,17 @@ impl MinAttribute {
         <Self as IMinAttributeMethods>::ctor(this, min);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-minattribute")]
+pub mod prelude {
+    pub use super::IMinAttribute;
+    pub use super::IMinAttributeMethods;
+    pub use super::MinAttribute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
 }

@@ -2,5 +2,9 @@
 
 #[cfg(any(feature = "unity_engine-experimental-u2d-spriteintermediaterendererinfo-types"))]
 pub mod spriteintermediaterendererinfo;
+#[cfg(feature = "unity_engine-experimental-u2d-spriteintermediaterendererinfo-types")]
+pub use spriteintermediaterendererinfo::SpriteIntermediateRendererInfo;
 #[cfg(any(feature = "unity_engine-experimental-u2d-spriterenderergroup-types"))]
 pub mod spriterenderergroup;
+#[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup-types")]
+pub use spriterenderergroup::{ISpriteRendererGroup, SpriteRendererGroup};

@@ -77,3 +77,13 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-ui-objectpool_1")]
+pub mod prelude {
+    pub use super::IObjectPool_1;
+    pub use super::IObjectPool_1Methods;
+    pub use super::ObjectPool_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

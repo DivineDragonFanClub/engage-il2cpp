@@ -45,59 +45,655 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-wwwtranscoder")]
-#[::unity2::methods]
-impl WWWTranscoder {
-    #[doc = "`Hex2Byte(::unity2::Array<u8>, i32)` overload"]
-    #[method(name = "Hex2Byte", args = 2)]
-    pub fn hex2_byte(b: ::unity2::Array<u8>, offset: i32) -> u8;
-
-    #[doc = "`Byte2Hex(u8, ::unity2::Array<u8>)` overload"]
-    #[method(name = "Byte2Hex", args = 2)]
-    pub fn byte2_hex(b: u8, hex_chars: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
-
-    #[doc = "`DataEncode(::unity2::Array<u8>)` overload"]
-    #[method(name = "DataEncode", args = 1)]
-    pub fn data_encode(to_encode: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
-
-    #[doc = "`Encode(::unity2::Array<u8>, u8, ::unity2::Array<u8>, ::unity2::Array<u8>, bool)` overload"]
-    #[method(name = "Encode", args = 5)]
-    pub fn encode(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WWWTranscoder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hex2_byte {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "Hex2Byte",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "Hex2Byte",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hex2_byte(
+        b: ::unity2::Array<u8>,
+        offset: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u8 {
+        let inner: extern "C" fn(::unity2::Array<u8>, i32, ::unity2::OptionalMethod) -> u8 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hex2_byte::get_offset() as isize),
+            );
+        inner(b, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_byte2_hex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u8 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "Byte2Hex",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "Byte2Hex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn byte2_hex(
+        b: u8,
+        hex_chars: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            u8,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_byte2_hex::get_offset() as isize),
+        );
+        inner(b, hex_chars, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_data_encode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "DataEncode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "DataEncode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn data_encode(
+        to_encode: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_data_encode::get_offset() as isize),
+        );
+        inner(to_encode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_encode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "Encode",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "Encode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn encode(
         input: ::unity2::Array<u8>,
         escape_char: u8,
         space: ::unity2::Array<u8>,
         forbidden: ::unity2::Array<u8>,
         uppercase: bool,
-    ) -> ::unity2::Array<u8>;
-
-    #[doc = "`ByteArrayContains(::unity2::Array<u8>, u8)` overload"]
-    #[method(name = "ByteArrayContains", args = 2)]
-    pub fn byte_array_contains(array: ::unity2::Array<u8>, b: u8) -> bool;
-
-    #[doc = "`URLDecode(::unity2::Array<u8>)` overload"]
-    #[method(name = "URLDecode", args = 1)]
-    pub fn url_decode(to_encode: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
-
-    #[doc = "`ByteSubArrayEquals(::unity2::Array<u8>, i32, ::unity2::Array<u8>)` overload"]
-    #[method(name = "ByteSubArrayEquals", args = 3)]
-    pub fn byte_sub_array_equals(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            u8,
+            ::unity2::Array<u8>,
+            ::unity2::Array<u8>,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_encode::get_offset() as isize),
+        );
+        inner(
+            input,
+            escape_char,
+            space,
+            forbidden,
+            uppercase,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_byte_array_contains {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "ByteArrayContains",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "ByteArrayContains",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn byte_array_contains(
+        array: ::unity2::Array<u8>,
+        b: u8,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Array<u8>, u8, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_byte_array_contains::get_offset() as isize),
+            );
+        inner(array, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_url_decode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "URLDecode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "URLDecode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn url_decode(
+        to_encode: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_url_decode::get_offset() as isize),
+        );
+        inner(to_encode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_byte_sub_array_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "ByteSubArrayEquals",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "ByteSubArrayEquals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn byte_sub_array_equals(
         array: ::unity2::Array<u8>,
         index: i32,
         comperand: ::unity2::Array<u8>,
-    ) -> bool;
-
-    #[doc = "`Decode(::unity2::Array<u8>, u8, ::unity2::Array<u8>)` overload"]
-    #[method(name = "Decode", args = 3)]
-    pub fn decode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            i32,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_byte_sub_array_equals::get_offset() as isize),
+        );
+        inner(array, index, comperand, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "Decode",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "Decode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decode(
         input: ::unity2::Array<u8>,
         escape_char: u8,
         space: ::unity2::Array<u8>,
-    ) -> ::unity2::Array<u8>;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            u8,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_decode::get_offset() as isize),
+        );
+        inner(input, escape_char, space, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_seven_bit_clean {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                "SevenBitClean",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    "SevenBitClean",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn seven_bit_clean(
+        input: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Array<u8>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_seven_bit_clean::get_offset() as isize),
+            );
+        inner(input, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WWWTranscoder as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WWWTranscoder as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-wwwtranscoder")]
+impl WWWTranscoder {
+    #[doc = "`Hex2Byte(::unity2::Array<u8>, i32)` overload"]
+    pub fn hex2_byte(
+        b: impl ::core::convert::Into<::unity2::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+    ) -> u8 {
+        unsafe {
+            __WWWTranscoder_unity2_raw::hex2_byte(
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Byte2Hex(u8, ::unity2::Array<u8>)` overload"]
+    pub fn byte2_hex(
+        b: impl ::core::convert::Into<u8>,
+        hex_chars: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __WWWTranscoder_unity2_raw::byte2_hex(
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(hex_chars),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DataEncode(::unity2::Array<u8>)` overload"]
+    pub fn data_encode(
+        to_encode: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __WWWTranscoder_unity2_raw::data_encode(
+                ::core::convert::Into::into(to_encode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Encode(::unity2::Array<u8>, u8, ::unity2::Array<u8>, ::unity2::Array<u8>, bool)` overload"]
+    pub fn encode(
+        input: impl ::core::convert::Into<::unity2::Array<u8>>,
+        escape_char: impl ::core::convert::Into<u8>,
+        space: impl ::core::convert::Into<::unity2::Array<u8>>,
+        forbidden: impl ::core::convert::Into<::unity2::Array<u8>>,
+        uppercase: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __WWWTranscoder_unity2_raw::encode(
+                ::core::convert::Into::into(input),
+                ::core::convert::Into::into(escape_char),
+                ::core::convert::Into::into(space),
+                ::core::convert::Into::into(forbidden),
+                ::core::convert::Into::into(uppercase),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ByteArrayContains(::unity2::Array<u8>, u8)` overload"]
+    pub fn byte_array_contains(
+        array: impl ::core::convert::Into<::unity2::Array<u8>>,
+        b: impl ::core::convert::Into<u8>,
+    ) -> bool {
+        unsafe {
+            __WWWTranscoder_unity2_raw::byte_array_contains(
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`URLDecode(::unity2::Array<u8>)` overload"]
+    pub fn url_decode(
+        to_encode: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __WWWTranscoder_unity2_raw::url_decode(
+                ::core::convert::Into::into(to_encode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ByteSubArrayEquals(::unity2::Array<u8>, i32, ::unity2::Array<u8>)` overload"]
+    pub fn byte_sub_array_equals(
+        array: impl ::core::convert::Into<::unity2::Array<u8>>,
+        index: impl ::core::convert::Into<i32>,
+        comperand: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> bool {
+        unsafe {
+            __WWWTranscoder_unity2_raw::byte_sub_array_equals(
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(comperand),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Decode(::unity2::Array<u8>, u8, ::unity2::Array<u8>)` overload"]
+    pub fn decode(
+        input: impl ::core::convert::Into<::unity2::Array<u8>>,
+        escape_char: impl ::core::convert::Into<u8>,
+        space: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __WWWTranscoder_unity2_raw::decode(
+                ::core::convert::Into::into(input),
+                ::core::convert::Into::into(escape_char),
+                ::core::convert::Into::into(space),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SevenBitClean(::unity2::Array<u8>)` overload"]
-    #[method(name = "SevenBitClean", args = 1)]
-    pub fn seven_bit_clean(input: ::unity2::Array<u8>) -> bool;
-
+    pub fn seven_bit_clean(input: impl ::core::convert::Into<::unity2::Array<u8>>) -> bool {
+        unsafe {
+            __WWWTranscoder_unity2_raw::seven_bit_clean(
+                ::core::convert::Into::into(input),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __WWWTranscoder_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-wwwtranscoder")]
+pub mod prelude {
+    pub use super::IWWWTranscoder;
+    pub use super::WWWTranscoder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

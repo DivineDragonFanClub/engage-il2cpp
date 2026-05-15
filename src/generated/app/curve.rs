@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/curve/Curve.md"))]
+    #[::unity2::class(namespace = "App", name = "Curve")]
+    #[parent(crate::system::object::Object)]
+    pub struct Curve {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/curve/Curve_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -80,154 +85,1543 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/curve/Curve.md"))]
-    #[::unity2::class(namespace = "App", name = "Curve")]
-    #[parent(crate::system::object::Object)]
-    pub struct Curve {}
 }
 
 #[cfg(feature = "app-curve-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-curve")]
-#[::unity2::methods]
-impl Curve {
-    #[doc = "`Calc(crate::app::curve::Curve_Type, f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "Calc", args = 6)]
-    pub fn calc(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Curve_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Calc",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Calc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc(
         r#type: crate::app::curve::Curve_Type,
         prev: f32,
         next: f32,
         now: f32,
         term: f32,
         num: i32,
-    ) -> f32;
-
-    #[doc = "`Lerp(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "Lerp", args = 5)]
-    pub fn lerp(prev: f32, next: f32, now: f32, term: f32, unused: i32) -> f32;
-
-    #[doc = "`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]
-    #[method(name = "Lerp", args = 5)]
-    pub fn lerp_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::app::curve::Curve_Type,
+            f32,
+            f32,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc::get_offset() as isize),
+        );
+        inner(r#type, prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Lerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Lerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        unused: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_lerp::get_offset() as isize),
+            );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Lerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Lerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_2(
         prev: crate::unity_engine::vector3::Vector3,
         next: crate::unity_engine::vector3::Vector3,
         now: f32,
         term: f32,
         unused: i32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]
-    #[method(name = "Lerp", args = 5)]
-    pub fn lerp_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lerp_2::get_offset() as isize),
+        );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Lerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Lerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_3(
         prev: crate::unity_engine::color::Color,
         next: crate::unity_engine::color::Color,
         now: f32,
         term: f32,
         unused: i32,
-    ) -> crate::unity_engine::color::Color;
-
-    #[doc = "`Accel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "Accel", args = 5)]
-    pub fn accel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`Decel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "Decel", args = 5)]
-    pub fn decel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`AcDecel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "AcDecel", args = 5)]
-    pub fn ac_decel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`DecAccel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "DecAccel", args = 5)]
-    pub fn dec_accel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`LerpDecel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "LerpDecel", args = 5)]
-    pub fn lerp_decel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`LerpAccel(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "LerpAccel", args = 5)]
-    pub fn lerp_accel(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`DecelLerp(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "DecelLerp", args = 5)]
-    pub fn decel_lerp(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`AccelLerp(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "AccelLerp", args = 5)]
-    pub fn accel_lerp(prev: f32, next: f32, now: f32, term: f32, num: i32) -> f32;
-
-    #[doc = "`LerpSyncTime(f32, f32, f32, f32, i32)` overload"]
-    #[method(name = "LerpSyncTime", args = 5)]
-    pub fn lerp_sync_time(prev: f32, next: f32, now: f32, term: f32, unused: i32) -> f32;
-
-    #[doc = "`LerpSyncTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]
-    #[method(name = "LerpSyncTime", args = 5)]
-    pub fn lerp_sync_time_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lerp_3::get_offset() as isize),
+        );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_accel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Accel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Accel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn accel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_accel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Decel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Decel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_decel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ac_decel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "AcDecel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "AcDecel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ac_decel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ac_decel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dec_accel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "DecAccel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "DecAccel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dec_accel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dec_accel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_decel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "LerpDecel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "LerpDecel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_decel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_lerp_decel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_accel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "LerpAccel",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "LerpAccel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_accel(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_lerp_accel::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_decel_lerp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "DecelLerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "DecelLerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn decel_lerp(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_decel_lerp::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_accel_lerp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "AccelLerp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "AccelLerp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn accel_lerp(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_accel_lerp::get_offset() as isize),
+            );
+        inner(prev, next, now, term, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_sync_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "LerpSyncTime",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "LerpSyncTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_sync_time(
+        prev: f32,
+        next: f32,
+        now: f32,
+        term: f32,
+        unused: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(f32, f32, f32, f32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_lerp_sync_time::get_offset() as isize),
+            );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_sync_time_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "LerpSyncTime",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "LerpSyncTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_sync_time_2(
         prev: crate::unity_engine::vector3::Vector3,
         next: crate::unity_engine::vector3::Vector3,
         now: f32,
         term: f32,
         unused: i32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`LerpSyncTime(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]
-    #[method(name = "LerpSyncTime", args = 5)]
-    pub fn lerp_sync_time_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lerp_sync_time_2::get_offset() as isize),
+        );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_lerp_sync_time_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "LerpSyncTime",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "LerpSyncTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn lerp_sync_time_3(
         prev: crate::unity_engine::color::Color,
         next: crate::unity_engine::color::Color,
         now: f32,
         term: f32,
         unused: i32,
-    ) -> crate::unity_engine::color::Color;
-
-    #[doc = "`Hermite(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Hermite", args = 5)]
-    pub fn hermite(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            f32,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_lerp_sync_time_3::get_offset() as isize),
+        );
+        inner(prev, next, now, term, unused, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hermite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Hermite",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Hermite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hermite(
         v0: crate::unity_engine::vector3::Vector3,
         v1: crate::unity_engine::vector3::Vector3,
         v2: crate::unity_engine::vector3::Vector3,
         v3: crate::unity_engine::vector3::Vector3,
         t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Hermite(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "Hermite", args = 5)]
-    pub fn hermite_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hermite::get_offset() as isize),
+        );
+        inner(v0, v1, v2, v3, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hermite_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "Hermite",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "Hermite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hermite_2(
         v0: crate::unity_engine::vector2::Vector2,
         v1: crate::unity_engine::vector2::Vector2,
         v2: crate::unity_engine::vector2::Vector2,
         v3: crate::unity_engine::vector2::Vector2,
         t: f32,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`CatmullRom(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "CatmullRom", args = 5)]
-    pub fn catmull_rom(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hermite_2::get_offset() as isize),
+        );
+        inner(v0, v1, v2, v3, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_catmull_rom {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "CatmullRom",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "CatmullRom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn catmull_rom(
         v0: crate::unity_engine::vector3::Vector3,
         v1: crate::unity_engine::vector3::Vector3,
         v2: crate::unity_engine::vector3::Vector3,
         v3: crate::unity_engine::vector3::Vector3,
         t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CatmullRom(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "CatmullRom", args = 5)]
-    pub fn catmull_rom_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_catmull_rom::get_offset() as isize),
+        );
+        inner(v0, v1, v2, v3, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_catmull_rom_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                "CatmullRom",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    "CatmullRom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn catmull_rom_2(
         v0: crate::unity_engine::vector2::Vector2,
         v1: crate::unity_engine::vector2::Vector2,
         v2: crate::unity_engine::vector2::Vector2,
         v3: crate::unity_engine::vector2::Vector2,
         t: f32,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_catmull_rom_2::get_offset() as isize),
+        );
+        inner(v0, v1, v2, v3, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Curve as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Curve as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Curve, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Curve, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-curve")]
+impl Curve {
+    #[doc = "`Calc(crate::app::curve::Curve_Type, f32, f32, f32, f32, i32)` overload"]
+    pub fn calc(
+        r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>,
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::calc(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Lerp(f32, f32, f32, f32, i32)` overload"]
+    pub fn lerp(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::lerp(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]
+    pub fn lerp_2(
+        prev: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        next: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Curve_unity2_raw::lerp_2(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]
+    pub fn lerp_3(
+        prev: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        next: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            __Curve_unity2_raw::lerp_3(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Accel(f32, f32, f32, f32, i32)` overload"]
+    pub fn accel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::accel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Decel(f32, f32, f32, f32, i32)` overload"]
+    pub fn decel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::decel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AcDecel(f32, f32, f32, f32, i32)` overload"]
+    pub fn ac_decel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::ac_decel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecAccel(f32, f32, f32, f32, i32)` overload"]
+    pub fn dec_accel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::dec_accel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LerpDecel(f32, f32, f32, f32, i32)` overload"]
+    pub fn lerp_decel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::lerp_decel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LerpAccel(f32, f32, f32, f32, i32)` overload"]
+    pub fn lerp_accel(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::lerp_accel(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DecelLerp(f32, f32, f32, f32, i32)` overload"]
+    pub fn decel_lerp(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::decel_lerp(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AccelLerp(f32, f32, f32, f32, i32)` overload"]
+    pub fn accel_lerp(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::accel_lerp(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LerpSyncTime(f32, f32, f32, f32, i32)` overload"]
+    pub fn lerp_sync_time(
+        prev: impl ::core::convert::Into<f32>,
+        next: impl ::core::convert::Into<f32>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __Curve_unity2_raw::lerp_sync_time(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LerpSyncTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]
+    pub fn lerp_sync_time_2(
+        prev: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        next: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Curve_unity2_raw::lerp_sync_time_2(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LerpSyncTime(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]
+    pub fn lerp_sync_time_3(
+        prev: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        next: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        now: impl ::core::convert::Into<f32>,
+        term: impl ::core::convert::Into<f32>,
+        unused: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            __Curve_unity2_raw::lerp_sync_time_3(
+                ::core::convert::Into::into(prev),
+                ::core::convert::Into::into(next),
+                ::core::convert::Into::into(now),
+                ::core::convert::Into::into(term),
+                ::core::convert::Into::into(unused),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hermite(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn hermite(
+        v0: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v1: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v3: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Curve_unity2_raw::hermite(
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::convert::Into::into(v3),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hermite(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    pub fn hermite_2(
+        v0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v1: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v3: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __Curve_unity2_raw::hermite_2(
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::convert::Into::into(v3),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CatmullRom(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
+    pub fn catmull_rom(
+        v0: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v1: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        v3: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __Curve_unity2_raw::catmull_rom(
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::convert::Into::into(v3),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CatmullRom(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    pub fn catmull_rom_2(
+        v0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v1: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v3: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __Curve_unity2_raw::catmull_rom_2(
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::convert::Into::into(v3),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-curve")]
+pub trait ICurveMethods: ICurve {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Curve as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Curve_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-curve")]
+impl<__T: ICurve> ICurveMethods for __T {}
 
 #[cfg(feature = "app-curve")]
 impl Curve {
@@ -243,4 +1637,21 @@ impl Curve {
         <Self as ICurveMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-curve")]
+pub mod prelude {
+    pub use super::Curve;
+    pub use super::Curve_Type;
+    pub use super::ICurve;
+    pub use super::ICurveMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

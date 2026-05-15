@@ -21,72 +21,791 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npad")]
-#[::unity2::methods]
-impl Npad {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-
-    #[doc = "`SetSupportedStyleSet(crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    #[method(name = "SetSupportedStyleSet", args = 1)]
-    pub fn set_supported_style_set(npad_style: crate::nn::hid::npadstyle::NpadStyle) -> ();
-
-    #[doc = "`GetSupportedStyleSet()` overload"]
-    #[method(name = "GetSupportedStyleSet", args = 0)]
-    pub fn get_supported_style_set() -> crate::nn::hid::npadstyle::NpadStyle;
-
-    #[doc = "`SetSupportedIdType(::unity2::Array<crate::nn::hid::npadid::NpadId>, i64)` overload"]
-    #[method(name = "SetSupportedIdType", args = 2)]
-    pub fn set_supported_id_type(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Npad_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_supported_style_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "SetSupportedStyleSet",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "SetSupportedStyleSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_supported_style_set(
+        npad_style: crate::nn::hid::npadstyle::NpadStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadstyle::NpadStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_supported_style_set::get_offset() as isize),
+        );
+        inner(npad_style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supported_style_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "GetSupportedStyleSet",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "GetSupportedStyleSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supported_style_set(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadstyle::NpadStyle {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::nn::hid::npadstyle::NpadStyle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_supported_style_set::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_supported_id_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::nn::hid::npadid::NpadId> as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "SetSupportedIdType",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "SetSupportedIdType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_supported_id_type(
         npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId>,
         count: i64,
-    ) -> ();
-
-    #[doc = "`SetSupportedIdType(::unity2::Array<crate::nn::hid::npadid::NpadId>)` overload"]
-    #[method(name = "SetSupportedIdType", args = 1)]
-    pub fn set_supported_id_type_2(npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId>)
-        -> ();
-
-    #[doc = "`BindStyleSetUpdateEvent(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "BindStyleSetUpdateEvent", args = 1)]
-    pub fn bind_style_set_update_event(npad_id: crate::nn::hid::npadid::NpadId) -> ();
-
-    #[doc = "`IsStyleSetUpdated(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "IsStyleSetUpdated", args = 1)]
-    pub fn is_style_set_updated(npad_id: crate::nn::hid::npadid::NpadId) -> bool;
-
-    #[doc = "`DestroyStyleSetUpdateEvent(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "DestroyStyleSetUpdateEvent", args = 1)]
-    pub fn destroy_style_set_update_event(npad_id: crate::nn::hid::npadid::NpadId) -> ();
-
-    #[doc = "`GetStyleSet(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetStyleSet", args = 1)]
-    pub fn get_style_set(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::npadid::NpadId>,
+            i64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_supported_id_type::get_offset() as isize),
+        );
+        inner(npad_ids, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_supported_id_type_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::nn::hid::npadid::NpadId,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "SetSupportedIdType",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "SetSupportedIdType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_supported_id_type_2(
+        npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::npadid::NpadId>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_supported_id_type_2::get_offset() as isize),
+        );
+        inner(npad_ids, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_bind_style_set_update_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "BindStyleSetUpdateEvent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "BindStyleSetUpdateEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn bind_style_set_update_event(
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> crate::nn::hid::npadstyle::NpadStyle;
-
-    #[doc = "`Disconnect(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "Disconnect", args = 1)]
-    pub fn disconnect(npad_id: crate::nn::hid::npadid::NpadId) -> ();
-
-    #[doc = "`GetPlayerLedPattern(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetPlayerLedPattern", args = 1)]
-    pub fn get_player_led_pattern(npad_id: crate::nn::hid::npadid::NpadId) -> u8;
-
-    #[doc = "`GetState(crate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    #[method(name = "GetState", args = 3)]
-    pub fn get_state(
-        p_out_value: crate::nn::hid::npadstate::NpadState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_bind_style_set_update_event::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_style_set_updated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "IsStyleSetUpdated",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "IsStyleSetUpdated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_style_set_updated(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_style_set_updated::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_style_set_update_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "DestroyStyleSetUpdateEvent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "DestroyStyleSetUpdateEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_style_set_update_event(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_style_set_update_event::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "GetStyleSet",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "GetStyleSet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style_set(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadstyle::NpadStyle {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> crate::nn::hid::npadstyle::NpadStyle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style_set::get_offset() as isize),
+        );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disconnect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "Disconnect",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "Disconnect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disconnect(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disconnect::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_led_pattern {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "GetPlayerLedPattern",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "GetPlayerLedPattern",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_player_led_pattern(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u8 {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> u8 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_player_led_pattern::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "GetState",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "GetState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_state(
+        p_out_value: *mut crate::nn::hid::npadstate::NpadState,
         npad_id: crate::nn::hid::npadid::NpadId,
         npad_style: crate::nn::hid::npadstyle::NpadStyle,
-    ) -> ();
-
-    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    #[method(name = "GetStates", args = 4)]
-    pub fn get_states(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::npadstate::NpadState,
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadstyle::NpadStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_state::get_offset() as isize),
+        );
+        inner(p_out_value, npad_id, npad_style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_states {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: npadstatearrayitem :: NpadStateArrayItem > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadstyle :: NpadStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Npad as ::unity2::ClassIdentity>::class(),
+                "GetStates",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Npad as ::unity2::ClassIdentity>::NAME,
+                    "GetStates",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_states(
         p_out_values: ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
         count: i32,
         npad_id: crate::nn::hid::npadid::NpadId,
         npad_style: crate::nn::hid::npadstyle::NpadStyle,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
+            i32,
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadstyle::NpadStyle,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_states::get_offset() as isize),
+        );
+        inner(
+            p_out_values,
+            count,
+            npad_id,
+            npad_style,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "nn-hid-npad")]
+impl Npad {
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __Npad_unity2_raw::initialize(::core::option::Option::None) }
+    }
+    #[doc = "`SetSupportedStyleSet(crate::nn::hid::npadstyle::NpadStyle)` overload"]
+    pub fn set_supported_style_set(
+        npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
+    ) -> () {
+        unsafe {
+            __Npad_unity2_raw::set_supported_style_set(
+                ::core::convert::Into::into(npad_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSupportedStyleSet()` overload"]
+    pub fn get_supported_style_set() -> crate::nn::hid::npadstyle::NpadStyle {
+        unsafe { __Npad_unity2_raw::get_supported_style_set(::core::option::Option::None) }
+    }
+    #[doc = "`SetSupportedIdType(::unity2::Array<crate::nn::hid::npadid::NpadId>, i64)` overload"]
+    pub fn set_supported_id_type(
+        npad_ids: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::npadid::NpadId>>,
+        count: impl ::core::convert::Into<i64>,
+    ) -> () {
+        unsafe {
+            __Npad_unity2_raw::set_supported_id_type(
+                ::core::convert::Into::into(npad_ids),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSupportedIdType(::unity2::Array<crate::nn::hid::npadid::NpadId>)` overload"]
+    pub fn set_supported_id_type_2(
+        npad_ids: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::npadid::NpadId>>,
+    ) -> () {
+        unsafe {
+            __Npad_unity2_raw::set_supported_id_type_2(
+                ::core::convert::Into::into(npad_ids),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BindStyleSetUpdateEvent(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn bind_style_set_update_event(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> () {
+        unsafe {
+            __Npad_unity2_raw::bind_style_set_update_event(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStyleSetUpdated(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn is_style_set_updated(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> bool {
+        unsafe {
+            __Npad_unity2_raw::is_style_set_updated(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyStyleSetUpdateEvent(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn destroy_style_set_update_event(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> () {
+        unsafe {
+            __Npad_unity2_raw::destroy_style_set_update_event(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStyleSet(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_style_set(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> crate::nn::hid::npadstyle::NpadStyle {
+        unsafe {
+            __Npad_unity2_raw::get_style_set(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Disconnect(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn disconnect(npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>) -> () {
+        unsafe {
+            __Npad_unity2_raw::disconnect(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPlayerLedPattern(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_player_led_pattern(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> u8 {
+        unsafe {
+            __Npad_unity2_raw::get_player_led_pattern(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetState(*mutcrate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
+    pub fn get_state(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
+    ) -> crate::nn::hid::npadstate::NpadState {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::nn::hid::npadstate::NpadState>::uninit();
+            __Npad_unity2_raw::get_state(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(npad_id),
+                ::core::convert::Into::into(npad_style),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
+    pub fn get_states(
+        p_out_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
+        >,
+        count: impl ::core::convert::Into<i32>,
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
+    ) -> i32 {
+        unsafe {
+            __Npad_unity2_raw::get_states(
+                ::core::convert::Into::into(p_out_values),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(npad_id),
+                ::core::convert::Into::into(npad_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nn-hid-npad")]
+pub mod prelude {
+    pub use super::INpad;
+    pub use super::Npad;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

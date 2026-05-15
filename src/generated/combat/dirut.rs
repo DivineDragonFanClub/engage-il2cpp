@@ -17,21 +17,224 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-dirut")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DirUt_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_vec_to_dir2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::combat::dir::Dir as ::unity2::IlType>::il_type(),
+                <*mut crate::combat::dir::Dir as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DirUt as ::unity2::ClassIdentity>::class(),
+                "VecToDir2",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DirUt as ::unity2::ClassIdentity>::NAME,
+                    "VecToDir2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn vec_to_dir2(
+        slash_dir: *mut crate::unity_engine::vector3::Vector3,
+        out_dir1: *mut crate::combat::dir::Dir,
+        out_dir2: *mut crate::combat::dir::Dir,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::combat::dir::Dir,
+            *mut crate::combat::dir::Dir,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_vec_to_dir2::get_offset() as isize),
+        );
+        inner(slash_dir, out_dir1, out_dir2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_vec_to_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DirUt as ::unity2::ClassIdentity>::class(),
+                "VecToDir",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DirUt as ::unity2::ClassIdentity>::NAME,
+                    "VecToDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn vec_to_dir(
+        v: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::dir::Dir {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::dir::Dir = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_vec_to_dir::get_offset() as isize),
+        );
+        inner(v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_japanese {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DirUt as ::unity2::ClassIdentity>::class(),
+                "ToJapanese",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DirUt as ::unity2::ClassIdentity>::NAME,
+                    "ToJapanese",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_japanese(
+        v: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_japanese::get_offset() as isize),
+        );
+        inner(v, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-dirut")]
 impl DirUt {
-    #[doc = "`VecToDir2(crate::unity_engine::vector3::Vector3, crate::combat::dir::Dir, crate::combat::dir::Dir)` overload"]
-    #[method(name = "VecToDir2", args = 3)]
-    pub fn vec_to_dir2(
-        slash_dir: crate::unity_engine::vector3::Vector3,
-        out_dir1: crate::combat::dir::Dir,
-        out_dir2: crate::combat::dir::Dir,
-    ) -> ();
+    #[doc = "`VecToDir2(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::combat::dir::Dir, *mutcrate::combat::dir::Dir)` overload"]
+    pub fn vec_to_dir2() -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::combat::dir::Dir,
+        crate::combat::dir::Dir,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::combat::dir::Dir>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::combat::dir::Dir>::uninit();
+            __DirUt_unity2_raw::vec_to_dir2(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`VecToDir(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn vec_to_dir() -> (
+        crate::combat::dir::Dir,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __DirUt_unity2_raw::vec_to_dir(__out_0.as_mut_ptr(), ::core::option::Option::None)
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ToJapanese(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    pub fn to_japanese() -> (
+        ::unity2::Il2CppString,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __DirUt_unity2_raw::to_japanese(__out_0.as_mut_ptr(), ::core::option::Option::None)
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
 
-    #[doc = "`VecToDir(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "VecToDir", args = 1)]
-    pub fn vec_to_dir(v: crate::unity_engine::vector3::Vector3) -> crate::combat::dir::Dir;
-
-    #[doc = "`ToJapanese(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "ToJapanese", args = 1)]
-    pub fn to_japanese(v: crate::unity_engine::vector3::Vector3) -> ::unity2::Il2CppString;
+#[cfg(feature = "combat-dirut")]
+pub mod prelude {
+    pub use super::DirUt;
+    pub use super::IDirUt;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

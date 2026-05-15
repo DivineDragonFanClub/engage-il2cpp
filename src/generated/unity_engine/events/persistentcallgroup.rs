@@ -22,20 +22,145 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-persistentcallgroup")]
-#[::unity2::methods]
-impl PersistentCallGroup {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Initialize(crate::unity_engine::events::invokablecalllist::InvokableCallList, crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]
-    #[method(name = "Initialize", args = 2)]
-    pub fn initialize(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PersistentCallGroup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCallGroup as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCallGroup as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PersistentCallGroup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PersistentCallGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: events :: invokablecalllist :: InvokableCallList as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: events :: unityeventbase :: UnityEventBase as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PersistentCallGroup as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PersistentCallGroup as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(
+        this: PersistentCallGroup,
         invokable_list: crate::unity_engine::events::invokablecalllist::InvokableCallList,
         unity_event_base: crate::unity_engine::events::unityeventbase::UnityEventBase,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PersistentCallGroup,
+            crate::unity_engine::events::invokablecalllist::InvokableCallList,
+            crate::unity_engine::events::unityeventbase::UnityEventBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(this, invokable_list, unity_event_base, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-events-persistentcallgroup")]
+pub trait IPersistentCallGroupMethods: IPersistentCallGroup {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PersistentCallGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCallGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Initialize(crate::unity_engine::events::invokablecalllist::InvokableCallList, crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]
+    fn initialize(
+        self,
+        invokable_list: impl ::core::convert::Into<
+            crate::unity_engine::events::invokablecalllist::InvokableCallList,
+        >,
+        unity_event_base: impl ::core::convert::Into<
+            crate::unity_engine::events::unityeventbase::UnityEventBase,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PersistentCallGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PersistentCallGroup_unity2_raw::initialize(
+                __receiver,
+                ::core::convert::Into::into(invokable_list),
+                ::core::convert::Into::into(unity_event_base),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-events-persistentcallgroup")]
+impl<__T: IPersistentCallGroup> IPersistentCallGroupMethods for __T {}
 
 #[cfg(feature = "unity_engine-events-persistentcallgroup")]
 impl PersistentCallGroup {
@@ -51,4 +176,14 @@ impl PersistentCallGroup {
         <Self as IPersistentCallGroupMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-events-persistentcallgroup")]
+pub mod prelude {
+    pub use super::IPersistentCallGroup;
+    pub use super::IPersistentCallGroupMethods;
+    pub use super::PersistentCallGroup;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

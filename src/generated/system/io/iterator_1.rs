@@ -86,3 +86,13 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-io-iterator_1")]
+pub mod prelude {
+    pub use super::IIterator_1;
+    pub use super::IIterator_1Methods;
+    pub use super::Iterator_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

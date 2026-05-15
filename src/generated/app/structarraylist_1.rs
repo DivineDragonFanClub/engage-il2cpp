@@ -57,3 +57,16 @@ impl<T0: ::unity2::ClassIdentity> StructArrayList_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-structarraylist_1")]
+pub mod prelude {
+    pub use super::IStructArrayList_1;
+    pub use super::IStructArrayList_1Methods;
+    pub use super::StructArrayList_1;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

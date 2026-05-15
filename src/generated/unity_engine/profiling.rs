@@ -2,6 +2,10 @@
 
 #[cfg(any(feature = "unity_engine-profiling-customsampler-types"))]
 pub mod customsampler;
+#[cfg(feature = "unity_engine-profiling-customsampler")]
+pub use customsampler::ICustomSamplerMethods;
+#[cfg(feature = "unity_engine-profiling-customsampler-types")]
+pub use customsampler::{CustomSampler, ICustomSampler};
 #[cfg(any(feature = "unity_engine-profiling-experimental-debugscreencapture-types"))]
 pub mod experimental;
 #[cfg(any(
@@ -11,7 +15,17 @@ pub mod experimental;
 pub mod memory;
 #[cfg(any(feature = "unity_engine-profiling-profiler-types"))]
 pub mod profiler;
+#[cfg(feature = "unity_engine-profiling-profiler-types")]
+pub use profiler::{IProfiler, Profiler};
 #[cfg(any(feature = "unity_engine-profiling-recorder-types"))]
 pub mod recorder;
+#[cfg(feature = "unity_engine-profiling-recorder")]
+pub use recorder::IRecorderMethods;
+#[cfg(feature = "unity_engine-profiling-recorder-types")]
+pub use recorder::{IRecorder, Recorder};
 #[cfg(any(feature = "unity_engine-profiling-sampler-types"))]
 pub mod sampler;
+#[cfg(feature = "unity_engine-profiling-sampler")]
+pub use sampler::ISamplerMethods;
+#[cfg(feature = "unity_engine-profiling-sampler-types")]
+pub use sampler::{ISampler, Sampler};

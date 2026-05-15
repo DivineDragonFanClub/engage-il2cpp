@@ -18,3 +18,12 @@ mod __types {
 
 #[cfg(feature = "system-collections-generic-icollectiondebugview_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-icollectiondebugview_1")]
+pub mod prelude {
+    pub use super::ICollectionDebugView_1;
+    pub use super::IICollectionDebugView_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

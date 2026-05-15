@@ -13,16 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "PhysicsRaycaster.RaycastHitComparer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct PhysicsRaycaster_RaycastHitComparer {
-# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PhysicsRaycaster")]
     #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
@@ -41,29 +31,888 @@ mod __types {
         #[rename(name = "m_Hits")]
         pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.EventSystems",
+        name = "PhysicsRaycaster.RaycastHitComparer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct PhysicsRaycaster_RaycastHitComparer {
+# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
+}
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-#[::unity2::methods]
-impl PhysicsRaycaster_RaycastHitComparer {
-    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhysicsRaycaster_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "get_eventCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "get_eventCamera",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_camera(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(
+            PhysicsRaycaster,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_camera::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_depth {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "get_depth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "get_depth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_depth(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_depth::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_final_event_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "get_finalEventMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "get_finalEventMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_final_event_mask(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_final_event_mask::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "get_eventMask",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "get_eventMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_event_mask(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::layermask::LayerMask {
+        let inner: extern "C" fn(
+            PhysicsRaycaster,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_event_mask::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_event_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "set_eventMask",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "set_eventMask",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_event_mask(
+        this: PhysicsRaycaster,
+        value: crate::unity_engine::layermask::LayerMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhysicsRaycaster,
+            crate::unity_engine::layermask::LayerMask,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_event_mask::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_ray_intersections {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "get_maxRayIntersections",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "get_maxRayIntersections",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_ray_intersections(
+        this: PhysicsRaycaster,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_ray_intersections::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_ray_intersections {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "set_maxRayIntersections",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "set_maxRayIntersections",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_ray_intersections(
+        this: PhysicsRaycaster,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhysicsRaycaster, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_ray_intersections::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_ray_and_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "ComputeRayAndDistance",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "ComputeRayAndDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_ray_and_distance(
+        this: PhysicsRaycaster,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        ray: *mut crate::unity_engine::ray::Ray,
+        event_display_index: *mut i32,
+        distance_to_clip_plane: *mut f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            PhysicsRaycaster,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            *mut crate::unity_engine::ray::Ray,
+            *mut i32,
+            *mut f32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compute_ray_and_distance::get_offset() as isize),
+        );
+        inner(
+            this,
+            event_data,
+            ray,
+            event_display_index,
+            distance_to_clip_plane,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster as ::unity2::ClassIdentity>::class(),
+                "Raycast",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster as ::unity2::ClassIdentity>::NAME,
+                    "Raycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast(
+        this: PhysicsRaycaster,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        result_append_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::raycastresult::RaycastResult,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhysicsRaycaster,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::event_systems::raycastresult::RaycastResult,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast::get_offset() as isize),
+        );
+        inner(this, event_data, result_append_list, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+pub trait IPhysicsRaycasterMethods: IPhysicsRaycaster {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_eventCamera()` overload"]
+    fn get_event_camera(self) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::get_event_camera(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_depth()` overload"]
+    fn get_depth(self) -> i32 {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::get_depth(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_finalEventMask()` overload"]
+    fn get_final_event_mask(self) -> i32 {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::get_final_event_mask(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_eventMask()` overload"]
+    fn get_event_mask(self) -> crate::unity_engine::layermask::LayerMask {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::get_event_mask(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_eventMask(crate::unity_engine::layermask::LayerMask)` overload"]
+    fn set_event_mask(
         self,
+        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+    ) -> () {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::set_event_mask(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_maxRayIntersections()` overload"]
+    fn get_max_ray_intersections(self) -> i32 {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::get_max_ray_intersections(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_maxRayIntersections(i32)` overload"]
+    fn set_max_ray_intersections(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::set_max_ray_intersections(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ComputeRayAndDistance(crate::unity_engine::event_systems::pointereventdata::PointerEventData, *mutcrate::unity_engine::ray::Ray, *muti32, *mutf32)` overload"]
+    fn compute_ray_and_distance(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+    ) -> (bool, crate::unity_engine::ray::Ray, i32, f32) {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<f32>::uninit();
+            let __ret = {
+                __PhysicsRaycaster_unity2_raw::compute_ray_and_distance(
+                    __receiver,
+                    ::core::convert::Into::into(event_data),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]
+    fn raycast(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+        result_append_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::event_systems::raycastresult::RaycastResult,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <PhysicsRaycaster as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhysicsRaycaster_unity2_raw::raycast(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::convert::Into::into(result_append_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl<__T: IPhysicsRaycaster> IPhysicsRaycasterMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhysicsRaycaster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysicsRaycasterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhysicsRaycaster_RaycastHitComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: PhysicsRaycaster_RaycastHitComparer,
         x: crate::unity_engine::raycasthit::RaycastHit,
         y: crate::unity_engine::raycasthit::RaycastHit,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhysicsRaycaster_RaycastHitComparer,
+            crate::unity_engine::raycasthit::RaycastHit,
+            crate::unity_engine::raycasthit::RaycastHit,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhysicsRaycaster_RaycastHitComparer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhysicsRaycaster_RaycastHitComparer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster_RaycastHitComparer {
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe {
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::cctor(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+pub trait IPhysicsRaycaster_RaycastHitComparerMethods:
+    IPhysicsRaycaster_RaycastHitComparer
+{
+    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
+    fn compare(
+        self,
+        x: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
+        y: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl<__T: IPhysicsRaycaster_RaycastHitComparer> IPhysicsRaycaster_RaycastHitComparerMethods
+    for __T
+{
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
@@ -83,73 +932,32 @@ impl PhysicsRaycaster_RaycastHitComparer {
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-#[::unity2::methods]
-impl PhysicsRaycaster {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_eventCamera()` overload"]
-    #[method(name = "get_eventCamera", args = 0)]
-    pub fn get_event_camera(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`get_depth()` overload"]
-    #[method(name = "get_depth", args = 0)]
-    pub fn get_depth(self) -> i32;
-
-    #[doc = "`get_finalEventMask()` overload"]
-    #[method(name = "get_finalEventMask", args = 0)]
-    pub fn get_final_event_mask(self) -> i32;
-
-    #[doc = "`get_eventMask()` overload"]
-    #[method(name = "get_eventMask", args = 0)]
-    pub fn get_event_mask(self) -> crate::unity_engine::layermask::LayerMask;
-
-    #[doc = "`set_eventMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    #[method(name = "set_eventMask", args = 1)]
-    pub fn set_event_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
-
-    #[doc = "`get_maxRayIntersections()` overload"]
-    #[method(name = "get_maxRayIntersections", args = 0)]
-    pub fn get_max_ray_intersections(self) -> i32;
-
-    #[doc = "`set_maxRayIntersections(i32)` overload"]
-    #[method(name = "set_maxRayIntersections", args = 1)]
-    pub fn set_max_ray_intersections(self, value: i32) -> ();
-
-    #[doc = "`ComputeRayAndDistance(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::ray::Ray, i32, f32)` overload"]
-    #[method(name = "ComputeRayAndDistance", args = 4)]
-    pub fn compute_ray_and_distance(
-        self,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        ray: crate::unity_engine::ray::Ray,
-        event_display_index: i32,
-        distance_to_clip_plane: f32,
-    ) -> bool;
-
-    #[doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]
-    #[method(name = "Raycast", args = 2)]
-    pub fn raycast(
-        self,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        result_append_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::raycastresult::RaycastResult,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-impl PhysicsRaycaster {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhysicsRaycaster),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhysicsRaycasterMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::IPhysicsRaycaster;
+    pub use super::IPhysicsRaycasterMethods;
+    pub use super::IPhysicsRaycaster_RaycastHitComparer;
+    pub use super::IPhysicsRaycaster_RaycastHitComparerMethods;
+    pub use super::PhysicsRaycaster;
+    pub use super::PhysicsRaycaster_RaycastHitComparer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::event_systems::baseraycaster::IBaseRaycaster;
+    #[cfg(feature = "unity_engine-event_systems-baseraycaster")]
+    pub use crate::unity_engine::event_systems::baseraycaster::IBaseRaycasterMethods;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

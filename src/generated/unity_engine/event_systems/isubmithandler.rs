@@ -15,12 +15,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-isubmithandler")]
-#[::unity2::methods]
-impl ISubmitHandler {
-    #[doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    #[method(name = "OnSubmit", args = 1)]
-    pub fn on_submit(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ISubmitHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_submit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ISubmitHandler as ::unity2::ClassIdentity>::class(),
+                "OnSubmit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ISubmitHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnSubmit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_submit(
+        this: ISubmitHandler,
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ISubmitHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_submit::get_offset() as isize),
+        );
+        inner(this, event_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-isubmithandler")]
+pub trait IISubmitHandlerMethods: IISubmitHandler {
+    #[doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    fn on_submit(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ISubmitHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ISubmitHandler_unity2_raw::on_submit(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-isubmithandler")]
+impl<__T: IISubmitHandler> IISubmitHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-isubmithandler")]
+pub mod prelude {
+    pub use super::IISubmitHandler;
+    pub use super::IISubmitHandlerMethods;
+    pub use super::ISubmitHandler;
 }

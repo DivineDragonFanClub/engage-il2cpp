@@ -47,3 +47,19 @@ impl<T0: ::unity2::ClassIdentity> Func_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-func_1")]
+pub mod prelude {
+    pub use super::Func_1;
+    pub use super::IFunc_1;
+    pub use super::IFunc_1Methods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

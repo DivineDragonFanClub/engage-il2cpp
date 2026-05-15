@@ -15,12 +15,88 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-#[::unity2::methods]
-impl IMaterialModifier {
-    #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "GetModifiedMaterial", args = 1)]
-    pub fn get_modified_material(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IMaterialModifier_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_modified_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IMaterialModifier as ::unity2::ClassIdentity>::class(),
+                "GetModifiedMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IMaterialModifier as ::unity2::ClassIdentity>::NAME,
+                    "GetModifiedMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_modified_material(
+        this: IMaterialModifier,
         base_material: crate::unity_engine::material::Material,
-    ) -> crate::unity_engine::material::Material;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            IMaterialModifier,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_modified_material::get_offset() as isize),
+        );
+        inner(this, base_material, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+pub trait IIMaterialModifierMethods: IIMaterialModifier {
+    #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
+    fn get_modified_material(
+        self,
+        base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <IMaterialModifier as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IMaterialModifier_unity2_raw::get_modified_material(
+                __receiver,
+                ::core::convert::Into::into(base_material),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+impl<__T: IIMaterialModifier> IIMaterialModifierMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+pub mod prelude {
+    pub use super::IIMaterialModifier;
+    pub use super::IIMaterialModifierMethods;
+    pub use super::IMaterialModifier;
 }

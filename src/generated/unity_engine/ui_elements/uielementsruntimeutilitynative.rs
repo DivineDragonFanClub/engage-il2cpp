@@ -27,13 +27,119 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UIElementsRuntimeUtilityNative_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_repaint_overlay_panels {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UIElementsRuntimeUtilityNative as ::unity2::ClassIdentity>::class(),
+                "RepaintOverlayPanels",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UIElementsRuntimeUtilityNative as ::unity2::ClassIdentity>::NAME,
+                    "RepaintOverlayPanels",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn repaint_overlay_panels(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_repaint_overlay_panels::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_runtime_panels {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UIElementsRuntimeUtilityNative as ::unity2::ClassIdentity>::class(),
+                "UpdateRuntimePanels",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UIElementsRuntimeUtilityNative as ::unity2::ClassIdentity>::NAME,
+                    "UpdateRuntimePanels",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_runtime_panels(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_runtime_panels::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
 impl UIElementsRuntimeUtilityNative {
     #[doc = "`RepaintOverlayPanels()` overload"]
-    #[method(name = "RepaintOverlayPanels", args = 0)]
-    pub fn repaint_overlay_panels() -> ();
-
+    pub fn repaint_overlay_panels() -> () {
+        unsafe {
+            __UIElementsRuntimeUtilityNative_unity2_raw::repaint_overlay_panels(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`UpdateRuntimePanels()` overload"]
-    #[method(name = "UpdateRuntimePanels", args = 0)]
-    pub fn update_runtime_panels() -> ();
+    pub fn update_runtime_panels() -> () {
+        unsafe {
+            __UIElementsRuntimeUtilityNative_unity2_raw::update_runtime_panels(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
+pub mod prelude {
+    pub use super::IUIElementsRuntimeUtilityNative;
+    pub use super::UIElementsRuntimeUtilityNative;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

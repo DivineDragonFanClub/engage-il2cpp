@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-event_systems-ieventsystemhandler-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-event_systems-ieventsystemhandler")]
+pub mod prelude {
+    pub use super::IEventSystemHandler;
+    pub use super::IIEventSystemHandler;
+}

@@ -22,16 +22,90 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-fishing-config-fixcameraconfig")]
-#[::unity2::methods]
-impl FixCameraConfig {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FixCameraConfig_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixCameraConfig as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixCameraConfig as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FixCameraConfig,
         set_pos: crate::unity_engine::vector3::Vector3,
         set_rot: crate::unity_engine::vector3::Vector3,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FixCameraConfig,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, set_pos, set_rot, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+pub trait IFixCameraConfigMethods: IFixCameraConfig {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    fn ctor(
+        self,
+        set_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        set_rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <FixCameraConfig as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FixCameraConfig_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(set_pos),
+                ::core::convert::Into::into(set_rot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+impl<__T: IFixCameraConfig> IFixCameraConfigMethods for __T {}
 
 #[cfg(feature = "app-fishing-config-fixcameraconfig")]
 impl FixCameraConfig {
@@ -50,4 +124,14 @@ impl FixCameraConfig {
         <Self as IFixCameraConfigMethods>::ctor(this, set_pos, set_rot);
         this
     }
+}
+
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+pub mod prelude {
+    pub use super::FixCameraConfig;
+    pub use super::IFixCameraConfig;
+    pub use super::IFixCameraConfigMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

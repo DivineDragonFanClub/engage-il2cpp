@@ -41,66 +41,670 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animationmotionxtodeltaplayable")]
-#[::unity2::methods(value)]
-impl AnimationMotionXToDeltaPlayable {
-    #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create (graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph) -> crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable ;
-
-    #[doc = "`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    #[method(name = "CreateHandle", args = 1)]
-    pub fn create_handle(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationMotionXToDeltaPlayable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn create (graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable{
+        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(graph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
-
-    #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, handle: crate::unity_engine::playables::playablehandle::PlayableHandle)
-        -> ();
-
-    #[doc = "`GetHandle()` overload"]
-    #[method(name = "GetHandle", args = 0)]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
-
-    #[doc = "`op_Implicit(crate::unity_engine::animations::animationmotionxtodeltaplayable::AnimationMotionXToDeltaPlayable)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_handle::get_offset() as isize),
+            );
+        inner(graph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AnimationMotionXToDeltaPlayable,
+        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationMotionXToDeltaPlayable,
+            crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "GetHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "GetHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle(
+        this: AnimationMotionXToDeltaPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            AnimationMotionXToDeltaPlayable,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_handle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
         playable : crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable,
-    ) -> crate::unity_engine::playables::playable::Playable;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let inner : extern "C" fn (crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        inner(playable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: AnimationMotionXToDeltaPlayable,
+        other : crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (AnimationMotionXToDeltaPlayable , crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_equals :: get_offset () as isize) ,) ;
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_absolute_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "SetAbsoluteMotion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "SetAbsoluteMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_absolute_motion(
+        this: AnimationMotionXToDeltaPlayable,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimationMotionXToDeltaPlayable,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_absolute_motion::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandleInternal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandleInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle_internal(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_handle_internal::get_offset() as isize),
+        );
+        inner(graph, handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_absolute_motion_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "SetAbsoluteMotionInternal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "SetAbsoluteMotionInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_absolute_motion_internal(
+        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_absolute_motion_internal::get_offset() as isize),
+        );
+        inner(handle, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_handle_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::class(),
+                "CreateHandleInternal_Injected",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationMotionXToDeltaPlayable as ::unity2::ClassIdentity>::NAME,
+                    "CreateHandleInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_handle_internal_injected(
+        graph: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+        handle: *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+            *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_handle_internal_injected::get_offset() as isize),
+        );
+        inner(graph, handle, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-animations-animationmotionxtodeltaplayable")]
+impl AnimationMotionXToDeltaPlayable {
+    #[doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]    pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph >) -> crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable{
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::create(
+                ::core::convert::Into::into(graph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
+    pub fn create_handle(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::create_handle(
+                ::core::convert::Into::into(graph),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Implicit(crate::unity_engine::animations::animationmotionxtodeltaplayable::AnimationMotionXToDeltaPlayable)` overload"]
+    pub fn op_implicit(
+        playable : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable >,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::op_implicit(
+                ::core::convert::Into::into(playable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn create_handle_internal(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+    ) -> (
+        bool,
+        crate::unity_engine::playables::playablehandle::PlayableHandle,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablehandle::PlayableHandle,
+            >::uninit();
+            let __ret = {
+                __AnimationMotionXToDeltaPlayable_unity2_raw::create_handle_internal(
+                    ::core::convert::Into::into(graph),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SetAbsoluteMotionInternal(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, bool)` overload"]
+    pub fn set_absolute_motion_internal(
+        value: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablehandle::PlayableHandle,
+            >::uninit();
+            __AnimationMotionXToDeltaPlayable_unity2_raw::set_absolute_motion_internal(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AnimationMotionXToDeltaPlayable_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`CreateHandleInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn create_handle_internal_injected() -> (
+        bool,
+        crate::unity_engine::playables::playablegraph::PlayableGraph,
+        crate::unity_engine::playables::playablehandle::PlayableHandle,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablegraph::PlayableGraph,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablehandle::PlayableHandle,
+            >::uninit();
+            let __ret = {
+                __AnimationMotionXToDeltaPlayable_unity2_raw::create_handle_internal_injected(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animations-animationmotionxtodeltaplayable")]
+impl AnimationMotionXToDeltaPlayable {
+    #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
+    pub fn ctor(
+        self,
+        handle: impl ::core::convert::Into<
+            crate::unity_engine::playables::playablehandle::PlayableHandle,
+        >,
+    ) -> () {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHandle()` overload"]
+    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::get_handle(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Equals(crate::unity_engine::animations::animationmotionxtodeltaplayable::AnimationMotionXToDeltaPlayable)` overload"]
-    #[method(name = "Equals", args = 1)]
     pub fn equals(
         self,
-        other : crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable,
-    ) -> bool;
-
+        other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationmotionxtodeltaplayable :: AnimationMotionXToDeltaPlayable >,
+    ) -> bool {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetAbsoluteMotion(bool)` overload"]
-    #[method(name = "SetAbsoluteMotion", args = 1)]
-    pub fn set_absolute_motion(self, value: bool) -> ();
+    pub fn set_absolute_motion(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __AnimationMotionXToDeltaPlayable_unity2_raw::set_absolute_motion(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = "CreateHandleInternal", args = 2)]
-    pub fn create_handle_internal(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-    ) -> bool;
-
-    #[doc = "`SetAbsoluteMotionInternal(crate::unity_engine::playables::playablehandle::PlayableHandle, bool)` overload"]
-    #[method(name = "SetAbsoluteMotionInternal", args = 2)]
-    pub fn set_absolute_motion_internal(
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`CreateHandleInternal_Injected(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    #[method(name = "CreateHandleInternal_Injected", args = 2)]
-    pub fn create_handle_internal_injected(
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        handle: crate::unity_engine::playables::playablehandle::PlayableHandle,
-    ) -> bool;
+#[cfg(feature = "unity_engine-animations-animationmotionxtodeltaplayable")]
+pub mod prelude {
+    pub use super::AnimationMotionXToDeltaPlayable;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

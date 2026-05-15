@@ -17,17 +17,188 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-zoneut")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ZoneUt_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ZoneUt as ::unity2::ClassIdentity>::class(),
+                "Select",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ZoneUt as ::unity2::ClassIdentity>::NAME,
+                    "Select",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select(
+        zone: i32,
+        last_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_select::get_offset() as isize),
+            );
+        inner(zone, last_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_index_to_rad {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ZoneUt as ::unity2::ClassIdentity>::class(),
+                "IndexToRad",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ZoneUt as ::unity2::ClassIdentity>::NAME,
+                    "IndexToRad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn index_to_rad(
+        zone_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_index_to_rad::get_offset() as isize),
+        );
+        inner(zone_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ZoneUt as ::unity2::ClassIdentity>::class(),
+                "Reverse",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ZoneUt as ::unity2::ClassIdentity>::NAME,
+                    "Reverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reverse(zone: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reverse::get_offset() as isize),
+        );
+        inner(zone, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-zoneut")]
 impl ZoneUt {
     #[doc = "`Select(i32, i32)` overload"]
-    #[method(name = "Select", args = 2)]
-    pub fn select(zone: i32, last_index: i32) -> i32;
-
+    pub fn select(
+        zone: impl ::core::convert::Into<i32>,
+        last_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __ZoneUt_unity2_raw::select(
+                ::core::convert::Into::into(zone),
+                ::core::convert::Into::into(last_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IndexToRad(i32)` overload"]
-    #[method(name = "IndexToRad", args = 1)]
-    pub fn index_to_rad(zone_index: i32) -> f32;
-
+    pub fn index_to_rad(zone_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            __ZoneUt_unity2_raw::index_to_rad(
+                ::core::convert::Into::into(zone_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Reverse(i32)` overload"]
-    #[method(name = "Reverse", args = 1)]
-    pub fn reverse(zone: i32) -> f32;
+    pub fn reverse(zone: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            __ZoneUt_unity2_raw::reverse(
+                ::core::convert::Into::into(zone),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-zoneut")]
+pub mod prelude {
+    pub use super::IZoneUt;
+    pub use super::ZoneUt;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

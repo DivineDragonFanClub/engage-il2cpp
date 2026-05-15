@@ -20,44 +20,423 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-humanposehandler")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HumanPoseHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create_from_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatar::Avatar as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                "Internal_CreateFromRoot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CreateFromRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create_from_root(
+        avatar: crate::unity_engine::avatar::Avatar,
+        root: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(
+            crate::unity_engine::avatar::Avatar,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create_from_root::get_offset() as isize),
+        );
+        inner(avatar, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                "Internal_Destroy",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_destroy(
+        ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_destroy::get_offset() as isize),
+            );
+        inner(ptr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_human_pose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                "GetHumanPose",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    "GetHumanPose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_human_pose(
+        this: HumanPoseHandler,
+        body_position: *mut crate::unity_engine::vector3::Vector3,
+        body_rotation: *mut crate::unity_engine::quaternion::Quaternion,
+        muscles: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HumanPoseHandler,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_human_pose::get_offset() as isize),
+        );
+        inner(
+            this,
+            body_position,
+            body_rotation,
+            muscles,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: HumanPoseHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HumanPoseHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatar::Avatar as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HumanPoseHandler,
+        avatar: crate::unity_engine::avatar::Avatar,
+        root: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HumanPoseHandler,
+            crate::unity_engine::avatar::Avatar,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, avatar, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_human_pose_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::humanpose::HumanPose as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HumanPoseHandler as ::unity2::ClassIdentity>::class(),
+                "GetHumanPose",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HumanPoseHandler as ::unity2::ClassIdentity>::NAME,
+                    "GetHumanPose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_human_pose_2(
+        this: HumanPoseHandler,
+        human_pose: *mut crate::unity_engine::humanpose::HumanPose,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HumanPoseHandler,
+            *mut crate::unity_engine::humanpose::HumanPose,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_human_pose_2::get_offset() as isize),
+        );
+        inner(this, human_pose, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-humanposehandler")]
 impl HumanPoseHandler {
     #[doc = "`Internal_CreateFromRoot(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Internal_CreateFromRoot", args = 2)]
     pub fn internal_create_from_root(
-        avatar: crate::unity_engine::avatar::Avatar,
-        root: crate::unity_engine::transform::Transform,
-    ) -> ::unity2::IntPtr;
-
+        avatar: impl ::core::convert::Into<crate::unity_engine::avatar::Avatar>,
+        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> ::unity2::IntPtr {
+        unsafe {
+            __HumanPoseHandler_unity2_raw::internal_create_from_root(
+                ::core::convert::Into::into(avatar),
+                ::core::convert::Into::into(root),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
-    #[method(name = "Internal_Destroy", args = 1)]
-    pub fn internal_destroy(ptr: ::unity2::IntPtr) -> ();
-
-    #[doc = "`GetHumanPose(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, ::unity2::Array<f32>)` overload"]
-    #[method(name = "GetHumanPose", args = 3)]
-    pub fn get_human_pose(
-        self,
-        body_position: crate::unity_engine::vector3::Vector3,
-        body_rotation: crate::unity_engine::quaternion::Quaternion,
-        muscles: ::unity2::Array<f32>,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        avatar: crate::unity_engine::avatar::Avatar,
-        root: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`GetHumanPose(crate::unity_engine::humanpose::HumanPose)` overload"]
-    #[method(name = "GetHumanPose", args = 1)]
-    pub fn get_human_pose_2(self, human_pose: crate::unity_engine::humanpose::HumanPose) -> ();
+    pub fn internal_destroy(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            __HumanPoseHandler_unity2_raw::internal_destroy(
+                ::core::convert::Into::into(ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-humanposehandler")]
+pub trait IHumanPoseHandlerMethods: IHumanPoseHandler {
+    #[doc = "`GetHumanPose(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, ::unity2::Array<f32>)` overload"]
+    fn get_human_pose(
+        self,
+        muscles: impl ::core::convert::Into<::unity2::Array<f32>>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::quaternion::Quaternion,
+    ) {
+        unsafe {
+            let __receiver = <HumanPoseHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __HumanPoseHandler_unity2_raw::get_human_pose(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(muscles),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <HumanPoseHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HumanPoseHandler_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"]
+    fn ctor(
+        self,
+        avatar: impl ::core::convert::Into<crate::unity_engine::avatar::Avatar>,
+        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HumanPoseHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HumanPoseHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(avatar),
+                ::core::convert::Into::into(root),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHumanPose(*mutcrate::unity_engine::humanpose::HumanPose)` overload"]
+    fn get_human_pose_2(self) -> crate::unity_engine::humanpose::HumanPose {
+        unsafe {
+            let __receiver = <HumanPoseHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::humanpose::HumanPose>::uninit();
+            __HumanPoseHandler_unity2_raw::get_human_pose_2(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-humanposehandler")]
+impl<__T: IHumanPoseHandler> IHumanPoseHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-humanposehandler")]
 impl HumanPoseHandler {
@@ -76,4 +455,14 @@ impl HumanPoseHandler {
         <Self as IHumanPoseHandlerMethods>::ctor(this, avatar, root);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-humanposehandler")]
+pub mod prelude {
+    pub use super::HumanPoseHandler;
+    pub use super::IHumanPoseHandler;
+    pub use super::IHumanPoseHandlerMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

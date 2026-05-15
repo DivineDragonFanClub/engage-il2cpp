@@ -11,14 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct SignalReceiver {
-        #[rename(name = "m_Events")]
-        pub m_events: crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver_EventKeyValue.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Timeline",
@@ -35,103 +27,1425 @@ mod __types {
             crate::unity_engine::events::unityevent::UnityEvent,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct SignalReceiver {
+        #[rename(name = "m_Events")]
+        pub m_events: crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
-#[::unity2::methods]
-impl SignalReceiver {
-    #[doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]
-    #[method(name = "OnNotify", args = 3)]
-    pub fn on_notify(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SignalReceiver_EventKeyValue_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: events :: unityevent :: UnityEvent as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "TryGetValue",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "TryGetValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_value(
+        this: SignalReceiver_EventKeyValue,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: *mut crate::unity_engine::events::unityevent::UnityEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            *mut crate::unity_engine::events::unityevent::UnityEvent,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_value::get_offset() as isize),
+        );
+        inner(this, key, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_append {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: events :: unityevent :: UnityEvent as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "Append",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "Append",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn append(
+        this: SignalReceiver_EventKeyValue,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: crate::unity_engine::events::unityevent::UnityEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            crate::unity_engine::events::unityevent::UnityEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_append::get_offset() as isize),
+        );
+        inner(this, key, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: SignalReceiver_EventKeyValue,
+        idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_2(
+        this: SignalReceiver_EventKeyValue,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_2::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_signals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "get_signals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "get_signals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_signals(
+        this: SignalReceiver_EventKeyValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::timeline::signalasset::SignalAsset,
+    > {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_signals::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                "get_events",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    "get_events",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_events(
+        this: SignalReceiver_EventKeyValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::events::unityevent::UnityEvent,
+    > {
+        let inner: extern "C" fn(
+            SignalReceiver_EventKeyValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::events::unityevent::UnityEvent,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_events::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver_EventKeyValue as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SignalReceiver_EventKeyValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SignalReceiver_EventKeyValue, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+pub trait ISignalReceiver_EventKeyValueMethods: ISignalReceiver_EventKeyValue {
+    #[doc = "`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, *mutcrate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    fn try_get_value(
         self,
+        key: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+    ) -> (bool, crate::unity_engine::events::unityevent::UnityEvent) {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::events::unityevent::UnityEvent,
+            >::uninit();
+            let __ret = {
+                __SignalReceiver_EventKeyValue_unity2_raw::try_get_value(
+                    __receiver,
+                    ::core::convert::Into::into(key),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    fn append(
+        self,
+        key: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+        value: impl ::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::append(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(i32)` overload"]
+    fn remove(self, idx: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::remove(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
+    fn remove_2(
+        self,
+        key: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::remove_2(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_signals()` overload"]
+    fn get_signals(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::timeline::signalasset::SignalAsset,
+    > {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::get_signals(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_events()` overload"]
+    fn get_events(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::events::unityevent::UnityEvent,
+    > {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::get_events(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SignalReceiver_EventKeyValue as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SignalReceiver_EventKeyValue_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+impl<__T: ISignalReceiver_EventKeyValue> ISignalReceiver_EventKeyValueMethods for __T {}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+impl SignalReceiver_EventKeyValue {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SignalReceiver_EventKeyValue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISignalReceiver_EventKeyValueMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SignalReceiver_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_notify {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: inotification :: INotification as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "OnNotify",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnNotify",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_notify(
+        this: SignalReceiver,
         origin: crate::unity_engine::playables::playable::Playable,
         notification: crate::unity_engine::playables::inotification::INotification,
         context: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`AddReaction(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "AddReaction", args = 2)]
-    pub fn add_reaction(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::inotification::INotification,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_notify::get_offset() as isize),
+        );
+        inner(this, origin, notification, context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_reaction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: events :: unityevent :: UnityEvent as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "AddReaction",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "AddReaction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_reaction(
+        this: SignalReceiver,
         asset: crate::unity_engine::timeline::signalasset::SignalAsset,
         reaction: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> ();
-
-    #[doc = "`AddEmptyReaction(crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "AddEmptyReaction", args = 1)]
-    pub fn add_empty_reaction(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            crate::unity_engine::events::unityevent::UnityEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_reaction::get_offset() as isize),
+        );
+        inner(this, asset, reaction, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_empty_reaction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::events::unityevent::UnityEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "AddEmptyReaction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "AddEmptyReaction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_empty_reaction(
+        this: SignalReceiver,
         reaction: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            crate::unity_engine::events::unityevent::UnityEvent,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_empty_reaction::get_offset() as isize),
+        );
+        inner(this, reaction, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: SignalReceiver,
+        asset: crate::unity_engine::timeline::signalasset::SignalAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_registered_signals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "GetRegisteredSignals",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "GetRegisteredSignals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_registered_signals(
+        this: SignalReceiver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::timeline::signalasset::SignalAsset,
+    > {
+        let inner : extern "C" fn (SignalReceiver , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_registered_signals :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reaction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "GetReaction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "GetReaction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_reaction(
+        this: SignalReceiver,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::unityevent::UnityEvent {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::events::unityevent::UnityEvent = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_reaction::get_offset() as isize),
+        );
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn count(
+        this: SignalReceiver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(SignalReceiver, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_signal_at_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: signalasset :: SignalAsset as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "ChangeSignalAtIndex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "ChangeSignalAtIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_signal_at_index(
+        this: SignalReceiver,
+        idx: i32,
+        new_key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            i32,
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_signal_at_index::get_offset() as isize),
+        );
+        inner(this, idx, new_key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_at_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "RemoveAtIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "RemoveAtIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_at_index(
+        this: SignalReceiver,
+        idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SignalReceiver, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_at_index::get_offset() as isize),
+            );
+        inner(this, idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_reaction_at_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::events::unityevent::UnityEvent as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "ChangeReactionAtIndex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "ChangeReactionAtIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_reaction_at_index(
+        this: SignalReceiver,
+        idx: i32,
+        reaction: crate::unity_engine::events::unityevent::UnityEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            i32,
+            crate::unity_engine::events::unityevent::UnityEvent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_reaction_at_index::get_offset() as isize),
+        );
+        inner(this, idx, reaction, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reaction_at_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "GetReactionAtIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "GetReactionAtIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_reaction_at_index(
+        this: SignalReceiver,
+        idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::events::unityevent::UnityEvent {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::events::unityevent::UnityEvent = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_reaction_at_index::get_offset() as isize),
+        );
+        inner(this, idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_signal_asset_at_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "GetSignalAssetAtIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "GetSignalAssetAtIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_signal_asset_at_index(
+        this: SignalReceiver,
+        idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::signalasset::SignalAsset {
+        let inner: extern "C" fn(
+            SignalReceiver,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::timeline::signalasset::SignalAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_signal_asset_at_index::get_offset() as isize),
+        );
+        inner(this, idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                "OnEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    "OnEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_enable(
+        this: SignalReceiver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SignalReceiver, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_enable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SignalReceiver as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SignalReceiver as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: SignalReceiver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SignalReceiver, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+pub trait ISignalReceiverMethods: ISignalReceiver {
+    #[doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]
+    fn on_notify(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        notification: impl ::core::convert::Into<
+            crate::unity_engine::playables::inotification::INotification,
+        >,
+        context: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::on_notify(
+                __receiver,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(notification),
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddReaction(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    fn add_reaction(
+        self,
+        asset: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+        reaction: impl ::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::add_reaction(
+                __receiver,
+                ::core::convert::Into::into(asset),
+                ::core::convert::Into::into(reaction),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEmptyReaction(crate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    fn add_empty_reaction(
+        self,
+        reaction: impl ::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::add_empty_reaction(
+                __receiver,
+                ::core::convert::Into::into(reaction),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, asset: crate::unity_engine::timeline::signalasset::SignalAsset) -> ();
-
+    fn remove(
+        self,
+        asset: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::remove(
+                __receiver,
+                ::core::convert::Into::into(asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetRegisteredSignals()` overload"]
-    #[method(name = "GetRegisteredSignals", args = 0)]
-    pub fn get_registered_signals(
+    fn get_registered_signals(
         self,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::unity_engine::timeline::signalasset::SignalAsset,
-    >;
-
+    > {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::get_registered_signals(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetReaction(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    #[method(name = "GetReaction", args = 1)]
-    pub fn get_reaction(
+    fn get_reaction(
         self,
-        key: crate::unity_engine::timeline::signalasset::SignalAsset,
-    ) -> crate::unity_engine::events::unityevent::UnityEvent;
-
+        key: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+    ) -> crate::unity_engine::events::unityevent::UnityEvent {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::get_reaction(
+                __receiver,
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Count()` overload"]
-    #[method(name = "Count", args = 0)]
-    pub fn count(self) -> i32;
-
+    fn count(self) -> i32 {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::count(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`ChangeSignalAtIndex(i32, crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    #[method(name = "ChangeSignalAtIndex", args = 2)]
-    pub fn change_signal_at_index(
+    fn change_signal_at_index(
         self,
-        idx: i32,
-        new_key: crate::unity_engine::timeline::signalasset::SignalAsset,
-    ) -> ();
-
+        idx: impl ::core::convert::Into<i32>,
+        new_key: impl ::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::change_signal_at_index(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::convert::Into::into(new_key),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`RemoveAtIndex(i32)` overload"]
-    #[method(name = "RemoveAtIndex", args = 1)]
-    pub fn remove_at_index(self, idx: i32) -> ();
-
+    fn remove_at_index(self, idx: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::remove_at_index(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ChangeReactionAtIndex(i32, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "ChangeReactionAtIndex", args = 2)]
-    pub fn change_reaction_at_index(
+    fn change_reaction_at_index(
         self,
-        idx: i32,
-        reaction: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> ();
-
+        idx: impl ::core::convert::Into<i32>,
+        reaction: impl ::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::change_reaction_at_index(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::convert::Into::into(reaction),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetReactionAtIndex(i32)` overload"]
-    #[method(name = "GetReactionAtIndex", args = 1)]
-    pub fn get_reaction_at_index(
+    fn get_reaction_at_index(
         self,
-        idx: i32,
-    ) -> crate::unity_engine::events::unityevent::UnityEvent;
-
+        idx: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::events::unityevent::UnityEvent {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::get_reaction_at_index(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetSignalAssetAtIndex(i32)` overload"]
-    #[method(name = "GetSignalAssetAtIndex", args = 1)]
-    pub fn get_signal_asset_at_index(
+    fn get_signal_asset_at_index(
         self,
-        idx: i32,
-    ) -> crate::unity_engine::timeline::signalasset::SignalAsset;
-
+        idx: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::timeline::signalasset::SignalAsset {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::get_signal_asset_at_index(
+                __receiver,
+                ::core::convert::Into::into(idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`OnEnable()` overload"]
-    #[method(name = "OnEnable", args = 0)]
-    pub fn on_enable(self) -> ();
-
+    fn on_enable(self) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SignalReceiver as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SignalReceiver_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+impl<__T: ISignalReceiver> ISignalReceiverMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
 impl SignalReceiver {
@@ -150,65 +1464,26 @@ impl SignalReceiver {
 }
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
-#[::unity2::methods]
-impl SignalReceiver_EventKeyValue {
-    #[doc = "`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "TryGetValue", args = 2)]
-    pub fn try_get_value(
-        self,
-        key: crate::unity_engine::timeline::signalasset::SignalAsset,
-        value: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> bool;
-
-    #[doc = "`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "Append", args = 2)]
-    pub fn append(
-        self,
-        key: crate::unity_engine::timeline::signalasset::SignalAsset,
-        value: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> ();
-
-    #[doc = "`Remove(i32)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, idx: i32) -> ();
-
-    #[doc = "`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove_2(self, key: crate::unity_engine::timeline::signalasset::SignalAsset) -> ();
-
-    #[doc = "`get_signals()` overload"]
-    #[method(name = "get_signals", args = 0)]
-    pub fn get_signals(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::timeline::signalasset::SignalAsset,
-    >;
-
-    #[doc = "`get_events()` overload"]
-    #[method(name = "get_events", args = 0)]
-    pub fn get_events(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::events::unityevent::UnityEvent,
-    >;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-timeline-signalreceiver")]
-impl SignalReceiver_EventKeyValue {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SignalReceiver_EventKeyValue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISignalReceiver_EventKeyValueMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::ISignalReceiver;
+    pub use super::ISignalReceiverMethods;
+    pub use super::ISignalReceiver_EventKeyValue;
+    pub use super::ISignalReceiver_EventKeyValueMethods;
+    pub use super::SignalReceiver;
+    pub use super::SignalReceiver_EventKeyValue;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

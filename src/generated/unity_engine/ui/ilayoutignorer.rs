@@ -15,9 +15,76 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-ilayoutignorer")]
-#[::unity2::methods]
-impl ILayoutIgnorer {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ILayoutIgnorer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ignore_layout {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILayoutIgnorer as ::unity2::ClassIdentity>::class(),
+                "get_ignoreLayout",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILayoutIgnorer as ::unity2::ClassIdentity>::NAME,
+                    "get_ignoreLayout",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ignore_layout(
+        this: ILayoutIgnorer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ILayoutIgnorer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_ignore_layout::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+pub trait IILayoutIgnorerMethods: IILayoutIgnorer {
     #[doc = "`get_ignoreLayout()` overload"]
-    #[method(name = "get_ignoreLayout", args = 0)]
-    pub fn get_ignore_layout(self) -> bool;
+    fn get_ignore_layout(self) -> bool {
+        unsafe {
+            let __receiver = <ILayoutIgnorer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILayoutIgnorer_unity2_raw::get_ignore_layout(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+impl<__T: IILayoutIgnorer> IILayoutIgnorerMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+pub mod prelude {
+    pub use super::IILayoutIgnorer;
+    pub use super::IILayoutIgnorerMethods;
+    pub use super::ILayoutIgnorer;
 }

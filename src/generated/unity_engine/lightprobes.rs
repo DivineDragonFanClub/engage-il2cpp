@@ -25,69 +25,616 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightprobes")]
-#[::unity2::methods]
-impl LightProbes {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`add_tetrahedralizationCompleted(crate::system::action::Action)` overload"]
-    #[method(name = "add_tetrahedralizationCompleted", args = 1)]
-    pub fn add_tetrahedralization_completed(value: crate::system::action::Action) -> ();
-
-    #[doc = "`remove_tetrahedralizationCompleted(crate::system::action::Action)` overload"]
-    #[method(name = "remove_tetrahedralizationCompleted", args = 1)]
-    pub fn remove_tetrahedralization_completed(value: crate::system::action::Action) -> ();
-
-    #[doc = "`Internal_CallTetrahedralizationCompletedFunction()` overload"]
-    #[method(name = "Internal_CallTetrahedralizationCompletedFunction", args = 0)]
-    pub fn internal_call_tetrahedralization_completed_function() -> ();
-
-    #[doc = "`add_needsRetetrahedralization(crate::system::action::Action)` overload"]
-    #[method(name = "add_needsRetetrahedralization", args = 1)]
-    pub fn add_needs_retetrahedralization(value: crate::system::action::Action) -> ();
-
-    #[doc = "`remove_needsRetetrahedralization(crate::system::action::Action)` overload"]
-    #[method(name = "remove_needsRetetrahedralization", args = 1)]
-    pub fn remove_needs_retetrahedralization(value: crate::system::action::Action) -> ();
-
-    #[doc = "`Internal_CallNeedsRetetrahedralizationFunction()` overload"]
-    #[method(name = "Internal_CallNeedsRetetrahedralizationFunction", args = 0)]
-    pub fn internal_call_needs_retetrahedralization_function() -> ();
-
-    #[doc = "`Tetrahedralize()` overload"]
-    #[method(name = "Tetrahedralize", args = 0)]
-    pub fn tetrahedralize() -> ();
-
-    #[doc = "`TetrahedralizeAsync()` overload"]
-    #[method(name = "TetrahedralizeAsync", args = 0)]
-    pub fn tetrahedralize_async() -> ();
-
-    #[doc = "`GetInterpolatedProbe(crate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
-    #[method(name = "GetInterpolatedProbe", args = 3)]
-    pub fn get_interpolated_probe(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LightProbes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: LightProbes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LightProbes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_tetrahedralization_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "add_tetrahedralizationCompleted",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "add_tetrahedralizationCompleted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_tetrahedralization_completed(
+        value: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::action::Action, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_tetrahedralization_completed::get_offset() as isize),
+            );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_tetrahedralization_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "remove_tetrahedralizationCompleted",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "remove_tetrahedralizationCompleted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_tetrahedralization_completed(
+        value: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::action::Action, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_tetrahedralization_completed::get_offset() as isize),
+            );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_call_tetrahedralization_completed_function {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "Internal_CallTetrahedralizationCompletedFunction",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CallTetrahedralizationCompletedFunction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_call_tetrahedralization_completed_function(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_call_tetrahedralization_completed_function::get_offset()
+                        as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_needs_retetrahedralization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "add_needsRetetrahedralization",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "add_needsRetetrahedralization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_needs_retetrahedralization(
+        value: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::action::Action, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_needs_retetrahedralization::get_offset() as isize),
+            );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_needs_retetrahedralization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "remove_needsRetetrahedralization",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "remove_needsRetetrahedralization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_needs_retetrahedralization(
+        value: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::action::Action, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_remove_needs_retetrahedralization::get_offset() as isize),
+            );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_call_needs_retetrahedralization_function {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "Internal_CallNeedsRetetrahedralizationFunction",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CallNeedsRetetrahedralizationFunction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_call_needs_retetrahedralization_function(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_internal_call_needs_retetrahedralization_function::get_offset()
+                        as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tetrahedralize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "Tetrahedralize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "Tetrahedralize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tetrahedralize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tetrahedralize::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tetrahedralize_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "TetrahedralizeAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "TetrahedralizeAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tetrahedralize_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tetrahedralize_async::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interpolated_probe {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: renderer :: Renderer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "GetInterpolatedProbe",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "GetInterpolatedProbe",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interpolated_probe(
         position: crate::unity_engine::vector3::Vector3,
         renderer: crate::unity_engine::renderer::Renderer,
-        probe: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-    ) -> ();
-
-    #[doc = "`AreLightProbesAllowed(crate::unity_engine::renderer::Renderer)` overload"]
-    #[method(name = "AreLightProbesAllowed", args = 1)]
-    pub fn are_light_probes_allowed(renderer: crate::unity_engine::renderer::Renderer) -> bool;
-
-    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "CalculateInterpolatedLightAndOcclusionProbes", args = 3)]
-    pub fn calculate_interpolated_light_and_occlusion_probes(
+        probe: *mut crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::renderer::Renderer,
+            *mut crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interpolated_probe::get_offset() as isize),
+        );
+        inner(position, renderer, probe, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_are_light_probes_allowed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "AreLightProbesAllowed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "AreLightProbesAllowed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn are_light_probes_allowed(
+        renderer: crate::unity_engine::renderer::Renderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::renderer::Renderer,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_are_light_probes_allowed::get_offset() as isize),
+        );
+        inner(renderer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_interpolated_light_and_occlusion_probes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "CalculateInterpolatedLightAndOcclusionProbes",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "CalculateInterpolatedLightAndOcclusionProbes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_interpolated_light_and_occlusion_probes(
         positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         light_probes: ::unity2::Array<
             crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
         >,
         occlusion_probes: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-    ) -> ();
-
-    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(name = "CalculateInterpolatedLightAndOcclusionProbes", args = 3)]
-    pub fn calculate_interpolated_light_and_occlusion_probes_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_calculate_interpolated_light_and_occlusion_probes::get_offset()
+                        as isize,
+                ),
+        );
+        inner(
+            positions,
+            light_probes,
+            occlusion_probes,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_interpolated_light_and_occlusion_probes_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector4::Vector4,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "CalculateInterpolatedLightAndOcclusionProbes",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "CalculateInterpolatedLightAndOcclusionProbes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_interpolated_light_and_occlusion_probes_2(
         positions: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector3::Vector3,
         >,
@@ -97,74 +644,859 @@ impl LightProbes {
         occlusion_probes: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::vector4::Vector4,
         >,
-    ) -> ();
-
-    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes_Internal(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
-    #[method(
-        name = "CalculateInterpolatedLightAndOcclusionProbes_Internal",
-        args = 4
-    )]
-    pub fn calculate_interpolated_light_and_occlusion_probes_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_calculate_interpolated_light_and_occlusion_probes_2::get_offset()
+                        as isize,
+                ),
+        );
+        inner(
+            positions,
+            light_probes,
+            occlusion_probes,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_interpolated_light_and_occlusion_probes_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "CalculateInterpolatedLightAndOcclusionProbes_Internal",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "CalculateInterpolatedLightAndOcclusionProbes_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_interpolated_light_and_occlusion_probes_internal(
         positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         positions_count: i32,
         light_probes: ::unity2::Array<
             crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
         >,
         occlusion_probes: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-    ) -> ();
-
-    #[doc = "`get_positions()` overload"]
-    #[method(name = "get_positions", args = 0)]
-    pub fn get_positions(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`get_bakedProbes()` overload"]
-    #[method(name = "get_bakedProbes", args = 0)]
-    pub fn get_baked_probes(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>;
-
-    #[doc = "`set_bakedProbes(::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>)` overload"]
-    #[method(name = "set_bakedProbes", args = 1)]
-    pub fn set_baked_probes(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            i32,
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_calculate_interpolated_light_and_occlusion_probes_internal::get_offset(
+                    ) as isize,
+                ),
+        );
+        inner(
+            positions,
+            positions_count,
+            light_probes,
+            occlusion_probes,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_positions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "get_positions",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "get_positions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_positions(
+        this: LightProbes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            LightProbes,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_positions::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_baked_probes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "get_bakedProbes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "get_bakedProbes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_baked_probes(
+        this: LightProbes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>
+    {
+        let inner: extern "C" fn(
+            LightProbes,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_baked_probes::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_baked_probes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "set_bakedProbes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "set_bakedProbes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_baked_probes(
+        this: LightProbes,
         value: ::unity2::Array<
             crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
         >,
-    ) -> ();
-
-    #[doc = "`get_count()` overload"]
-    #[method(name = "get_count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_cellCount()` overload"]
-    #[method(name = "get_cellCount", args = 0)]
-    pub fn get_cell_count(self) -> i32;
-
-    #[doc = "`GetInterpolatedLightProbe(crate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, ::unity2::Array<f32>)` overload"]
-    #[method(name = "GetInterpolatedLightProbe", args = 3)]
-    pub fn get_interpolated_light_probe(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightProbes,
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_baked_probes::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "get_count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "get_count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count(
+        this: LightProbes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(LightProbes, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cell_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "get_cellCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "get_cellCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cell_count(
+        this: LightProbes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(LightProbes, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_cell_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interpolated_light_probe {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
+                <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "GetInterpolatedLightProbe",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "GetInterpolatedLightProbe",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interpolated_light_probe(
+        this: LightProbes,
         position: crate::unity_engine::vector3::Vector3,
         renderer: crate::unity_engine::renderer::Renderer,
         coefficients: ::unity2::Array<f32>,
-    ) -> ();
-
-    #[doc = "`get_coefficients()` overload"]
-    #[method(name = "get_coefficients", args = 0)]
-    pub fn get_coefficients(self) -> ::unity2::Array<f32>;
-
-    #[doc = "`set_coefficients(::unity2::Array<f32>)` overload"]
-    #[method(name = "set_coefficients", args = 1)]
-    pub fn set_coefficients(self, value: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`GetInterpolatedProbe_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
-    #[method(name = "GetInterpolatedProbe_Injected", args = 3)]
-    pub fn get_interpolated_probe_injected(
-        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightProbes,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::renderer::Renderer,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interpolated_light_probe::get_offset() as isize),
+        );
+        inner(this, position, renderer, coefficients, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_coefficients {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "get_coefficients",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "get_coefficients",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_coefficients(
+        this: LightProbes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(LightProbes, ::unity2::OptionalMethod) -> ::unity2::Array<f32> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_coefficients::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_coefficients {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "set_coefficients",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "set_coefficients",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_coefficients(
+        this: LightProbes,
+        value: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            LightProbes,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_coefficients::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_interpolated_probe_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: renderer :: Renderer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LightProbes as ::unity2::ClassIdentity>::class(),
+                "GetInterpolatedProbe_Injected",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LightProbes as ::unity2::ClassIdentity>::NAME,
+                    "GetInterpolatedProbe_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_interpolated_probe_injected(
+        position: *mut crate::unity_engine::vector3::Vector3,
         renderer: crate::unity_engine::renderer::Renderer,
-        probe: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
-    ) -> ();
+        probe: *mut crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::renderer::Renderer,
+            *mut crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_interpolated_probe_injected::get_offset() as isize),
+        );
+        inner(position, renderer, probe, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-lightprobes")]
+impl LightProbes {
+    #[doc = "`add_tetrahedralizationCompleted(crate::system::action::Action)` overload"]
+    pub fn add_tetrahedralization_completed(
+        value: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::add_tetrahedralization_completed(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_tetrahedralizationCompleted(crate::system::action::Action)` overload"]
+    pub fn remove_tetrahedralization_completed(
+        value: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::remove_tetrahedralization_completed(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_CallTetrahedralizationCompletedFunction()` overload"]
+    pub fn internal_call_tetrahedralization_completed_function() -> () {
+        unsafe {
+            __LightProbes_unity2_raw::internal_call_tetrahedralization_completed_function(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`add_needsRetetrahedralization(crate::system::action::Action)` overload"]
+    pub fn add_needs_retetrahedralization(
+        value: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::add_needs_retetrahedralization(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_needsRetetrahedralization(crate::system::action::Action)` overload"]
+    pub fn remove_needs_retetrahedralization(
+        value: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::remove_needs_retetrahedralization(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_CallNeedsRetetrahedralizationFunction()` overload"]
+    pub fn internal_call_needs_retetrahedralization_function() -> () {
+        unsafe {
+            __LightProbes_unity2_raw::internal_call_needs_retetrahedralization_function(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tetrahedralize()` overload"]
+    pub fn tetrahedralize() -> () {
+        unsafe { __LightProbes_unity2_raw::tetrahedralize(::core::option::Option::None) }
+    }
+    #[doc = "`TetrahedralizeAsync()` overload"]
+    pub fn tetrahedralize_async() -> () {
+        unsafe { __LightProbes_unity2_raw::tetrahedralize_async(::core::option::Option::None) }
+    }
+    #[doc = "`GetInterpolatedProbe(crate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, *mutcrate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
+    pub fn get_interpolated_probe(
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        renderer: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2 {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >::uninit();
+            __LightProbes_unity2_raw::get_interpolated_probe(
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(renderer),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`AreLightProbesAllowed(crate::unity_engine::renderer::Renderer)` overload"]
+    pub fn are_light_probes_allowed(
+        renderer: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> bool {
+        unsafe {
+            __LightProbes_unity2_raw::are_light_probes_allowed(
+                ::core::convert::Into::into(renderer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
+    pub fn calculate_interpolated_light_and_occlusion_probes(
+        positions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        light_probes: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+        >,
+        occlusion_probes: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        >,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::calculate_interpolated_light_and_occlusion_probes(
+                ::core::convert::Into::into(positions),
+                ::core::convert::Into::into(light_probes),
+                ::core::convert::Into::into(occlusion_probes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
+    pub fn calculate_interpolated_light_and_occlusion_probes_2(
+        positions: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+        >,
+        light_probes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+        >,
+        occlusion_probes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector4::Vector4,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::calculate_interpolated_light_and_occlusion_probes_2(
+                ::core::convert::Into::into(positions),
+                ::core::convert::Into::into(light_probes),
+                ::core::convert::Into::into(occlusion_probes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculateInterpolatedLightAndOcclusionProbes_Internal(::unity2::Array<crate::unity_engine::vector3::Vector3>, i32, ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
+    pub fn calculate_interpolated_light_and_occlusion_probes_internal(
+        positions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        positions_count: impl ::core::convert::Into<i32>,
+        light_probes: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+        >,
+        occlusion_probes: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        >,
+    ) -> () {
+        unsafe {
+            __LightProbes_unity2_raw::calculate_interpolated_light_and_occlusion_probes_internal(
+                ::core::convert::Into::into(positions),
+                ::core::convert::Into::into(positions_count),
+                ::core::convert::Into::into(light_probes),
+                ::core::convert::Into::into(occlusion_probes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInterpolatedProbe_Injected(*mutcrate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, *mutcrate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]
+    pub fn get_interpolated_probe_injected(
+        renderer: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >::uninit();
+            __LightProbes_unity2_raw::get_interpolated_probe_injected(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(renderer),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-lightprobes")]
+pub trait ILightProbesMethods: ILightProbes {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_positions()` overload"]
+    fn get_positions(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_positions(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_bakedProbes()` overload"]
+    fn get_baked_probes(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>
+    {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_baked_probes(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_bakedProbes(::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>)` overload"]
+    fn set_baked_probes(
+        self,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<
+                crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::set_baked_probes(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_cellCount()` overload"]
+    fn get_cell_count(self) -> i32 {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_cell_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetInterpolatedLightProbe(crate::unity_engine::vector3::Vector3, crate::unity_engine::renderer::Renderer, ::unity2::Array<f32>)` overload"]
+    fn get_interpolated_light_probe(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        renderer: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+        coefficients: impl ::core::convert::Into<::unity2::Array<f32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_interpolated_light_probe(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(renderer),
+                ::core::convert::Into::into(coefficients),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_coefficients()` overload"]
+    fn get_coefficients(self) -> ::unity2::Array<f32> {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::get_coefficients(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_coefficients(::unity2::Array<f32>)` overload"]
+    fn set_coefficients(self, value: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
+        unsafe {
+            let __receiver = <LightProbes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbes_unity2_raw::set_coefficients(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-lightprobes")]
+impl<__T: ILightProbes> ILightProbesMethods for __T {}
 
 #[cfg(feature = "unity_engine-lightprobes")]
 impl LightProbes {
@@ -180,4 +1512,17 @@ impl LightProbes {
         <Self as ILightProbesMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-lightprobes")]
+pub mod prelude {
+    pub use super::ILightProbes;
+    pub use super::ILightProbesMethods;
+    pub use super::LightProbes;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

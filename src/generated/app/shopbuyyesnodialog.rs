@@ -28,38 +28,221 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-shopbuyyesnodialog")]
-#[::unity2::methods]
-impl ShopBuyYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShopBuyYesNoDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         item_data: crate::app::itemdata::ItemData,
         num: i32,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, bool, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::itemdata::ItemData,
+            i32,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            item_data,
+            num,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
         super_: crate::app::procinst::ProcInst,
         item_data: crate::app::itemdata::ItemData,
         num: i32,
         enabled_price_down: bool,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::accessorydata::AccessoryData, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::itemdata::ItemData,
+            i32,
+            bool,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(
+            super_,
+            item_data,
+            num,
+            enabled_price_down,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_3(
         super_: crate::app::procinst::ProcInst,
         accessory_data: crate::app::accessorydata::AccessoryData,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, i32, i32, i32, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 8)]
-    pub fn create_bind_4(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::accessorydata::AccessoryData,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_3::get_offset() as isize),
+        );
+        inner(
+            super_,
+            accessory_data,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_4(
         super_: crate::app::procinst::ProcInst,
         base_unit_item: crate::app::unititem::UnitItem,
         refined_unit_item: crate::app::unititem::UnitItem,
@@ -68,41 +251,428 @@ impl ShopBuyYesNoDialog {
         silver_num: i32,
         price: i32,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::itemevolvedata::ItemEvolveData, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind_5(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_4::get_offset() as isize),
+        );
+        inner(
+            super_,
+            base_unit_item,
+            refined_unit_item,
+            iron_num,
+            steel_num,
+            silver_num,
+            price,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemevolvedata :: ItemEvolveData as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_5(
         super_: crate::app::procinst::ProcInst,
         base_unit_item: crate::app::unititem::UnitItem,
         evolved_unit_item: crate::app::unititem::UnitItem,
         item_evolve_data: crate::app::itemevolvedata::ItemEvolveData,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind_6(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unititem::UnitItem,
+            crate::app::unititem::UnitItem,
+            crate::app::itemevolvedata::ItemEvolveData,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_5::get_offset() as isize),
+        );
+        inner(
+            super_,
+            base_unit_item,
+            evolved_unit_item,
+            item_evolve_data,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_6(
         super_: crate::app::procinst::ProcInst,
         skill_data: crate::app::skilldata::SkillData,
         cost: i32,
         yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::skilldata::SkillData,
+            i32,
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_6::get_offset() as isize),
+        );
+        inner(
+            super_,
+            skill_data,
+            cost,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ShopBuyYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
         menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ShopBuyYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "OnClose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_close(
+        this: ShopBuyYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ShopBuyYesNoDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+impl ShopBuyYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        num: impl ::core::convert::Into<i32>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(num),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, bool, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        num: impl ::core::convert::Into<i32>,
+        enabled_price_down: impl ::core::convert::Into<bool>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(num),
+                ::core::convert::Into::into(enabled_price_down),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::accessorydata::AccessoryData, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_3(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind_3(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(accessory_data),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, i32, i32, i32, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_4(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        refined_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        iron_num: impl ::core::convert::Into<i32>,
+        steel_num: impl ::core::convert::Into<i32>,
+        silver_num: impl ::core::convert::Into<i32>,
+        price: impl ::core::convert::Into<i32>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind_4(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(base_unit_item),
+                ::core::convert::Into::into(refined_unit_item),
+                ::core::convert::Into::into(iron_num),
+                ::core::convert::Into::into(steel_num),
+                ::core::convert::Into::into(silver_num),
+                ::core::convert::Into::into(price),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::itemevolvedata::ItemEvolveData, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_5(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        evolved_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        item_evolve_data: impl ::core::convert::Into<crate::app::itemevolvedata::ItemEvolveData>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind_5(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(base_unit_item),
+                ::core::convert::Into::into(evolved_unit_item),
+                ::core::convert::Into::into(item_evolve_data),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
+    pub fn create_bind_6(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        cost: impl ::core::convert::Into<i32>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+        >,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
+        unsafe {
+            __ShopBuyYesNoDialog_unity2_raw::create_bind_6(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(skill_data),
+                ::core::convert::Into::into(cost),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+pub trait IShopBuyYesNoDialogMethods: IShopBuyYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ShopBuyYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ShopBuyYesNoDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
+        unsafe {
+            let __receiver = <ShopBuyYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ShopBuyYesNoDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+impl<__T: IShopBuyYesNoDialog> IShopBuyYesNoDialogMethods for __T {}
 
 #[cfg(feature = "app-shopbuyyesnodialog")]
 impl ShopBuyYesNoDialog {
@@ -126,16 +696,151 @@ impl ShopBuyYesNoDialog {
 }
 
 #[cfg(feature = "app-shopbuyyesnodialog")]
-#[::unity2::methods]
-impl ShopBuyYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShopBuyYesNoDialog_YesEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ShopBuyYesNoDialog_YesEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ShopBuyYesNoDialog_YesEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopBuyYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopBuyYesNoDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ShopBuyYesNoDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ShopBuyYesNoDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+pub trait IShopBuyYesNoDialog_YesEventHandlerMethods: IShopBuyYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ShopBuyYesNoDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ShopBuyYesNoDialog_YesEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <ShopBuyYesNoDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ShopBuyYesNoDialog_YesEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+impl<__T: IShopBuyYesNoDialog_YesEventHandler> IShopBuyYesNoDialog_YesEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-shopbuyyesnodialog")]
 impl ShopBuyYesNoDialog_YesEventHandler {
@@ -151,4 +856,35 @@ impl ShopBuyYesNoDialog_YesEventHandler {
         <Self as IShopBuyYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
         this
     }
+}
+
+#[cfg(feature = "app-shopbuyyesnodialog")]
+pub mod prelude {
+    pub use super::IShopBuyYesNoDialog;
+    pub use super::IShopBuyYesNoDialogMethods;
+    pub use super::IShopBuyYesNoDialog_YesEventHandler;
+    pub use super::IShopBuyYesNoDialog_YesEventHandlerMethods;
+    pub use super::ShopBuyYesNoDialog;
+    pub use super::ShopBuyYesNoDialog_YesEventHandler;
+    pub use crate::app::basicdialog::IBasicDialog;
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::yesnodialog::IYesNoDialog;
+    #[cfg(feature = "app-yesnodialog")]
+    pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

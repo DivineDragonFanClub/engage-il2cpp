@@ -41,117 +41,1198 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-fixedvalue")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FixedValue_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "get_Value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "get_Value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(FixedValue, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "set_Value",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "set_Value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_value(
+        this: FixedValue,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FixedValue, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_value::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "get_Float",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "get_Float",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_float(
+        this: FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(FixedValue, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_float::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "set_Float",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "set_Float",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float(
+        this: FixedValue,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FixedValue, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_float::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FixedValue,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FixedValue, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: FixedValue,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FixedValue, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_2::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: FixedValue,
+        value: i32,
+        shift: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FixedValue, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_3::get_offset() as isize),
+            );
+        inner(this, value, shift, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_addition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Addition",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Addition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_addition(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            crate::app::fixedvalue::FixedValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_addition::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_subtraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Subtraction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Subtraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_subtraction(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            crate::app::fixedvalue::FixedValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_subtraction::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_multiply {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Multiply",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Multiply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_multiply(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            crate::app::fixedvalue::FixedValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_multiply::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_division {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Division",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Division",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_division(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            crate::app::fixedvalue::FixedValue,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_division::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_addition_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Addition",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Addition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_addition_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_addition_2::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_subtraction_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Subtraction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Subtraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_subtraction_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_subtraction_2::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_multiply_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Multiply",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Multiply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_multiply_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_multiply_2::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_division_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Division",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Division",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_division_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_division_2::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_addition_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Addition",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Addition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_addition_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_addition_3::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_subtraction_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Subtraction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Subtraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_subtraction_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_subtraction_3::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_multiply_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Multiply",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Multiply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_multiply_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_multiply_3::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_division_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fixedvalue::FixedValue as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FixedValue as ::unity2::ClassIdentity>::class(),
+                "op_Division",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FixedValue as ::unity2::ClassIdentity>::NAME,
+                    "op_Division",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_division_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fixedvalue::FixedValue {
+        let inner: extern "C" fn(
+            crate::app::fixedvalue::FixedValue,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fixedvalue::FixedValue = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_division_3::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fixedvalue")]
+impl FixedValue {
+    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
+    pub fn op_addition(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_addition(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
+    pub fn op_subtraction(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_subtraction(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
+    pub fn op_multiply(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_multiply(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
+    pub fn op_division(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_division(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, i32)` overload"]
+    pub fn op_addition_2(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<i32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_addition_2(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, i32)` overload"]
+    pub fn op_subtraction_2(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<i32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_subtraction_2(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, i32)` overload"]
+    pub fn op_multiply_2(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<i32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_multiply_2(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, i32)` overload"]
+    pub fn op_division_2(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<i32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_division_2(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, f32)` overload"]
+    pub fn op_addition_3(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<f32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_addition_3(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, f32)` overload"]
+    pub fn op_subtraction_3(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<f32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_subtraction_3(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, f32)` overload"]
+    pub fn op_multiply_3(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<f32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_multiply_3(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, f32)` overload"]
+    pub fn op_division_3(
+        a: impl ::core::convert::Into<crate::app::fixedvalue::FixedValue>,
+        b: impl ::core::convert::Into<f32>,
+    ) -> crate::app::fixedvalue::FixedValue {
+        unsafe {
+            __FixedValue_unity2_raw::op_division_3(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fixedvalue")]
 impl FixedValue {
     #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> i32;
-
+    pub fn get_value(self) -> i32 {
+        unsafe { __FixedValue_unity2_raw::get_value(self, ::core::option::Option::None) }
+    }
     #[doc = "`set_Value(i32)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: i32) -> ();
-
+    pub fn set_value(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __FixedValue_unity2_raw::set_value(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_Float()` overload"]
-    #[method(name = "get_Float", args = 0)]
-    pub fn get_float(self) -> f32;
-
+    pub fn get_float(self) -> f32 {
+        unsafe { __FixedValue_unity2_raw::get_float(self, ::core::option::Option::None) }
+    }
     #[doc = "`set_Float(f32)` overload"]
-    #[method(name = "set_Float", args = 1)]
-    pub fn set_float(self, value: f32) -> ();
-
+    pub fn set_float(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __FixedValue_unity2_raw::set_float(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, value: i32) -> ();
-
+    pub fn ctor(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __FixedValue_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor(f32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, value: f32) -> ();
-
+    pub fn ctor_2(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __FixedValue_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_3(self, value: i32, shift: i32) -> ();
+    pub fn ctor_3(
+        self,
+        value: impl ::core::convert::Into<i32>,
+        shift: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __FixedValue_unity2_raw::ctor_3(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(shift),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
-    #[method(name = "op_Addition", args = 2)]
-    pub fn op_addition(
-        a: crate::app::fixedvalue::FixedValue,
-        b: crate::app::fixedvalue::FixedValue,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
-    #[method(name = "op_Subtraction", args = 2)]
-    pub fn op_subtraction(
-        a: crate::app::fixedvalue::FixedValue,
-        b: crate::app::fixedvalue::FixedValue,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
-    #[method(name = "op_Multiply", args = 2)]
-    pub fn op_multiply(
-        a: crate::app::fixedvalue::FixedValue,
-        b: crate::app::fixedvalue::FixedValue,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]
-    #[method(name = "op_Division", args = 2)]
-    pub fn op_division(
-        a: crate::app::fixedvalue::FixedValue,
-        b: crate::app::fixedvalue::FixedValue,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, i32)` overload"]
-    #[method(name = "op_Addition", args = 2)]
-    pub fn op_addition_2(
-        a: crate::app::fixedvalue::FixedValue,
-        b: i32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, i32)` overload"]
-    #[method(name = "op_Subtraction", args = 2)]
-    pub fn op_subtraction_2(
-        a: crate::app::fixedvalue::FixedValue,
-        b: i32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, i32)` overload"]
-    #[method(name = "op_Multiply", args = 2)]
-    pub fn op_multiply_2(
-        a: crate::app::fixedvalue::FixedValue,
-        b: i32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, i32)` overload"]
-    #[method(name = "op_Division", args = 2)]
-    pub fn op_division_2(
-        a: crate::app::fixedvalue::FixedValue,
-        b: i32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Addition(crate::app::fixedvalue::FixedValue, f32)` overload"]
-    #[method(name = "op_Addition", args = 2)]
-    pub fn op_addition_3(
-        a: crate::app::fixedvalue::FixedValue,
-        b: f32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, f32)` overload"]
-    #[method(name = "op_Subtraction", args = 2)]
-    pub fn op_subtraction_3(
-        a: crate::app::fixedvalue::FixedValue,
-        b: f32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, f32)` overload"]
-    #[method(name = "op_Multiply", args = 2)]
-    pub fn op_multiply_3(
-        a: crate::app::fixedvalue::FixedValue,
-        b: f32,
-    ) -> crate::app::fixedvalue::FixedValue;
-
-    #[doc = "`op_Division(crate::app::fixedvalue::FixedValue, f32)` overload"]
-    #[method(name = "op_Division", args = 2)]
-    pub fn op_division_3(
-        a: crate::app::fixedvalue::FixedValue,
-        b: f32,
-    ) -> crate::app::fixedvalue::FixedValue;
+#[cfg(feature = "app-fixedvalue")]
+pub mod prelude {
+    pub use super::FixedValue;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

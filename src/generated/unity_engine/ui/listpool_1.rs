@@ -41,3 +41,12 @@ impl<T0: ::unity2::ClassIdentity> ListPool_1<T0> {
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
 }
+
+#[cfg(feature = "unity_engine-ui-listpool_1")]
+pub mod prelude {
+    pub use super::IListPool_1;
+    pub use super::ListPool_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

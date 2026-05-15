@@ -14,7 +14,10 @@ mod __types {
     #[parent(crate::app::struct_object::baseitem::BaseItem)]
     #[parent(crate::app::struct_object::basepiece::BasePiece)]
     #[parent(crate::system::object::Object)]
-    pub struct BaseArrayItem_1<T0: ::unity2::ClassIdentity> {}
+    pub struct BaseArrayItem_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "_Pieces")]
+        pub pieces_field: crate::system::collections::generic::list_1::List_1<T0>,
+    }
 }
 
 #[cfg(feature = "app-struct_object-basearrayitem_1-types")]
@@ -54,4 +57,20 @@ impl<T0: ::unity2::ClassIdentity> BaseArrayItem_1<T0> {
         <Self as IBaseArrayItem_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-struct_object-basearrayitem_1")]
+pub mod prelude {
+    pub use super::BaseArrayItem_1;
+    pub use super::IBaseArrayItem_1;
+    pub use super::IBaseArrayItem_1Methods;
+    pub use crate::app::struct_object::baseitem::IBaseItem;
+    #[cfg(feature = "app-struct_object-baseitem")]
+    pub use crate::app::struct_object::baseitem::IBaseItemMethods;
+    pub use crate::app::struct_object::basepiece::IBasePiece;
+    #[cfg(feature = "app-struct_object-basepiece")]
+    pub use crate::app::struct_object::basepiece::IBasePieceMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

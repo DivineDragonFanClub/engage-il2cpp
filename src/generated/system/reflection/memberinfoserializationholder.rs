@@ -29,3 +29,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-memberinfoserializationholder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-memberinfoserializationholder")]
+pub mod prelude {
+    pub use super::IMemberInfoSerializationHolder;
+    pub use super::MemberInfoSerializationHolder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

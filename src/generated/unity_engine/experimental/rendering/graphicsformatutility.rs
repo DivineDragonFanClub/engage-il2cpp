@@ -20,68 +20,599 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-graphicsformatutility")]
-#[::unity2::methods]
-impl GraphicsFormatUtility {
-    #[doc = "`GetFormat(crate::unity_engine::texture::Texture)` overload"]
-    #[method(name = "GetFormat", args = 1)]
-    pub fn get_format(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GraphicsFormatUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_format(
         texture: crate::unity_engine::texture::Texture,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`GetGraphicsFormat(crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
-    #[method(name = "GetGraphicsFormat", args = 2)]
-    pub fn get_graphics_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: texture :: Texture , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_format :: get_offset () as isize) ,) ;
+        inner(texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format(
         format: crate::unity_engine::textureformat::TextureFormat,
         is_srgb: bool,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`GetGraphicsFormat_Native_TextureFormat(crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
-    #[method(name = "GetGraphicsFormat_Native_TextureFormat", args = 2)]
-    pub fn get_graphics_format_native_texture_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: textureformat :: TextureFormat , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format :: get_offset () as isize) ,) ;
+        inner(format, is_srgb, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format_native_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat_Native_TextureFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat_Native_TextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format_native_texture_format(
         format: crate::unity_engine::textureformat::TextureFormat,
         is_srgb: bool,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`GetGraphicsFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, bool)` overload"]
-    #[method(name = "GetGraphicsFormat", args = 2)]
-    pub fn get_graphics_format_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: textureformat :: TextureFormat , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format_native_texture_format :: get_offset () as isize) ,) ;
+        inner(format, is_srgb, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format_2(
         format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
         is_srgb: bool,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`GetGraphicsFormat_Native_RenderTextureFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, bool)` overload"]
-    #[method(name = "GetGraphicsFormat_Native_RenderTextureFormat", args = 2)]
-    pub fn get_graphics_format_native_render_texture_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: rendertextureformat :: RenderTextureFormat , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format_2 :: get_offset () as isize) ,) ;
+        inner(format, is_srgb, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format_native_render_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat_Native_RenderTextureFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat_Native_RenderTextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format_native_render_texture_format(
         format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
         is_srgb: bool,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`GetGraphicsFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite)` overload"]
-    #[method(name = "GetGraphicsFormat", args = 2)]
-    pub fn get_graphics_format_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: rendertextureformat :: RenderTextureFormat , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format_native_render_texture_format :: get_offset () as isize) ,) ;
+        inner(format, is_srgb, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format_3(
         format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
         read_write: crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
-    #[doc = "`IsSRGBFormat(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)` overload"]
-    #[method(name = "IsSRGBFormat", args = 1)]
-    pub fn is_srgb_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: rendertextureformat :: RenderTextureFormat , crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format_3 :: get_offset () as isize) ,) ;
+        inner(format, read_write, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_srgb_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "IsSRGBFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "IsSRGBFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_srgb_format(
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-    ) -> bool;
-
-    #[doc = "`GetRenderTextureFormat(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)` overload"]
-    #[method(name = "GetRenderTextureFormat", args = 1)]
-    pub fn get_render_texture_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_srgb_format::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "GetRenderTextureFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderTextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_texture_format(
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-    ) -> crate::unity_engine::rendertextureformat::RenderTextureFormat;
-
-    #[doc = "`IsCompressedTextureFormat(crate::unity_engine::textureformat::TextureFormat)` overload"]
-    #[method(name = "IsCompressedTextureFormat", args = 1)]
-    pub fn is_compressed_texture_format(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendertextureformat::RenderTextureFormat {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendertextureformat::RenderTextureFormat =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_render_texture_format::get_offset() as isize),
+            );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_compressed_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "IsCompressedTextureFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "IsCompressedTextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_compressed_texture_format(
         format: crate::unity_engine::textureformat::TextureFormat,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::textureformat::TextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_compressed_texture_format::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_crunch_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFormatUtility as ::unity2::ClassIdentity>::class(),
+                "IsCrunchFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFormatUtility as ::unity2::ClassIdentity>::NAME,
+                    "IsCrunchFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_crunch_format(
+        format: crate::unity_engine::textureformat::TextureFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::textureformat::TextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_crunch_format::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-experimental-rendering-graphicsformatutility")]
+impl GraphicsFormatUtility {
+    #[doc = "`GetFormat(crate::unity_engine::texture::Texture)` overload"]
+    pub fn get_format(
+        texture: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_format(
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsFormat(crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
+    pub fn get_graphics_format(
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        is_srgb: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_graphics_format(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(is_srgb),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsFormat_Native_TextureFormat(crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
+    pub fn get_graphics_format_native_texture_format(
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        is_srgb: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_graphics_format_native_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(is_srgb),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, bool)` overload"]
+    pub fn get_graphics_format_2(
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        >,
+        is_srgb: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_graphics_format_2(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(is_srgb),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsFormat_Native_RenderTextureFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, bool)` overload"]
+    pub fn get_graphics_format_native_render_texture_format(
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        >,
+        is_srgb: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_graphics_format_native_render_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(is_srgb),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGraphicsFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat, crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite)` overload"]
+    pub fn get_graphics_format_3(
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        >,
+        read_write: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
+        >,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_graphics_format_3(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(read_write),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSRGBFormat(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)` overload"]
+    pub fn is_srgb_format(
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+    ) -> bool {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::is_srgb_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRenderTextureFormat(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)` overload"]
+    pub fn get_render_texture_format(
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+    ) -> crate::unity_engine::rendertextureformat::RenderTextureFormat {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::get_render_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsCompressedTextureFormat(crate::unity_engine::textureformat::TextureFormat)` overload"]
+    pub fn is_compressed_texture_format(
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+    ) -> bool {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::is_compressed_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsCrunchFormat(crate::unity_engine::textureformat::TextureFormat)` overload"]
-    #[method(name = "IsCrunchFormat", args = 1)]
-    pub fn is_crunch_format(format: crate::unity_engine::textureformat::TextureFormat) -> bool;
+    pub fn is_crunch_format(
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+    ) -> bool {
+        unsafe {
+            __GraphicsFormatUtility_unity2_raw::is_crunch_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-graphicsformatutility")]
+pub mod prelude {
+    pub use super::GraphicsFormatUtility;
+    pub use super::IGraphicsFormatUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

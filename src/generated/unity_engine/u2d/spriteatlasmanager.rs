@@ -28,39 +28,371 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SpriteAtlasManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_atlas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                "RequestAtlas",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    "RequestAtlas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_atlas(
+        tag: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_request_atlas::get_offset() as isize),
+            );
+        inner(tag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_atlas_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                "add_atlasRegistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    "add_atlasRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_atlas_registered(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_atlas_registered::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_atlas_registered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                "remove_atlasRegistered",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    "remove_atlasRegistered",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_atlas_registered(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_atlas_registered::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_registered_atlas {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                "PostRegisteredAtlas",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    "PostRegisteredAtlas",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_registered_atlas(
+        sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_post_registered_atlas::get_offset() as isize),
+        );
+        inner(sprite_atlas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                "Register",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    "Register",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register(
+        sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register::get_offset() as isize),
+        );
+        inner(sprite_atlas, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpriteAtlasManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpriteAtlasManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
 impl SpriteAtlasManager {
     #[doc = "`RequestAtlas(::unity2::Il2CppString)` overload"]
-    #[method(name = "RequestAtlas", args = 1)]
-    pub fn request_atlas(tag: ::unity2::Il2CppString) -> bool;
-
+    pub fn request_atlas(tag: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __SpriteAtlasManager_unity2_raw::request_atlas(
+                ::core::convert::Into::into(tag),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`add_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"]
-    #[method(name = "add_atlasRegistered", args = 1)]
     pub fn add_atlas_registered(
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
         >,
-    ) -> ();
-
+    ) -> () {
+        unsafe {
+            __SpriteAtlasManager_unity2_raw::add_atlas_registered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`remove_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"]
-    #[method(name = "remove_atlasRegistered", args = 1)]
     pub fn remove_atlas_registered(
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
         >,
-    ) -> ();
-
+    ) -> () {
+        unsafe {
+            __SpriteAtlasManager_unity2_raw::remove_atlas_registered(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`PostRegisteredAtlas(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
-    #[method(name = "PostRegisteredAtlas", args = 1)]
     pub fn post_registered_atlas(
-        sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-    ) -> ();
-
+        sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+    ) -> () {
+        unsafe {
+            __SpriteAtlasManager_unity2_raw::post_registered_atlas(
+                ::core::convert::Into::into(sprite_atlas),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Register(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
-    #[method(name = "Register", args = 1)]
-    pub fn register(sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas) -> ();
-
+    pub fn register(
+        sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+    ) -> () {
+        unsafe {
+            __SpriteAtlasManager_unity2_raw::register(
+                ::core::convert::Into::into(sprite_atlas),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __SpriteAtlasManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
+pub mod prelude {
+    pub use super::ISpriteAtlasManager;
+    pub use super::SpriteAtlasManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

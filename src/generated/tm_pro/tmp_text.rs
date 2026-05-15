@@ -16,177 +16,6 @@ mod __types {
     use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_SpecialCharacter {
-        pub character: crate::tm_pro::tmp_character::TMP_Character,
-        pub font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        pub material: crate::unity_engine::material::Material,
-        pub material_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_SpecialCharacter {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.SpecialCharacter";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_SpecialCharacter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_Text_TextInputSources {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.TextInputSources";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_TextInputSources {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_Text_TextInputSources {
-        pub fn text_input_box() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn set_text() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn set_text_array() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn text_string() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_CharacterSubstitution {
-        pub index: i32,
-        pub unicode: u32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.CharacterSubstitution";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_TextBackingContainer {
-        pub m_array: ::unity2::Array<u32>,
-        pub m_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_TextBackingContainer {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.TextBackingContainer";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_TextBackingContainer {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_UnicodeChar {
-        pub unicode: i32,
-        pub string_index: i32,
-        pub length: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.UnicodeChar";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_UnicodeChar {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_text/TMP_Text.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_Text")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
@@ -710,1027 +539,9952 @@ mod __types {
         #[rename(name = "k_LargeNegativeInt")]
         pub k_large_negative_int: i32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_UnicodeChar {
+        pub unicode: i32,
+        pub string_index: i32,
+        pub length: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.UnicodeChar";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_UnicodeChar {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TMP_Text_TextInputSources {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.TextInputSources";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_TextInputSources {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TMP_Text_TextInputSources {
+        pub fn text_input_box() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn set_text() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn set_text_array() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn text_string() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_TextBackingContainer {
+        pub m_array: ::unity2::Array<u32>,
+        pub m_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_TextBackingContainer {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.TextBackingContainer";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_TextBackingContainer {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_SpecialCharacter {
+        pub character: crate::tm_pro::tmp_character::TMP_Character,
+        pub font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        pub material: crate::unity_engine::material::Material,
+        pub material_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_SpecialCharacter {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.SpecialCharacter";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_SpecialCharacter {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_CharacterSubstitution {
+        pub index: i32,
+        pub unicode: u32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.CharacterSubstitution";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_text-types")]
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_text")]
-#[::unity2::methods(value)]
-impl TMP_Text_SpecialCharacter {
-    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-        material_index: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[::unity2::methods(value)]
-impl TMP_Text_CharacterSubstitution {
-    #[doc = "`.ctor(i32, u32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, index: i32, unicode: u32) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[::unity2::methods(value)]
-impl TMP_Text_TextBackingContainer {
-    #[doc = "`get_Capacity()` overload"]
-    #[method(name = "get_Capacity", args = 0)]
-    pub fn get_capacity(self) -> i32;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`set_Count(i32)` overload"]
-    #[method(name = "set_Count", args = 1)]
-    pub fn set_count(self, value: i32) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> u32;
-
-    #[doc = "`set_Item(i32, u32)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, index: i32, value: u32) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, size: i32) -> ();
-
-    #[doc = "`Resize(i32)` overload"]
-    #[method(name = "Resize", args = 1)]
-    pub fn resize(self, size: i32) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[::unity2::methods]
-impl TMP_Text {
-    #[doc = "`get_text()` overload"]
-    #[method(name = "get_text", args = 0)]
-    pub fn get_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_text", args = 1)]
-    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_textPreprocessor()` overload"]
-    #[method(name = "get_textPreprocessor", args = 0)]
-    pub fn get_text_preprocessor(self) -> crate::tm_pro::itextpreprocessor::ITextPreprocessor;
-
-    #[doc = "`set_textPreprocessor(crate::tm_pro::itextpreprocessor::ITextPreprocessor)` overload"]
-    #[method(name = "set_textPreprocessor", args = 1)]
-    pub fn set_text_preprocessor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_text",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_text",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text(
+        this: TMP_Text,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_text::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_preprocessor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_textPreprocessor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_textPreprocessor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_preprocessor(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::itextpreprocessor::ITextPreprocessor {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::itextpreprocessor::ITextPreprocessor = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_preprocessor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_preprocessor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::itextpreprocessor::ITextPreprocessor as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_textPreprocessor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_textPreprocessor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_preprocessor(
+        this: TMP_Text,
         value: crate::tm_pro::itextpreprocessor::ITextPreprocessor,
-    ) -> ();
-
-    #[doc = "`get_isRightToLeftText()` overload"]
-    #[method(name = "get_isRightToLeftText", args = 0)]
-    pub fn get_is_right_to_left_text(self) -> bool;
-
-    #[doc = "`set_isRightToLeftText(bool)` overload"]
-    #[method(name = "set_isRightToLeftText", args = 1)]
-    pub fn set_is_right_to_left_text(self, value: bool) -> ();
-
-    #[doc = "`get_font()` overload"]
-    #[method(name = "get_font", args = 0)]
-    pub fn get_font(self) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`set_font(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "set_font", args = 1)]
-    pub fn set_font(self, value: crate::tm_pro::tmp_fontasset::TMP_FontAsset) -> ();
-
-    #[doc = "`get_fontSharedMaterial()` overload"]
-    #[method(name = "get_fontSharedMaterial", args = 0)]
-    pub fn get_font_shared_material(self) -> crate::unity_engine::material::Material;
-
-    #[doc = "`set_fontSharedMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "set_fontSharedMaterial", args = 1)]
-    pub fn set_font_shared_material(self, value: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`get_fontSharedMaterials()` overload"]
-    #[method(name = "get_fontSharedMaterials", args = 0)]
-    pub fn get_font_shared_materials(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
-
-    #[doc = "`set_fontSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    #[method(name = "set_fontSharedMaterials", args = 1)]
-    pub fn set_font_shared_materials(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::itextpreprocessor::ITextPreprocessor,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_preprocessor::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_right_to_left_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isRightToLeftText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isRightToLeftText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_right_to_left_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_right_to_left_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_right_to_left_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isRightToLeftText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isRightToLeftText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_right_to_left_text(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_right_to_left_text::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_font",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_font",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_font",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_font",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font(
+        this: TMP_Text,
+        value: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_shared_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontSharedMaterial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSharedMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_shared_material(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_shared_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_shared_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontSharedMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontSharedMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_shared_material(
+        this: TMP_Text,
+        value: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_shared_material::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_shared_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontSharedMaterials",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSharedMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_shared_materials(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_shared_materials::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_shared_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::material::Material,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontSharedMaterials",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontSharedMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_shared_materials(
+        this: TMP_Text,
         value: ::unity2::Array<crate::unity_engine::material::Material>,
-    ) -> ();
-
-    #[doc = "`get_fontMaterial()` overload"]
-    #[method(name = "get_fontMaterial", args = 0)]
-    pub fn get_font_material(self) -> crate::unity_engine::material::Material;
-
-    #[doc = "`set_fontMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "set_fontMaterial", args = 1)]
-    pub fn set_font_material(self, value: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`get_fontMaterials()` overload"]
-    #[method(name = "get_fontMaterials", args = 0)]
-    pub fn get_font_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
-
-    #[doc = "`set_fontMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    #[method(name = "set_fontMaterials", args = 1)]
-    pub fn set_font_materials(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_shared_materials::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontMaterial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_material(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_material(
+        this: TMP_Text,
+        value: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_material::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontMaterials",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_materials(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_materials::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::material::Material,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontMaterials",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_materials(
+        this: TMP_Text,
         value: ::unity2::Array<crate::unity_engine::material::Material>,
-    ) -> ();
-
-    #[doc = "`get_color()` overload"]
-    #[method(name = "get_color", args = 0)]
-    pub fn get_color(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "set_color", args = 1)]
-    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
-
-    #[doc = "`get_alpha()` overload"]
-    #[method(name = "get_alpha", args = 0)]
-    pub fn get_alpha(self) -> f32;
-
-    #[doc = "`set_alpha(f32)` overload"]
-    #[method(name = "set_alpha", args = 1)]
-    pub fn set_alpha(self, value: f32) -> ();
-
-    #[doc = "`get_enableVertexGradient()` overload"]
-    #[method(name = "get_enableVertexGradient", args = 0)]
-    pub fn get_enable_vertex_gradient(self) -> bool;
-
-    #[doc = "`set_enableVertexGradient(bool)` overload"]
-    #[method(name = "set_enableVertexGradient", args = 1)]
-    pub fn set_enable_vertex_gradient(self, value: bool) -> ();
-
-    #[doc = "`get_colorGradient()` overload"]
-    #[method(name = "get_colorGradient", args = 0)]
-    pub fn get_color_gradient(self) -> crate::tm_pro::vertexgradient::VertexGradient;
-
-    #[doc = "`set_colorGradient(crate::tm_pro::vertexgradient::VertexGradient)` overload"]
-    #[method(name = "set_colorGradient", args = 1)]
-    pub fn set_color_gradient(self, value: crate::tm_pro::vertexgradient::VertexGradient) -> ();
-
-    #[doc = "`get_colorGradientPreset()` overload"]
-    #[method(name = "get_colorGradientPreset", args = 0)]
-    pub fn get_color_gradient_preset(self) -> crate::tm_pro::tmp_colorgradient::TMP_ColorGradient;
-
-    #[doc = "`set_colorGradientPreset(crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "set_colorGradientPreset", args = 1)]
-    pub fn set_color_gradient_preset(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_materials::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_color",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_color",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color(
+        this: TMP_Text,
+        value: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_alpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_alpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alpha(this: TMP_Text, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_alpha",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_alpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_vertex_gradient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_enableVertexGradient",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_enableVertexGradient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_vertex_gradient(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_vertex_gradient::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_vertex_gradient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_enableVertexGradient",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_enableVertexGradient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_vertex_gradient(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_vertex_gradient::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_gradient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_colorGradient",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_colorGradient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_gradient(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::vertexgradient::VertexGradient {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::vertexgradient::VertexGradient = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color_gradient::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_gradient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::vertexgradient::VertexGradient as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_colorGradient",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_colorGradient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color_gradient(
+        this: TMP_Text,
+        value: crate::tm_pro::vertexgradient::VertexGradient,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::vertexgradient::VertexGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color_gradient::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_gradient_preset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_colorGradientPreset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_colorGradientPreset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color_gradient_preset(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_colorgradient::TMP_ColorGradient {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_colorgradient::TMP_ColorGradient = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color_gradient_preset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_gradient_preset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_colorgradient::TMP_ColorGradient as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_colorGradientPreset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_colorGradientPreset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color_gradient_preset(
+        this: TMP_Text,
         value: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> ();
-
-    #[doc = "`get_spriteAsset()` overload"]
-    #[method(name = "get_spriteAsset", args = 0)]
-    pub fn get_sprite_asset(self) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
-
-    #[doc = "`set_spriteAsset(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    #[method(name = "set_spriteAsset", args = 1)]
-    pub fn set_sprite_asset(self, value: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) -> ();
-
-    #[doc = "`get_tintAllSprites()` overload"]
-    #[method(name = "get_tintAllSprites", args = 0)]
-    pub fn get_tint_all_sprites(self) -> bool;
-
-    #[doc = "`set_tintAllSprites(bool)` overload"]
-    #[method(name = "set_tintAllSprites", args = 1)]
-    pub fn set_tint_all_sprites(self, value: bool) -> ();
-
-    #[doc = "`get_styleSheet()` overload"]
-    #[method(name = "get_styleSheet", args = 0)]
-    pub fn get_style_sheet(self) -> crate::tm_pro::tmp_stylesheet::TMP_StyleSheet;
-
-    #[doc = "`set_styleSheet(crate::tm_pro::tmp_stylesheet::TMP_StyleSheet)` overload"]
-    #[method(name = "set_styleSheet", args = 1)]
-    pub fn set_style_sheet(self, value: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet) -> ();
-
-    #[doc = "`get_textStyle()` overload"]
-    #[method(name = "get_textStyle", args = 0)]
-    pub fn get_text_style(self) -> crate::tm_pro::tmp_style::TMP_Style;
-
-    #[doc = "`set_textStyle(crate::tm_pro::tmp_style::TMP_Style)` overload"]
-    #[method(name = "set_textStyle", args = 1)]
-    pub fn set_text_style(self, value: crate::tm_pro::tmp_style::TMP_Style) -> ();
-
-    #[doc = "`get_overrideColorTags()` overload"]
-    #[method(name = "get_overrideColorTags", args = 0)]
-    pub fn get_override_color_tags(self) -> bool;
-
-    #[doc = "`set_overrideColorTags(bool)` overload"]
-    #[method(name = "set_overrideColorTags", args = 1)]
-    pub fn set_override_color_tags(self, value: bool) -> ();
-
-    #[doc = "`get_faceColor()` overload"]
-    #[method(name = "get_faceColor", args = 0)]
-    pub fn get_face_color(self) -> crate::unity_engine::color32::Color32;
-
-    #[doc = "`set_faceColor(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "set_faceColor", args = 1)]
-    pub fn set_face_color(self, value: crate::unity_engine::color32::Color32) -> ();
-
-    #[doc = "`get_outlineColor()` overload"]
-    #[method(name = "get_outlineColor", args = 0)]
-    pub fn get_outline_color(self) -> crate::unity_engine::color32::Color32;
-
-    #[doc = "`set_outlineColor(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "set_outlineColor", args = 1)]
-    pub fn set_outline_color(self, value: crate::unity_engine::color32::Color32) -> ();
-
-    #[doc = "`get_outlineWidth()` overload"]
-    #[method(name = "get_outlineWidth", args = 0)]
-    pub fn get_outline_width(self) -> f32;
-
-    #[doc = "`set_outlineWidth(f32)` overload"]
-    #[method(name = "set_outlineWidth", args = 1)]
-    pub fn set_outline_width(self, value: f32) -> ();
-
-    #[doc = "`get_fontSize()` overload"]
-    #[method(name = "get_fontSize", args = 0)]
-    pub fn get_font_size(self) -> f32;
-
-    #[doc = "`set_fontSize(f32)` overload"]
-    #[method(name = "set_fontSize", args = 1)]
-    pub fn set_font_size(self, value: f32) -> ();
-
-    #[doc = "`get_fontWeight()` overload"]
-    #[method(name = "get_fontWeight", args = 0)]
-    pub fn get_font_weight(self) -> crate::tm_pro::fontweight::FontWeight;
-
-    #[doc = "`set_fontWeight(crate::tm_pro::fontweight::FontWeight)` overload"]
-    #[method(name = "set_fontWeight", args = 1)]
-    pub fn set_font_weight(self, value: crate::tm_pro::fontweight::FontWeight) -> ();
-
-    #[doc = "`get_pixelsPerUnit()` overload"]
-    #[method(name = "get_pixelsPerUnit", args = 0)]
-    pub fn get_pixels_per_unit(self) -> f32;
-
-    #[doc = "`get_enableAutoSizing()` overload"]
-    #[method(name = "get_enableAutoSizing", args = 0)]
-    pub fn get_enable_auto_sizing(self) -> bool;
-
-    #[doc = "`set_enableAutoSizing(bool)` overload"]
-    #[method(name = "set_enableAutoSizing", args = 1)]
-    pub fn set_enable_auto_sizing(self, value: bool) -> ();
-
-    #[doc = "`get_fontSizeMin()` overload"]
-    #[method(name = "get_fontSizeMin", args = 0)]
-    pub fn get_font_size_min(self) -> f32;
-
-    #[doc = "`set_fontSizeMin(f32)` overload"]
-    #[method(name = "set_fontSizeMin", args = 1)]
-    pub fn set_font_size_min(self, value: f32) -> ();
-
-    #[doc = "`get_fontSizeMax()` overload"]
-    #[method(name = "get_fontSizeMax", args = 0)]
-    pub fn get_font_size_max(self) -> f32;
-
-    #[doc = "`set_fontSizeMax(f32)` overload"]
-    #[method(name = "set_fontSizeMax", args = 1)]
-    pub fn set_font_size_max(self, value: f32) -> ();
-
-    #[doc = "`get_fontStyle()` overload"]
-    #[method(name = "get_fontStyle", args = 0)]
-    pub fn get_font_style(self) -> crate::tm_pro::fontstyles::FontStyles;
-
-    #[doc = "`set_fontStyle(crate::tm_pro::fontstyles::FontStyles)` overload"]
-    #[method(name = "set_fontStyle", args = 1)]
-    pub fn set_font_style(self, value: crate::tm_pro::fontstyles::FontStyles) -> ();
-
-    #[doc = "`get_isUsingBold()` overload"]
-    #[method(name = "get_isUsingBold", args = 0)]
-    pub fn get_is_using_bold(self) -> bool;
-
-    #[doc = "`get_horizontalAlignment()` overload"]
-    #[method(name = "get_horizontalAlignment", args = 0)]
-    pub fn get_horizontal_alignment(
-        self,
-    ) -> crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions;
-
-    #[doc = "`set_horizontalAlignment(crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions)` overload"]
-    #[method(name = "set_horizontalAlignment", args = 1)]
-    pub fn set_horizontal_alignment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color_gradient_preset::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_spriteAsset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_spriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_asset(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_asset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sprite_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_spriteAsset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_spriteAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sprite_asset(
+        this: TMP_Text,
+        value: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sprite_asset::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tint_all_sprites {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_tintAllSprites",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_tintAllSprites",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_tint_all_sprites(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_tint_all_sprites::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tint_all_sprites {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_tintAllSprites",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_tintAllSprites",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_tint_all_sprites(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_tint_all_sprites::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style_sheet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_styleSheet",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_styleSheet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style_sheet(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_stylesheet::TMP_StyleSheet {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_stylesheet::TMP_StyleSheet = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style_sheet::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_style_sheet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_stylesheet::TMP_StyleSheet as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_styleSheet",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_styleSheet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_style_sheet(
+        this: TMP_Text,
+        value: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_style_sheet::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_textStyle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_textStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_style(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_style::TMP_Style {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_style::TMP_Style = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_style::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_style::TMP_Style as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_textStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_textStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_style(
+        this: TMP_Text,
+        value: crate::tm_pro::tmp_style::TMP_Style,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_style::TMP_Style,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_style::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_override_color_tags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_overrideColorTags",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_overrideColorTags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_override_color_tags(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_override_color_tags::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_override_color_tags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_overrideColorTags",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_overrideColorTags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_override_color_tags(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_override_color_tags::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_face_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_faceColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_faceColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_face_color(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color32::Color32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_face_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_faceColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_faceColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_face_color(
+        this: TMP_Text,
+        value: crate::unity_engine::color32::Color32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_face_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_outline_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_outlineColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_outlineColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_outline_color(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color32::Color32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_outline_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_outline_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_outlineColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_outlineColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_outline_color(
+        this: TMP_Text,
+        value: crate::unity_engine::color32::Color32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_outline_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_outline_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_outlineWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_outlineWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_outline_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_outline_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_outline_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_outlineWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_outlineWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_outline_width(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_outline_width::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_size(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_font_size::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_size(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_font_size::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontWeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_weight(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::fontweight::FontWeight {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::fontweight::FontWeight = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_weight::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_weight(
+        this: TMP_Text,
+        value: crate::tm_pro::fontweight::FontWeight,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::fontweight::FontWeight,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_weight::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pixels_per_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_pixelsPerUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_pixelsPerUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pixels_per_unit(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_pixels_per_unit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_auto_sizing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_enableAutoSizing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_enableAutoSizing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_auto_sizing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_auto_sizing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_auto_sizing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_enableAutoSizing",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_enableAutoSizing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_auto_sizing(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_auto_sizing::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_size_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontSizeMin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSizeMin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_size_min(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_font_size_min::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_size_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontSizeMin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontSizeMin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_size_min(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_font_size_min::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_size_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontSizeMax",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSizeMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_size_max(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_font_size_max::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_size_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontSizeMax",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontSizeMax",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_size_max(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_font_size_max::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_fontStyle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_fontStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_style(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::fontstyles::FontStyles {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::fontstyles::FontStyles = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_style::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_fontStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_fontStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_style(
+        this: TMP_Text,
+        value: crate::tm_pro::fontstyles::FontStyles,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::fontstyles::FontStyles,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_style::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_using_bold {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isUsingBold",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isUsingBold",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_using_bold(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_using_bold::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_horizontal_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_horizontalAlignment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_horizontalAlignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_horizontal_alignment(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions {
+        let inner : extern "C" fn (TMP_Text , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: horizontalalignmentoptions :: HorizontalAlignmentOptions = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_horizontal_alignment :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_horizontal_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: horizontalalignmentoptions :: HorizontalAlignmentOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_horizontalAlignment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_horizontalAlignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_horizontal_alignment(
+        this: TMP_Text,
         value: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
-    ) -> ();
-
-    #[doc = "`get_verticalAlignment()` overload"]
-    #[method(name = "get_verticalAlignment", args = 0)]
-    pub fn get_vertical_alignment(
-        self,
-    ) -> crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions;
-
-    #[doc = "`set_verticalAlignment(crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions)` overload"]
-    #[method(name = "set_verticalAlignment", args = 1)]
-    pub fn set_vertical_alignment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_horizontal_alignment::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertical_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_verticalAlignment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_verticalAlignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertical_alignment(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions {
+        let inner : extern "C" fn (TMP_Text , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: verticalalignmentoptions :: VerticalAlignmentOptions = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertical_alignment :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertical_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: verticalalignmentoptions :: VerticalAlignmentOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_verticalAlignment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_verticalAlignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertical_alignment(
+        this: TMP_Text,
         value: crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
-    ) -> ();
-
-    #[doc = "`get_alignment()` overload"]
-    #[method(name = "get_alignment", args = 0)]
-    pub fn get_alignment(self) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
-
-    #[doc = "`set_alignment(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]
-    #[method(name = "set_alignment", args = 1)]
-    pub fn set_alignment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertical_alignment::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_alignment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_alignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alignment(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_alignment::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_alignment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_alignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alignment(
+        this: TMP_Text,
         value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
-    ) -> ();
-
-    #[doc = "`get_characterSpacing()` overload"]
-    #[method(name = "get_characterSpacing", args = 0)]
-    pub fn get_character_spacing(self) -> f32;
-
-    #[doc = "`set_characterSpacing(f32)` overload"]
-    #[method(name = "set_characterSpacing", args = 1)]
-    pub fn set_character_spacing(self, value: f32) -> ();
-
-    #[doc = "`get_wordSpacing()` overload"]
-    #[method(name = "get_wordSpacing", args = 0)]
-    pub fn get_word_spacing(self) -> f32;
-
-    #[doc = "`set_wordSpacing(f32)` overload"]
-    #[method(name = "set_wordSpacing", args = 1)]
-    pub fn set_word_spacing(self, value: f32) -> ();
-
-    #[doc = "`get_lineSpacing()` overload"]
-    #[method(name = "get_lineSpacing", args = 0)]
-    pub fn get_line_spacing(self) -> f32;
-
-    #[doc = "`set_lineSpacing(f32)` overload"]
-    #[method(name = "set_lineSpacing", args = 1)]
-    pub fn set_line_spacing(self, value: f32) -> ();
-
-    #[doc = "`get_lineSpacingAdjustment()` overload"]
-    #[method(name = "get_lineSpacingAdjustment", args = 0)]
-    pub fn get_line_spacing_adjustment(self) -> f32;
-
-    #[doc = "`set_lineSpacingAdjustment(f32)` overload"]
-    #[method(name = "set_lineSpacingAdjustment", args = 1)]
-    pub fn set_line_spacing_adjustment(self, value: f32) -> ();
-
-    #[doc = "`get_paragraphSpacing()` overload"]
-    #[method(name = "get_paragraphSpacing", args = 0)]
-    pub fn get_paragraph_spacing(self) -> f32;
-
-    #[doc = "`set_paragraphSpacing(f32)` overload"]
-    #[method(name = "set_paragraphSpacing", args = 1)]
-    pub fn set_paragraph_spacing(self, value: f32) -> ();
-
-    #[doc = "`get_characterWidthAdjustment()` overload"]
-    #[method(name = "get_characterWidthAdjustment", args = 0)]
-    pub fn get_character_width_adjustment(self) -> f32;
-
-    #[doc = "`set_characterWidthAdjustment(f32)` overload"]
-    #[method(name = "set_characterWidthAdjustment", args = 1)]
-    pub fn set_character_width_adjustment(self, value: f32) -> ();
-
-    #[doc = "`get_enableWordWrapping()` overload"]
-    #[method(name = "get_enableWordWrapping", args = 0)]
-    pub fn get_enable_word_wrapping(self) -> bool;
-
-    #[doc = "`set_enableWordWrapping(bool)` overload"]
-    #[method(name = "set_enableWordWrapping", args = 1)]
-    pub fn set_enable_word_wrapping(self, value: bool) -> ();
-
-    #[doc = "`get_wordWrappingRatios()` overload"]
-    #[method(name = "get_wordWrappingRatios", args = 0)]
-    pub fn get_word_wrapping_ratios(self) -> f32;
-
-    #[doc = "`set_wordWrappingRatios(f32)` overload"]
-    #[method(name = "set_wordWrappingRatios", args = 1)]
-    pub fn set_word_wrapping_ratios(self, value: f32) -> ();
-
-    #[doc = "`get_overflowMode()` overload"]
-    #[method(name = "get_overflowMode", args = 0)]
-    pub fn get_overflow_mode(self) -> crate::tm_pro::textoverflowmodes::TextOverflowModes;
-
-    #[doc = "`set_overflowMode(crate::tm_pro::textoverflowmodes::TextOverflowModes)` overload"]
-    #[method(name = "set_overflowMode", args = 1)]
-    pub fn set_overflow_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_alignment::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_characterSpacing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_characterSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_spacing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_character_spacing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_characterSpacing",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_characterSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_spacing(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_character_spacing::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_word_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_wordSpacing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_wordSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_word_spacing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_word_spacing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_word_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_wordSpacing",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_wordSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_word_spacing(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_word_spacing::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_line_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_lineSpacing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_lineSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_line_spacing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_line_spacing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_line_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_lineSpacing",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_lineSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_line_spacing(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_line_spacing::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_line_spacing_adjustment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_lineSpacingAdjustment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_lineSpacingAdjustment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_line_spacing_adjustment(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_line_spacing_adjustment::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_line_spacing_adjustment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_lineSpacingAdjustment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_lineSpacingAdjustment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_line_spacing_adjustment(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_line_spacing_adjustment::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_paragraph_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_paragraphSpacing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_paragraphSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_paragraph_spacing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_paragraph_spacing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_paragraph_spacing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_paragraphSpacing",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_paragraphSpacing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_paragraph_spacing(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_paragraph_spacing::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_width_adjustment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_characterWidthAdjustment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_characterWidthAdjustment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_width_adjustment(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_character_width_adjustment::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character_width_adjustment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_characterWidthAdjustment",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_characterWidthAdjustment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character_width_adjustment(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_character_width_adjustment::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_word_wrapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_enableWordWrapping",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_enableWordWrapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_word_wrapping(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_word_wrapping::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_word_wrapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_enableWordWrapping",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_enableWordWrapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_word_wrapping(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_word_wrapping::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_word_wrapping_ratios {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_wordWrappingRatios",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_wordWrappingRatios",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_word_wrapping_ratios(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_word_wrapping_ratios::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_word_wrapping_ratios {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_wordWrappingRatios",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_wordWrappingRatios",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_word_wrapping_ratios(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_word_wrapping_ratios::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_overflow_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_overflowMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_overflowMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_overflow_mode(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::textoverflowmodes::TextOverflowModes {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::textoverflowmodes::TextOverflowModes = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_overflow_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_overflow_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::textoverflowmodes::TextOverflowModes as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_overflowMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_overflowMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_overflow_mode(
+        this: TMP_Text,
         value: crate::tm_pro::textoverflowmodes::TextOverflowModes,
-    ) -> ();
-
-    #[doc = "`get_isTextOverflowing()` overload"]
-    #[method(name = "get_isTextOverflowing", args = 0)]
-    pub fn get_is_text_overflowing(self) -> bool;
-
-    #[doc = "`get_firstOverflowCharacterIndex()` overload"]
-    #[method(name = "get_firstOverflowCharacterIndex", args = 0)]
-    pub fn get_first_overflow_character_index(self) -> i32;
-
-    #[doc = "`get_linkedTextComponent()` overload"]
-    #[method(name = "get_linkedTextComponent", args = 0)]
-    pub fn get_linked_text_component(self) -> crate::tm_pro::tmp_text::TMP_Text;
-
-    #[doc = "`set_linkedTextComponent(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    #[method(name = "set_linkedTextComponent", args = 1)]
-    pub fn set_linked_text_component(self, value: crate::tm_pro::tmp_text::TMP_Text) -> ();
-
-    #[doc = "`get_isTextTruncated()` overload"]
-    #[method(name = "get_isTextTruncated", args = 0)]
-    pub fn get_is_text_truncated(self) -> bool;
-
-    #[doc = "`get_enableKerning()` overload"]
-    #[method(name = "get_enableKerning", args = 0)]
-    pub fn get_enable_kerning(self) -> bool;
-
-    #[doc = "`set_enableKerning(bool)` overload"]
-    #[method(name = "set_enableKerning", args = 1)]
-    pub fn set_enable_kerning(self, value: bool) -> ();
-
-    #[doc = "`get_extraPadding()` overload"]
-    #[method(name = "get_extraPadding", args = 0)]
-    pub fn get_extra_padding(self) -> bool;
-
-    #[doc = "`set_extraPadding(bool)` overload"]
-    #[method(name = "set_extraPadding", args = 1)]
-    pub fn set_extra_padding(self, value: bool) -> ();
-
-    #[doc = "`get_richText()` overload"]
-    #[method(name = "get_richText", args = 0)]
-    pub fn get_rich_text(self) -> bool;
-
-    #[doc = "`set_richText(bool)` overload"]
-    #[method(name = "set_richText", args = 1)]
-    pub fn set_rich_text(self, value: bool) -> ();
-
-    #[doc = "`get_parseCtrlCharacters()` overload"]
-    #[method(name = "get_parseCtrlCharacters", args = 0)]
-    pub fn get_parse_ctrl_characters(self) -> bool;
-
-    #[doc = "`set_parseCtrlCharacters(bool)` overload"]
-    #[method(name = "set_parseCtrlCharacters", args = 1)]
-    pub fn set_parse_ctrl_characters(self, value: bool) -> ();
-
-    #[doc = "`get_isOverlay()` overload"]
-    #[method(name = "get_isOverlay", args = 0)]
-    pub fn get_is_overlay(self) -> bool;
-
-    #[doc = "`set_isOverlay(bool)` overload"]
-    #[method(name = "set_isOverlay", args = 1)]
-    pub fn set_is_overlay(self, value: bool) -> ();
-
-    #[doc = "`get_isOrthographic()` overload"]
-    #[method(name = "get_isOrthographic", args = 0)]
-    pub fn get_is_orthographic(self) -> bool;
-
-    #[doc = "`set_isOrthographic(bool)` overload"]
-    #[method(name = "set_isOrthographic", args = 1)]
-    pub fn set_is_orthographic(self, value: bool) -> ();
-
-    #[doc = "`get_enableCulling()` overload"]
-    #[method(name = "get_enableCulling", args = 0)]
-    pub fn get_enable_culling(self) -> bool;
-
-    #[doc = "`set_enableCulling(bool)` overload"]
-    #[method(name = "set_enableCulling", args = 1)]
-    pub fn set_enable_culling(self, value: bool) -> ();
-
-    #[doc = "`get_ignoreVisibility()` overload"]
-    #[method(name = "get_ignoreVisibility", args = 0)]
-    pub fn get_ignore_visibility(self) -> bool;
-
-    #[doc = "`set_ignoreVisibility(bool)` overload"]
-    #[method(name = "set_ignoreVisibility", args = 1)]
-    pub fn set_ignore_visibility(self, value: bool) -> ();
-
-    #[doc = "`get_horizontalMapping()` overload"]
-    #[method(name = "get_horizontalMapping", args = 0)]
-    pub fn get_horizontal_mapping(
-        self,
-    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions;
-
-    #[doc = "`set_horizontalMapping(crate::tm_pro::texturemappingoptions::TextureMappingOptions)` overload"]
-    #[method(name = "set_horizontalMapping", args = 1)]
-    pub fn set_horizontal_mapping(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::textoverflowmodes::TextOverflowModes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_overflow_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_text_overflowing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isTextOverflowing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isTextOverflowing",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_text_overflowing(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_text_overflowing::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_first_overflow_character_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_firstOverflowCharacterIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_firstOverflowCharacterIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_first_overflow_character_index(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_first_overflow_character_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_linked_text_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_linkedTextComponent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_linkedTextComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_linked_text_component(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_text::TMP_Text {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_text::TMP_Text = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_linked_text_component::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_linked_text_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_linkedTextComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_linkedTextComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_linked_text_component(
+        this: TMP_Text,
+        value: crate::tm_pro::tmp_text::TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_linked_text_component::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_text_truncated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isTextTruncated",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isTextTruncated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_text_truncated(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_text_truncated::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_kerning {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_enableKerning",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_enableKerning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_kerning(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_kerning::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_kerning {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_enableKerning",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_enableKerning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_kerning(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_kerning::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_extra_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_extraPadding",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_extraPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_extra_padding(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_extra_padding::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_extra_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_extraPadding",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_extraPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_extra_padding(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_extra_padding::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rich_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_richText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_richText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rich_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rich_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rich_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_richText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_richText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rich_text(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rich_text::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parse_ctrl_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_parseCtrlCharacters",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_parseCtrlCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parse_ctrl_characters(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_parse_ctrl_characters::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parse_ctrl_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_parseCtrlCharacters",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_parseCtrlCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_parse_ctrl_characters(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_parse_ctrl_characters::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_overlay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isOverlay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isOverlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_overlay(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_overlay::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_overlay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isOverlay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isOverlay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_overlay(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_overlay::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_orthographic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isOrthographic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isOrthographic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_orthographic(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_orthographic::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_orthographic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isOrthographic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isOrthographic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_orthographic(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_orthographic::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enable_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_enableCulling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_enableCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enable_culling(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_enable_culling::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_enableCulling",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_enableCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_culling(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_culling::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ignore_visibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_ignoreVisibility",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_ignoreVisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ignore_visibility(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_ignore_visibility::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ignore_visibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_ignoreVisibility",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_ignoreVisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ignore_visibility(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_ignore_visibility::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_horizontal_mapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_horizontalMapping",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_horizontalMapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_horizontal_mapping(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::texturemappingoptions::TextureMappingOptions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_horizontal_mapping::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_horizontal_mapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: texturemappingoptions :: TextureMappingOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_horizontalMapping",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_horizontalMapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_horizontal_mapping(
+        this: TMP_Text,
         value: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
-    ) -> ();
-
-    #[doc = "`get_verticalMapping()` overload"]
-    #[method(name = "get_verticalMapping", args = 0)]
-    pub fn get_vertical_mapping(
-        self,
-    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions;
-
-    #[doc = "`set_verticalMapping(crate::tm_pro::texturemappingoptions::TextureMappingOptions)` overload"]
-    #[method(name = "set_verticalMapping", args = 1)]
-    pub fn set_vertical_mapping(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_horizontal_mapping::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertical_mapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_verticalMapping",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_verticalMapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertical_mapping(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::tm_pro::texturemappingoptions::TextureMappingOptions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vertical_mapping::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertical_mapping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: texturemappingoptions :: TextureMappingOptions as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_verticalMapping",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_verticalMapping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertical_mapping(
+        this: TMP_Text,
         value: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
-    ) -> ();
-
-    #[doc = "`get_mappingUvLineOffset()` overload"]
-    #[method(name = "get_mappingUvLineOffset", args = 0)]
-    pub fn get_mapping_uv_line_offset(self) -> f32;
-
-    #[doc = "`set_mappingUvLineOffset(f32)` overload"]
-    #[method(name = "set_mappingUvLineOffset", args = 1)]
-    pub fn set_mapping_uv_line_offset(self, value: f32) -> ();
-
-    #[doc = "`get_renderMode()` overload"]
-    #[method(name = "get_renderMode", args = 0)]
-    pub fn get_render_mode(self) -> crate::tm_pro::textrenderflags::TextRenderFlags;
-
-    #[doc = "`set_renderMode(crate::tm_pro::textrenderflags::TextRenderFlags)` overload"]
-    #[method(name = "set_renderMode", args = 1)]
-    pub fn set_render_mode(self, value: crate::tm_pro::textrenderflags::TextRenderFlags) -> ();
-
-    #[doc = "`get_geometrySortingOrder()` overload"]
-    #[method(name = "get_geometrySortingOrder", args = 0)]
-    pub fn get_geometry_sorting_order(
-        self,
-    ) -> crate::tm_pro::vertexsortingorder::VertexSortingOrder;
-
-    #[doc = "`set_geometrySortingOrder(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]
-    #[method(name = "set_geometrySortingOrder", args = 1)]
-    pub fn set_geometry_sorting_order(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertical_mapping::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mapping_uv_line_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_mappingUvLineOffset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_mappingUvLineOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mapping_uv_line_offset(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_mapping_uv_line_offset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mapping_uv_line_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_mappingUvLineOffset",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_mappingUvLineOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mapping_uv_line_offset(
+        this: TMP_Text,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_mapping_uv_line_offset::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_renderMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_renderMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_mode(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::textrenderflags::TextRenderFlags {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::textrenderflags::TextRenderFlags = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_render_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::textrenderflags::TextRenderFlags as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_renderMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_renderMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_render_mode(
+        this: TMP_Text,
+        value: crate::tm_pro::textrenderflags::TextRenderFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::textrenderflags::TextRenderFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_render_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_geometry_sorting_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_geometrySortingOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_geometrySortingOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_geometry_sorting_order(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::vertexsortingorder::VertexSortingOrder {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::vertexsortingorder::VertexSortingOrder = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_geometry_sorting_order::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_geometry_sorting_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: vertexsortingorder :: VertexSortingOrder as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_geometrySortingOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_geometrySortingOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_geometry_sorting_order(
+        this: TMP_Text,
         value: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
-    ) -> ();
-
-    #[doc = "`get_isTextObjectScaleStatic()` overload"]
-    #[method(name = "get_isTextObjectScaleStatic", args = 0)]
-    pub fn get_is_text_object_scale_static(self) -> bool;
-
-    #[doc = "`set_isTextObjectScaleStatic(bool)` overload"]
-    #[method(name = "set_isTextObjectScaleStatic", args = 1)]
-    pub fn set_is_text_object_scale_static(self, value: bool) -> ();
-
-    #[doc = "`get_vertexBufferAutoSizeReduction()` overload"]
-    #[method(name = "get_vertexBufferAutoSizeReduction", args = 0)]
-    pub fn get_vertex_buffer_auto_size_reduction(self) -> bool;
-
-    #[doc = "`set_vertexBufferAutoSizeReduction(bool)` overload"]
-    #[method(name = "set_vertexBufferAutoSizeReduction", args = 1)]
-    pub fn set_vertex_buffer_auto_size_reduction(self, value: bool) -> ();
-
-    #[doc = "`get_firstVisibleCharacter()` overload"]
-    #[method(name = "get_firstVisibleCharacter", args = 0)]
-    pub fn get_first_visible_character(self) -> i32;
-
-    #[doc = "`set_firstVisibleCharacter(i32)` overload"]
-    #[method(name = "set_firstVisibleCharacter", args = 1)]
-    pub fn set_first_visible_character(self, value: i32) -> ();
-
-    #[doc = "`get_maxVisibleCharacters()` overload"]
-    #[method(name = "get_maxVisibleCharacters", args = 0)]
-    pub fn get_max_visible_characters(self) -> i32;
-
-    #[doc = "`set_maxVisibleCharacters(i32)` overload"]
-    #[method(name = "set_maxVisibleCharacters", args = 1)]
-    pub fn set_max_visible_characters(self, value: i32) -> ();
-
-    #[doc = "`get_maxVisibleWords()` overload"]
-    #[method(name = "get_maxVisibleWords", args = 0)]
-    pub fn get_max_visible_words(self) -> i32;
-
-    #[doc = "`set_maxVisibleWords(i32)` overload"]
-    #[method(name = "set_maxVisibleWords", args = 1)]
-    pub fn set_max_visible_words(self, value: i32) -> ();
-
-    #[doc = "`get_maxVisibleLines()` overload"]
-    #[method(name = "get_maxVisibleLines", args = 0)]
-    pub fn get_max_visible_lines(self) -> i32;
-
-    #[doc = "`set_maxVisibleLines(i32)` overload"]
-    #[method(name = "set_maxVisibleLines", args = 1)]
-    pub fn set_max_visible_lines(self, value: i32) -> ();
-
-    #[doc = "`get_useMaxVisibleDescender()` overload"]
-    #[method(name = "get_useMaxVisibleDescender", args = 0)]
-    pub fn get_use_max_visible_descender(self) -> bool;
-
-    #[doc = "`set_useMaxVisibleDescender(bool)` overload"]
-    #[method(name = "set_useMaxVisibleDescender", args = 1)]
-    pub fn set_use_max_visible_descender(self, value: bool) -> ();
-
-    #[doc = "`get_pageToDisplay()` overload"]
-    #[method(name = "get_pageToDisplay", args = 0)]
-    pub fn get_page_to_display(self) -> i32;
-
-    #[doc = "`set_pageToDisplay(i32)` overload"]
-    #[method(name = "set_pageToDisplay", args = 1)]
-    pub fn set_page_to_display(self, value: i32) -> ();
-
-    #[doc = "`get_margin()` overload"]
-    #[method(name = "get_margin", args = 0)]
-    pub fn get_margin(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`set_margin(crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "set_margin", args = 1)]
-    pub fn set_margin(self, value: crate::unity_engine::vector4::Vector4) -> ();
-
-    #[doc = "`get_textInfo()` overload"]
-    #[method(name = "get_textInfo", args = 0)]
-    pub fn get_text_info(self) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo;
-
-    #[doc = "`get_havePropertiesChanged()` overload"]
-    #[method(name = "get_havePropertiesChanged", args = 0)]
-    pub fn get_have_properties_changed(self) -> bool;
-
-    #[doc = "`set_havePropertiesChanged(bool)` overload"]
-    #[method(name = "set_havePropertiesChanged", args = 1)]
-    pub fn set_have_properties_changed(self, value: bool) -> ();
-
-    #[doc = "`get_isUsingLegacyAnimationComponent()` overload"]
-    #[method(name = "get_isUsingLegacyAnimationComponent", args = 0)]
-    pub fn get_is_using_legacy_animation_component(self) -> bool;
-
-    #[doc = "`set_isUsingLegacyAnimationComponent(bool)` overload"]
-    #[method(name = "set_isUsingLegacyAnimationComponent", args = 1)]
-    pub fn set_is_using_legacy_animation_component(self, value: bool) -> ();
-
-    #[doc = "`get_transform()` overload"]
-    #[method(name = "get_transform", args = 0)]
-    pub fn get_transform(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_rectTransform()` overload"]
-    #[method(name = "get_rectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`get_autoSizeTextContainer()` overload"]
-    #[method(name = "get_autoSizeTextContainer", args = 0)]
-    pub fn get_auto_size_text_container(self) -> bool;
-
-    #[doc = "`set_autoSizeTextContainer(bool)` overload"]
-    #[method(name = "set_autoSizeTextContainer", args = 1)]
-    pub fn set_auto_size_text_container(self, value: bool) -> ();
-
-    #[doc = "`get_mesh()` overload"]
-    #[method(name = "get_mesh", args = 0)]
-    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
-
-    #[doc = "`get_isVolumetricText()` overload"]
-    #[method(name = "get_isVolumetricText", args = 0)]
-    pub fn get_is_volumetric_text(self) -> bool;
-
-    #[doc = "`set_isVolumetricText(bool)` overload"]
-    #[method(name = "set_isVolumetricText", args = 1)]
-    pub fn set_is_volumetric_text(self, value: bool) -> ();
-
-    #[doc = "`get_bounds()` overload"]
-    #[method(name = "get_bounds", args = 0)]
-    pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`get_textBounds()` overload"]
-    #[method(name = "get_textBounds", args = 0)]
-    pub fn get_text_bounds(self) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`add_OnFontAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
-    #[method(name = "add_OnFontAssetRequest", args = 1)]
-    pub fn add_on_font_asset_request(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_geometry_sorting_order::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_text_object_scale_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isTextObjectScaleStatic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isTextObjectScaleStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_text_object_scale_static(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_text_object_scale_static::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_text_object_scale_static {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isTextObjectScaleStatic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isTextObjectScaleStatic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_text_object_scale_static(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_text_object_scale_static::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vertex_buffer_auto_size_reduction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_vertexBufferAutoSizeReduction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_vertexBufferAutoSizeReduction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vertex_buffer_auto_size_reduction(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_vertex_buffer_auto_size_reduction::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertex_buffer_auto_size_reduction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_vertexBufferAutoSizeReduction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_vertexBufferAutoSizeReduction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertex_buffer_auto_size_reduction(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_vertex_buffer_auto_size_reduction::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_first_visible_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_firstVisibleCharacter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_firstVisibleCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_first_visible_character(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_first_visible_character::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_first_visible_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_firstVisibleCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_firstVisibleCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_first_visible_character(
+        this: TMP_Text,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_first_visible_character::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_visible_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_maxVisibleCharacters",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_maxVisibleCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_visible_characters(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_visible_characters::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_visible_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_maxVisibleCharacters",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_maxVisibleCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_visible_characters(
+        this: TMP_Text,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_visible_characters::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_visible_words {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_maxVisibleWords",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_maxVisibleWords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_visible_words(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_visible_words::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_visible_words {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_maxVisibleWords",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_maxVisibleWords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_visible_words(
+        this: TMP_Text,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_visible_words::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_visible_lines {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_maxVisibleLines",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_maxVisibleLines",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_visible_lines(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_visible_lines::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_max_visible_lines {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_maxVisibleLines",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_maxVisibleLines",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_max_visible_lines(
+        this: TMP_Text,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_max_visible_lines::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_max_visible_descender {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_useMaxVisibleDescender",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_useMaxVisibleDescender",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_max_visible_descender(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_max_visible_descender::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_max_visible_descender {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_useMaxVisibleDescender",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_useMaxVisibleDescender",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_max_visible_descender(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_max_visible_descender::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_page_to_display {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_pageToDisplay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_pageToDisplay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_page_to_display(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_page_to_display::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_page_to_display {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_pageToDisplay",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_pageToDisplay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_page_to_display(
+        this: TMP_Text,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_page_to_display::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_margin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_margin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_margin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_margin(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_margin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_margin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_margin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_margin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_margin(
+        this: TMP_Text,
+        value: crate::unity_engine::vector4::Vector4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_margin::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_textInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_textInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_info(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_have_properties_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_havePropertiesChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_havePropertiesChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_have_properties_changed(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_have_properties_changed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_have_properties_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_havePropertiesChanged",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_havePropertiesChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_have_properties_changed(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_have_properties_changed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_using_legacy_animation_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isUsingLegacyAnimationComponent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isUsingLegacyAnimationComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_using_legacy_animation_component(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_get_is_using_legacy_animation_component::get_offset() as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_using_legacy_animation_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isUsingLegacyAnimationComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isUsingLegacyAnimationComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_using_legacy_animation_component(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_set_is_using_legacy_animation_component::get_offset() as isize,
+                    ),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_transform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_transform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transform(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_rectTransform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_rectTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rect_transform(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::recttransform::RectTransform {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rect_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_auto_size_text_container {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_autoSizeTextContainer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_autoSizeTextContainer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_auto_size_text_container(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_auto_size_text_container::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_auto_size_text_container {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_autoSizeTextContainer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_autoSizeTextContainer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_auto_size_text_container(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_auto_size_text_container::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_mesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_mesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_volumetric_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_isVolumetricText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_isVolumetricText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_volumetric_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_volumetric_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_volumetric_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "set_isVolumetricText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "set_isVolumetricText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_volumetric_text(
+        this: TMP_Text,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_volumetric_text::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_bounds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_bounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bounds(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bounds::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_textBounds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_textBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_bounds(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_bounds::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_font_asset_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::func_3::Func_3<
+                    i32,
+                    ::unity2::Il2CppString,
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "add_OnFontAssetRequest",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "add_OnFontAssetRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_font_asset_request(
         value: crate::system::func_3::Func_3<
             i32,
             ::unity2::Il2CppString,
             crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         >,
-    ) -> ();
-
-    #[doc = "`remove_OnFontAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
-    #[method(name = "remove_OnFontAssetRequest", args = 1)]
-    pub fn remove_on_font_asset_request(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_on_font_asset_request::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_font_asset_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::func_3::Func_3<
+                    i32,
+                    ::unity2::Il2CppString,
+                    crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "remove_OnFontAssetRequest",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "remove_OnFontAssetRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_font_asset_request(
         value: crate::system::func_3::Func_3<
             i32,
             ::unity2::Il2CppString,
             crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         >,
-    ) -> ();
-
-    #[doc = "`add_OnSpriteAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>)` overload"]
-    #[method(name = "add_OnSpriteAssetRequest", args = 1)]
-    pub fn add_on_sprite_asset_request(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_on_font_asset_request::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_sprite_asset_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::func_3::Func_3<
+                    i32,
+                    ::unity2::Il2CppString,
+                    crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "add_OnSpriteAssetRequest",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "add_OnSpriteAssetRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_sprite_asset_request(
         value: crate::system::func_3::Func_3<
             i32,
             ::unity2::Il2CppString,
             crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         >,
-    ) -> ();
-
-    #[doc = "`remove_OnSpriteAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>)` overload"]
-    #[method(name = "remove_OnSpriteAssetRequest", args = 1)]
-    pub fn remove_on_sprite_asset_request(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_on_sprite_asset_request::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_sprite_asset_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::func_3::Func_3<
+                    i32,
+                    ::unity2::Il2CppString,
+                    crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "remove_OnSpriteAssetRequest",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "remove_OnSpriteAssetRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_sprite_asset_request(
         value: crate::system::func_3::Func_3<
             i32,
             ::unity2::Il2CppString,
             crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         >,
-    ) -> ();
-
-    #[doc = "`add_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
-    #[method(name = "add_OnPreRenderText", args = 1)]
-    pub fn add_on_pre_render_text(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_on_sprite_asset_request::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_pre_render_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::tm_pro::tmp_textinfo::TMP_TextInfo,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "add_OnPreRenderText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "add_OnPreRenderText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_pre_render_text(
+        this: TMP_Text,
         value: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
-    ) -> ();
-
-    #[doc = "`remove_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
-    #[method(name = "remove_OnPreRenderText", args = 1)]
-    pub fn remove_on_pre_render_text(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_on_pre_render_text::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_pre_render_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::tm_pro::tmp_textinfo::TMP_TextInfo,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "remove_OnPreRenderText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "remove_OnPreRenderText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_pre_render_text(
+        this: TMP_Text,
         value: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
-    ) -> ();
-
-    #[doc = "`get_spriteAnimator()` overload"]
-    #[method(name = "get_spriteAnimator", args = 0)]
-    pub fn get_sprite_animator(self) -> crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator;
-
-    #[doc = "`get_flexibleHeight()` overload"]
-    #[method(name = "get_flexibleHeight", args = 0)]
-    pub fn get_flexible_height(self) -> f32;
-
-    #[doc = "`get_flexibleWidth()` overload"]
-    #[method(name = "get_flexibleWidth", args = 0)]
-    pub fn get_flexible_width(self) -> f32;
-
-    #[doc = "`get_minWidth()` overload"]
-    #[method(name = "get_minWidth", args = 0)]
-    pub fn get_min_width(self) -> f32;
-
-    #[doc = "`get_minHeight()` overload"]
-    #[method(name = "get_minHeight", args = 0)]
-    pub fn get_min_height(self) -> f32;
-
-    #[doc = "`get_maxWidth()` overload"]
-    #[method(name = "get_maxWidth", args = 0)]
-    pub fn get_max_width(self) -> f32;
-
-    #[doc = "`get_maxHeight()` overload"]
-    #[method(name = "get_maxHeight", args = 0)]
-    pub fn get_max_height(self) -> f32;
-
-    #[doc = "`get_layoutElement()` overload"]
-    #[method(name = "get_layoutElement", args = 0)]
-    pub fn get_layout_element(self) -> crate::unity_engine::ui::layoutelement::LayoutElement;
-
-    #[doc = "`get_preferredWidth()` overload"]
-    #[method(name = "get_preferredWidth", args = 0)]
-    pub fn get_preferred_width(self) -> f32;
-
-    #[doc = "`get_preferredHeight()` overload"]
-    #[method(name = "get_preferredHeight", args = 0)]
-    pub fn get_preferred_height(self) -> f32;
-
-    #[doc = "`get_renderedWidth()` overload"]
-    #[method(name = "get_renderedWidth", args = 0)]
-    pub fn get_rendered_width(self) -> f32;
-
-    #[doc = "`get_renderedHeight()` overload"]
-    #[method(name = "get_renderedHeight", args = 0)]
-    pub fn get_rendered_height(self) -> f32;
-
-    #[doc = "`get_layoutPriority()` overload"]
-    #[method(name = "get_layoutPriority", args = 0)]
-    pub fn get_layout_priority(self) -> i32;
-
-    #[doc = "`LoadFontAsset()` overload"]
-    #[method(name = "LoadFontAsset", args = 0)]
-    pub fn load_font_asset(self) -> ();
-
-    #[doc = "`SetSharedMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "SetSharedMaterial", args = 1)]
-    pub fn set_shared_material(self, mat: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`GetMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "GetMaterial", args = 1)]
-    pub fn get_material(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_on_pre_render_text::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_animator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_spriteAnimator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_spriteAnimator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sprite_animator(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sprite_animator::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_flexibleHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_flexibleHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_height(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_flexible_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_flexibleWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_flexibleWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_flexible_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_minWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_minWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_min_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_minHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_minHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_height(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_min_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_maxWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_maxWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_maxHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_maxHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_height(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layout_element {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_layoutElement",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_layoutElement",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layout_element(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::ui::layoutelement::LayoutElement {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::layoutelement::LayoutElement = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layout_element::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_preferredWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_preferredWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_preferred_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_preferredHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_preferredHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_height(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_preferred_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_renderedWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_renderedWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_width(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rendered_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_renderedHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_renderedHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_height(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rendered_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layout_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "get_layoutPriority",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "get_layoutPriority",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layout_priority(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_layout_priority::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_font_asset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "LoadFontAsset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "LoadFontAsset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_font_asset(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_font_asset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shared_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetSharedMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetSharedMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shared_material(
+        this: TMP_Text,
         mat: crate::unity_engine::material::Material,
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`SetFontBaseMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "SetFontBaseMaterial", args = 1)]
-    pub fn set_font_base_material(self, mat: crate::unity_engine::material::Material) -> ();
-
-    #[doc = "`GetSharedMaterials()` overload"]
-    #[method(name = "GetSharedMaterials", args = 0)]
-    pub fn get_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
-
-    #[doc = "`SetSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    #[method(name = "SetSharedMaterials", args = 1)]
-    pub fn set_shared_materials(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shared_material::get_offset() as isize),
+        );
+        inner(this, mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_material(
+        this: TMP_Text,
+        mat: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_material::get_offset() as isize),
+        );
+        inner(this, mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_font_base_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetFontBaseMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetFontBaseMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_font_base_material(
+        this: TMP_Text,
+        mat: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_font_base_material::get_offset() as isize),
+        );
+        inner(this, mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shared_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetSharedMaterials",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetSharedMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shared_materials(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_shared_materials::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shared_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::material::Material,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetSharedMaterials",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetSharedMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shared_materials(
+        this: TMP_Text,
         materials: ::unity2::Array<crate::unity_engine::material::Material>,
-    ) -> ();
-
-    #[doc = "`GetMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    #[method(name = "GetMaterials", args = 1)]
-    pub fn get_materials(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shared_materials::get_offset() as isize),
+        );
+        inner(this, materials, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_materials {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::material::Material,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetMaterials",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetMaterials",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_materials(
+        this: TMP_Text,
         mats: ::unity2::Array<crate::unity_engine::material::Material>,
-    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
-
-    #[doc = "`CreateMaterialInstance(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "CreateMaterialInstance", args = 1)]
-    pub fn create_material_instance(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::unity_engine::material::Material>,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_materials::get_offset() as isize),
+        );
+        inner(this, mats, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_material_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "CreateMaterialInstance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "CreateMaterialInstance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_material_instance(
+        this: TMP_Text,
         source: crate::unity_engine::material::Material,
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`SetVertexColorGradient(crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
-    #[method(name = "SetVertexColorGradient", args = 1)]
-    pub fn set_vertex_color_gradient(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_material_instance::get_offset() as isize),
+        );
+        inner(this, source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertex_color_gradient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_colorgradient::TMP_ColorGradient as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetVertexColorGradient",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetVertexColorGradient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertex_color_gradient(
+        this: TMP_Text,
         gradient: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-    ) -> ();
-
-    #[doc = "`SetTextSortingOrder(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]
-    #[method(name = "SetTextSortingOrder", args = 1)]
-    pub fn set_text_sorting_order(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertex_color_gradient::get_offset() as isize),
+        );
+        inner(this, gradient, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_sorting_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: vertexsortingorder :: VertexSortingOrder as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetTextSortingOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetTextSortingOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_sorting_order(
+        this: TMP_Text,
         order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
-    ) -> ();
-
-    #[doc = "`SetTextSortingOrder(::unity2::Array<i32>)` overload"]
-    #[method(name = "SetTextSortingOrder", args = 1)]
-    pub fn set_text_sorting_order_2(self, order: ::unity2::Array<i32>) -> ();
-
-    #[doc = "`SetOutlineThickness(f32)` overload"]
-    #[method(name = "SetOutlineThickness", args = 1)]
-    pub fn set_outline_thickness(self, thickness: f32) -> ();
-
-    #[doc = "`SetShaderDepth()` overload"]
-    #[method(name = "SetShaderDepth", args = 0)]
-    pub fn set_shader_depth(self) -> ();
-
-    #[doc = "`SetCulling()` overload"]
-    #[method(name = "SetCulling", args = 0)]
-    pub fn set_culling(self) -> ();
-
-    #[doc = "`UpdateCulling()` overload"]
-    #[method(name = "UpdateCulling", args = 0)]
-    pub fn update_culling(self) -> ();
-
-    #[doc = "`GetPaddingForMaterial()` overload"]
-    #[method(name = "GetPaddingForMaterial", args = 0)]
-    pub fn get_padding_for_material(self) -> f32;
-
-    #[doc = "`GetPaddingForMaterial(crate::unity_engine::material::Material)` overload"]
-    #[method(name = "GetPaddingForMaterial", args = 1)]
-    pub fn get_padding_for_material_2(self, mat: crate::unity_engine::material::Material) -> f32;
-
-    #[doc = "`GetTextContainerLocalCorners()` overload"]
-    #[method(name = "GetTextContainerLocalCorners", args = 0)]
-    pub fn get_text_container_local_corners(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`ForceMeshUpdate(bool, bool)` overload"]
-    #[method(name = "ForceMeshUpdate", args = 2)]
-    pub fn force_mesh_update(self, ignore_active_state: bool, force_text_reparsing: bool) -> ();
-
-    #[doc = "`UpdateGeometry(crate::unity_engine::mesh::Mesh, i32)` overload"]
-    #[method(name = "UpdateGeometry", args = 2)]
-    pub fn update_geometry(self, mesh: crate::unity_engine::mesh::Mesh, index: i32) -> ();
-
-    #[doc = "`UpdateVertexData(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)` overload"]
-    #[method(name = "UpdateVertexData", args = 1)]
-    pub fn update_vertex_data(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_sorting_order::get_offset() as isize),
+        );
+        inner(this, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_sorting_order_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetTextSortingOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetTextSortingOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_sorting_order_2(
+        this: TMP_Text,
+        order: ::unity2::Array<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Array<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_text_sorting_order_2::get_offset() as isize),
+            );
+        inner(this, order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_outline_thickness {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetOutlineThickness",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetOutlineThickness",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_outline_thickness(
+        this: TMP_Text,
+        thickness: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_outline_thickness::get_offset() as isize),
+            );
+        inner(this, thickness, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_shader_depth {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetShaderDepth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetShaderDepth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_shader_depth(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_shader_depth::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetCulling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_culling(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_culling::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "UpdateCulling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "UpdateCulling",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_culling(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_culling::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_padding_for_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPaddingForMaterial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPaddingForMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_padding_for_material(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_padding_for_material::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_padding_for_material_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPaddingForMaterial",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPaddingForMaterial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_padding_for_material_2(
+        this: TMP_Text,
+        mat: crate::unity_engine::material::Material,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::material::Material,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_padding_for_material_2::get_offset() as isize),
+        );
+        inner(this, mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_container_local_corners {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetTextContainerLocalCorners",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetTextContainerLocalCorners",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_container_local_corners(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_container_local_corners::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_force_mesh_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ForceMeshUpdate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ForceMeshUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn force_mesh_update(
+        this: TMP_Text,
+        ignore_active_state: bool,
+        force_text_reparsing: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_force_mesh_update::get_offset() as isize),
+            );
+        inner(
+            this,
+            ignore_active_state,
+            force_text_reparsing,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_geometry {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "UpdateGeometry",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "UpdateGeometry",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_geometry(
+        this: TMP_Text,
+        mesh: crate::unity_engine::mesh::Mesh,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::mesh::Mesh,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_geometry::get_offset() as isize),
+        );
+        inner(this, mesh, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_vertex_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_vertexdataupdateflags :: TMP_VertexDataUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "UpdateVertexData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "UpdateVertexData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_vertex_data(
+        this: TMP_Text,
         flags: crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
-    ) -> ();
-
-    #[doc = "`UpdateVertexData()` overload"]
-    #[method(name = "UpdateVertexData", args = 0)]
-    pub fn update_vertex_data_2(self) -> ();
-
-    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "SetVertices", args = 1)]
-    pub fn set_vertices(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_vertex_data::get_offset() as isize),
+        );
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_vertex_data_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "UpdateVertexData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "UpdateVertexData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_vertex_data_2(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_vertex_data_2::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vertices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector3::Vector3,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetVertices",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetVertices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vertices(
+        this: TMP_Text,
         vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    ) -> ();
-
-    #[doc = "`UpdateMeshPadding()` overload"]
-    #[method(name = "UpdateMeshPadding", args = 0)]
-    pub fn update_mesh_padding(self) -> ();
-
-    #[doc = "`CrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]
-    #[method(name = "CrossFadeColor", args = 4)]
-    pub fn cross_fade_color(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vertices::get_offset() as isize),
+        );
+        inner(this, vertices, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_mesh_padding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "UpdateMeshPadding",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "UpdateMeshPadding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_mesh_padding(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_mesh_padding::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "CrossFadeColor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_color(
+        this: TMP_Text,
         target_color: crate::unity_engine::color::Color,
         duration: f32,
         ignore_time_scale: bool,
         use_alpha: bool,
-    ) -> ();
-
-    #[doc = "`CrossFadeAlpha(f32, f32, bool)` overload"]
-    #[method(name = "CrossFadeAlpha", args = 3)]
-    pub fn cross_fade_alpha(self, alpha: f32, duration: f32, ignore_time_scale: bool) -> ();
-
-    #[doc = "`InternalCrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]
-    #[method(name = "InternalCrossFadeColor", args = 4)]
-    pub fn internal_cross_fade_color(
-        self,
-        target_color: crate::unity_engine::color::Color,
-        duration: f32,
-        ignore_time_scale: bool,
-        use_alpha: bool,
-    ) -> ();
-
-    #[doc = "`InternalCrossFadeAlpha(f32, f32, bool)` overload"]
-    #[method(name = "InternalCrossFadeAlpha", args = 3)]
-    pub fn internal_cross_fade_alpha(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color::Color,
+            f32,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_color::get_offset() as isize),
+        );
+        inner(
+            this,
+            target_color,
+            duration,
+            ignore_time_scale,
+            use_alpha,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "CrossFadeAlpha",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_alpha(
+        this: TMP_Text,
         alpha: f32,
         duration: f32,
         ignore_time_scale: bool,
-    ) -> ();
-
-    #[doc = "`ParseInputText()` overload"]
-    #[method(name = "ParseInputText", args = 0)]
-    pub fn parse_input_text(self) -> ();
-
-    #[doc = "`PopulateTextBackingArray(::unity2::Il2CppString)` overload"]
-    #[method(name = "PopulateTextBackingArray", args = 1)]
-    pub fn populate_text_backing_array(self, source_text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`PopulateTextBackingArray(::unity2::Il2CppString, i32, i32)` overload"]
-    #[method(name = "PopulateTextBackingArray", args = 3)]
-    pub fn populate_text_backing_array_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_alpha::get_offset() as isize),
+            );
+        inner(
+            this,
+            alpha,
+            duration,
+            ignore_time_scale,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_cross_fade_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InternalCrossFadeColor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InternalCrossFadeColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_cross_fade_color(
+        this: TMP_Text,
+        target_color: crate::unity_engine::color::Color,
+        duration: f32,
+        ignore_time_scale: bool,
+        use_alpha: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color::Color,
+            f32,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_cross_fade_color::get_offset() as isize),
+        );
+        inner(
+            this,
+            target_color,
+            duration,
+            ignore_time_scale,
+            use_alpha,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_cross_fade_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InternalCrossFadeAlpha",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InternalCrossFadeAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_cross_fade_alpha(
+        this: TMP_Text,
+        alpha: f32,
+        duration: f32,
+        ignore_time_scale: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f32, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_cross_fade_alpha::get_offset() as isize),
+            );
+        inner(
+            this,
+            alpha,
+            duration,
+            ignore_time_scale,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_parse_input_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ParseInputText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ParseInputText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn parse_input_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_parse_input_text::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_text_backing_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PopulateTextBackingArray",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PopulateTextBackingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_text_backing_array(
+        this: TMP_Text,
+        source_text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_populate_text_backing_array::get_offset() as isize),
+            );
+        inner(this, source_text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_text_backing_array_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PopulateTextBackingArray",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PopulateTextBackingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_text_backing_array_2(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`PopulateTextBackingArray(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "PopulateTextBackingArray", args = 3)]
-    pub fn populate_text_backing_array_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_populate_text_backing_array_2::get_offset() as isize),
+        );
+        inner(this, source_text, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_text_backing_array_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PopulateTextBackingArray",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PopulateTextBackingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_text_backing_array_3(
+        this: TMP_Text,
         source_text: ::unity2::Array<u16>,
         start: i32,
         length: i32,
-    ) -> ();
-
-    #[doc = "`PopulateTextProcessingArray()` overload"]
-    #[method(name = "PopulateTextProcessingArray", args = 0)]
-    pub fn populate_text_processing_array(self) -> ();
-
-    #[doc = "`SetTextInternal(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTextInternal", args = 1)]
-    pub fn set_text_internal(self, source_text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "SetText", args = 2)]
-    pub fn set_text_2(self, source_text: ::unity2::Il2CppString, sync_text_input_box: bool) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "SetText", args = 2)]
-    pub fn set_text_3(self, source_text: ::unity2::Il2CppString, arg0: f32) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32)` overload"]
-    #[method(name = "SetText", args = 3)]
-    pub fn set_text_4(self, source_text: ::unity2::Il2CppString, arg0: f32, arg1: f32) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 4)]
-    pub fn set_text_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_populate_text_backing_array_3::get_offset() as isize),
+        );
+        inner(this, source_text, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_text_processing_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PopulateTextProcessingArray",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PopulateTextProcessingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_text_processing_array(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_populate_text_processing_array::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetTextInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetTextInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_internal(
+        this: TMP_Text,
+        source_text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_text_internal::get_offset() as isize),
+            );
+        inner(this, source_text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_2(
+        this: TMP_Text,
+        source_text: ::unity2::Il2CppString,
+        sync_text_input_box: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_2::get_offset() as isize),
+        );
+        inner(this, source_text, sync_text_input_box, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_3(
+        this: TMP_Text,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_3::get_offset() as isize),
+        );
+        inner(this, source_text, arg0, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_4(
+        this: TMP_Text,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_4::get_offset() as isize),
+        );
+        inner(this, source_text, arg0, arg1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_5(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
         arg2: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 5)]
-    pub fn set_text_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_5::get_offset() as isize),
+        );
+        inner(this, source_text, arg0, arg1, arg2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_6(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
         arg2: f32,
         arg3: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 6)]
-    pub fn set_text_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            arg0,
+            arg1,
+            arg2,
+            arg3,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_7(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
         arg2: f32,
         arg3: f32,
         arg4: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 7)]
-    pub fn set_text_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_7::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            arg0,
+            arg1,
+            arg2,
+            arg3,
+            arg4,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_8(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
@@ -1738,12 +10492,79 @@ impl TMP_Text {
         arg3: f32,
         arg4: f32,
         arg5: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 8)]
-    pub fn set_text_9(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_8::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            arg0,
+            arg1,
+            arg2,
+            arg3,
+            arg4,
+            arg5,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_9(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
@@ -1752,12 +10573,82 @@ impl TMP_Text {
         arg4: f32,
         arg5: f32,
         arg6: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetText", args = 9)]
-    pub fn set_text_10(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_9::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            arg0,
+            arg1,
+            arg2,
+            arg3,
+            arg4,
+            arg5,
+            arg6,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_10(
+        this: TMP_Text,
         source_text: ::unity2::Il2CppString,
         arg0: f32,
         arg1: f32,
@@ -1767,256 +10658,2047 @@ impl TMP_Text {
         arg5: f32,
         arg6: f32,
         arg7: f32,
-    ) -> ();
-
-    #[doc = "`SetText(::unity2::Array<u16>)` overload"]
-    #[method(name = "SetText", args = 1)]
-    pub fn set_text_11(self, source_text: ::unity2::Array<u16>) -> ();
-
-    #[doc = "`SetText(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "SetText", args = 3)]
-    pub fn set_text_12(self, source_text: ::unity2::Array<u16>, start: i32, length: i32) -> ();
-
-    #[doc = "`SetCharArray(::unity2::Array<u16>)` overload"]
-    #[method(name = "SetCharArray", args = 1)]
-    pub fn set_char_array(self, source_text: ::unity2::Array<u16>) -> ();
-
-    #[doc = "`SetCharArray(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "SetCharArray", args = 3)]
-    pub fn set_char_array_2(self, source_text: ::unity2::Array<u16>, start: i32, length: i32)
-        -> ();
-
-    #[doc = "`GetStyle(i32)` overload"]
-    #[method(name = "GetStyle", args = 1)]
-    pub fn get_style(self, hash_code: i32) -> crate::tm_pro::tmp_style::TMP_Style;
-
-    #[doc = "`ReplaceOpeningStyleTag(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, i32, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "ReplaceOpeningStyleTag", args = 5)]
-    pub fn replace_opening_style_tag(
-        self,
-        source_text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_10::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            arg0,
+            arg1,
+            arg2,
+            arg3,
+            arg4,
+            arg5,
+            arg6,
+            arg7,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_11(
+        this: TMP_Text,
+        source_text: ::unity2::Array<u16>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Array<u16>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_text_11::get_offset() as isize),
+            );
+        inner(this, source_text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetText",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_12(
+        this: TMP_Text,
+        source_text: ::unity2::Array<u16>,
+        start: i32,
+        length: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_12::get_offset() as isize),
+        );
+        inner(this, source_text, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_char_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetCharArray",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetCharArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_char_array(
+        this: TMP_Text,
+        source_text: ::unity2::Array<u16>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::Array<u16>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_char_array::get_offset() as isize),
+            );
+        inner(this, source_text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_char_array_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetCharArray",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetCharArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_char_array_2(
+        this: TMP_Text,
+        source_text: ::unity2::Array<u16>,
+        start: i32,
+        length: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_char_array_2::get_offset() as isize),
+        );
+        inner(this, source_text, start, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style(
+        this: TMP_Text,
+        hash_code: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_style::TMP_Style {
+        let inner: extern "C" fn(
+            TMP_Text,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_style::TMP_Style = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style::get_offset() as isize),
+        );
+        inner(this, hash_code, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_opening_style_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReplaceOpeningStyleTag",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceOpeningStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_opening_style_tag(
+        this: TMP_Text,
+        source_text: *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         src_index: i32,
-        src_offset: i32,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> bool;
-
-    #[doc = "`ReplaceOpeningStyleTag(::unity2::Array<i32>, i32, i32, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "ReplaceOpeningStyleTag", args = 5)]
-    pub fn replace_opening_style_tag_2(
-        self,
-        source_text: ::unity2::Array<i32>,
+        src_offset: *mut i32,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            *mut i32,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_opening_style_tag::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            src_index,
+            src_offset,
+            char_buffer,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_opening_style_tag_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReplaceOpeningStyleTag",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceOpeningStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_opening_style_tag_2(
+        this: TMP_Text,
+        source_text: *mut ::unity2::Array<i32>,
         src_index: i32,
-        src_offset: i32,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> bool;
-
-    #[doc = "`ReplaceClosingStyleTag(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "ReplaceClosingStyleTag", args = 4)]
-    pub fn replace_closing_style_tag(
-        self,
-        source_text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        src_offset: *mut i32,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut ::unity2::Array<i32>,
+            i32,
+            *mut i32,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_opening_style_tag_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            src_index,
+            src_offset,
+            char_buffer,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_closing_style_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReplaceClosingStyleTag",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceClosingStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_closing_style_tag(
+        this: TMP_Text,
+        source_text: *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         src_index: i32,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> ();
-
-    #[doc = "`ReplaceClosingStyleTag(::unity2::Array<i32>, i32, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "ReplaceClosingStyleTag", args = 4)]
-    pub fn replace_closing_style_tag_2(
-        self,
-        source_text: ::unity2::Array<i32>,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_closing_style_tag::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            src_index,
+            char_buffer,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_closing_style_tag_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReplaceClosingStyleTag",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceClosingStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_closing_style_tag_2(
+        this: TMP_Text,
+        source_text: *mut ::unity2::Array<i32>,
         src_index: i32,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> ();
-
-    #[doc = "`InsertOpeningStyleTag(crate::tm_pro::tmp_style::TMP_Style, i32, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "InsertOpeningStyleTag", args = 4)]
-    pub fn insert_opening_style_tag(
-        self,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut ::unity2::Array<i32>,
+            i32,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_closing_style_tag_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_text,
+            src_index,
+            char_buffer,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert_opening_style_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_style :: TMP_Style as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InsertOpeningStyleTag",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InsertOpeningStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insert_opening_style_tag(
+        this: TMP_Text,
         style: crate::tm_pro::tmp_style::TMP_Style,
         src_index: i32,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> bool;
-
-    #[doc = "`InsertClosingStyleTag(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32)` overload"]
-    #[method(name = "InsertClosingStyleTag", args = 2)]
-    pub fn insert_closing_style_tag(
-        self,
-        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        write_index: i32,
-    ) -> ();
-
-    #[doc = "`GetMarkupTagHashCode(::unity2::Array<i32>, i32)` overload"]
-    #[method(name = "GetMarkupTagHashCode", args = 2)]
-    pub fn get_markup_tag_hash_code(
-        self,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_style::TMP_Style,
+            i32,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insert_opening_style_tag::get_offset() as isize),
+        );
+        inner(
+            this,
+            style,
+            src_index,
+            char_buffer,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert_closing_style_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InsertClosingStyleTag",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InsertClosingStyleTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insert_closing_style_tag(
+        this: TMP_Text,
+        char_buffer: *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insert_closing_style_tag::get_offset() as isize),
+        );
+        inner(this, char_buffer, write_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_markup_tag_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetMarkupTagHashCode",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetMarkupTagHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_markup_tag_hash_code(
+        this: TMP_Text,
         tag_definition: ::unity2::Array<i32>,
         read_index: i32,
-    ) -> i32;
-
-    #[doc = "`GetMarkupTagHashCode(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
-    #[method(name = "GetMarkupTagHashCode", args = 2)]
-    pub fn get_markup_tag_hash_code_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_markup_tag_hash_code::get_offset() as isize),
+        );
+        inner(this, tag_definition, read_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_markup_tag_hash_code_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetMarkupTagHashCode",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetMarkupTagHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_markup_tag_hash_code_2(
+        this: TMP_Text,
         tag_definition: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         read_index: i32,
-    ) -> i32;
-
-    #[doc = "`GetStyleHashCode(::unity2::Array<i32>, i32, i32)` overload"]
-    #[method(name = "GetStyleHashCode", args = 3)]
-    pub fn get_style_hash_code(
-        self,
-        text: ::unity2::Array<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_markup_tag_hash_code_2::get_offset() as isize),
+        );
+        inner(this, tag_definition, read_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut ::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetStyleHashCode",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetStyleHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style_hash_code(
+        this: TMP_Text,
+        text: *mut ::unity2::Array<i32>,
         index: i32,
-        close_index: i32,
-    ) -> i32;
-
-    #[doc = "`GetStyleHashCode(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, i32)` overload"]
-    #[method(name = "GetStyleHashCode", args = 3)]
-    pub fn get_style_hash_code_2(
-        self,
-        text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        close_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut ::unity2::Array<i32>,
+            i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style_hash_code::get_offset() as isize),
+        );
+        inner(this, text, index, close_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style_hash_code_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetStyleHashCode",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetStyleHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_style_hash_code_2(
+        this: TMP_Text,
+        text: *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         index: i32,
-        close_index: i32,
-    ) -> i32;
-
-    #[doc = "`AddFloatToInternalTextBackingArray(f32, i32, i32, i32)` overload"]
-    #[method(name = "AddFloatToInternalTextBackingArray", args = 4)]
-    pub fn add_float_to_internal_text_backing_array(
-        self,
+        close_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_style_hash_code_2::get_offset() as isize),
+        );
+        inner(this, text, index, close_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_float_to_internal_text_backing_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "AddFloatToInternalTextBackingArray",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "AddFloatToInternalTextBackingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_float_to_internal_text_backing_array(
+        this: TMP_Text,
         value: f32,
         padding: i32,
         precision: i32,
-        write_index: i32,
-    ) -> ();
-
-    #[doc = "`AddIntegerToInternalTextBackingArray(f64, i32, i32)` overload"]
-    #[method(name = "AddIntegerToInternalTextBackingArray", args = 3)]
-    pub fn add_integer_to_internal_text_backing_array(
-        self,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            f32,
+            i32,
+            i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_float_to_internal_text_backing_array::get_offset() as isize),
+        );
+        inner(
+            this,
+            value,
+            padding,
+            precision,
+            write_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_integer_to_internal_text_backing_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f64 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "AddIntegerToInternalTextBackingArray",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "AddIntegerToInternalTextBackingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_integer_to_internal_text_backing_array(
+        this: TMP_Text,
         number: f64,
         padding: i32,
-        write_index: i32,
-    ) -> ();
-
-    #[doc = "`InternalTextBackingArrayToString()` overload"]
-    #[method(name = "InternalTextBackingArrayToString", args = 0)]
-    pub fn internal_text_backing_array_to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetArraySizes(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)` overload"]
-    #[method(name = "SetArraySizes", args = 1)]
-    pub fn set_array_sizes(
-        self,
+        write_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, f64, i32, *mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_add_integer_to_internal_text_backing_array::get_offset() as isize,
+                    ),
+            );
+        inner(this, number, padding, write_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_text_backing_array_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InternalTextBackingArrayToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InternalTextBackingArrayToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_text_backing_array_to_string(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_internal_text_backing_array_to_string::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_array_sizes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::tm_pro::tmp_text::TMP_Text_UnicodeChar,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetArraySizes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetArraySizes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_array_sizes(
+        this: TMP_Text,
         unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-    ) -> i32;
-
-    #[doc = "`GetPreferredValues()` overload"]
-    #[method(name = "GetPreferredValues", args = 0)]
-    pub fn get_preferred_values(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetPreferredValues(f32, f32)` overload"]
-    #[method(name = "GetPreferredValues", args = 2)]
-    pub fn get_preferred_values_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_array_sizes::get_offset() as isize),
+        );
+        inner(this, unicode_chars, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredValues",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_values(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_values::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_values_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredValues",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_values_2(
+        this: TMP_Text,
         width: f32,
         height: f32,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetPreferredValues(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPreferredValues", args = 1)]
-    pub fn get_preferred_values_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_values_2::get_offset() as isize),
+        );
+        inner(this, width, height, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_values_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredValues",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_values_3(
+        this: TMP_Text,
         text: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetPreferredValues(::unity2::Il2CppString, f32, f32)` overload"]
-    #[method(name = "GetPreferredValues", args = 3)]
-    pub fn get_preferred_values_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_values_3::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_values_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredValues",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_values_4(
+        this: TMP_Text,
         text: ::unity2::Il2CppString,
         width: f32,
         height: f32,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetPreferredWidth(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "GetPreferredWidth", args = 1)]
-    pub fn get_preferred_width_2(self, margin: crate::unity_engine::vector2::Vector2) -> f32;
-
-    #[doc = "`GetPreferredHeight(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "GetPreferredHeight", args = 1)]
-    pub fn get_preferred_height_2(self, margin: crate::unity_engine::vector2::Vector2) -> f32;
-
-    #[doc = "`GetRenderedValues()` overload"]
-    #[method(name = "GetRenderedValues", args = 0)]
-    pub fn get_rendered_values(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetRenderedValues(bool)` overload"]
-    #[method(name = "GetRenderedValues", args = 1)]
-    pub fn get_rendered_values_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_values_4::get_offset() as isize),
+        );
+        inner(this, text, width, height, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_width_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_width_2(
+        this: TMP_Text,
+        margin: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_width_2::get_offset() as isize),
+        );
+        inner(this, margin, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_height_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetPreferredHeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_height_2(
+        this: TMP_Text,
+        margin: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_height_2::get_offset() as isize),
+        );
+        inner(this, margin, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetRenderedValues",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderedValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_values(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rendered_values::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_values_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetRenderedValues",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderedValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_values_2(
+        this: TMP_Text,
         only_visible_characters: bool,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetRenderedWidth(bool)` overload"]
-    #[method(name = "GetRenderedWidth", args = 1)]
-    pub fn get_rendered_width_2(self, only_visible_characters: bool) -> f32;
-
-    #[doc = "`GetRenderedHeight(bool)` overload"]
-    #[method(name = "GetRenderedHeight", args = 1)]
-    pub fn get_rendered_height_2(self, only_visible_characters: bool) -> f32;
-
-    #[doc = "`CalculatePreferredValues(f32, crate::unity_engine::vector2::Vector2, bool, bool)` overload"]
-    #[method(name = "CalculatePreferredValues", args = 4)]
-    pub fn calculate_preferred_values(
-        self,
-        font_size: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rendered_values_2::get_offset() as isize),
+        );
+        inner(this, only_visible_characters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_width_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetRenderedWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderedWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_width_2(
+        this: TMP_Text,
+        only_visible_characters: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rendered_width_2::get_offset() as isize),
+            );
+        inner(this, only_visible_characters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendered_height_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetRenderedHeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderedHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rendered_height_2(
+        this: TMP_Text,
+        only_visible_characters: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rendered_height_2::get_offset() as isize),
+            );
+        inner(this, only_visible_characters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_preferred_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "CalculatePreferredValues",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "CalculatePreferredValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_preferred_values(
+        this: TMP_Text,
+        font_size: *mut f32,
         margin_size: crate::unity_engine::vector2::Vector2,
         is_text_auto_sizing_enabled: bool,
         is_word_wrapping_enabled: bool,
-    ) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`GetCompoundBounds()` overload"]
-    #[method(name = "GetCompoundBounds", args = 0)]
-    pub fn get_compound_bounds(self) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`GetCanvasSpaceClippingRect()` overload"]
-    #[method(name = "GetCanvasSpaceClippingRect", args = 0)]
-    pub fn get_canvas_space_clipping_rect(self) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`GetTextBounds(bool)` overload"]
-    #[method(name = "GetTextBounds", args = 1)]
-    pub fn get_text_bounds_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut f32,
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_preferred_values::get_offset() as isize),
+        );
+        inner(
+            this,
+            font_size,
+            margin_size,
+            is_text_auto_sizing_enabled,
+            is_word_wrapping_enabled,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_compound_bounds {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetCompoundBounds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetCompoundBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_compound_bounds(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_compound_bounds::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_canvas_space_clipping_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetCanvasSpaceClippingRect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetCanvasSpaceClippingRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_canvas_space_clipping_rect(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_canvas_space_clipping_rect::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_bounds_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetTextBounds",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetTextBounds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_bounds_2(
+        this: TMP_Text,
         only_visible_characters: bool,
-    ) -> crate::unity_engine::bounds::Bounds;
-
-    #[doc = "`AdjustLineOffset(i32, i32, f32)` overload"]
-    #[method(name = "AdjustLineOffset", args = 3)]
-    pub fn adjust_line_offset(self, start_index: i32, end_index: i32, offset: f32) -> ();
-
-    #[doc = "`ResizeLineExtents(i32)` overload"]
-    #[method(name = "ResizeLineExtents", args = 1)]
-    pub fn resize_line_extents(self, size: i32) -> ();
-
-    #[doc = "`GetTextInfo(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetTextInfo", args = 1)]
-    pub fn get_text_info_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(
+            TMP_Text,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_bounds_2::get_offset() as isize),
+        );
+        inner(this, only_visible_characters, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_adjust_line_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "AdjustLineOffset",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "AdjustLineOffset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn adjust_line_offset(
+        this: TMP_Text,
+        start_index: i32,
+        end_index: i32,
+        offset: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_adjust_line_offset::get_offset() as isize),
+            );
+        inner(this, start_index, end_index, offset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resize_line_extents {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ResizeLineExtents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ResizeLineExtents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resize_line_extents(
+        this: TMP_Text,
+        size: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_resize_line_extents::get_offset() as isize),
+            );
+        inner(this, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetTextInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetTextInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_info_2(
+        this: TMP_Text,
         text: ::unity2::Il2CppString,
-    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo;
-
-    #[doc = "`ComputeMarginSize()` overload"]
-    #[method(name = "ComputeMarginSize", args = 0)]
-    pub fn compute_margin_size(self) -> ();
-
-    #[doc = "`InsertNewLine(i32, f32, f32, f32, f32, f32, f32, f32, f32, bool, f32)` overload"]
-    #[method(name = "InsertNewLine", args = 11)]
-    pub fn insert_new_line(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_info_2::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_margin_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ComputeMarginSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ComputeMarginSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_margin_size(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compute_margin_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert_new_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+                <*mut f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InsertNewLine",
+                11,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InsertNewLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn insert_new_line(
+        this: TMP_Text,
         i: i32,
         base_scale: f32,
         current_element_scale: f32,
@@ -2026,282 +12708,6628 @@ impl TMP_Text {
         character_spacing_adjustment: f32,
         width: f32,
         line_gap: f32,
-        is_max_visible_descender_set: bool,
-        max_visible_descender: f32,
-    ) -> ();
-
-    #[doc = "`SaveWordWrappingState(crate::tm_pro::wordwrapstate::WordWrapState, i32, i32)` overload"]
-    #[method(name = "SaveWordWrappingState", args = 3)]
-    pub fn save_word_wrapping_state(
-        self,
-        state: crate::tm_pro::wordwrapstate::WordWrapState,
+        is_max_visible_descender_set: *mut bool,
+        max_visible_descender: *mut f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            i32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            *mut bool,
+            *mut f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_insert_new_line::get_offset() as isize),
+        );
+        inner(
+            this,
+            i,
+            base_scale,
+            current_element_scale,
+            current_em_scale,
+            glyph_adjustment,
+            bold_spacing_adjustment,
+            character_spacing_adjustment,
+            width,
+            line_gap,
+            is_max_visible_descender_set,
+            max_visible_descender,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_word_wrapping_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SaveWordWrappingState",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SaveWordWrappingState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_word_wrapping_state(
+        this: TMP_Text,
+        state: *mut crate::tm_pro::wordwrapstate::WordWrapState,
         index: i32,
         count: i32,
-    ) -> ();
-
-    #[doc = "`RestoreWordWrappingState(crate::tm_pro::wordwrapstate::WordWrapState)` overload"]
-    #[method(name = "RestoreWordWrappingState", args = 1)]
-    pub fn restore_word_wrapping_state(
-        self,
-        state: crate::tm_pro::wordwrapstate::WordWrapState,
-    ) -> i32;
-
-    #[doc = "`SaveGlyphVertexInfo(f32, f32, crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "SaveGlyphVertexInfo", args = 3)]
-    pub fn save_glyph_vertex_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut crate::tm_pro::wordwrapstate::WordWrapState,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_word_wrapping_state::get_offset() as isize),
+        );
+        inner(this, state, index, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_restore_word_wrapping_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "RestoreWordWrappingState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "RestoreWordWrappingState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn restore_word_wrapping_state(
+        this: TMP_Text,
+        state: *mut crate::tm_pro::wordwrapstate::WordWrapState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            *mut crate::tm_pro::wordwrapstate::WordWrapState,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_restore_word_wrapping_state::get_offset() as isize),
+        );
+        inner(this, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_glyph_vertex_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SaveGlyphVertexInfo",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SaveGlyphVertexInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_glyph_vertex_info(
+        this: TMP_Text,
         padding: f32,
         style_padding: f32,
         vertex_color: crate::unity_engine::color32::Color32,
-    ) -> ();
-
-    #[doc = "`SaveSpriteVertexInfo(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "SaveSpriteVertexInfo", args = 1)]
-    pub fn save_sprite_vertex_info(self, vertex_color: crate::unity_engine::color32::Color32)
-        -> ();
-
-    #[doc = "`FillCharacterVertexBuffers(i32, i32)` overload"]
-    #[method(name = "FillCharacterVertexBuffers", args = 2)]
-    pub fn fill_character_vertex_buffers(self, i: i32, index_x4: i32) -> ();
-
-    #[doc = "`FillCharacterVertexBuffers(i32, i32, bool)` overload"]
-    #[method(name = "FillCharacterVertexBuffers", args = 3)]
-    pub fn fill_character_vertex_buffers_2(self, i: i32, index_x4: i32, is_volumetric: bool) -> ();
-
-    #[doc = "`FillSpriteVertexBuffers(i32, i32)` overload"]
-    #[method(name = "FillSpriteVertexBuffers", args = 2)]
-    pub fn fill_sprite_vertex_buffers(self, i: i32, index_x4: i32) -> ();
-
-    #[doc = "`DrawUnderlineMesh(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, f32, f32, f32, f32, crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "DrawUnderlineMesh", args = 8)]
-    pub fn draw_underline_mesh(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            f32,
+            f32,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_glyph_vertex_info::get_offset() as isize),
+        );
+        inner(
+            this,
+            padding,
+            style_padding,
+            vertex_color,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_sprite_vertex_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SaveSpriteVertexInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SaveSpriteVertexInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_sprite_vertex_info(
+        this: TMP_Text,
+        vertex_color: crate::unity_engine::color32::Color32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_sprite_vertex_info::get_offset() as isize),
+        );
+        inner(this, vertex_color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_character_vertex_buffers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "FillCharacterVertexBuffers",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "FillCharacterVertexBuffers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_character_vertex_buffers(
+        this: TMP_Text,
+        i: i32,
+        index_x4: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fill_character_vertex_buffers::get_offset() as isize),
+            );
+        inner(this, i, index_x4, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_character_vertex_buffers_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "FillCharacterVertexBuffers",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "FillCharacterVertexBuffers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_character_vertex_buffers_2(
+        this: TMP_Text,
+        i: i32,
+        index_x4: i32,
+        is_volumetric: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fill_character_vertex_buffers_2::get_offset() as isize),
+            );
+        inner(this, i, index_x4, is_volumetric, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_sprite_vertex_buffers {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "FillSpriteVertexBuffers",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "FillSpriteVertexBuffers",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_sprite_vertex_buffers(
+        this: TMP_Text,
+        i: i32,
+        index_x4: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fill_sprite_vertex_buffers::get_offset() as isize),
+            );
+        inner(this, i, index_x4, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_underline_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "DrawUnderlineMesh",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "DrawUnderlineMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_underline_mesh(
+        this: TMP_Text,
         start: crate::unity_engine::vector3::Vector3,
         end: crate::unity_engine::vector3::Vector3,
-        index: i32,
+        index: *mut i32,
         start_scale: f32,
         end_scale: f32,
         max_scale: f32,
         sdf_scale: f32,
         underline_color: crate::unity_engine::color32::Color32,
-    ) -> ();
-
-    #[doc = "`DrawTextHighlight(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "DrawTextHighlight", args = 4)]
-    pub fn draw_text_highlight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            *mut i32,
+            f32,
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_underline_mesh::get_offset() as isize),
+        );
+        inner(
+            this,
+            start,
+            end,
+            index,
+            start_scale,
+            end_scale,
+            max_scale,
+            sdf_scale,
+            underline_color,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_text_highlight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "DrawTextHighlight",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "DrawTextHighlight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn draw_text_highlight(
+        this: TMP_Text,
         start: crate::unity_engine::vector3::Vector3,
         end: crate::unity_engine::vector3::Vector3,
-        index: i32,
+        index: *mut i32,
         highlight_color: crate::unity_engine::color32::Color32,
-    ) -> ();
-
-    #[doc = "`LoadDefaultSettings()` overload"]
-    #[method(name = "LoadDefaultSettings", args = 0)]
-    pub fn load_default_settings(self) -> ();
-
-    #[doc = "`GetSpecialCharacters(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "GetSpecialCharacters", args = 1)]
-    pub fn get_special_characters(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            *mut i32,
+            crate::unity_engine::color32::Color32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_draw_text_highlight::get_offset() as isize),
+        );
+        inner(
+            this,
+            start,
+            end,
+            index,
+            highlight_color,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_default_settings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "LoadDefaultSettings",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "LoadDefaultSettings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_default_settings(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_default_settings::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_special_characters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetSpecialCharacters",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetSpecialCharacters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_special_characters(
+        this: TMP_Text,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
-    #[doc = "`GetEllipsisSpecialCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "GetEllipsisSpecialCharacter", args = 1)]
-    pub fn get_ellipsis_special_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_special_characters::get_offset() as isize),
+        );
+        inner(this, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ellipsis_special_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetEllipsisSpecialCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetEllipsisSpecialCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ellipsis_special_character(
+        this: TMP_Text,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
-    #[doc = "`GetUnderlineSpecialCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    #[method(name = "GetUnderlineSpecialCharacter", args = 1)]
-    pub fn get_underline_special_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ellipsis_special_character::get_offset() as isize),
+        );
+        inner(this, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_underline_special_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUnderlineSpecialCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUnderlineSpecialCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_underline_special_character(
+        this: TMP_Text,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-    ) -> ();
-
-    #[doc = "`ReplaceTagWithCharacter(::unity2::Array<i32>, i32, i32, u16)` overload"]
-    #[method(name = "ReplaceTagWithCharacter", args = 4)]
-    pub fn replace_tag_with_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_underline_special_character::get_offset() as isize),
+        );
+        inner(this, font_asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_tag_with_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReplaceTagWithCharacter",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReplaceTagWithCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn replace_tag_with_character(
+        this: TMP_Text,
         chars: ::unity2::Array<i32>,
         insertion_index: i32,
         tag_length: i32,
         c: u16,
-    ) -> ();
-
-    #[doc = "`GetFontAssetForWeight(i32)` overload"]
-    #[method(name = "GetFontAssetForWeight", args = 1)]
-    pub fn get_font_asset_for_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<i32>,
+            i32,
+            i32,
+            u16,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_replace_tag_with_character::get_offset() as isize),
+        );
+        inner(
+            this,
+            chars,
+            insertion_index,
+            tag_length,
+            c,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_asset_for_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetFontAssetForWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetFontAssetForWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_asset_for_weight(
+        this: TMP_Text,
         font_weight: i32,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
-
-    #[doc = "`GetTextElement(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, bool)` overload"]
-    #[method(name = "GetTextElement", args = 5)]
-    pub fn get_text_element(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(
+            TMP_Text,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_asset_for_weight::get_offset() as isize),
+        );
+        inner(this, font_weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_element {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetTextElement",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetTextElement",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text_element(
+        this: TMP_Text,
         unicode: u32,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         font_style: crate::tm_pro::fontstyles::FontStyles,
         font_weight: crate::tm_pro::fontweight::FontWeight,
-        is_using_alternative_typeface: bool,
-    ) -> crate::tm_pro::tmp_textelement::TMP_TextElement;
-
-    #[doc = "`SetActiveSubMeshes(bool)` overload"]
-    #[method(name = "SetActiveSubMeshes", args = 1)]
-    pub fn set_active_sub_meshes(self, state: bool) -> ();
-
-    #[doc = "`DestroySubMeshObjects()` overload"]
-    #[method(name = "DestroySubMeshObjects", args = 0)]
-    pub fn destroy_sub_mesh_objects(self) -> ();
-
-    #[doc = "`ClearMesh()` overload"]
-    #[method(name = "ClearMesh", args = 0)]
-    pub fn clear_mesh(self) -> ();
-
-    #[doc = "`ClearMesh(bool)` overload"]
-    #[method(name = "ClearMesh", args = 1)]
-    pub fn clear_mesh_2(self, upload_geometry: bool) -> ();
-
-    #[doc = "`GetParsedText()` overload"]
-    #[method(name = "GetParsedText", args = 0)]
-    pub fn get_parsed_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsSelfOrLinkedAncestor(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    #[method(name = "IsSelfOrLinkedAncestor", args = 1)]
-    pub fn is_self_or_linked_ancestor(
-        self,
+        is_using_alternative_typeface: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_textelement::TMP_TextElement {
+        let inner: extern "C" fn(
+            TMP_Text,
+            u32,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            crate::tm_pro::fontstyles::FontStyles,
+            crate::tm_pro::fontweight::FontWeight,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_textelement::TMP_TextElement = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text_element::get_offset() as isize),
+        );
+        inner(
+            this,
+            unicode,
+            font_asset,
+            font_style,
+            font_weight,
+            is_using_alternative_typeface,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active_sub_meshes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "SetActiveSubMeshes",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "SetActiveSubMeshes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active_sub_meshes(
+        this: TMP_Text,
+        state: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active_sub_meshes::get_offset() as isize),
+            );
+        inner(this, state, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_sub_mesh_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "DestroySubMeshObjects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "DestroySubMeshObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_sub_mesh_objects(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destroy_sub_mesh_objects::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ClearMesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ClearMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_mesh(this: TMP_Text, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_mesh_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ClearMesh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ClearMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_mesh_2(
+        this: TMP_Text,
+        upload_geometry: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_mesh_2::get_offset() as isize),
+            );
+        inner(this, upload_geometry, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parsed_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetParsedText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetParsedText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parsed_text(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_parsed_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_self_or_linked_ancestor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "IsSelfOrLinkedAncestor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "IsSelfOrLinkedAncestor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_self_or_linked_ancestor(
+        this: TMP_Text,
         target_text_component: crate::tm_pro::tmp_text::TMP_Text,
-    ) -> bool;
-
-    #[doc = "`ReleaseLinkedTextComponent(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    #[method(name = "ReleaseLinkedTextComponent", args = 1)]
-    pub fn release_linked_text_component(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_self_or_linked_ancestor::get_offset() as isize),
+        );
+        inner(this, target_text_component, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_linked_text_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ReleaseLinkedTextComponent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ReleaseLinkedTextComponent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release_linked_text_component(
+        this: TMP_Text,
         target_text_component: crate::tm_pro::tmp_text::TMP_Text,
-    ) -> ();
-
-    #[doc = "`PackUV(f32, f32, f32)` overload"]
-    #[method(name = "PackUV", args = 3)]
-    pub fn pack_uv(self, x: f32, y: f32, scale: f32) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`PackUV(f32, f32)` overload"]
-    #[method(name = "PackUV", args = 2)]
-    pub fn pack_uv_2(self, x: f32, y: f32) -> f32;
-
-    #[doc = "`InternalUpdate()` overload"]
-    #[method(name = "InternalUpdate", args = 0)]
-    pub fn internal_update(self) -> ();
-
-    #[doc = "`HexToInt(u16)` overload"]
-    #[method(name = "HexToInt", args = 1)]
-    pub fn hex_to_int(self, hex: u16) -> i32;
-
-    #[doc = "`GetUTF16(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetUTF16", args = 2)]
-    pub fn get_utf16(self, text: ::unity2::Il2CppString, i: i32) -> i32;
-
-    #[doc = "`GetUTF16(::unity2::Array<i32>, i32)` overload"]
-    #[method(name = "GetUTF16", args = 2)]
-    pub fn get_utf16_2(self, text: ::unity2::Array<i32>, i: i32) -> i32;
-
-    #[doc = "`GetUTF16(::unity2::Array<u32>, i32)` overload"]
-    #[method(name = "GetUTF16", args = 2)]
-    pub fn get_utf16_3(self, text: ::unity2::Array<u32>, i: i32) -> i32;
-
-    #[doc = "`GetUTF16(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
-    #[method(name = "GetUTF16", args = 2)]
-    pub fn get_utf16_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release_linked_text_component::get_offset() as isize),
+        );
+        inner(this, target_text_component, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pack_uv {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PackUV",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PackUV",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pack_uv(
+        this: TMP_Text,
+        x: f32,
+        y: f32,
+        scale: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pack_uv::get_offset() as isize),
+        );
+        inner(this, x, y, scale, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pack_uv_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "PackUV",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "PackUV",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pack_uv_2(
+        this: TMP_Text,
+        x: f32,
+        y: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TMP_Text, f32, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pack_uv_2::get_offset() as isize),
+            );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "InternalUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "InternalUpdate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_update(
+        this: TMP_Text,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_update::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hex_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "HexToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "HexToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hex_to_int(
+        this: TMP_Text,
+        hex: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text, u16, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hex_to_int::get_offset() as isize),
+            );
+        inner(this, hex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf16 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF16",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf16(
+        this: TMP_Text,
+        text: ::unity2::Il2CppString,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf16::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf16_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF16",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf16_2(
+        this: TMP_Text,
+        text: ::unity2::Array<i32>,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf16_2::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf16_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF16",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf16_3(
+        this: TMP_Text,
+        text: ::unity2::Array<u32>,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf16_3::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf16_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF16",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF16",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf16_4(
+        this: TMP_Text,
         text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         i: i32,
-    ) -> i32;
-
-    #[doc = "`GetUTF32(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetUTF32", args = 2)]
-    pub fn get_utf32(self, text: ::unity2::Il2CppString, i: i32) -> i32;
-
-    #[doc = "`GetUTF32(::unity2::Array<i32>, i32)` overload"]
-    #[method(name = "GetUTF32", args = 2)]
-    pub fn get_utf32_2(self, text: ::unity2::Array<i32>, i: i32) -> i32;
-
-    #[doc = "`GetUTF32(::unity2::Array<u32>, i32)` overload"]
-    #[method(name = "GetUTF32", args = 2)]
-    pub fn get_utf32_3(self, text: ::unity2::Array<u32>, i: i32) -> i32;
-
-    #[doc = "`GetUTF32(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
-    #[method(name = "GetUTF32", args = 2)]
-    pub fn get_utf32_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf16_4::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf32 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF32",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf32(
+        this: TMP_Text,
+        text: ::unity2::Il2CppString,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf32::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf32_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF32",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf32_2(
+        this: TMP_Text,
+        text: ::unity2::Array<i32>,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<i32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf32_2::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf32_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF32",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf32_3(
+        this: TMP_Text,
+        text: ::unity2::Array<u32>,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u32>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf32_3::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_utf32_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetUTF32",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetUTF32",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_utf32_4(
+        this: TMP_Text,
         text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
         i: i32,
-    ) -> i32;
-
-    #[doc = "`HexCharsToColor(::unity2::Array<u16>, i32)` overload"]
-    #[method(name = "HexCharsToColor", args = 2)]
-    pub fn hex_chars_to_color(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_utf32_4::get_offset() as isize),
+        );
+        inner(this, text, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hex_chars_to_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "HexCharsToColor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "HexCharsToColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hex_chars_to_color(
+        this: TMP_Text,
         hex_chars: ::unity2::Array<u16>,
         tag_count: i32,
-    ) -> crate::unity_engine::color32::Color32;
-
-    #[doc = "`HexCharsToColor(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "HexCharsToColor", args = 3)]
-    pub fn hex_chars_to_color_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color32::Color32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hex_chars_to_color::get_offset() as isize),
+        );
+        inner(this, hex_chars, tag_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hex_chars_to_color_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "HexCharsToColor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "HexCharsToColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hex_chars_to_color_2(
+        this: TMP_Text,
         hex_chars: ::unity2::Array<u16>,
         start_index: i32,
         length: i32,
-    ) -> crate::unity_engine::color32::Color32;
-
-    #[doc = "`GetAttributeParameters(::unity2::Array<u16>, i32, i32, ::unity2::Array<f32>)` overload"]
-    #[method(name = "GetAttributeParameters", args = 4)]
-    pub fn get_attribute_parameters(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color32::Color32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hex_chars_to_color_2::get_offset() as isize),
+        );
+        inner(this, hex_chars, start_index, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attribute_parameters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Array<f32> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "GetAttributeParameters",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "GetAttributeParameters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_attribute_parameters(
+        this: TMP_Text,
         chars: ::unity2::Array<u16>,
         start_index: i32,
         length: i32,
-        parameters: ::unity2::Array<f32>,
-    ) -> i32;
-
-    #[doc = "`ConvertToFloat(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "ConvertToFloat", args = 3)]
-    pub fn convert_to_float(
-        self,
+        parameters: *mut ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            *mut ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_attribute_parameters::get_offset() as isize),
+        );
+        inner(
+            this,
+            chars,
+            start_index,
+            length,
+            parameters,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_to_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ConvertToFloat",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ConvertToFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_to_float(
+        this: TMP_Text,
         chars: ::unity2::Array<u16>,
         start_index: i32,
         length: i32,
-    ) -> f32;
-
-    #[doc = "`ConvertToFloat(::unity2::Array<u16>, i32, i32, i32)` overload"]
-    #[method(name = "ConvertToFloat", args = 4)]
-    pub fn convert_to_float_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_to_float::get_offset() as isize),
+        );
+        inner(this, chars, start_index, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_to_float_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ConvertToFloat",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ConvertToFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_to_float_2(
+        this: TMP_Text,
         chars: ::unity2::Array<u16>,
         start_index: i32,
         length: i32,
-        last_index: i32,
-    ) -> f32;
-
-    #[doc = "`ValidateHtmlTag(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32, i32)` overload"]
-    #[method(name = "ValidateHtmlTag", args = 3)]
-    pub fn validate_html_tag(
-        self,
+        last_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_to_float_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            chars,
+            start_index,
+            length,
+            last_index,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_html_tag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ValidateHtmlTag",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    "ValidateHtmlTag",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_html_tag(
+        this: TMP_Text,
         chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
         start_index: i32,
-        end_index: i32,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        end_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TMP_Text,
+            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_html_tag::get_offset() as isize),
+        );
+        inner(this, chars, start_index, end_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_Text, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text {
+    #[doc = "`add_OnFontAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
+    pub fn add_on_font_asset_request(
+        value: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __TMP_Text_unity2_raw::add_on_font_asset_request(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_OnFontAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]
+    pub fn remove_on_font_asset_request(
+        value: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __TMP_Text_unity2_raw::remove_on_font_asset_request(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`add_OnSpriteAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>)` overload"]
+    pub fn add_on_sprite_asset_request(
+        value: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __TMP_Text_unity2_raw::add_on_sprite_asset_request(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_OnSpriteAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>)` overload"]
+    pub fn remove_on_sprite_asset_request(
+        value: impl ::core::convert::Into<
+            crate::system::func_3::Func_3<
+                i32,
+                ::unity2::Il2CppString,
+                crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __TMP_Text_unity2_raw::remove_on_sprite_asset_request(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __TMP_Text_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+pub trait ITMP_TextMethods: ITMP_Text {
+    #[doc = "`get_text()` overload"]
+    fn get_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
+    fn set_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_textPreprocessor()` overload"]
+    fn get_text_preprocessor(self) -> crate::tm_pro::itextpreprocessor::ITextPreprocessor {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_preprocessor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_textPreprocessor(crate::tm_pro::itextpreprocessor::ITextPreprocessor)` overload"]
+    fn set_text_preprocessor(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::itextpreprocessor::ITextPreprocessor>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_preprocessor(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isRightToLeftText()` overload"]
+    fn get_is_right_to_left_text(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_right_to_left_text(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_isRightToLeftText(bool)` overload"]
+    fn set_is_right_to_left_text(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_right_to_left_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_font()` overload"]
+    fn get_font(self) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_font(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn set_font(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontSharedMaterial()` overload"]
+    fn get_font_shared_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_shared_material(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_fontSharedMaterial(crate::unity_engine::material::Material)` overload"]
+    fn set_font_shared_material(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_shared_material(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontSharedMaterials()` overload"]
+    fn get_font_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_shared_materials(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_fontSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
+    fn set_font_shared_materials(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_shared_materials(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontMaterial()` overload"]
+    fn get_font_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_material(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontMaterial(crate::unity_engine::material::Material)` overload"]
+    fn set_font_material(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_material(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontMaterials()` overload"]
+    fn get_font_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_materials(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
+    fn set_font_materials(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_materials(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_color()` overload"]
+    fn get_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
+    fn set_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_color(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_alpha()` overload"]
+    fn get_alpha(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_alpha(f32)` overload"]
+    fn set_alpha(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_alpha(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_enableVertexGradient()` overload"]
+    fn get_enable_vertex_gradient(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_enable_vertex_gradient(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_enableVertexGradient(bool)` overload"]
+    fn set_enable_vertex_gradient(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_enable_vertex_gradient(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colorGradient()` overload"]
+    fn get_color_gradient(self) -> crate::tm_pro::vertexgradient::VertexGradient {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_color_gradient(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_colorGradient(crate::tm_pro::vertexgradient::VertexGradient)` overload"]
+    fn set_color_gradient(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::vertexgradient::VertexGradient>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_color_gradient(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_colorGradientPreset()` overload"]
+    fn get_color_gradient_preset(self) -> crate::tm_pro::tmp_colorgradient::TMP_ColorGradient {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_color_gradient_preset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_colorGradientPreset(crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
+    fn set_color_gradient_preset(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_color_gradient_preset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_spriteAsset()` overload"]
+    fn get_sprite_asset(self) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_sprite_asset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_spriteAsset(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
+    fn set_sprite_asset(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_sprite_asset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_tintAllSprites()` overload"]
+    fn get_tint_all_sprites(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_tint_all_sprites(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_tintAllSprites(bool)` overload"]
+    fn set_tint_all_sprites(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_tint_all_sprites(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_styleSheet()` overload"]
+    fn get_style_sheet(self) -> crate::tm_pro::tmp_stylesheet::TMP_StyleSheet {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_style_sheet(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_styleSheet(crate::tm_pro::tmp_stylesheet::TMP_StyleSheet)` overload"]
+    fn set_style_sheet(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_stylesheet::TMP_StyleSheet>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_style_sheet(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_textStyle()` overload"]
+    fn get_text_style(self) -> crate::tm_pro::tmp_style::TMP_Style {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_style(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_textStyle(crate::tm_pro::tmp_style::TMP_Style)` overload"]
+    fn set_text_style(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_style::TMP_Style>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_overrideColorTags()` overload"]
+    fn get_override_color_tags(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_override_color_tags(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_overrideColorTags(bool)` overload"]
+    fn set_override_color_tags(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_override_color_tags(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_faceColor()` overload"]
+    fn get_face_color(self) -> crate::unity_engine::color32::Color32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_face_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_faceColor(crate::unity_engine::color32::Color32)` overload"]
+    fn set_face_color(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_face_color(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_outlineColor()` overload"]
+    fn get_outline_color(self) -> crate::unity_engine::color32::Color32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_outline_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_outlineColor(crate::unity_engine::color32::Color32)` overload"]
+    fn set_outline_color(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_outline_color(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_outlineWidth()` overload"]
+    fn get_outline_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_outline_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_outlineWidth(f32)` overload"]
+    fn set_outline_width(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_outline_width(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontSize()` overload"]
+    fn get_font_size(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontSize(f32)` overload"]
+    fn set_font_size(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_size(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontWeight()` overload"]
+    fn get_font_weight(self) -> crate::tm_pro::fontweight::FontWeight {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_weight(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontWeight(crate::tm_pro::fontweight::FontWeight)` overload"]
+    fn set_font_weight(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::fontweight::FontWeight>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_weight(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_pixelsPerUnit()` overload"]
+    fn get_pixels_per_unit(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_pixels_per_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_enableAutoSizing()` overload"]
+    fn get_enable_auto_sizing(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_enable_auto_sizing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_enableAutoSizing(bool)` overload"]
+    fn set_enable_auto_sizing(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_enable_auto_sizing(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontSizeMin()` overload"]
+    fn get_font_size_min(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_size_min(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontSizeMin(f32)` overload"]
+    fn set_font_size_min(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_size_min(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontSizeMax()` overload"]
+    fn get_font_size_max(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_size_max(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontSizeMax(f32)` overload"]
+    fn set_font_size_max(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_size_max(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fontStyle()` overload"]
+    fn get_font_style(self) -> crate::tm_pro::fontstyles::FontStyles {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_style(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fontStyle(crate::tm_pro::fontstyles::FontStyles)` overload"]
+    fn set_font_style(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isUsingBold()` overload"]
+    fn get_is_using_bold(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_using_bold(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_horizontalAlignment()` overload"]
+    fn get_horizontal_alignment(
+        self,
+    ) -> crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_horizontal_alignment(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_horizontalAlignment(crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions)` overload"]
+    fn set_horizontal_alignment(
+        self,
+        value: impl ::core::convert::Into<
+            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_horizontal_alignment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_verticalAlignment()` overload"]
+    fn get_vertical_alignment(
+        self,
+    ) -> crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_vertical_alignment(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_verticalAlignment(crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions)` overload"]
+    fn set_vertical_alignment(
+        self,
+        value: impl ::core::convert::Into<
+            crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_vertical_alignment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_alignment()` overload"]
+    fn get_alignment(self) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_alignment(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_alignment(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]
+    fn set_alignment(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::textalignmentoptions::TextAlignmentOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_alignment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_characterSpacing()` overload"]
+    fn get_character_spacing(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_character_spacing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_characterSpacing(f32)` overload"]
+    fn set_character_spacing(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_character_spacing(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_wordSpacing()` overload"]
+    fn get_word_spacing(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_word_spacing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_wordSpacing(f32)` overload"]
+    fn set_word_spacing(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_word_spacing(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_lineSpacing()` overload"]
+    fn get_line_spacing(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_line_spacing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_lineSpacing(f32)` overload"]
+    fn set_line_spacing(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_line_spacing(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_lineSpacingAdjustment()` overload"]
+    fn get_line_spacing_adjustment(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_line_spacing_adjustment(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_lineSpacingAdjustment(f32)` overload"]
+    fn set_line_spacing_adjustment(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_line_spacing_adjustment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_paragraphSpacing()` overload"]
+    fn get_paragraph_spacing(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_paragraph_spacing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_paragraphSpacing(f32)` overload"]
+    fn set_paragraph_spacing(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_paragraph_spacing(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_characterWidthAdjustment()` overload"]
+    fn get_character_width_adjustment(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_character_width_adjustment(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_characterWidthAdjustment(f32)` overload"]
+    fn set_character_width_adjustment(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_character_width_adjustment(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_enableWordWrapping()` overload"]
+    fn get_enable_word_wrapping(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_enable_word_wrapping(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_enableWordWrapping(bool)` overload"]
+    fn set_enable_word_wrapping(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_enable_word_wrapping(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_wordWrappingRatios()` overload"]
+    fn get_word_wrapping_ratios(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_word_wrapping_ratios(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_wordWrappingRatios(f32)` overload"]
+    fn set_word_wrapping_ratios(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_word_wrapping_ratios(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_overflowMode()` overload"]
+    fn get_overflow_mode(self) -> crate::tm_pro::textoverflowmodes::TextOverflowModes {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_overflow_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_overflowMode(crate::tm_pro::textoverflowmodes::TextOverflowModes)` overload"]
+    fn set_overflow_mode(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::textoverflowmodes::TextOverflowModes>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_overflow_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isTextOverflowing()` overload"]
+    fn get_is_text_overflowing(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_text_overflowing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_firstOverflowCharacterIndex()` overload"]
+    fn get_first_overflow_character_index(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_first_overflow_character_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_linkedTextComponent()` overload"]
+    fn get_linked_text_component(self) -> crate::tm_pro::tmp_text::TMP_Text {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_linked_text_component(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_linkedTextComponent(crate::tm_pro::tmp_text::TMP_Text)` overload"]
+    fn set_linked_text_component(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_linked_text_component(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isTextTruncated()` overload"]
+    fn get_is_text_truncated(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_text_truncated(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_enableKerning()` overload"]
+    fn get_enable_kerning(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_enable_kerning(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_enableKerning(bool)` overload"]
+    fn set_enable_kerning(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_enable_kerning(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_extraPadding()` overload"]
+    fn get_extra_padding(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_extra_padding(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_extraPadding(bool)` overload"]
+    fn set_extra_padding(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_extra_padding(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_richText()` overload"]
+    fn get_rich_text(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rich_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_richText(bool)` overload"]
+    fn set_rich_text(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_rich_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_parseCtrlCharacters()` overload"]
+    fn get_parse_ctrl_characters(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_parse_ctrl_characters(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_parseCtrlCharacters(bool)` overload"]
+    fn set_parse_ctrl_characters(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_parse_ctrl_characters(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isOverlay()` overload"]
+    fn get_is_overlay(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_overlay(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_isOverlay(bool)` overload"]
+    fn set_is_overlay(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_overlay(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isOrthographic()` overload"]
+    fn get_is_orthographic(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_orthographic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_isOrthographic(bool)` overload"]
+    fn set_is_orthographic(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_orthographic(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_enableCulling()` overload"]
+    fn get_enable_culling(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_enable_culling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_enableCulling(bool)` overload"]
+    fn set_enable_culling(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_enable_culling(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ignoreVisibility()` overload"]
+    fn get_ignore_visibility(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_ignore_visibility(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_ignoreVisibility(bool)` overload"]
+    fn set_ignore_visibility(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_ignore_visibility(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_horizontalMapping()` overload"]
+    fn get_horizontal_mapping(self) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_horizontal_mapping(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_horizontalMapping(crate::tm_pro::texturemappingoptions::TextureMappingOptions)` overload"]
+    fn set_horizontal_mapping(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::texturemappingoptions::TextureMappingOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_horizontal_mapping(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_verticalMapping()` overload"]
+    fn get_vertical_mapping(self) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_vertical_mapping(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_verticalMapping(crate::tm_pro::texturemappingoptions::TextureMappingOptions)` overload"]
+    fn set_vertical_mapping(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::texturemappingoptions::TextureMappingOptions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_vertical_mapping(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_mappingUvLineOffset()` overload"]
+    fn get_mapping_uv_line_offset(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_mapping_uv_line_offset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_mappingUvLineOffset(f32)` overload"]
+    fn set_mapping_uv_line_offset(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_mapping_uv_line_offset(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_renderMode()` overload"]
+    fn get_render_mode(self) -> crate::tm_pro::textrenderflags::TextRenderFlags {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_render_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_renderMode(crate::tm_pro::textrenderflags::TextRenderFlags)` overload"]
+    fn set_render_mode(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::textrenderflags::TextRenderFlags>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_render_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_geometrySortingOrder()` overload"]
+    fn get_geometry_sorting_order(self) -> crate::tm_pro::vertexsortingorder::VertexSortingOrder {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_geometry_sorting_order(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_geometrySortingOrder(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]
+    fn set_geometry_sorting_order(
+        self,
+        value: impl ::core::convert::Into<crate::tm_pro::vertexsortingorder::VertexSortingOrder>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_geometry_sorting_order(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isTextObjectScaleStatic()` overload"]
+    fn get_is_text_object_scale_static(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_text_object_scale_static(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_isTextObjectScaleStatic(bool)` overload"]
+    fn set_is_text_object_scale_static(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_text_object_scale_static(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_vertexBufferAutoSizeReduction()` overload"]
+    fn get_vertex_buffer_auto_size_reduction(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_vertex_buffer_auto_size_reduction(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_vertexBufferAutoSizeReduction(bool)` overload"]
+    fn set_vertex_buffer_auto_size_reduction(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_vertex_buffer_auto_size_reduction(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_firstVisibleCharacter()` overload"]
+    fn get_first_visible_character(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_first_visible_character(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_firstVisibleCharacter(i32)` overload"]
+    fn set_first_visible_character(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_first_visible_character(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_maxVisibleCharacters()` overload"]
+    fn get_max_visible_characters(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_max_visible_characters(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_maxVisibleCharacters(i32)` overload"]
+    fn set_max_visible_characters(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_max_visible_characters(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_maxVisibleWords()` overload"]
+    fn get_max_visible_words(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_max_visible_words(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_maxVisibleWords(i32)` overload"]
+    fn set_max_visible_words(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_max_visible_words(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_maxVisibleLines()` overload"]
+    fn get_max_visible_lines(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_max_visible_lines(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_maxVisibleLines(i32)` overload"]
+    fn set_max_visible_lines(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_max_visible_lines(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_useMaxVisibleDescender()` overload"]
+    fn get_use_max_visible_descender(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_use_max_visible_descender(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_useMaxVisibleDescender(bool)` overload"]
+    fn set_use_max_visible_descender(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_use_max_visible_descender(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_pageToDisplay()` overload"]
+    fn get_page_to_display(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_page_to_display(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_pageToDisplay(i32)` overload"]
+    fn set_page_to_display(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_page_to_display(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_margin()` overload"]
+    fn get_margin(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_margin(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_margin(crate::unity_engine::vector4::Vector4)` overload"]
+    fn set_margin(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_margin(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_textInfo()` overload"]
+    fn get_text_info(self) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_havePropertiesChanged()` overload"]
+    fn get_have_properties_changed(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_have_properties_changed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_havePropertiesChanged(bool)` overload"]
+    fn set_have_properties_changed(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_have_properties_changed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isUsingLegacyAnimationComponent()` overload"]
+    fn get_is_using_legacy_animation_component(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_using_legacy_animation_component(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_isUsingLegacyAnimationComponent(bool)` overload"]
+    fn set_is_using_legacy_animation_component(
+        self,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_using_legacy_animation_component(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_transform()` overload"]
+    fn get_transform(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_transform(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_rectTransform()` overload"]
+    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_autoSizeTextContainer()` overload"]
+    fn get_auto_size_text_container(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_auto_size_text_container(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_autoSizeTextContainer(bool)` overload"]
+    fn set_auto_size_text_container(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_auto_size_text_container(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_mesh()` overload"]
+    fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isVolumetricText()` overload"]
+    fn get_is_volumetric_text(self) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_is_volumetric_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_isVolumetricText(bool)` overload"]
+    fn set_is_volumetric_text(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_is_volumetric_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_bounds()` overload"]
+    fn get_bounds(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_bounds(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_textBounds()` overload"]
+    fn get_text_bounds(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_bounds(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
+    fn add_on_pre_render_text(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::add_on_pre_render_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
+    fn remove_on_pre_render_text(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::remove_on_pre_render_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_spriteAnimator()` overload"]
+    fn get_sprite_animator(self) -> crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_sprite_animator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_flexibleHeight()` overload"]
+    fn get_flexible_height(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_flexibleWidth()` overload"]
+    fn get_flexible_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_minWidth()` overload"]
+    fn get_min_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_minHeight()` overload"]
+    fn get_min_height(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_maxWidth()` overload"]
+    fn get_max_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_max_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_maxHeight()` overload"]
+    fn get_max_height(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_max_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_layoutElement()` overload"]
+    fn get_layout_element(self) -> crate::unity_engine::ui::layoutelement::LayoutElement {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_layout_element(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_preferredWidth()` overload"]
+    fn get_preferred_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_preferredHeight()` overload"]
+    fn get_preferred_height(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderedWidth()` overload"]
+    fn get_rendered_width(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderedHeight()` overload"]
+    fn get_rendered_height(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_layoutPriority()` overload"]
+    fn get_layout_priority(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadFontAsset()` overload"]
+    fn load_font_asset(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::load_font_asset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetSharedMaterial(crate::unity_engine::material::Material)` overload"]
+    fn set_shared_material(
+        self,
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_shared_material(
+                __receiver,
+                ::core::convert::Into::into(mat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMaterial(crate::unity_engine::material::Material)` overload"]
+    fn get_material(
+        self,
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_material(
+                __receiver,
+                ::core::convert::Into::into(mat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFontBaseMaterial(crate::unity_engine::material::Material)` overload"]
+    fn set_font_base_material(
+        self,
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_font_base_material(
+                __receiver,
+                ::core::convert::Into::into(mat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSharedMaterials()` overload"]
+    fn get_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_shared_materials(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
+    fn set_shared_materials(
+        self,
+        materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_shared_materials(
+                __receiver,
+                ::core::convert::Into::into(materials),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
+    fn get_materials(
+        self,
+        mats: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_materials(
+                __receiver,
+                ::core::convert::Into::into(mats),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateMaterialInstance(crate::unity_engine::material::Material)` overload"]
+    fn create_material_instance(
+        self,
+        source: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::create_material_instance(
+                __receiver,
+                ::core::convert::Into::into(source),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVertexColorGradient(crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]
+    fn set_vertex_color_gradient(
+        self,
+        gradient: impl ::core::convert::Into<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_vertex_color_gradient(
+                __receiver,
+                ::core::convert::Into::into(gradient),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTextSortingOrder(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]
+    fn set_text_sorting_order(
+        self,
+        order: impl ::core::convert::Into<crate::tm_pro::vertexsortingorder::VertexSortingOrder>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_sorting_order(
+                __receiver,
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTextSortingOrder(::unity2::Array<i32>)` overload"]
+    fn set_text_sorting_order_2(
+        self,
+        order: impl ::core::convert::Into<::unity2::Array<i32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_sorting_order_2(
+                __receiver,
+                ::core::convert::Into::into(order),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetOutlineThickness(f32)` overload"]
+    fn set_outline_thickness(self, thickness: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_outline_thickness(
+                __receiver,
+                ::core::convert::Into::into(thickness),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetShaderDepth()` overload"]
+    fn set_shader_depth(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_shader_depth(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetCulling()` overload"]
+    fn set_culling(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_culling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateCulling()` overload"]
+    fn update_culling(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::update_culling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPaddingForMaterial()` overload"]
+    fn get_padding_for_material(self) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_padding_for_material(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPaddingForMaterial(crate::unity_engine::material::Material)` overload"]
+    fn get_padding_for_material_2(
+        self,
+        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_padding_for_material_2(
+                __receiver,
+                ::core::convert::Into::into(mat),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTextContainerLocalCorners()` overload"]
+    fn get_text_container_local_corners(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_container_local_corners(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ForceMeshUpdate(bool, bool)` overload"]
+    fn force_mesh_update(
+        self,
+        ignore_active_state: impl ::core::convert::Into<bool>,
+        force_text_reparsing: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::force_mesh_update(
+                __receiver,
+                ::core::convert::Into::into(ignore_active_state),
+                ::core::convert::Into::into(force_text_reparsing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateGeometry(crate::unity_engine::mesh::Mesh, i32)` overload"]
+    fn update_geometry(
+        self,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::update_geometry(
+                __receiver,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateVertexData(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)` overload"]
+    fn update_vertex_data(
+        self,
+        flags: impl ::core::convert::Into<
+            crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::update_vertex_data(
+                __receiver,
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateVertexData()` overload"]
+    fn update_vertex_data_2(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::update_vertex_data_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_vertices(
+        self,
+        vertices: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_vertices(
+                __receiver,
+                ::core::convert::Into::into(vertices),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateMeshPadding()` overload"]
+    fn update_mesh_padding(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::update_mesh_padding(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]
+    fn cross_fade_color(
+        self,
+        target_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        duration: impl ::core::convert::Into<f32>,
+        ignore_time_scale: impl ::core::convert::Into<bool>,
+        use_alpha: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::cross_fade_color(
+                __receiver,
+                ::core::convert::Into::into(target_color),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(ignore_time_scale),
+                ::core::convert::Into::into(use_alpha),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeAlpha(f32, f32, bool)` overload"]
+    fn cross_fade_alpha(
+        self,
+        alpha: impl ::core::convert::Into<f32>,
+        duration: impl ::core::convert::Into<f32>,
+        ignore_time_scale: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::cross_fade_alpha(
+                __receiver,
+                ::core::convert::Into::into(alpha),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(ignore_time_scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalCrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]
+    fn internal_cross_fade_color(
+        self,
+        target_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        duration: impl ::core::convert::Into<f32>,
+        ignore_time_scale: impl ::core::convert::Into<bool>,
+        use_alpha: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::internal_cross_fade_color(
+                __receiver,
+                ::core::convert::Into::into(target_color),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(ignore_time_scale),
+                ::core::convert::Into::into(use_alpha),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalCrossFadeAlpha(f32, f32, bool)` overload"]
+    fn internal_cross_fade_alpha(
+        self,
+        alpha: impl ::core::convert::Into<f32>,
+        duration: impl ::core::convert::Into<f32>,
+        ignore_time_scale: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::internal_cross_fade_alpha(
+                __receiver,
+                ::core::convert::Into::into(alpha),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(ignore_time_scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ParseInputText()` overload"]
+    fn parse_input_text(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::parse_input_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PopulateTextBackingArray(::unity2::Il2CppString)` overload"]
+    fn populate_text_backing_array(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::populate_text_backing_array(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopulateTextBackingArray(::unity2::Il2CppString, i32, i32)` overload"]
+    fn populate_text_backing_array_2(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::populate_text_backing_array_2(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopulateTextBackingArray(::unity2::Array<u16>, i32, i32)` overload"]
+    fn populate_text_backing_array_3(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::populate_text_backing_array_3(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopulateTextProcessingArray()` overload"]
+    fn populate_text_processing_array(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::populate_text_processing_array(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTextInternal(::unity2::Il2CppString)` overload"]
+    fn set_text_internal(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_internal(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, bool)` overload"]
+    fn set_text_2(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        sync_text_input_box: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_2(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(sync_text_input_box),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32)` overload"]
+    fn set_text_3(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_3(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32)` overload"]
+    fn set_text_4(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_4(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32)` overload"]
+    fn set_text_5(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_5(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32)` overload"]
+    fn set_text_6(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+        arg3: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_6(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32)` overload"]
+    fn set_text_7(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+        arg3: impl ::core::convert::Into<f32>,
+        arg4: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_7(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::convert::Into::into(arg4),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32)` overload"]
+    fn set_text_8(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+        arg3: impl ::core::convert::Into<f32>,
+        arg4: impl ::core::convert::Into<f32>,
+        arg5: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_8(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::convert::Into::into(arg4),
+                ::core::convert::Into::into(arg5),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32, f32)` overload"]
+    fn set_text_9(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+        arg3: impl ::core::convert::Into<f32>,
+        arg4: impl ::core::convert::Into<f32>,
+        arg5: impl ::core::convert::Into<f32>,
+        arg6: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_9(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::convert::Into::into(arg4),
+                ::core::convert::Into::into(arg5),
+                ::core::convert::Into::into(arg6),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Il2CppString, f32, f32, f32, f32, f32, f32, f32, f32)` overload"]
+    fn set_text_10(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<f32>,
+        arg1: impl ::core::convert::Into<f32>,
+        arg2: impl ::core::convert::Into<f32>,
+        arg3: impl ::core::convert::Into<f32>,
+        arg4: impl ::core::convert::Into<f32>,
+        arg5: impl ::core::convert::Into<f32>,
+        arg6: impl ::core::convert::Into<f32>,
+        arg7: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_10(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::convert::Into::into(arg4),
+                ::core::convert::Into::into(arg5),
+                ::core::convert::Into::into(arg6),
+                ::core::convert::Into::into(arg7),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Array<u16>)` overload"]
+    fn set_text_11(self, source_text: impl ::core::convert::Into<::unity2::Array<u16>>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_11(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetText(::unity2::Array<u16>, i32, i32)` overload"]
+    fn set_text_12(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_text_12(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharArray(::unity2::Array<u16>)` overload"]
+    fn set_char_array(self, source_text: impl ::core::convert::Into<::unity2::Array<u16>>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_char_array(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCharArray(::unity2::Array<u16>, i32, i32)` overload"]
+    fn set_char_array_2(
+        self,
+        source_text: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_char_array_2(
+                __receiver,
+                ::core::convert::Into::into(source_text),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStyle(i32)` overload"]
+    fn get_style(
+        self,
+        hash_code: impl ::core::convert::Into<i32>,
+    ) -> crate::tm_pro::tmp_style::TMP_Style {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_style(
+                __receiver,
+                ::core::convert::Into::into(hash_code),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReplaceOpeningStyleTag(*mutcrate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, *muti32, *mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn replace_opening_style_tag(
+        self,
+        src_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        bool,
+        crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        i32,
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::replace_opening_style_tag(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(src_index),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`ReplaceOpeningStyleTag(*mut::unity2::Array<i32>, i32, *muti32, *mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn replace_opening_style_tag_2(
+        self,
+        src_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        bool,
+        ::unity2::Array<i32>,
+        i32,
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<i32>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::replace_opening_style_tag_2(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(src_index),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`ReplaceClosingStyleTag(*mutcrate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, *mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn replace_closing_style_tag(
+        self,
+        src_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::replace_closing_style_tag(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(src_index),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`ReplaceClosingStyleTag(*mut::unity2::Array<i32>, i32, *mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn replace_closing_style_tag_2(
+        self,
+        src_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        ::unity2::Array<i32>,
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<i32>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::replace_closing_style_tag_2(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(src_index),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`InsertOpeningStyleTag(crate::tm_pro::tmp_style::TMP_Style, i32, *mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn insert_opening_style_tag(
+        self,
+        style: impl ::core::convert::Into<crate::tm_pro::tmp_style::TMP_Style>,
+        src_index: impl ::core::convert::Into<i32>,
+    ) -> (
+        bool,
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::insert_opening_style_tag(
+                    __receiver,
+                    ::core::convert::Into::into(style),
+                    ::core::convert::Into::into(src_index),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`InsertClosingStyleTag(*mut::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, *muti32)` overload"]
+    fn insert_closing_style_tag(
+        self,
+    ) -> (
+        ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::insert_closing_style_tag(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetMarkupTagHashCode(::unity2::Array<i32>, i32)` overload"]
+    fn get_markup_tag_hash_code(
+        self,
+        tag_definition: impl ::core::convert::Into<::unity2::Array<i32>>,
+        read_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_markup_tag_hash_code(
+                __receiver,
+                ::core::convert::Into::into(tag_definition),
+                ::core::convert::Into::into(read_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMarkupTagHashCode(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
+    fn get_markup_tag_hash_code_2(
+        self,
+        tag_definition: impl ::core::convert::Into<
+            crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        >,
+        read_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_markup_tag_hash_code_2(
+                __receiver,
+                ::core::convert::Into::into(tag_definition),
+                ::core::convert::Into::into(read_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStyleHashCode(*mut::unity2::Array<i32>, i32, *muti32)` overload"]
+    fn get_style_hash_code(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> (i32, ::unity2::Array<i32>, i32) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<i32>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::get_style_hash_code(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(index),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`GetStyleHashCode(*mutcrate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32, *muti32)` overload"]
+    fn get_style_hash_code_2(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> (
+        i32,
+        crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        i32,
+    ) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::get_style_hash_code_2(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(index),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    pub fn resize_internal_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ResizeInternalArray",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                "ResizeInternalArray",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                TMP_Text,
+                *mut ::unity2::Array<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn resize_internal_array_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
+        size: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <TMP_Text as ::unity2::ClassIdentity>::class(),
+                "ResizeInternalArray",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <TMP_Text as ::unity2::ClassIdentity>::NAME,
+                "ResizeInternalArray",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                TMP_Text,
+                *mut ::unity2::Array<M0>,
+                i32,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`AddFloatToInternalTextBackingArray(f32, i32, i32, *muti32)` overload"]
+    fn add_float_to_internal_text_backing_array(
+        self,
+        value: impl ::core::convert::Into<f32>,
+        padding: impl ::core::convert::Into<i32>,
+        precision: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::add_float_to_internal_text_backing_array(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(precision),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`AddIntegerToInternalTextBackingArray(f64, i32, *muti32)` overload"]
+    fn add_integer_to_internal_text_backing_array(
+        self,
+        number: impl ::core::convert::Into<f64>,
+        padding: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::add_integer_to_internal_text_backing_array(
+                __receiver,
+                ::core::convert::Into::into(number),
+                ::core::convert::Into::into(padding),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`InternalTextBackingArrayToString()` overload"]
+    fn internal_text_backing_array_to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::internal_text_backing_array_to_string(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetArraySizes(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)` overload"]
+    fn set_array_sizes(
+        self,
+        unicode_chars: impl ::core::convert::Into<
+            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_array_sizes(
+                __receiver,
+                ::core::convert::Into::into(unicode_chars),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPreferredValues()` overload"]
+    fn get_preferred_values(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_values(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPreferredValues(f32, f32)` overload"]
+    fn get_preferred_values_2(
+        self,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_values_2(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPreferredValues(::unity2::Il2CppString)` overload"]
+    fn get_preferred_values_3(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_values_3(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPreferredValues(::unity2::Il2CppString, f32, f32)` overload"]
+    fn get_preferred_values_4(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        width: impl ::core::convert::Into<f32>,
+        height: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_values_4(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPreferredWidth(crate::unity_engine::vector2::Vector2)` overload"]
+    fn get_preferred_width_2(
+        self,
+        margin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_width_2(
+                __receiver,
+                ::core::convert::Into::into(margin),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPreferredHeight(crate::unity_engine::vector2::Vector2)` overload"]
+    fn get_preferred_height_2(
+        self,
+        margin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_preferred_height_2(
+                __receiver,
+                ::core::convert::Into::into(margin),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRenderedValues()` overload"]
+    fn get_rendered_values(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_values(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetRenderedValues(bool)` overload"]
+    fn get_rendered_values_2(
+        self,
+        only_visible_characters: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_values_2(
+                __receiver,
+                ::core::convert::Into::into(only_visible_characters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRenderedWidth(bool)` overload"]
+    fn get_rendered_width_2(
+        self,
+        only_visible_characters: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_width_2(
+                __receiver,
+                ::core::convert::Into::into(only_visible_characters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRenderedHeight(bool)` overload"]
+    fn get_rendered_height_2(
+        self,
+        only_visible_characters: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_rendered_height_2(
+                __receiver,
+                ::core::convert::Into::into(only_visible_characters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalculatePreferredValues(*mutf32, crate::unity_engine::vector2::Vector2, bool, bool)` overload"]
+    fn calculate_preferred_values(
+        self,
+        margin_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        is_text_auto_sizing_enabled: impl ::core::convert::Into<bool>,
+        is_word_wrapping_enabled: impl ::core::convert::Into<bool>,
+    ) -> (crate::unity_engine::vector2::Vector2, f32) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::calculate_preferred_values(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(margin_size),
+                    ::core::convert::Into::into(is_text_auto_sizing_enabled),
+                    ::core::convert::Into::into(is_word_wrapping_enabled),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetCompoundBounds()` overload"]
+    fn get_compound_bounds(self) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_compound_bounds(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCanvasSpaceClippingRect()` overload"]
+    fn get_canvas_space_clipping_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_canvas_space_clipping_rect(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTextBounds(bool)` overload"]
+    fn get_text_bounds_2(
+        self,
+        only_visible_characters: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::bounds::Bounds {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_bounds_2(
+                __receiver,
+                ::core::convert::Into::into(only_visible_characters),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AdjustLineOffset(i32, i32, f32)` overload"]
+    fn adjust_line_offset(
+        self,
+        start_index: impl ::core::convert::Into<i32>,
+        end_index: impl ::core::convert::Into<i32>,
+        offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::adjust_line_offset(
+                __receiver,
+                ::core::convert::Into::into(start_index),
+                ::core::convert::Into::into(end_index),
+                ::core::convert::Into::into(offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResizeLineExtents(i32)` overload"]
+    fn resize_line_extents(self, size: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::resize_line_extents(
+                __receiver,
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTextInfo(::unity2::Il2CppString)` overload"]
+    fn get_text_info_2(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_text_info_2(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ComputeMarginSize()` overload"]
+    fn compute_margin_size(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::compute_margin_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InsertNewLine(i32, f32, f32, f32, f32, f32, f32, f32, f32, *mutbool, *mutf32)` overload"]
+    fn insert_new_line(
+        self,
+        i: impl ::core::convert::Into<i32>,
+        base_scale: impl ::core::convert::Into<f32>,
+        current_element_scale: impl ::core::convert::Into<f32>,
+        current_em_scale: impl ::core::convert::Into<f32>,
+        glyph_adjustment: impl ::core::convert::Into<f32>,
+        bold_spacing_adjustment: impl ::core::convert::Into<f32>,
+        character_spacing_adjustment: impl ::core::convert::Into<f32>,
+        width: impl ::core::convert::Into<f32>,
+        line_gap: impl ::core::convert::Into<f32>,
+    ) -> (bool, f32) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
+            __TMP_Text_unity2_raw::insert_new_line(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::convert::Into::into(base_scale),
+                ::core::convert::Into::into(current_element_scale),
+                ::core::convert::Into::into(current_em_scale),
+                ::core::convert::Into::into(glyph_adjustment),
+                ::core::convert::Into::into(bold_spacing_adjustment),
+                ::core::convert::Into::into(character_spacing_adjustment),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(line_gap),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`SaveWordWrappingState(*mutcrate::tm_pro::wordwrapstate::WordWrapState, i32, i32)` overload"]
+    fn save_word_wrapping_state(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> crate::tm_pro::wordwrapstate::WordWrapState {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::wordwrapstate::WordWrapState>::uninit();
+            __TMP_Text_unity2_raw::save_word_wrapping_state(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`RestoreWordWrappingState(*mutcrate::tm_pro::wordwrapstate::WordWrapState)` overload"]
+    fn restore_word_wrapping_state(self) -> (i32, crate::tm_pro::wordwrapstate::WordWrapState) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::tm_pro::wordwrapstate::WordWrapState>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::restore_word_wrapping_state(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SaveGlyphVertexInfo(f32, f32, crate::unity_engine::color32::Color32)` overload"]
+    fn save_glyph_vertex_info(
+        self,
+        padding: impl ::core::convert::Into<f32>,
+        style_padding: impl ::core::convert::Into<f32>,
+        vertex_color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::save_glyph_vertex_info(
+                __receiver,
+                ::core::convert::Into::into(padding),
+                ::core::convert::Into::into(style_padding),
+                ::core::convert::Into::into(vertex_color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveSpriteVertexInfo(crate::unity_engine::color32::Color32)` overload"]
+    fn save_sprite_vertex_info(
+        self,
+        vertex_color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::save_sprite_vertex_info(
+                __receiver,
+                ::core::convert::Into::into(vertex_color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillCharacterVertexBuffers(i32, i32)` overload"]
+    fn fill_character_vertex_buffers(
+        self,
+        i: impl ::core::convert::Into<i32>,
+        index_x4: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::fill_character_vertex_buffers(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::convert::Into::into(index_x4),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillCharacterVertexBuffers(i32, i32, bool)` overload"]
+    fn fill_character_vertex_buffers_2(
+        self,
+        i: impl ::core::convert::Into<i32>,
+        index_x4: impl ::core::convert::Into<i32>,
+        is_volumetric: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::fill_character_vertex_buffers_2(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::convert::Into::into(index_x4),
+                ::core::convert::Into::into(is_volumetric),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillSpriteVertexBuffers(i32, i32)` overload"]
+    fn fill_sprite_vertex_buffers(
+        self,
+        i: impl ::core::convert::Into<i32>,
+        index_x4: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::fill_sprite_vertex_buffers(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::convert::Into::into(index_x4),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DrawUnderlineMesh(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *muti32, f32, f32, f32, f32, crate::unity_engine::color32::Color32)` overload"]
+    fn draw_underline_mesh(
+        self,
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        end: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        start_scale: impl ::core::convert::Into<f32>,
+        end_scale: impl ::core::convert::Into<f32>,
+        max_scale: impl ::core::convert::Into<f32>,
+        sdf_scale: impl ::core::convert::Into<f32>,
+        underline_color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::draw_underline_mesh(
+                __receiver,
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(end),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(start_scale),
+                ::core::convert::Into::into(end_scale),
+                ::core::convert::Into::into(max_scale),
+                ::core::convert::Into::into(sdf_scale),
+                ::core::convert::Into::into(underline_color),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`DrawTextHighlight(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *muti32, crate::unity_engine::color32::Color32)` overload"]
+    fn draw_text_highlight(
+        self,
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        end: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        highlight_color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __TMP_Text_unity2_raw::draw_text_highlight(
+                __receiver,
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(end),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(highlight_color),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`LoadDefaultSettings()` overload"]
+    fn load_default_settings(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::load_default_settings(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSpecialCharacters(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn get_special_characters(
+        self,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_special_characters(
+                __receiver,
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEllipsisSpecialCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn get_ellipsis_special_character(
+        self,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_ellipsis_special_character(
+                __receiver,
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUnderlineSpecialCharacter(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
+    fn get_underline_special_character(
+        self,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_underline_special_character(
+                __receiver,
+                ::core::convert::Into::into(font_asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReplaceTagWithCharacter(::unity2::Array<i32>, i32, i32, u16)` overload"]
+    fn replace_tag_with_character(
+        self,
+        chars: impl ::core::convert::Into<::unity2::Array<i32>>,
+        insertion_index: impl ::core::convert::Into<i32>,
+        tag_length: impl ::core::convert::Into<i32>,
+        c: impl ::core::convert::Into<u16>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::replace_tag_with_character(
+                __receiver,
+                ::core::convert::Into::into(chars),
+                ::core::convert::Into::into(insertion_index),
+                ::core::convert::Into::into(tag_length),
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFontAssetForWeight(i32)` overload"]
+    fn get_font_asset_for_weight(
+        self,
+        font_weight: impl ::core::convert::Into<i32>,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_font_asset_for_weight(
+                __receiver,
+                ::core::convert::Into::into(font_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTextElement(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::tm_pro::fontstyles::FontStyles, crate::tm_pro::fontweight::FontWeight, *mutbool)` overload"]
+    fn get_text_element(
+        self,
+        unicode: impl ::core::convert::Into<u32>,
+        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        font_style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>,
+        font_weight: impl ::core::convert::Into<crate::tm_pro::fontweight::FontWeight>,
+    ) -> (crate::tm_pro::tmp_textelement::TMP_TextElement, bool) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::get_text_element(
+                    __receiver,
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(font_asset),
+                    ::core::convert::Into::into(font_style),
+                    ::core::convert::Into::into(font_weight),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`SetActiveSubMeshes(bool)` overload"]
+    fn set_active_sub_meshes(self, state: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::set_active_sub_meshes(
+                __receiver,
+                ::core::convert::Into::into(state),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroySubMeshObjects()` overload"]
+    fn destroy_sub_mesh_objects(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::destroy_sub_mesh_objects(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearMesh()` overload"]
+    fn clear_mesh(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::clear_mesh(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearMesh(bool)` overload"]
+    fn clear_mesh_2(self, upload_geometry: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::clear_mesh_2(
+                __receiver,
+                ::core::convert::Into::into(upload_geometry),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetParsedText()` overload"]
+    fn get_parsed_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_parsed_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSelfOrLinkedAncestor(crate::tm_pro::tmp_text::TMP_Text)` overload"]
+    fn is_self_or_linked_ancestor(
+        self,
+        target_text_component: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::is_self_or_linked_ancestor(
+                __receiver,
+                ::core::convert::Into::into(target_text_component),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReleaseLinkedTextComponent(crate::tm_pro::tmp_text::TMP_Text)` overload"]
+    fn release_linked_text_component(
+        self,
+        target_text_component: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::release_linked_text_component(
+                __receiver,
+                ::core::convert::Into::into(target_text_component),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PackUV(f32, f32, f32)` overload"]
+    fn pack_uv(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+        scale: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::pack_uv(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PackUV(f32, f32)` overload"]
+    fn pack_uv_2(
+        self,
+        x: impl ::core::convert::Into<f32>,
+        y: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::pack_uv_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalUpdate()` overload"]
+    fn internal_update(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::internal_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HexToInt(u16)` overload"]
+    fn hex_to_int(self, hex: impl ::core::convert::Into<u16>) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::hex_to_int(
+                __receiver,
+                ::core::convert::Into::into(hex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF16(::unity2::Il2CppString, i32)` overload"]
+    fn get_utf16(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf16(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF16(::unity2::Array<i32>, i32)` overload"]
+    fn get_utf16_2(
+        self,
+        text: impl ::core::convert::Into<::unity2::Array<i32>>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf16_2(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF16(::unity2::Array<u32>, i32)` overload"]
+    fn get_utf16_3(
+        self,
+        text: impl ::core::convert::Into<::unity2::Array<u32>>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf16_3(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF16(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
+    fn get_utf16_4(
+        self,
+        text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf16_4(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF32(::unity2::Il2CppString, i32)` overload"]
+    fn get_utf32(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf32(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF32(::unity2::Array<i32>, i32)` overload"]
+    fn get_utf32_2(
+        self,
+        text: impl ::core::convert::Into<::unity2::Array<i32>>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf32_2(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF32(::unity2::Array<u32>, i32)` overload"]
+    fn get_utf32_3(
+        self,
+        text: impl ::core::convert::Into<::unity2::Array<u32>>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf32_3(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetUTF32(crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, i32)` overload"]
+    fn get_utf32_4(
+        self,
+        text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::get_utf32_4(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HexCharsToColor(::unity2::Array<u16>, i32)` overload"]
+    fn hex_chars_to_color(
+        self,
+        hex_chars: impl ::core::convert::Into<::unity2::Array<u16>>,
+        tag_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color32::Color32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::hex_chars_to_color(
+                __receiver,
+                ::core::convert::Into::into(hex_chars),
+                ::core::convert::Into::into(tag_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HexCharsToColor(::unity2::Array<u16>, i32, i32)` overload"]
+    fn hex_chars_to_color_2(
+        self,
+        hex_chars: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start_index: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::color32::Color32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::hex_chars_to_color_2(
+                __receiver,
+                ::core::convert::Into::into(hex_chars),
+                ::core::convert::Into::into(start_index),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAttributeParameters(::unity2::Array<u16>, i32, i32, *mut::unity2::Array<f32>)` overload"]
+    fn get_attribute_parameters(
+        self,
+        chars: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start_index: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> (i32, ::unity2::Array<f32>) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<f32>>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::get_attribute_parameters(
+                    __receiver,
+                    ::core::convert::Into::into(chars),
+                    ::core::convert::Into::into(start_index),
+                    ::core::convert::Into::into(length),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ConvertToFloat(::unity2::Array<u16>, i32, i32)` overload"]
+    fn convert_to_float(
+        self,
+        chars: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start_index: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::convert_to_float(
+                __receiver,
+                ::core::convert::Into::into(chars),
+                ::core::convert::Into::into(start_index),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConvertToFloat(::unity2::Array<u16>, i32, i32, *muti32)` overload"]
+    fn convert_to_float_2(
+        self,
+        chars: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start_index: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> (f32, i32) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::convert_to_float_2(
+                    __receiver,
+                    ::core::convert::Into::into(chars),
+                    ::core::convert::Into::into(start_index),
+                    ::core::convert::Into::into(length),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`ValidateHtmlTag(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, i32, *muti32)` overload"]
+    fn validate_html_tag(
+        self,
+        chars: impl ::core::convert::Into<
+            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        >,
+        start_index: impl ::core::convert::Into<i32>,
+    ) -> (bool, i32) {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __TMP_Text_unity2_raw::validate_html_tag(
+                    __receiver,
+                    ::core::convert::Into::into(chars),
+                    ::core::convert::Into::into(start_index),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Text as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Text_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl<__T: ITMP_Text> ITMP_TextMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_text")]
 impl TMP_Text {
@@ -2317,4 +19345,634 @@ impl TMP_Text {
         <Self as ITMP_TextMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_TextBackingContainer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Capacity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "get_Capacity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_capacity(
+        this: TMP_Text_TextBackingContainer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_capacity::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "get_Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count(
+        this: TMP_Text_TextBackingContainer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "set_Count",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "set_Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_count(
+        this: TMP_Text_TextBackingContainer,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_count::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: TMP_Text_TextBackingContainer,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(
+            TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "set_Item",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "set_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_item(
+        this: TMP_Text_TextBackingContainer,
+        index: i32,
+        value: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_TextBackingContainer,
+            i32,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_item::get_offset() as isize),
+        );
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_Text_TextBackingContainer,
+        size: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "Resize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                    "Resize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resize(
+        this: TMP_Text_TextBackingContainer,
+        size: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_TextBackingContainer,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resize::get_offset() as isize),
+        );
+        inner(this, size, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text_TextBackingContainer {
+    #[doc = "`get_Capacity()` overload"]
+    pub fn get_capacity(self) -> i32 {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::get_capacity(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    pub fn get_count(self) -> i32 {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::get_count(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Count(i32)` overload"]
+    pub fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::set_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::get_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Item(i32, u32)` overload"]
+    pub fn set_item(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<u32>,
+    ) -> () {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::set_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor(self, size: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Resize(i32)` overload"]
+    pub fn resize(self, size: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::resize(
+                self,
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_SpecialCharacter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_Text_SpecialCharacter,
+        character: crate::tm_pro::tmp_character::TMP_Character,
+        material_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_SpecialCharacter,
+            crate::tm_pro::tmp_character::TMP_Character,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, character, material_index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text_SpecialCharacter {
+    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
+    pub fn ctor(
+        self,
+        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
+        material_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TMP_Text_SpecialCharacter_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(material_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_CharacterSubstitution_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_Text_CharacterSubstitution,
+        index: i32,
+        unicode: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_CharacterSubstitution,
+            i32,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, index, unicode, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text_CharacterSubstitution {
+    #[doc = "`.ctor(i32, u32)` overload"]
+    pub fn ctor(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        unicode: impl ::core::convert::Into<u32>,
+    ) -> () {
+        unsafe {
+            __TMP_Text_CharacterSubstitution_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(unicode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+pub mod prelude {
+    pub use super::ITMP_Text;
+    pub use super::ITMP_TextMethods;
+    pub use super::TMP_Text;
+    pub use super::TMP_Text_CharacterSubstitution;
+    pub use super::TMP_Text_SpecialCharacter;
+    pub use super::TMP_Text_TextBackingContainer;
+    pub use super::TMP_Text_TextInputSources;
+    pub use super::TMP_Text_UnicodeChar;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::ui::graphic::IGraphic;
+    #[cfg(feature = "unity_engine-ui-graphic")]
+    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+    #[cfg(feature = "unity_engine-ui-maskablegraphic")]
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
 }

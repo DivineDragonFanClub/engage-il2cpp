@@ -22,20 +22,146 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
-#[::unity2::methods]
-impl RectangularVertexClipper {
-    #[doc = "`GetCanvasRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"]
-    #[method(name = "GetCanvasRect", args = 2)]
-    pub fn get_canvas_rect(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RectangularVertexClipper_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_canvas_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectangularVertexClipper as ::unity2::ClassIdentity>::class(),
+                "GetCanvasRect",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectangularVertexClipper as ::unity2::ClassIdentity>::NAME,
+                    "GetCanvasRect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_canvas_rect(
+        this: RectangularVertexClipper,
         t: crate::unity_engine::recttransform::RectTransform,
         c: crate::unity_engine::canvas::Canvas,
-    ) -> crate::unity_engine::rect::Rect;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            RectangularVertexClipper,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::canvas::Canvas,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_canvas_rect::get_offset() as isize),
+        );
+        inner(this, t, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectangularVertexClipper as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectangularVertexClipper as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RectangularVertexClipper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectangularVertexClipper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
+pub trait IRectangularVertexClipperMethods: IRectangularVertexClipper {
+    #[doc = "`GetCanvasRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"]
+    fn get_canvas_rect(
+        self,
+        t: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        c: impl ::core::convert::Into<crate::unity_engine::canvas::Canvas>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver =
+                <RectangularVertexClipper as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RectangularVertexClipper_unity2_raw::get_canvas_rect(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RectangularVertexClipper as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RectangularVertexClipper_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
+impl<__T: IRectangularVertexClipper> IRectangularVertexClipperMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
 impl RectangularVertexClipper {
@@ -51,4 +177,14 @@ impl RectangularVertexClipper {
         <Self as IRectangularVertexClipperMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
+pub mod prelude {
+    pub use super::IRectangularVertexClipper;
+    pub use super::IRectangularVertexClipperMethods;
+    pub use super::RectangularVertexClipper;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

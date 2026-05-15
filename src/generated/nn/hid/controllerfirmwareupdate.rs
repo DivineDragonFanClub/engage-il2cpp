@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "nn-hid-controllerfirmwareupdate-types")]
 pub use __types::*;
+
+#[cfg(feature = "nn-hid-controllerfirmwareupdate")]
+pub mod prelude {
+    pub use super::ControllerFirmwareUpdate;
+    pub use super::IControllerFirmwareUpdate;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

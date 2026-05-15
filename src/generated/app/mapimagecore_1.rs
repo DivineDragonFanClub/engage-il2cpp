@@ -87,3 +87,16 @@ impl<T0: ::unity2::ClassIdentity> MapImageCore_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-mapimagecore_1")]
+pub mod prelude {
+    pub use super::IMapImageCore_1;
+    pub use super::IMapImageCore_1Methods;
+    pub use super::MapImageCore_1;
+    pub use crate::app::mapimageindex::IMapImageIndex;
+    #[cfg(feature = "app-mapimageindex")]
+    pub use crate::app::mapimageindex::IMapImageIndexMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

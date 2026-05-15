@@ -17,9 +17,79 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-charactergamestatusex")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterGameStatusEx_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: charactergamestatus :: CharacterGameStatus as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterGameStatusEx as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterGameStatusEx as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        gs: crate::combat::charactergamestatus::CharacterGameStatus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::charactergamestatus::CharacterGameStatus,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_valid::get_offset() as isize),
+        );
+        inner(gs, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-charactergamestatusex")]
 impl CharacterGameStatusEx {
     #[doc = "`IsValid(crate::combat::charactergamestatus::CharacterGameStatus)` overload"]
-    #[method(name = "IsValid", args = 1)]
-    pub fn is_valid(gs: crate::combat::charactergamestatus::CharacterGameStatus) -> bool;
+    pub fn is_valid(
+        gs: impl ::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>,
+    ) -> bool {
+        unsafe {
+            __CharacterGameStatusEx_unity2_raw::is_valid(
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-charactergamestatusex")]
+pub mod prelude {
+    pub use super::CharacterGameStatusEx;
+    pub use super::ICharacterGameStatusEx;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

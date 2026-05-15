@@ -9,6 +9,37 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandleSystem")]
+    #[parent(crate::system::object::Object)]
+    pub struct RTHandleSystem {
+        #[rename(name = "m_HardwareDynamicResRequested")]
+        pub m_hardware_dynamic_res_requested: bool,
+        #[rename(name = "m_ScaledRTSupportsMSAA")]
+        pub m_scaled_rt_supports_msaa: bool,
+        #[rename(name = "m_ScaledRTCurrentMSAASamples")]
+        pub m_scaled_rt_current_msaa_samples:
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        #[rename(name = "m_AutoSizedRTs")]
+        pub m_auto_sized_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
+            crate::unity_engine::rendering::rthandle::RTHandle,
+        >,
+        #[rename(name = "m_AutoSizedRTsArray")]
+        pub m_auto_sized_r_ts_array:
+            ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>,
+        #[rename(name = "m_ResizeOnDemandRTs")]
+        pub m_resize_on_demand_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
+            crate::unity_engine::rendering::rthandle::RTHandle,
+        >,
+        #[rename(name = "m_RTHandleProperties")]
+        pub m_rt_handle_properties:
+            crate::unity_engine::rendering::rthandleproperties::RTHandleProperties,
+        #[rename(name = "m_MaxWidths")]
+        pub m_max_widths: i32,
+        #[rename(name = "m_MaxHeights")]
+        pub m_max_heights: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem_ResizeMode.md"))]
     #[repr(C)]
     #[derive(
@@ -52,143 +83,858 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandleSystem")]
-    #[parent(crate::system::object::Object)]
-    pub struct RTHandleSystem {
-        #[rename(name = "m_HardwareDynamicResRequested")]
-        pub m_hardware_dynamic_res_requested: bool,
-        #[rename(name = "m_ScaledRTSupportsMSAA")]
-        pub m_scaled_rt_supports_msaa: bool,
-        #[rename(name = "m_ScaledRTCurrentMSAASamples")]
-        pub m_scaled_rt_current_msaa_samples:
-            crate::unity_engine::rendering::msaasamples::MSAASamples,
-        #[rename(name = "m_AutoSizedRTs")]
-        pub m_auto_sized_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::unity_engine::rendering::rthandle::RTHandle,
-        >,
-        #[rename(name = "m_AutoSizedRTsArray")]
-        pub m_auto_sized_r_ts_array:
-            ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>,
-        #[rename(name = "m_ResizeOnDemandRTs")]
-        pub m_resize_on_demand_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::unity_engine::rendering::rthandle::RTHandle,
-        >,
-        #[rename(name = "m_RTHandleProperties")]
-        pub m_rt_handle_properties:
-            crate::unity_engine::rendering::rthandleproperties::RTHandleProperties,
-        #[rename(name = "m_MaxWidths")]
-        pub m_max_widths: i32,
-        #[rename(name = "m_MaxHeights")]
-        pub m_max_heights: i32,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-rthandlesystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-rthandlesystem")]
-#[::unity2::methods]
-impl RTHandleSystem {
-    #[doc = "`get_rtHandleProperties()` overload"]
-    #[method(name = "get_rtHandleProperties", args = 0)]
-    pub fn get_rt_handle_properties(
-        self,
-    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Initialize(i32, i32, bool, crate::unity_engine::rendering::msaasamples::MSAASamples)` overload"]
-    #[method(name = "Initialize", args = 4)]
-    pub fn initialize(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RTHandleSystem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rt_handle_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "get_rtHandleProperties",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "get_rtHandleProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rt_handle_properties(
+        this: RTHandleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties {
+        let inner : extern "C" fn (RTHandleSystem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rthandleproperties :: RTHandleProperties = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rt_handle_properties :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: RTHandleSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RTHandleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: RTHandleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RTHandleSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: msaasamples :: MSAASamples as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Initialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         scaled_r_tsupports_msaa: bool,
         scaled_rtmsaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    #[method(name = "Release", args = 1)]
-    pub fn release(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
-
-    #[doc = "`Remove(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
-
-    #[doc = "`ResetReferenceSize(i32, i32)` overload"]
-    #[method(name = "ResetReferenceSize", args = 2)]
-    pub fn reset_reference_size(self, width: i32, height: i32) -> ();
-
-    #[doc = "`SetReferenceSize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples)` overload"]
-    #[method(name = "SetReferenceSize", args = 3)]
-    pub fn set_reference_size(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            bool,
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            scaled_r_tsupports_msaa,
+            scaled_rtmsaa_samples,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Release",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: RTHandleSystem,
+        rth: crate::unity_engine::rendering::rthandle::RTHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rthandle::RTHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release::get_offset() as isize),
+        );
+        inner(this, rth, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: RTHandleSystem,
+        rth: crate::unity_engine::rendering::rthandle::RTHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rthandle::RTHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, rth, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_reference_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "ResetReferenceSize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "ResetReferenceSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_reference_size(
+        this: RTHandleSystem,
+        width: i32,
+        height: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RTHandleSystem, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_reference_size::get_offset() as isize),
+            );
+        inner(this, width, height, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_reference_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: msaasamples :: MSAASamples as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "SetReferenceSize",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetReferenceSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_reference_size(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
-    ) -> ();
-
-    #[doc = "`SetReferenceSize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool)` overload"]
-    #[method(name = "SetReferenceSize", args = 4)]
-    pub fn set_reference_size_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_reference_size::get_offset() as isize),
+        );
+        inner(this, width, height, msaa_samples, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_reference_size_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: msaasamples :: MSAASamples as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "SetReferenceSize",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetReferenceSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_reference_size_2(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
         reset: bool,
-    ) -> ();
-
-    #[doc = "`SetHardwareDynamicResolutionState(bool)` overload"]
-    #[method(name = "SetHardwareDynamicResolutionState", args = 1)]
-    pub fn set_hardware_dynamic_resolution_state(self, enable_hw_dynamic_res: bool) -> ();
-
-    #[doc = "`SwitchResizeMode(crate::unity_engine::rendering::rthandle::RTHandle, crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode)` overload"]
-    #[method(name = "SwitchResizeMode", args = 2)]
-    pub fn switch_resize_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_reference_size_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            msaa_samples,
+            reset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hardware_dynamic_resolution_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "SetHardwareDynamicResolutionState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SetHardwareDynamicResolutionState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hardware_dynamic_resolution_state(
+        this: RTHandleSystem,
+        enable_hw_dynamic_res: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RTHandleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_hardware_dynamic_resolution_state::get_offset() as isize),
+            );
+        inner(this, enable_hw_dynamic_res, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_switch_resize_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rthandle :: RTHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rthandlesystem :: RTHandleSystem_ResizeMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "SwitchResizeMode",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "SwitchResizeMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn switch_resize_mode(
+        this: RTHandleSystem,
         rth: crate::unity_engine::rendering::rthandle::RTHandle,
         mode: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode,
-    ) -> ();
-
-    #[doc = "`DemandResize(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    #[method(name = "DemandResize", args = 1)]
-    pub fn demand_resize(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
-
-    #[doc = "`GetMaxWidth()` overload"]
-    #[method(name = "GetMaxWidth", args = 0)]
-    pub fn get_max_width(self) -> i32;
-
-    #[doc = "`GetMaxHeight()` overload"]
-    #[method(name = "GetMaxHeight", args = 0)]
-    pub fn get_max_height(self) -> i32;
-
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose_2(self, disposing: bool) -> ();
-
-    #[doc = "`Resize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool, bool)` overload"]
-    #[method(name = "Resize", args = 5)]
-    pub fn resize(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rthandle::RTHandle,
+            crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_switch_resize_mode::get_offset() as isize),
+        );
+        inner(this, rth, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_demand_resize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "DemandResize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "DemandResize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn demand_resize(
+        this: RTHandleSystem,
+        rth: crate::unity_engine::rendering::rthandle::RTHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rthandle::RTHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_demand_resize::get_offset() as isize),
+        );
+        inner(this, rth, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "GetMaxWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetMaxWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_width(
+        this: RTHandleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(RTHandleSystem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_width::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "GetMaxHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "GetMaxHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_max_height(
+        this: RTHandleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(RTHandleSystem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_max_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose_2(
+        this: RTHandleSystem,
+        disposing: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RTHandleSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose_2::get_offset() as isize),
+            );
+        inner(this, disposing, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: msaasamples :: MSAASamples as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Resize",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Resize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resize(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
         size_changed: bool,
         msaa_sample_changed: bool,
-    ) -> ();
-
-    #[doc = "`Alloc(i32, i32, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Alloc", args = 19)]
-    pub fn alloc(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resize::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            msaa_samples,
+            size_changed,
+            msaa_sample_changed,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: depthbits :: DepthBits as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texturewrapmode :: TextureWrapMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: texturedimension :: TextureDimension as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: msaasamples :: MSAASamples as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                19,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         slices: i32,
@@ -208,12 +954,94 @@ impl RTHandleSystem {
         use_dynamic_scale: bool,
         memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::vector2::Vector2, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Alloc", args = 18)]
-    pub fn alloc_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::depthbits::DepthBits,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::filtermode::FilterMode,
+            crate::unity_engine::texturewrapmode::TextureWrapMode,
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+            bool,
+            bool,
+            bool,
+            bool,
+            i32,
+            f32,
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+            bool,
+            bool,
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            slices,
+            depth_buffer_bits,
+            color_format,
+            filter_mode,
+            wrap_mode,
+            dimension,
+            enable_random_write,
+            use_mip_map,
+            auto_generate_mips,
+            is_shadow_map,
+            aniso_level,
+            mip_map_bias,
+            msaa_samples,
+            bind_texture_ms,
+            use_dynamic_scale,
+            memoryless,
+            name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: depthbits :: DepthBits as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texturewrapmode :: TextureWrapMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: texturedimension :: TextureDimension as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                18,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_2(
+        this: RTHandleSystem,
         scale_factor: crate::unity_engine::vector2::Vector2,
         slices: i32,
         depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
@@ -232,12 +1060,92 @@ impl RTHandleSystem {
         use_dynamic_scale: bool,
         memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::rendering::scalefunc::ScaleFunc, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Alloc", args = 18)]
-    pub fn alloc_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::vector2::Vector2,
+            i32,
+            crate::unity_engine::rendering::depthbits::DepthBits,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::filtermode::FilterMode,
+            crate::unity_engine::texturewrapmode::TextureWrapMode,
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+            bool,
+            bool,
+            bool,
+            bool,
+            i32,
+            f32,
+            bool,
+            bool,
+            bool,
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            scale_factor,
+            slices,
+            depth_buffer_bits,
+            color_format,
+            filter_mode,
+            wrap_mode,
+            dimension,
+            enable_random_write,
+            use_mip_map,
+            auto_generate_mips,
+            is_shadow_map,
+            aniso_level,
+            mip_map_bias,
+            enable_msaa,
+            bind_texture_ms,
+            use_dynamic_scale,
+            memoryless,
+            name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scalefunc :: ScaleFunc as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: depthbits :: DepthBits as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texturewrapmode :: TextureWrapMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: texturedimension :: TextureDimension as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                18,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_3(
+        this: RTHandleSystem,
         scale_func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
         slices: i32,
         depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
@@ -256,12 +1164,92 @@ impl RTHandleSystem {
         use_dynamic_scale: bool,
         memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`AllocAutoSizedRenderTexture(i32, i32, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
-    #[method(name = "AllocAutoSizedRenderTexture", args = 19)]
-    pub fn alloc_auto_sized_render_texture(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::scalefunc::ScaleFunc,
+            i32,
+            crate::unity_engine::rendering::depthbits::DepthBits,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::filtermode::FilterMode,
+            crate::unity_engine::texturewrapmode::TextureWrapMode,
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+            bool,
+            bool,
+            bool,
+            bool,
+            i32,
+            f32,
+            bool,
+            bool,
+            bool,
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            scale_func,
+            slices,
+            depth_buffer_bits,
+            color_format,
+            filter_mode,
+            wrap_mode,
+            dimension,
+            enable_random_write,
+            use_mip_map,
+            auto_generate_mips,
+            is_shadow_map,
+            aniso_level,
+            mip_map_bias,
+            enable_msaa,
+            bind_texture_ms,
+            use_dynamic_scale,
+            memoryless,
+            name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_auto_sized_render_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: depthbits :: DepthBits as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texturewrapmode :: TextureWrapMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: texturedimension :: TextureDimension as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "AllocAutoSizedRenderTexture",
+                19,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "AllocAutoSizedRenderTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_auto_sized_render_texture(
+        this: RTHandleSystem,
         width: i32,
         height: i32,
         slices: i32,
@@ -281,47 +1269,957 @@ impl RTHandleSystem {
         use_dynamic_scale: bool,
         memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::rendertexture::RenderTexture)` overload"]
-    #[method(name = "Alloc", args = 1)]
-    pub fn alloc_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::rendering::depthbits::DepthBits,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::filtermode::FilterMode,
+            crate::unity_engine::texturewrapmode::TextureWrapMode,
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+            bool,
+            bool,
+            bool,
+            bool,
+            i32,
+            f32,
+            bool,
+            bool,
+            bool,
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_auto_sized_render_texture::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            height,
+            slices,
+            depth_buffer_bits,
+            color_format,
+            filter_mode,
+            wrap_mode,
+            dimension,
+            enable_random_write,
+            use_mip_map,
+            auto_generate_mips,
+            is_shadow_map,
+            aniso_level,
+            mip_map_bias,
+            enable_msaa,
+            bind_texture_ms,
+            use_dynamic_scale,
+            memoryless,
+            name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_4(
+        this: RTHandleSystem,
         texture: crate::unity_engine::rendertexture::RenderTexture,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::texture::Texture)` overload"]
-    #[method(name = "Alloc", args = 1)]
-    pub fn alloc_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendertexture::RenderTexture,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_4::get_offset() as isize),
+        );
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_5(
+        this: RTHandleSystem,
         texture: crate::unity_engine::texture::Texture,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    #[method(name = "Alloc", args = 1)]
-    pub fn alloc_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::texture::Texture,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_5::get_offset() as isize),
+        );
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_6(
+        this: RTHandleSystem,
         texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Alloc", args = 2)]
-    pub fn alloc_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_6::get_offset() as isize),
+        );
+        inner(this, texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_7(
+        this: RTHandleSystem,
         texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`Alloc(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    #[method(name = "Alloc", args = 1)]
-    pub fn alloc_8(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_7::get_offset() as isize),
+        );
+        inner(this, texture, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alloc_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "Alloc",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "Alloc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alloc_8(
         tex: crate::unity_engine::rendering::rthandle::RTHandle,
-    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
-
-    #[doc = "`DumpRTInfo()` overload"]
-    #[method(name = "DumpRTInfo", args = 0)]
-    pub fn dump_rt_info(self) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::rthandle::RTHandle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rthandle::RTHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alloc_8::get_offset() as isize),
+        );
+        inner(tex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump_rt_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RTHandleSystem as ::unity2::ClassIdentity>::class(),
+                "DumpRTInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RTHandleSystem as ::unity2::ClassIdentity>::NAME,
+                    "DumpRTInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump_rt_info(
+        this: RTHandleSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RTHandleSystem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dump_rt_info::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+impl RTHandleSystem {
+    #[doc = "`Alloc(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
+    pub fn alloc_8(
+        tex: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            __RTHandleSystem_unity2_raw::alloc_8(
+                ::core::convert::Into::into(tex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+pub trait IRTHandleSystemMethods: IRTHandleSystem {
+    #[doc = "`get_rtHandleProperties()` overload"]
+    fn get_rt_handle_properties(
+        self,
+    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::get_rt_handle_properties(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Initialize(i32, i32, bool, crate::unity_engine::rendering::msaasamples::MSAASamples)` overload"]
+    fn initialize(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        scaled_r_tsupports_msaa: impl ::core::convert::Into<bool>,
+        scaled_rtmsaa_samples: impl ::core::convert::Into<
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::initialize(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(scaled_r_tsupports_msaa),
+                ::core::convert::Into::into(scaled_rtmsaa_samples),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
+    fn release(
+        self,
+        rth: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::release(
+                __receiver,
+                ::core::convert::Into::into(rth),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
+    fn remove(
+        self,
+        rth: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::remove(
+                __receiver,
+                ::core::convert::Into::into(rth),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetReferenceSize(i32, i32)` overload"]
+    fn reset_reference_size(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::reset_reference_size(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetReferenceSize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples)` overload"]
+    fn set_reference_size(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        msaa_samples: impl ::core::convert::Into<
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::set_reference_size(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(msaa_samples),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetReferenceSize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool)` overload"]
+    fn set_reference_size_2(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        msaa_samples: impl ::core::convert::Into<
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        >,
+        reset: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::set_reference_size_2(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(msaa_samples),
+                ::core::convert::Into::into(reset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHardwareDynamicResolutionState(bool)` overload"]
+    fn set_hardware_dynamic_resolution_state(
+        self,
+        enable_hw_dynamic_res: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::set_hardware_dynamic_resolution_state(
+                __receiver,
+                ::core::convert::Into::into(enable_hw_dynamic_res),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SwitchResizeMode(crate::unity_engine::rendering::rthandle::RTHandle, crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode)` overload"]
+    fn switch_resize_mode(
+        self,
+        rth: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>,
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::switch_resize_mode(
+                __receiver,
+                ::core::convert::Into::into(rth),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DemandResize(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
+    fn demand_resize(
+        self,
+        rth: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::demand_resize(
+                __receiver,
+                ::core::convert::Into::into(rth),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMaxWidth()` overload"]
+    fn get_max_width(self) -> i32 {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::get_max_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetMaxHeight()` overload"]
+    fn get_max_height(self) -> i32 {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::get_max_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose(bool)` overload"]
+    fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::dispose_2(
+                __receiver,
+                ::core::convert::Into::into(disposing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Resize(i32, i32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool, bool)` overload"]
+    fn resize(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        msaa_samples: impl ::core::convert::Into<
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        >,
+        size_changed: impl ::core::convert::Into<bool>,
+        msaa_sample_changed: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::resize(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(msaa_samples),
+                ::core::convert::Into::into(size_changed),
+                ::core::convert::Into::into(msaa_sample_changed),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(i32, i32, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, crate::unity_engine::rendering::msaasamples::MSAASamples, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
+    fn alloc(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        slices: impl ::core::convert::Into<i32>,
+        depth_buffer_bits: impl ::core::convert::Into<
+            crate::unity_engine::rendering::depthbits::DepthBits,
+        >,
+        color_format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        filter_mode: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
+        wrap_mode: impl ::core::convert::Into<crate::unity_engine::texturewrapmode::TextureWrapMode>,
+        dimension: impl ::core::convert::Into<
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+        >,
+        enable_random_write: impl ::core::convert::Into<bool>,
+        use_mip_map: impl ::core::convert::Into<bool>,
+        auto_generate_mips: impl ::core::convert::Into<bool>,
+        is_shadow_map: impl ::core::convert::Into<bool>,
+        aniso_level: impl ::core::convert::Into<i32>,
+        mip_map_bias: impl ::core::convert::Into<f32>,
+        msaa_samples: impl ::core::convert::Into<
+            crate::unity_engine::rendering::msaasamples::MSAASamples,
+        >,
+        bind_texture_ms: impl ::core::convert::Into<bool>,
+        use_dynamic_scale: impl ::core::convert::Into<bool>,
+        memoryless: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(slices),
+                ::core::convert::Into::into(depth_buffer_bits),
+                ::core::convert::Into::into(color_format),
+                ::core::convert::Into::into(filter_mode),
+                ::core::convert::Into::into(wrap_mode),
+                ::core::convert::Into::into(dimension),
+                ::core::convert::Into::into(enable_random_write),
+                ::core::convert::Into::into(use_mip_map),
+                ::core::convert::Into::into(auto_generate_mips),
+                ::core::convert::Into::into(is_shadow_map),
+                ::core::convert::Into::into(aniso_level),
+                ::core::convert::Into::into(mip_map_bias),
+                ::core::convert::Into::into(msaa_samples),
+                ::core::convert::Into::into(bind_texture_ms),
+                ::core::convert::Into::into(use_dynamic_scale),
+                ::core::convert::Into::into(memoryless),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::vector2::Vector2, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
+    fn alloc_2(
+        self,
+        scale_factor: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        slices: impl ::core::convert::Into<i32>,
+        depth_buffer_bits: impl ::core::convert::Into<
+            crate::unity_engine::rendering::depthbits::DepthBits,
+        >,
+        color_format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        filter_mode: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
+        wrap_mode: impl ::core::convert::Into<crate::unity_engine::texturewrapmode::TextureWrapMode>,
+        dimension: impl ::core::convert::Into<
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+        >,
+        enable_random_write: impl ::core::convert::Into<bool>,
+        use_mip_map: impl ::core::convert::Into<bool>,
+        auto_generate_mips: impl ::core::convert::Into<bool>,
+        is_shadow_map: impl ::core::convert::Into<bool>,
+        aniso_level: impl ::core::convert::Into<i32>,
+        mip_map_bias: impl ::core::convert::Into<f32>,
+        enable_msaa: impl ::core::convert::Into<bool>,
+        bind_texture_ms: impl ::core::convert::Into<bool>,
+        use_dynamic_scale: impl ::core::convert::Into<bool>,
+        memoryless: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_2(
+                __receiver,
+                ::core::convert::Into::into(scale_factor),
+                ::core::convert::Into::into(slices),
+                ::core::convert::Into::into(depth_buffer_bits),
+                ::core::convert::Into::into(color_format),
+                ::core::convert::Into::into(filter_mode),
+                ::core::convert::Into::into(wrap_mode),
+                ::core::convert::Into::into(dimension),
+                ::core::convert::Into::into(enable_random_write),
+                ::core::convert::Into::into(use_mip_map),
+                ::core::convert::Into::into(auto_generate_mips),
+                ::core::convert::Into::into(is_shadow_map),
+                ::core::convert::Into::into(aniso_level),
+                ::core::convert::Into::into(mip_map_bias),
+                ::core::convert::Into::into(enable_msaa),
+                ::core::convert::Into::into(bind_texture_ms),
+                ::core::convert::Into::into(use_dynamic_scale),
+                ::core::convert::Into::into(memoryless),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::rendering::scalefunc::ScaleFunc, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
+    fn alloc_3(
+        self,
+        scale_func: impl ::core::convert::Into<crate::unity_engine::rendering::scalefunc::ScaleFunc>,
+        slices: impl ::core::convert::Into<i32>,
+        depth_buffer_bits: impl ::core::convert::Into<
+            crate::unity_engine::rendering::depthbits::DepthBits,
+        >,
+        color_format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        filter_mode: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
+        wrap_mode: impl ::core::convert::Into<crate::unity_engine::texturewrapmode::TextureWrapMode>,
+        dimension: impl ::core::convert::Into<
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+        >,
+        enable_random_write: impl ::core::convert::Into<bool>,
+        use_mip_map: impl ::core::convert::Into<bool>,
+        auto_generate_mips: impl ::core::convert::Into<bool>,
+        is_shadow_map: impl ::core::convert::Into<bool>,
+        aniso_level: impl ::core::convert::Into<i32>,
+        mip_map_bias: impl ::core::convert::Into<f32>,
+        enable_msaa: impl ::core::convert::Into<bool>,
+        bind_texture_ms: impl ::core::convert::Into<bool>,
+        use_dynamic_scale: impl ::core::convert::Into<bool>,
+        memoryless: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_3(
+                __receiver,
+                ::core::convert::Into::into(scale_func),
+                ::core::convert::Into::into(slices),
+                ::core::convert::Into::into(depth_buffer_bits),
+                ::core::convert::Into::into(color_format),
+                ::core::convert::Into::into(filter_mode),
+                ::core::convert::Into::into(wrap_mode),
+                ::core::convert::Into::into(dimension),
+                ::core::convert::Into::into(enable_random_write),
+                ::core::convert::Into::into(use_mip_map),
+                ::core::convert::Into::into(auto_generate_mips),
+                ::core::convert::Into::into(is_shadow_map),
+                ::core::convert::Into::into(aniso_level),
+                ::core::convert::Into::into(mip_map_bias),
+                ::core::convert::Into::into(enable_msaa),
+                ::core::convert::Into::into(bind_texture_ms),
+                ::core::convert::Into::into(use_dynamic_scale),
+                ::core::convert::Into::into(memoryless),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllocAutoSizedRenderTexture(i32, i32, i32, crate::unity_engine::rendering::depthbits::DepthBits, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::filtermode::FilterMode, crate::unity_engine::texturewrapmode::TextureWrapMode, crate::unity_engine::rendering::texturedimension::TextureDimension, bool, bool, bool, bool, i32, f32, bool, bool, bool, crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless, ::unity2::Il2CppString)` overload"]
+    fn alloc_auto_sized_render_texture(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+        slices: impl ::core::convert::Into<i32>,
+        depth_buffer_bits: impl ::core::convert::Into<
+            crate::unity_engine::rendering::depthbits::DepthBits,
+        >,
+        color_format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        filter_mode: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
+        wrap_mode: impl ::core::convert::Into<crate::unity_engine::texturewrapmode::TextureWrapMode>,
+        dimension: impl ::core::convert::Into<
+            crate::unity_engine::rendering::texturedimension::TextureDimension,
+        >,
+        enable_random_write: impl ::core::convert::Into<bool>,
+        use_mip_map: impl ::core::convert::Into<bool>,
+        auto_generate_mips: impl ::core::convert::Into<bool>,
+        is_shadow_map: impl ::core::convert::Into<bool>,
+        aniso_level: impl ::core::convert::Into<i32>,
+        mip_map_bias: impl ::core::convert::Into<f32>,
+        enable_msaa: impl ::core::convert::Into<bool>,
+        bind_texture_ms: impl ::core::convert::Into<bool>,
+        use_dynamic_scale: impl ::core::convert::Into<bool>,
+        memoryless: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_auto_sized_render_texture(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::convert::Into::into(slices),
+                ::core::convert::Into::into(depth_buffer_bits),
+                ::core::convert::Into::into(color_format),
+                ::core::convert::Into::into(filter_mode),
+                ::core::convert::Into::into(wrap_mode),
+                ::core::convert::Into::into(dimension),
+                ::core::convert::Into::into(enable_random_write),
+                ::core::convert::Into::into(use_mip_map),
+                ::core::convert::Into::into(auto_generate_mips),
+                ::core::convert::Into::into(is_shadow_map),
+                ::core::convert::Into::into(aniso_level),
+                ::core::convert::Into::into(mip_map_bias),
+                ::core::convert::Into::into(enable_msaa),
+                ::core::convert::Into::into(bind_texture_ms),
+                ::core::convert::Into::into(use_dynamic_scale),
+                ::core::convert::Into::into(memoryless),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::rendertexture::RenderTexture)` overload"]
+    fn alloc_4(
+        self,
+        texture: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_4(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::texture::Texture)` overload"]
+    fn alloc_5(
+        self,
+        texture: impl ::core::convert::Into<crate::unity_engine::texture::Texture>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_5(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
+    fn alloc_6(
+        self,
+        texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_6(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Alloc(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, ::unity2::Il2CppString)` overload"]
+    fn alloc_7(
+        self,
+        texture: impl ::core::convert::Into<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::alloc_7(
+                __receiver,
+                ::core::convert::Into::into(texture),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DumpRTInfo()` overload"]
+    fn dump_rt_info(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RTHandleSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RTHandleSystem_unity2_raw::dump_rt_info(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+impl<__T: IRTHandleSystem> IRTHandleSystemMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-rthandlesystem")]
 impl RTHandleSystem {
@@ -337,4 +2235,21 @@ impl RTHandleSystem {
         <Self as IRTHandleSystemMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+pub mod prelude {
+    pub use super::IRTHandleSystem;
+    pub use super::IRTHandleSystemMethods;
+    pub use super::RTHandleSystem;
+    pub use super::RTHandleSystem_ResizeMode;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

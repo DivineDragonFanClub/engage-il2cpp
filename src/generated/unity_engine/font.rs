@@ -10,11 +10,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Font_FontTextureRebuildCallback {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Font")]
     #[parent(crate::unity_engine::object_2::Object_2)]
@@ -26,22 +21,793 @@ mod __types {
         pub m_font_texture_rebuild_callback:
             crate::unity_engine::font::Font_FontTextureRebuildCallback,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Font_FontTextureRebuildCallback {}
 }
 
 #[cfg(feature = "unity_engine-font-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-font")]
-#[::unity2::methods]
-impl Font_FontTextureRebuildCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Font_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_texture_rebuilt {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::font::Font,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "add_textureRebuilt",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "add_textureRebuilt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_texture_rebuilt(
+        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_texture_rebuilt::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_texture_rebuilt {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::unity_engine::font::Font,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "remove_textureRebuilt",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "remove_textureRebuilt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_texture_rebuilt(
+        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_texture_rebuilt::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_material {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "get_material",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "get_material",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_material(
+        this: Font,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            Font,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_material::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dynamic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "get_dynamic",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "get_dynamic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dynamic(this: Font, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Font, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dynamic::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_font_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "get_fontSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "get_fontSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_font_size(this: Font, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Font, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_font_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_texture_rebuilt_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::font::Font as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "InvokeTextureRebuilt_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "InvokeTextureRebuilt_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_texture_rebuilt_internal(
+        font: crate::unity_engine::font::Font,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::font::Font, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke_texture_rebuilt_internal::get_offset() as isize),
+            );
+        inner(font, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "HasCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_character(
+        this: Font,
+        c: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Font, u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_character::get_offset() as isize),
+            );
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_character_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "HasCharacter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "HasCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_character_2(
+        this: Font,
+        c: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Font, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_character_2::get_offset() as isize),
+            );
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: characterinfo :: CharacterInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: fontstyle :: FontStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "GetCharacterInfo",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_info(
+        this: Font,
+        ch: u16,
+        info: *mut crate::unity_engine::characterinfo::CharacterInfo,
+        size: i32,
+        style: crate::unity_engine::fontstyle::FontStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Font,
+            u16,
+            *mut crate::unity_engine::characterinfo::CharacterInfo,
+            i32,
+            crate::unity_engine::fontstyle::FontStyle,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_info::get_offset() as isize),
+        );
+        inner(this, ch, info, size, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: characterinfo :: CharacterInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font as ::unity2::ClassIdentity>::class(),
+                "GetCharacterInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font as ::unity2::ClassIdentity>::NAME,
+                    "GetCharacterInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_info_2(
+        this: Font,
+        ch: u16,
+        info: *mut crate::unity_engine::characterinfo::CharacterInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Font,
+            u16,
+            *mut crate::unity_engine::characterinfo::CharacterInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_info_2::get_offset() as isize),
+        );
+        inner(this, ch, info, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-font")]
+impl Font {
+    #[doc = "`add_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]
+    pub fn add_texture_rebuilt(
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+        >,
+    ) -> () {
+        unsafe {
+            __Font_unity2_raw::add_texture_rebuilt(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]
+    pub fn remove_texture_rebuilt(
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+        >,
+    ) -> () {
+        unsafe {
+            __Font_unity2_raw::remove_texture_rebuilt(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InvokeTextureRebuilt_Internal(crate::unity_engine::font::Font)` overload"]
+    pub fn invoke_texture_rebuilt_internal(
+        font: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+    ) -> () {
+        unsafe {
+            __Font_unity2_raw::invoke_texture_rebuilt_internal(
+                ::core::convert::Into::into(font),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-font")]
+pub trait IFontMethods: IFont {
+    #[doc = "`get_material()` overload"]
+    fn get_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Font_unity2_raw::get_material(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_dynamic()` overload"]
+    fn get_dynamic(self) -> bool {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Font_unity2_raw::get_dynamic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_fontSize()` overload"]
+    fn get_font_size(self) -> i32 {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Font_unity2_raw::get_font_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasCharacter(u16)` overload"]
+    fn has_character(self, c: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Font_unity2_raw::has_character(
+                __receiver,
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasCharacter(i32)` overload"]
+    fn has_character_2(self, c: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Font_unity2_raw::has_character_2(
+                __receiver,
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo, i32, crate::unity_engine::fontstyle::FontStyle)` overload"]
+    fn get_character_info(
+        self,
+        ch: impl ::core::convert::Into<u16>,
+        size: impl ::core::convert::Into<i32>,
+        style: impl ::core::convert::Into<crate::unity_engine::fontstyle::FontStyle>,
+    ) -> (bool, crate::unity_engine::characterinfo::CharacterInfo) {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::characterinfo::CharacterInfo,
+            >::uninit();
+            let __ret = {
+                __Font_unity2_raw::get_character_info(
+                    __receiver,
+                    ::core::convert::Into::into(ch),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(size),
+                    ::core::convert::Into::into(style),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo)` overload"]
+    fn get_character_info_2(
+        self,
+        ch: impl ::core::convert::Into<u16>,
+    ) -> (bool, crate::unity_engine::characterinfo::CharacterInfo) {
+        unsafe {
+            let __receiver = <Font as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::characterinfo::CharacterInfo,
+            >::uninit();
+            let __ret = {
+                __Font_unity2_raw::get_character_info_2(
+                    __receiver,
+                    ::core::convert::Into::into(ch),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-font")]
+impl<__T: IFont> IFontMethods for __T {}
+
+#[cfg(feature = "unity_engine-font")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Font_FontTextureRebuildCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font_FontTextureRebuildCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font_FontTextureRebuildCallback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Font_FontTextureRebuildCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Font_FontTextureRebuildCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Font_FontTextureRebuildCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Font_FontTextureRebuildCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: Font_FontTextureRebuildCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Font_FontTextureRebuildCallback, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-font")]
+pub trait IFont_FontTextureRebuildCallbackMethods: IFont_FontTextureRebuildCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <Font_FontTextureRebuildCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Font_FontTextureRebuildCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <Font_FontTextureRebuildCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Font_FontTextureRebuildCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-font")]
+impl<__T: IFont_FontTextureRebuildCallback> IFont_FontTextureRebuildCallbackMethods for __T {}
 
 #[cfg(feature = "unity_engine-font")]
 impl Font_FontTextureRebuildCallback {
@@ -60,59 +826,23 @@ impl Font_FontTextureRebuildCallback {
 }
 
 #[cfg(feature = "unity_engine-font")]
-#[::unity2::methods]
-impl Font {
-    #[doc = "`add_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]
-    #[method(name = "add_textureRebuilt", args = 1)]
-    pub fn add_texture_rebuilt(
-        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
-    ) -> ();
-
-    #[doc = "`remove_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]
-    #[method(name = "remove_textureRebuilt", args = 1)]
-    pub fn remove_texture_rebuilt(
-        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
-    ) -> ();
-
-    #[doc = "`get_material()` overload"]
-    #[method(name = "get_material", args = 0)]
-    pub fn get_material(self) -> crate::unity_engine::material::Material;
-
-    #[doc = "`get_dynamic()` overload"]
-    #[method(name = "get_dynamic", args = 0)]
-    pub fn get_dynamic(self) -> bool;
-
-    #[doc = "`get_fontSize()` overload"]
-    #[method(name = "get_fontSize", args = 0)]
-    pub fn get_font_size(self) -> i32;
-
-    #[doc = "`InvokeTextureRebuilt_Internal(crate::unity_engine::font::Font)` overload"]
-    #[method(name = "InvokeTextureRebuilt_Internal", args = 1)]
-    pub fn invoke_texture_rebuilt_internal(font: crate::unity_engine::font::Font) -> ();
-
-    #[doc = "`HasCharacter(u16)` overload"]
-    #[method(name = "HasCharacter", args = 1)]
-    pub fn has_character(self, c: u16) -> bool;
-
-    #[doc = "`HasCharacter(i32)` overload"]
-    #[method(name = "HasCharacter", args = 1)]
-    pub fn has_character_2(self, c: i32) -> bool;
-
-    #[doc = "`GetCharacterInfo(u16, crate::unity_engine::characterinfo::CharacterInfo, i32, crate::unity_engine::fontstyle::FontStyle)` overload"]
-    #[method(name = "GetCharacterInfo", args = 4)]
-    pub fn get_character_info(
-        self,
-        ch: u16,
-        info: crate::unity_engine::characterinfo::CharacterInfo,
-        size: i32,
-        style: crate::unity_engine::fontstyle::FontStyle,
-    ) -> bool;
-
-    #[doc = "`GetCharacterInfo(u16, crate::unity_engine::characterinfo::CharacterInfo)` overload"]
-    #[method(name = "GetCharacterInfo", args = 2)]
-    pub fn get_character_info_2(
-        self,
-        ch: u16,
-        info: crate::unity_engine::characterinfo::CharacterInfo,
-    ) -> bool;
+pub mod prelude {
+    pub use super::Font;
+    pub use super::Font_FontTextureRebuildCallback;
+    pub use super::IFont;
+    pub use super::IFontMethods;
+    pub use super::IFont_FontTextureRebuildCallback;
+    pub use super::IFont_FontTextureRebuildCallbackMethods;
+    pub use crate::system::delegate::IDelegate;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    pub use crate::system::multicastdelegate::IMulticastDelegate;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

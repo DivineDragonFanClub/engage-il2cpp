@@ -19,3 +19,12 @@ mod __types {
 
 #[cfg(feature = "app-nexdataid-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-nexdataid")]
+pub mod prelude {
+    pub use super::INexDataId;
+    pub use super::NexDataId;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

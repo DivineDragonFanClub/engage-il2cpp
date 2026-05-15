@@ -101,3 +101,16 @@ impl<T0: ::unity2::ClassIdentity> InvokableCall_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-events-invokablecall_1")]
+pub mod prelude {
+    pub use super::IInvokableCall_1;
+    pub use super::IInvokableCall_1Methods;
+    pub use super::InvokableCall_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCall;
+    #[cfg(feature = "unity_engine-events-baseinvokablecall")]
+    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
+}

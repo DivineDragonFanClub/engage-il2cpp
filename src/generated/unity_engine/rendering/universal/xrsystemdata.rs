@@ -9,15 +9,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct XRSystemData {
-        #[rename(name = "shaders")]
-        pub shaders:
-            crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData_ShaderResources,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData_ShaderResources.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -30,18 +21,172 @@ mod __types {
         #[rename(name = "xrMirrorViewPS")]
         pub xr_mirror_view_ps: crate::unity_engine::shader::Shader,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct XRSystemData {
+        #[rename(name = "shaders")]
+        pub shaders:
+            crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData_ShaderResources,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
-#[::unity2::methods]
-impl XRSystemData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRSystemData_ShaderResources_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRSystemData_ShaderResources as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <XRSystemData_ShaderResources as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: XRSystemData_ShaderResources,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(XRSystemData_ShaderResources, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+pub trait IXRSystemData_ShaderResourcesMethods: IXRSystemData_ShaderResources {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <XRSystemData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __XRSystemData_ShaderResources_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+impl<__T: IXRSystemData_ShaderResources> IXRSystemData_ShaderResourcesMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+impl XRSystemData_ShaderResources {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRSystemData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRSystemData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRSystemData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRSystemData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <XRSystemData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: XRSystemData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(XRSystemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+pub trait IXRSystemDataMethods: IXRSystemData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <XRSystemData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __XRSystemData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+impl<__T: IXRSystemData> IXRSystemDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
 impl XRSystemData {
@@ -60,25 +205,20 @@ impl XRSystemData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
-#[::unity2::methods]
-impl XRSystemData_ShaderResources {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
-impl XRSystemData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRSystemData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRSystemData_ShaderResourcesMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::IXRSystemData;
+    pub use super::IXRSystemDataMethods;
+    pub use super::IXRSystemData_ShaderResources;
+    pub use super::IXRSystemData_ShaderResourcesMethods;
+    pub use super::XRSystemData;
+    pub use super::XRSystemData_ShaderResources;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

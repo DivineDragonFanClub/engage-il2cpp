@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-animations-iconstraint-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-animations-iconstraint")]
+pub mod prelude {
+    pub use super::IConstraint;
+    pub use super::IIConstraint;
+}

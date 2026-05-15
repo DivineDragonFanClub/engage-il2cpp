@@ -43,9 +43,9 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> Key2Dictionary_2<
     #[method(name = "ContainsKey", args = 2)]
     pub fn contains_key(self, key_a: T0, key_b: T0) -> bool;
 
-    #[doc = "`TryGetValue(T0, T0, T1)` overload"]
+    #[doc = "`TryGetValue(T0, T0, *mutT1)` overload"]
     #[method(name = "TryGetValue", args = 3)]
-    pub fn try_get_value(self, key_a: T0, key_b: T0, data: T1) -> bool;
+    pub fn try_get_value(self, key_a: T0, key_b: T0, data: *mut T1) -> bool;
 }
 
 #[cfg(feature = "app-key2dictionary_2")]
@@ -62,4 +62,14 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> Key2Dictionary_2<
         <Self as IKey2Dictionary_2Methods<T0, T1>>::ctor(this, capacity);
         this
     }
+}
+
+#[cfg(feature = "app-key2dictionary_2")]
+pub mod prelude {
+    pub use super::IKey2Dictionary_2;
+    pub use super::IKey2Dictionary_2Methods;
+    pub use super::Key2Dictionary_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

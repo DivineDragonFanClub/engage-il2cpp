@@ -54,3 +54,14 @@ impl<T0: ::unity2::ClassIdentity> ExposedReference_1<T0> {
         resolver: crate::unity_engine::iexposedpropertytable::IExposedPropertyTable,
     ) -> T0;
 }
+
+#[cfg(feature = "unity_engine-exposedreference_1")]
+pub mod prelude {
+    pub use super::ExposedReference_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

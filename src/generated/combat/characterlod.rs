@@ -24,49 +24,541 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-characterlod")]
-#[::unity2::methods]
-impl CharacterLod {
-    #[doc = "`Activate(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]
-    #[method(name = "Activate", args = 1)]
-    pub fn activate(objects: ::unity2::Array<crate::unity_engine::transform::Transform>) -> ();
-
-    #[doc = "`HasLod(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
-    #[method(name = "HasLod", args = 1)]
-    pub fn has_lod(renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>) -> bool;
-
-    #[doc = "`IsShadowMesh(crate::unity_engine::renderer::Renderer)` overload"]
-    #[method(name = "IsShadowMesh", args = 1)]
-    pub fn is_shadow_mesh(r: crate::unity_engine::renderer::Renderer) -> bool;
-
-    #[doc = "`GetBaseName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetBaseName", args = 1)]
-    pub fn get_base_name(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetRenderersByLod(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
-    #[method(name = "GetRenderersByLod", args = 2)]
-    pub fn get_renderers_by_lod(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CharacterLod_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_activate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::transform::Transform,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "Activate",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "Activate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn activate(
+        objects: ::unity2::Array<crate::unity_engine::transform::Transform>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_activate::get_offset() as isize),
+        );
+        inner(objects, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_lod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::renderer::Renderer,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "HasLod",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "HasLod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_lod(
+        renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_lod::get_offset() as isize),
+        );
+        inner(renderers, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_shadow_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "IsShadowMesh",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "IsShadowMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_shadow_mesh(
+        r: crate::unity_engine::renderer::Renderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::renderer::Renderer,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_shadow_mesh::get_offset() as isize),
+        );
+        inner(r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "GetBaseName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "GetBaseName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_name(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_base_name::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_renderers_by_lod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "GetRenderersByLod",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderersByLod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_renderers_by_lod(
         key: ::unity2::Il2CppString,
         renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-    ) -> ::unity2::Array<crate::unity_engine::renderer::Renderer>;
-
-    #[doc = "`CreateLods(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
-    #[method(name = "CreateLods", args = 1)]
-    pub fn create_lods(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::renderer::Renderer> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::renderer::Renderer> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_renderers_by_lod::get_offset() as isize),
+        );
+        inner(key, renderers, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_lods {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::renderer::Renderer,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "CreateLods",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "CreateLods",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_lods(
         renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-    ) -> ::unity2::Array<crate::unity_engine::lod::LOD>;
-
-    #[doc = "`Setup(crate::combat::characterasset::CharacterAsset)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(asset: crate::combat::characterasset::CharacterAsset) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::lod::LOD> {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::unity_engine::lod::LOD> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_lods::get_offset() as isize),
+        );
+        inner(renderers, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::characterasset::CharacterAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        asset: crate::combat::characterasset::CharacterAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::combat::characterasset::CharacterAsset,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup::get_offset() as isize),
+        );
+        inner(asset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: CharacterLod, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharacterLod, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterLod as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterLod as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-characterlod")]
+impl CharacterLod {
+    #[doc = "`Activate(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]
+    pub fn activate(
+        objects: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::transform::Transform>>,
+    ) -> () {
+        unsafe {
+            __CharacterLod_unity2_raw::activate(
+                ::core::convert::Into::into(objects),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasLod(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
+    pub fn has_lod(
+        renderers: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::renderer::Renderer>>,
+    ) -> bool {
+        unsafe {
+            __CharacterLod_unity2_raw::has_lod(
+                ::core::convert::Into::into(renderers),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsShadowMesh(crate::unity_engine::renderer::Renderer)` overload"]
+    pub fn is_shadow_mesh(
+        r: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> bool {
+        unsafe {
+            __CharacterLod_unity2_raw::is_shadow_mesh(
+                ::core::convert::Into::into(r),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBaseName(::unity2::Il2CppString)` overload"]
+    pub fn get_base_name(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __CharacterLod_unity2_raw::get_base_name(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRenderersByLod(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
+    pub fn get_renderers_by_lod(
+        key: impl ::core::convert::Into<::unity2::Il2CppString>,
+        renderers: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::renderer::Renderer>>,
+    ) -> ::unity2::Array<crate::unity_engine::renderer::Renderer> {
+        unsafe {
+            __CharacterLod_unity2_raw::get_renderers_by_lod(
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(renderers),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateLods(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]
+    pub fn create_lods(
+        renderers: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::renderer::Renderer>>,
+    ) -> ::unity2::Array<crate::unity_engine::lod::LOD> {
+        unsafe {
+            __CharacterLod_unity2_raw::create_lods(
+                ::core::convert::Into::into(renderers),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup(crate::combat::characterasset::CharacterAsset)` overload"]
+    pub fn setup(
+        asset: impl ::core::convert::Into<crate::combat::characterasset::CharacterAsset>,
+    ) -> bool {
+        unsafe {
+            __CharacterLod_unity2_raw::setup(
+                ::core::convert::Into::into(asset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __CharacterLod_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-characterlod")]
+pub trait ICharacterLodMethods: ICharacterLod {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CharacterLod as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterLod_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-characterlod")]
+impl<__T: ICharacterLod> ICharacterLodMethods for __T {}
 
 #[cfg(feature = "combat-characterlod")]
 impl CharacterLod {
@@ -82,4 +574,14 @@ impl CharacterLod {
         <Self as ICharacterLodMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-characterlod")]
+pub mod prelude {
+    pub use super::CharacterLod;
+    pub use super::ICharacterLod;
+    pub use super::ICharacterLodMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

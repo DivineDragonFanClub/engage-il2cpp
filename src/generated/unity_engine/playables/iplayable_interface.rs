@@ -15,9 +15,80 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-playables-iplayable_interface")]
-#[::unity2::methods]
-impl IPlayable_Interface {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPlayable_Interface_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPlayable_Interface as ::unity2::ClassIdentity>::class(),
+                "GetHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPlayable_Interface as ::unity2::ClassIdentity>::NAME,
+                    "GetHandle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle(
+        this: IPlayable_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        let inner: extern "C" fn(
+            IPlayable_Interface,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_handle::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-iplayable_interface")]
+pub trait IIPlayable_InterfaceMethods: IIPlayable_Interface {
     #[doc = "`GetHandle()` overload"]
-    #[method(name = "GetHandle", args = 0)]
-    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
+    fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe {
+            let __receiver = <IPlayable_Interface as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPlayable_Interface_unity2_raw::get_handle(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-iplayable_interface")]
+impl<__T: IIPlayable_Interface> IIPlayable_InterfaceMethods for __T {}
+
+#[cfg(feature = "unity_engine-playables-iplayable_interface")]
+pub mod prelude {
+    pub use super::IIPlayable_Interface;
+    pub use super::IIPlayable_InterfaceMethods;
+    pub use super::IPlayable_Interface;
 }

@@ -25,38 +25,549 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-subsystemmanager")]
-#[::unity2::methods]
-impl SubsystemManager {
-    #[doc = "`ReloadSubsystemsStarted()` overload"]
-    #[method(name = "ReloadSubsystemsStarted", args = 0)]
-    pub fn reload_subsystems_started() -> ();
-
-    #[doc = "`ReloadSubsystemsCompleted()` overload"]
-    #[method(name = "ReloadSubsystemsCompleted", args = 0)]
-    pub fn reload_subsystems_completed() -> ();
-
-    #[doc = "`InitializeIntegratedSubsystem(::unity2::IntPtr, crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"]
-    #[method(name = "InitializeIntegratedSubsystem", args = 2)]
-    pub fn initialize_integrated_subsystem(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SubsystemManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reload_subsystems_started {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "ReloadSubsystemsStarted",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "ReloadSubsystemsStarted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reload_subsystems_started(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reload_subsystems_started::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reload_subsystems_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "ReloadSubsystemsCompleted",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "ReloadSubsystemsCompleted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reload_subsystems_completed(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reload_subsystems_completed::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_integrated_subsystem {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: integratedsubsystem :: IntegratedSubsystem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "InitializeIntegratedSubsystem",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "InitializeIntegratedSubsystem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_integrated_subsystem(
         ptr: ::unity2::IntPtr,
         subsystem: crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
-    ) -> ();
-
-    #[doc = "`ClearSubsystems()` overload"]
-    #[method(name = "ClearSubsystems", args = 0)]
-    pub fn clear_subsystems() -> ();
-
-    #[doc = "`StaticConstructScriptingClassMap()` overload"]
-    #[method(name = "StaticConstructScriptingClassMap", args = 0)]
-    pub fn static_construct_scripting_class_map() -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`GetIntegratedSubsystemByPtr(::unity2::IntPtr)` overload"]
-    #[method(name = "GetIntegratedSubsystemByPtr", args = 1)]
-    pub fn get_integrated_subsystem_by_ptr(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize_integrated_subsystem::get_offset() as isize),
+        );
+        inner(ptr, subsystem, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_subsystems {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "ClearSubsystems",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "ClearSubsystems",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_subsystems(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_subsystems::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_construct_scripting_class_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "StaticConstructScriptingClassMap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "StaticConstructScriptingClassMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn static_construct_scripting_class_map(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_static_construct_scripting_class_map::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_integrated_subsystem_by_ptr {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "GetIntegratedSubsystemByPtr",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                    "GetIntegratedSubsystemByPtr",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_integrated_subsystem_by_ptr(
         ptr: ::unity2::IntPtr,
-    ) -> crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::integratedsubsystem::IntegratedSubsystem {
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::integratedsubsystem::IntegratedSubsystem =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_integrated_subsystem_by_ptr::get_offset() as isize),
+            );
+        inner(ptr, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-subsystemmanager")]
+impl SubsystemManager {
+    #[doc = "`ReloadSubsystemsStarted()` overload"]
+    pub fn reload_subsystems_started() -> () {
+        unsafe {
+            __SubsystemManager_unity2_raw::reload_subsystems_started(::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReloadSubsystemsCompleted()` overload"]
+    pub fn reload_subsystems_completed() -> () {
+        unsafe {
+            __SubsystemManager_unity2_raw::reload_subsystems_completed(::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitializeIntegratedSubsystem(::unity2::IntPtr, crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"]
+    pub fn initialize_integrated_subsystem(
+        ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        subsystem: impl ::core::convert::Into<
+            crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
+        >,
+    ) -> () {
+        unsafe {
+            __SubsystemManager_unity2_raw::initialize_integrated_subsystem(
+                ::core::convert::Into::into(ptr),
+                ::core::convert::Into::into(subsystem),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearSubsystems()` overload"]
+    pub fn clear_subsystems() -> () {
+        unsafe { __SubsystemManager_unity2_raw::clear_subsystems(::core::option::Option::None) }
+    }
+    #[doc = "`StaticConstructScriptingClassMap()` overload"]
+    pub fn static_construct_scripting_class_map() -> () {
+        unsafe {
+            __SubsystemManager_unity2_raw::static_construct_scripting_class_map(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SubsystemManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    pub fn get_subsystems<M0: ::unity2::IlType + ::core::marker::Copy>(
+        subsystems: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "GetSubsystems",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                "GetSubsystems",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(subsystems),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn add_subsystem_subset<
+        M0: ::unity2::IlType + ::core::marker::Copy,
+        M1: ::unity2::IlType + ::core::marker::Copy,
+    >(
+        copy_from: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+        copy_to: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M1>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "AddSubsystemSubset",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                "AddSubsystemSubset",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize)
+            ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[
+                        <M0 as ::unity2::IlType>::il_type(),
+                        <M1 as ::unity2::IlType>::il_type(),
+                    ],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::list_1::List_1<M0>,
+                crate::system::collections::generic::list_1::List_1<M1>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(copy_from),
+                ::core::convert::Into::into(copy_to),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`GetIntegratedSubsystemByPtr(::unity2::IntPtr)` overload"]
+    pub fn get_integrated_subsystem_by_ptr(
+        ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> crate::unity_engine::integratedsubsystem::IntegratedSubsystem {
+        unsafe {
+            __SubsystemManager_unity2_raw::get_integrated_subsystem_by_ptr(
+                ::core::convert::Into::into(ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_instances<M0: ::unity2::IlType + ::core::marker::Copy>(
+        subsystems: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <SubsystemManager as ::unity2::ClassIdentity>::class(),
+                "GetInstances",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <SubsystemManager as ::unity2::ClassIdentity>::NAME,
+                "GetInstances",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::system::collections::generic::list_1::List_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(subsystems),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-subsystemmanager")]
+pub mod prelude {
+    pub use super::ISubsystemManager;
+    pub use super::SubsystemManager;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

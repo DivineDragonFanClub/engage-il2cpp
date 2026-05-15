@@ -17,84 +17,824 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-unitfor")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitFor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_each {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Each",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Each",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn each(
+        r#type: crate::app::force::Force_Type,
+        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::force::Force_Type,
+            crate::system::action_1::Action_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_each::get_offset() as isize),
+        );
+        inner(r#type, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Reverse",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Reverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reverse(
+        r#type: crate::app::force::Force_Type,
+        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::force::Force_Type,
+            crate::system::action_1::Action_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reverse::get_offset() as isize),
+        );
+        inner(r#type, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_each_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Each",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Each",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn each_2(
+        force_mask: u32,
+        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            u32,
+            crate::system::action_1::Action_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_each_2::get_offset() as isize),
+        );
+        inner(force_mask, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reverse_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Reverse",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Reverse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reverse_2(
+        force_mask: u32,
+        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            u32,
+            crate::system::action_1::Action_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reverse_2::get_offset() as isize),
+        );
+        inner(force_mask, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: predicate_1 :: Predicate_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Find",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Find",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find(
+        r#type: crate::app::force::Force_Type,
+        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::force::Force_Type,
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find::get_offset() as isize),
+        );
+        inner(r#type, pred, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_last {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: force :: Force_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: predicate_1 :: Predicate_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "FindLast",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "FindLast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_last(
+        r#type: crate::app::force::Force_Type,
+        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::force::Force_Type,
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_last::get_offset() as isize),
+        );
+        inner(r#type, pred, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: predicate_1 :: Predicate_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "Find",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "Find",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_2(
+        force_mask: u32,
+        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            u32,
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_2::get_offset() as isize),
+        );
+        inner(force_mask, pred, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_last_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: predicate_1 :: Predicate_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "FindLast",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "FindLast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_last_2(
+        force_mask: u32,
+        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            u32,
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_last_2::get_offset() as isize),
+        );
+        inner(force_mask, pred, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "GetPrev",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "GetPrev",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_prev(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_prev::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "GetNext",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "GetNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prev_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "GetPrev",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "GetPrev",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_prev_2(
+        unit: crate::app::unit::Unit,
+        force_mask: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_prev_2::get_offset() as isize),
+        );
+        inner(unit, force_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                "GetNext",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    "GetNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_2(
+        unit: crate::app::unit::Unit,
+        force_mask: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next_2::get_offset() as isize),
+        );
+        inner(unit, force_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitFor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitFor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: UnitFor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitFor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitfor")]
 impl UnitFor {
     #[doc = "`Each(crate::app::force::Force_Type, crate::system::action_1::Action_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Each", args = 2)]
     pub fn each(
-        r#type: crate::app::force::Force_Type,
-        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
-    ) -> ();
-
+        r#type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        func: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            __UnitFor_unity2_raw::each(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(func),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Reverse(crate::app::force::Force_Type, crate::system::action_1::Action_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Reverse", args = 2)]
     pub fn reverse(
-        r#type: crate::app::force::Force_Type,
-        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
-    ) -> ();
-
+        r#type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        func: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            __UnitFor_unity2_raw::reverse(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(func),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Each(u32, crate::system::action_1::Action_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Each", args = 2)]
     pub fn each_2(
-        force_mask: u32,
-        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
-    ) -> ();
-
+        force_mask: impl ::core::convert::Into<u32>,
+        func: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            __UnitFor_unity2_raw::each_2(
+                ::core::convert::Into::into(force_mask),
+                ::core::convert::Into::into(func),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Reverse(u32, crate::system::action_1::Action_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Reverse", args = 2)]
     pub fn reverse_2(
-        force_mask: u32,
-        func: crate::system::action_1::Action_1<crate::app::unit::Unit>,
-    ) -> ();
-
+        force_mask: impl ::core::convert::Into<u32>,
+        func: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            __UnitFor_unity2_raw::reverse_2(
+                ::core::convert::Into::into(force_mask),
+                ::core::convert::Into::into(func),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Find(crate::app::force::Force_Type, crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Find", args = 2)]
     pub fn find(
-        r#type: crate::app::force::Force_Type,
-        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit;
-
+        r#type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        pred: impl ::core::convert::Into<
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        >,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::find(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(pred),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`FindLast(crate::app::force::Force_Type, crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "FindLast", args = 2)]
     pub fn find_last(
-        r#type: crate::app::force::Force_Type,
-        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit;
-
+        r#type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        pred: impl ::core::convert::Into<
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        >,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::find_last(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(pred),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Find(u32, crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Find", args = 2)]
     pub fn find_2(
-        force_mask: u32,
-        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit;
-
+        force_mask: impl ::core::convert::Into<u32>,
+        pred: impl ::core::convert::Into<
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        >,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::find_2(
+                ::core::convert::Into::into(force_mask),
+                ::core::convert::Into::into(pred),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`FindLast(u32, crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "FindLast", args = 2)]
     pub fn find_last_2(
-        force_mask: u32,
-        pred: crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit;
-
+        force_mask: impl ::core::convert::Into<u32>,
+        pred: impl ::core::convert::Into<
+            crate::system::predicate_1::Predicate_1<crate::app::unit::Unit>,
+        >,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::find_last_2(
+                ::core::convert::Into::into(force_mask),
+                ::core::convert::Into::into(pred),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPrev(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetPrev", args = 1)]
-    pub fn get_prev(unit: crate::app::unit::Unit) -> crate::app::unit::Unit;
-
+    pub fn get_prev(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::get_prev(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNext(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetNext", args = 1)]
-    pub fn get_next(unit: crate::app::unit::Unit) -> crate::app::unit::Unit;
-
+    pub fn get_next(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::get_next(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPrev(crate::app::unit::Unit, u32)` overload"]
-    #[method(name = "GetPrev", args = 2)]
-    pub fn get_prev_2(unit: crate::app::unit::Unit, force_mask: u32) -> crate::app::unit::Unit;
-
+    pub fn get_prev_2(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        force_mask: impl ::core::convert::Into<u32>,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::get_prev_2(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(force_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetNext(crate::app::unit::Unit, u32)` overload"]
-    #[method(name = "GetNext", args = 2)]
-    pub fn get_next_2(unit: crate::app::unit::Unit, force_mask: u32) -> crate::app::unit::Unit;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn get_next_2(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        force_mask: impl ::core::convert::Into<u32>,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitFor_unity2_raw::get_next_2(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(force_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "app-unitfor")]
+pub trait IUnitForMethods: IUnitFor {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitFor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitFor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitfor")]
+impl<__T: IUnitFor> IUnitForMethods for __T {}
 
 #[cfg(feature = "app-unitfor")]
 impl UnitFor {
@@ -110,4 +850,14 @@ impl UnitFor {
         <Self as IUnitForMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-unitfor")]
+pub mod prelude {
+    pub use super::IUnitFor;
+    pub use super::IUnitForMethods;
+    pub use super::UnitFor;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

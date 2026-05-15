@@ -11,6 +11,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -80,123 +90,1223 @@ mod __types {
         #[rename(name = "m_HelpWindowMessageText")]
         pub m_help_window_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
 }
 
 #[cfg(feature = "app-refreshunitselectroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-refreshunitselectroot")]
-#[::unity2::methods]
-impl RefreshUnitSelectRoot {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    #[method(name = "LoadPrefabAsync", args = 0)]
-    pub fn load_prefab_async() -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefreshUnitSelectRoot_UnitWindowUnitInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot_UnitWindowUnitInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
 
-    #[doc = "`IsLoadingPrefab()` overload"]
-    #[method(name = "IsLoadingPrefab", args = 0)]
-    pub fn is_loading_prefab() -> bool;
-
-    #[doc = "`UnloadPrefab()` overload"]
-    #[method(name = "UnloadPrefab", args = 0)]
-    pub fn unload_prefab() -> ();
-
-    #[doc = "`CreateRoot()` overload"]
-    #[method(name = "CreateRoot", args = 0)]
-    pub fn create_root() -> crate::app::refreshunitselectroot::RefreshUnitSelectRoot;
-
+#[cfg(feature = "app-refreshunitselectroot")]
+pub trait IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods:
+    IRefreshUnitSelectRoot_UnitWindowUnitInfo
+{
     #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSelectRoot_UnitWindowUnitInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
+#[cfg(feature = "app-refreshunitselectroot")]
+impl<__T: IRefreshUnitSelectRoot_UnitWindowUnitInfo>
+    IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods for __T
+{
+}
 
-    #[doc = "`GetRefreshUnitSetMenuContent()` overload"]
-    #[method(name = "GetRefreshUnitSetMenuContent", args = 0)]
-    pub fn get_refresh_unit_set_menu_content(
-        self,
-    ) -> crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent;
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
+        this
+    }
+}
 
-    #[doc = "`GetRefreshUnitSelectMenuContent()` overload"]
-    #[method(name = "GetRefreshUnitSelectMenuContent", args = 0)]
-    pub fn get_refresh_unit_select_menu_content(
-        self,
-    ) -> crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent;
-
-    #[doc = "`GetRefreshFacilitySelectMenuContent()` overload"]
-    #[method(name = "GetRefreshFacilitySelectMenuContent", args = 0)]
-    pub fn get_refresh_facility_select_menu_content(
-        self,
-    ) -> crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent;
-
-    #[doc = "`CloseSettingInfoWindow()` overload"]
-    #[method(name = "CloseSettingInfoWindow", args = 0)]
-    pub fn close_setting_info_window(self) -> ();
-
-    #[doc = "`IsClosedSettingInfoWindow()` overload"]
-    #[method(name = "IsClosedSettingInfoWindow", args = 0)]
-    pub fn is_closed_setting_info_window(self) -> bool;
-
-    #[doc = "`SetFacilityWindow(bool, crate::app::hubfacilitydata::HubFacilityData)` overload"]
-    #[method(name = "SetFacilityWindow", args = 2)]
-    pub fn set_facility_window(
-        self,
+#[cfg(feature = "app-refreshunitselectroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSelectRoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_prefab_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "LoadPrefabAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "LoadPrefabAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_prefab_async::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_prefab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "IsLoadingPrefab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsLoadingPrefab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading_prefab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_prefab {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "UnloadPrefab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "UnloadPrefab",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_prefab::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "CreateRoot",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "CreateRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_root(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::refreshunitselectroot::RefreshUnitSelectRoot {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::refreshunitselectroot::RefreshUnitSelectRoot = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_root::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_refresh_unit_set_menu_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "GetRefreshUnitSetMenuContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetRefreshUnitSetMenuContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_refresh_unit_set_menu_content(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent {
+        let inner : extern "C" fn (RefreshUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshunitsetmenucontent :: RefreshUnitSetMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_refresh_unit_set_menu_content :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_refresh_unit_select_menu_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "GetRefreshUnitSelectMenuContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetRefreshUnitSelectMenuContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_refresh_unit_select_menu_content(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent {
+        let inner : extern "C" fn (RefreshUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_refresh_unit_select_menu_content :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_refresh_facility_select_menu_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "GetRefreshFacilitySelectMenuContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "GetRefreshFacilitySelectMenuContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_refresh_facility_select_menu_content(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent {
+        let inner : extern "C" fn (RefreshUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshfacilityselectmenucontent :: RefreshFacilitySelectMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_refresh_facility_select_menu_content :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_setting_info_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "CloseSettingInfoWindow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "CloseSettingInfoWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_setting_info_window(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_setting_info_window::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_closed_setting_info_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "IsClosedSettingInfoWindow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "IsClosedSettingInfoWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_closed_setting_info_window(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_closed_setting_info_window::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_facility_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::hubfacilitydata::HubFacilityData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetFacilityWindow",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetFacilityWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_facility_window(
+        this: RefreshUnitSelectRoot,
         enabled: bool,
         facility_data: crate::app::hubfacilitydata::HubFacilityData,
-    ) -> ();
-
-    #[doc = "`SetUnitWindow(bool, ::unity2::Array<crate::app::unit::Unit>)` overload"]
-    #[method(name = "SetUnitWindow", args = 2)]
-    pub fn set_unit_window(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot,
+            bool,
+            crate::app::hubfacilitydata::HubFacilityData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_facility_window::get_offset() as isize),
+        );
+        inner(this, enabled, facility_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetUnitWindow",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetUnitWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit_window(
+        this: RefreshUnitSelectRoot,
         enabled: bool,
         unit: ::unity2::Array<crate::app::unit::Unit>,
-    ) -> ();
-
-    #[doc = "`SetRelianceWindow(bool, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "SetRelianceWindow", args = 3)]
-    pub fn set_reliance_window(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot,
+            bool,
+            ::unity2::Array<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit_window::get_offset() as isize),
+        );
+        inner(this, enabled, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_reliance_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetRelianceWindow",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetRelianceWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_reliance_window(
+        this: RefreshUnitSelectRoot,
         enabled: bool,
         unit0: crate::app::unit::Unit,
         unit1: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`SetActiveHelpWindow(bool)` overload"]
-    #[method(name = "SetActiveHelpWindow", args = 1)]
-    pub fn set_active_help_window(self, actived: bool) -> ();
-
-    #[doc = "`SetHelpWindow(::unity2::Array<crate::app::unit::Unit>)` overload"]
-    #[method(name = "SetHelpWindow", args = 1)]
-    pub fn set_help_window(self, units: ::unity2::Array<crate::app::unit::Unit>) -> ();
-
-    #[doc = "`SetHelpWindow(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetHelpWindow", args = 2)]
-    pub fn set_help_window_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot,
+            bool,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_reliance_window::get_offset() as isize),
+        );
+        inner(this, enabled, unit0, unit1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active_help_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetActiveHelpWindow",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetActiveHelpWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active_help_window(
+        this: RefreshUnitSelectRoot,
+        actived: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active_help_window::get_offset() as isize),
+            );
+        inner(this, actived, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_help_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetHelpWindow",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetHelpWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_help_window(
+        this: RefreshUnitSelectRoot,
+        units: ::unity2::Array<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot,
+            ::unity2::Array<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_help_window::get_offset() as isize),
+        );
+        inner(this, units, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_help_window_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "SetHelpWindow",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "SetHelpWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_help_window_2(
+        this: RefreshUnitSelectRoot,
         caption_mid: ::unity2::Il2CppString,
         message_mid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`CloseHelpWindow()` overload"]
-    #[method(name = "CloseHelpWindow", args = 0)]
-    pub fn close_help_window(self) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSelectRoot,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_help_window_2::get_offset() as isize),
+        );
+        inner(this, caption_mid, message_mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_help_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "CloseHelpWindow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "CloseHelpWindow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_help_window(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_help_window::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSelectRoot as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: RefreshUnitSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot {
+    #[doc = "`LoadPrefabAsync()` overload"]
+    pub fn load_prefab_async() -> () {
+        unsafe {
+            __RefreshUnitSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLoadingPrefab()` overload"]
+    pub fn is_loading_prefab() -> bool {
+        unsafe {
+            __RefreshUnitSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadPrefab()` overload"]
+    pub fn unload_prefab() -> () {
+        unsafe { __RefreshUnitSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
+    }
+    #[doc = "`CreateRoot()` overload"]
+    pub fn create_root() -> crate::app::refreshunitselectroot::RefreshUnitSelectRoot {
+        unsafe { __RefreshUnitSelectRoot_unity2_raw::create_root(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+pub trait IRefreshUnitSelectRootMethods: IRefreshUnitSelectRoot {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetRefreshUnitSetMenuContent()` overload"]
+    fn get_refresh_unit_set_menu_content(
+        self,
+    ) -> crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::get_refresh_unit_set_menu_content(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRefreshUnitSelectMenuContent()` overload"]
+    fn get_refresh_unit_select_menu_content(
+        self,
+    ) -> crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::get_refresh_unit_select_menu_content(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRefreshFacilitySelectMenuContent()` overload"]
+    fn get_refresh_facility_select_menu_content(
+        self,
+    ) -> crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::get_refresh_facility_select_menu_content(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseSettingInfoWindow()` overload"]
+    fn close_setting_info_window(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::close_setting_info_window(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsClosedSettingInfoWindow()` overload"]
+    fn is_closed_setting_info_window(self) -> bool {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::is_closed_setting_info_window(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFacilityWindow(bool, crate::app::hubfacilitydata::HubFacilityData)` overload"]
+    fn set_facility_window(
+        self,
+        enabled: impl ::core::convert::Into<bool>,
+        facility_data: impl ::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_facility_window(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::convert::Into::into(facility_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetUnitWindow(bool, ::unity2::Array<crate::app::unit::Unit>)` overload"]
+    fn set_unit_window(
+        self,
+        enabled: impl ::core::convert::Into<bool>,
+        unit: impl ::core::convert::Into<::unity2::Array<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_unit_window(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRelianceWindow(bool, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn set_reliance_window(
+        self,
+        enabled: impl ::core::convert::Into<bool>,
+        unit0: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit1: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_reliance_window(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::convert::Into::into(unit0),
+                ::core::convert::Into::into(unit1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetActiveHelpWindow(bool)` overload"]
+    fn set_active_help_window(self, actived: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_active_help_window(
+                __receiver,
+                ::core::convert::Into::into(actived),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHelpWindow(::unity2::Array<crate::app::unit::Unit>)` overload"]
+    fn set_help_window(
+        self,
+        units: impl ::core::convert::Into<::unity2::Array<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_help_window(
+                __receiver,
+                ::core::convert::Into::into(units),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHelpWindow(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_help_window_2(
+        self,
+        caption_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        message_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::set_help_window_2(
+                __receiver,
+                ::core::convert::Into::into(caption_mid),
+                ::core::convert::Into::into(message_mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseHelpWindow()` overload"]
+    fn close_help_window(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::close_help_window(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl<__T: IRefreshUnitSelectRoot> IRefreshUnitSelectRootMethods for __T {}
 
 #[cfg(feature = "app-refreshunitselectroot")]
 impl RefreshUnitSelectRoot {
@@ -215,25 +1325,26 @@ impl RefreshUnitSelectRoot {
 }
 
 #[cfg(feature = "app-refreshunitselectroot")]
-#[::unity2::methods]
-impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::IRefreshUnitSelectRoot;
+    pub use super::IRefreshUnitSelectRootMethods;
+    pub use super::IRefreshUnitSelectRoot_UnitWindowUnitInfo;
+    pub use super::IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods;
+    pub use super::RefreshUnitSelectRoot;
+    pub use super::RefreshUnitSelectRoot_UnitWindowUnitInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

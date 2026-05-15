@@ -17,38 +17,316 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-vibrationfile_2")]
-#[::unity2::methods]
-impl VibrationFile_2 {
-    #[doc = "`RetrieveValue(crate::nn::hid::vibrationvalue::VibrationValue, i32, crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext)` overload"]
-    #[method(name = "RetrieveValue", args = 3)]
-    pub fn retrieve_value(
-        p_out_value: crate::nn::hid::vibrationvalue::VibrationValue,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VibrationFile_2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_retrieve_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: vibrationvalue :: VibrationValue as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
+                "RetrieveValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VibrationFile_2 as ::unity2::ClassIdentity>::NAME,
+                    "RetrieveValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn retrieve_value(
+        p_out_value: *mut crate::nn::hid::vibrationvalue::VibrationValue,
         position: i32,
-        p_context: crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
-    ) -> ();
-
-    #[doc = "`Generate(i64, ::unity2::Array<u8>, i64, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]
-    #[method(name = "Generate", args = 5)]
-    pub fn generate(
-        p_out_size: i64,
+        p_context: *mut crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::vibrationvalue::VibrationValue,
+            i32,
+            *mut crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_retrieve_value::get_offset() as isize),
+        );
+        inner(p_out_value, position, p_context, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i64 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
+                "Generate",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VibrationFile_2 as ::unity2::ClassIdentity>::NAME,
+                    "Generate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate(
+        p_out_size: *mut i64,
         out_buffer: ::unity2::Array<u8>,
         buffer_size: i64,
         info: crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
         p_values: ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
-    ) -> ();
-
-    #[doc = "`Generate(i64, ::unity2::Array<u8>, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]
-    #[method(name = "Generate", args = 4)]
-    pub fn generate_2(
-        p_out_size: i64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut i64,
+            ::unity2::Array<u8>,
+            i64,
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+            ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate::get_offset() as isize),
+        );
+        inner(
+            p_out_size,
+            out_buffer,
+            buffer_size,
+            info,
+            p_values,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
+                "Generate",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VibrationFile_2 as ::unity2::ClassIdentity>::NAME,
+                    "Generate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate_2(
+        p_out_size: *mut i64,
         out_buffer: ::unity2::Array<u8>,
         info: crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
         p_values: ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
-    ) -> ();
-
-    #[doc = "`CalculateSize(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)` overload"]
-    #[method(name = "CalculateSize", args = 1)]
-    pub fn calculate_size(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut i64,
+            ::unity2::Array<u8>,
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+            ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_generate_2::get_offset() as isize),
+        );
+        inner(p_out_size, out_buffer, info, p_values, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
+                "CalculateSize",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VibrationFile_2 as ::unity2::ClassIdentity>::NAME,
+                    "CalculateSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate_size(
         info: crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
-    ) -> i64;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+            ::unity2::OptionalMethod,
+        ) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate_size::get_offset() as isize),
+        );
+        inner(info, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nn-hid-vibrationfile_2")]
+impl VibrationFile_2 {
+    #[doc = "`RetrieveValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, i32, *mutcrate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext)` overload"]
+    pub fn retrieve_value(
+        position: impl ::core::convert::Into<i32>,
+    ) -> (
+        crate::nn::hid::vibrationvalue::VibrationValue,
+        crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::vibrationvalue::VibrationValue,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
+            >::uninit();
+            __VibrationFile_2_unity2_raw::retrieve_value(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(position),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Generate(*muti64, ::unity2::Array<u8>, i64, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]
+    pub fn generate(
+        out_buffer: impl ::core::convert::Into<::unity2::Array<u8>>,
+        buffer_size: impl ::core::convert::Into<i64>,
+        info: impl ::core::convert::Into<
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+        >,
+        p_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
+        >,
+    ) -> i64 {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i64>::uninit();
+            __VibrationFile_2_unity2_raw::generate(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(out_buffer),
+                ::core::convert::Into::into(buffer_size),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(p_values),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Generate(*muti64, ::unity2::Array<u8>, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]
+    pub fn generate_2(
+        out_buffer: impl ::core::convert::Into<::unity2::Array<u8>>,
+        info: impl ::core::convert::Into<
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+        >,
+        p_values: impl ::core::convert::Into<
+            ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>,
+        >,
+    ) -> i64 {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i64>::uninit();
+            __VibrationFile_2_unity2_raw::generate_2(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(out_buffer),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(p_values),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`CalculateSize(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)` overload"]
+    pub fn calculate_size(
+        info: impl ::core::convert::Into<
+            crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo,
+        >,
+    ) -> i64 {
+        unsafe {
+            __VibrationFile_2_unity2_raw::calculate_size(
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "nn-hid-vibrationfile_2")]
+pub mod prelude {
+    pub use super::IVibrationFile_2;
+    pub use super::VibrationFile_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

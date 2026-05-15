@@ -152,3 +152,13 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-collections-object_model-readonlycollection_1")]
+pub mod prelude {
+    pub use super::IReadOnlyCollection_1;
+    pub use super::IReadOnlyCollection_1Methods;
+    pub use super::ReadOnlyCollection_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

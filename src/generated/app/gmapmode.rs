@@ -67,104 +67,1101 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gmapmode")]
-#[::unity2::methods]
-impl GmapMode {
-    #[doc = "`get_IsAlongPath()` overload"]
-    #[method(name = "get_IsAlongPath", args = 0)]
-    pub fn get_is_along_path() -> bool;
-
-    #[doc = "`set_IsAlongPath(bool)` overload"]
-    #[method(name = "set_IsAlongPath", args = 1)]
-    pub fn set_is_along_path(value: bool) -> ();
-
-    #[doc = "`GetMode()` overload"]
-    #[method(name = "GetMode", args = 0)]
-    pub fn get_mode() -> crate::app::gmapmode::GmapMode_Mode;
-
-    #[doc = "`SetMode(crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "SetMode", args = 1)]
-    pub fn set_mode(mode: crate::app::gmapmode::GmapMode_Mode) -> ();
-
-    #[doc = "`GoMode(crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "GoMode", args = 1)]
-    pub fn go_mode(mode: crate::app::gmapmode::GmapMode_Mode) -> ();
-
-    #[doc = "`GetSceneName(crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "GetSceneName", args = 1)]
-    pub fn get_scene_name(mode: crate::app::gmapmode::GmapMode_Mode) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetNowSpotId(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetNowSpotId", args = 1)]
-    pub fn set_now_spot_id(spot_id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetNowSpotId(crate::app::gmapmode::GmapMode_Mode, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetNowSpotId", args = 2)]
-    pub fn set_now_spot_id_2(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GmapMode_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_along_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "get_IsAlongPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "get_IsAlongPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_along_path(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_along_path::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_along_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "set_IsAlongPath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "set_IsAlongPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_along_path(
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_along_path::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GetMode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GetMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gmapmode::GmapMode_Mode {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::gmapmode::GmapMode_Mode =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_mode::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "SetMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "SetMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mode(
+        mode: crate::app::gmapmode::GmapMode_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_go_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GoMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GoMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn go_mode(
+        mode: crate::app::gmapmode::GmapMode_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_go_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GetSceneName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GetSceneName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scene_name(
+        mode: crate::app::gmapmode::GmapMode_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scene_name::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_now_spot_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "SetNowSpotId",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "SetNowSpotId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_now_spot_id(
+        spot_id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_now_spot_id::get_offset() as isize),
+            );
+        inner(spot_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_now_spot_id_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "SetNowSpotId",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "SetNowSpotId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_now_spot_id_2(
         mode: crate::app::gmapmode::GmapMode_Mode,
         spot_id: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetNowSpotId()` overload"]
-    #[method(name = "GetNowSpotId", args = 0)]
-    pub fn get_now_spot_id() -> ::unity2::Il2CppString;
-
-    #[doc = "`CanMoveDlcMap()` overload"]
-    #[method(name = "CanMoveDlcMap", args = 0)]
-    pub fn can_move_dlc_map() -> bool;
-
-    #[doc = "`CanMoveGod()` overload"]
-    #[method(name = "CanMoveGod", args = 0)]
-    pub fn can_move_god() -> bool;
-
-    #[doc = "`CanMoveEvil()` overload"]
-    #[method(name = "CanMoveEvil", args = 0)]
-    pub fn can_move_evil() -> bool;
-
-    #[doc = "`CheckSpotModeOnGmap(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "CheckSpotModeOnGmap", args = 2)]
-    pub fn check_spot_mode_on_gmap(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_now_spot_id_2::get_offset() as isize),
+        );
+        inner(mode, spot_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_now_spot_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GetNowSpotId",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GetNowSpotId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_now_spot_id(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_now_spot_id::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_move_dlc_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CanMoveDlcMap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CanMoveDlcMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_move_dlc_map(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_move_dlc_map::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_move_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CanMoveGod",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CanMoveGod",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_move_god(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_move_god::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_move_evil {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CanMoveEvil",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CanMoveEvil",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn can_move_evil(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_can_move_evil::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_spot_mode_on_gmap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CheckSpotModeOnGmap",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CheckSpotModeOnGmap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_spot_mode_on_gmap(
         spot: crate::app::gmapspot::GmapSpot,
         mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> bool;
-
-    #[doc = "`CheckSpotModeAtChapter(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "CheckSpotModeAtChapter", args = 2)]
-    pub fn check_spot_mode_at_chapter(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::gmapspot::GmapSpot,
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_spot_mode_on_gmap::get_offset() as isize),
+        );
+        inner(spot, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_spot_mode_at_chapter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CheckSpotModeAtChapter",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CheckSpotModeAtChapter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_spot_mode_at_chapter(
         spot: crate::app::gmapspot::GmapSpot,
         mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> bool;
-
-    #[doc = "`CheckSpotModeOnGmap(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = "CheckSpotModeOnGmap", args = 2)]
-    pub fn check_spot_mode_on_gmap_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::gmapspot::GmapSpot,
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_spot_mode_at_chapter::get_offset() as isize),
+        );
+        inner(spot, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_spot_mode_on_gmap_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CheckSpotModeOnGmap",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CheckSpotModeOnGmap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_spot_mode_on_gmap_2(
         spot_id: ::unity2::Il2CppString,
         mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> bool;
-
-    #[doc = "`CheckSpotModeImpl(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode, bool)` overload"]
-    #[method(name = "CheckSpotModeImpl", args = 3)]
-    pub fn check_spot_mode_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_spot_mode_on_gmap_2::get_offset() as isize),
+        );
+        inner(spot_id, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_spot_mode_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "CheckSpotModeImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "CheckSpotModeImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_spot_mode_impl(
         spot_id: ::unity2::Il2CppString,
         mode: crate::app::gmapmode::GmapMode_Mode,
         on_gmap: bool,
-    ) -> bool;
-
-    #[doc = "`GetDlcGmapPathAssetPath()` overload"]
-    #[method(name = "GetDlcGmapPathAssetPath", args = 0)]
-    pub fn get_dlc_gmap_path_asset_path() -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDlcGmapSpotAssetPath()` overload"]
-    #[method(name = "GetDlcGmapSpotAssetPath", args = 0)]
-    pub fn get_dlc_gmap_spot_asset_path() -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::gmapmode::GmapMode_Mode,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_spot_mode_impl::get_offset() as isize),
+        );
+        inner(spot_id, mode, on_gmap, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dlc_gmap_path_asset_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GetDlcGmapPathAssetPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GetDlcGmapPathAssetPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dlc_gmap_path_asset_path(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_dlc_gmap_path_asset_path::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dlc_gmap_spot_asset_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                "GetDlcGmapSpotAssetPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    "GetDlcGmapSpotAssetPath",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dlc_gmap_spot_asset_path(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_dlc_gmap_spot_asset_path::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GmapMode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapMode, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapMode as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapMode as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-gmapmode")]
+impl GmapMode {
+    #[doc = "`get_IsAlongPath()` overload"]
+    pub fn get_is_along_path() -> bool {
+        unsafe { __GmapMode_unity2_raw::get_is_along_path(::core::option::Option::None) }
+    }
+    #[doc = "`set_IsAlongPath(bool)` overload"]
+    pub fn set_is_along_path(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __GmapMode_unity2_raw::set_is_along_path(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMode()` overload"]
+    pub fn get_mode() -> crate::app::gmapmode::GmapMode_Mode {
+        unsafe { __GmapMode_unity2_raw::get_mode(::core::option::Option::None) }
+    }
+    #[doc = "`SetMode(crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn set_mode(mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>) -> () {
+        unsafe {
+            __GmapMode_unity2_raw::set_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GoMode(crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn go_mode(mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>) -> () {
+        unsafe {
+            __GmapMode_unity2_raw::go_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSceneName(crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn get_scene_name(
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __GmapMode_unity2_raw::get_scene_name(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNowSpotId(::unity2::Il2CppString)` overload"]
+    pub fn set_now_spot_id(spot_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __GmapMode_unity2_raw::set_now_spot_id(
+                ::core::convert::Into::into(spot_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetNowSpotId(crate::app::gmapmode::GmapMode_Mode, ::unity2::Il2CppString)` overload"]
+    pub fn set_now_spot_id_2(
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __GmapMode_unity2_raw::set_now_spot_id_2(
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(spot_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNowSpotId()` overload"]
+    pub fn get_now_spot_id() -> ::unity2::Il2CppString {
+        unsafe { __GmapMode_unity2_raw::get_now_spot_id(::core::option::Option::None) }
+    }
+    #[doc = "`CanMoveDlcMap()` overload"]
+    pub fn can_move_dlc_map() -> bool {
+        unsafe { __GmapMode_unity2_raw::can_move_dlc_map(::core::option::Option::None) }
+    }
+    #[doc = "`CanMoveGod()` overload"]
+    pub fn can_move_god() -> bool {
+        unsafe { __GmapMode_unity2_raw::can_move_god(::core::option::Option::None) }
+    }
+    #[doc = "`CanMoveEvil()` overload"]
+    pub fn can_move_evil() -> bool {
+        unsafe { __GmapMode_unity2_raw::can_move_evil(::core::option::Option::None) }
+    }
+    #[doc = "`CheckSpotModeOnGmap(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn check_spot_mode_on_gmap(
+        spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> bool {
+        unsafe {
+            __GmapMode_unity2_raw::check_spot_mode_on_gmap(
+                ::core::convert::Into::into(spot),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckSpotModeAtChapter(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn check_spot_mode_at_chapter(
+        spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> bool {
+        unsafe {
+            __GmapMode_unity2_raw::check_spot_mode_at_chapter(
+                ::core::convert::Into::into(spot),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckSpotModeOnGmap(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    pub fn check_spot_mode_on_gmap_2(
+        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> bool {
+        unsafe {
+            __GmapMode_unity2_raw::check_spot_mode_on_gmap_2(
+                ::core::convert::Into::into(spot_id),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckSpotModeImpl(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode, bool)` overload"]
+    pub fn check_spot_mode_impl(
+        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+        on_gmap: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            __GmapMode_unity2_raw::check_spot_mode_impl(
+                ::core::convert::Into::into(spot_id),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(on_gmap),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDlcGmapPathAssetPath()` overload"]
+    pub fn get_dlc_gmap_path_asset_path() -> ::unity2::Il2CppString {
+        unsafe { __GmapMode_unity2_raw::get_dlc_gmap_path_asset_path(::core::option::Option::None) }
+    }
+    #[doc = "`GetDlcGmapSpotAssetPath()` overload"]
+    pub fn get_dlc_gmap_spot_asset_path() -> ::unity2::Il2CppString {
+        unsafe { __GmapMode_unity2_raw::get_dlc_gmap_spot_asset_path(::core::option::Option::None) }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __GmapMode_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-gmapmode")]
+pub trait IGmapModeMethods: IGmapMode {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GmapMode as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GmapMode_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gmapmode")]
+impl<__T: IGmapMode> IGmapModeMethods for __T {}
 
 #[cfg(feature = "app-gmapmode")]
 impl GmapMode {
@@ -180,4 +1177,21 @@ impl GmapMode {
         <Self as IGmapModeMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-gmapmode")]
+pub mod prelude {
+    pub use super::GmapMode;
+    pub use super::GmapMode_Mode;
+    pub use super::IGmapMode;
+    pub use super::IGmapModeMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

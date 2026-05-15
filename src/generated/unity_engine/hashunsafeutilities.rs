@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "unity_engine-hashunsafeutilities-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-hashunsafeutilities")]
+pub mod prelude {
+    pub use super::HashUnsafeUtilities;
+    pub use super::IHashUnsafeUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

@@ -2,3 +2,7 @@
 
 #[cfg(any(feature = "app-fishing-config-fixcameraconfig-types"))]
 pub mod fixcameraconfig;
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+pub use fixcameraconfig::IFixCameraConfigMethods;
+#[cfg(feature = "app-fishing-config-fixcameraconfig-types")]
+pub use fixcameraconfig::{FixCameraConfig, IFixCameraConfig};

@@ -17,52 +17,609 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-lexerutils")]
-#[::unity2::methods]
-impl LexerUtils {
-    #[doc = "`ParseNumber(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    #[method(name = "ParseNumber", args = 1)]
-    pub fn parse_number(t: crate::moon_sharp::interpreter::tree::token::Token) -> f64;
-
-    #[doc = "`ParseHexInteger(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    #[method(name = "ParseHexInteger", args = 1)]
-    pub fn parse_hex_integer(t: crate::moon_sharp::interpreter::tree::token::Token) -> f64;
-
-    #[doc = "`ReadHexProgressive(::unity2::Il2CppString, f64, i32)` overload"]
-    #[method(name = "ReadHexProgressive", args = 3)]
-    pub fn read_hex_progressive(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LexerUtils_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_parse_number {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "ParseNumber",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "ParseNumber",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn parse_number(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::OptionalMethod,
+        ) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_parse_number::get_offset() as isize),
+        );
+        inner(t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_parse_hex_integer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "ParseHexInteger",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "ParseHexInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn parse_hex_integer(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::OptionalMethod,
+        ) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_parse_hex_integer::get_offset() as isize),
+        );
+        inner(t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_hex_progressive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut f64 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "ReadHexProgressive",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "ReadHexProgressive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_hex_progressive(
         s: ::unity2::Il2CppString,
-        d: f64,
-        digits: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`ParseHexFloat(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    #[method(name = "ParseHexFloat", args = 1)]
-    pub fn parse_hex_float(t: crate::moon_sharp::interpreter::tree::token::Token) -> f64;
-
-    #[doc = "`HexDigit2Value(u16)` overload"]
-    #[method(name = "HexDigit2Value", args = 1)]
-    pub fn hex_digit2_value(c: u16) -> i32;
-
-    #[doc = "`CharIsDigit(u16)` overload"]
-    #[method(name = "CharIsDigit", args = 1)]
-    pub fn char_is_digit(c: u16) -> bool;
-
-    #[doc = "`CharIsHexDigit(u16)` overload"]
-    #[method(name = "CharIsHexDigit", args = 1)]
-    pub fn char_is_hex_digit(c: u16) -> bool;
-
-    #[doc = "`AdjustLuaLongString(::unity2::Il2CppString)` overload"]
-    #[method(name = "AdjustLuaLongString", args = 1)]
-    pub fn adjust_lua_long_string(str: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`UnescapeLuaString(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"]
-    #[method(name = "UnescapeLuaString", args = 2)]
-    pub fn unescape_lua_string(
+        d: *mut f64,
+        digits: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            *mut f64,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_hex_progressive::get_offset() as isize),
+        );
+        inner(s, d, digits, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_parse_hex_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "ParseHexFloat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "ParseHexFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn parse_hex_float(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f64 {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::OptionalMethod,
+        ) -> f64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_parse_hex_float::get_offset() as isize),
+        );
+        inner(t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hex_digit2_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "HexDigit2Value",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "HexDigit2Value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hex_digit2_value(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hex_digit2_value::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_char_is_digit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "CharIsDigit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "CharIsDigit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn char_is_digit(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_char_is_digit::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_char_is_hex_digit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "CharIsHexDigit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "CharIsHexDigit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn char_is_hex_digit(
+        c: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_char_is_hex_digit::get_offset() as isize),
+        );
+        inner(c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_adjust_lua_long_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "AdjustLuaLongString",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "AdjustLuaLongString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn adjust_lua_long_string(
+        str: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_adjust_lua_long_string::get_offset() as isize),
+        );
+        inner(str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unescape_lua_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "UnescapeLuaString",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "UnescapeLuaString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unescape_lua_string(
         token: crate::moon_sharp::interpreter::tree::token::Token,
         str: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::tree::token::Token,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unescape_lua_string::get_offset() as isize),
+        );
+        inner(token, str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_utf32_to_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LexerUtils as ::unity2::ClassIdentity>::class(),
+                "ConvertUtf32ToChar",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LexerUtils as ::unity2::ClassIdentity>::NAME,
+                    "ConvertUtf32ToChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_utf32_to_char(
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_convert_utf32_to_char::get_offset() as isize),
+            );
+        inner(i, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "moon_sharp-interpreter-tree-lexerutils")]
+impl LexerUtils {
+    #[doc = "`ParseNumber(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
+    pub fn parse_number(
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+    ) -> f64 {
+        unsafe {
+            __LexerUtils_unity2_raw::parse_number(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ParseHexInteger(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
+    pub fn parse_hex_integer(
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+    ) -> f64 {
+        unsafe {
+            __LexerUtils_unity2_raw::parse_hex_integer(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadHexProgressive(::unity2::Il2CppString, *mutf64, *muti32)` overload"]
+    pub fn read_hex_progressive(
+        s: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> (::unity2::Il2CppString, f64, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<f64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __LexerUtils_unity2_raw::read_hex_progressive(
+                    ::core::convert::Into::into(s),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`ParseHexFloat(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
+    pub fn parse_hex_float(
+        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+    ) -> f64 {
+        unsafe {
+            __LexerUtils_unity2_raw::parse_hex_float(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HexDigit2Value(u16)` overload"]
+    pub fn hex_digit2_value(c: impl ::core::convert::Into<u16>) -> i32 {
+        unsafe {
+            __LexerUtils_unity2_raw::hex_digit2_value(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CharIsDigit(u16)` overload"]
+    pub fn char_is_digit(c: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            __LexerUtils_unity2_raw::char_is_digit(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CharIsHexDigit(u16)` overload"]
+    pub fn char_is_hex_digit(c: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            __LexerUtils_unity2_raw::char_is_hex_digit(
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AdjustLuaLongString(::unity2::Il2CppString)` overload"]
+    pub fn adjust_lua_long_string(
+        str: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __LexerUtils_unity2_raw::adjust_lua_long_string(
+                ::core::convert::Into::into(str),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnescapeLuaString(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"]
+    pub fn unescape_lua_string(
+        token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+        str: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __LexerUtils_unity2_raw::unescape_lua_string(
+                ::core::convert::Into::into(token),
+                ::core::convert::Into::into(str),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ConvertUtf32ToChar(i32)` overload"]
-    #[method(name = "ConvertUtf32ToChar", args = 1)]
-    pub fn convert_utf32_to_char(i: i32) -> ::unity2::Il2CppString;
+    pub fn convert_utf32_to_char(i: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe {
+            __LexerUtils_unity2_raw::convert_utf32_to_char(
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexerutils")]
+pub mod prelude {
+    pub use super::ILexerUtils;
+    pub use super::LexerUtils;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

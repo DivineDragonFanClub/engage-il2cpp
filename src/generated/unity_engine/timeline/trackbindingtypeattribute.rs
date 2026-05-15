@@ -20,20 +20,154 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
-#[::unity2::methods]
-impl TrackBindingTypeAttribute {
-    #[doc = "`.ctor(::unity2::SystemType)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, r#type: ::unity2::SystemType) -> ();
-
-    #[doc = "`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrackBindingTypeAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackBindingTypeAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackBindingTypeAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TrackBindingTypeAttribute,
+        r#type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrackBindingTypeAttribute,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: trackbindingflags :: TrackBindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackBindingTypeAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackBindingTypeAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: TrackBindingTypeAttribute,
         r#type: ::unity2::SystemType,
         flags: crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TrackBindingTypeAttribute,
+            ::unity2::SystemType,
+            crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, r#type, flags, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
+pub trait ITrackBindingTypeAttributeMethods: ITrackBindingTypeAttribute {
+    #[doc = "`.ctor(::unity2::SystemType)` overload"]
+    fn ctor(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> () {
+        unsafe {
+            let __receiver =
+                <TrackBindingTypeAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TrackBindingTypeAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` overload"]
+    fn ctor_2(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TrackBindingTypeAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TrackBindingTypeAttribute_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
+impl<__T: ITrackBindingTypeAttribute> ITrackBindingTypeAttributeMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
 impl TrackBindingTypeAttribute {
@@ -65,4 +199,11 @@ impl TrackBindingTypeAttribute {
         <Self as ITrackBindingTypeAttributeMethods>::ctor_2(this, r#type, flags);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
+pub mod prelude {
+    pub use super::ITrackBindingTypeAttribute;
+    pub use super::ITrackBindingTypeAttributeMethods;
+    pub use super::TrackBindingTypeAttribute;
 }

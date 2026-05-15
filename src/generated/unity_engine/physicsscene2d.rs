@@ -41,80 +41,560 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-physicsscene2d")]
-#[::unity2::methods(value)]
-impl PhysicsScene2D {
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, other: crate::system::object::Object) -> bool;
-
-    #[doc = "`Equals(crate::unity_engine::physicsscene2d::PhysicsScene2D)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals_2(self, other: crate::unity_engine::physicsscene2d::PhysicsScene2D) -> bool;
-
-    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, i32)` overload"]
-    #[method(name = "Raycast", args = 4)]
-    pub fn raycast(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhysicsScene2D_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: PhysicsScene2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: PhysicsScene2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(PhysicsScene2D, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_hash_code::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: PhysicsScene2D,
+        other: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene2d::PhysicsScene2D as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals_2(
+        this: PhysicsScene2D,
+        other: crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals_2::get_offset() as isize),
+        );
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast(
+        this: PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
         layer_mask: i32,
-    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D;
-
-    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]
-    #[method(name = "Raycast", args = 4)]
-    pub fn raycast_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::raycasthit2d::RaycastHit2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast::get_offset() as isize),
+        );
+        inner(
+            this,
+            origin,
+            direction,
+            distance,
+            layer_mask,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_2(
+        this: PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
         contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
-    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D;
-
-    #[doc = "`Raycast_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]
-    #[method(name = "Raycast_Internal", args = 5)]
-    pub fn raycast_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::raycasthit2d::RaycastHit2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast_Internal",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_internal(
         physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
         contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
-    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D;
-
-    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "Raycast", args = 5)]
-    pub fn raycast_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        let inner: extern "C" fn(
+            crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::raycasthit2d::RaycastHit2D = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_internal::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_3(
+        this: PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
         contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-    ) -> i32;
-
-    #[doc = "`RaycastArray_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "RaycastArray_Internal", args = 6)]
-    pub fn raycast_array_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_array_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "RaycastArray_Internal",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "RaycastArray_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_array_internal(
         physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
         contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-    ) -> i32;
-
-    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "Raycast", args = 5)]
-    pub fn raycast_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_array_internal::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_4(
+        this: PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
         distance: f32,
@@ -122,11 +602,67 @@ impl PhysicsScene2D {
         results: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::raycasthit2d::RaycastHit2D,
         >,
-    ) -> i32;
-
-    #[doc = "`RaycastList_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "RaycastList_Internal", args = 6)]
-    pub fn raycast_list_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_list_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "RaycastList_Internal",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "RaycastList_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_list_internal(
         physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
         origin: crate::unity_engine::vector2::Vector2,
         direction: crate::unity_engine::vector2::Vector2,
@@ -135,72 +671,855 @@ impl PhysicsScene2D {
         results: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::raycasthit2d::RaycastHit2D,
         >,
-    ) -> i32;
-
-    #[doc = "`GetRayIntersection(crate::unity_engine::ray::Ray, f32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, i32)` overload"]
-    #[method(name = "GetRayIntersection", args = 4)]
-    pub fn get_ray_intersection(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_list_internal::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ray_intersection {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "GetRayIntersection",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "GetRayIntersection",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ray_intersection(
+        this: PhysicsScene2D,
         ray: crate::unity_engine::ray::Ray,
         distance: f32,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
         layer_mask: i32,
-    ) -> i32;
-
-    #[doc = "`GetRayIntersectionArray_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, i32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "GetRayIntersectionArray_Internal", args = 6)]
-    pub fn get_ray_intersection_array_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhysicsScene2D,
+            crate::unity_engine::ray::Ray,
+            f32,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ray_intersection::get_offset() as isize),
+        );
+        inner(
+            this,
+            ray,
+            distance,
+            results,
+            layer_mask,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ray_intersection_array_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "GetRayIntersectionArray_Internal",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "GetRayIntersectionArray_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ray_intersection_array_internal(
         physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
         origin: crate::unity_engine::vector3::Vector3,
         direction: crate::unity_engine::vector3::Vector3,
         distance: f32,
         layer_mask: i32,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-    ) -> i32;
-
-    #[doc = "`Raycast_Internal_Injected(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::unity_engine::raycasthit2d::RaycastHit2D)` overload"]
-    #[method(name = "Raycast_Internal_Injected", args = 6)]
-    pub fn raycast_internal_injected(
-        physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
-        origin: crate::unity_engine::vector2::Vector2,
-        direction: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            i32,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ray_intersection_array_internal::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            layer_mask,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: raycasthit2d :: RaycastHit2D as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "Raycast_Internal_Injected",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "Raycast_Internal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_internal_injected(
+        physics_scene: *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        origin: *mut crate::unity_engine::vector2::Vector2,
+        direction: *mut crate::unity_engine::vector2::Vector2,
         distance: f32,
-        contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
-        ret: crate::unity_engine::raycasthit2d::RaycastHit2D,
-    ) -> ();
-
-    #[doc = "`RaycastArray_Internal_Injected(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "RaycastArray_Internal_Injected", args = 6)]
-    pub fn raycast_array_internal_injected(
-        physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
-        origin: crate::unity_engine::vector2::Vector2,
-        direction: crate::unity_engine::vector2::Vector2,
+        contact_filter: *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
+        ret: *mut crate::unity_engine::raycasthit2d::RaycastHit2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            *mut crate::unity_engine::vector2::Vector2,
+            *mut crate::unity_engine::vector2::Vector2,
+            f32,
+            *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
+            *mut crate::unity_engine::raycasthit2d::RaycastHit2D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_internal_injected::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            ret,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_array_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "RaycastArray_Internal_Injected",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "RaycastArray_Internal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_array_internal_injected(
+        physics_scene: *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        origin: *mut crate::unity_engine::vector2::Vector2,
+        direction: *mut crate::unity_engine::vector2::Vector2,
         distance: f32,
-        contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
+        contact_filter: *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-    ) -> i32;
-
-    #[doc = "`RaycastList_Internal_Injected(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "RaycastList_Internal_Injected", args = 6)]
-    pub fn raycast_list_internal_injected(
-        physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
-        origin: crate::unity_engine::vector2::Vector2,
-        direction: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            *mut crate::unity_engine::vector2::Vector2,
+            *mut crate::unity_engine::vector2::Vector2,
+            f32,
+            *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_array_internal_injected::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_raycast_list_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "RaycastList_Internal_Injected",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "RaycastList_Internal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn raycast_list_internal_injected(
+        physics_scene: *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        origin: *mut crate::unity_engine::vector2::Vector2,
+        direction: *mut crate::unity_engine::vector2::Vector2,
         distance: f32,
-        contact_filter: crate::unity_engine::contactfilter2d::ContactFilter2D,
+        contact_filter: *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
         results: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::raycasthit2d::RaycastHit2D,
         >,
-    ) -> i32;
-
-    #[doc = "`GetRayIntersectionArray_Internal_Injected(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, i32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
-    #[method(name = "GetRayIntersectionArray_Internal_Injected", args = 6)]
-    pub fn get_ray_intersection_array_internal_injected(
-        physics_scene: crate::unity_engine::physicsscene2d::PhysicsScene2D,
-        origin: crate::unity_engine::vector3::Vector3,
-        direction: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            *mut crate::unity_engine::vector2::Vector2,
+            *mut crate::unity_engine::vector2::Vector2,
+            f32,
+            *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_raycast_list_internal_injected::get_offset() as isize),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            contact_filter,
+            results,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ray_intersection_array_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: physicsscene2d :: PhysicsScene2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsScene2D as ::unity2::ClassIdentity>::class(),
+                "GetRayIntersectionArray_Internal_Injected",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsScene2D as ::unity2::ClassIdentity>::NAME,
+                    "GetRayIntersectionArray_Internal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ray_intersection_array_internal_injected(
+        physics_scene: *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        origin: *mut crate::unity_engine::vector3::Vector3,
+        direction: *mut crate::unity_engine::vector3::Vector3,
         distance: f32,
         layer_mask: i32,
         results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::vector3::Vector3,
+            f32,
+            i32,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_ray_intersection_array_internal_injected::get_offset() as isize,
+                ),
+        );
+        inner(
+            physics_scene,
+            origin,
+            direction,
+            distance,
+            layer_mask,
+            results,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "unity_engine-physicsscene2d")]
+impl PhysicsScene2D {
+    #[doc = "`Raycast_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]
+    pub fn raycast_internal(
+        physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene2d::PhysicsScene2D>,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_internal(
+                ::core::convert::Into::into(physics_scene),
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RaycastArray_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_array_internal(
+        physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene2d::PhysicsScene2D>,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_array_internal(
+                ::core::convert::Into::into(physics_scene),
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RaycastList_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_list_internal(
+        physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene2d::PhysicsScene2D>,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+        >,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_list_internal(
+                ::core::convert::Into::into(physics_scene),
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRayIntersectionArray_Internal(crate::unity_engine::physicsscene2d::PhysicsScene2D, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, i32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn get_ray_intersection_array_internal(
+        physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene2d::PhysicsScene2D>,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        distance: impl ::core::convert::Into<f32>,
+        layer_mask: impl ::core::convert::Into<i32>,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::get_ray_intersection_array_internal(
+                ::core::convert::Into::into(physics_scene),
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(layer_mask),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Raycast_Internal_Injected(*mutcrate::unity_engine::physicsscene2d::PhysicsScene2D, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, f32, *mutcrate::unity_engine::contactfilter2d::ContactFilter2D, *mutcrate::unity_engine::raycasthit2d::RaycastHit2D)` overload"]
+    pub fn raycast_internal_injected(
+        distance: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::contactfilter2d::ContactFilter2D,
+        crate::unity_engine::raycasthit2d::RaycastHit2D,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::contactfilter2d::ContactFilter2D,
+            >::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >::uninit();
+            __PhysicsScene2D_unity2_raw::raycast_internal_injected(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                ::core::convert::Into::into(distance),
+                __out_3.as_mut_ptr(),
+                __out_4.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+                __out_4.assume_init(),
+            )
+        }
+    }
+    #[doc = "`RaycastArray_Internal_Injected(*mutcrate::unity_engine::physicsscene2d::PhysicsScene2D, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, f32, *mutcrate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_array_internal_injected(
+        distance: impl ::core::convert::Into<f32>,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+    ) -> (
+        i32,
+        crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::contactfilter2d::ContactFilter2D,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::contactfilter2d::ContactFilter2D,
+            >::uninit();
+            let __ret = {
+                __PhysicsScene2D_unity2_raw::raycast_array_internal_injected(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::convert::Into::into(distance),
+                    __out_3.as_mut_ptr(),
+                    ::core::convert::Into::into(results),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`RaycastList_Internal_Injected(*mutcrate::unity_engine::physicsscene2d::PhysicsScene2D, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, f32, *mutcrate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_list_internal_injected(
+        distance: impl ::core::convert::Into<f32>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+        >,
+    ) -> (
+        i32,
+        crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::vector2::Vector2,
+        crate::unity_engine::contactfilter2d::ContactFilter2D,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::contactfilter2d::ContactFilter2D,
+            >::uninit();
+            let __ret = {
+                __PhysicsScene2D_unity2_raw::raycast_list_internal_injected(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::convert::Into::into(distance),
+                    __out_3.as_mut_ptr(),
+                    ::core::convert::Into::into(results),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`GetRayIntersectionArray_Internal_Injected(*mutcrate::unity_engine::physicsscene2d::PhysicsScene2D, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, i32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn get_ray_intersection_array_internal_injected(
+        distance: impl ::core::convert::Into<f32>,
+        layer_mask: impl ::core::convert::Into<i32>,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+    ) -> (
+        i32,
+        crate::unity_engine::physicsscene2d::PhysicsScene2D,
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::vector3::Vector3,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::physicsscene2d::PhysicsScene2D,
+            >::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = {
+                __PhysicsScene2D_unity2_raw::get_ray_intersection_array_internal_injected(
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::convert::Into::into(distance),
+                    ::core::convert::Into::into(layer_mask),
+                    ::core::convert::Into::into(results),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-physicsscene2d")]
+impl PhysicsScene2D {
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe { __PhysicsScene2D_unity2_raw::to_string(self, ::core::option::Option::None) }
+    }
+    #[doc = "`GetHashCode()` overload"]
+    pub fn get_hash_code(self) -> i32 {
+        unsafe { __PhysicsScene2D_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
+    }
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    pub fn equals(self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::equals(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::unity_engine::physicsscene2d::PhysicsScene2D)` overload"]
+    pub fn equals_2(
+        self,
+        other: impl ::core::convert::Into<crate::unity_engine::physicsscene2d::PhysicsScene2D>,
+    ) -> bool {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::equals_2(
+                self,
+                ::core::convert::Into::into(other),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, i32)` overload"]
+    pub fn raycast(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        layer_mask: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast(
+                self,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]
+    pub fn raycast_2(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_2(
+                self,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_3(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_3(
+                self,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, crate::unity_engine::contactfilter2d::ContactFilter2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::raycasthit2d::RaycastHit2D>)` overload"]
+    pub fn raycast_4(
+        self,
+        origin: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        direction: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+        contact_filter: impl ::core::convert::Into<
+            crate::unity_engine::contactfilter2d::ContactFilter2D,
+        >,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::raycasthit2d::RaycastHit2D,
+            >,
+        >,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::raycast_4(
+                self,
+                ::core::convert::Into::into(origin),
+                ::core::convert::Into::into(direction),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(contact_filter),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRayIntersection(crate::unity_engine::ray::Ray, f32, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, i32)` overload"]
+    pub fn get_ray_intersection(
+        self,
+        ray: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
+        distance: impl ::core::convert::Into<f32>,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+        layer_mask: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __PhysicsScene2D_unity2_raw::get_ray_intersection(
+                self,
+                ::core::convert::Into::into(ray),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(results),
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-physicsscene2d")]
+pub mod prelude {
+    pub use super::PhysicsScene2D;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

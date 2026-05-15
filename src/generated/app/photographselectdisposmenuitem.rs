@@ -23,20 +23,209 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-photographselectdisposmenuitem")]
-#[::unity2::methods]
-impl PhotographSelectDisposMenuItem {
-    #[doc = "`get_CharacterID()` overload"]
-    #[method(name = "get_CharacterID", args = 0)]
-    pub fn get_character_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_IsMascotArea()` overload"]
-    #[method(name = "get_IsMascotArea", args = 0)]
-    pub fn get_is_mascot_area(self) -> bool;
-
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, character_id: ::unity2::Il2CppString, is_mascot_area: bool) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographSelectDisposMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_character_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "get_CharacterID",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "get_CharacterID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_character_id(
+        this: PhotographSelectDisposMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_character_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_mascot_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "get_IsMascotArea",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "get_IsMascotArea",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_mascot_area(
+        this: PhotographSelectDisposMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(PhotographSelectDisposMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_mascot_area::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographSelectDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographSelectDisposMenuItem,
+        character_id: ::unity2::Il2CppString,
+        is_mascot_area: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenuItem,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, character_id, is_mascot_area, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-photographselectdisposmenuitem")]
+pub trait IPhotographSelectDisposMenuItemMethods: IPhotographSelectDisposMenuItem {
+    #[doc = "`get_CharacterID()` overload"]
+    fn get_character_id(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <PhotographSelectDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographSelectDisposMenuItem_unity2_raw::get_character_id(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsMascotArea()` overload"]
+    fn get_is_mascot_area(self) -> bool {
+        unsafe {
+            let __receiver =
+                <PhotographSelectDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographSelectDisposMenuItem_unity2_raw::get_is_mascot_area(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
+    fn ctor(
+        self,
+        character_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_mascot_area: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographSelectDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographSelectDisposMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(character_id),
+                ::core::convert::Into::into(is_mascot_area),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenuitem")]
+impl<__T: IPhotographSelectDisposMenuItem> IPhotographSelectDisposMenuItemMethods for __T {}
 
 #[cfg(feature = "app-photographselectdisposmenuitem")]
 impl PhotographSelectDisposMenuItem {
@@ -52,4 +241,17 @@ impl PhotographSelectDisposMenuItem {
         <Self as IPhotographSelectDisposMenuItemMethods>::ctor(this, character_id, is_mascot_area);
         this
     }
+}
+
+#[cfg(feature = "app-photographselectdisposmenuitem")]
+pub mod prelude {
+    pub use super::IPhotographSelectDisposMenuItem;
+    pub use super::IPhotographSelectDisposMenuItemMethods;
+    pub use super::PhotographSelectDisposMenuItem;
+    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

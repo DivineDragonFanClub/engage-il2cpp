@@ -16,3 +16,15 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-assemblybuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-assemblybuilder")]
+pub mod prelude {
+    pub use super::AssemblyBuilder;
+    pub use super::IAssemblyBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::assembly::IAssembly;
+    #[cfg(feature = "system-reflection-assembly")]
+    pub use crate::system::reflection::assembly::IAssemblyMethods;
+}

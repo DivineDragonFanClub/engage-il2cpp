@@ -49,3 +49,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-contactpoint2d-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-contactpoint2d")]
+pub mod prelude {
+    pub use super::ContactPoint2D;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

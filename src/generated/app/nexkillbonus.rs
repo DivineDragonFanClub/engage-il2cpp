@@ -11,114 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexKillBonus.ServerSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexKillBonus_ServerSequence {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
-        #[rename(name = "m_Cid")]
-        pub m_cid: ::unity2::Il2CppString,
-        #[rename(name = "m_KillCountImage")]
-        pub m_kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        #[rename(name = "m_KilledCountImage")]
-        pub m_killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexKillBonus_ServerSequence_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexKillBonus_ServerSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexKillBonus_ServerSequence_Mode {
-        pub fn download() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn upload() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexKillBonus_Kinds {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexKillBonus_Kinds {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexKillBonus.Kinds";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexKillBonus_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexKillBonus_Kinds {
-        pub fn kill() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn killed() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn max() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -191,6 +83,54 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexKillBonus_Kinds {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexKillBonus_Kinds {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexKillBonus.Kinds";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexKillBonus_Kinds {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexKillBonus_Kinds {
+        pub fn kill() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn killed() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn max() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))]
     #[::unity2::class(namespace = "App", name = "NexKillBonus")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)]
@@ -223,106 +163,2111 @@ mod __types {
         #[rename(name = "m_SerializeStreamBuffer")]
         pub m_serialize_stream_buffer: ::unity2::Array<u8>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexKillBonus.ServerSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexKillBonus_ServerSequence {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+        #[rename(name = "m_Cid")]
+        pub m_cid: ::unity2::Il2CppString,
+        #[rename(name = "m_KillCountImage")]
+        pub m_kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        #[rename(name = "m_KilledCountImage")]
+        pub m_killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexKillBonus_ServerSequence_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexKillBonus_ServerSequence_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexKillBonus_ServerSequence_Mode {
+        pub fn download() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn upload() -> Self {
+            Self { value: 1 }
+        }
+    }
 }
 
 #[cfg(feature = "app-nexkillbonus-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-nexkillbonus")]
-#[::unity2::methods]
-impl NexKillBonus_ServerSequence {
-    #[doc = "`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexKillBonus_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: NexKillBonus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "Download",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "Download",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download(
+        this: NexKillBonus,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_download::get_offset() as isize),
+        );
+        inner(this, super_, cid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "Upload",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "Upload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload(
+        this: NexKillBonus,
+        super_: crate::app::procinst::ProcInst,
         cid: ::unity2::Il2CppString,
         kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
         killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> ();
-
-    #[doc = "`Login()` overload"]
-    #[method(name = "Login", args = 0)]
-    pub fn login(self) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`SearchData()` overload"]
-    #[method(name = "SearchData", args = 0)]
-    pub fn search_data(self) -> ();
-
-    #[doc = "`SearchSelfData()` overload"]
-    #[method(name = "SearchSelfData", args = 0)]
-    pub fn search_self_data(self) -> ();
-
-    #[doc = "`DeleteData()` overload"]
-    #[method(name = "DeleteData", args = 0)]
-    pub fn delete_data(self) -> ();
-
-    #[doc = "`GetData()` overload"]
-    #[method(name = "GetData", args = 0)]
-    pub fn get_data(self) -> ();
-
-    #[doc = "`PostData()` overload"]
-    #[method(name = "PostData", args = 0)]
-    pub fn post_data(self) -> ();
-
-    #[doc = "`UpdateData()` overload"]
-    #[method(name = "UpdateData", args = 0)]
-    pub fn update_data(self) -> ();
-
-    #[doc = "`Succeeded()` overload"]
-    #[method(name = "Succeeded", args = 0)]
-    pub fn succeeded(self) -> ();
-
-    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
-    #[method(name = "SetError", args = 1)]
-    pub fn set_error(self, error: crate::app::neterror::NetError_App) -> ();
-
-    #[doc = "`Error()` overload"]
-    #[method(name = "Error", args = 0)]
-    pub fn error(self) -> ();
-
-    #[doc = "`OpenWaitMessage()` overload"]
-    #[method(name = "OpenWaitMessage", args = 0)]
-    pub fn open_wait_message(self) -> ();
-
-    #[doc = "`CloseWaitMessage()` overload"]
-    #[method(name = "CloseWaitMessage", args = 0)]
-    pub fn close_wait_message(self) -> ();
-
-    #[doc = "`GetDataType()` overload"]
-    #[method(name = "GetDataType", args = 0)]
-    pub fn get_data_type(self) -> u16;
-
-    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBindDownload", args = 2)]
-    pub fn create_bind_download(
-        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            cid,
+            kill_count_image,
+            killed_count_image,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "ClearSucceeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "ClearSucceeded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_succeeded(
+        this: NexKillBonus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_succeeded::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "get_IsSucceeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "get_IsSucceeded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_succeeded(
+        this: NexKillBonus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_succeeded::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data(
+        this: NexKillBonus,
         cid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "CreateBindUpload", args = 4)]
-    pub fn create_bind_upload(
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
+        data: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            ::unity2::Il2CppString,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data::get_offset() as isize),
+        );
+        inner(this, cid, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <*mut u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "CreateData",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "CreateData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_data(
+        this: NexKillBonus,
         kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
         killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> ();
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "CreateBindImpl", args = 5)]
-    pub fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
-        cid: ::unity2::Il2CppString,
-        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> ();
+        data: *mut ::unity2::Array<u8>,
+        data_size: *mut u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            *mut ::unity2::Array<u8>,
+            *mut u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_data::get_offset() as isize),
+        );
+        inner(
+            this,
+            kill_count_image,
+            killed_count_image,
+            data,
+            data_size,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_counts {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::nexkillbonus::NexKillBonus_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "AddCounts",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "AddCounts",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_counts(
+        this: NexKillBonus,
+        kind: crate::app::nexkillbonus::NexKillBonus_Kinds,
+        count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            crate::app::nexkillbonus::NexKillBonus_Kinds,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_counts::get_offset() as isize),
+        );
+        inner(this, kind, count_image, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "get_Version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version(
+        this: NexKillBonus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_version::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut ::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <*mut u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "Serialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "Serialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn serialize(
+        this: NexKillBonus,
+        data: *mut ::unity2::Array<u8>,
+        data_size: *mut u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            *mut ::unity2::Array<u8>,
+            *mut u32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_serialize::get_offset() as isize),
+        );
+        inner(this, data, data_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "Deserialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "Deserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn deserialize(
+        this: NexKillBonus,
+        data: ::unity2::Array<u8>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus,
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_deserialize::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                "ClearData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    "ClearData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_data(
+        this: NexKillBonus,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: NexKillBonus, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexKillBonus, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-nexkillbonus")]
+pub trait INexKillBonusMethods: INexKillBonus {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    fn download(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::download(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    fn upload(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        kill_count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+        killed_count_image: impl ::core::convert::Into<
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::upload(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(kill_count_image),
+                ::core::convert::Into::into(killed_count_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearSucceeded()` overload"]
+    fn clear_succeeded(self) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::clear_succeeded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsSucceeded()` overload"]
+    fn get_is_succeeded(self) -> bool {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::get_is_succeeded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
+    fn set_data(
+        self,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, *mut::unity2::Array<u8>, *mutu32)` overload"]
+    fn create_data(
+        self,
+        kill_count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+        killed_count_image: impl ::core::convert::Into<
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+        >,
+    ) -> (::unity2::Array<u8>, u32) {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<u8>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u32>::uninit();
+            __NexKillBonus_unity2_raw::create_data(
+                __receiver,
+                ::core::convert::Into::into(kill_count_image),
+                ::core::convert::Into::into(killed_count_image),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    fn add_counts(
+        self,
+        kind: impl ::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_Kinds>,
+        count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::add_counts(
+                __receiver,
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(count_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Version()` overload"]
+    fn get_version(self) -> i32 {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Serialize(*mut::unity2::Array<u8>, *mutu32)` overload"]
+    fn serialize(self) -> (::unity2::Array<u8>, u32) {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<u8>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u32>::uninit();
+            __NexKillBonus_unity2_raw::serialize(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`Deserialize(::unity2::Array<u8>)` overload"]
+    fn deserialize(self, data: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::deserialize(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearData()` overload"]
+    fn clear_data(self) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::clear_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <NexKillBonus as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexKillBonus_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+impl<__T: INexKillBonus> INexKillBonusMethods for __T {}
+
+#[cfg(feature = "app-nexkillbonus")]
+impl NexKillBonus {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexKillBonus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexKillBonusMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexKillBonus_ServerSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapkillbonus :: MapKillBonus_CountImage as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapkillbonus :: MapKillBonus_CountImage as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexKillBonus_ServerSequence,
+        mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+        cid: ::unity2::Il2CppString,
+        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus_ServerSequence,
+            crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+            ::unity2::Il2CppString,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            mode,
+            cid,
+            kill_count_image,
+            killed_count_image,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_login {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Login",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Login",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn login(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_login::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SearchData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SearchData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_search_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search_self_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SearchSelfData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SearchSelfData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search_self_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_search_self_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "DeleteData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "DeleteData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "GetData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "PostData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "PostData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_post_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "UpdateData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "UpdateData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_data(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Succeeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Succeeded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn succeeded(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_succeeded::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::neterror::NetError_App as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "SetError",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_error(
+        this: NexKillBonus_ServerSequence,
+        error: crate::app::neterror::NetError_App,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexKillBonus_ServerSequence,
+            crate::app::neterror::NetError_App,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_error::get_offset() as isize),
+        );
+        inner(this, error, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "Error",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "Error",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn error(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_error::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_wait_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "OpenWaitMessage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "OpenWaitMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_wait_message(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open_wait_message::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_wait_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CloseWaitMessage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CloseWaitMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_wait_message(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_wait_message::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "GetDataType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetDataType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_type(
+        this: NexKillBonus_ServerSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(NexKillBonus_ServerSequence, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindDownload",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_download(
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_download::get_offset() as isize),
+        );
+        inner(super_, cid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+                <crate::app::mapkillbonus::MapKillBonus_CountImage as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindUpload",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindUpload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_upload(
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_upload::get_offset() as isize),
+        );
+        inner(
+            super_,
+            cid,
+            kill_count_image,
+            killed_count_image,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapkillbonus :: MapKillBonus_CountImage as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapkillbonus :: MapKillBonus_CountImage as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindImpl",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexKillBonus_ServerSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+        cid: ::unity2::Il2CppString,
+        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+            ::unity2::Il2CppString,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_impl::get_offset() as isize),
+        );
+        inner(
+            super_,
+            mode,
+            cid,
+            kill_count_image,
+            killed_count_image,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+impl NexKillBonus_ServerSequence {
+    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind_download(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __NexKillBonus_ServerSequence_unity2_raw::create_bind_download(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    pub fn create_bind_upload(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        kill_count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+        killed_count_image: impl ::core::convert::Into<
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+        >,
+    ) -> () {
+        unsafe {
+            __NexKillBonus_ServerSequence_unity2_raw::create_bind_upload(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(kill_count_image),
+                ::core::convert::Into::into(killed_count_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    pub fn create_bind_impl(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mode: impl ::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        kill_count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+        killed_count_image: impl ::core::convert::Into<
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+        >,
+    ) -> () {
+        unsafe {
+            __NexKillBonus_ServerSequence_unity2_raw::create_bind_impl(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(kill_count_image),
+                ::core::convert::Into::into(killed_count_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+pub trait INexKillBonus_ServerSequenceMethods: INexKillBonus_ServerSequence {
+    #[doc = "`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    fn ctor(
+        self,
+        mode: impl ::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        kill_count_image: impl ::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>,
+        killed_count_image: impl ::core::convert::Into<
+            crate::app::mapkillbonus::MapKillBonus_CountImage,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(kill_count_image),
+                ::core::convert::Into::into(killed_count_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::login(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SearchData()` overload"]
+    fn search_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::search_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SearchSelfData()` overload"]
+    fn search_self_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::search_self_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteData()` overload"]
+    fn delete_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::delete_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetData()` overload"]
+    fn get_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::get_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PostData()` overload"]
+    fn post_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::post_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateData()` overload"]
+    fn update_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::update_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Succeeded()` overload"]
+    fn succeeded(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::succeeded(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
+    fn set_error(
+        self,
+        error: impl ::core::convert::Into<crate::app::neterror::NetError_App>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::set_error(
+                __receiver,
+                ::core::convert::Into::into(error),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Error()` overload"]
+    fn error(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::error(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OpenWaitMessage()` overload"]
+    fn open_wait_message(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::open_wait_message(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseWaitMessage()` overload"]
+    fn close_wait_message(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::close_wait_message(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDataType()` overload"]
+    fn get_data_type(self) -> u16 {
+        unsafe {
+            let __receiver =
+                <NexKillBonus_ServerSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexKillBonus_ServerSequence_unity2_raw::get_data_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+impl<__T: INexKillBonus_ServerSequence> INexKillBonus_ServerSequenceMethods for __T {}
 
 #[cfg(feature = "app-nexkillbonus")]
 impl NexKillBonus_ServerSequence {
@@ -352,93 +2297,29 @@ impl NexKillBonus_ServerSequence {
 }
 
 #[cfg(feature = "app-nexkillbonus")]
-#[::unity2::methods]
-impl NexKillBonus {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Download", args = 2)]
-    pub fn download(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "Upload", args = 4)]
-    pub fn upload(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> bool;
-
-    #[doc = "`ClearSucceeded()` overload"]
-    #[method(name = "ClearSucceeded", args = 0)]
-    pub fn clear_succeeded(self) -> ();
-
-    #[doc = "`get_IsSucceeded()` overload"]
-    #[method(name = "get_IsSucceeded", args = 0)]
-    pub fn get_is_succeeded(self) -> bool;
-
-    #[doc = "`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
-    #[method(name = "SetData", args = 2)]
-    pub fn set_data(self, cid: ::unity2::Il2CppString, data: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, ::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "CreateData", args = 4)]
-    pub fn create_data(
-        self,
-        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        data: ::unity2::Array<u8>,
-        data_size: u32,
-    ) -> ();
-
-    #[doc = "`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "AddCounts", args = 2)]
-    pub fn add_counts(
-        self,
-        kind: crate::app::nexkillbonus::NexKillBonus_Kinds,
-        count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`Serialize(::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "Serialize", args = 2)]
-    pub fn serialize(self, data: ::unity2::Array<u8>, data_size: u32) -> ();
-
-    #[doc = "`Deserialize(::unity2::Array<u8>)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, data: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ClearData()` overload"]
-    #[method(name = "ClearData", args = 0)]
-    pub fn clear_data(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexKillBonus),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexKillBonusMethods>::ctor(this);
-        this
-    }
+pub mod prelude {
+    pub use super::INexKillBonus;
+    pub use super::INexKillBonusMethods;
+    pub use super::INexKillBonus_ServerSequence;
+    pub use super::INexKillBonus_ServerSequenceMethods;
+    pub use super::NexKillBonus;
+    pub use super::NexKillBonus_Kinds;
+    pub use super::NexKillBonus_ServerSequence;
+    pub use super::NexKillBonus_ServerSequence_Label;
+    pub use super::NexKillBonus_ServerSequence_Mode;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

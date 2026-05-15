@@ -47,17 +47,195 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_linkinfo")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_LinkInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_link_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_LinkInfo as ::unity2::ClassIdentity>::class(),
+                "SetLinkID",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_LinkInfo as ::unity2::ClassIdentity>::NAME,
+                    "SetLinkID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_link_id(
+        this: TMP_LinkInfo,
+        text: ::unity2::Array<u16>,
+        start_index: i32,
+        length: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_LinkInfo,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_link_id::get_offset() as isize),
+        );
+        inner(this, text, start_index, length, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_link_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_LinkInfo as ::unity2::ClassIdentity>::class(),
+                "GetLinkText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_LinkInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetLinkText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_link_text(
+        this: TMP_LinkInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_LinkInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_link_text::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_link_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_LinkInfo as ::unity2::ClassIdentity>::class(),
+                "GetLinkID",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_LinkInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetLinkID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_link_id(
+        this: TMP_LinkInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_LinkInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_link_id::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_linkinfo")]
 impl TMP_LinkInfo {
     #[doc = "`SetLinkID(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "SetLinkID", args = 3)]
-    pub fn set_link_id(self, text: ::unity2::Array<u16>, start_index: i32, length: i32) -> ();
-
+    pub fn set_link_id(
+        self,
+        text: impl ::core::convert::Into<::unity2::Array<u16>>,
+        start_index: impl ::core::convert::Into<i32>,
+        length: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TMP_LinkInfo_unity2_raw::set_link_id(
+                self,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(start_index),
+                ::core::convert::Into::into(length),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetLinkText()` overload"]
-    #[method(name = "GetLinkText", args = 0)]
-    pub fn get_link_text(self) -> ::unity2::Il2CppString;
-
+    pub fn get_link_text(self) -> ::unity2::Il2CppString {
+        unsafe { __TMP_LinkInfo_unity2_raw::get_link_text(self, ::core::option::Option::None) }
+    }
     #[doc = "`GetLinkID()` overload"]
-    #[method(name = "GetLinkID", args = 0)]
-    pub fn get_link_id(self) -> ::unity2::Il2CppString;
+    pub fn get_link_id(self) -> ::unity2::Il2CppString {
+        unsafe { __TMP_LinkInfo_unity2_raw::get_link_id(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_linkinfo")]
+pub mod prelude {
+    pub use super::TMP_LinkInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

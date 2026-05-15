@@ -20,26 +20,189 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
-#[::unity2::methods]
-impl UnityWebRequestAssetBundle {
-    #[doc = "`GetAssetBundle(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetAssetBundle", args = 1)]
-    pub fn get_asset_bundle(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnityWebRequestAssetBundle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_bundle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::class(),
+                "GetAssetBundle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetBundle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_bundle(
         uri: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
-
-    #[doc = "`GetAssetBundle(::unity2::Il2CppString, u32)` overload"]
-    #[method(name = "GetAssetBundle", args = 2)]
-    pub fn get_asset_bundle_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_asset_bundle :: get_offset () as isize) ,) ;
+        inner(uri, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_bundle_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::class(),
+                "GetAssetBundle",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetBundle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_bundle_2(
         uri: ::unity2::Il2CppString,
         crc: u32,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
-
-    #[doc = "`GetAssetBundle(::unity2::Il2CppString, crate::unity_engine::cachedassetbundle::CachedAssetBundle, u32)` overload"]
-    #[method(name = "GetAssetBundle", args = 3)]
-    pub fn get_asset_bundle_3(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_asset_bundle_2 :: get_offset () as isize) ,) ;
+        inner(uri, crc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_bundle_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cachedassetbundle :: CachedAssetBundle as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::class(),
+                "GetAssetBundle",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestAssetBundle as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetBundle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_asset_bundle_3(
         uri: ::unity2::Il2CppString,
         cached_asset_bundle: crate::unity_engine::cachedassetbundle::CachedAssetBundle,
         crc: u32,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: cachedassetbundle :: CachedAssetBundle , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_asset_bundle_3 :: get_offset () as isize) ,) ;
+        inner(uri, cached_asset_bundle, crc, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
+impl UnityWebRequestAssetBundle {
+    #[doc = "`GetAssetBundle(::unity2::Il2CppString)` overload"]
+    pub fn get_asset_bundle(
+        uri: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        unsafe {
+            __UnityWebRequestAssetBundle_unity2_raw::get_asset_bundle(
+                ::core::convert::Into::into(uri),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetBundle(::unity2::Il2CppString, u32)` overload"]
+    pub fn get_asset_bundle_2(
+        uri: impl ::core::convert::Into<::unity2::Il2CppString>,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        unsafe {
+            __UnityWebRequestAssetBundle_unity2_raw::get_asset_bundle_2(
+                ::core::convert::Into::into(uri),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAssetBundle(::unity2::Il2CppString, crate::unity_engine::cachedassetbundle::CachedAssetBundle, u32)` overload"]
+    pub fn get_asset_bundle_3(
+        uri: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cached_asset_bundle: impl ::core::convert::Into<
+            crate::unity_engine::cachedassetbundle::CachedAssetBundle,
+        >,
+        crc: impl ::core::convert::Into<u32>,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest {
+        unsafe {
+            __UnityWebRequestAssetBundle_unity2_raw::get_asset_bundle_3(
+                ::core::convert::Into::into(uri),
+                ::core::convert::Into::into(cached_asset_bundle),
+                ::core::convert::Into::into(crc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
+pub mod prelude {
+    pub use super::IUnityWebRequestAssetBundle;
+    pub use super::UnityWebRequestAssetBundle;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

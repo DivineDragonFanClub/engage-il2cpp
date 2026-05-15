@@ -24,31 +24,280 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-manifestresourceinfo")]
-#[::unity2::methods]
-impl ManifestResourceInfo {
-    #[doc = "`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ManifestResourceInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: assembly :: Assembly as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: resourcelocation :: ResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ManifestResourceInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ManifestResourceInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ManifestResourceInfo,
         containing_assembly: crate::system::reflection::assembly::Assembly,
         containing_file_name: ::unity2::Il2CppString,
         resource_location: crate::system::reflection::resourcelocation::ResourceLocation,
-    ) -> ();
-
-    #[doc = "`get_ReferencedAssembly()` overload"]
-    #[method(name = "get_ReferencedAssembly", args = 0)]
-    pub fn get_referenced_assembly(self) -> crate::system::reflection::assembly::Assembly;
-
-    #[doc = "`get_FileName()` overload"]
-    #[method(name = "get_FileName", args = 0)]
-    pub fn get_file_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_ResourceLocation()` overload"]
-    #[method(name = "get_ResourceLocation", args = 0)]
-    pub fn get_resource_location(
-        self,
-    ) -> crate::system::reflection::resourcelocation::ResourceLocation;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ManifestResourceInfo,
+            crate::system::reflection::assembly::Assembly,
+            ::unity2::Il2CppString,
+            crate::system::reflection::resourcelocation::ResourceLocation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            containing_assembly,
+            containing_file_name,
+            resource_location,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_referenced_assembly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ManifestResourceInfo as ::unity2::ClassIdentity>::class(),
+                "get_ReferencedAssembly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ManifestResourceInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_ReferencedAssembly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_referenced_assembly(
+        this: ManifestResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::assembly::Assembly {
+        let inner: extern "C" fn(
+            ManifestResourceInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::assembly::Assembly = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_referenced_assembly::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_file_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ManifestResourceInfo as ::unity2::ClassIdentity>::class(),
+                "get_FileName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ManifestResourceInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_FileName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_file_name(
+        this: ManifestResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ManifestResourceInfo,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_file_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_resource_location {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ManifestResourceInfo as ::unity2::ClassIdentity>::class(),
+                "get_ResourceLocation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ManifestResourceInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_ResourceLocation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_resource_location(
+        this: ManifestResourceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::reflection::resourcelocation::ResourceLocation {
+        let inner: extern "C" fn(
+            ManifestResourceInfo,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::reflection::resourcelocation::ResourceLocation =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_resource_location::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-reflection-manifestresourceinfo")]
+pub trait IManifestResourceInfoMethods: IManifestResourceInfo {
+    #[doc = "`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` overload"]
+    fn ctor(
+        self,
+        containing_assembly: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
+        containing_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        resource_location: impl ::core::convert::Into<
+            crate::system::reflection::resourcelocation::ResourceLocation,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ManifestResourceInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ManifestResourceInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(containing_assembly),
+                ::core::convert::Into::into(containing_file_name),
+                ::core::convert::Into::into(resource_location),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ReferencedAssembly()` overload"]
+    fn get_referenced_assembly(self) -> crate::system::reflection::assembly::Assembly {
+        unsafe {
+            let __receiver = <ManifestResourceInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ManifestResourceInfo_unity2_raw::get_referenced_assembly(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_FileName()` overload"]
+    fn get_file_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <ManifestResourceInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ManifestResourceInfo_unity2_raw::get_file_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ResourceLocation()` overload"]
+    fn get_resource_location(
+        self,
+    ) -> crate::system::reflection::resourcelocation::ResourceLocation {
+        unsafe {
+            let __receiver = <ManifestResourceInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ManifestResourceInfo_unity2_raw::get_resource_location(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-manifestresourceinfo")]
+impl<__T: IManifestResourceInfo> IManifestResourceInfoMethods for __T {}
 
 #[cfg(feature = "system-reflection-manifestresourceinfo")]
 impl ManifestResourceInfo {
@@ -73,4 +322,14 @@ impl ManifestResourceInfo {
         );
         this
     }
+}
+
+#[cfg(feature = "system-reflection-manifestresourceinfo")]
+pub mod prelude {
+    pub use super::IManifestResourceInfo;
+    pub use super::IManifestResourceInfoMethods;
+    pub use super::ManifestResourceInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

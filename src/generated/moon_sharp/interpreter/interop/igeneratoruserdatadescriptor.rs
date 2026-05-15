@@ -18,12 +18,81 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
-#[::unity2::methods]
-impl IGeneratorUserDataDescriptor {
-    #[doc = "`Generate(::unity2::SystemType)` overload"]
-    #[method(name = "Generate", args = 1)]
-    pub fn generate(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IGeneratorUserDataDescriptor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_generate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IGeneratorUserDataDescriptor as ::unity2::ClassIdentity>::class(),
+                "Generate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IGeneratorUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                    "Generate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn generate(
+        this: IGeneratorUserDataDescriptor,
         r#type: ::unity2::SystemType,
-    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
+        let inner : extern "C" fn (IGeneratorUserDataDescriptor , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_generate :: get_offset () as isize) ,) ;
+        inner(this, r#type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
+pub trait IIGeneratorUserDataDescriptorMethods: IIGeneratorUserDataDescriptor {
+    #[doc = "`Generate(::unity2::SystemType)` overload"]
+    fn generate(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
+        unsafe {
+            let __receiver =
+                <IGeneratorUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __IGeneratorUserDataDescriptor_unity2_raw::generate(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
+impl<__T: IIGeneratorUserDataDescriptor> IIGeneratorUserDataDescriptorMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
+pub mod prelude {
+    pub use super::IGeneratorUserDataDescriptor;
+    pub use super::IIGeneratorUserDataDescriptor;
+    pub use super::IIGeneratorUserDataDescriptorMethods;
 }

@@ -43,31 +43,338 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-graphicsfence")]
-#[::unity2::methods(value)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GraphicsFence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_translate_synchronization_stage_to_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: synchronisationstage :: SynchronisationStage as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "TranslateSynchronizationStageToFlags",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "TranslateSynchronizationStageToFlags",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn translate_synchronization_stage_to_flags(
+        s: crate::unity_engine::rendering::synchronisationstage::SynchronisationStage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags {
+        let inner : extern "C" fn (crate :: unity_engine :: rendering :: synchronisationstage :: SynchronisationStage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_translate_synchronization_stage_to_flags :: get_offset () as isize) ,) ;
+        inner(s, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_post_allocation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "InitPostAllocation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "InitPostAllocation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init_post_allocation(
+        this: GraphicsFence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GraphicsFence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init_post_allocation::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_fence_pending {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "IsFencePending",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "IsFencePending",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_fence_pending(
+        this: GraphicsFence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GraphicsFence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_fence_pending::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "Validate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "Validate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate(
+        this: GraphicsFence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GraphicsFence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_validate::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_platform_not_supported_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "GetPlatformNotSupportedVersion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "GetPlatformNotSupportedVersion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_platform_not_supported_version(
+        this: GraphicsFence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GraphicsFence, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_platform_not_supported_version::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version_number {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GraphicsFence as ::unity2::ClassIdentity>::class(),
+                "GetVersionNumber",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GraphicsFence as ::unity2::ClassIdentity>::NAME,
+                    "GetVersionNumber",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version_number(
+        fence_ptr: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_version_number::get_offset() as isize),
+            );
+        inner(fence_ptr, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-graphicsfence")]
 impl GraphicsFence {
     #[doc = "`TranslateSynchronizationStageToFlags(crate::unity_engine::rendering::synchronisationstage::SynchronisationStage)` overload"]
-    #[method(name = "TranslateSynchronizationStageToFlags", args = 1)]
     pub fn translate_synchronization_stage_to_flags(
-        s: crate::unity_engine::rendering::synchronisationstage::SynchronisationStage,
-    ) -> crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags;
-
-    #[doc = "`InitPostAllocation()` overload"]
-    #[method(name = "InitPostAllocation", args = 0)]
-    pub fn init_post_allocation(self) -> ();
-
-    #[doc = "`IsFencePending()` overload"]
-    #[method(name = "IsFencePending", args = 0)]
-    pub fn is_fence_pending(self) -> bool;
-
-    #[doc = "`Validate()` overload"]
-    #[method(name = "Validate", args = 0)]
-    pub fn validate(self) -> ();
-
-    #[doc = "`GetPlatformNotSupportedVersion()` overload"]
-    #[method(name = "GetPlatformNotSupportedVersion", args = 0)]
-    pub fn get_platform_not_supported_version(self) -> i32;
-
+        s: impl ::core::convert::Into<
+            crate::unity_engine::rendering::synchronisationstage::SynchronisationStage,
+        >,
+    ) -> crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags {
+        unsafe {
+            __GraphicsFence_unity2_raw::translate_synchronization_stage_to_flags(
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetVersionNumber(::unity2::IntPtr)` overload"]
-    #[method(name = "GetVersionNumber", args = 1)]
-    pub fn get_version_number(fence_ptr: ::unity2::IntPtr) -> i32;
+    pub fn get_version_number(fence_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
+        unsafe {
+            __GraphicsFence_unity2_raw::get_version_number(
+                ::core::convert::Into::into(fence_ptr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-graphicsfence")]
+impl GraphicsFence {
+    #[doc = "`InitPostAllocation()` overload"]
+    pub fn init_post_allocation(self) -> () {
+        unsafe {
+            __GraphicsFence_unity2_raw::init_post_allocation(self, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsFencePending()` overload"]
+    pub fn is_fence_pending(self) -> bool {
+        unsafe { __GraphicsFence_unity2_raw::is_fence_pending(self, ::core::option::Option::None) }
+    }
+    #[doc = "`Validate()` overload"]
+    pub fn validate(self) -> () {
+        unsafe { __GraphicsFence_unity2_raw::validate(self, ::core::option::Option::None) }
+    }
+    #[doc = "`GetPlatformNotSupportedVersion()` overload"]
+    pub fn get_platform_not_supported_version(self) -> i32 {
+        unsafe {
+            __GraphicsFence_unity2_raw::get_platform_not_supported_version(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-graphicsfence")]
+pub mod prelude {
+    pub use super::GraphicsFence;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

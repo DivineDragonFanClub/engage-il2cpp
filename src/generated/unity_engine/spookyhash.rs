@@ -48,42 +48,480 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-spookyhash")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SpookyHash_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attempt_detect_allow_unaligned_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                "AttemptDetectAllowUnalignedRead",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    "AttemptDetectAllowUnalignedRead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn attempt_detect_allow_unaligned_read(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_attempt_detect_allow_unaligned_read::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_partial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                "EndPartial",
+                12,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    "EndPartial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_partial(
+        h0: *mut u64,
+        h1: *mut u64,
+        h2: *mut u64,
+        h3: *mut u64,
+        h4: *mut u64,
+        h5: *mut u64,
+        h6: *mut u64,
+        h7: *mut u64,
+        h8: *mut u64,
+        h9: *mut u64,
+        h10: *mut u64,
+        h11: *mut u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_end_partial::get_offset() as isize),
+        );
+        inner(
+            h0,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            h7,
+            h8,
+            h9,
+            h10,
+            h11,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rot64 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                "Rot64",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    "Rot64",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rot64(x: *mut u64, k: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut u64, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rot64::get_offset() as isize),
+            );
+        inner(x, k, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_short_mix {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                "ShortMix",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    "ShortMix",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn short_mix(
+        h0: *mut u64,
+        h1: *mut u64,
+        h2: *mut u64,
+        h3: *mut u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_short_mix::get_offset() as isize),
+        );
+        inner(h0, h1, h2, h3, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_short_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+                <*mut u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                "ShortEnd",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    "ShortEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn short_end(
+        h0: *mut u64,
+        h1: *mut u64,
+        h2: *mut u64,
+        h3: *mut u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            *mut u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_short_end::get_offset() as isize),
+        );
+        inner(h0, h1, h2, h3, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SpookyHash as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SpookyHash as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-spookyhash")]
 impl SpookyHash {
     #[doc = "`AttemptDetectAllowUnalignedRead()` overload"]
-    #[method(name = "AttemptDetectAllowUnalignedRead", args = 0)]
-    pub fn attempt_detect_allow_unaligned_read() -> bool;
-
-    #[doc = "`EndPartial(u64, u64, u64, u64, u64, u64, u64, u64, u64, u64, u64, u64)` overload"]
-    #[method(name = "EndPartial", args = 12)]
-    pub fn end_partial(
-        h0: u64,
-        h1: u64,
-        h2: u64,
-        h3: u64,
-        h4: u64,
-        h5: u64,
-        h6: u64,
-        h7: u64,
-        h8: u64,
-        h9: u64,
-        h10: u64,
-        h11: u64,
-    ) -> ();
-
-    #[doc = "`Rot64(u64, i32)` overload"]
-    #[method(name = "Rot64", args = 2)]
-    pub fn rot64(x: u64, k: i32) -> ();
-
-    #[doc = "`ShortMix(u64, u64, u64, u64)` overload"]
-    #[method(name = "ShortMix", args = 4)]
-    pub fn short_mix(h0: u64, h1: u64, h2: u64, h3: u64) -> ();
-
-    #[doc = "`ShortEnd(u64, u64, u64, u64)` overload"]
-    #[method(name = "ShortEnd", args = 4)]
-    pub fn short_end(h0: u64, h1: u64, h2: u64, h3: u64) -> ();
-
+    pub fn attempt_detect_allow_unaligned_read() -> bool {
+        unsafe {
+            __SpookyHash_unity2_raw::attempt_detect_allow_unaligned_read(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndPartial(*mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64)` overload"]
+    pub fn end_partial() -> (u64, u64, u64, u64, u64, u64, u64, u64, u64, u64, u64, u64) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_6 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_7 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_8 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_9 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_10 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_11 = ::core::mem::MaybeUninit::<u64>::uninit();
+            __SpookyHash_unity2_raw::end_partial(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                __out_3.as_mut_ptr(),
+                __out_4.as_mut_ptr(),
+                __out_5.as_mut_ptr(),
+                __out_6.as_mut_ptr(),
+                __out_7.as_mut_ptr(),
+                __out_8.as_mut_ptr(),
+                __out_9.as_mut_ptr(),
+                __out_10.as_mut_ptr(),
+                __out_11.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+                __out_4.assume_init(),
+                __out_5.assume_init(),
+                __out_6.assume_init(),
+                __out_7.assume_init(),
+                __out_8.assume_init(),
+                __out_9.assume_init(),
+                __out_10.assume_init(),
+                __out_11.assume_init(),
+            )
+        }
+    }
+    #[doc = "`Rot64(*mutu64, i32)` overload"]
+    pub fn rot64(k: impl ::core::convert::Into<i32>) -> u64 {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            __SpookyHash_unity2_raw::rot64(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(k),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`ShortMix(*mutu64, *mutu64, *mutu64, *mutu64)` overload"]
+    pub fn short_mix() -> (u64, u64, u64, u64) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<u64>::uninit();
+            __SpookyHash_unity2_raw::short_mix(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                __out_3.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`ShortEnd(*mutu64, *mutu64, *mutu64, *mutu64)` overload"]
+    pub fn short_end() -> (u64, u64, u64, u64) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<u64>::uninit();
+            __SpookyHash_unity2_raw::short_end(
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                __out_3.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __SpookyHash_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-spookyhash")]
+pub mod prelude {
+    pub use super::ISpookyHash;
+    pub use super::SpookyHash;
+    pub use super::SpookyHash_U;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

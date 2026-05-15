@@ -22,6 +22,9 @@ mod __types {
                 >,
             >,
         >,
+        #[static_field]
+        #[rename(name = "_enabled")]
+        pub enabled_field: bool,
     }
 }
 
@@ -29,48 +32,382 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-cameracapturebridge")]
-#[::unity2::methods]
-impl CameraCaptureBridge {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`get_enabled()` overload"]
-    #[method(name = "get_enabled", args = 0)]
-    pub fn get_enabled() -> bool;
-
-    #[doc = "`set_enabled(bool)` overload"]
-    #[method(name = "set_enabled", args = 1)]
-    pub fn set_enabled(value: bool) -> ();
-
-    #[doc = "`GetCaptureActions(crate::unity_engine::camera::Camera)` overload"]
-    #[method(name = "GetCaptureActions", args = 1)]
-    pub fn get_capture_actions(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraCaptureBridge_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                "get_enabled",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    "get_enabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_enabled(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_enabled::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                "set_enabled",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    "set_enabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enabled(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_enabled::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_capture_actions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                "GetCaptureActions",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    "GetCaptureActions",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_capture_actions(
         camera: crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
         crate::system::action_2::Action_2<
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         >,
-    >;
+    > {
+        let inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_capture_actions :: get_offset () as isize) ,) ;
+        inner(camera, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_capture_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::system::action_2::Action_2<
+                    crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                    crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                "AddCaptureAction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    "AddCaptureAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_capture_action(
+        camera: crate::unity_engine::camera::Camera,
+        action: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::camera::Camera,
+            crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_capture_action::get_offset() as isize),
+        );
+        inner(camera, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_capture_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::system::action_2::Action_2<
+                    crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                    crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraCaptureBridge as ::unity2::ClassIdentity>::class(),
+                "RemoveCaptureAction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraCaptureBridge as ::unity2::ClassIdentity>::NAME,
+                    "RemoveCaptureAction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_capture_action(
+        camera: crate::unity_engine::camera::Camera,
+        action: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::camera::Camera,
+            crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove_capture_action::get_offset() as isize),
+        );
+        inner(camera, action, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-rendering-cameracapturebridge")]
+impl CameraCaptureBridge {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __CameraCaptureBridge_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`get_enabled()` overload"]
+    pub fn get_enabled() -> bool {
+        unsafe { __CameraCaptureBridge_unity2_raw::get_enabled(::core::option::Option::None) }
+    }
+    #[doc = "`set_enabled(bool)` overload"]
+    pub fn set_enabled(value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __CameraCaptureBridge_unity2_raw::set_enabled(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCaptureActions(crate::unity_engine::camera::Camera)` overload"]
+    pub fn get_capture_actions(
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
+        crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+    > {
+        unsafe {
+            __CameraCaptureBridge_unity2_raw::get_capture_actions(
+                ::core::convert::Into::into(camera),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`AddCaptureAction(crate::unity_engine::camera::Camera, crate::system::action_2::Action_2<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,crate::unity_engine::rendering::commandbuffer::CommandBuffer>)` overload"]
-    #[method(name = "AddCaptureAction", args = 2)]
     pub fn add_capture_action(
-        camera: crate::unity_engine::camera::Camera,
-        action: crate::system::action_2::Action_2<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        action: impl ::core::convert::Into<
+            crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            >,
         >,
-    ) -> ();
-
+    ) -> () {
+        unsafe {
+            __CameraCaptureBridge_unity2_raw::add_capture_action(
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`RemoveCaptureAction(crate::unity_engine::camera::Camera, crate::system::action_2::Action_2<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,crate::unity_engine::rendering::commandbuffer::CommandBuffer>)` overload"]
-    #[method(name = "RemoveCaptureAction", args = 2)]
     pub fn remove_capture_action(
-        camera: crate::unity_engine::camera::Camera,
-        action: crate::system::action_2::Action_2<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
+        action: impl ::core::convert::Into<
+            crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            >,
         >,
-    ) -> ();
+    ) -> () {
+        unsafe {
+            __CameraCaptureBridge_unity2_raw::remove_capture_action(
+                ::core::convert::Into::into(camera),
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-cameracapturebridge")]
+pub mod prelude {
+    pub use super::CameraCaptureBridge;
+    pub use super::ICameraCaptureBridge;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

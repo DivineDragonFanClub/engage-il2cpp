@@ -77,3 +77,17 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderinput-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-shaderinput")]
+pub mod prelude {
+    pub use super::IShaderInput;
+    pub use super::ShaderInput;
+    pub use super::ShaderInput_LightData;
+    pub use super::ShaderInput_ShadowData;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

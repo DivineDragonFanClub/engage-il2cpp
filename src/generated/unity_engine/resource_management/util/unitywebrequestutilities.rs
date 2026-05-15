@@ -20,19 +20,131 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
-#[::unity2::methods]
-impl UnityWebRequestUtilities {
-    #[doc = "`RequestHasErrors(crate::unity_engine::networking::unitywebrequest::UnityWebRequest, crate::unity_engine::resource_management::util::unitywebrequestresult::UnityWebRequestResult)` overload"]
-    #[method(name = "RequestHasErrors", args = 2)]
-    pub fn request_has_errors(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnityWebRequestUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_request_has_errors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestUtilities as ::unity2::ClassIdentity>::class(),
+                "RequestHasErrors",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestUtilities as ::unity2::ClassIdentity>::NAME,
+                    "RequestHasErrors",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn request_has_errors(
         web_req: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-        result : crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        result : * mut crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest , * mut crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_request_has_errors :: get_offset () as isize) ,) ;
+        inner(web_req, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnityWebRequestUtilities as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnityWebRequestUtilities as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnityWebRequestUtilities,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnityWebRequestUtilities, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
+impl UnityWebRequestUtilities {
+    #[doc = "`RequestHasErrors(crate::unity_engine::networking::unitywebrequest::UnityWebRequest, *mutcrate::unity_engine::resource_management::util::unitywebrequestresult::UnityWebRequestResult)` overload"]    pub fn request_has_errors (web_req : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest >) -> (bool , crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult){
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult > :: uninit () ;
+            let __ret = {
+                __UnityWebRequestUtilities_unity2_raw::request_has_errors(
+                    ::core::convert::Into::into(web_req),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
+pub trait IUnityWebRequestUtilitiesMethods: IUnityWebRequestUtilities {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnityWebRequestUtilities as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnityWebRequestUtilities_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
+impl<__T: IUnityWebRequestUtilities> IUnityWebRequestUtilitiesMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
 impl UnityWebRequestUtilities {
@@ -48,4 +160,14 @@ impl UnityWebRequestUtilities {
         <Self as IUnityWebRequestUtilitiesMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
+pub mod prelude {
+    pub use super::IUnityWebRequestUtilities;
+    pub use super::IUnityWebRequestUtilitiesMethods;
+    pub use super::UnityWebRequestUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

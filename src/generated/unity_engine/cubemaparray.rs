@@ -19,134 +19,1218 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-cubemaparray")]
-#[::unity2::methods]
-impl CubemapArray {
-    #[doc = "`get_isReadable()` overload"]
-    #[method(name = "get_isReadable", args = 0)]
-    pub fn get_is_readable(self) -> bool;
-
-    #[doc = "`Internal_CreateImpl(crate::unity_engine::cubemaparray::CubemapArray, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = "Internal_CreateImpl", args = 6)]
-    pub fn internal_create_impl(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CubemapArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_readable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "get_isReadable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "get_isReadable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_readable(
+        this: CubemapArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(CubemapArray, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_readable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: cubemaparray :: CubemapArray as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "Internal_CreateImpl",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "Internal_CreateImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create_impl(
         mono: crate::unity_engine::cubemaparray::CubemapArray,
         ext: i32,
         count: i32,
         mip_count: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> bool;
-
-    #[doc = "`Internal_Create(crate::unity_engine::cubemaparray::CubemapArray, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = "Internal_Create", args = 6)]
-    pub fn internal_create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::cubemaparray::CubemapArray,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create_impl::get_offset() as isize),
+        );
+        inner(
+            mono,
+            ext,
+            count,
+            mip_count,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: cubemaparray :: CubemapArray as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "Internal_Create",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "Internal_Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_create(
         mono: crate::unity_engine::cubemaparray::CubemapArray,
         ext: i32,
         count: i32,
         mip_count: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`ApplyImpl(bool, bool)` overload"]
-    #[method(name = "ApplyImpl", args = 2)]
-    pub fn apply_impl(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
-
-    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, crate::unity_engine::cubemapface::CubemapFace, i32, i32)` overload"]
-    #[method(name = "SetPixels", args = 4)]
-    pub fn set_pixels(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::cubemaparray::CubemapArray,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_create::get_offset() as isize),
+        );
+        inner(
+            mono,
+            ext,
+            count,
+            mip_count,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "ApplyImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_impl(
+        this: CubemapArray,
+        update_mipmaps: bool,
+        make_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CubemapArray, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_impl::get_offset() as isize),
+            );
+        inner(
+            this,
+            update_mipmaps,
+            make_no_longer_readable,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixels {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "SetPixels",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "SetPixels",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixels(
+        this: CubemapArray,
         colors: ::unity2::Array<crate::unity_engine::color::Color>,
         face: crate::unity_engine::cubemapface::CubemapFace,
         array_element: i32,
         miplevel: i32,
-    ) -> ();
-
-    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
-    #[method(name = "SetPixels", args = 3)]
-    pub fn set_pixels_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            crate::unity_engine::cubemapface::CubemapFace,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixels::get_offset() as isize),
+        );
+        inner(
+            this,
+            colors,
+            face,
+            array_element,
+            miplevel,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pixels_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "SetPixels",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "SetPixels",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pixels_2(
+        this: CubemapArray,
         colors: ::unity2::Array<crate::unity_engine::color::Color>,
         face: crate::unity_engine::cubemapface::CubemapFace,
         array_element: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            crate::unity_engine::cubemapface::CubemapFace,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_pixels_2::get_offset() as isize),
+        );
+        inner(this, colors, face, array_element, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: defaultformat :: DefaultFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, i32)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            format,
+            flags,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
         mip_count: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, i32, bool)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            format,
+            flags,
+            mip_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_count: i32,
         linear: bool,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, bool, bool)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_count,
+            linear,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_5(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_chain: bool,
         linear: bool,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_chain,
+            linear,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_6(
+        this: CubemapArray,
         width: i32,
         cubemap_count: i32,
         texture_format: crate::unity_engine::textureformat::TextureFormat,
         mip_chain: bool,
-    ) -> ();
-
-    #[doc = "`Apply(bool, bool)` overload"]
-    #[method(name = "Apply", args = 2)]
-    pub fn apply(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
-
-    #[doc = "`Apply()` overload"]
-    #[method(name = "Apply", args = 0)]
-    pub fn apply_2(self) -> ();
-
-    #[doc = "`ValidateIsNotCrunched(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
-    #[method(name = "ValidateIsNotCrunched", args = 1)]
-    pub fn validate_is_not_crunched(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CubemapArray,
+            i32,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_chain,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "Apply",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "Apply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply(
+        this: CubemapArray,
+        update_mipmaps: bool,
+        make_no_longer_readable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CubemapArray, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply::get_offset() as isize),
+            );
+        inner(
+            this,
+            update_mipmaps,
+            make_no_longer_readable,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "Apply",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "Apply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_2(
+        this: CubemapArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(CubemapArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_apply_2::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_validate_is_not_crunched {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CubemapArray as ::unity2::ClassIdentity>::class(),
+                "ValidateIsNotCrunched",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CubemapArray as ::unity2::ClassIdentity>::NAME,
+                    "ValidateIsNotCrunched",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn validate_is_not_crunched(
         flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_validate_is_not_crunched::get_offset() as isize),
+        );
+        inner(flags, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+impl CubemapArray {
+    #[doc = "`Internal_CreateImpl(crate::unity_engine::cubemaparray::CubemapArray, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    pub fn internal_create_impl(
+        mono: impl ::core::convert::Into<crate::unity_engine::cubemaparray::CubemapArray>,
+        ext: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        mip_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> bool {
+        unsafe {
+            __CubemapArray_unity2_raw::internal_create_impl(
+                ::core::convert::Into::into(mono),
+                ::core::convert::Into::into(ext),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Internal_Create(crate::unity_engine::cubemaparray::CubemapArray, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    pub fn internal_create(
+        mono: impl ::core::convert::Into<crate::unity_engine::cubemaparray::CubemapArray>,
+        ext: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+        mip_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            __CubemapArray_unity2_raw::internal_create(
+                ::core::convert::Into::into(mono),
+                ::core::convert::Into::into(ext),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ValidateIsNotCrunched(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    pub fn validate_is_not_crunched(
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            __CubemapArray_unity2_raw::validate_is_not_crunched(
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+pub trait ICubemapArrayMethods: ICubemapArray {
+    #[doc = "`get_isReadable()` overload"]
+    fn get_is_readable(self) -> bool {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ApplyImpl(bool, bool)` overload"]
+    fn apply_impl(
+        self,
+        update_mipmaps: impl ::core::convert::Into<bool>,
+        make_no_longer_readable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::apply_impl(
+                __receiver,
+                ::core::convert::Into::into(update_mipmaps),
+                ::core::convert::Into::into(make_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, crate::unity_engine::cubemapface::CubemapFace, i32, i32)` overload"]
+    fn set_pixels(
+        self,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+        face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
+        array_element: impl ::core::convert::Into<i32>,
+        miplevel: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::set_pixels(
+                __receiver,
+                ::core::convert::Into::into(colors),
+                ::core::convert::Into::into(face),
+                ::core::convert::Into::into(array_element),
+                ::core::convert::Into::into(miplevel),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPixels(::unity2::Array<crate::unity_engine::color::Color>, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
+    fn set_pixels_2(
+        self,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
+        face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
+        array_element: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::set_pixels_2(
+                __receiver,
+                ::core::convert::Into::into(colors),
+                ::core::convert::Into::into(face),
+                ::core::convert::Into::into(array_element),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    fn ctor(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]
+    fn ctor_2(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, i32)` overload"]
+    fn ctor_3(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        flags : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags >,
+        mip_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(flags),
+                ::core::convert::Into::into(mip_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, i32, bool)` overload"]
+    fn ctor_4(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_count: impl ::core::convert::Into<i32>,
+        linear: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_count),
+                ::core::convert::Into::into(linear),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, bool, bool)` overload"]
+    fn ctor_5(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_chain: impl ::core::convert::Into<bool>,
+        linear: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor_5(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_chain),
+                ::core::convert::Into::into(linear),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32, crate::unity_engine::textureformat::TextureFormat, bool)` overload"]
+    fn ctor_6(
+        self,
+        width: impl ::core::convert::Into<i32>,
+        cubemap_count: impl ::core::convert::Into<i32>,
+        texture_format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        mip_chain: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::ctor_6(
+                __receiver,
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(cubemap_count),
+                ::core::convert::Into::into(texture_format),
+                ::core::convert::Into::into(mip_chain),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Apply(bool, bool)` overload"]
+    fn apply(
+        self,
+        update_mipmaps: impl ::core::convert::Into<bool>,
+        make_no_longer_readable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::apply(
+                __receiver,
+                ::core::convert::Into::into(update_mipmaps),
+                ::core::convert::Into::into(make_no_longer_readable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Apply()` overload"]
+    fn apply_2(self) -> () {
+        unsafe {
+            let __receiver = <CubemapArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CubemapArray_unity2_raw::apply_2(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+impl<__T: ICubemapArray> ICubemapArrayMethods for __T {}
 
 #[cfg(feature = "unity_engine-cubemaparray")]
 impl CubemapArray {
@@ -287,4 +1371,20 @@ impl CubemapArray {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+pub mod prelude {
+    pub use super::CubemapArray;
+    pub use super::ICubemapArray;
+    pub use super::ICubemapArrayMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::texture::ITexture;
+    #[cfg(feature = "unity_engine-texture")]
+    pub use crate::unity_engine::texture::ITextureMethods;
 }

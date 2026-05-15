@@ -17,78 +17,812 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadjoy")]
-#[::unity2::methods]
-impl NpadJoy {
-    #[doc = "`GetAssignment(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "GetAssignment", args = 1)]
-    pub fn get_assignment(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NpadJoy_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "GetAssignment",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "GetAssignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_assignment(
         npad_id: crate::nn::hid::npadid::NpadId,
-    ) -> crate::nn::hid::npadjoyassignmentmode::NpadJoyAssignmentMode;
-
-    #[doc = "`SetAssignmentModeSingle(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "SetAssignmentModeSingle", args = 1)]
-    pub fn set_assignment_mode_single(npad_id: crate::nn::hid::npadid::NpadId) -> ();
-
-    #[doc = "`SetAssignmentModeSingle(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType)` overload"]
-    #[method(name = "SetAssignmentModeSingle", args = 2)]
-    pub fn set_assignment_mode_single_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadjoyassignmentmode::NpadJoyAssignmentMode {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::nn::hid::npadjoyassignmentmode::NpadJoyAssignmentMode =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_assignment::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_assignment_mode_single {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetAssignmentModeSingle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetAssignmentModeSingle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_assignment_mode_single(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_assignment_mode_single::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_assignment_mode_single_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetAssignmentModeSingle",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetAssignmentModeSingle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_assignment_mode_single_2(
         npad_id: crate::nn::hid::npadid::NpadId,
         device_type: crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType,
-    ) -> ();
-
-    #[doc = "`SetAssignmentModeSingle(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType)` overload"]
-    #[method(name = "SetAssignmentModeSingle", args = 3)]
-    pub fn set_assignment_mode_single_3(
-        p_out_value: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_assignment_mode_single_2::get_offset() as isize),
+        );
+        inner(npad_id, device_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_assignment_mode_single_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetAssignmentModeSingle",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetAssignmentModeSingle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_assignment_mode_single_3(
+        p_out_value: *mut crate::nn::hid::npadid::NpadId,
         npad_id: crate::nn::hid::npadid::NpadId,
         device_type: crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType,
-    ) -> ();
-
-    #[doc = "`SetAssignmentModeDual(crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "SetAssignmentModeDual", args = 1)]
-    pub fn set_assignment_mode_dual(npad_id: crate::nn::hid::npadid::NpadId) -> ();
-
-    #[doc = "`SwapAssignment(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadid::NpadId)` overload"]
-    #[method(name = "SwapAssignment", args = 2)]
-    pub fn swap_assignment(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            *mut crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_assignment_mode_single_3::get_offset() as isize),
+        );
+        inner(p_out_value, npad_id, device_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_assignment_mode_dual {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetAssignmentModeDual",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetAssignmentModeDual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_assignment_mode_dual(
+        npad_id: crate::nn::hid::npadid::NpadId,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_assignment_mode_dual::get_offset() as isize),
+            );
+        inner(npad_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_swap_assignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SwapAssignment",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SwapAssignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn swap_assignment(
         npad_id1: crate::nn::hid::npadid::NpadId,
         npad_id2: crate::nn::hid::npadid::NpadId,
-    ) -> ();
-
-    #[doc = "`SetHoldType(crate::nn::hid::npadjoyholdtype::NpadJoyHoldType)` overload"]
-    #[method(name = "SetHoldType", args = 1)]
-    pub fn set_hold_type(hold_type: crate::nn::hid::npadjoyholdtype::NpadJoyHoldType) -> ();
-
-    #[doc = "`GetHoldType()` overload"]
-    #[method(name = "GetHoldType", args = 0)]
-    pub fn get_hold_type() -> crate::nn::hid::npadjoyholdtype::NpadJoyHoldType;
-
-    #[doc = "`StartLrAssignmentMode()` overload"]
-    #[method(name = "StartLrAssignmentMode", args = 0)]
-    pub fn start_lr_assignment_mode() -> ();
-
-    #[doc = "`StopLrAssignmentMode()` overload"]
-    #[method(name = "StopLrAssignmentMode", args = 0)]
-    pub fn stop_lr_assignment_mode() -> ();
-
-    #[doc = "`SetHandheldActivationMode(crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode)` overload"]
-    #[method(name = "SetHandheldActivationMode", args = 1)]
-    pub fn set_handheld_activation_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadid::NpadId,
+            crate::nn::hid::npadid::NpadId,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_swap_assignment::get_offset() as isize),
+        );
+        inner(npad_id1, npad_id2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hold_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::npadjoyholdtype::NpadJoyHoldType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetHoldType",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetHoldType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hold_type(
+        hold_type: crate::nn::hid::npadjoyholdtype::NpadJoyHoldType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadjoyholdtype::NpadJoyHoldType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hold_type::get_offset() as isize),
+        );
+        inner(hold_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hold_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "GetHoldType",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "GetHoldType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hold_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadjoyholdtype::NpadJoyHoldType {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::nn::hid::npadjoyholdtype::NpadJoyHoldType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hold_type::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_lr_assignment_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "StartLrAssignmentMode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "StartLrAssignmentMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_lr_assignment_mode(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_start_lr_assignment_mode::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_lr_assignment_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "StopLrAssignmentMode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "StopLrAssignmentMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_lr_assignment_mode(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_stop_lr_assignment_mode::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_handheld_activation_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: npadhandheldactivationmode :: NpadHandheldActivationMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetHandheldActivationMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetHandheldActivationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_handheld_activation_mode(
         activation_mode: crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode,
-    ) -> ();
-
-    #[doc = "`GetHandheldActivationMode()` overload"]
-    #[method(name = "GetHandheldActivationMode", args = 0)]
-    pub fn get_handheld_activation_mode(
-    ) -> crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode;
-
-    #[doc = "`SetCommunicationMode(crate::nn::hid::npadcommunicationmode::NpadCommunicationMode)` overload"]
-    #[method(name = "SetCommunicationMode", args = 1)]
-    pub fn set_communication_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_handheld_activation_mode::get_offset() as isize),
+        );
+        inner(activation_mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handheld_activation_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "GetHandheldActivationMode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "GetHandheldActivationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handheld_activation_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: npadhandheldactivationmode :: NpadHandheldActivationMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_handheld_activation_mode :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_communication_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: npadcommunicationmode :: NpadCommunicationMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "SetCommunicationMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "SetCommunicationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_communication_mode(
         mode: crate::nn::hid::npadcommunicationmode::NpadCommunicationMode,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::nn::hid::npadcommunicationmode::NpadCommunicationMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_communication_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_communication_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NpadJoy as ::unity2::ClassIdentity>::class(),
+                "GetCommunicationMode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NpadJoy as ::unity2::ClassIdentity>::NAME,
+                    "GetCommunicationMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_communication_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::nn::hid::npadcommunicationmode::NpadCommunicationMode {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::nn::hid::npadcommunicationmode::NpadCommunicationMode =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_communication_mode::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "nn-hid-npadjoy")]
+impl NpadJoy {
+    #[doc = "`GetAssignment(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn get_assignment(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> crate::nn::hid::npadjoyassignmentmode::NpadJoyAssignmentMode {
+        unsafe {
+            __NpadJoy_unity2_raw::get_assignment(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAssignmentModeSingle(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn set_assignment_mode_single(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_assignment_mode_single(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAssignmentModeSingle(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType)` overload"]
+    pub fn set_assignment_mode_single_2(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        device_type: impl ::core::convert::Into<crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_assignment_mode_single_2(
+                ::core::convert::Into::into(npad_id),
+                ::core::convert::Into::into(device_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAssignmentModeSingle(*mutcrate::nn::hid::npadid::NpadId, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType)` overload"]
+    pub fn set_assignment_mode_single_3(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        device_type: impl ::core::convert::Into<crate::nn::hid::npadjoydevicetype::NpadJoyDeviceType>,
+    ) -> crate::nn::hid::npadid::NpadId {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nn::hid::npadid::NpadId>::uninit();
+            __NpadJoy_unity2_raw::set_assignment_mode_single_3(
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(npad_id),
+                ::core::convert::Into::into(device_type),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetAssignmentModeDual(crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn set_assignment_mode_dual(
+        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_assignment_mode_dual(
+                ::core::convert::Into::into(npad_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SwapAssignment(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadid::NpadId)` overload"]
+    pub fn swap_assignment(
+        npad_id1: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+        npad_id2: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::swap_assignment(
+                ::core::convert::Into::into(npad_id1),
+                ::core::convert::Into::into(npad_id2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHoldType(crate::nn::hid::npadjoyholdtype::NpadJoyHoldType)` overload"]
+    pub fn set_hold_type(
+        hold_type: impl ::core::convert::Into<crate::nn::hid::npadjoyholdtype::NpadJoyHoldType>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_hold_type(
+                ::core::convert::Into::into(hold_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHoldType()` overload"]
+    pub fn get_hold_type() -> crate::nn::hid::npadjoyholdtype::NpadJoyHoldType {
+        unsafe { __NpadJoy_unity2_raw::get_hold_type(::core::option::Option::None) }
+    }
+    #[doc = "`StartLrAssignmentMode()` overload"]
+    pub fn start_lr_assignment_mode() -> () {
+        unsafe { __NpadJoy_unity2_raw::start_lr_assignment_mode(::core::option::Option::None) }
+    }
+    #[doc = "`StopLrAssignmentMode()` overload"]
+    pub fn stop_lr_assignment_mode() -> () {
+        unsafe { __NpadJoy_unity2_raw::stop_lr_assignment_mode(::core::option::Option::None) }
+    }
+    #[doc = "`SetHandheldActivationMode(crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode)` overload"]
+    pub fn set_handheld_activation_mode(
+        activation_mode: impl ::core::convert::Into<
+            crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode,
+        >,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_handheld_activation_mode(
+                ::core::convert::Into::into(activation_mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHandheldActivationMode()` overload"]
+    pub fn get_handheld_activation_mode(
+    ) -> crate::nn::hid::npadhandheldactivationmode::NpadHandheldActivationMode {
+        unsafe { __NpadJoy_unity2_raw::get_handheld_activation_mode(::core::option::Option::None) }
+    }
+    #[doc = "`SetCommunicationMode(crate::nn::hid::npadcommunicationmode::NpadCommunicationMode)` overload"]
+    pub fn set_communication_mode(
+        mode: impl ::core::convert::Into<crate::nn::hid::npadcommunicationmode::NpadCommunicationMode>,
+    ) -> () {
+        unsafe {
+            __NpadJoy_unity2_raw::set_communication_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetCommunicationMode()` overload"]
-    #[method(name = "GetCommunicationMode", args = 0)]
-    pub fn get_communication_mode() -> crate::nn::hid::npadcommunicationmode::NpadCommunicationMode;
+    pub fn get_communication_mode() -> crate::nn::hid::npadcommunicationmode::NpadCommunicationMode
+    {
+        unsafe { __NpadJoy_unity2_raw::get_communication_mode(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "nn-hid-npadjoy")]
+pub mod prelude {
+    pub use super::INpadJoy;
+    pub use super::NpadJoy;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

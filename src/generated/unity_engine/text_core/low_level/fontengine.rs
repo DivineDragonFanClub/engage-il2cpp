@@ -26,80 +26,547 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengine")]
-#[::unity2::methods]
-impl FontEngine {
-    #[doc = "`InitializeFontEngine()` overload"]
-    #[method(name = "InitializeFontEngine", args = 0)]
-    pub fn initialize_font_engine(
-    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError;
-
-    #[doc = "`InitializeFontEngine_Internal()` overload"]
-    #[method(name = "InitializeFontEngine_Internal", args = 0)]
-    pub fn initialize_font_engine_internal() -> i32;
-
-    #[doc = "`LoadFontFace(crate::unity_engine::font::Font, i32)` overload"]
-    #[method(name = "LoadFontFace", args = 2)]
-    pub fn load_font_face(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FontEngine_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_font_engine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "InitializeFontEngine",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "InitializeFontEngine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_font_engine(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: fontengineerror :: FontEngineError = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_initialize_font_engine :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize_font_engine_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "InitializeFontEngine_Internal",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "InitializeFontEngine_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn initialize_font_engine_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_initialize_font_engine_internal::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_font_face {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::font::Font as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "LoadFontFace",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "LoadFontFace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_font_face(
         font: crate::unity_engine::font::Font,
         point_size: i32,
-    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError;
-
-    #[doc = "`LoadFontFace_With_Size_FromFont_Internal(crate::unity_engine::font::Font, i32)` overload"]
-    #[method(name = "LoadFontFace_With_Size_FromFont_Internal", args = 2)]
-    pub fn load_font_face_with_size_from_font_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError {
+        let inner : extern "C" fn (crate :: unity_engine :: font :: Font , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: fontengineerror :: FontEngineError = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_font_face :: get_offset () as isize) ,) ;
+        inner(font, point_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_font_face_with_size_from_font_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::font::Font as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "LoadFontFace_With_Size_FromFont_Internal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "LoadFontFace_With_Size_FromFont_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_font_face_with_size_from_font_internal(
         font: crate::unity_engine::font::Font,
         point_size: i32,
-    ) -> i32;
-
-    #[doc = "`GetFaceInfo()` overload"]
-    #[method(name = "GetFaceInfo", args = 0)]
-    pub fn get_face_info() -> crate::unity_engine::text_core::faceinfo::FaceInfo;
-
-    #[doc = "`GetFaceInfo_Internal(crate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
-    #[method(name = "GetFaceInfo_Internal", args = 1)]
-    pub fn get_face_info_internal(
-        face_info: crate::unity_engine::text_core::faceinfo::FaceInfo,
-    ) -> i32;
-
-    #[doc = "`GetGlyphIndex(u32)` overload"]
-    #[method(name = "GetGlyphIndex", args = 1)]
-    pub fn get_glyph_index(unicode: u32) -> u32;
-
-    #[doc = "`TryGetGlyphWithUnicodeValue(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, crate::unity_engine::text_core::glyph::Glyph)` overload"]
-    #[method(name = "TryGetGlyphWithUnicodeValue", args = 3)]
-    pub fn try_get_glyph_with_unicode_value(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::font::Font,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_load_font_face_with_size_from_font_internal::get_offset() as isize,
+                ),
+        );
+        inner(font, point_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_face_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetFaceInfo",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetFaceInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_face_info(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::faceinfo::FaceInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_face_info::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_face_info_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: text_core :: faceinfo :: FaceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetFaceInfo_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetFaceInfo_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_face_info_internal(
+        face_info: *mut crate::unity_engine::text_core::faceinfo::FaceInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::text_core::faceinfo::FaceInfo,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_face_info_internal::get_offset() as isize),
+        );
+        inner(face_info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetGlyphIndex",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetGlyphIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_index(
+        unicode: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_glyph_index::get_offset() as isize),
+        );
+        inner(unicode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_glyph_with_unicode_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryGetGlyphWithUnicodeValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryGetGlyphWithUnicodeValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_glyph_with_unicode_value(
         unicode: u32,
         flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
-        glyph: crate::unity_engine::text_core::glyph::Glyph,
-    ) -> bool;
-
-    #[doc = "`TryGetGlyphWithUnicodeValue_Internal(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
-    #[method(name = "TryGetGlyphWithUnicodeValue_Internal", args = 3)]
-    pub fn try_get_glyph_with_unicode_value_internal(
+        glyph: *mut crate::unity_engine::text_core::glyph::Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            u32,
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+            *mut crate::unity_engine::text_core::glyph::Glyph,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_glyph_with_unicode_value::get_offset() as isize),
+        );
+        inner(unicode, flags, glyph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_glyph_with_unicode_value_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryGetGlyphWithUnicodeValue_Internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryGetGlyphWithUnicodeValue_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_glyph_with_unicode_value_internal(
         unicode: u32,
         load_flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
-        glyph_struct : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
-    ) -> bool;
-
-    #[doc = "`TryGetGlyphWithIndexValue(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, crate::unity_engine::text_core::glyph::Glyph)` overload"]
-    #[method(name = "TryGetGlyphWithIndexValue", args = 3)]
-    pub fn try_get_glyph_with_index_value(
+        glyph_struct : * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (u32 , crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags , * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_get_glyph_with_unicode_value_internal :: get_offset () as isize) ,) ;
+        inner(unicode, load_flags, glyph_struct, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_glyph_with_index_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryGetGlyphWithIndexValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryGetGlyphWithIndexValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_glyph_with_index_value(
         glyph_index: u32,
         flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
-        glyph: crate::unity_engine::text_core::glyph::Glyph,
-    ) -> bool;
-
-    #[doc = "`TryGetGlyphWithIndexValue_Internal(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
-    #[method(name = "TryGetGlyphWithIndexValue_Internal", args = 3)]
-    pub fn try_get_glyph_with_index_value_internal(
+        glyph: *mut crate::unity_engine::text_core::glyph::Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            u32,
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+            *mut crate::unity_engine::text_core::glyph::Glyph,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_get_glyph_with_index_value::get_offset() as isize),
+        );
+        inner(glyph_index, flags, glyph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_glyph_with_index_value_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryGetGlyphWithIndexValue_Internal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryGetGlyphWithIndexValue_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_glyph_with_index_value_internal(
         glyph_index: u32,
         load_flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
-        glyph_struct : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
-    ) -> bool;
-
-    #[doc = "`TryAddGlyphToTexture(u32, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, crate::unity_engine::text_core::glyph::Glyph)` overload"]
-    #[method(name = "TryAddGlyphToTexture", args = 8)]
-    pub fn try_add_glyph_to_texture(
+        glyph_struct : * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (u32 , crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags , * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_get_glyph_with_index_value_internal :: get_offset () as isize) ,) ;
+        inner(glyph_index, load_flags, glyph_struct, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyph_to_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphToTexture",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphToTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyph_to_texture(
         glyph_index: u32,
         padding: i32,
         packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
@@ -111,27 +578,135 @@ impl FontEngine {
         >,
         render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
         texture: crate::unity_engine::texture2d::Texture2D,
-        glyph: crate::unity_engine::text_core::glyph::Glyph,
-    ) -> bool;
-
-    #[doc = "`TryAddGlyphToTexture_Internal(u32, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, i32, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, i32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
-    #[method(name = "TryAddGlyphToTexture_Internal", args = 10)]
-    pub fn try_add_glyph_to_texture_internal(
+        glyph: *mut crate::unity_engine::text_core::glyph::Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            u32,
+            i32,
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+            crate::unity_engine::texture2d::Texture2D,
+            *mut crate::unity_engine::text_core::glyph::Glyph,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_glyph_to_texture::get_offset() as isize),
+        );
+        inner(
+            glyph_index,
+            padding,
+            packing_mode,
+            free_glyph_rects,
+            used_glyph_rects,
+            render_mode,
+            texture,
+            glyph,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyph_to_texture_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphToTexture_Internal",
+                10,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphToTexture_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyph_to_texture_internal(
         glyph_index: u32,
         padding: i32,
         packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
         free_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        free_glyph_rect_count: i32,
+        free_glyph_rect_count: *mut i32,
         used_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        used_glyph_rect_count: i32,
+        used_glyph_rect_count: *mut i32,
         render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
         texture: crate::unity_engine::texture2d::Texture2D,
-        glyph : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
-    ) -> bool;
-
-    #[doc = "`TryAddGlyphsToTexture(crate::system::collections::generic::list_1::List_1<u32>, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>)` overload"]
-    #[method(name = "TryAddGlyphsToTexture", args = 8)]
-    pub fn try_add_glyphs_to_texture(
+        glyph : * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (u32 , i32 , crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode , :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , * mut i32 , :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , * mut i32 , crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode , crate :: unity_engine :: texture2d :: Texture2D , * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_add_glyph_to_texture_internal :: get_offset () as isize) ,) ;
+        inner(
+            glyph_index,
+            padding,
+            packing_mode,
+            free_glyph_rects,
+            free_glyph_rect_count,
+            used_glyph_rects,
+            used_glyph_rect_count,
+            render_mode,
+            texture,
+            glyph,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyphs_to_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: unity_engine :: text_core :: glyph :: Glyph > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphsToTexture",
+                8,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphsToTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyphs_to_texture(
         glyph_indexes: crate::system::collections::generic::list_1::List_1<u32>,
         padding: i32,
         packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
@@ -143,54 +718,866 @@ impl FontEngine {
         >,
         render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
         texture: crate::unity_engine::texture2d::Texture2D,
-        glyphs: ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
-    ) -> bool;
-
-    #[doc = "`TryAddGlyphsToTexture_Internal(::unity2::Array<u32>, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, i32, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, i32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, ::unity2::Array<crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct>, i32)` overload"]
-    #[method(name = "TryAddGlyphsToTexture_Internal", args = 11)]
-    pub fn try_add_glyphs_to_texture_internal(
+        glyphs: *mut ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<u32>,
+            i32,
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+            crate::unity_engine::texture2d::Texture2D,
+            *mut ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add_glyphs_to_texture::get_offset() as isize),
+        );
+        inner(
+            glyph_indexes,
+            padding,
+            packing_mode,
+            free_glyph_rects,
+            used_glyph_rects,
+            render_mode,
+            texture,
+            glyphs,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_glyphs_to_texture_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "TryAddGlyphsToTexture_Internal",
+                11,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "TryAddGlyphsToTexture_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add_glyphs_to_texture_internal(
         glyph_index: ::unity2::Array<u32>,
         padding: i32,
         packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
         free_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        free_glyph_rect_count: i32,
+        free_glyph_rect_count: *mut i32,
         used_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
-        used_glyph_rect_count: i32,
+        used_glyph_rect_count: *mut i32,
         render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
         texture: crate::unity_engine::texture2d::Texture2D,
         glyphs : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct >,
-        glyph_count: i32,
-    ) -> bool;
-
-    #[doc = "`GetGlyphPairAdjustmentTable(::unity2::Array<u32>)` overload"]
-    #[method(name = "GetGlyphPairAdjustmentTable", args = 1)]
-    pub fn get_glyph_pair_adjustment_table (glyph_indexes : :: unity2 :: Array < u32 >) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > ;
-
-    #[doc = "`GetGlyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>, i32)` overload"]
-    #[method(name = "GetGlyphPairAdjustmentRecords", args = 2)]
-    pub fn get_glyph_pair_adjustment_records (glyph_indexes : crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > , record_count : i32) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > ;
-
-    #[doc = "`PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes(::unity2::Array<u32>, i32)` overload"]
-    #[method(
-        name = "PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes",
-        args = 2
-    )]
-    pub fn populate_pair_adjustment_record_marshalling_array_from_glyph_indexes(
+        glyph_count: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner : extern "C" fn (:: unity2 :: Array < u32 > , i32 , crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode , :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , * mut i32 , :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > , * mut i32 , crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode , crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_add_glyphs_to_texture_internal :: get_offset () as isize) ,) ;
+        inner(
+            glyph_index,
+            padding,
+            packing_mode,
+            free_glyph_rects,
+            free_glyph_rect_count,
+            used_glyph_rects,
+            used_glyph_rect_count,
+            render_mode,
+            texture,
+            glyphs,
+            glyph_count,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_pair_adjustment_table {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<u32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetGlyphPairAdjustmentTable",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetGlyphPairAdjustmentTable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_glyph_pair_adjustment_table (glyph_indexes : :: unity2 :: Array < u32 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >{
+        let inner : extern "C" fn (:: unity2 :: Array < u32 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_glyph_pair_adjustment_table :: get_offset () as isize) ,) ;
+        inner(glyph_indexes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_pair_adjustment_records {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetGlyphPairAdjustmentRecords",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetGlyphPairAdjustmentRecords",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_glyph_pair_adjustment_records (glyph_indexes : crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > , record_count : * mut i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >{
+        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > , * mut i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_glyph_pair_adjustment_records :: get_offset () as isize) ,) ;
+        inner(glyph_indexes, record_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_populate_pair_adjustment_record_marshalling_array_from_glyph_indexes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn populate_pair_adjustment_record_marshalling_array_from_glyph_indexes(
         glyph_indexes: ::unity2::Array<u32>,
-        record_count: i32,
-    ) -> i32;
-
-    #[doc = "`GetGlyphPairAdjustmentRecordsFromMarshallingArray(::unity2::Array<crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord>)` overload"]
-    #[method(name = "GetGlyphPairAdjustmentRecordsFromMarshallingArray", args = 1)]
-    pub fn get_glyph_pair_adjustment_records_from_marshalling_array(
+        record_count: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (:: unity2 :: Array < u32 > , * mut i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_populate_pair_adjustment_record_marshalling_array_from_glyph_indexes :: get_offset () as isize) ,) ;
+        inner(glyph_indexes, record_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_glyph_pair_adjustment_records_from_marshalling_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GetGlyphPairAdjustmentRecordsFromMarshallingArray",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "GetGlyphPairAdjustmentRecordsFromMarshallingArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_glyph_pair_adjustment_records_from_marshalling_array(
         glyph_pair_adjustment_records : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_glyph_pair_adjustment_records_from_marshalling_array :: get_offset () as isize) ,) ;
+        inner(glyph_pair_adjustment_records, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_atlas_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "ResetAtlasTexture",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    "ResetAtlasTexture",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_atlas_texture(
+        texture: crate::unity_engine::texture2d::Texture2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::texture2d::Texture2D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset_atlas_texture::get_offset() as isize),
+        );
+        inner(texture, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FontEngine as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-text_core-low_level-fontengine")]
+impl FontEngine {
+    #[doc = "`InitializeFontEngine()` overload"]
+    pub fn initialize_font_engine(
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError {
+        unsafe { __FontEngine_unity2_raw::initialize_font_engine(::core::option::Option::None) }
+    }
+    #[doc = "`InitializeFontEngine_Internal()` overload"]
+    pub fn initialize_font_engine_internal() -> i32 {
+        unsafe {
+            __FontEngine_unity2_raw::initialize_font_engine_internal(::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadFontFace(crate::unity_engine::font::Font, i32)` overload"]
+    pub fn load_font_face(
+        font: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+        point_size: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError {
+        unsafe {
+            __FontEngine_unity2_raw::load_font_face(
+                ::core::convert::Into::into(font),
+                ::core::convert::Into::into(point_size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFontFace_With_Size_FromFont_Internal(crate::unity_engine::font::Font, i32)` overload"]
+    pub fn load_font_face_with_size_from_font_internal(
+        font: impl ::core::convert::Into<crate::unity_engine::font::Font>,
+        point_size: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __FontEngine_unity2_raw::load_font_face_with_size_from_font_internal(
+                ::core::convert::Into::into(font),
+                ::core::convert::Into::into(point_size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFaceInfo()` overload"]
+    pub fn get_face_info() -> crate::unity_engine::text_core::faceinfo::FaceInfo {
+        unsafe { __FontEngine_unity2_raw::get_face_info(::core::option::Option::None) }
+    }
+    #[doc = "`GetFaceInfo_Internal(*mutcrate::unity_engine::text_core::faceinfo::FaceInfo)` overload"]
+    pub fn get_face_info_internal() -> (i32, crate::unity_engine::text_core::faceinfo::FaceInfo) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::text_core::faceinfo::FaceInfo,
+            >::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::get_face_info_internal(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetGlyphIndex(u32)` overload"]
+    pub fn get_glyph_index(unicode: impl ::core::convert::Into<u32>) -> u32 {
+        unsafe {
+            __FontEngine_unity2_raw::get_glyph_index(
+                ::core::convert::Into::into(unicode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetGlyphWithUnicodeValue(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, *mutcrate::unity_engine::text_core::glyph::Glyph)` overload"]
+    pub fn try_get_glyph_with_unicode_value(
+        unicode: impl ::core::convert::Into<u32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        >,
+    ) -> (bool, crate::unity_engine::text_core::glyph::Glyph) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::text_core::glyph::Glyph>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::try_get_glyph_with_unicode_value(
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(flags),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetGlyphWithUnicodeValue_Internal(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, *mutcrate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
+    pub fn try_get_glyph_with_unicode_value_internal(
+        unicode: impl ::core::convert::Into<u32>,
+        load_flags: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        >,
+    ) -> (
+        bool,
+        crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct,
+    ) {
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > :: uninit () ;
+            let __ret = {
+                __FontEngine_unity2_raw::try_get_glyph_with_unicode_value_internal(
+                    ::core::convert::Into::into(unicode),
+                    ::core::convert::Into::into(load_flags),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetGlyphWithIndexValue(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, *mutcrate::unity_engine::text_core::glyph::Glyph)` overload"]
+    pub fn try_get_glyph_with_index_value(
+        glyph_index: impl ::core::convert::Into<u32>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        >,
+    ) -> (bool, crate::unity_engine::text_core::glyph::Glyph) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::text_core::glyph::Glyph>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::try_get_glyph_with_index_value(
+                    ::core::convert::Into::into(glyph_index),
+                    ::core::convert::Into::into(flags),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryGetGlyphWithIndexValue_Internal(u32, crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags, *mutcrate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
+    pub fn try_get_glyph_with_index_value_internal(
+        glyph_index: impl ::core::convert::Into<u32>,
+        load_flags: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        >,
+    ) -> (
+        bool,
+        crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct,
+    ) {
+        unsafe {
+            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > :: uninit () ;
+            let __ret = {
+                __FontEngine_unity2_raw::try_get_glyph_with_index_value_internal(
+                    ::core::convert::Into::into(glyph_index),
+                    ::core::convert::Into::into(load_flags),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddGlyphToTexture(u32, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, *mutcrate::unity_engine::text_core::glyph::Glyph)` overload"]
+    pub fn try_add_glyph_to_texture(
+        glyph_index: impl ::core::convert::Into<u32>,
+        padding: impl ::core::convert::Into<i32>,
+        packing_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        >,
+        free_glyph_rects: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+        used_glyph_rects: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+        render_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+        texture: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+    ) -> (bool, crate::unity_engine::text_core::glyph::Glyph) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::text_core::glyph::Glyph>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::try_add_glyph_to_texture(
+                    ::core::convert::Into::into(glyph_index),
+                    ::core::convert::Into::into(padding),
+                    ::core::convert::Into::into(packing_mode),
+                    ::core::convert::Into::into(free_glyph_rects),
+                    ::core::convert::Into::into(used_glyph_rects),
+                    ::core::convert::Into::into(render_mode),
+                    ::core::convert::Into::into(texture),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddGlyphToTexture_Internal(u32, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, *muti32, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, *muti32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, *mutcrate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct)` overload"]
+    pub fn try_add_glyph_to_texture_internal(
+        glyph_index: impl ::core::convert::Into<u32>,
+        padding: impl ::core::convert::Into<i32>,
+        packing_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        >,
+        free_glyph_rects: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        >,
+        used_glyph_rects: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        >,
+        render_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+        texture: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+    ) -> (
+        bool,
+        i32,
+        i32,
+        crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > :: uninit () ;
+            let __ret = {
+                __FontEngine_unity2_raw::try_add_glyph_to_texture_internal(
+                    ::core::convert::Into::into(glyph_index),
+                    ::core::convert::Into::into(padding),
+                    ::core::convert::Into::into(packing_mode),
+                    ::core::convert::Into::into(free_glyph_rects),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(used_glyph_rects),
+                    __out_1.as_mut_ptr(),
+                    ::core::convert::Into::into(render_mode),
+                    ::core::convert::Into::into(texture),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`TryAddGlyphsToTexture(crate::system::collections::generic::list_1::List_1<u32>, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, *mut::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>)` overload"]
+    pub fn try_add_glyphs_to_texture(
+        glyph_indexes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u32>,
+        >,
+        padding: impl ::core::convert::Into<i32>,
+        packing_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        >,
+        free_glyph_rects: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+        used_glyph_rects: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::text_core::glyphrect::GlyphRect,
+            >,
+        >,
+        render_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+        texture: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+    ) -> (
+        bool,
+        ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
+            >::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::try_add_glyphs_to_texture(
+                    ::core::convert::Into::into(glyph_indexes),
+                    ::core::convert::Into::into(padding),
+                    ::core::convert::Into::into(packing_mode),
+                    ::core::convert::Into::into(free_glyph_rects),
+                    ::core::convert::Into::into(used_glyph_rects),
+                    ::core::convert::Into::into(render_mode),
+                    ::core::convert::Into::into(texture),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddGlyphsToTexture_Internal(::unity2::Array<u32>, i32, crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, *muti32, ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>, *muti32, crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode, crate::unity_engine::texture2d::Texture2D, ::unity2::Array<crate::unity_engine::text_core::low_level::glyphmarshallingstruct::GlyphMarshallingStruct>, *muti32)` overload"]
+    pub fn try_add_glyphs_to_texture_internal(
+        glyph_index: impl ::core::convert::Into<::unity2::Array<u32>>,
+        padding: impl ::core::convert::Into<i32>,
+        packing_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        >,
+        free_glyph_rects: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        >,
+        used_glyph_rects: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        >,
+        render_mode: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        >,
+        texture: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+        glyphs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > >,
+    ) -> (bool, i32, i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::try_add_glyphs_to_texture_internal(
+                    ::core::convert::Into::into(glyph_index),
+                    ::core::convert::Into::into(padding),
+                    ::core::convert::Into::into(packing_mode),
+                    ::core::convert::Into::into(free_glyph_rects),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(used_glyph_rects),
+                    __out_1.as_mut_ptr(),
+                    ::core::convert::Into::into(render_mode),
+                    ::core::convert::Into::into(texture),
+                    ::core::convert::Into::into(glyphs),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`GetGlyphPairAdjustmentTable(::unity2::Array<u32>)` overload"]    pub fn get_glyph_pair_adjustment_table (glyph_indexes : impl :: core :: convert :: Into < :: unity2 :: Array < u32 > >) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >{
+        unsafe {
+            __FontEngine_unity2_raw::get_glyph_pair_adjustment_table(
+                ::core::convert::Into::into(glyph_indexes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGlyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<u32>, *muti32)` overload"]    pub fn get_glyph_pair_adjustment_records (glyph_indexes : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > >) -> (:: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > , i32){
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw::get_glyph_pair_adjustment_records(
+                    ::core::convert::Into::into(glyph_indexes),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes(::unity2::Array<u32>, *muti32)` overload"]
+    pub fn populate_pair_adjustment_record_marshalling_array_from_glyph_indexes(
+        glyph_indexes: impl ::core::convert::Into<::unity2::Array<u32>>,
+    ) -> (i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __FontEngine_unity2_raw :: populate_pair_adjustment_record_marshalling_array_from_glyph_indexes (:: core :: convert :: Into :: into (glyph_indexes) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None)
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`GetGlyphPairAdjustmentRecordsFromMarshallingArray(::unity2::Array<crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord>)` overload"]
+    pub fn get_glyph_pair_adjustment_records_from_marshalling_array(
+        glyph_pair_adjustment_records : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > >,
+    ) -> i32 {
+        unsafe {
+            __FontEngine_unity2_raw::get_glyph_pair_adjustment_records_from_marshalling_array(
+                ::core::convert::Into::into(glyph_pair_adjustment_records),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn generic_list_to_marshalling_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+        src_list: impl ::core::convert::Into<
+            *mut crate::system::collections::generic::list_1::List_1<M0>,
+        >,
+        dst_array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "GenericListToMarshallingArray",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <FontEngine as ::unity2::ClassIdentity>::NAME,
+                "GenericListToMarshallingArray",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                *mut crate::system::collections::generic::list_1::List_1<M0>,
+                *mut ::unity2::Array<M0>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(src_list),
+                ::core::convert::Into::into(dst_array),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn set_marshalling_array_size<M0: ::unity2::IlType + ::core::marker::Copy>(
+        marshalling_array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
+        record_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <FontEngine as ::unity2::ClassIdentity>::class(),
+                "SetMarshallingArraySize",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <FontEngine as ::unity2::ClassIdentity>::NAME,
+                "SetMarshallingArraySize",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(*mut ::unity2::Array<M0>, i32, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(marshalling_array),
+                ::core::convert::Into::into(record_count),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`ResetAtlasTexture(crate::unity_engine::texture2d::Texture2D)` overload"]
-    #[method(name = "ResetAtlasTexture", args = 1)]
-    pub fn reset_atlas_texture(texture: crate::unity_engine::texture2d::Texture2D) -> ();
-
+    pub fn reset_atlas_texture(
+        texture: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
+    ) -> () {
+        unsafe {
+            __FontEngine_unity2_raw::reset_atlas_texture(
+                ::core::convert::Into::into(texture),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn cctor() -> () {
+        unsafe { __FontEngine_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontengine")]
+pub mod prelude {
+    pub use super::FontEngine;
+    pub use super::IFontEngine;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

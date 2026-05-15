@@ -17,132 +17,1201 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-granutility")]
-#[::unity2::methods]
-impl GranUtility {
-    #[doc = "`CalcAttackStance2(crate::combat::character::Character, f32, bool)` overload"]
-    #[method(name = "CalcAttackStance2", args = 3)]
-    pub fn calc_attack_stance2(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GranUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_stance2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcAttackStance2",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcAttackStance2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_attack_stance2(
         ghr: crate::combat::character::Character,
         distance: f32,
         allrange: bool,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcAttackStanceNN(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
-    #[method(name = "CalcAttackStanceNN", args = 2)]
-    pub fn calc_attack_stance_nn(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_attack_stance2::get_offset() as isize),
+        );
+        inner(ghr, distance, allrange, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_stance_nn {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcAttackStanceNN",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcAttackStanceNN",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_attack_stance_nn(
         ghr: crate::combat::character::Character,
         phase: crate::combat::phase::Phase,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcAttackStanceFN(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
-    #[method(name = "CalcAttackStanceFN", args = 2)]
-    pub fn calc_attack_stance_fn(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            crate::combat::phase::Phase,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_attack_stance_nn::get_offset() as isize),
+        );
+        inner(ghr, phase, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_stance_fn {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcAttackStanceFN",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcAttackStanceFN",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_attack_stance_fn(
         ghr: crate::combat::character::Character,
         phase: crate::combat::phase::Phase,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcAttackStanceFF(crate::combat::character::Character)` overload"]
-    #[method(name = "CalcAttackStanceFF", args = 1)]
-    pub fn calc_attack_stance_ff(ghr: crate::combat::character::Character)
-        -> crate::combat::tr::TR;
-
-    #[doc = "`CalcAttackStanceNF(crate::combat::character::Character)` overload"]
-    #[method(name = "CalcAttackStanceNF", args = 1)]
-    pub fn calc_attack_stance_nf(ghr: crate::combat::character::Character)
-        -> crate::combat::tr::TR;
-
-    #[doc = "`CalcShootStance(crate::combat::character::Character)` overload"]
-    #[method(name = "CalcShootStance", args = 1)]
-    pub fn calc_shoot_stance(grandew: crate::combat::character::Character)
-        -> crate::combat::tr::TR;
-
-    #[doc = "`CalcWaitPosition(crate::combat::character::Character, f32, f32)` overload"]
-    #[method(name = "CalcWaitPosition", args = 3)]
-    pub fn calc_wait_position(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            crate::combat::phase::Phase,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_attack_stance_fn::get_offset() as isize),
+        );
+        inner(ghr, phase, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_stance_ff {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcAttackStanceFF",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcAttackStanceFF",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_attack_stance_ff(
+        ghr: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_attack_stance_ff::get_offset() as isize),
+        );
+        inner(ghr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_stance_nf {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcAttackStanceNF",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcAttackStanceNF",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_attack_stance_nf(
+        ghr: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_attack_stance_nf::get_offset() as isize),
+        );
+        inner(ghr, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_shoot_stance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcShootStance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcShootStance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_shoot_stance(
+        grandew: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_shoot_stance::get_offset() as isize),
+        );
+        inner(grandew, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_wait_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcWaitPosition",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcWaitPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_wait_position(
         grandew: crate::combat::character::Character,
         distance: f32,
         degree: f32,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcWaitPosition(crate::combat::character::Character, crate::combat::character::Character, crate::combat::character::Character, f32, f32)` overload"]
-    #[method(name = "CalcWaitPosition", args = 5)]
-    pub fn calc_wait_position_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_wait_position::get_offset() as isize),
+        );
+        inner(grandew, distance, degree, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_wait_position_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcWaitPosition",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcWaitPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_wait_position_2(
         master: crate::combat::character::Character,
         grandew: crate::combat::character::Character,
         enemy: crate::combat::character::Character,
         distance: f32,
         degree: f32,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcDamageStance(crate::combat::character::Character)` overload"]
-    #[method(name = "CalcDamageStance", args = 1)]
-    pub fn calc_damage_stance(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_wait_position_2::get_offset() as isize),
+        );
+        inner(
+            master,
+            grandew,
+            enemy,
+            distance,
+            degree,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_damage_stance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcDamageStance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcDamageStance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_damage_stance(
         grandew: crate::combat::character::Character,
-    ) -> crate::combat::tr::TR;
-
-    #[doc = "`Calc見切りStance(crate::combat::character::Character)` overload"]
-    #[method(name = "Calc見切りStance", args = 1)]
-    pub fn calc____stance(grandew: crate::combat::character::Character) -> crate::combat::tr::TR;
-
-    #[doc = "`CalcPoint(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, f32)` overload"]
-    #[method(name = "CalcPoint", args = 4)]
-    pub fn calc_point(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_damage_stance::get_offset() as isize),
+        );
+        inner(grandew, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc見切り_stance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "Calc見切りStance",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "Calc見切りStance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc見切り_stance(
+        grandew: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc見切り_stance::get_offset() as isize),
+        );
+        inner(grandew, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcPoint",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcPoint",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_point(
         target: crate::combat::fxz::FXZ,
         dir_to_target: crate::combat::fxz::FXZ,
         rad: f32,
         distance: f32,
-    ) -> crate::combat::tr::TR;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::fxz::FXZ,
+            crate::combat::fxz::FXZ,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_point::get_offset() as isize),
+        );
+        inner(target, dir_to_target, rad, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_near_attack_stance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcNearAttackStance",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcNearAttackStance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_near_attack_stance(
+        grandew: crate::combat::character::Character,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_near_attack_stance::get_offset() as isize),
+        );
+        inner(grandew, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_near_damage_stance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcNearDamageStance",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcNearDamageStance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_near_damage_stance(
+        grandew: crate::combat::character::Character,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::tr::TR {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::tr::TR = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_near_damage_stance::get_offset() as isize),
+        );
+        inner(grandew, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_behind_attack_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcBehindAttackLine",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcBehindAttackLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_behind_attack_line(
+        plpos: crate::combat::fxz::FXZ,
+        enpos: crate::combat::fxz::FXZ,
+        ratio: f32,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(
+            crate::combat::fxz::FXZ,
+            crate::combat::fxz::FXZ,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_behind_attack_line::get_offset() as isize),
+        );
+        inner(plpos, enpos, ratio, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_behind_attack_line2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcBehindAttackLine2",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcBehindAttackLine2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_behind_attack_line2(
+        plpos: crate::combat::fxz::FXZ,
+        enpos: crate::combat::fxz::FXZ,
+        ratio: f32,
+        angle: f32,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(
+            crate::combat::fxz::FXZ,
+            crate::combat::fxz::FXZ,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_behind_attack_line2::get_offset() as isize),
+        );
+        inner(plpos, enpos, ratio, angle, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_behind_attack_line3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcBehindAttackLine3",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcBehindAttackLine3",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_behind_attack_line3(
+        grandew: crate::combat::character::Character,
+        ratio: f32,
+        angle: f32,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_behind_attack_line3::get_offset() as isize),
+        );
+        inner(grandew, ratio, angle, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_behind_attack_line4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GranUtility as ::unity2::ClassIdentity>::class(),
+                "CalcBehindAttackLine4",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GranUtility as ::unity2::ClassIdentity>::NAME,
+                    "CalcBehindAttackLine4",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_behind_attack_line4(
+        grandew: crate::combat::character::Character,
+        plpos: crate::combat::fxz::FXZ,
+        enpos: crate::combat::fxz::FXZ,
+        ratio: f32,
+        angle: f32,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(
+            crate::combat::character::Character,
+            crate::combat::fxz::FXZ,
+            crate::combat::fxz::FXZ,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_behind_attack_line4::get_offset() as isize),
+        );
+        inner(
+            grandew,
+            plpos,
+            enpos,
+            ratio,
+            angle,
+            distance,
+            __unity2_method_info,
+        )
+    }
+}
 
+#[cfg(feature = "combat-granutility")]
+impl GranUtility {
+    #[doc = "`CalcAttackStance2(crate::combat::character::Character, f32, bool)` overload"]
+    pub fn calc_attack_stance2(
+        ghr: impl ::core::convert::Into<crate::combat::character::Character>,
+        distance: impl ::core::convert::Into<f32>,
+        allrange: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_attack_stance2(
+                ::core::convert::Into::into(ghr),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(allrange),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackStanceNN(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
+    pub fn calc_attack_stance_nn(
+        ghr: impl ::core::convert::Into<crate::combat::character::Character>,
+        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_attack_stance_nn(
+                ::core::convert::Into::into(ghr),
+                ::core::convert::Into::into(phase),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackStanceFN(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
+    pub fn calc_attack_stance_fn(
+        ghr: impl ::core::convert::Into<crate::combat::character::Character>,
+        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_attack_stance_fn(
+                ::core::convert::Into::into(ghr),
+                ::core::convert::Into::into(phase),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackStanceFF(crate::combat::character::Character)` overload"]
+    pub fn calc_attack_stance_ff(
+        ghr: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_attack_stance_ff(
+                ::core::convert::Into::into(ghr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackStanceNF(crate::combat::character::Character)` overload"]
+    pub fn calc_attack_stance_nf(
+        ghr: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_attack_stance_nf(
+                ::core::convert::Into::into(ghr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcShootStance(crate::combat::character::Character)` overload"]
+    pub fn calc_shoot_stance(
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_shoot_stance(
+                ::core::convert::Into::into(grandew),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcWaitPosition(crate::combat::character::Character, f32, f32)` overload"]
+    pub fn calc_wait_position(
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        distance: impl ::core::convert::Into<f32>,
+        degree: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_wait_position(
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(degree),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcWaitPosition(crate::combat::character::Character, crate::combat::character::Character, crate::combat::character::Character, f32, f32)` overload"]
+    pub fn calc_wait_position_2(
+        master: impl ::core::convert::Into<crate::combat::character::Character>,
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        enemy: impl ::core::convert::Into<crate::combat::character::Character>,
+        distance: impl ::core::convert::Into<f32>,
+        degree: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_wait_position_2(
+                ::core::convert::Into::into(master),
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(enemy),
+                ::core::convert::Into::into(distance),
+                ::core::convert::Into::into(degree),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcDamageStance(crate::combat::character::Character)` overload"]
+    pub fn calc_damage_stance(
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_damage_stance(
+                ::core::convert::Into::into(grandew),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calc見切りStance(crate::combat::character::Character)` overload"]
+    pub fn calc見切り_stance(
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc見切り_stance(
+                ::core::convert::Into::into(grandew),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcPoint(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, f32)` overload"]
+    pub fn calc_point(
+        target: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        dir_to_target: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        rad: impl ::core::convert::Into<f32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_point(
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(dir_to_target),
+                ::core::convert::Into::into(rad),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcNearAttackStance(crate::combat::character::Character, f32)` overload"]
-    #[method(name = "CalcNearAttackStance", args = 2)]
     pub fn calc_near_attack_stance(
-        grandew: crate::combat::character::Character,
-        distance: f32,
-    ) -> crate::combat::tr::TR;
-
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_near_attack_stance(
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcNearDamageStance(crate::combat::character::Character, f32)` overload"]
-    #[method(name = "CalcNearDamageStance", args = 2)]
     pub fn calc_near_damage_stance(
-        grandew: crate::combat::character::Character,
-        distance: f32,
-    ) -> crate::combat::tr::TR;
-
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::tr::TR {
+        unsafe {
+            __GranUtility_unity2_raw::calc_near_damage_stance(
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcBehindAttackLine(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, f32)` overload"]
-    #[method(name = "CalcBehindAttackLine", args = 4)]
     pub fn calc_behind_attack_line(
-        plpos: crate::combat::fxz::FXZ,
-        enpos: crate::combat::fxz::FXZ,
-        ratio: f32,
-        distance: f32,
-    ) -> crate::combat::fxz::FXZ;
-
+        plpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        enpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        ratio: impl ::core::convert::Into<f32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __GranUtility_unity2_raw::calc_behind_attack_line(
+                ::core::convert::Into::into(plpos),
+                ::core::convert::Into::into(enpos),
+                ::core::convert::Into::into(ratio),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcBehindAttackLine2(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, f32, f32)` overload"]
-    #[method(name = "CalcBehindAttackLine2", args = 5)]
     pub fn calc_behind_attack_line2(
-        plpos: crate::combat::fxz::FXZ,
-        enpos: crate::combat::fxz::FXZ,
-        ratio: f32,
-        angle: f32,
-        distance: f32,
-    ) -> crate::combat::fxz::FXZ;
-
+        plpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        enpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        ratio: impl ::core::convert::Into<f32>,
+        angle: impl ::core::convert::Into<f32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __GranUtility_unity2_raw::calc_behind_attack_line2(
+                ::core::convert::Into::into(plpos),
+                ::core::convert::Into::into(enpos),
+                ::core::convert::Into::into(ratio),
+                ::core::convert::Into::into(angle),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcBehindAttackLine3(crate::combat::character::Character, f32, f32, f32)` overload"]
-    #[method(name = "CalcBehindAttackLine3", args = 4)]
     pub fn calc_behind_attack_line3(
-        grandew: crate::combat::character::Character,
-        ratio: f32,
-        angle: f32,
-        distance: f32,
-    ) -> crate::combat::fxz::FXZ;
-
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        ratio: impl ::core::convert::Into<f32>,
+        angle: impl ::core::convert::Into<f32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __GranUtility_unity2_raw::calc_behind_attack_line3(
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(ratio),
+                ::core::convert::Into::into(angle),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CalcBehindAttackLine4(crate::combat::character::Character, crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, f32, f32)` overload"]
-    #[method(name = "CalcBehindAttackLine4", args = 6)]
     pub fn calc_behind_attack_line4(
-        grandew: crate::combat::character::Character,
-        plpos: crate::combat::fxz::FXZ,
-        enpos: crate::combat::fxz::FXZ,
-        ratio: f32,
-        angle: f32,
-        distance: f32,
-    ) -> crate::combat::fxz::FXZ;
+        grandew: impl ::core::convert::Into<crate::combat::character::Character>,
+        plpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        enpos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        ratio: impl ::core::convert::Into<f32>,
+        angle: impl ::core::convert::Into<f32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __GranUtility_unity2_raw::calc_behind_attack_line4(
+                ::core::convert::Into::into(grandew),
+                ::core::convert::Into::into(plpos),
+                ::core::convert::Into::into(enpos),
+                ::core::convert::Into::into(ratio),
+                ::core::convert::Into::into(angle),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-granutility")]
+pub mod prelude {
+    pub use super::GranUtility;
+    pub use super::IGranUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

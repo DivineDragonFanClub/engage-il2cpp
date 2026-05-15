@@ -73,3 +73,22 @@ impl<T0: ::unity2::ClassIdentity> StructCalculatorData_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-structcalculatordata_1")]
+pub mod prelude {
+    pub use super::IStructCalculatorData_1;
+    pub use super::IStructCalculatorData_1Methods;
+    pub use super::StructCalculatorData_1;
+    pub use crate::app::structbase::IStructBase;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    pub use crate::app::structdata_1::IStructData_1;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

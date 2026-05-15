@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-parameterbuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-parameterbuilder")]
+pub mod prelude {
+    pub use super::IParameterBuilder;
+    pub use super::ParameterBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

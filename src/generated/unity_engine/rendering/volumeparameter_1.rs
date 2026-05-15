@@ -132,3 +132,16 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+pub mod prelude {
+    pub use super::IVolumeParameter_1;
+    pub use super::IVolumeParameter_1Methods;
+    pub use super::VolumeParameter_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+}

@@ -188,3 +188,16 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-provideroperation_1")]
+pub mod prelude {
+    pub use super::IProviderOperation_1;
+    pub use super::IProviderOperation_1Methods;
+    pub use super::ProviderOperation_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+}

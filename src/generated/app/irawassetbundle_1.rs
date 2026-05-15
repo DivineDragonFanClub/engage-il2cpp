@@ -66,3 +66,13 @@ impl<T0: ::unity2::ClassIdentity> IRawAssetBundle_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-irawassetbundle_1")]
+pub mod prelude {
+    pub use super::IIRawAssetBundle_1;
+    pub use super::IIRawAssetBundle_1Methods;
+    pub use super::IRawAssetBundle_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

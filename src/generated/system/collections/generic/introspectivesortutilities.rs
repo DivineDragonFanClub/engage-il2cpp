@@ -20,13 +20,129 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-introspectivesortutilities")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IntrospectiveSortUtilities_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_floor_log2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntrospectiveSortUtilities as ::unity2::ClassIdentity>::class(),
+                "FloorLog2",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntrospectiveSortUtilities as ::unity2::ClassIdentity>::NAME,
+                    "FloorLog2",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn floor_log2(n: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_floor_log2::get_offset() as isize),
+        );
+        inner(n, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_throw_or_ignore_bad_comparer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IntrospectiveSortUtilities as ::unity2::ClassIdentity>::class(),
+                "ThrowOrIgnoreBadComparer",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IntrospectiveSortUtilities as ::unity2::ClassIdentity>::NAME,
+                    "ThrowOrIgnoreBadComparer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn throw_or_ignore_bad_comparer(
+        comparer: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_throw_or_ignore_bad_comparer::get_offset() as isize),
+            );
+        inner(comparer, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-generic-introspectivesortutilities")]
 impl IntrospectiveSortUtilities {
     #[doc = "`FloorLog2(i32)` overload"]
-    #[method(name = "FloorLog2", args = 1)]
-    pub fn floor_log2(n: i32) -> i32;
-
+    pub fn floor_log2(n: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            __IntrospectiveSortUtilities_unity2_raw::floor_log2(
+                ::core::convert::Into::into(n),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ThrowOrIgnoreBadComparer(crate::system::object::Object)` overload"]
-    #[method(name = "ThrowOrIgnoreBadComparer", args = 1)]
-    pub fn throw_or_ignore_bad_comparer(comparer: crate::system::object::Object) -> ();
+    pub fn throw_or_ignore_bad_comparer(
+        comparer: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            __IntrospectiveSortUtilities_unity2_raw::throw_or_ignore_bad_comparer(
+                ::core::convert::Into::into(comparer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-generic-introspectivesortutilities")]
+pub mod prelude {
+    pub use super::IIntrospectiveSortUtilities;
+    pub use super::IntrospectiveSortUtilities;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

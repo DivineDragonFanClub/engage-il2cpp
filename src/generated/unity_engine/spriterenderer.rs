@@ -18,3 +18,21 @@ mod __types {
 
 #[cfg(feature = "unity_engine-spriterenderer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-spriterenderer")]
+pub mod prelude {
+    pub use super::ISpriteRenderer;
+    pub use super::SpriteRenderer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::renderer::IRenderer;
+    #[cfg(feature = "unity_engine-renderer")]
+    pub use crate::unity_engine::renderer::IRendererMethods;
+}

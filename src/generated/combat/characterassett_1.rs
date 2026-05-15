@@ -14,6 +14,8 @@ mod __types {
         #[static_field]
         #[rename(name = "TotalAllocCount")]
         pub total_alloc_count: i32,
+        #[rename(name = "name")]
+        pub name_field: ::unity2::Il2CppString,
         #[rename(name = "m_FileHandle")]
         pub m_file_handle: crate::app::tresourcehandle_1::TResourceHandle_1<T0>,
         #[rename(name = "m_Object")]
@@ -170,4 +172,14 @@ impl<T0: ::unity2::ClassIdentity> CharacterAssetT_1<T0> {
         <Self as ICharacterAssetT_1Methods<T0>>::ctor_3(this, rhs);
         this
     }
+}
+
+#[cfg(feature = "combat-characterassett_1")]
+pub mod prelude {
+    pub use super::CharacterAssetT_1;
+    pub use super::ICharacterAssetT_1;
+    pub use super::ICharacterAssetT_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

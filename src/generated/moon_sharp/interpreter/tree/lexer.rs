@@ -36,151 +36,1521 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
-#[::unity2::methods]
-impl Lexer {
-    #[doc = "`.ctor(i32, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Lexer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Lexer,
         source_id: i32,
         script_content: ::unity2::Il2CppString,
         auto_skip_comments: bool,
-    ) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`FetchNewToken()` overload"]
-    #[method(name = "FetchNewToken", args = 0)]
-    pub fn fetch_new_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`Next()` overload"]
-    #[method(name = "Next", args = 0)]
-    pub fn next(self) -> ();
-
-    #[doc = "`PeekNext()` overload"]
-    #[method(name = "PeekNext", args = 0)]
-    pub fn peek_next(self) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`CursorNext()` overload"]
-    #[method(name = "CursorNext", args = 0)]
-    pub fn cursor_next(self) -> ();
-
-    #[doc = "`CursorChar()` overload"]
-    #[method(name = "CursorChar", args = 0)]
-    pub fn cursor_char(self) -> u16;
-
-    #[doc = "`CursorCharNext()` overload"]
-    #[method(name = "CursorCharNext", args = 0)]
-    pub fn cursor_char_next(self) -> u16;
-
-    #[doc = "`CursorMatches(::unity2::Il2CppString)` overload"]
-    #[method(name = "CursorMatches", args = 1)]
-    pub fn cursor_matches(self, pattern: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`CursorNotEof()` overload"]
-    #[method(name = "CursorNotEof", args = 0)]
-    pub fn cursor_not_eof(self) -> bool;
-
-    #[doc = "`IsWhiteSpace(u16)` overload"]
-    #[method(name = "IsWhiteSpace", args = 1)]
-    pub fn is_white_space(self, c: u16) -> bool;
-
-    #[doc = "`SkipWhiteSpace()` overload"]
-    #[method(name = "SkipWhiteSpace", args = 0)]
-    pub fn skip_white_space(self) -> ();
-
-    #[doc = "`ReadToken()` overload"]
-    #[method(name = "ReadToken", args = 0)]
-    pub fn read_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`ReadLongString(i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ReadLongString", args = 4)]
-    pub fn read_long_string(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            source_id,
+            script_content,
+            auto_skip_comments,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "get_Current",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fetch_new_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "FetchNewToken",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "FetchNewToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fetch_new_token(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fetch_new_token::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "Next",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "Next",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn next(this: Lexer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_peek_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "PeekNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "PeekNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn peek_next(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_peek_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cursor_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CursorNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CursorNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cursor_next(this: Lexer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cursor_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cursor_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CursorChar",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CursorChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cursor_char(this: Lexer, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cursor_char::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cursor_char_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CursorCharNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CursorCharNext",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cursor_char_next(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cursor_char_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cursor_matches {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CursorMatches",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CursorMatches",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cursor_matches(
+        this: Lexer,
+        pattern: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Lexer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cursor_matches::get_offset() as isize),
+            );
+        inner(this, pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cursor_not_eof {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CursorNotEof",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CursorNotEof",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cursor_not_eof(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cursor_not_eof::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_white_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "IsWhiteSpace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "IsWhiteSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_white_space(
+        this: Lexer,
+        c: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Lexer, u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_white_space::get_offset() as isize),
+            );
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_skip_white_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "SkipWhiteSpace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "SkipWhiteSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn skip_white_space(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_skip_white_space::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadToken",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_token(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_token::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_long_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadLongString",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadLongString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_long_string(
+        this: Lexer,
         from_line: i32,
         from_col: i32,
         startpattern: ::unity2::Il2CppString,
         subtypeforerrors: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadNumberToken(i32, i32, bool)` overload"]
-    #[method(name = "ReadNumberToken", args = 3)]
-    pub fn read_number_token(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_long_string::get_offset() as isize),
+        );
+        inner(
+            this,
+            from_line,
+            from_col,
+            startpattern,
+            subtypeforerrors,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_number_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadNumberToken",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadNumberToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_number_token(
+        this: Lexer,
         from_line: i32,
         from_col: i32,
         leading_dot: bool,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`CreateSingleCharToken(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32)` overload"]
-    #[method(name = "CreateSingleCharToken", args = 3)]
-    pub fn create_single_char_token(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_number_token::get_offset() as isize),
+        );
+        inner(this, from_line, from_col, leading_dot, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_single_char_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CreateSingleCharToken",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CreateSingleCharToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_single_char_token(
+        this: Lexer,
         token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`ReadHashBang(i32, i32)` overload"]
-    #[method(name = "ReadHashBang", args = 2)]
-    pub fn read_hash_bang(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_single_char_token::get_offset() as isize),
+        );
+        inner(this, token_type, from_line, from_col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_hash_bang {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadHashBang",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadHashBang",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_hash_bang(
+        this: Lexer,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`ReadComment(i32, i32)` overload"]
-    #[method(name = "ReadComment", args = 2)]
-    pub fn read_comment(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_hash_bang::get_offset() as isize),
+        );
+        inner(this, from_line, from_col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_comment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadComment",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadComment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_comment(
+        this: Lexer,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`ReadSimpleStringToken(i32, i32)` overload"]
-    #[method(name = "ReadSimpleStringToken", args = 2)]
-    pub fn read_simple_string_token(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_comment::get_offset() as isize),
+        );
+        inner(this, from_line, from_col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_simple_string_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadSimpleStringToken",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadSimpleStringToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_simple_string_token(
+        this: Lexer,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`PotentiallyDoubleCharOperator(u16, crate::moon_sharp::interpreter::tree::tokentype::TokenType, crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32)` overload"]
-    #[method(name = "PotentiallyDoubleCharOperator", args = 5)]
-    pub fn potentially_double_char_operator(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_simple_string_token::get_offset() as isize),
+        );
+        inner(this, from_line, from_col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_potentially_double_char_operator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "PotentiallyDoubleCharOperator",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "PotentiallyDoubleCharOperator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn potentially_double_char_operator(
+        this: Lexer,
         expected_second_char: u16,
         single_char_token: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         double_char_token: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`CreateNameToken(::unity2::Il2CppString, i32, i32)` overload"]
-    #[method(name = "CreateNameToken", args = 3)]
-    pub fn create_name_token(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            u16,
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_potentially_double_char_operator::get_offset() as isize),
+        );
+        inner(
+            this,
+            expected_second_char,
+            single_char_token,
+            double_char_token,
+            from_line,
+            from_col,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_name_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CreateNameToken",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CreateNameToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_name_token(
+        this: Lexer,
         name: ::unity2::Il2CppString,
         from_line: i32,
         from_col: i32,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`CreateToken(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateToken", args = 4)]
-    pub fn create_token(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            ::unity2::Il2CppString,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_name_token::get_offset() as isize),
+        );
+        inner(this, name, from_line, from_col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "CreateToken",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "CreateToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_token(
+        this: Lexer,
         token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         from_line: i32,
         from_col: i32,
         text: ::unity2::Il2CppString,
-    ) -> crate::moon_sharp::interpreter::tree::token::Token;
-
-    #[doc = "`ReadNameToken()` overload"]
-    #[method(name = "ReadNameToken", args = 0)]
-    pub fn read_name_token(self) -> ::unity2::Il2CppString;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        let inner: extern "C" fn(
+            Lexer,
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+            i32,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_token::get_offset() as isize),
+        );
+        inner(
+            this,
+            token_type,
+            from_line,
+            from_col,
+            text,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_name_token {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Lexer as ::unity2::ClassIdentity>::class(),
+                "ReadNameToken",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Lexer as ::unity2::ClassIdentity>::NAME,
+                    "ReadNameToken",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_name_token(
+        this: Lexer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Lexer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_read_name_token::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+pub trait ILexerMethods: ILexer {
+    #[doc = "`.ctor(i32, ::unity2::Il2CppString, bool)` overload"]
+    fn ctor(
+        self,
+        source_id: impl ::core::convert::Into<i32>,
+        script_content: impl ::core::convert::Into<::unity2::Il2CppString>,
+        auto_skip_comments: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(source_id),
+                ::core::convert::Into::into(script_content),
+                ::core::convert::Into::into(auto_skip_comments),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::get_current(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FetchNewToken()` overload"]
+    fn fetch_new_token(self) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::fetch_new_token(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Next()` overload"]
+    fn next(self) -> () {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PeekNext()` overload"]
+    fn peek_next(self) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::peek_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CursorNext()` overload"]
+    fn cursor_next(self) -> () {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::cursor_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CursorChar()` overload"]
+    fn cursor_char(self) -> u16 {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::cursor_char(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CursorCharNext()` overload"]
+    fn cursor_char_next(self) -> u16 {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::cursor_char_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CursorMatches(::unity2::Il2CppString)` overload"]
+    fn cursor_matches(self, pattern: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::cursor_matches(
+                __receiver,
+                ::core::convert::Into::into(pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CursorNotEof()` overload"]
+    fn cursor_not_eof(self) -> bool {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::cursor_not_eof(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsWhiteSpace(u16)` overload"]
+    fn is_white_space(self, c: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::is_white_space(
+                __receiver,
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SkipWhiteSpace()` overload"]
+    fn skip_white_space(self) -> () {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::skip_white_space(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReadToken()` overload"]
+    fn read_token(self) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_token(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReadLongString(i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn read_long_string(
+        self,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+        startpattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        subtypeforerrors: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_long_string(
+                __receiver,
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::convert::Into::into(startpattern),
+                ::core::convert::Into::into(subtypeforerrors),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadNumberToken(i32, i32, bool)` overload"]
+    fn read_number_token(
+        self,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+        leading_dot: impl ::core::convert::Into<bool>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_number_token(
+                __receiver,
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::convert::Into::into(leading_dot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateSingleCharToken(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32)` overload"]
+    fn create_single_char_token(
+        self,
+        token_type: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        >,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::create_single_char_token(
+                __receiver,
+                ::core::convert::Into::into(token_type),
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadHashBang(i32, i32)` overload"]
+    fn read_hash_bang(
+        self,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_hash_bang(
+                __receiver,
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadComment(i32, i32)` overload"]
+    fn read_comment(
+        self,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_comment(
+                __receiver,
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadSimpleStringToken(i32, i32)` overload"]
+    fn read_simple_string_token(
+        self,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_simple_string_token(
+                __receiver,
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PotentiallyDoubleCharOperator(u16, crate::moon_sharp::interpreter::tree::tokentype::TokenType, crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32)` overload"]
+    fn potentially_double_char_operator(
+        self,
+        expected_second_char: impl ::core::convert::Into<u16>,
+        single_char_token: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        >,
+        double_char_token: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        >,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::potentially_double_char_operator(
+                __receiver,
+                ::core::convert::Into::into(expected_second_char),
+                ::core::convert::Into::into(single_char_token),
+                ::core::convert::Into::into(double_char_token),
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateNameToken(::unity2::Il2CppString, i32, i32)` overload"]
+    fn create_name_token(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::create_name_token(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateToken(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, ::unity2::Il2CppString)` overload"]
+    fn create_token(
+        self,
+        token_type: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        >,
+        from_line: impl ::core::convert::Into<i32>,
+        from_col: impl ::core::convert::Into<i32>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::create_token(
+                __receiver,
+                ::core::convert::Into::into(token_type),
+                ::core::convert::Into::into(from_line),
+                ::core::convert::Into::into(from_col),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadNameToken()` overload"]
+    fn read_name_token(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Lexer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Lexer_unity2_raw::read_name_token(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+impl<__T: ILexer> ILexerMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
 impl Lexer {
@@ -200,4 +1570,14 @@ impl Lexer {
         <Self as ILexerMethods>::ctor(this, source_id, script_content, auto_skip_comments);
         this
     }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+pub mod prelude {
+    pub use super::ILexer;
+    pub use super::ILexerMethods;
+    pub use super::Lexer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

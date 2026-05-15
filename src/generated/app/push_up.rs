@@ -2,3 +2,10 @@
 
 #[cfg(any(feature = "app-push_up-musclepushupsequence-types"))]
 pub mod musclepushupsequence;
+#[cfg(feature = "app-push_up-musclepushupsequence")]
+pub use musclepushupsequence::IMusclePushupSequenceMethods;
+#[cfg(feature = "app-push_up-musclepushupsequence-types")]
+pub use musclepushupsequence::{
+    IMusclePushupSequence, MusclePushupSequence, MusclePushupSequence_Label,
+    MusclePushupSequence_judgeRank,
+};

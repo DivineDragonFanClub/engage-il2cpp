@@ -18,12 +18,82 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
-#[::unity2::methods]
-impl AssemblyDescriptionAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, description: ::unity2::Il2CppString) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssemblyDescriptionAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssemblyDescriptionAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssemblyDescriptionAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AssemblyDescriptionAttribute,
+        description: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssemblyDescriptionAttribute,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, description, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+pub trait IAssemblyDescriptionAttributeMethods: IAssemblyDescriptionAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, description: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssemblyDescriptionAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AssemblyDescriptionAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(description),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+impl<__T: IAssemblyDescriptionAttribute> IAssemblyDescriptionAttributeMethods for __T {}
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
 impl AssemblyDescriptionAttribute {
@@ -39,4 +109,11 @@ impl AssemblyDescriptionAttribute {
         <Self as IAssemblyDescriptionAttributeMethods>::ctor(this, description);
         this
     }
+}
+
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+pub mod prelude {
+    pub use super::AssemblyDescriptionAttribute;
+    pub use super::IAssemblyDescriptionAttribute;
+    pub use super::IAssemblyDescriptionAttributeMethods;
 }

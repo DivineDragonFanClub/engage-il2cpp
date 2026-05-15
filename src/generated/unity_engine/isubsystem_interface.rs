@@ -13,3 +13,9 @@ mod __types {
 
 #[cfg(feature = "unity_engine-isubsystem_interface-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-isubsystem_interface")]
+pub mod prelude {
+    pub use super::IISubsystem_Interface;
+    pub use super::ISubsystem_Interface;
+}

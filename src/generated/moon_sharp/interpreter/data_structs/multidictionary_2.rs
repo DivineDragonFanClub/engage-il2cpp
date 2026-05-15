@@ -103,3 +103,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MultiDictionary_2
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-multidictionary_2")]
+pub mod prelude {
+    pub use super::IMultiDictionary_2;
+    pub use super::IMultiDictionary_2Methods;
+    pub use super::MultiDictionary_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

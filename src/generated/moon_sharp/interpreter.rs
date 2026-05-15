@@ -2,16 +2,36 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor-types"))]
 pub mod autodescribinguserdatadescriptor;
+#[cfg(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor")]
+pub use autodescribinguserdatadescriptor::IAutoDescribingUserDataDescriptorMethods;
+#[cfg(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor-types")]
+pub use autodescribinguserdatadescriptor::{
+    AutoDescribingUserDataDescriptor, IAutoDescribingUserDataDescriptor,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-callbackarguments-types"))]
 pub mod callbackarguments;
+#[cfg(feature = "moon_sharp-interpreter-callbackarguments")]
+pub use callbackarguments::ICallbackArgumentsMethods;
+#[cfg(feature = "moon_sharp-interpreter-callbackarguments-types")]
+pub use callbackarguments::{CallbackArguments, ICallbackArguments};
 #[cfg(any(feature = "moon_sharp-interpreter-callbackfunction-types"))]
 pub mod callbackfunction;
+#[cfg(feature = "moon_sharp-interpreter-callbackfunction")]
+pub use callbackfunction::ICallbackFunctionMethods;
+#[cfg(feature = "moon_sharp-interpreter-callbackfunction-types")]
+pub use callbackfunction::{CallbackFunction, ICallbackFunction};
 #[cfg(any(feature = "moon_sharp-interpreter-closure-types"))]
 pub mod closure;
+#[cfg(feature = "moon_sharp-interpreter-closure")]
+pub use closure::IClosureMethods;
+#[cfg(feature = "moon_sharp-interpreter-closure-types")]
+pub use closure::{Closure, Closure_UpvaluesType, IClosure};
 #[cfg(any(feature = "moon_sharp-interpreter-code_analysis-astnode-types"))]
 pub mod code_analysis;
 #[cfg(any(feature = "moon_sharp-interpreter-colonoperatorbehaviour-types"))]
 pub mod colonoperatorbehaviour;
+#[cfg(feature = "moon_sharp-interpreter-colonoperatorbehaviour-types")]
+pub use colonoperatorbehaviour::ColonOperatorBehaviour;
 #[cfg(any(
     feature = "moon_sharp-interpreter-compatibility-framework-types",
     feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase-types",
@@ -50,12 +70,24 @@ pub mod compatibility;
 pub mod core_lib;
 #[cfg(any(feature = "moon_sharp-interpreter-coremodules-types"))]
 pub mod coremodules;
+#[cfg(feature = "moon_sharp-interpreter-coremodules-types")]
+pub use coremodules::CoreModules;
 #[cfg(any(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types"))]
 pub mod coremodules_extensionmethods;
+#[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types")]
+pub use coremodules_extensionmethods::{
+    CoreModules_ExtensionMethods, ICoreModules_ExtensionMethods,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-coroutine_2-types"))]
 pub mod coroutine_2;
+#[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
+pub use coroutine_2::ICoroutine_2Methods;
+#[cfg(feature = "moon_sharp-interpreter-coroutine_2-types")]
+pub use coroutine_2::{Coroutine_2, Coroutine_CoroutineType, ICoroutine_2};
 #[cfg(any(feature = "moon_sharp-interpreter-coroutinestate-types"))]
 pub mod coroutinestate;
+#[cfg(feature = "moon_sharp-interpreter-coroutinestate-types")]
+pub use coroutinestate::CoroutineState;
 #[cfg(any(
     feature = "moon_sharp-interpreter-data_structs-faststack_1-types",
     feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1-types",
@@ -67,6 +99,8 @@ pub mod coroutinestate;
 pub mod data_structs;
 #[cfg(any(feature = "moon_sharp-interpreter-datatype-types"))]
 pub mod datatype;
+#[cfg(feature = "moon_sharp-interpreter-datatype-types")]
+pub use datatype::DataType;
 #[cfg(any(
     feature = "moon_sharp-interpreter-debugging-debuggeraction-types",
     feature = "moon_sharp-interpreter-debugging-debuggercaps-types",
@@ -93,10 +127,22 @@ pub mod debugging;
 pub mod diagnostics;
 #[cfg(any(feature = "moon_sharp-interpreter-dynamicexpression-types"))]
 pub mod dynamicexpression;
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpression")]
+pub use dynamicexpression::IDynamicExpressionMethods;
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpression-types")]
+pub use dynamicexpression::{DynamicExpression, IDynamicExpression};
 #[cfg(any(feature = "moon_sharp-interpreter-dynamicexpressionexception-types"))]
 pub mod dynamicexpressionexception;
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
+pub use dynamicexpressionexception::IDynamicExpressionExceptionMethods;
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception-types")]
+pub use dynamicexpressionexception::{DynamicExpressionException, IDynamicExpressionException};
 #[cfg(any(feature = "moon_sharp-interpreter-dynvalue-types"))]
 pub mod dynvalue;
+#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
+pub use dynvalue::IDynValueMethods;
+#[cfg(feature = "moon_sharp-interpreter-dynvalue-types")]
+pub use dynvalue::{DynValue, IDynValue};
 #[cfg(any(
     feature = "moon_sharp-interpreter-execution-buildtimescope-types",
     feature = "moon_sharp-interpreter-execution-closurecontext-types",
@@ -122,8 +168,14 @@ pub mod dynvalue;
 pub mod execution;
 #[cfg(any(feature = "moon_sharp-interpreter-extension_methods-types"))]
 pub mod extension_methods;
+#[cfg(feature = "moon_sharp-interpreter-extension_methods-types")]
+pub use extension_methods::{Extension_Methods, IExtension_Methods};
 #[cfg(any(feature = "moon_sharp-interpreter-internalerrorexception-types"))]
 pub mod internalerrorexception;
+#[cfg(feature = "moon_sharp-interpreter-internalerrorexception")]
+pub use internalerrorexception::IInternalErrorExceptionMethods;
+#[cfg(feature = "moon_sharp-interpreter-internalerrorexception-types")]
+pub use internalerrorexception::{IInternalErrorException, InternalErrorException};
 #[cfg(any(
     feature = "moon_sharp-interpreter-interop-anonwrapper-types",
     feature = "moon_sharp-interpreter-interop-anonwrapper_1-types",
@@ -195,8 +247,14 @@ pub mod internalerrorexception;
 pub mod interop;
 #[cfg(any(feature = "moon_sharp-interpreter-interopaccessmode-types"))]
 pub mod interopaccessmode;
+#[cfg(feature = "moon_sharp-interpreter-interopaccessmode-types")]
+pub use interopaccessmode::InteropAccessMode;
 #[cfg(any(feature = "moon_sharp-interpreter-interpreterexception-types"))]
 pub mod interpreterexception;
+#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
+pub use interpreterexception::IInterpreterExceptionMethods;
+#[cfg(feature = "moon_sharp-interpreter-interpreterexception-types")]
+pub use interpreterexception::{IInterpreterException, InterpreterException};
 #[cfg(any(
     feature = "moon_sharp-interpreter-io-bindumpbinaryreader-types",
     feature = "moon_sharp-interpreter-io-bindumpbinarywriter-types",
@@ -205,8 +263,14 @@ pub mod interpreterexception;
 pub mod io;
 #[cfg(any(feature = "moon_sharp-interpreter-iscriptprivateresource-types"))]
 pub mod iscriptprivateresource;
+#[cfg(feature = "moon_sharp-interpreter-iscriptprivateresource")]
+pub use iscriptprivateresource::IIScriptPrivateResourceMethods;
+#[cfg(feature = "moon_sharp-interpreter-iscriptprivateresource-types")]
+pub use iscriptprivateresource::{IIScriptPrivateResource, IScriptPrivateResource};
 #[cfg(any(feature = "moon_sharp-interpreter-linqhelpers-types"))]
 pub mod linqhelpers;
+#[cfg(feature = "moon_sharp-interpreter-linqhelpers-types")]
+pub use linqhelpers::{ILinqHelpers, LinqHelpers};
 #[cfg(any(
     feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader-types",
     feature = "moon_sharp-interpreter-loaders-filesystemscriptloader-types",
@@ -219,26 +283,72 @@ pub mod linqhelpers;
 pub mod loaders;
 #[cfg(any(feature = "moon_sharp-interpreter-luatypeextensions-types"))]
 pub mod luatypeextensions;
+#[cfg(feature = "moon_sharp-interpreter-luatypeextensions-types")]
+pub use luatypeextensions::{ILuaTypeExtensions, LuaTypeExtensions};
 #[cfg(any(feature = "moon_sharp-interpreter-moduleregister-types"))]
 pub mod moduleregister;
+#[cfg(feature = "moon_sharp-interpreter-moduleregister-types")]
+pub use moduleregister::{IModuleRegister, ModuleRegister};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharphiddenattribute-types"))]
 pub mod moonsharphiddenattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharphiddenattribute")]
+pub use moonsharphiddenattribute::IMoonSharpHiddenAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharphiddenattribute-types")]
+pub use moonsharphiddenattribute::{IMoonSharpHiddenAttribute, MoonSharpHiddenAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharphidememberattribute-types"))]
 pub mod moonsharphidememberattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
+pub use moonsharphidememberattribute::IMoonSharpHideMemberAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute-types")]
+pub use moonsharphidememberattribute::{
+    IMoonSharpHideMemberAttribute, MoonSharpHideMemberAttribute,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpmoduleattribute-types"))]
 pub mod moonsharpmoduleattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+pub use moonsharpmoduleattribute::IMoonSharpModuleAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute-types")]
+pub use moonsharpmoduleattribute::{IMoonSharpModuleAttribute, MoonSharpModuleAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute-types"))]
 pub mod moonsharpmoduleconstantattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
+pub use moonsharpmoduleconstantattribute::IMoonSharpModuleConstantAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute-types")]
+pub use moonsharpmoduleconstantattribute::{
+    IMoonSharpModuleConstantAttribute, MoonSharpModuleConstantAttribute,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute-types"))]
 pub mod moonsharpmodulemethodattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute")]
+pub use moonsharpmodulemethodattribute::IMoonSharpModuleMethodAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute-types")]
+pub use moonsharpmodulemethodattribute::{
+    IMoonSharpModuleMethodAttribute, MoonSharpModuleMethodAttribute,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharppropertyattribute-types"))]
 pub mod moonsharppropertyattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharppropertyattribute")]
+pub use moonsharppropertyattribute::IMoonSharpPropertyAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharppropertyattribute-types")]
+pub use moonsharppropertyattribute::{IMoonSharpPropertyAttribute, MoonSharpPropertyAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpuserdataattribute-types"))]
 pub mod moonsharpuserdataattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
+pub use moonsharpuserdataattribute::IMoonSharpUserDataAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute-types")]
+pub use moonsharpuserdataattribute::{IMoonSharpUserDataAttribute, MoonSharpUserDataAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpuserdatametamethodattribute-types"))]
 pub mod moonsharpuserdatametamethodattribute;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpuserdatametamethodattribute")]
+pub use moonsharpuserdatametamethodattribute::IMoonSharpUserDataMetamethodAttributeMethods;
+#[cfg(feature = "moon_sharp-interpreter-moonsharpuserdatametamethodattribute-types")]
+pub use moonsharpuserdatametamethodattribute::{
+    IMoonSharpUserDataMetamethodAttribute, MoonSharpUserDataMetamethodAttribute,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-namespacedoc-types"))]
 pub mod namespacedoc;
+#[cfg(feature = "moon_sharp-interpreter-namespacedoc-types")]
+pub use namespacedoc::{INamespaceDoc, NamespaceDoc};
 #[cfg(any(
     feature = "moon_sharp-interpreter-platforms-iplatformaccessor-types",
     feature = "moon_sharp-interpreter-platforms-limitedplatformaccessor-types",
@@ -251,6 +361,10 @@ pub mod namespacedoc;
 pub mod platforms;
 #[cfg(any(feature = "moon_sharp-interpreter-refidobject-types"))]
 pub mod refidobject;
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+pub use refidobject::IRefIdObjectMethods;
+#[cfg(feature = "moon_sharp-interpreter-refidobject-types")]
+pub use refidobject::{IRefIdObject, RefIdObject};
 #[cfg(any(
     feature = "moon_sharp-interpreter-repl-namespacedoc_2-types",
     feature = "moon_sharp-interpreter-repl-replhistoryinterpreter-types",
@@ -260,20 +374,52 @@ pub mod refidobject;
 pub mod repl;
 #[cfg(any(feature = "moon_sharp-interpreter-script-types"))]
 pub mod script;
+#[cfg(feature = "moon_sharp-interpreter-script")]
+pub use script::IScriptMethods;
+#[cfg(feature = "moon_sharp-interpreter-script-types")]
+pub use script::{IScript, Script};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptexecutioncontext-types"))]
 pub mod scriptexecutioncontext;
+#[cfg(feature = "moon_sharp-interpreter-scriptexecutioncontext")]
+pub use scriptexecutioncontext::IScriptExecutionContextMethods;
+#[cfg(feature = "moon_sharp-interpreter-scriptexecutioncontext-types")]
+pub use scriptexecutioncontext::{IScriptExecutionContext, ScriptExecutionContext};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptfunctiondelegate-types"))]
 pub mod scriptfunctiondelegate;
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+pub use scriptfunctiondelegate::IScriptFunctionDelegateMethods;
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate-types")]
+pub use scriptfunctiondelegate::{IScriptFunctionDelegate, ScriptFunctionDelegate};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptfunctiondelegate_1-types"))]
 pub mod scriptfunctiondelegate_1;
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate_1")]
+pub use scriptfunctiondelegate_1::IScriptFunctionDelegate_1Methods;
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate_1-types")]
+pub use scriptfunctiondelegate_1::{IScriptFunctionDelegate_1, ScriptFunctionDelegate_1};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptglobaloptions-types"))]
 pub mod scriptglobaloptions;
+#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
+pub use scriptglobaloptions::IScriptGlobalOptionsMethods;
+#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions-types")]
+pub use scriptglobaloptions::{IScriptGlobalOptions, ScriptGlobalOptions};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptoptions-types"))]
 pub mod scriptoptions;
+#[cfg(feature = "moon_sharp-interpreter-scriptoptions")]
+pub use scriptoptions::IScriptOptionsMethods;
+#[cfg(feature = "moon_sharp-interpreter-scriptoptions-types")]
+pub use scriptoptions::{IScriptOptions, ScriptOptions};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptprivateresource_extension-types"))]
 pub mod scriptprivateresource_extension;
+#[cfg(feature = "moon_sharp-interpreter-scriptprivateresource_extension-types")]
+pub use scriptprivateresource_extension::{
+    IScriptPrivateResource_Extension, ScriptPrivateResource_Extension,
+};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptruntimeexception-types"))]
 pub mod scriptruntimeexception;
+#[cfg(feature = "moon_sharp-interpreter-scriptruntimeexception")]
+pub use scriptruntimeexception::IScriptRuntimeExceptionMethods;
+#[cfg(feature = "moon_sharp-interpreter-scriptruntimeexception-types")]
+pub use scriptruntimeexception::{IScriptRuntimeException, ScriptRuntimeException};
 #[cfg(any(
     feature = "moon_sharp-interpreter-serialization-json-jsonnull-types",
     feature = "moon_sharp-interpreter-serialization-json-jsontableconverter-types",
@@ -283,16 +429,36 @@ pub mod scriptruntimeexception;
 pub mod serialization;
 #[cfg(any(feature = "moon_sharp-interpreter-symbolref-types"))]
 pub mod symbolref;
+#[cfg(feature = "moon_sharp-interpreter-symbolref")]
+pub use symbolref::ISymbolRefMethods;
+#[cfg(feature = "moon_sharp-interpreter-symbolref-types")]
+pub use symbolref::{ISymbolRef, SymbolRef};
 #[cfg(any(feature = "moon_sharp-interpreter-symbolreftype-types"))]
 pub mod symbolreftype;
+#[cfg(feature = "moon_sharp-interpreter-symbolreftype-types")]
+pub use symbolreftype::SymbolRefType;
 #[cfg(any(feature = "moon_sharp-interpreter-syntaxerrorexception-types"))]
 pub mod syntaxerrorexception;
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+pub use syntaxerrorexception::ISyntaxErrorExceptionMethods;
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception-types")]
+pub use syntaxerrorexception::{ISyntaxErrorException, SyntaxErrorException};
 #[cfg(any(feature = "moon_sharp-interpreter-table-types"))]
 pub mod table;
+#[cfg(feature = "moon_sharp-interpreter-table")]
+pub use table::ITableMethods;
+#[cfg(feature = "moon_sharp-interpreter-table-types")]
+pub use table::{ITable, Table};
 #[cfg(any(feature = "moon_sharp-interpreter-tablepair-types"))]
 pub mod tablepair;
+#[cfg(feature = "moon_sharp-interpreter-tablepair-types")]
+pub use tablepair::TablePair;
 #[cfg(any(feature = "moon_sharp-interpreter-tailcalldata-types"))]
 pub mod tailcalldata;
+#[cfg(feature = "moon_sharp-interpreter-tailcalldata")]
+pub use tailcalldata::ITailCallDataMethods;
+#[cfg(feature = "moon_sharp-interpreter-tailcalldata-types")]
+pub use tailcalldata::{ITailCallData, TailCallData};
 #[cfg(any(
     feature = "moon_sharp-interpreter-tree-expression-types",
     feature = "moon_sharp-interpreter-tree-expressions-adjustmentexpression-types",
@@ -336,9 +502,21 @@ pub mod tailcalldata;
 pub mod tree;
 #[cfg(any(feature = "moon_sharp-interpreter-typevalidationflags-types"))]
 pub mod typevalidationflags;
+#[cfg(feature = "moon_sharp-interpreter-typevalidationflags-types")]
+pub use typevalidationflags::TypeValidationFlags;
 #[cfg(any(feature = "moon_sharp-interpreter-userdata-types"))]
 pub mod userdata;
+#[cfg(feature = "moon_sharp-interpreter-userdata")]
+pub use userdata::IUserDataMethods;
+#[cfg(feature = "moon_sharp-interpreter-userdata-types")]
+pub use userdata::{IUserData, UserData};
 #[cfg(any(feature = "moon_sharp-interpreter-wellknownsymbols-types"))]
 pub mod wellknownsymbols;
+#[cfg(feature = "moon_sharp-interpreter-wellknownsymbols-types")]
+pub use wellknownsymbols::{IWellKnownSymbols, WellKnownSymbols};
 #[cfg(any(feature = "moon_sharp-interpreter-yieldrequest-types"))]
 pub mod yieldrequest;
+#[cfg(feature = "moon_sharp-interpreter-yieldrequest")]
+pub use yieldrequest::IYieldRequestMethods;
+#[cfg(feature = "moon_sharp-interpreter-yieldrequest-types")]
+pub use yieldrequest::{IYieldRequest, YieldRequest};

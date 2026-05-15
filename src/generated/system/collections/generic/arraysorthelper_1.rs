@@ -132,3 +132,12 @@ impl<T0: ::unity2::ClassIdentity> ArraySortHelper_1<T0> {
         comparer: crate::system::comparison_1::Comparison_1<T0>,
     ) -> ();
 }
+
+#[cfg(feature = "system-collections-generic-arraysorthelper_1")]
+pub mod prelude {
+    pub use super::ArraySortHelper_1;
+    pub use super::IArraySortHelper_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

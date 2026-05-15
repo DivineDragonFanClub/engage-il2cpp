@@ -18,13 +18,84 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
-#[::unity2::methods]
-impl ILocationSizeData {
-    #[doc = "`ComputeSize(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    #[method(name = "ComputeSize", args = 2)]
-    pub fn compute_size(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ILocationSizeData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compute_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ILocationSizeData as ::unity2::ClassIdentity>::class(),
+                "ComputeSize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ILocationSizeData as ::unity2::ClassIdentity>::NAME,
+                    "ComputeSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compute_size(
+        this: ILocationSizeData,
         location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
         resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> i64;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner : extern "C" fn (ILocationSizeData , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compute_size :: get_offset () as isize) ,) ;
+        inner(this, location, resource_manager, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
+pub trait IILocationSizeDataMethods: IILocationSizeData {
+    #[doc = "`ComputeSize(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
+    fn compute_size(
+        self,
+        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        resource_manager: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        >,
+    ) -> i64 {
+        unsafe {
+            let __receiver = <ILocationSizeData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ILocationSizeData_unity2_raw::compute_size(
+                __receiver,
+                ::core::convert::Into::into(location),
+                ::core::convert::Into::into(resource_manager),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
+impl<__T: IILocationSizeData> IILocationSizeDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
+pub mod prelude {
+    pub use super::IILocationSizeData;
+    pub use super::IILocationSizeDataMethods;
+    pub use super::ILocationSizeData;
 }

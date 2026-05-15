@@ -20,39 +20,545 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-resourcemanagerconfig")]
-#[::unity2::methods]
-impl ResourceManagerConfig {
-    #[doc = "`ExtractKeyAndSubKey(crate::system::object::Object, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ExtractKeyAndSubKey", args = 3)]
-    pub fn extract_key_and_sub_key(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceManagerConfig_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_extract_key_and_sub_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "ExtractKeyAndSubKey",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "ExtractKeyAndSubKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn extract_key_and_sub_key(
         key_obj: crate::system::object::Object,
-        main_key: ::unity2::Il2CppString,
-        sub_key: ::unity2::Il2CppString,
-    ) -> bool;
+        main_key: *mut ::unity2::Il2CppString,
+        sub_key: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::system::object::Object,
+            *mut ::unity2::Il2CppString,
+            *mut ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_extract_key_and_sub_key::get_offset() as isize),
+        );
+        inner(key_obj, main_key, sub_key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_path_remote {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "IsPathRemote",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "IsPathRemote",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_path_remote(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_path_remote::get_offset() as isize),
+            );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_strip_query_parameters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "StripQueryParameters",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "StripQueryParameters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn strip_query_parameters(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_strip_query_parameters::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_should_path_use_web_request {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "ShouldPathUseWebRequest",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "ShouldPathUseWebRequest",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn should_path_use_web_request(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_should_path_use_web_request::get_offset() as isize),
+            );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_array_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "CreateArrayResult",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "CreateArrayResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_array_result(
+        r#type: ::unity2::SystemType,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::IlInstance {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::IlInstance = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_array_result::get_offset() as isize),
+        );
+        inner(r#type, all_assets, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_list_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "CreateListResult",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                    "CreateListResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_list_result(
+        r#type: ::unity2::SystemType,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ilist::IList {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ilist::IList = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_list_result::get_offset() as isize),
+        );
+        inner(r#type, all_assets, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-resource_management-util-resourcemanagerconfig")]
+impl ResourceManagerConfig {
+    #[doc = "`ExtractKeyAndSubKey(crate::system::object::Object, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
+    pub fn extract_key_and_sub_key(
+        key_obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __ResourceManagerConfig_unity2_raw::extract_key_and_sub_key(
+                    ::core::convert::Into::into(key_obj),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
     #[doc = "`IsPathRemote(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsPathRemote", args = 1)]
-    pub fn is_path_remote(path: ::unity2::Il2CppString) -> bool;
-
+    pub fn is_path_remote(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __ResourceManagerConfig_unity2_raw::is_path_remote(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`StripQueryParameters(::unity2::Il2CppString)` overload"]
-    #[method(name = "StripQueryParameters", args = 1)]
-    pub fn strip_query_parameters(path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
+    pub fn strip_query_parameters(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __ResourceManagerConfig_unity2_raw::strip_query_parameters(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`ShouldPathUseWebRequest(::unity2::Il2CppString)` overload"]
-    #[method(name = "ShouldPathUseWebRequest", args = 1)]
-    pub fn should_path_use_web_request(path: ::unity2::Il2CppString) -> bool;
-
+    pub fn should_path_use_web_request(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            __ResourceManagerConfig_unity2_raw::should_path_use_web_request(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateArrayResult(::unity2::SystemType, ::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
-    #[method(name = "CreateArrayResult", args = 2)]
     pub fn create_array_result(
-        r#type: ::unity2::SystemType,
-        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    ) -> ::unity2::IlInstance;
-
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> ::unity2::IlInstance {
+        unsafe {
+            __ResourceManagerConfig_unity2_raw::create_array_result(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn create_array_result_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "CreateArrayResult",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                "CreateArrayResult",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
     #[doc = "`CreateListResult(::unity2::SystemType, ::unity2::Array<crate::unity_engine::object_2::Object_2>)` overload"]
-    #[method(name = "CreateListResult", args = 2)]
     pub fn create_list_result(
-        r#type: ::unity2::SystemType,
-        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    ) -> crate::system::collections::ilist::IList;
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> crate::system::collections::ilist::IList {
+        unsafe {
+            __ResourceManagerConfig_unity2_raw::create_list_result(
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn create_list_result_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+        all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "CreateListResult",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                "CreateListResult",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(all_assets),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn is_instance<
+        M0: ::unity2::IlType + ::core::marker::Copy,
+        M1: ::unity2::IlType + ::core::marker::Copy,
+    >() -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::class(),
+                "IsInstance",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ResourceManagerConfig as ::unity2::ClassIdentity>::NAME,
+                "IsInstance",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize)
+            ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[
+                        <M0 as ::unity2::IlType>::il_type(),
+                        <M1 as ::unity2::IlType>::il_type(),
+                    ],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::OptionalMethod) -> bool =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::option::Option::Some(__mi_opaque))
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-resourcemanagerconfig")]
+pub mod prelude {
+    pub use super::IResourceManagerConfig;
+    pub use super::ResourceManagerConfig;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

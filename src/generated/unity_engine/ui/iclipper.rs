@@ -15,9 +15,75 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-iclipper")]
-#[::unity2::methods]
-impl IClipper {
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IClipper_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_perform_clipping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IClipper as ::unity2::ClassIdentity>::class(),
+                "PerformClipping",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IClipper as ::unity2::ClassIdentity>::NAME,
+                    "PerformClipping",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn perform_clipping(
+        this: IClipper,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IClipper, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_perform_clipping::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-iclipper")]
+pub trait IIClipperMethods: IIClipper {
     #[doc = "`PerformClipping()` overload"]
-    #[method(name = "PerformClipping", args = 0)]
-    pub fn perform_clipping(self) -> ();
+    fn perform_clipping(self) -> () {
+        unsafe {
+            let __receiver = <IClipper as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IClipper_unity2_raw::perform_clipping(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-iclipper")]
+impl<__T: IIClipper> IIClipperMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-iclipper")]
+pub mod prelude {
+    pub use super::IClipper;
+    pub use super::IIClipper;
+    pub use super::IIClipperMethods;
 }

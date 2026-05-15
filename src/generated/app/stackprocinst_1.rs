@@ -68,3 +68,16 @@ impl<T0: ::unity2::ClassIdentity> StackProcInst_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-stackprocinst_1")]
+pub mod prelude {
+    pub use super::IStackProcInst_1;
+    pub use super::IStackProcInst_1Methods;
+    pub use super::StackProcInst_1;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

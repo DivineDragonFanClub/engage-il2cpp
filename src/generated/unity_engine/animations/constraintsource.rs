@@ -40,3 +40,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-animations-constraintsource-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-animations-constraintsource")]
+pub mod prelude {
+    pub use super::ConstraintSource;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

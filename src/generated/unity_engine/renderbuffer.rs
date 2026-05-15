@@ -40,3 +40,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-renderbuffer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-renderbuffer")]
+pub mod prelude {
+    pub use super::RenderBuffer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

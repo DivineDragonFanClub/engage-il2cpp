@@ -20,19 +20,142 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-animationplayablebinding")]
-#[::unity2::methods]
-impl AnimationPlayableBinding {
-    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationPlayableBinding_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationPlayableBinding as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationPlayableBinding as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
         name: ::unity2::Il2CppString,
         key: crate::unity_engine::object_2::Object_2,
-    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding;
-
-    #[doc = "`CreateAnimationOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateAnimationOutput", args = 2)]
-    pub fn create_animation_output(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
+        let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(name, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_animation_output {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationPlayableBinding as ::unity2::ClassIdentity>::class(),
+                "CreateAnimationOutput",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationPlayableBinding as ::unity2::ClassIdentity>::NAME,
+                    "CreateAnimationOutput",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_animation_output(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_animation_output::get_offset() as isize),
+            );
+        inner(graph, name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-animations-animationplayablebinding")]
+impl AnimationPlayableBinding {
+    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn create(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
+        unsafe {
+            __AnimationPlayableBinding_unity2_raw::create(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(key),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateAnimationOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]
+    pub fn create_animation_output(
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
+        unsafe {
+            __AnimationPlayableBinding_unity2_raw::create_animation_output(
+                ::core::convert::Into::into(graph),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animations-animationplayablebinding")]
+pub mod prelude {
+    pub use super::AnimationPlayableBinding;
+    pub use super::IAnimationPlayableBinding;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

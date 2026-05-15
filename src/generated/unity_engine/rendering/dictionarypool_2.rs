@@ -29,10 +29,10 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<
     #[method(name = "Get", args = 0)]
     pub fn get() -> crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>;
 
-    #[doc = "`Get(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"]
+    #[doc = "`Get(*mutcrate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"]
     #[method(name = "Get", args = 1)]
     pub fn get_2(
-        value: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
+        value: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
     ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<
         crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
     >;
@@ -46,4 +46,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-dictionarypool_2")]
+pub mod prelude {
+    pub use super::DictionaryPool_2;
+    pub use super::IDictionaryPool_2;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -18,3 +18,12 @@ mod __types {
 
 #[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup")]
+pub mod prelude {
+    pub use super::ISpriteRendererGroup;
+    pub use super::SpriteRendererGroup;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

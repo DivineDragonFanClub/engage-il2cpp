@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RelayShowDataSequence {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+        #[rename(name = "m_IsNewPlay")]
+        pub m_is_new_play: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -53,75 +65,533 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayShowDataSequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        #[rename(name = "m_IsNewPlay")]
-        pub m_is_new_play: bool,
-    }
 }
 
 #[cfg(feature = "app-relayshowdatasequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-relayshowdatasequence")]
-#[::unity2::methods]
-impl RelayShowDataSequence {
-    #[doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayShowDataSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayShowDataSequence,
         mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         is_new_play: bool,
-    ) -> ();
-
-    #[doc = "`IsSkipTutorial()` overload"]
-    #[method(name = "IsSkipTutorial", args = 0)]
-    pub fn is_skip_tutorial(self) -> bool;
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`IsSetPublishMode()` overload"]
-    #[method(name = "IsSetPublishMode", args = 0)]
-    pub fn is_set_publish_mode(self) -> bool;
-
-    #[doc = "`SetPublishMode()` overload"]
-    #[method(name = "SetPublishMode", args = 0)]
-    pub fn set_publish_mode(self) -> ();
-
-    #[doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "CreateBindTakeOver", args = 2)]
-    pub fn create_bind_take_over(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayShowDataSequence,
+            crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, mode, meta_data, is_new_play, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_skip_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "IsSkipTutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsSkipTutorial",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_skip_tutorial(
+        this: RelayShowDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_skip_tutorial::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "Show",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show(
+        this: RelayShowDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_set_publish_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "IsSetPublishMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsSetPublishMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_set_publish_mode(
+        this: RelayShowDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_set_publish_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_publish_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "SetPublishMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetPublishMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_publish_mode(
+        this: RelayShowDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelayShowDataSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_publish_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_take_over {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindTakeOver",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindTakeOver",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_take_over(
         super_: crate::app::procinst::ProcInst,
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    #[method(name = "CreateBindUpload", args = 3)]
-    pub fn create_bind_upload(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_take_over::get_offset() as isize),
+        );
+        inner(super_, meta_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindUpload",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindUpload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_upload(
         super_: crate::app::procinst::ProcInst,
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         is_new_play: bool,
-    ) -> ();
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
-    #[method(name = "CreateBindImpl", args = 4)]
-    pub fn create_bind_impl(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_upload::get_offset() as isize),
+        );
+        inner(super_, meta_data, is_new_play, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayShowDataSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindImpl",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayShowDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_impl(
         super_: crate::app::procinst::ProcInst,
         mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         is_new_play: bool,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_impl::get_offset() as isize),
+        );
+        inner(super_, mode, meta_data, is_new_play, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl RelayShowDataSequence {
+    #[doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    pub fn create_bind_take_over(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            __RelayShowDataSequence_unity2_raw::create_bind_take_over(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
+    pub fn create_bind_upload(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        is_new_play: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __RelayShowDataSequence_unity2_raw::create_bind_upload(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_new_play),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
+    pub fn create_bind_impl(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mode: impl ::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        is_new_play: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __RelayShowDataSequence_unity2_raw::create_bind_impl(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_new_play),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayshowdatasequence")]
+pub trait IRelayShowDataSequenceMethods: IRelayShowDataSequence {
+    #[doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
+    fn ctor(
+        self,
+        mode: impl ::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        is_new_play: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayShowDataSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_new_play),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSkipTutorial()` overload"]
+    fn is_skip_tutorial(self) -> bool {
+        unsafe {
+            let __receiver = <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayShowDataSequence_unity2_raw::is_skip_tutorial(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver = <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayShowDataSequence_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSetPublishMode()` overload"]
+    fn is_set_publish_mode(self) -> bool {
+        unsafe {
+            let __receiver = <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayShowDataSequence_unity2_raw::is_set_publish_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPublishMode()` overload"]
+    fn set_publish_mode(self) -> () {
+        unsafe {
+            let __receiver = <RelayShowDataSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayShowDataSequence_unity2_raw::set_publish_mode(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl<__T: IRelayShowDataSequence> IRelayShowDataSequenceMethods for __T {}
 
 #[cfg(feature = "app-relayshowdatasequence")]
 impl RelayShowDataSequence {
@@ -141,4 +611,24 @@ impl RelayShowDataSequence {
         <Self as IRelayShowDataSequenceMethods>::ctor(this, mode, meta_data, is_new_play);
         this
     }
+}
+
+#[cfg(feature = "app-relayshowdatasequence")]
+pub mod prelude {
+    pub use super::IRelayShowDataSequence;
+    pub use super::IRelayShowDataSequenceMethods;
+    pub use super::RelayShowDataSequence;
+    pub use super::RelayShowDataSequence_Label;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

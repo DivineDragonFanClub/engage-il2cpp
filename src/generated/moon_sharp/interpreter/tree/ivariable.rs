@@ -15,14 +15,97 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
-#[::unity2::methods]
-impl IVariable {
-    #[doc = "`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"]
-    #[method(name = "CompileAssignment", args = 3)]
-    pub fn compile_assignment(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IVariable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile_assignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IVariable as ::unity2::ClassIdentity>::class(),
+                "CompileAssignment",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IVariable as ::unity2::ClassIdentity>::NAME,
+                    "CompileAssignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compile_assignment(
+        this: IVariable,
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
         stackofs: i32,
         tupleidx: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IVariable,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compile_assignment::get_offset() as isize),
+        );
+        inner(this, bc, stackofs, tupleidx, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
+pub trait IIVariableMethods: IIVariable {
+    #[doc = "`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"]
+    fn compile_assignment(
+        self,
+        bc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        >,
+        stackofs: impl ::core::convert::Into<i32>,
+        tupleidx: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IVariable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IVariable_unity2_raw::compile_assignment(
+                __receiver,
+                ::core::convert::Into::into(bc),
+                ::core::convert::Into::into(stackofs),
+                ::core::convert::Into::into(tupleidx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
+impl<__T: IIVariable> IIVariableMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
+pub mod prelude {
+    pub use super::IIVariable;
+    pub use super::IIVariableMethods;
+    pub use super::IVariable;
 }

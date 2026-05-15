@@ -39,18 +39,152 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-drivenrecttransformtracker")]
-#[::unity2::methods(value)]
-impl DrivenRectTransformTracker {
-    #[doc = "`Add(crate::unity_engine::object_2::Object_2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DrivenRectTransformTracker_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrivenRectTransformTracker as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrivenRectTransformTracker as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: DrivenRectTransformTracker,
         driver: crate::unity_engine::object_2::Object_2,
         rect_transform: crate::unity_engine::recttransform::RectTransform,
         driven_properties : crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DrivenRectTransformTracker,
+            crate::unity_engine::object_2::Object_2,
+            crate::unity_engine::recttransform::RectTransform,
+            crate::unity_engine::driventransformproperties::DrivenTransformProperties,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(
+            this,
+            driver,
+            rect_transform,
+            driven_properties,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrivenRectTransformTracker as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrivenRectTransformTracker as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: DrivenRectTransformTracker,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DrivenRectTransformTracker, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(feature = "unity_engine-drivenrecttransformtracker")]
+impl DrivenRectTransformTracker {
+    #[doc = "`Add(crate::unity_engine::object_2::Object_2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"]
+    pub fn add(
+        self,
+        driver: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+        rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        driven_properties: impl ::core::convert::Into<
+            crate::unity_engine::driventransformproperties::DrivenTransformProperties,
+        >,
+    ) -> () {
+        unsafe {
+            __DrivenRectTransformTracker_unity2_raw::add(
+                self,
+                ::core::convert::Into::into(driver),
+                ::core::convert::Into::into(rect_transform),
+                ::core::convert::Into::into(driven_properties),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+    pub fn clear(self) -> () {
+        unsafe {
+            __DrivenRectTransformTracker_unity2_raw::clear(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-drivenrecttransformtracker")]
+pub mod prelude {
+    pub use super::DrivenRectTransformTracker;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

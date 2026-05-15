@@ -17,74 +17,830 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-file")]
-#[::unity2::methods]
-impl File {
-    #[doc = "`Create(::unity2::Il2CppString)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(path: ::unity2::Il2CppString) -> crate::system::io::filestream::FileStream;
-
-    #[doc = "`Create(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create_2(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __File_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::filestream::FileStream {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::filestream::FileStream = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_2(
         path: ::unity2::Il2CppString,
         buffer_size: i32,
-    ) -> crate::system::io::filestream::FileStream;
-
-    #[doc = "`Delete(::unity2::Il2CppString)` overload"]
-    #[method(name = "Delete", args = 1)]
-    pub fn delete(path: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Exists(::unity2::Il2CppString)` overload"]
-    #[method(name = "Exists", args = 1)]
-    pub fn exists(path: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Move(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Move", args = 2)]
-    pub fn r#move(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::filestream::FileStream {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::filestream::FileStream = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_2::get_offset() as isize),
+        );
+        inner(path, buffer_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Delete",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Delete",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete::get_offset() as isize),
+            );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Exists",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Exists",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exists(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exists::get_offset() as isize),
+            );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Move",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Move",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn r#move(
         source_file_name: ::unity2::Il2CppString,
         dest_file_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Open(::unity2::Il2CppString, crate::system::io::filemode::FileMode)` overload"]
-    #[method(name = "Open", args = 2)]
-    pub fn open(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move::get_offset() as isize),
+        );
+        inner(source_file_name, dest_file_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::filemode::FileMode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "Open",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "Open",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open(
         path: ::unity2::Il2CppString,
         mode: crate::system::io::filemode::FileMode,
-    ) -> crate::system::io::filestream::FileStream;
-
-    #[doc = "`OpenRead(::unity2::Il2CppString)` overload"]
-    #[method(name = "OpenRead", args = 1)]
-    pub fn open_read(path: ::unity2::Il2CppString) -> crate::system::io::filestream::FileStream;
-
-    #[doc = "`OpenText(::unity2::Il2CppString)` overload"]
-    #[method(name = "OpenText", args = 1)]
-    pub fn open_text(path: ::unity2::Il2CppString)
-        -> crate::system::io::streamreader::StreamReader;
-
-    #[doc = "`ReadAllBytes(::unity2::Il2CppString)` overload"]
-    #[method(name = "ReadAllBytes", args = 1)]
-    pub fn read_all_bytes(path: ::unity2::Il2CppString) -> ::unity2::Array<u8>;
-
-    #[doc = "`ReadAllLines(crate::system::io::streamreader::StreamReader)` overload"]
-    #[method(name = "ReadAllLines", args = 1)]
-    pub fn read_all_lines(
-        reader: crate::system::io::streamreader::StreamReader,
-    ) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`ReadAllText(::unity2::Il2CppString)` overload"]
-    #[method(name = "ReadAllText", args = 1)]
-    pub fn read_all_text(path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`WriteAllText(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteAllText", args = 2)]
-    pub fn write_all_text(path: ::unity2::Il2CppString, contents: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`FillAttributeInfo(::unity2::Il2CppString, crate::system::io::monoiostat::MonoIOStat, bool, bool)` overload"]
-    #[method(name = "FillAttributeInfo", args = 4)]
-    pub fn fill_attribute_info(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::filestream::FileStream {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::system::io::filemode::FileMode,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::filestream::FileStream = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_open::get_offset() as isize),
+        );
+        inner(path, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "OpenRead",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "OpenRead",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_read(
         path: ::unity2::Il2CppString,
-        data: crate::system::io::monoiostat::MonoIOStat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::filestream::FileStream {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::filestream::FileStream = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_open_read::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "OpenText",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "OpenText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_text(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::streamreader::StreamReader {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::streamreader::StreamReader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_open_text::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_all_bytes {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "ReadAllBytes",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "ReadAllBytes",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_all_bytes(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_all_bytes::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_all_lines {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::streamreader::StreamReader as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "ReadAllLines",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "ReadAllLines",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_all_lines(
+        reader: crate::system::io::streamreader::StreamReader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            crate::system::io::streamreader::StreamReader,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_all_lines::get_offset() as isize),
+        );
+        inner(reader, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_all_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "ReadAllText",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "ReadAllText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn read_all_text(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_read_all_text::get_offset() as isize),
+        );
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_all_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "WriteAllText",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "WriteAllText",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_all_text(
+        path: ::unity2::Il2CppString,
+        contents: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_all_text::get_offset() as isize),
+        );
+        inner(path, contents, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_attribute_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <*mut crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <File as ::unity2::ClassIdentity>::class(),
+                "FillAttributeInfo",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <File as ::unity2::ClassIdentity>::NAME,
+                    "FillAttributeInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_attribute_info(
+        path: ::unity2::Il2CppString,
+        data: *mut crate::system::io::monoiostat::MonoIOStat,
         tryagain: bool,
         return_error_on_not_found: bool,
-    ) -> i32;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            *mut crate::system::io::monoiostat::MonoIOStat,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fill_attribute_info::get_offset() as isize),
+        );
+        inner(
+            path,
+            data,
+            tryagain,
+            return_error_on_not_found,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "system-io-file")]
+impl File {
+    #[doc = "`Create(::unity2::Il2CppString)` overload"]
+    pub fn create(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::io::filestream::FileStream {
+        unsafe {
+            __File_unity2_raw::create(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Create(::unity2::Il2CppString, i32)` overload"]
+    pub fn create_2(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        buffer_size: impl ::core::convert::Into<i32>,
+    ) -> crate::system::io::filestream::FileStream {
+        unsafe {
+            __File_unity2_raw::create_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(buffer_size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Delete(::unity2::Il2CppString)` overload"]
+    pub fn delete(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __File_unity2_raw::delete(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Exists(::unity2::Il2CppString)` overload"]
+    pub fn exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            __File_unity2_raw::exists(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Move(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn r#move(
+        source_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        dest_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __File_unity2_raw::r#move(
+                ::core::convert::Into::into(source_file_name),
+                ::core::convert::Into::into(dest_file_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Open(::unity2::Il2CppString, crate::system::io::filemode::FileMode)` overload"]
+    pub fn open(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<crate::system::io::filemode::FileMode>,
+    ) -> crate::system::io::filestream::FileStream {
+        unsafe {
+            __File_unity2_raw::open(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OpenRead(::unity2::Il2CppString)` overload"]
+    pub fn open_read(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::io::filestream::FileStream {
+        unsafe {
+            __File_unity2_raw::open_read(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OpenText(::unity2::Il2CppString)` overload"]
+    pub fn open_text(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::io::streamreader::StreamReader {
+        unsafe {
+            __File_unity2_raw::open_text(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAllBytes(::unity2::Il2CppString)` overload"]
+    pub fn read_all_bytes(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<u8> {
+        unsafe {
+            __File_unity2_raw::read_all_bytes(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAllLines(crate::system::io::streamreader::StreamReader)` overload"]
+    pub fn read_all_lines(
+        reader: impl ::core::convert::Into<crate::system::io::streamreader::StreamReader>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __File_unity2_raw::read_all_lines(
+                ::core::convert::Into::into(reader),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReadAllText(::unity2::Il2CppString)` overload"]
+    pub fn read_all_text(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __File_unity2_raw::read_all_text(
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteAllText(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn write_all_text(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        contents: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __File_unity2_raw::write_all_text(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(contents),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillAttributeInfo(::unity2::Il2CppString, *mutcrate::system::io::monoiostat::MonoIOStat, bool, bool)` overload"]
+    pub fn fill_attribute_info(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        tryagain: impl ::core::convert::Into<bool>,
+        return_error_on_not_found: impl ::core::convert::Into<bool>,
+    ) -> (i32, crate::system::io::monoiostat::MonoIOStat) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::system::io::monoiostat::MonoIOStat>::uninit();
+            let __ret = {
+                __File_unity2_raw::fill_attribute_info(
+                    ::core::convert::Into::into(path),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(tryagain),
+                    ::core::convert::Into::into(return_error_on_not_found),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "system-io-file")]
+pub mod prelude {
+    pub use super::File;
+    pub use super::IFile;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

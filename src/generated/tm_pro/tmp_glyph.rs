@@ -18,18 +18,132 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Glyph_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_glyph::TMP_Glyph as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Glyph as ::unity2::ClassIdentity>::class(),
+                "Clone",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Glyph as ::unity2::ClassIdentity>::NAME,
+                    "Clone",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clone(
+        source: crate::tm_pro::tmp_glyph::TMP_Glyph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::tmp_glyph::TMP_Glyph {
+        let inner: extern "C" fn(
+            crate::tm_pro::tmp_glyph::TMP_Glyph,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_glyph::TMP_Glyph = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clone::get_offset() as isize),
+        );
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Glyph as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Glyph as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_Glyph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Glyph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
 impl TMP_Glyph {
     #[doc = "`Clone(crate::tm_pro::tmp_glyph::TMP_Glyph)` overload"]
-    #[method(name = "Clone", args = 1)]
     pub fn clone(
-        source: crate::tm_pro::tmp_glyph::TMP_Glyph,
-    ) -> crate::tm_pro::tmp_glyph::TMP_Glyph;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        source: impl ::core::convert::Into<crate::tm_pro::tmp_glyph::TMP_Glyph>,
+    ) -> crate::tm_pro::tmp_glyph::TMP_Glyph {
+        unsafe {
+            __TMP_Glyph_unity2_raw::clone(
+                ::core::convert::Into::into(source),
+                ::core::option::Option::None,
+            )
+        }
+    }
 }
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+pub trait ITMP_GlyphMethods: ITMP_Glyph {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Glyph as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_Glyph_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+impl<__T: ITMP_Glyph> ITMP_GlyphMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
 impl TMP_Glyph {
@@ -45,4 +159,17 @@ impl TMP_Glyph {
         <Self as ITMP_GlyphMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+pub mod prelude {
+    pub use super::ITMP_Glyph;
+    pub use super::ITMP_GlyphMethods;
+    pub use super::TMP_Glyph;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
+    #[cfg(feature = "tm_pro-tmp_textelement_legacy")]
+    pub use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_LegacyMethods;
 }

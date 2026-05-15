@@ -43,12 +43,45 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
-#[::unity2::methods]
-impl DrawObjectsPass {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
-    #[method(name = ".ctor", args = 8)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DrawObjectsPass_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrawObjectsPass as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrawObjectsPass as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DrawObjectsPass,
         profiler_tag: ::unity2::Il2CppString,
         shader_tag_ids: ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
         opaque: bool,
@@ -57,12 +90,72 @@ impl DrawObjectsPass {
         layer_mask: crate::unity_engine::layermask::LayerMask,
         stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
         stencil_reference: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DrawObjectsPass,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+            bool,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+            crate::unity_engine::layermask::LayerMask,
+            crate::unity_engine::rendering::stencilstate::StencilState,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            profiler_tag,
+            shader_tag_ids,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrawObjectsPass as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrawObjectsPass as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: DrawObjectsPass,
         profiler_tag: ::unity2::Il2CppString,
         opaque: bool,
         evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
@@ -70,12 +163,70 @@ impl DrawObjectsPass {
         layer_mask: crate::unity_engine::layermask::LayerMask,
         stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
         stencil_reference: i32,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::urpprofileid::URPProfileId, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
-    #[method(name = ".ctor", args = 7)]
-    pub fn ctor_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DrawObjectsPass,
+            ::unity2::Il2CppString,
+            bool,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+            crate::unity_engine::layermask::LayerMask,
+            crate::unity_engine::rendering::stencilstate::StencilState,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            profiler_tag,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: urpprofileid :: URPProfileId as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrawObjectsPass as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrawObjectsPass as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: DrawObjectsPass,
         profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
         opaque: bool,
         evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
@@ -83,20 +234,274 @@ impl DrawObjectsPass {
         layer_mask: crate::unity_engine::layermask::LayerMask,
         stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
         stencil_reference: i32,
-    ) -> ();
-
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "Execute", args = 2)]
-    pub fn execute(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DrawObjectsPass,
+            crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+            bool,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+            crate::unity_engine::layermask::LayerMask,
+            crate::unity_engine::rendering::stencilstate::StencilState,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            profile_id,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrawObjectsPass as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrawObjectsPass as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: DrawObjectsPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DrawObjectsPass,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute::get_offset() as isize),
+        );
+        inner(this, context, rendering_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DrawObjectsPass as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DrawObjectsPass as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+impl DrawObjectsPass {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DrawObjectsPass_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+pub trait IDrawObjectsPassMethods: IDrawObjectsPass {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
+    fn ctor(
+        self,
+        profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+        shader_tag_ids: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        >,
+        opaque: impl ::core::convert::Into<bool>,
+        evt: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        >,
+        render_queue_range: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        >,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+        stencil_state: impl ::core::convert::Into<
+            crate::unity_engine::rendering::stencilstate::StencilState,
+        >,
+        stencil_reference: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DrawObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DrawObjectsPass_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(profiler_tag),
+                ::core::convert::Into::into(shader_tag_ids),
+                ::core::convert::Into::into(opaque),
+                ::core::convert::Into::into(evt),
+                ::core::convert::Into::into(render_queue_range),
+                ::core::convert::Into::into(layer_mask),
+                ::core::convert::Into::into(stencil_state),
+                ::core::convert::Into::into(stencil_reference),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
+    fn ctor_2(
+        self,
+        profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
+        opaque: impl ::core::convert::Into<bool>,
+        evt: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        >,
+        render_queue_range: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        >,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+        stencil_state: impl ::core::convert::Into<
+            crate::unity_engine::rendering::stencilstate::StencilState,
+        >,
+        stencil_reference: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DrawObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DrawObjectsPass_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(profiler_tag),
+                ::core::convert::Into::into(opaque),
+                ::core::convert::Into::into(evt),
+                ::core::convert::Into::into(render_queue_range),
+                ::core::convert::Into::into(layer_mask),
+                ::core::convert::Into::into(stencil_state),
+                ::core::convert::Into::into(stencil_reference),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::urpprofileid::URPProfileId, bool, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::rendering::stencilstate::StencilState, i32)` overload"]
+    fn ctor_3(
+        self,
+        profile_id: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+        >,
+        opaque: impl ::core::convert::Into<bool>,
+        evt: impl ::core::convert::Into<
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        >,
+        render_queue_range: impl ::core::convert::Into<
+            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        >,
+        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
+        stencil_state: impl ::core::convert::Into<
+            crate::unity_engine::rendering::stencilstate::StencilState,
+        >,
+        stencil_reference: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DrawObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DrawObjectsPass_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(profile_id),
+                ::core::convert::Into::into(opaque),
+                ::core::convert::Into::into(evt),
+                ::core::convert::Into::into(render_queue_range),
+                ::core::convert::Into::into(layer_mask),
+                ::core::convert::Into::into(stencil_state),
+                ::core::convert::Into::into(stencil_reference),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn execute(
+        self,
+        context: impl ::core::convert::Into<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        >,
+    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+        unsafe {
+            let __receiver = <DrawObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            >::uninit();
+            __DrawObjectsPass_unity2_raw::execute(
+                __receiver,
+                ::core::convert::Into::into(context),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+impl<__T: IDrawObjectsPass> IDrawObjectsPassMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
 impl DrawObjectsPass {
@@ -191,4 +596,17 @@ impl DrawObjectsPass {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+pub mod prelude {
+    pub use super::DrawObjectsPass;
+    pub use super::IDrawObjectsPass;
+    pub use super::IDrawObjectsPassMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+    #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
+    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
 }

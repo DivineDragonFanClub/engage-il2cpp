@@ -182,3 +182,19 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2_C
         this
     }
 }
+
+#[cfg(feature = "app-singletonpool_2")]
+pub mod prelude {
+    pub use super::ISingletonPool_2;
+    pub use super::ISingletonPool_2Methods;
+    pub use super::ISingletonPool_2_Comparer;
+    pub use super::ISingletonPool_2_ComparerMethods;
+    pub use super::SingletonPool_2;
+    pub use super::SingletonPool_2_Comparer;
+    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

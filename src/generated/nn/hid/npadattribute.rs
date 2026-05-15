@@ -76,3 +76,17 @@ mod __types {
 
 #[cfg(feature = "nn-hid-npadattribute-types")]
 pub use __types::*;
+
+#[cfg(feature = "nn-hid-npadattribute")]
+pub mod prelude {
+    pub use super::NpadAttribute;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

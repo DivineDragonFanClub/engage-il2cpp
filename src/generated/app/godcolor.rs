@@ -17,7 +17,33 @@ mod __types {
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: godcolor :: GodColor >)]
     pub struct GodColor {
         #[rename(name = "マルス")]
-        pub _unnamed: crate::unity_engine::color::Color,
+        pub マルス: crate::unity_engine::color::Color,
+        #[rename(name = "シグルド")]
+        pub シグルド: crate::unity_engine::color::Color,
+        #[rename(name = "セリカ")]
+        pub セリカ: crate::unity_engine::color::Color,
+        #[rename(name = "ミカヤ")]
+        pub ミカヤ: crate::unity_engine::color::Color,
+        #[rename(name = "ロイ")]
+        pub ロイ: crate::unity_engine::color::Color,
+        #[rename(name = "リーフ")]
+        pub リーフ: crate::unity_engine::color::Color,
+        #[rename(name = "ルキナ")]
+        pub ルキナ: crate::unity_engine::color::Color,
+        #[rename(name = "リン")]
+        pub リン: crate::unity_engine::color::Color,
+        #[rename(name = "アイク")]
+        pub アイク: crate::unity_engine::color::Color,
+        #[rename(name = "ベレト")]
+        pub ベレト: crate::unity_engine::color::Color,
+        #[rename(name = "カムイ")]
+        pub カムイ: crate::unity_engine::color::Color,
+        #[rename(name = "エイリーク")]
+        pub エイリーク: crate::unity_engine::color::Color,
+        #[rename(name = "エフラム")]
+        pub エフラム: crate::unity_engine::color::Color,
+        #[rename(name = "リュール")]
+        pub リュール: crate::unity_engine::color::Color,
     }
 }
 
@@ -25,19 +51,134 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-godcolor")]
-#[::unity2::methods]
-impl GodColor {
-    #[doc = "`GetGodColor(crate::app::goddata::GodData)` overload"]
-    #[method(name = "GetGodColor", args = 1)]
-    pub fn get_god_color(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodColor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodColor as ::unity2::ClassIdentity>::class(),
+                "GetGodColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodColor as ::unity2::ClassIdentity>::NAME,
+                    "GetGodColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_god_color(
+        this: GodColor,
         god: crate::app::goddata::GodData,
-    ) -> crate::unity_engine::color::Color;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            GodColor,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_god_color::get_offset() as isize),
+        );
+        inner(this, god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodColor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodColor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: GodColor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodColor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-godcolor")]
+pub trait IGodColorMethods: IGodColor {
+    #[doc = "`GetGodColor(crate::app::goddata::GodData)` overload"]
+    fn get_god_color(
+        self,
+        god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <GodColor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodColor_unity2_raw::get_god_color(
+                __receiver,
+                ::core::convert::Into::into(god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GodColor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GodColor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-godcolor")]
+impl<__T: IGodColor> IGodColorMethods for __T {}
 
 #[cfg(feature = "app-godcolor")]
 impl GodColor {
@@ -53,4 +194,23 @@ impl GodColor {
         <Self as IGodColorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-godcolor")]
+pub mod prelude {
+    pub use super::GodColor;
+    pub use super::IGodColor;
+    pub use super::IGodColorMethods;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    #[cfg(feature = "app-singletonscriptableobject_1")]
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

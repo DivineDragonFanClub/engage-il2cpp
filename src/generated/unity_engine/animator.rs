@@ -20,685 +20,6085 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animator")]
-#[::unity2::methods]
-impl Animator {
-    #[doc = "`get_isOptimizable()` overload"]
-    #[method(name = "get_isOptimizable", args = 0)]
-    pub fn get_is_optimizable(self) -> bool;
-
-    #[doc = "`get_isHuman()` overload"]
-    #[method(name = "get_isHuman", args = 0)]
-    pub fn get_is_human(self) -> bool;
-
-    #[doc = "`get_hasRootMotion()` overload"]
-    #[method(name = "get_hasRootMotion", args = 0)]
-    pub fn get_has_root_motion(self) -> bool;
-
-    #[doc = "`get_isRootPositionOrRotationControlledByCurves()` overload"]
-    #[method(name = "get_isRootPositionOrRotationControlledByCurves", args = 0)]
-    pub fn get_is_root_position_or_rotation_controlled_by_curves(self) -> bool;
-
-    #[doc = "`get_humanScale()` overload"]
-    #[method(name = "get_humanScale", args = 0)]
-    pub fn get_human_scale(self) -> f32;
-
-    #[doc = "`get_isInitialized()` overload"]
-    #[method(name = "get_isInitialized", args = 0)]
-    pub fn get_is_initialized(self) -> bool;
-
-    #[doc = "`GetFloat(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetFloat", args = 1)]
-    pub fn get_float(self, name: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`GetFloat(i32)` overload"]
-    #[method(name = "GetFloat", args = 1)]
-    pub fn get_float_2(self, id: i32) -> f32;
-
-    #[doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "SetFloat", args = 2)]
-    pub fn set_float(self, name: ::unity2::Il2CppString, value: f32) -> ();
-
-    #[doc = "`SetFloat(::unity2::Il2CppString, f32, f32, f32)` overload"]
-    #[method(name = "SetFloat", args = 4)]
-    pub fn set_float_2(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Animator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_optimizable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_isOptimizable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_isOptimizable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_optimizable(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_optimizable::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_human {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_isHuman",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_isHuman",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_human(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_human::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_hasRootMotion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_hasRootMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_root_motion(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_root_motion::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_root_position_or_rotation_controlled_by_curves {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_isRootPositionOrRotationControlledByCurves",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_isRootPositionOrRotationControlledByCurves",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_root_position_or_rotation_controlled_by_curves(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_get_is_root_position_or_rotation_controlled_by_curves::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_human_scale {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_humanScale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_humanScale",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_human_scale(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_human_scale::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_initialized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_isInitialized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_isInitialized",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_initialized(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_initialized::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetFloat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_float(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_float::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetFloat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_float_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_float_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloat",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_float::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloat",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_2(
+        this: Animator,
         name: ::unity2::Il2CppString,
         value: f32,
         damp_time: f32,
         delta_time: f32,
-    ) -> ();
-
-    #[doc = "`SetFloat(i32, f32)` overload"]
-    #[method(name = "SetFloat", args = 2)]
-    pub fn set_float_3(self, id: i32, value: f32) -> ();
-
-    #[doc = "`SetFloat(i32, f32, f32, f32)` overload"]
-    #[method(name = "SetFloat", args = 4)]
-    pub fn set_float_4(self, id: i32, value: f32, damp_time: f32, delta_time: f32) -> ();
-
-    #[doc = "`GetBool(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetBool", args = 1)]
-    pub fn get_bool(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`GetBool(i32)` overload"]
-    #[method(name = "GetBool", args = 1)]
-    pub fn get_bool_2(self, id: i32) -> bool;
-
-    #[doc = "`SetBool(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "SetBool", args = 2)]
-    pub fn set_bool(self, name: ::unity2::Il2CppString, value: bool) -> ();
-
-    #[doc = "`SetBool(i32, bool)` overload"]
-    #[method(name = "SetBool", args = 2)]
-    pub fn set_bool_2(self, id: i32, value: bool) -> ();
-
-    #[doc = "`GetInteger(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetInteger", args = 1)]
-    pub fn get_integer(self, name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetInteger(i32)` overload"]
-    #[method(name = "GetInteger", args = 1)]
-    pub fn get_integer_2(self, id: i32) -> i32;
-
-    #[doc = "`SetInteger(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "SetInteger", args = 2)]
-    pub fn set_integer(self, name: ::unity2::Il2CppString, value: i32) -> ();
-
-    #[doc = "`SetInteger(i32, i32)` overload"]
-    #[method(name = "SetInteger", args = 2)]
-    pub fn set_integer_2(self, id: i32, value: i32) -> ();
-
-    #[doc = "`SetTrigger(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTrigger", args = 1)]
-    pub fn set_trigger(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetTrigger(i32)` overload"]
-    #[method(name = "SetTrigger", args = 1)]
-    pub fn set_trigger_2(self, id: i32) -> ();
-
-    #[doc = "`ResetTrigger(::unity2::Il2CppString)` overload"]
-    #[method(name = "ResetTrigger", args = 1)]
-    pub fn reset_trigger(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ResetTrigger(i32)` overload"]
-    #[method(name = "ResetTrigger", args = 1)]
-    pub fn reset_trigger_2(self, id: i32) -> ();
-
-    #[doc = "`IsParameterControlledByCurve(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsParameterControlledByCurve", args = 1)]
-    pub fn is_parameter_controlled_by_curve(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsParameterControlledByCurve(i32)` overload"]
-    #[method(name = "IsParameterControlledByCurve", args = 1)]
-    pub fn is_parameter_controlled_by_curve_2(self, id: i32) -> bool;
-
-    #[doc = "`get_deltaPosition()` overload"]
-    #[method(name = "get_deltaPosition", args = 0)]
-    pub fn get_delta_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_deltaRotation()` overload"]
-    #[method(name = "get_deltaRotation", args = 0)]
-    pub fn get_delta_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`get_velocity()` overload"]
-    #[method(name = "get_velocity", args = 0)]
-    pub fn get_velocity(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_angularVelocity()` overload"]
-    #[method(name = "get_angularVelocity", args = 0)]
-    pub fn get_angular_velocity(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_rootPosition()` overload"]
-    #[method(name = "get_rootPosition", args = 0)]
-    pub fn get_root_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_rootPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_rootPosition", args = 1)]
-    pub fn set_root_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rootRotation()` overload"]
-    #[method(name = "get_rootRotation", args = 0)]
-    pub fn get_root_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_rootRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_rootRotation", args = 1)]
-    pub fn set_root_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_applyRootMotion()` overload"]
-    #[method(name = "get_applyRootMotion", args = 0)]
-    pub fn get_apply_root_motion(self) -> bool;
-
-    #[doc = "`set_applyRootMotion(bool)` overload"]
-    #[method(name = "set_applyRootMotion", args = 1)]
-    pub fn set_apply_root_motion(self, value: bool) -> ();
-
-    #[doc = "`get_linearVelocityBlending()` overload"]
-    #[method(name = "get_linearVelocityBlending", args = 0)]
-    pub fn get_linear_velocity_blending(self) -> bool;
-
-    #[doc = "`set_linearVelocityBlending(bool)` overload"]
-    #[method(name = "set_linearVelocityBlending", args = 1)]
-    pub fn set_linear_velocity_blending(self, value: bool) -> ();
-
-    #[doc = "`get_animatePhysics()` overload"]
-    #[method(name = "get_animatePhysics", args = 0)]
-    pub fn get_animate_physics(self) -> bool;
-
-    #[doc = "`set_animatePhysics(bool)` overload"]
-    #[method(name = "set_animatePhysics", args = 1)]
-    pub fn set_animate_physics(self, value: bool) -> ();
-
-    #[doc = "`get_updateMode()` overload"]
-    #[method(name = "get_updateMode", args = 0)]
-    pub fn get_update_mode(self) -> crate::unity_engine::animatorupdatemode::AnimatorUpdateMode;
-
-    #[doc = "`set_updateMode(crate::unity_engine::animatorupdatemode::AnimatorUpdateMode)` overload"]
-    #[method(name = "set_updateMode", args = 1)]
-    pub fn set_update_mode(
-        self,
-        value: crate::unity_engine::animatorupdatemode::AnimatorUpdateMode,
-    ) -> ();
-
-    #[doc = "`get_hasTransformHierarchy()` overload"]
-    #[method(name = "get_hasTransformHierarchy", args = 0)]
-    pub fn get_has_transform_hierarchy(self) -> bool;
-
-    #[doc = "`get_allowConstantClipSamplingOptimization()` overload"]
-    #[method(name = "get_allowConstantClipSamplingOptimization", args = 0)]
-    pub fn get_allow_constant_clip_sampling_optimization(self) -> bool;
-
-    #[doc = "`set_allowConstantClipSamplingOptimization(bool)` overload"]
-    #[method(name = "set_allowConstantClipSamplingOptimization", args = 1)]
-    pub fn set_allow_constant_clip_sampling_optimization(self, value: bool) -> ();
-
-    #[doc = "`get_gravityWeight()` overload"]
-    #[method(name = "get_gravityWeight", args = 0)]
-    pub fn get_gravity_weight(self) -> f32;
-
-    #[doc = "`get_bodyPosition()` overload"]
-    #[method(name = "get_bodyPosition", args = 0)]
-    pub fn get_body_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_bodyPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_bodyPosition", args = 1)]
-    pub fn set_body_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_bodyPositionInternal()` overload"]
-    #[method(name = "get_bodyPositionInternal", args = 0)]
-    pub fn get_body_position_internal(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_bodyPositionInternal(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_bodyPositionInternal", args = 1)]
-    pub fn set_body_position_internal(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_bodyRotation()` overload"]
-    #[method(name = "get_bodyRotation", args = 0)]
-    pub fn get_body_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_bodyRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_bodyRotation", args = 1)]
-    pub fn set_body_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`get_bodyRotationInternal()` overload"]
-    #[method(name = "get_bodyRotationInternal", args = 0)]
-    pub fn get_body_rotation_internal(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`set_bodyRotationInternal(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_bodyRotationInternal", args = 1)]
-    pub fn set_body_rotation_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_float_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            name,
+            value,
+            damp_time,
+            delta_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloat",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_3(
+        this: Animator,
+        id: i32,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_float_3::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloat",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_4(
+        this: Animator,
+        id: i32,
+        value: f32,
+        damp_time: f32,
+        delta_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_float_4::get_offset() as isize),
+            );
+        inner(this, id, value, damp_time, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bool {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBool",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bool(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bool::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bool_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBool",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bool_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bool_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bool {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBool",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bool(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bool::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bool_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBool",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBool",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bool_2(
+        this: Animator,
+        id: i32,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_bool_2::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_integer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetInteger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_integer(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_integer::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_integer_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetInteger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_integer_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_integer_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_integer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetInteger",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_integer(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_integer::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_integer_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetInteger",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetInteger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_integer_2(
+        this: Animator,
+        id: i32,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_integer_2::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetTrigger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trigger(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_trigger::get_offset() as isize),
+            );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trigger_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetTrigger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trigger_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_trigger_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_trigger {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ResetTrigger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ResetTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_trigger(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_trigger::get_offset() as isize),
+            );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_trigger_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ResetTrigger",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ResetTrigger",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_trigger_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_trigger_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_parameter_controlled_by_curve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsParameterControlledByCurve",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsParameterControlledByCurve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_parameter_controlled_by_curve(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_parameter_controlled_by_curve::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_parameter_controlled_by_curve_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsParameterControlledByCurve",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsParameterControlledByCurve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_parameter_controlled_by_curve_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_parameter_controlled_by_curve_2::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_delta_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_deltaPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_deltaPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_delta_position(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_delta_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_delta_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_deltaRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_deltaRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_delta_rotation(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_delta_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_velocity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_velocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_velocity(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_velocity::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_angular_velocity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_angularVelocity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_angularVelocity",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_angular_velocity(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_angular_velocity::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_rootPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_rootPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root_position(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_root_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_rootPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_rootPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_root_position(
+        this: Animator,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_root_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_rootRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_rootRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root_rotation(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_root_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_rootRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_rootRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_root_rotation(
+        this: Animator,
         value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`GetIKPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetIKPosition", args = 1)]
-    pub fn get_ik_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_root_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_apply_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_applyRootMotion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_applyRootMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_apply_root_motion(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_apply_root_motion::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_apply_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_applyRootMotion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_applyRootMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_apply_root_motion(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_apply_root_motion::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_linear_velocity_blending {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_linearVelocityBlending",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_linearVelocityBlending",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_linear_velocity_blending(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_linear_velocity_blending::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_linear_velocity_blending {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_linearVelocityBlending",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_linearVelocityBlending",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_linear_velocity_blending(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_linear_velocity_blending::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animate_physics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_animatePhysics",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_animatePhysics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animate_physics(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_animate_physics::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_animate_physics {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_animatePhysics",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_animatePhysics",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_animate_physics(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_animate_physics::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_update_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_updateMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_updateMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_update_mode(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorupdatemode::AnimatorUpdateMode {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::animatorupdatemode::AnimatorUpdateMode = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_update_mode::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_update_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatorupdatemode :: AnimatorUpdateMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_updateMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_updateMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_update_mode(
+        this: Animator,
+        value: crate::unity_engine::animatorupdatemode::AnimatorUpdateMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::animatorupdatemode::AnimatorUpdateMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_update_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_transform_hierarchy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_hasTransformHierarchy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_hasTransformHierarchy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_transform_hierarchy(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_transform_hierarchy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_allow_constant_clip_sampling_optimization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_allowConstantClipSamplingOptimization",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_allowConstantClipSamplingOptimization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_allow_constant_clip_sampling_optimization(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_get_allow_constant_clip_sampling_optimization::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_allow_constant_clip_sampling_optimization {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_allowConstantClipSamplingOptimization",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_allowConstantClipSamplingOptimization",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_allow_constant_clip_sampling_optimization(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_set_allow_constant_clip_sampling_optimization::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gravity_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_gravityWeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_gravityWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_gravity_weight(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_gravity_weight::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_position(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_position(
+        this: Animator,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_position_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyPositionInternal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyPositionInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_position_internal(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_position_internal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_position_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyPositionInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyPositionInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_position_internal(
+        this: Animator,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_position_internal::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_rotation(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_rotation(
+        this: Animator,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_rotation::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_rotation_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyRotationInternal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyRotationInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_rotation_internal(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_rotation_internal::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_rotation_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyRotationInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyRotationInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_rotation_internal(
+        this: Animator,
+        value: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_rotation_internal::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetGoalPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetGoalPosition", args = 1)]
-    pub fn get_goal_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_position::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`SetIKPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetIKPosition", args = 2)]
-    pub fn set_ik_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_position::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         goal_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetGoalPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetGoalPosition", args = 2)]
-    pub fn set_goal_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_position::get_offset() as isize),
+        );
+        inner(this, goal, goal_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         goal_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetIKRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetIKRotation", args = 1)]
-    pub fn get_ik_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_position::get_offset() as isize),
+        );
+        inner(this, goal, goal_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`GetGoalRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetGoalRotation", args = 1)]
-    pub fn get_goal_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_rotation::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`SetIKRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetIKRotation", args = 2)]
-    pub fn set_ik_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_rotation::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKRotation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         goal_rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`SetGoalRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetGoalRotation", args = 2)]
-    pub fn set_goal_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_rotation::get_offset() as isize),
+        );
+        inner(this, goal, goal_rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalRotation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         goal_rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`GetIKPositionWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetIKPositionWeight", args = 1)]
-    pub fn get_ik_position_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_rotation::get_offset() as isize),
+        );
+        inner(this, goal, goal_rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_position_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKPositionWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKPositionWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_position_weight(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> f32;
-
-    #[doc = "`GetGoalWeightPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetGoalWeightPosition", args = 1)]
-    pub fn get_goal_weight_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_position_weight::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_weight_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalWeightPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalWeightPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_weight_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> f32;
-
-    #[doc = "`SetIKPositionWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
-    #[method(name = "SetIKPositionWeight", args = 2)]
-    pub fn set_ik_position_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_weight_position::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_position_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKPositionWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKPositionWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_position_weight(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         value: f32,
-    ) -> ();
-
-    #[doc = "`SetGoalWeightPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
-    #[method(name = "SetGoalWeightPosition", args = 2)]
-    pub fn set_goal_weight_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_position_weight::get_offset() as isize),
+        );
+        inner(this, goal, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_weight_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalWeightPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalWeightPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_weight_position(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         value: f32,
-    ) -> ();
-
-    #[doc = "`GetIKRotationWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetIKRotationWeight", args = 1)]
-    pub fn get_ik_rotation_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_weight_position::get_offset() as isize),
+        );
+        inner(this, goal, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_rotation_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKRotationWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKRotationWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_rotation_weight(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> f32;
-
-    #[doc = "`GetGoalWeightRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
-    #[method(name = "GetGoalWeightRotation", args = 1)]
-    pub fn get_goal_weight_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_rotation_weight::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_weight_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalWeightRotation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalWeightRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_weight_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-    ) -> f32;
-
-    #[doc = "`SetIKRotationWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
-    #[method(name = "SetIKRotationWeight", args = 2)]
-    pub fn set_ik_rotation_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_weight_rotation::get_offset() as isize),
+        );
+        inner(this, goal, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_rotation_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKRotationWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKRotationWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_rotation_weight(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         value: f32,
-    ) -> ();
-
-    #[doc = "`SetGoalWeightRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
-    #[method(name = "SetGoalWeightRotation", args = 2)]
-    pub fn set_goal_weight_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_rotation_weight::get_offset() as isize),
+        );
+        inner(this, goal, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_weight_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalWeightRotation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalWeightRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_weight_rotation(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
         value: f32,
-    ) -> ();
-
-    #[doc = "`GetIKHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
-    #[method(name = "GetIKHintPosition", args = 1)]
-    pub fn get_ik_hint_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_weight_rotation::get_offset() as isize),
+        );
+        inner(this, goal, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_hint_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKHintPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKHintPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_hint_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
-    #[method(name = "GetHintPosition", args = 1)]
-    pub fn get_hint_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_hint_position::get_offset() as isize),
+        );
+        inner(this, hint, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hint_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetHintPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetHintPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hint_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`SetIKHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetIKHintPosition", args = 2)]
-    pub fn set_ik_hint_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hint_position::get_offset() as isize),
+        );
+        inner(this, hint, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_hint_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKHintPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKHintPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_hint_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
         hint_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetHintPosition", args = 2)]
-    pub fn set_hint_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_hint_position::get_offset() as isize),
+        );
+        inner(this, hint, hint_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hint_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetHintPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetHintPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hint_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
         hint_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetIKHintPositionWeight(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
-    #[method(name = "GetIKHintPositionWeight", args = 1)]
-    pub fn get_ik_hint_position_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hint_position::get_offset() as isize),
+        );
+        inner(this, hint, hint_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ik_hint_position_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIKHintPositionWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIKHintPositionWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ik_hint_position_weight(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-    ) -> f32;
-
-    #[doc = "`GetHintWeightPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
-    #[method(name = "GetHintWeightPosition", args = 1)]
-    pub fn get_hint_weight_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ik_hint_position_weight::get_offset() as isize),
+        );
+        inner(this, hint, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hint_weight_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetHintWeightPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetHintWeightPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hint_weight_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-    ) -> f32;
-
-    #[doc = "`SetIKHintPositionWeight(crate::unity_engine::avatarikhint::AvatarIKHint, f32)` overload"]
-    #[method(name = "SetIKHintPositionWeight", args = 2)]
-    pub fn set_ik_hint_position_weight(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hint_weight_position::get_offset() as isize),
+        );
+        inner(this, hint, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ik_hint_position_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIKHintPositionWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIKHintPositionWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ik_hint_position_weight(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
         value: f32,
-    ) -> ();
-
-    #[doc = "`SetHintWeightPosition(crate::unity_engine::avatarikhint::AvatarIKHint, f32)` overload"]
-    #[method(name = "SetHintWeightPosition", args = 2)]
-    pub fn set_hint_weight_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ik_hint_position_weight::get_offset() as isize),
+        );
+        inner(this, hint, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hint_weight_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetHintWeightPosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetHintWeightPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hint_weight_position(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
         value: f32,
-    ) -> ();
-
-    #[doc = "`SetLookAtPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLookAtPosition", args = 1)]
-    pub fn set_look_at_position(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hint_weight_position::get_offset() as isize),
+        );
+        inner(this, hint, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_position(
+        this: Animator,
         look_at_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetLookAtPositionInternal(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLookAtPositionInternal", args = 1)]
-    pub fn set_look_at_position_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_look_at_position::get_offset() as isize),
+        );
+        inner(this, look_at_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_position_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtPositionInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtPositionInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_position_internal(
+        this: Animator,
         look_at_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetLookAtWeight(f32)` overload"]
-    #[method(name = "SetLookAtWeight", args = 1)]
-    pub fn set_look_at_weight(self, weight: f32) -> ();
-
-    #[doc = "`SetLookAtWeight(f32, f32)` overload"]
-    #[method(name = "SetLookAtWeight", args = 2)]
-    pub fn set_look_at_weight_2(self, weight: f32, body_weight: f32) -> ();
-
-    #[doc = "`SetLookAtWeight(f32, f32, f32)` overload"]
-    #[method(name = "SetLookAtWeight", args = 3)]
-    pub fn set_look_at_weight_3(self, weight: f32, body_weight: f32, head_weight: f32) -> ();
-
-    #[doc = "`SetLookAtWeight(f32, f32, f32, f32)` overload"]
-    #[method(name = "SetLookAtWeight", args = 4)]
-    pub fn set_look_at_weight_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_look_at_position_internal::get_offset() as isize),
+        );
+        inner(this, look_at_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight(
+        this: Animator,
+        weight: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_look_at_weight::get_offset() as isize),
+            );
+        inner(this, weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight_2(
+        this: Animator,
+        weight: f32,
+        body_weight: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_look_at_weight_2::get_offset() as isize),
+            );
+        inner(this, weight, body_weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeight",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight_3(
+        this: Animator,
+        weight: f32,
+        body_weight: f32,
+        head_weight: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_look_at_weight_3::get_offset() as isize),
+            );
+        inner(this, weight, body_weight, head_weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeight",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight_4(
+        this: Animator,
         weight: f32,
         body_weight: f32,
         head_weight: f32,
         eyes_weight: f32,
-    ) -> ();
-
-    #[doc = "`SetLookAtWeight(f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetLookAtWeight", args = 5)]
-    pub fn set_look_at_weight_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_look_at_weight_4::get_offset() as isize),
+            );
+        inner(
+            this,
+            weight,
+            body_weight,
+            head_weight,
+            eyes_weight,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeight",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight_5(
+        this: Animator,
         weight: f32,
         body_weight: f32,
         head_weight: f32,
         eyes_weight: f32,
         clamp_weight: f32,
-    ) -> ();
-
-    #[doc = "`SetLookAtWeightInternal(f32, f32, f32, f32, f32)` overload"]
-    #[method(name = "SetLookAtWeightInternal", args = 5)]
-    pub fn set_look_at_weight_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_look_at_weight_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            weight,
+            body_weight,
+            head_weight,
+            eyes_weight,
+            clamp_weight,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_weight_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtWeightInternal",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtWeightInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_weight_internal(
+        this: Animator,
         weight: f32,
         body_weight: f32,
         head_weight: f32,
         eyes_weight: f32,
         clamp_weight: f32,
-    ) -> ();
-
-    #[doc = "`SetBoneLocalRotation(crate::unity_engine::humanbodybones::HumanBodyBones, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetBoneLocalRotation", args = 2)]
-    pub fn set_bone_local_rotation(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            f32,
+            f32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_look_at_weight_internal::get_offset() as isize),
+        );
+        inner(
+            this,
+            weight,
+            body_weight,
+            head_weight,
+            eyes_weight,
+            clamp_weight,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bone_local_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::humanbodybones::HumanBodyBones as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBoneLocalRotation",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBoneLocalRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bone_local_rotation(
+        this: Animator,
         human_bone_id: crate::unity_engine::humanbodybones::HumanBodyBones,
         rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`SetBoneLocalRotationInternal(i32, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetBoneLocalRotationInternal", args = 2)]
-    pub fn set_bone_local_rotation_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::humanbodybones::HumanBodyBones,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bone_local_rotation::get_offset() as isize),
+        );
+        inner(this, human_bone_id, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bone_local_rotation_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBoneLocalRotationInternal",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBoneLocalRotationInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bone_local_rotation_internal(
+        this: Animator,
         human_bone_id: i32,
         rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`GetBehaviour(::unity2::SystemType)` overload"]
-    #[method(name = "GetBehaviour", args = 1)]
-    pub fn get_behaviour(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bone_local_rotation_internal::get_offset() as isize),
+        );
+        inner(this, human_bone_id, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_behaviour {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBehaviour",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBehaviour",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_behaviour(
+        this: Animator,
         r#type: ::unity2::SystemType,
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
-
-    #[doc = "`InternalGetBehaviours(::unity2::SystemType)` overload"]
-    #[method(name = "InternalGetBehaviours", args = 1)]
-    pub fn internal_get_behaviours(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_behaviour::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_behaviours {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "InternalGetBehaviours",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "InternalGetBehaviours",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_get_behaviours(
+        this: Animator,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject>;
-
-    #[doc = "`GetBehaviours(i32, i32)` overload"]
-    #[method(name = "GetBehaviours", args = 2)]
-    pub fn get_behaviours(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject> {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::scriptableobject::ScriptableObject,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_get_behaviours::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_behaviours_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBehaviours",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBehaviours",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_behaviours_2(
+        this: Animator,
         full_path_hash: i32,
         layer_index: i32,
-    ) -> ::unity2::Array<crate::unity_engine::statemachinebehaviour::StateMachineBehaviour>;
-
-    #[doc = "`InternalGetBehavioursByKey(i32, i32, ::unity2::SystemType)` overload"]
-    #[method(name = "InternalGetBehavioursByKey", args = 3)]
-    pub fn internal_get_behaviours_by_key(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::statemachinebehaviour::StateMachineBehaviour> {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::statemachinebehaviour::StateMachineBehaviour,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_behaviours_2::get_offset() as isize),
+        );
+        inner(this, full_path_hash, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_behaviours_by_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "InternalGetBehavioursByKey",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "InternalGetBehavioursByKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn internal_get_behaviours_by_key(
+        this: Animator,
         full_path_hash: i32,
         layer_index: i32,
         r#type: ::unity2::SystemType,
-    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject>;
-
-    #[doc = "`get_stabilizeFeet()` overload"]
-    #[method(name = "get_stabilizeFeet", args = 0)]
-    pub fn get_stabilize_feet(self) -> bool;
-
-    #[doc = "`set_stabilizeFeet(bool)` overload"]
-    #[method(name = "set_stabilizeFeet", args = 1)]
-    pub fn set_stabilize_feet(self, value: bool) -> ();
-
-    #[doc = "`get_layerCount()` overload"]
-    #[method(name = "get_layerCount", args = 0)]
-    pub fn get_layer_count(self) -> i32;
-
-    #[doc = "`GetLayerName(i32)` overload"]
-    #[method(name = "GetLayerName", args = 1)]
-    pub fn get_layer_name(self, layer_index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetLayerIndex(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetLayerIndex", args = 1)]
-    pub fn get_layer_index(self, layer_name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetLayerWeight(i32)` overload"]
-    #[method(name = "GetLayerWeight", args = 1)]
-    pub fn get_layer_weight(self, layer_index: i32) -> f32;
-
-    #[doc = "`SetLayerWeight(i32, f32)` overload"]
-    #[method(name = "SetLayerWeight", args = 2)]
-    pub fn set_layer_weight(self, layer_index: i32, weight: f32) -> ();
-
-    #[doc = "`GetAnimatorStateInfo(i32, crate::unity_engine::stateinfoindex::StateInfoIndex, crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
-    #[method(name = "GetAnimatorStateInfo", args = 3)]
-    pub fn get_animator_state_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject> {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            i32,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::scriptableobject::ScriptableObject,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_internal_get_behaviours_by_key::get_offset() as isize),
+        );
+        inner(
+            this,
+            full_path_hash,
+            layer_index,
+            r#type,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stabilize_feet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_stabilizeFeet",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_stabilizeFeet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stabilize_feet(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_stabilize_feet::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_stabilize_feet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_stabilizeFeet",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_stabilizeFeet",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_stabilize_feet(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_stabilize_feet::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_layerCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_layerCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layer_count(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_layer_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetLayerName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetLayerName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layer_name(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layer_name::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetLayerIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetLayerIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layer_index(
+        this: Animator,
+        layer_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layer_index::get_offset() as isize),
+        );
+        inner(this, layer_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetLayerWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetLayerWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layer_weight(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_layer_weight::get_offset() as isize),
+            );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_layer_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLayerWeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLayerWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_layer_weight(
+        this: Animator,
+        layer_index: i32,
+        weight: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_layer_weight::get_offset() as isize),
+            );
+        inner(this, layer_index, weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_state_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: stateinfoindex :: StateInfoIndex as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorStateInfo",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorStateInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_state_info(
+        this: Animator,
         layer_index: i32,
         state_info_index: crate::unity_engine::stateinfoindex::StateInfoIndex,
-        info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-    ) -> ();
-
-    #[doc = "`GetCurrentAnimatorStateInfo(i32)` overload"]
-    #[method(name = "GetCurrentAnimatorStateInfo", args = 1)]
-    pub fn get_current_animator_state_info(
-        self,
+        info: *mut crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::unity_engine::stateinfoindex::StateInfoIndex,
+            *mut crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animator_state_info::get_offset() as isize),
+        );
+        inner(
+            this,
+            layer_index,
+            state_info_index,
+            info,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_animator_state_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentAnimatorStateInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentAnimatorStateInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_animator_state_info(
+        this: Animator,
         layer_index: i32,
-    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo;
-
-    #[doc = "`GetNextAnimatorStateInfo(i32)` overload"]
-    #[method(name = "GetNextAnimatorStateInfo", args = 1)]
-    pub fn get_next_animator_state_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_animator_state_info::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_animator_state_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetNextAnimatorStateInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetNextAnimatorStateInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_animator_state_info(
+        this: Animator,
         layer_index: i32,
-    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo;
-
-    #[doc = "`GetAnimatorTransitionInfo(i32, crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo)` overload"]
-    #[method(name = "GetAnimatorTransitionInfo", args = 2)]
-    pub fn get_animator_transition_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next_animator_state_info::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_transition_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: animatortransitioninfo :: AnimatorTransitionInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorTransitionInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorTransitionInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_transition_info(
+        this: Animator,
         layer_index: i32,
-        info: crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo,
-    ) -> ();
-
-    #[doc = "`GetAnimatorTransitionInfo(i32)` overload"]
-    #[method(name = "GetAnimatorTransitionInfo", args = 1)]
-    pub fn get_animator_transition_info_2(
-        self,
+        info: *mut crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            *mut crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animator_transition_info::get_offset() as isize),
+        );
+        inner(this, layer_index, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_transition_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorTransitionInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorTransitionInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_transition_info_2(
+        this: Animator,
         layer_index: i32,
-    ) -> crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo;
-
-    #[doc = "`GetAnimatorClipInfoCount(i32, bool)` overload"]
-    #[method(name = "GetAnimatorClipInfoCount", args = 2)]
-    pub fn get_animator_clip_info_count(self, layer_index: i32, current: bool) -> i32;
-
-    #[doc = "`GetCurrentAnimatorClipInfoCount(i32)` overload"]
-    #[method(name = "GetCurrentAnimatorClipInfoCount", args = 1)]
-    pub fn get_current_animator_clip_info_count(self, layer_index: i32) -> i32;
-
-    #[doc = "`GetNextAnimatorClipInfoCount(i32)` overload"]
-    #[method(name = "GetNextAnimatorClipInfoCount", args = 1)]
-    pub fn get_next_animator_clip_info_count(self, layer_index: i32) -> i32;
-
-    #[doc = "`GetCurrentAnimatorClipInfo(i32)` overload"]
-    #[method(name = "GetCurrentAnimatorClipInfo", args = 1)]
-    pub fn get_current_animator_clip_info(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo {
+        let inner : extern "C" fn (Animator , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animatortransitioninfo :: AnimatorTransitionInfo = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_animator_transition_info_2 :: get_offset () as isize) ,) ;
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_clip_info_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorClipInfoCount",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorClipInfoCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_clip_info_count(
+        this: Animator,
         layer_index: i32,
-    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>;
-
-    #[doc = "`GetNextAnimatorClipInfo(i32)` overload"]
-    #[method(name = "GetNextAnimatorClipInfo", args = 1)]
-    pub fn get_next_animator_clip_info(
-        self,
+        current: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, i32, bool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_animator_clip_info_count::get_offset() as isize),
+            );
+        inner(this, layer_index, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_animator_clip_info_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentAnimatorClipInfoCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentAnimatorClipInfoCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_animator_clip_info_count(
+        this: Animator,
         layer_index: i32,
-    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>;
-
-    #[doc = "`GetCurrentAnimatorClipInfo(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>)` overload"]
-    #[method(name = "GetCurrentAnimatorClipInfo", args = 2)]
-    pub fn get_current_animator_clip_info_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_current_animator_clip_info_count::get_offset() as isize),
+            );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_animator_clip_info_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetNextAnimatorClipInfoCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetNextAnimatorClipInfoCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_animator_clip_info_count(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_next_animator_clip_info_count::get_offset() as isize),
+            );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_animator_clip_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentAnimatorClipInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentAnimatorClipInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_animator_clip_info(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo> {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_animator_clip_info::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_animator_clip_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetNextAnimatorClipInfo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetNextAnimatorClipInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_animator_clip_info(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo> {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next_animator_clip_info::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_animator_clip_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentAnimatorClipInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentAnimatorClipInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_animator_clip_info_2(
+        this: Animator,
         layer_index: i32,
         clips: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
         >,
-    ) -> ();
-
-    #[doc = "`GetAnimatorClipInfoInternal(i32, bool, crate::system::object::Object)` overload"]
-    #[method(name = "GetAnimatorClipInfoInternal", args = 3)]
-    pub fn get_animator_clip_info_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_animator_clip_info_2::get_offset() as isize),
+        );
+        inner(this, layer_index, clips, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_clip_info_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorClipInfoInternal",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorClipInfoInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_clip_info_internal(
+        this: Animator,
         layer_index: i32,
         is_current: bool,
         clips: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`GetNextAnimatorClipInfo(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>)` overload"]
-    #[method(name = "GetNextAnimatorClipInfo", args = 2)]
-    pub fn get_next_animator_clip_info_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            bool,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animator_clip_info_internal::get_offset() as isize),
+        );
+        inner(this, layer_index, is_current, clips, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_animator_clip_info_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetNextAnimatorClipInfo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetNextAnimatorClipInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_animator_clip_info_2(
+        this: Animator,
         layer_index: i32,
         clips: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
         >,
-    ) -> ();
-
-    #[doc = "`IsInTransition(i32)` overload"]
-    #[method(name = "IsInTransition", args = 1)]
-    pub fn is_in_transition(self, layer_index: i32) -> bool;
-
-    #[doc = "`get_parameters()` overload"]
-    #[method(name = "get_parameters", args = 0)]
-    pub fn get_parameters(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next_animator_clip_info_2::get_offset() as isize),
+        );
+        inner(this, layer_index, clips, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_in_transition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsInTransition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsInTransition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_in_transition(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_in_transition::get_offset() as isize),
+            );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parameters {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_parameters",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_parameters",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parameters(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<
         crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter,
-    >;
-
-    #[doc = "`get_parameterCount()` overload"]
-    #[method(name = "get_parameterCount", args = 0)]
-    pub fn get_parameter_count(self) -> i32;
-
-    #[doc = "`GetParameter(i32)` overload"]
-    #[method(name = "GetParameter", args = 1)]
-    pub fn get_parameter(
-        self,
+    > {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_parameters::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parameter_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_parameterCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_parameterCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parameter_count(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_parameter_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parameter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetParameter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetParameter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_parameter(
+        this: Animator,
         index: i32,
-    ) -> crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter;
-
-    #[doc = "`get_feetPivotActive()` overload"]
-    #[method(name = "get_feetPivotActive", args = 0)]
-    pub fn get_feet_pivot_active(self) -> f32;
-
-    #[doc = "`set_feetPivotActive(f32)` overload"]
-    #[method(name = "set_feetPivotActive", args = 1)]
-    pub fn set_feet_pivot_active(self, value: f32) -> ();
-
-    #[doc = "`get_pivotWeight()` overload"]
-    #[method(name = "get_pivotWeight", args = 0)]
-    pub fn get_pivot_weight(self) -> f32;
-
-    #[doc = "`get_pivotPosition()` overload"]
-    #[method(name = "get_pivotPosition", args = 0)]
-    pub fn get_pivot_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
-    #[method(name = "MatchTarget", args = 7)]
-    pub fn match_target(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter {
+        let inner : extern "C" fn (Animator , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animatorcontrollerparameter :: AnimatorControllerParameter = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_parameter :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_feet_pivot_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_feetPivotActive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_feetPivotActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_feet_pivot_active(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_feet_pivot_active::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_feet_pivot_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_feetPivotActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_feetPivotActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_feet_pivot_active(
+        this: Animator,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_feet_pivot_active::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pivot_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_pivotWeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_pivotWeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pivot_weight(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_pivot_weight::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pivot_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_pivotPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_pivotPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pivot_position(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pivot_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_match_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matchtargetweightmask :: MatchTargetWeightMask as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "MatchTarget",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "MatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn match_target(
+        this: Animator,
         match_position: crate::unity_engine::vector3::Vector3,
         match_rotation: crate::unity_engine::quaternion::Quaternion,
         target_body_part: i32,
@@ -706,35 +6106,203 @@ impl Animator {
         start_normalized_time: f32,
         target_normalized_time: f32,
         complete_match: bool,
-    ) -> ();
-
-    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32)` overload"]
-    #[method(name = "MatchTarget", args = 5)]
-    pub fn match_target_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            i32,
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_match_target::get_offset() as isize),
+        );
+        inner(
+            this,
+            match_position,
+            match_rotation,
+            target_body_part,
+            weight_mask,
+            start_normalized_time,
+            target_normalized_time,
+            complete_match,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_match_target_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: avatartarget :: AvatarTarget as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matchtargetweightmask :: MatchTargetWeightMask as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "MatchTarget",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "MatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn match_target_2(
+        this: Animator,
         match_position: crate::unity_engine::vector3::Vector3,
         match_rotation: crate::unity_engine::quaternion::Quaternion,
         target_body_part: crate::unity_engine::avatartarget::AvatarTarget,
         weight_mask: crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
         start_normalized_time: f32,
-    ) -> ();
-
-    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32)` overload"]
-    #[method(name = "MatchTarget", args = 6)]
-    pub fn match_target_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            crate::unity_engine::avatartarget::AvatarTarget,
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_match_target_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            match_position,
+            match_rotation,
+            target_body_part,
+            weight_mask,
+            start_normalized_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_match_target_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: avatartarget :: AvatarTarget as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matchtargetweightmask :: MatchTargetWeightMask as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "MatchTarget",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "MatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn match_target_3(
+        this: Animator,
         match_position: crate::unity_engine::vector3::Vector3,
         match_rotation: crate::unity_engine::quaternion::Quaternion,
         target_body_part: crate::unity_engine::avatartarget::AvatarTarget,
         weight_mask: crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
         start_normalized_time: f32,
         target_normalized_time: f32,
-    ) -> ();
-
-    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
-    #[method(name = "MatchTarget", args = 7)]
-    pub fn match_target_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            crate::unity_engine::avatartarget::AvatarTarget,
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_match_target_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            match_position,
+            match_rotation,
+            target_body_part,
+            weight_mask,
+            start_normalized_time,
+            target_normalized_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_match_target_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: avatartarget :: AvatarTarget as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matchtargetweightmask :: MatchTargetWeightMask as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "MatchTarget",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "MatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn match_target_4(
+        this: Animator,
         match_position: crate::unity_engine::vector3::Vector3,
         match_rotation: crate::unity_engine::quaternion::Quaternion,
         target_body_part: crate::unity_engine::avatartarget::AvatarTarget,
@@ -742,790 +6310,11710 @@ impl Animator {
         start_normalized_time: f32,
         target_normalized_time: f32,
         complete_match: bool,
-    ) -> ();
-
-    #[doc = "`InterruptMatchTarget()` overload"]
-    #[method(name = "InterruptMatchTarget", args = 0)]
-    pub fn interrupt_match_target(self) -> ();
-
-    #[doc = "`InterruptMatchTarget(bool)` overload"]
-    #[method(name = "InterruptMatchTarget", args = 1)]
-    pub fn interrupt_match_target_2(self, complete_match: bool) -> ();
-
-    #[doc = "`get_isMatchingTarget()` overload"]
-    #[method(name = "get_isMatchingTarget", args = 0)]
-    pub fn get_is_matching_target(self) -> bool;
-
-    #[doc = "`get_speed()` overload"]
-    #[method(name = "get_speed", args = 0)]
-    pub fn get_speed(self) -> f32;
-
-    #[doc = "`set_speed(f32)` overload"]
-    #[method(name = "set_speed", args = 1)]
-    pub fn set_speed(self, value: f32) -> ();
-
-    #[doc = "`ForceStateNormalizedTime(f32)` overload"]
-    #[method(name = "ForceStateNormalizedTime", args = 1)]
-    pub fn force_state_normalized_time(self, normalized_time: f32) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 2)]
-    pub fn cross_fade_in_fixed_time(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            crate::unity_engine::avatartarget::AvatarTarget,
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_match_target_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            match_position,
+            match_rotation,
+            target_body_part,
+            weight_mask,
+            start_normalized_time,
+            target_normalized_time,
+            complete_match,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_interrupt_match_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "InterruptMatchTarget",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "InterruptMatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn interrupt_match_target(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_interrupt_match_target::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_interrupt_match_target_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "InterruptMatchTarget",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "InterruptMatchTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn interrupt_match_target_2(
+        this: Animator,
+        complete_match: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_interrupt_match_target_2::get_offset() as isize),
+            );
+        inner(this, complete_match, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_matching_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_isMatchingTarget",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_isMatchingTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_matching_target(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_matching_target::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_speed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_speed(this: Animator, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_speed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_speed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_speed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_speed(
+        this: Animator,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_speed::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_force_state_normalized_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ForceStateNormalizedTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ForceStateNormalizedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn force_state_normalized_time(
+        this: Animator,
+        normalized_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_force_state_normalized_time::get_offset() as isize),
+            );
+        inner(this, normalized_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         fixed_transition_duration: f32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 3)]
-    pub fn cross_fade_in_fixed_time_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_in_fixed_time::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            fixed_transition_duration,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_2(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         fixed_transition_duration: f32,
         layer: i32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 4)]
-    pub fn cross_fade_in_fixed_time_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_in_fixed_time_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            fixed_transition_duration,
+            layer,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_3(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         fixed_transition_duration: f32,
         layer: i32,
         fixed_time_offset: f32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32, f32, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 5)]
-    pub fn cross_fade_in_fixed_time_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_in_fixed_time_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            fixed_transition_duration,
+            layer,
+            fixed_time_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_4(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         fixed_transition_duration: f32,
         layer: i32,
         fixed_time_offset: f32,
         normalized_transition_time: f32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(i32, f32, i32, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 4)]
-    pub fn cross_fade_in_fixed_time_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_in_fixed_time_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            fixed_transition_duration,
+            layer,
+            fixed_time_offset,
+            normalized_transition_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_5(
+        this: Animator,
         state_hash_name: i32,
         fixed_transition_duration: f32,
         layer: i32,
         fixed_time_offset: f32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(i32, f32, i32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 3)]
-    pub fn cross_fade_in_fixed_time_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_in_fixed_time_5::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            fixed_transition_duration,
+            layer,
+            fixed_time_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_6(
+        this: Animator,
         state_hash_name: i32,
         fixed_transition_duration: f32,
         layer: i32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(i32, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 2)]
-    pub fn cross_fade_in_fixed_time_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_in_fixed_time_6::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            fixed_transition_duration,
+            layer,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_7(
+        this: Animator,
         state_hash_name: i32,
         fixed_transition_duration: f32,
-    ) -> ();
-
-    #[doc = "`CrossFadeInFixedTime(i32, f32, i32, f32, f32)` overload"]
-    #[method(name = "CrossFadeInFixedTime", args = 5)]
-    pub fn cross_fade_in_fixed_time_8(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_in_fixed_time_7::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            fixed_transition_duration,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_in_fixed_time_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFadeInFixedTime",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFadeInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_in_fixed_time_8(
+        this: Animator,
         state_hash_name: i32,
         fixed_transition_duration: f32,
         layer: i32,
         fixed_time_offset: f32,
         normalized_transition_time: f32,
-    ) -> ();
-
-    #[doc = "`WriteDefaultValues()` overload"]
-    #[method(name = "WriteDefaultValues", args = 0)]
-    pub fn write_default_values(self) -> ();
-
-    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32, f32)` overload"]
-    #[method(name = "CrossFade", args = 4)]
-    pub fn cross_fade(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            f32,
+            i32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_in_fixed_time_8::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_hash_name,
+            fixed_transition_duration,
+            layer,
+            fixed_time_offset,
+            normalized_transition_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_default_values {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "WriteDefaultValues",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "WriteDefaultValues",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_default_values(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_default_values::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         normalized_transition_duration: f32,
         layer: i32,
         normalized_time_offset: f32,
-    ) -> ();
-
-    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32)` overload"]
-    #[method(name = "CrossFade", args = 3)]
-    pub fn cross_fade_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            normalized_transition_duration,
+            layer,
+            normalized_time_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_2(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         normalized_transition_duration: f32,
         layer: i32,
-    ) -> ();
-
-    #[doc = "`CrossFade(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "CrossFade", args = 2)]
-    pub fn cross_fade_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            normalized_transition_duration,
+            layer,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_3(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         normalized_transition_duration: f32,
-    ) -> ();
-
-    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32, f32, f32)` overload"]
-    #[method(name = "CrossFade", args = 5)]
-    pub fn cross_fade_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            normalized_transition_duration,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_4(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         normalized_transition_duration: f32,
         layer: i32,
         normalized_time_offset: f32,
         normalized_transition_time: f32,
-    ) -> ();
-
-    #[doc = "`CrossFade(i32, f32, i32, f32, f32)` overload"]
-    #[method(name = "CrossFade", args = 5)]
-    pub fn cross_fade_5(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            i32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            normalized_transition_duration,
+            layer,
+            normalized_time_offset,
+            normalized_transition_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_5(
+        this: Animator,
         state_hash_name: i32,
         normalized_transition_duration: f32,
         layer: i32,
         normalized_time_offset: f32,
         normalized_transition_time: f32,
-    ) -> ();
-
-    #[doc = "`CrossFade(i32, f32, i32, f32)` overload"]
-    #[method(name = "CrossFade", args = 4)]
-    pub fn cross_fade_6(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            f32,
+            i32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cross_fade_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_hash_name,
+            normalized_transition_duration,
+            layer,
+            normalized_time_offset,
+            normalized_transition_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_6(
+        this: Animator,
         state_hash_name: i32,
         normalized_transition_duration: f32,
         layer: i32,
         normalized_time_offset: f32,
-    ) -> ();
-
-    #[doc = "`CrossFade(i32, f32, i32)` overload"]
-    #[method(name = "CrossFade", args = 3)]
-    pub fn cross_fade_7(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_6::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            normalized_transition_duration,
+            layer,
+            normalized_time_offset,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_7(
+        this: Animator,
         state_hash_name: i32,
         normalized_transition_duration: f32,
         layer: i32,
-    ) -> ();
-
-    #[doc = "`CrossFade(i32, f32)` overload"]
-    #[method(name = "CrossFade", args = 2)]
-    pub fn cross_fade_8(self, state_hash_name: i32, normalized_transition_duration: f32) -> ();
-
-    #[doc = "`PlayInFixedTime(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "PlayInFixedTime", args = 2)]
-    pub fn play_in_fixed_time(self, state_name: ::unity2::Il2CppString, layer: i32) -> ();
-
-    #[doc = "`PlayInFixedTime(::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayInFixedTime", args = 1)]
-    pub fn play_in_fixed_time_2(self, state_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`PlayInFixedTime(::unity2::Il2CppString, i32, f32)` overload"]
-    #[method(name = "PlayInFixedTime", args = 3)]
-    pub fn play_in_fixed_time_3(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_7::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            normalized_transition_duration,
+            layer,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cross_fade_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CrossFade",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CrossFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cross_fade_8(
+        this: Animator,
+        state_hash_name: i32,
+        normalized_transition_duration: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_cross_fade_8::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_hash_name,
+            normalized_transition_duration,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time(
+        this: Animator,
+        state_name: ::unity2::Il2CppString,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_in_fixed_time::get_offset() as isize),
+        );
+        inner(this, state_name, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time_2(
+        this: Animator,
+        state_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_in_fixed_time_2::get_offset() as isize),
+            );
+        inner(this, state_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time_3(
+        this: Animator,
         state_name: ::unity2::Il2CppString,
         layer: i32,
         fixed_time: f32,
-    ) -> ();
-
-    #[doc = "`PlayInFixedTime(i32, i32, f32)` overload"]
-    #[method(name = "PlayInFixedTime", args = 3)]
-    pub fn play_in_fixed_time_4(self, state_name_hash: i32, layer: i32, fixed_time: f32) -> ();
-
-    #[doc = "`PlayInFixedTime(i32, i32)` overload"]
-    #[method(name = "PlayInFixedTime", args = 2)]
-    pub fn play_in_fixed_time_5(self, state_name_hash: i32, layer: i32) -> ();
-
-    #[doc = "`PlayInFixedTime(i32)` overload"]
-    #[method(name = "PlayInFixedTime", args = 1)]
-    pub fn play_in_fixed_time_6(self, state_name_hash: i32) -> ();
-
-    #[doc = "`Play(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "Play", args = 2)]
-    pub fn play(self, state_name: ::unity2::Il2CppString, layer: i32) -> ();
-
-    #[doc = "`Play(::unity2::Il2CppString)` overload"]
-    #[method(name = "Play", args = 1)]
-    pub fn play_2(self, state_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Play(::unity2::Il2CppString, i32, f32)` overload"]
-    #[method(name = "Play", args = 3)]
-    pub fn play_3(self, state_name: ::unity2::Il2CppString, layer: i32, normalized_time: f32)
-        -> ();
-
-    #[doc = "`Play(i32, i32, f32)` overload"]
-    #[method(name = "Play", args = 3)]
-    pub fn play_4(self, state_name_hash: i32, layer: i32, normalized_time: f32) -> ();
-
-    #[doc = "`Play(i32, i32)` overload"]
-    #[method(name = "Play", args = 2)]
-    pub fn play_5(self, state_name_hash: i32, layer: i32) -> ();
-
-    #[doc = "`Play(i32)` overload"]
-    #[method(name = "Play", args = 1)]
-    pub fn play_6(self, state_name_hash: i32) -> ();
-
-    #[doc = "`SetTarget(crate::unity_engine::avatartarget::AvatarTarget, f32)` overload"]
-    #[method(name = "SetTarget", args = 2)]
-    pub fn set_target(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_in_fixed_time_3::get_offset() as isize),
+        );
+        inner(this, state_name, layer, fixed_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time_4(
+        this: Animator,
+        state_name_hash: i32,
+        layer: i32,
+        fixed_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_in_fixed_time_4::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_name_hash,
+            layer,
+            fixed_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time_5(
+        this: Animator,
+        state_name_hash: i32,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_in_fixed_time_5::get_offset() as isize),
+            );
+        inner(this, state_name_hash, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_in_fixed_time_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "PlayInFixedTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "PlayInFixedTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_in_fixed_time_6(
+        this: Animator,
+        state_name_hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_in_fixed_time_6::get_offset() as isize),
+            );
+        inner(this, state_name_hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play(
+        this: Animator,
+        state_name: ::unity2::Il2CppString,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play::get_offset() as isize),
+        );
+        inner(this, state_name, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_2(
+        this: Animator,
+        state_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_2::get_offset() as isize),
+            );
+        inner(this, state_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_3(
+        this: Animator,
+        state_name: ::unity2::Il2CppString,
+        layer: i32,
+        normalized_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            state_name,
+            layer,
+            normalized_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_4(
+        this: Animator,
+        state_name_hash: i32,
+        layer: i32,
+        normalized_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_4::get_offset() as isize),
+            );
+        inner(
+            this,
+            state_name_hash,
+            layer,
+            normalized_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_5(
+        this: Animator,
+        state_name_hash: i32,
+        layer: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_5::get_offset() as isize),
+            );
+        inner(this, state_name_hash, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Play",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Play",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_6(
+        this: Animator,
+        state_name_hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_play_6::get_offset() as isize),
+            );
+        inner(this, state_name_hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatartarget::AvatarTarget as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetTarget",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetTarget",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_target(
+        this: Animator,
         target_index: crate::unity_engine::avatartarget::AvatarTarget,
         target_normalized_time: f32,
-    ) -> ();
-
-    #[doc = "`get_targetPosition()` overload"]
-    #[method(name = "get_targetPosition", args = 0)]
-    pub fn get_target_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_targetRotation()` overload"]
-    #[method(name = "get_targetRotation", args = 0)]
-    pub fn get_target_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`IsControlled(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "IsControlled", args = 1)]
-    pub fn is_controlled(self, transform: crate::unity_engine::transform::Transform) -> bool;
-
-    #[doc = "`IsBoneTransform(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "IsBoneTransform", args = 1)]
-    pub fn is_bone_transform(self, transform: crate::unity_engine::transform::Transform) -> bool;
-
-    #[doc = "`get_avatarRoot()` overload"]
-    #[method(name = "get_avatarRoot", args = 0)]
-    pub fn get_avatar_root(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`GetBoneTransform(crate::unity_engine::humanbodybones::HumanBodyBones)` overload"]
-    #[method(name = "GetBoneTransform", args = 1)]
-    pub fn get_bone_transform(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatartarget::AvatarTarget,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_target::get_offset() as isize),
+        );
+        inner(
+            this,
+            target_index,
+            target_normalized_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_targetPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_targetPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_position(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_rotation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_targetRotation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_targetRotation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_rotation(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_rotation::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_controlled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsControlled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsControlled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_controlled(
+        this: Animator,
+        transform: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_controlled::get_offset() as isize),
+        );
+        inner(this, transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_bone_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsBoneTransform",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsBoneTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_bone_transform(
+        this: Animator,
+        transform: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_bone_transform::get_offset() as isize),
+        );
+        inner(this, transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_avatar_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_avatarRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_avatarRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_avatar_root(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_avatar_root::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::humanbodybones::HumanBodyBones as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBoneTransform",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBoneTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_transform(
+        this: Animator,
         human_bone_id: crate::unity_engine::humanbodybones::HumanBodyBones,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`GetBoneTransformInternal(i32)` overload"]
-    #[method(name = "GetBoneTransformInternal", args = 1)]
-    pub fn get_bone_transform_internal(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::humanbodybones::HumanBodyBones,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bone_transform::get_offset() as isize),
+        );
+        inner(this, human_bone_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bone_transform_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBoneTransformInternal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBoneTransformInternal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bone_transform_internal(
+        this: Animator,
         human_bone_id: i32,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_cullingMode()` overload"]
-    #[method(name = "get_cullingMode", args = 0)]
-    pub fn get_culling_mode(self) -> crate::unity_engine::animatorcullingmode::AnimatorCullingMode;
-
-    #[doc = "`set_cullingMode(crate::unity_engine::animatorcullingmode::AnimatorCullingMode)` overload"]
-    #[method(name = "set_cullingMode", args = 1)]
-    pub fn set_culling_mode(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bone_transform_internal::get_offset() as isize),
+        );
+        inner(this, human_bone_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_culling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_cullingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_cullingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_culling_mode(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorcullingmode::AnimatorCullingMode {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::animatorcullingmode::AnimatorCullingMode =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_culling_mode::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_culling_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatorcullingmode :: AnimatorCullingMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_cullingMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_cullingMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_culling_mode(
+        this: Animator,
         value: crate::unity_engine::animatorcullingmode::AnimatorCullingMode,
-    ) -> ();
-
-    #[doc = "`StartPlayback()` overload"]
-    #[method(name = "StartPlayback", args = 0)]
-    pub fn start_playback(self) -> ();
-
-    #[doc = "`StopPlayback()` overload"]
-    #[method(name = "StopPlayback", args = 0)]
-    pub fn stop_playback(self) -> ();
-
-    #[doc = "`get_playbackTime()` overload"]
-    #[method(name = "get_playbackTime", args = 0)]
-    pub fn get_playback_time(self) -> f32;
-
-    #[doc = "`set_playbackTime(f32)` overload"]
-    #[method(name = "set_playbackTime", args = 1)]
-    pub fn set_playback_time(self, value: f32) -> ();
-
-    #[doc = "`StartRecording(i32)` overload"]
-    #[method(name = "StartRecording", args = 1)]
-    pub fn start_recording(self, frame_count: i32) -> ();
-
-    #[doc = "`StopRecording()` overload"]
-    #[method(name = "StopRecording", args = 0)]
-    pub fn stop_recording(self) -> ();
-
-    #[doc = "`get_recorderStartTime()` overload"]
-    #[method(name = "get_recorderStartTime", args = 0)]
-    pub fn get_recorder_start_time(self) -> f32;
-
-    #[doc = "`set_recorderStartTime(f32)` overload"]
-    #[method(name = "set_recorderStartTime", args = 1)]
-    pub fn set_recorder_start_time(self, value: f32) -> ();
-
-    #[doc = "`get_recorderStopTime()` overload"]
-    #[method(name = "get_recorderStopTime", args = 0)]
-    pub fn get_recorder_stop_time(self) -> f32;
-
-    #[doc = "`set_recorderStopTime(f32)` overload"]
-    #[method(name = "set_recorderStopTime", args = 1)]
-    pub fn set_recorder_stop_time(self, value: f32) -> ();
-
-    #[doc = "`get_recorderMode()` overload"]
-    #[method(name = "get_recorderMode", args = 0)]
-    pub fn get_recorder_mode(
-        self,
-    ) -> crate::unity_engine::animatorrecordermode::AnimatorRecorderMode;
-
-    #[doc = "`get_runtimeAnimatorController()` overload"]
-    #[method(name = "get_runtimeAnimatorController", args = 0)]
-    pub fn get_runtime_animator_controller(
-        self,
-    ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController;
-
-    #[doc = "`set_runtimeAnimatorController(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` overload"]
-    #[method(name = "set_runtimeAnimatorController", args = 1)]
-    pub fn set_runtime_animator_controller(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::animatorcullingmode::AnimatorCullingMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_culling_mode::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_playback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "StartPlayback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "StartPlayback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_playback(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_start_playback::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_playback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "StopPlayback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "StopPlayback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_playback(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_stop_playback::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playback_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_playbackTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_playbackTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_playback_time(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_playback_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playback_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_playbackTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_playbackTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_playback_time(
+        this: Animator,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_playback_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_recording {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "StartRecording",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "StartRecording",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_recording(
+        this: Animator,
+        frame_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start_recording::get_offset() as isize),
+            );
+        inner(this, frame_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_recording {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "StopRecording",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "StopRecording",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn stop_recording(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_stop_recording::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_recorder_start_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_recorderStartTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_recorderStartTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_recorder_start_time(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_recorder_start_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_recorder_start_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_recorderStartTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_recorderStartTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_recorder_start_time(
+        this: Animator,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_recorder_start_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_recorder_stop_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_recorderStopTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_recorderStopTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_recorder_stop_time(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_recorder_stop_time::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_recorder_stop_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_recorderStopTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_recorderStopTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_recorder_stop_time(
+        this: Animator,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_recorder_stop_time::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_recorder_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_recorderMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_recorderMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_recorder_mode(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animatorrecordermode::AnimatorRecorderMode {
+        let inner : extern "C" fn (Animator , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animatorrecordermode :: AnimatorRecorderMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_recorder_mode :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_runtime_animator_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_runtimeAnimatorController",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_runtimeAnimatorController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_runtime_animator_controller(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController {
+        let inner : extern "C" fn (Animator , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_runtime_animator_controller :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_runtime_animator_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_runtimeAnimatorController",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_runtimeAnimatorController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_runtime_animator_controller(
+        this: Animator,
         value: crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-    ) -> ();
-
-    #[doc = "`get_hasBoundPlayables()` overload"]
-    #[method(name = "get_hasBoundPlayables", args = 0)]
-    pub fn get_has_bound_playables(self) -> bool;
-
-    #[doc = "`ClearInternalControllerPlayable()` overload"]
-    #[method(name = "ClearInternalControllerPlayable", args = 0)]
-    pub fn clear_internal_controller_playable(self) -> ();
-
-    #[doc = "`HasState(i32, i32)` overload"]
-    #[method(name = "HasState", args = 2)]
-    pub fn has_state(self, layer_index: i32, state_id: i32) -> bool;
-
-    #[doc = "`StringToHash(::unity2::Il2CppString)` overload"]
-    #[method(name = "StringToHash", args = 1)]
-    pub fn string_to_hash(name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`get_avatar()` overload"]
-    #[method(name = "get_avatar", args = 0)]
-    pub fn get_avatar(self) -> crate::unity_engine::avatar::Avatar;
-
-    #[doc = "`set_avatar(crate::unity_engine::avatar::Avatar)` overload"]
-    #[method(name = "set_avatar", args = 1)]
-    pub fn set_avatar(self, value: crate::unity_engine::avatar::Avatar) -> ();
-
-    #[doc = "`GetStats()` overload"]
-    #[method(name = "GetStats", args = 0)]
-    pub fn get_stats(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_playableGraph()` overload"]
-    #[method(name = "get_playableGraph", args = 0)]
-    pub fn get_playable_graph(self)
-        -> crate::unity_engine::playables::playablegraph::PlayableGraph;
-
-    #[doc = "`GetCurrentGraph(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    #[method(name = "GetCurrentGraph", args = 1)]
-    pub fn get_current_graph(
-        self,
-        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-    ) -> ();
-
-    #[doc = "`CheckIfInIKPass()` overload"]
-    #[method(name = "CheckIfInIKPass", args = 0)]
-    pub fn check_if_in_ik_pass(self) -> ();
-
-    #[doc = "`IsInIKPass()` overload"]
-    #[method(name = "IsInIKPass", args = 0)]
-    pub fn is_in_ik_pass(self) -> bool;
-
-    #[doc = "`SetFloatString(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "SetFloatString", args = 2)]
-    pub fn set_float_string(self, name: ::unity2::Il2CppString, value: f32) -> ();
-
-    #[doc = "`SetFloatID(i32, f32)` overload"]
-    #[method(name = "SetFloatID", args = 2)]
-    pub fn set_float_id(self, id: i32, value: f32) -> ();
-
-    #[doc = "`GetFloatString(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetFloatString", args = 1)]
-    pub fn get_float_string(self, name: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`GetFloatID(i32)` overload"]
-    #[method(name = "GetFloatID", args = 1)]
-    pub fn get_float_id(self, id: i32) -> f32;
-
-    #[doc = "`SetBoolString(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "SetBoolString", args = 2)]
-    pub fn set_bool_string(self, name: ::unity2::Il2CppString, value: bool) -> ();
-
-    #[doc = "`SetBoolID(i32, bool)` overload"]
-    #[method(name = "SetBoolID", args = 2)]
-    pub fn set_bool_id(self, id: i32, value: bool) -> ();
-
-    #[doc = "`GetBoolString(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetBoolString", args = 1)]
-    pub fn get_bool_string(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`GetBoolID(i32)` overload"]
-    #[method(name = "GetBoolID", args = 1)]
-    pub fn get_bool_id(self, id: i32) -> bool;
-
-    #[doc = "`SetIntegerString(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "SetIntegerString", args = 2)]
-    pub fn set_integer_string(self, name: ::unity2::Il2CppString, value: i32) -> ();
-
-    #[doc = "`SetIntegerID(i32, i32)` overload"]
-    #[method(name = "SetIntegerID", args = 2)]
-    pub fn set_integer_id(self, id: i32, value: i32) -> ();
-
-    #[doc = "`GetIntegerString(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetIntegerString", args = 1)]
-    pub fn get_integer_string(self, name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetIntegerID(i32)` overload"]
-    #[method(name = "GetIntegerID", args = 1)]
-    pub fn get_integer_id(self, id: i32) -> i32;
-
-    #[doc = "`SetTriggerString(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTriggerString", args = 1)]
-    pub fn set_trigger_string(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetTriggerID(i32)` overload"]
-    #[method(name = "SetTriggerID", args = 1)]
-    pub fn set_trigger_id(self, id: i32) -> ();
-
-    #[doc = "`ResetTriggerString(::unity2::Il2CppString)` overload"]
-    #[method(name = "ResetTriggerString", args = 1)]
-    pub fn reset_trigger_string(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ResetTriggerID(i32)` overload"]
-    #[method(name = "ResetTriggerID", args = 1)]
-    pub fn reset_trigger_id(self, id: i32) -> ();
-
-    #[doc = "`IsParameterControlledByCurveString(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsParameterControlledByCurveString", args = 1)]
-    pub fn is_parameter_controlled_by_curve_string(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsParameterControlledByCurveID(i32)` overload"]
-    #[method(name = "IsParameterControlledByCurveID", args = 1)]
-    pub fn is_parameter_controlled_by_curve_id(self, id: i32) -> bool;
-
-    #[doc = "`SetFloatStringDamp(::unity2::Il2CppString, f32, f32, f32)` overload"]
-    #[method(name = "SetFloatStringDamp", args = 4)]
-    pub fn set_float_string_damp(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_runtime_animator_controller::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_bound_playables {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_hasBoundPlayables",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_hasBoundPlayables",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_bound_playables(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_has_bound_playables::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_internal_controller_playable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ClearInternalControllerPlayable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ClearInternalControllerPlayable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_internal_controller_playable(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_internal_controller_playable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "HasState",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "HasState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_state(
+        this: Animator,
+        layer_index: i32,
+        state_id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_has_state::get_offset() as isize),
+            );
+        inner(this, layer_index, state_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_string_to_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "StringToHash",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "StringToHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn string_to_hash(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_string_to_hash::get_offset() as isize),
+            );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_avatar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_avatar",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_avatar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_avatar(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::avatar::Avatar {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::avatar::Avatar = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_avatar::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_avatar {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::avatar::Avatar as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_avatar",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_avatar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_avatar(
+        this: Animator,
+        value: crate::unity_engine::avatar::Avatar,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatar::Avatar,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_avatar::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stats {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetStats",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetStats",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_stats(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_stats::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playable_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_playableGraph",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_playableGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_playable_graph(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::playables::playablegraph::PlayableGraph =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_playable_graph::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_graph {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentGraph",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentGraph",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_graph(
+        this: Animator,
+        graph: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_graph::get_offset() as isize),
+        );
+        inner(this, graph, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_if_in_ik_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "CheckIfInIKPass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "CheckIfInIKPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_if_in_ik_pass(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_if_in_ik_pass::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_in_ik_pass {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsInIKPass",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsInIKPass",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_in_ik_pass(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_in_ik_pass::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloatString",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloatString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_float_string::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloatID",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloatID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_id(
+        this: Animator,
+        id: i32,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_float_id::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetFloatString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetFloatString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_float_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_float_string::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetFloatID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetFloatID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_float_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_float_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bool_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBoolString",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBoolString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bool_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bool_string::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bool_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBoolID",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBoolID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bool_id(
+        this: Animator,
+        id: i32,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_bool_id::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bool_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBoolString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBoolString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bool_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_bool_string::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bool_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBoolID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetBoolID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_bool_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_bool_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_integer_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIntegerString",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIntegerString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_integer_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_integer_string::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_integer_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetIntegerID",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetIntegerID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_integer_id(
+        this: Animator,
+        id: i32,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_integer_id::get_offset() as isize),
+            );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_integer_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIntegerString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIntegerString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_integer_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_integer_string::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_integer_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetIntegerID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetIntegerID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_integer_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_integer_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trigger_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetTriggerString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetTriggerString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trigger_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_trigger_string::get_offset() as isize),
+            );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_trigger_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetTriggerID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetTriggerID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_trigger_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_trigger_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_trigger_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ResetTriggerString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ResetTriggerString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_trigger_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_trigger_string::get_offset() as isize),
+            );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_trigger_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ResetTriggerID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ResetTriggerID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_trigger_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_trigger_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_parameter_controlled_by_curve_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsParameterControlledByCurveString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsParameterControlledByCurveString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_parameter_controlled_by_curve_string(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_parameter_controlled_by_curve_string::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_parameter_controlled_by_curve_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "IsParameterControlledByCurveID",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "IsParameterControlledByCurveID",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_parameter_controlled_by_curve_id(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_parameter_controlled_by_curve_id::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_string_damp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloatStringDamp",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloatStringDamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_string_damp(
+        this: Animator,
         name: ::unity2::Il2CppString,
         value: f32,
         damp_time: f32,
         delta_time: f32,
-    ) -> ();
-
-    #[doc = "`SetFloatIDDamp(i32, f32, f32, f32)` overload"]
-    #[method(name = "SetFloatIDDamp", args = 4)]
-    pub fn set_float_id_damp(self, id: i32, value: f32, damp_time: f32, delta_time: f32) -> ();
-
-    #[doc = "`get_layersAffectMassCenter()` overload"]
-    #[method(name = "get_layersAffectMassCenter", args = 0)]
-    pub fn get_layers_affect_mass_center(self) -> bool;
-
-    #[doc = "`set_layersAffectMassCenter(bool)` overload"]
-    #[method(name = "set_layersAffectMassCenter", args = 1)]
-    pub fn set_layers_affect_mass_center(self, value: bool) -> ();
-
-    #[doc = "`get_leftFeetBottomHeight()` overload"]
-    #[method(name = "get_leftFeetBottomHeight", args = 0)]
-    pub fn get_left_feet_bottom_height(self) -> f32;
-
-    #[doc = "`get_rightFeetBottomHeight()` overload"]
-    #[method(name = "get_rightFeetBottomHeight", args = 0)]
-    pub fn get_right_feet_bottom_height(self) -> f32;
-
-    #[doc = "`get_supportsOnAnimatorMove()` overload"]
-    #[method(name = "get_supportsOnAnimatorMove", args = 0)]
-    pub fn get_supports_on_animator_move(self) -> bool;
-
-    #[doc = "`OnUpdateModeChanged()` overload"]
-    #[method(name = "OnUpdateModeChanged", args = 0)]
-    pub fn on_update_mode_changed(self) -> ();
-
-    #[doc = "`OnCullingModeChanged()` overload"]
-    #[method(name = "OnCullingModeChanged", args = 0)]
-    pub fn on_culling_mode_changed(self) -> ();
-
-    #[doc = "`WriteDefaultPose()` overload"]
-    #[method(name = "WriteDefaultPose", args = 0)]
-    pub fn write_default_pose(self) -> ();
-
-    #[doc = "`Update(f32)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(self, delta_time: f32) -> ();
-
-    #[doc = "`Rebind()` overload"]
-    #[method(name = "Rebind", args = 0)]
-    pub fn rebind(self) -> ();
-
-    #[doc = "`Rebind(bool)` overload"]
-    #[method(name = "Rebind", args = 1)]
-    pub fn rebind_2(self, write_default_values: bool) -> ();
-
-    #[doc = "`ApplyBuiltinRootMotion()` overload"]
-    #[method(name = "ApplyBuiltinRootMotion", args = 0)]
-    pub fn apply_builtin_root_motion(self) -> ();
-
-    #[doc = "`EvaluateController()` overload"]
-    #[method(name = "EvaluateController", args = 0)]
-    pub fn evaluate_controller(self) -> ();
-
-    #[doc = "`EvaluateController(f32)` overload"]
-    #[method(name = "EvaluateController", args = 1)]
-    pub fn evaluate_controller_2(self, delta_time: f32) -> ();
-
-    #[doc = "`GetCurrentStateName(i32)` overload"]
-    #[method(name = "GetCurrentStateName", args = 1)]
-    pub fn get_current_state_name(self, layer_index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetNextStateName(i32)` overload"]
-    #[method(name = "GetNextStateName", args = 1)]
-    pub fn get_next_state_name(self, layer_index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetAnimatorStateName(i32, bool)` overload"]
-    #[method(name = "GetAnimatorStateName", args = 2)]
-    pub fn get_animator_state_name(self, layer_index: i32, current: bool)
-        -> ::unity2::Il2CppString;
-
-    #[doc = "`ResolveHash(i32)` overload"]
-    #[method(name = "ResolveHash", args = 1)]
-    pub fn resolve_hash(self, hash: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_logWarnings()` overload"]
-    #[method(name = "get_logWarnings", args = 0)]
-    pub fn get_log_warnings(self) -> bool;
-
-    #[doc = "`set_logWarnings(bool)` overload"]
-    #[method(name = "set_logWarnings", args = 1)]
-    pub fn set_log_warnings(self, value: bool) -> ();
-
-    #[doc = "`get_fireEvents()` overload"]
-    #[method(name = "get_fireEvents", args = 0)]
-    pub fn get_fire_events(self) -> bool;
-
-    #[doc = "`set_fireEvents(bool)` overload"]
-    #[method(name = "set_fireEvents", args = 1)]
-    pub fn set_fire_events(self, value: bool) -> ();
-
-    #[doc = "`get_keepAnimatorControllerStateOnDisable()` overload"]
-    #[method(name = "get_keepAnimatorControllerStateOnDisable", args = 0)]
-    pub fn get_keep_animator_controller_state_on_disable(self) -> bool;
-
-    #[doc = "`set_keepAnimatorControllerStateOnDisable(bool)` overload"]
-    #[method(name = "set_keepAnimatorControllerStateOnDisable", args = 1)]
-    pub fn set_keep_animator_controller_state_on_disable(self, value: bool) -> ();
-
-    #[doc = "`GetVector(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetVector", args = 1)]
-    pub fn get_vector(self, name: ::unity2::Il2CppString) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetVector(i32)` overload"]
-    #[method(name = "GetVector", args = 1)]
-    pub fn get_vector_2(self, id: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`SetVector(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetVector", args = 2)]
-    pub fn set_vector(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_float_string_damp::get_offset() as isize),
+        );
+        inner(
+            this,
+            name,
+            value,
+            damp_time,
+            delta_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_float_id_damp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetFloatIDDamp",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetFloatIDDamp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_float_id_damp(
+        this: Animator,
+        id: i32,
+        value: f32,
+        damp_time: f32,
+        delta_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, i32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_float_id_damp::get_offset() as isize),
+            );
+        inner(this, id, value, damp_time, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layers_affect_mass_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_layersAffectMassCenter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_layersAffectMassCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layers_affect_mass_center(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_layers_affect_mass_center::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_layers_affect_mass_center {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_layersAffectMassCenter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_layersAffectMassCenter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_layers_affect_mass_center(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_layers_affect_mass_center::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_left_feet_bottom_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_leftFeetBottomHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_leftFeetBottomHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_left_feet_bottom_height(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_left_feet_bottom_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_right_feet_bottom_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_rightFeetBottomHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_rightFeetBottomHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_right_feet_bottom_height(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_right_feet_bottom_height::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_on_animator_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_supportsOnAnimatorMove",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsOnAnimatorMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_on_animator_move(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_supports_on_animator_move::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_update_mode_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "OnUpdateModeChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "OnUpdateModeChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_update_mode_changed(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_update_mode_changed::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_culling_mode_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "OnCullingModeChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "OnCullingModeChanged",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_culling_mode_changed(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_culling_mode_changed::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_default_pose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "WriteDefaultPose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "WriteDefaultPose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_default_pose(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_default_pose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Update",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: Animator,
+        delta_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Rebind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Rebind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebind(this: Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rebind::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "Rebind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "Rebind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rebind_2(
+        this: Animator,
+        write_default_values: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_rebind_2::get_offset() as isize),
+            );
+        inner(this, write_default_values, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_builtin_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ApplyBuiltinRootMotion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ApplyBuiltinRootMotion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_builtin_root_motion(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_builtin_root_motion::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "EvaluateController",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "EvaluateController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate_controller(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_evaluate_controller::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate_controller_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "EvaluateController",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "EvaluateController",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate_controller_2(
+        this: Animator,
+        delta_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_evaluate_controller_2::get_offset() as isize),
+            );
+        inner(this, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_state_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentStateName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentStateName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_state_name(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_state_name::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_next_state_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetNextStateName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetNextStateName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_next_state_name(
+        this: Animator,
+        layer_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_next_state_name::get_offset() as isize),
+        );
+        inner(this, layer_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animator_state_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetAnimatorStateName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimatorStateName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animator_state_name(
+        this: Animator,
+        layer_index: i32,
+        current: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animator_state_name::get_offset() as isize),
+        );
+        inner(this, layer_index, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resolve_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ResolveHash",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "ResolveHash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resolve_hash(
+        this: Animator,
+        hash: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_resolve_hash::get_offset() as isize),
+        );
+        inner(this, hash, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_log_warnings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_logWarnings",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_logWarnings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_log_warnings(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_log_warnings::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_log_warnings {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_logWarnings",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_logWarnings",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_log_warnings(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_log_warnings::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fire_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_fireEvents",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_fireEvents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fire_events(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_fire_events::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fire_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_fireEvents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_fireEvents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fire_events(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_fire_events::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_keep_animator_controller_state_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_keepAnimatorControllerStateOnDisable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_keepAnimatorControllerStateOnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_keep_animator_controller_state_on_disable(
+        this: Animator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_get_keep_animator_controller_state_on_disable::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_keep_animator_controller_state_on_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_keepAnimatorControllerStateOnDisable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_keepAnimatorControllerStateOnDisable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_keep_animator_controller_state_on_disable(
+        this: Animator,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Animator, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_set_keep_animator_controller_state_on_disable::get_offset()
+                            as isize,
+                    ),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector(
+        this: Animator,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vector::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_vector_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetVector",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_vector_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_vector_2::get_offset() as isize),
+        );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetVector",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector(
+        this: Animator,
         name: ::unity2::Il2CppString,
         value: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetVector(i32, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetVector", args = 2)]
-    pub fn set_vector_2(self, id: i32, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`GetQuaternion(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetQuaternion", args = 1)]
-    pub fn get_quaternion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_vector_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetVector",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetVector",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_vector_2(
+        this: Animator,
+        id: i32,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_vector_2::get_offset() as isize),
+        );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_quaternion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetQuaternion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetQuaternion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_quaternion(
+        this: Animator,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`GetQuaternion(i32)` overload"]
-    #[method(name = "GetQuaternion", args = 1)]
-    pub fn get_quaternion_2(self, id: i32) -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`SetQuaternion(::unity2::Il2CppString, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetQuaternion", args = 2)]
-    pub fn set_quaternion(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_quaternion::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_quaternion_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetQuaternion",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetQuaternion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_quaternion_2(
+        this: Animator,
+        id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_quaternion_2::get_offset() as isize),
+        );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_quaternion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetQuaternion",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetQuaternion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_quaternion(
+        this: Animator,
         name: ::unity2::Il2CppString,
         value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`SetQuaternion(i32, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetQuaternion", args = 2)]
-    pub fn set_quaternion_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            ::unity2::Il2CppString,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_quaternion::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_quaternion_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetQuaternion",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetQuaternion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_quaternion_2(
+        this: Animator,
         id: i32,
         value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_deltaPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_deltaPosition_Injected", args = 1)]
-    pub fn get_delta_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_deltaRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_deltaRotation_Injected", args = 1)]
-    pub fn get_delta_rotation_injected(
-        self,
-        ret: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_velocity_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_velocity_Injected", args = 1)]
-    pub fn get_velocity_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_angularVelocity_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_angularVelocity_Injected", args = 1)]
-    pub fn get_angular_velocity_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rootPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_rootPosition_Injected", args = 1)]
-    pub fn get_root_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_rootPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_rootPosition_Injected", args = 1)]
-    pub fn set_root_position_injected(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_rootRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_rootRotation_Injected", args = 1)]
-    pub fn get_root_rotation_injected(self, ret: crate::unity_engine::quaternion::Quaternion)
-        -> ();
-
-    #[doc = "`set_rootRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_rootRotation_Injected", args = 1)]
-    pub fn set_root_rotation_injected(
-        self,
-        value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_bodyPositionInternal_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_bodyPositionInternal_Injected", args = 1)]
-    pub fn get_body_position_internal_injected(
-        self,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`set_bodyPositionInternal_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_bodyPositionInternal_Injected", args = 1)]
-    pub fn set_body_position_internal_injected(
-        self,
-        value: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`get_bodyRotationInternal_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_bodyRotationInternal_Injected", args = 1)]
-    pub fn get_body_rotation_internal_injected(
-        self,
-        ret: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`set_bodyRotationInternal_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "set_bodyRotationInternal_Injected", args = 1)]
-    pub fn set_body_rotation_internal_injected(
-        self,
-        value: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`GetGoalPosition_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetGoalPosition_Injected", args = 2)]
-    pub fn get_goal_position_injected(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_quaternion_2::get_offset() as isize),
+        );
+        inner(this, id, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Animator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_delta_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_deltaPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_deltaPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_delta_position_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_delta_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_delta_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_deltaRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_deltaRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_delta_rotation_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_delta_rotation_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_velocity_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_velocity_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_velocity_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_velocity_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_velocity_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_angular_velocity_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_angularVelocity_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_angularVelocity_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_angular_velocity_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_angular_velocity_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_rootPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_rootPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root_position_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_root_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_rootPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_rootPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_root_position_injected(
+        this: Animator,
+        value: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_root_position_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_rootRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_rootRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root_rotation_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root_rotation_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_root_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_rootRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_rootRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_root_rotation_injected(
+        this: Animator,
+        value: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_root_rotation_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_position_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyPositionInternal_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyPositionInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_position_internal_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_position_internal_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_position_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyPositionInternal_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyPositionInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_position_internal_injected(
+        this: Animator,
+        value: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_position_internal_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_body_rotation_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_bodyRotationInternal_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_bodyRotationInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_body_rotation_internal_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_body_rotation_internal_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_body_rotation_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "set_bodyRotationInternal_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "set_bodyRotationInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_body_rotation_internal_injected(
+        this: Animator,
+        value: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_body_rotation_internal_injected::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalPosition_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_position_injected(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetGoalPosition_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetGoalPosition_Injected", args = 2)]
-    pub fn set_goal_position_injected(
-        self,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_position_injected::get_offset() as isize),
+        );
+        inner(this, goal, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalPosition_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_position_injected(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-        goal_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`GetGoalRotation_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "GetGoalRotation_Injected", args = 2)]
-    pub fn get_goal_rotation_injected(
-        self,
+        goal_position: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_position_injected::get_offset() as isize),
+        );
+        inner(this, goal, goal_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_goal_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetGoalRotation_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetGoalRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_goal_rotation_injected(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-        ret: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`SetGoalRotation_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetGoalRotation_Injected", args = 2)]
-    pub fn set_goal_rotation_injected(
-        self,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_goal_rotation_injected::get_offset() as isize),
+        );
+        inner(this, goal, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_goal_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikgoal::AvatarIKGoal as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetGoalRotation_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetGoalRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_goal_rotation_injected(
+        this: Animator,
         goal: crate::unity_engine::avatarikgoal::AvatarIKGoal,
-        goal_rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`GetHintPosition_Injected(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "GetHintPosition_Injected", args = 2)]
-    pub fn get_hint_position_injected(
-        self,
+        goal_rotation: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikgoal::AvatarIKGoal,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_goal_rotation_injected::get_offset() as isize),
+        );
+        inner(this, goal, goal_rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hint_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetHintPosition_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "GetHintPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hint_position_injected(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-        ret: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetHintPosition_Injected(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetHintPosition_Injected", args = 2)]
-    pub fn set_hint_position_injected(
-        self,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hint_position_injected::get_offset() as isize),
+        );
+        inner(this, hint, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hint_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::avatarikhint::AvatarIKHint as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetHintPosition_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetHintPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hint_position_injected(
+        this: Animator,
         hint: crate::unity_engine::avatarikhint::AvatarIKHint,
-        hint_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetLookAtPositionInternal_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetLookAtPositionInternal_Injected", args = 1)]
-    pub fn set_look_at_position_internal_injected(
-        self,
-        look_at_position: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-
-    #[doc = "`SetBoneLocalRotationInternal_Injected(i32, crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetBoneLocalRotationInternal_Injected", args = 2)]
-    pub fn set_bone_local_rotation_internal_injected(
-        self,
+        hint_position: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            crate::unity_engine::avatarikhint::AvatarIKHint,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hint_position_injected::get_offset() as isize),
+        );
+        inner(this, hint, hint_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_look_at_position_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetLookAtPositionInternal_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetLookAtPositionInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_look_at_position_internal_injected(
+        this: Animator,
+        look_at_position: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_look_at_position_internal_injected::get_offset() as isize),
+        );
+        inner(this, look_at_position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_bone_local_rotation_internal_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "SetBoneLocalRotationInternal_Injected",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "SetBoneLocalRotationInternal_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_bone_local_rotation_internal_injected(
+        this: Animator,
         human_bone_id: i32,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`get_pivotPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_pivotPosition_Injected", args = 1)]
-    pub fn get_pivot_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`MatchTarget_Injected(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
-    #[method(name = "MatchTarget_Injected", args = 7)]
-    pub fn match_target_injected(
-        self,
-        match_position: crate::unity_engine::vector3::Vector3,
-        match_rotation: crate::unity_engine::quaternion::Quaternion,
+        rotation: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            i32,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_bone_local_rotation_internal_injected::get_offset() as isize),
+        );
+        inner(this, human_bone_id, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pivot_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_pivotPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_pivotPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pivot_position_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_pivot_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_match_target_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: matchtargetweightmask :: MatchTargetWeightMask as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "MatchTarget_Injected",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "MatchTarget_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn match_target_injected(
+        this: Animator,
+        match_position: *mut crate::unity_engine::vector3::Vector3,
+        match_rotation: *mut crate::unity_engine::quaternion::Quaternion,
         target_body_part: i32,
-        weight_mask: crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+        weight_mask: *mut crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
         start_normalized_time: f32,
         target_normalized_time: f32,
         complete_match: bool,
-    ) -> ();
-
-    #[doc = "`get_targetPosition_Injected(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "get_targetPosition_Injected", args = 1)]
-    pub fn get_target_position_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_targetRotation_Injected(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "get_targetRotation_Injected", args = 1)]
-    pub fn get_target_rotation_injected(
-        self,
-        ret: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            i32,
+            *mut crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_match_target_injected::get_offset() as isize),
+        );
+        inner(
+            this,
+            match_position,
+            match_rotation,
+            target_body_part,
+            weight_mask,
+            start_normalized_time,
+            target_normalized_time,
+            complete_match,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_targetPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_targetPosition_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_position_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_position_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_rotation_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "get_targetRotation_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Animator as ::unity2::ClassIdentity>::NAME,
+                    "get_targetRotation_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_rotation_injected(
+        this: Animator,
+        ret: *mut crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Animator,
+            *mut crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_rotation_injected::get_offset() as isize),
+        );
+        inner(this, ret, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-animator")]
+impl Animator {
+    pub fn convert_state_machine_behaviour<M0: ::unity2::IlType + ::core::marker::Copy>(
+        raw_objects: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject>,
+        >,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "ConvertStateMachineBehaviour",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Animator as ::unity2::ClassIdentity>::NAME,
+                "ConvertStateMachineBehaviour",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject>,
+                ::unity2::OptionalMethod,
+            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(raw_objects),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`StringToHash(::unity2::Il2CppString)` overload"]
+    pub fn string_to_hash(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe {
+            __Animator_unity2_raw::string_to_hash(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animator")]
+pub trait IAnimatorMethods: IAnimator {
+    #[doc = "`get_isOptimizable()` overload"]
+    fn get_is_optimizable(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_is_optimizable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isHuman()` overload"]
+    fn get_is_human(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_is_human(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_hasRootMotion()` overload"]
+    fn get_has_root_motion(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_has_root_motion(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isRootPositionOrRotationControlledByCurves()` overload"]
+    fn get_is_root_position_or_rotation_controlled_by_curves(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_is_root_position_or_rotation_controlled_by_curves(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_humanScale()` overload"]
+    fn get_human_scale(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_human_scale(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isInitialized()` overload"]
+    fn get_is_initialized(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_is_initialized(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetFloat(::unity2::Il2CppString)` overload"]
+    fn get_float(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_float(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFloat(i32)` overload"]
+    fn get_float_2(self, id: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_float_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"]
+    fn set_float(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloat(::unity2::Il2CppString, f32, f32, f32)` overload"]
+    fn set_float_2(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<f32>,
+        damp_time: impl ::core::convert::Into<f32>,
+        delta_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_2(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(damp_time),
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloat(i32, f32)` overload"]
+    fn set_float_3(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_3(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloat(i32, f32, f32, f32)` overload"]
+    fn set_float_4(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<f32>,
+        damp_time: impl ::core::convert::Into<f32>,
+        delta_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_4(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(damp_time),
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBool(::unity2::Il2CppString)` overload"]
+    fn get_bool(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bool(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBool(i32)` overload"]
+    fn get_bool_2(self, id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bool_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBool(::unity2::Il2CppString, bool)` overload"]
+    fn set_bool(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bool(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBool(i32, bool)` overload"]
+    fn set_bool_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bool_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInteger(::unity2::Il2CppString)` overload"]
+    fn get_integer(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_integer(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInteger(i32)` overload"]
+    fn get_integer_2(self, id: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_integer_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetInteger(::unity2::Il2CppString, i32)` overload"]
+    fn set_integer(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_integer(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetInteger(i32, i32)` overload"]
+    fn set_integer_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_integer_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTrigger(::unity2::Il2CppString)` overload"]
+    fn set_trigger(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_trigger(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTrigger(i32)` overload"]
+    fn set_trigger_2(self, id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_trigger_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetTrigger(::unity2::Il2CppString)` overload"]
+    fn reset_trigger(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::reset_trigger(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetTrigger(i32)` overload"]
+    fn reset_trigger_2(self, id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::reset_trigger_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsParameterControlledByCurve(::unity2::Il2CppString)` overload"]
+    fn is_parameter_controlled_by_curve(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_parameter_controlled_by_curve(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsParameterControlledByCurve(i32)` overload"]
+    fn is_parameter_controlled_by_curve_2(self, id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_parameter_controlled_by_curve_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_deltaPosition()` overload"]
+    fn get_delta_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_delta_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_deltaRotation()` overload"]
+    fn get_delta_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_delta_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_velocity()` overload"]
+    fn get_velocity(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_velocity(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_angularVelocity()` overload"]
+    fn get_angular_velocity(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_angular_velocity(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_rootPosition()` overload"]
+    fn get_root_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_root_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_rootPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_root_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_root_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rootRotation()` overload"]
+    fn get_root_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_root_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_rootRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_root_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_root_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_applyRootMotion()` overload"]
+    fn get_apply_root_motion(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_apply_root_motion(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_applyRootMotion(bool)` overload"]
+    fn set_apply_root_motion(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_apply_root_motion(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_linearVelocityBlending()` overload"]
+    fn get_linear_velocity_blending(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_linear_velocity_blending(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_linearVelocityBlending(bool)` overload"]
+    fn set_linear_velocity_blending(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_linear_velocity_blending(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_animatePhysics()` overload"]
+    fn get_animate_physics(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_animate_physics(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_animatePhysics(bool)` overload"]
+    fn set_animate_physics(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_animate_physics(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_updateMode()` overload"]
+    fn get_update_mode(self) -> crate::unity_engine::animatorupdatemode::AnimatorUpdateMode {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_update_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_updateMode(crate::unity_engine::animatorupdatemode::AnimatorUpdateMode)` overload"]
+    fn set_update_mode(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::animatorupdatemode::AnimatorUpdateMode>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_update_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_hasTransformHierarchy()` overload"]
+    fn get_has_transform_hierarchy(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_has_transform_hierarchy(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_allowConstantClipSamplingOptimization()` overload"]
+    fn get_allow_constant_clip_sampling_optimization(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_allow_constant_clip_sampling_optimization(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_allowConstantClipSamplingOptimization(bool)` overload"]
+    fn set_allow_constant_clip_sampling_optimization(
+        self,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_allow_constant_clip_sampling_optimization(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_gravityWeight()` overload"]
+    fn get_gravity_weight(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_gravity_weight(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_bodyPosition()` overload"]
+    fn get_body_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_body_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_bodyPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_body_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_body_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_bodyPositionInternal()` overload"]
+    fn get_body_position_internal(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_body_position_internal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_bodyPositionInternal(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_body_position_internal(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_body_position_internal(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_bodyRotation()` overload"]
+    fn get_body_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_body_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_bodyRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_body_rotation(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_body_rotation(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_bodyRotationInternal()` overload"]
+    fn get_body_rotation_internal(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_body_rotation_internal(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_bodyRotationInternal(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_body_rotation_internal(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_body_rotation_internal(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_ik_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGoalPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_goal_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_goal_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_ik_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        goal_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(goal_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGoalPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_goal_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        goal_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_goal_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(goal_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_ik_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGoalRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_goal_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_goal_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_ik_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        goal_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(goal_rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGoalRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_goal_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        goal_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_goal_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(goal_rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKPositionWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_ik_position_weight(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_position_weight(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGoalWeightPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_goal_weight_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_goal_weight_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKPositionWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
+    fn set_ik_position_weight(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_position_weight(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGoalWeightPosition(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
+    fn set_goal_weight_position(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_goal_weight_position(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKRotationWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_ik_rotation_weight(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_rotation_weight(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetGoalWeightRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal)` overload"]
+    fn get_goal_weight_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_goal_weight_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKRotationWeight(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
+    fn set_ik_rotation_weight(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_rotation_weight(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetGoalWeightRotation(crate::unity_engine::avatarikgoal::AvatarIKGoal, f32)` overload"]
+    fn set_goal_weight_rotation(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_goal_weight_rotation(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
+    fn get_ik_hint_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_hint_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
+    fn get_hint_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_hint_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_ik_hint_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+        hint_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_hint_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::convert::Into::into(hint_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHintPosition(crate::unity_engine::avatarikhint::AvatarIKHint, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_hint_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+        hint_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_hint_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::convert::Into::into(hint_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIKHintPositionWeight(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
+    fn get_ik_hint_position_weight(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_ik_hint_position_weight(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHintWeightPosition(crate::unity_engine::avatarikhint::AvatarIKHint)` overload"]
+    fn get_hint_weight_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_hint_weight_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIKHintPositionWeight(crate::unity_engine::avatarikhint::AvatarIKHint, f32)` overload"]
+    fn set_ik_hint_position_weight(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_ik_hint_position_weight(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetHintWeightPosition(crate::unity_engine::avatarikhint::AvatarIKHint, f32)` overload"]
+    fn set_hint_weight_position(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_hint_weight_position(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtPosition(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_look_at_position(
+        self,
+        look_at_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_position(
+                __receiver,
+                ::core::convert::Into::into(look_at_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtPositionInternal(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_look_at_position_internal(
+        self,
+        look_at_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_position_internal(
+                __receiver,
+                ::core::convert::Into::into(look_at_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeight(f32)` overload"]
+    fn set_look_at_weight(self, weight: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeight(f32, f32)` overload"]
+    fn set_look_at_weight_2(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        body_weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight_2(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(body_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeight(f32, f32, f32)` overload"]
+    fn set_look_at_weight_3(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        body_weight: impl ::core::convert::Into<f32>,
+        head_weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight_3(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(body_weight),
+                ::core::convert::Into::into(head_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeight(f32, f32, f32, f32)` overload"]
+    fn set_look_at_weight_4(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        body_weight: impl ::core::convert::Into<f32>,
+        head_weight: impl ::core::convert::Into<f32>,
+        eyes_weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight_4(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(body_weight),
+                ::core::convert::Into::into(head_weight),
+                ::core::convert::Into::into(eyes_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeight(f32, f32, f32, f32, f32)` overload"]
+    fn set_look_at_weight_5(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        body_weight: impl ::core::convert::Into<f32>,
+        head_weight: impl ::core::convert::Into<f32>,
+        eyes_weight: impl ::core::convert::Into<f32>,
+        clamp_weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight_5(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(body_weight),
+                ::core::convert::Into::into(head_weight),
+                ::core::convert::Into::into(eyes_weight),
+                ::core::convert::Into::into(clamp_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLookAtWeightInternal(f32, f32, f32, f32, f32)` overload"]
+    fn set_look_at_weight_internal(
+        self,
+        weight: impl ::core::convert::Into<f32>,
+        body_weight: impl ::core::convert::Into<f32>,
+        head_weight: impl ::core::convert::Into<f32>,
+        eyes_weight: impl ::core::convert::Into<f32>,
+        clamp_weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_look_at_weight_internal(
+                __receiver,
+                ::core::convert::Into::into(weight),
+                ::core::convert::Into::into(body_weight),
+                ::core::convert::Into::into(head_weight),
+                ::core::convert::Into::into(eyes_weight),
+                ::core::convert::Into::into(clamp_weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBoneLocalRotation(crate::unity_engine::humanbodybones::HumanBodyBones, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_bone_local_rotation(
+        self,
+        human_bone_id: impl ::core::convert::Into<crate::unity_engine::humanbodybones::HumanBodyBones>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bone_local_rotation(
+                __receiver,
+                ::core::convert::Into::into(human_bone_id),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBoneLocalRotationInternal(i32, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_bone_local_rotation_internal(
+        self,
+        human_bone_id: impl ::core::convert::Into<i32>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bone_local_rotation_internal(
+                __receiver,
+                ::core::convert::Into::into(human_bone_id),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBehaviour(::unity2::SystemType)` overload"]
+    fn get_behaviour(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_behaviour(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn get_behaviour_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBehaviour",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Animator as ::unity2::ClassIdentity>::NAME,
+                "GetBehaviour",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(Animator, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    pub fn get_behaviours<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+    ) -> ::unity2::Array<M0> {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <Animator as ::unity2::ClassIdentity>::class(),
+                "GetBehaviours",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <Animator as ::unity2::ClassIdentity>::NAME,
+                "GetBehaviours",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(Animator, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`InternalGetBehaviours(::unity2::SystemType)` overload"]
+    fn internal_get_behaviours(
+        self,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject> {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::internal_get_behaviours(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBehaviours(i32, i32)` overload"]
+    fn get_behaviours_2(
+        self,
+        full_path_hash: impl ::core::convert::Into<i32>,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Array<crate::unity_engine::statemachinebehaviour::StateMachineBehaviour> {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_behaviours_2(
+                __receiver,
+                ::core::convert::Into::into(full_path_hash),
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InternalGetBehavioursByKey(i32, i32, ::unity2::SystemType)` overload"]
+    fn internal_get_behaviours_by_key(
+        self,
+        full_path_hash: impl ::core::convert::Into<i32>,
+        layer_index: impl ::core::convert::Into<i32>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject> {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::internal_get_behaviours_by_key(
+                __receiver,
+                ::core::convert::Into::into(full_path_hash),
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_stabilizeFeet()` overload"]
+    fn get_stabilize_feet(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_stabilize_feet(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_stabilizeFeet(bool)` overload"]
+    fn set_stabilize_feet(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_stabilize_feet(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_layerCount()` overload"]
+    fn get_layer_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_layer_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetLayerName(i32)` overload"]
+    fn get_layer_name(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_layer_name(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLayerIndex(::unity2::Il2CppString)` overload"]
+    fn get_layer_index(
+        self,
+        layer_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_layer_index(
+                __receiver,
+                ::core::convert::Into::into(layer_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLayerWeight(i32)` overload"]
+    fn get_layer_weight(self, layer_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_layer_weight(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLayerWeight(i32, f32)` overload"]
+    fn set_layer_weight(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        weight: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_layer_weight(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimatorStateInfo(i32, crate::unity_engine::stateinfoindex::StateInfoIndex, *mutcrate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]
+    fn get_animator_state_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        state_info_index: impl ::core::convert::Into<
+            crate::unity_engine::stateinfoindex::StateInfoIndex,
+        >,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            >::uninit();
+            __Animator_unity2_raw::get_animator_state_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(state_info_index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetCurrentAnimatorStateInfo(i32)` overload"]
+    fn get_current_animator_state_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_current_animator_state_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNextAnimatorStateInfo(i32)` overload"]
+    fn get_next_animator_state_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_next_animator_state_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimatorTransitionInfo(i32, *mutcrate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo)` overload"]
+    fn get_animator_transition_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo,
+            >::uninit();
+            __Animator_unity2_raw::get_animator_transition_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetAnimatorTransitionInfo(i32)` overload"]
+    fn get_animator_transition_info_2(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animatortransitioninfo::AnimatorTransitionInfo {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_animator_transition_info_2(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimatorClipInfoCount(i32, bool)` overload"]
+    fn get_animator_clip_info_count(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        current: impl ::core::convert::Into<bool>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_animator_clip_info_count(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrentAnimatorClipInfoCount(i32)` overload"]
+    fn get_current_animator_clip_info_count(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_current_animator_clip_info_count(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNextAnimatorClipInfoCount(i32)` overload"]
+    fn get_next_animator_clip_info_count(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_next_animator_clip_info_count(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrentAnimatorClipInfo(i32)` overload"]
+    fn get_current_animator_clip_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo> {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_current_animator_clip_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNextAnimatorClipInfo(i32)` overload"]
+    fn get_next_animator_clip_info(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Array<crate::unity_engine::animatorclipinfo::AnimatorClipInfo> {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_next_animator_clip_info(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrentAnimatorClipInfo(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>)` overload"]
+    fn get_current_animator_clip_info_2(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        clips: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_current_animator_clip_info_2(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(clips),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimatorClipInfoInternal(i32, bool, crate::system::object::Object)` overload"]
+    fn get_animator_clip_info_internal(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        is_current: impl ::core::convert::Into<bool>,
+        clips: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_animator_clip_info_internal(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(is_current),
+                ::core::convert::Into::into(clips),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNextAnimatorClipInfo(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::animatorclipinfo::AnimatorClipInfo>)` overload"]
+    fn get_next_animator_clip_info_2(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        clips: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_next_animator_clip_info_2(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(clips),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsInTransition(i32)` overload"]
+    fn is_in_transition(self, layer_index: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_in_transition(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_parameters()` overload"]
+    fn get_parameters(
+        self,
+    ) -> ::unity2::Array<
+        crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter,
+    > {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_parameterCount()` overload"]
+    fn get_parameter_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_parameter_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetParameter(i32)` overload"]
+    fn get_parameter(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::animatorcontrollerparameter::AnimatorControllerParameter {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_parameter(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_feetPivotActive()` overload"]
+    fn get_feet_pivot_active(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_feet_pivot_active(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_feetPivotActive(f32)` overload"]
+    fn set_feet_pivot_active(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_feet_pivot_active(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_pivotWeight()` overload"]
+    fn get_pivot_weight(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_pivot_weight(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_pivotPosition()` overload"]
+    fn get_pivot_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_pivot_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
+    fn match_target(
+        self,
+        match_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        match_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        target_body_part: impl ::core::convert::Into<i32>,
+        weight_mask: impl ::core::convert::Into<
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+        >,
+        start_normalized_time: impl ::core::convert::Into<f32>,
+        target_normalized_time: impl ::core::convert::Into<f32>,
+        complete_match: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::match_target(
+                __receiver,
+                ::core::convert::Into::into(match_position),
+                ::core::convert::Into::into(match_rotation),
+                ::core::convert::Into::into(target_body_part),
+                ::core::convert::Into::into(weight_mask),
+                ::core::convert::Into::into(start_normalized_time),
+                ::core::convert::Into::into(target_normalized_time),
+                ::core::convert::Into::into(complete_match),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32)` overload"]
+    fn match_target_2(
+        self,
+        match_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        match_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        target_body_part: impl ::core::convert::Into<crate::unity_engine::avatartarget::AvatarTarget>,
+        weight_mask: impl ::core::convert::Into<
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+        >,
+        start_normalized_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::match_target_2(
+                __receiver,
+                ::core::convert::Into::into(match_position),
+                ::core::convert::Into::into(match_rotation),
+                ::core::convert::Into::into(target_body_part),
+                ::core::convert::Into::into(weight_mask),
+                ::core::convert::Into::into(start_normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32)` overload"]
+    fn match_target_3(
+        self,
+        match_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        match_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        target_body_part: impl ::core::convert::Into<crate::unity_engine::avatartarget::AvatarTarget>,
+        weight_mask: impl ::core::convert::Into<
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+        >,
+        start_normalized_time: impl ::core::convert::Into<f32>,
+        target_normalized_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::match_target_3(
+                __receiver,
+                ::core::convert::Into::into(match_position),
+                ::core::convert::Into::into(match_rotation),
+                ::core::convert::Into::into(target_body_part),
+                ::core::convert::Into::into(weight_mask),
+                ::core::convert::Into::into(start_normalized_time),
+                ::core::convert::Into::into(target_normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MatchTarget(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::avatartarget::AvatarTarget, crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
+    fn match_target_4(
+        self,
+        match_position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        match_rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        target_body_part: impl ::core::convert::Into<crate::unity_engine::avatartarget::AvatarTarget>,
+        weight_mask: impl ::core::convert::Into<
+            crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+        >,
+        start_normalized_time: impl ::core::convert::Into<f32>,
+        target_normalized_time: impl ::core::convert::Into<f32>,
+        complete_match: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::match_target_4(
+                __receiver,
+                ::core::convert::Into::into(match_position),
+                ::core::convert::Into::into(match_rotation),
+                ::core::convert::Into::into(target_body_part),
+                ::core::convert::Into::into(weight_mask),
+                ::core::convert::Into::into(start_normalized_time),
+                ::core::convert::Into::into(target_normalized_time),
+                ::core::convert::Into::into(complete_match),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InterruptMatchTarget()` overload"]
+    fn interrupt_match_target(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::interrupt_match_target(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InterruptMatchTarget(bool)` overload"]
+    fn interrupt_match_target_2(self, complete_match: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::interrupt_match_target_2(
+                __receiver,
+                ::core::convert::Into::into(complete_match),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isMatchingTarget()` overload"]
+    fn get_is_matching_target(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_is_matching_target(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_speed()` overload"]
+    fn get_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_speed(f32)` overload"]
+    fn set_speed(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_speed(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ForceStateNormalizedTime(f32)` overload"]
+    fn force_state_normalized_time(self, normalized_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::force_state_normalized_time(
+                __receiver,
+                ::core::convert::Into::into(normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32)` overload"]
+    fn cross_fade_in_fixed_time(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32)` overload"]
+    fn cross_fade_in_fixed_time_2(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_2(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32, f32)` overload"]
+    fn cross_fade_in_fixed_time_3(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time_offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_3(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(::unity2::Il2CppString, f32, i32, f32, f32)` overload"]
+    fn cross_fade_in_fixed_time_4(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time_offset: impl ::core::convert::Into<f32>,
+        normalized_transition_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_4(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time_offset),
+                ::core::convert::Into::into(normalized_transition_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(i32, f32, i32, f32)` overload"]
+    fn cross_fade_in_fixed_time_5(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time_offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_5(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(i32, f32, i32)` overload"]
+    fn cross_fade_in_fixed_time_6(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_6(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(i32, f32)` overload"]
+    fn cross_fade_in_fixed_time_7(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_7(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFadeInFixedTime(i32, f32, i32, f32, f32)` overload"]
+    fn cross_fade_in_fixed_time_8(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        fixed_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time_offset: impl ::core::convert::Into<f32>,
+        normalized_transition_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_in_fixed_time_8(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(fixed_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time_offset),
+                ::core::convert::Into::into(normalized_transition_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteDefaultValues()` overload"]
+    fn write_default_values(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::write_default_values(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32, f32)` overload"]
+    fn cross_fade(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time_offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32)` overload"]
+    fn cross_fade_2(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_2(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(::unity2::Il2CppString, f32)` overload"]
+    fn cross_fade_3(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_3(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(::unity2::Il2CppString, f32, i32, f32, f32)` overload"]
+    fn cross_fade_4(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time_offset: impl ::core::convert::Into<f32>,
+        normalized_transition_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_4(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time_offset),
+                ::core::convert::Into::into(normalized_transition_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(i32, f32, i32, f32, f32)` overload"]
+    fn cross_fade_5(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time_offset: impl ::core::convert::Into<f32>,
+        normalized_transition_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_5(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time_offset),
+                ::core::convert::Into::into(normalized_transition_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(i32, f32, i32, f32)` overload"]
+    fn cross_fade_6(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time_offset: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_6(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time_offset),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(i32, f32, i32)` overload"]
+    fn cross_fade_7(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_7(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CrossFade(i32, f32)` overload"]
+    fn cross_fade_8(
+        self,
+        state_hash_name: impl ::core::convert::Into<i32>,
+        normalized_transition_duration: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::cross_fade_8(
+                __receiver,
+                ::core::convert::Into::into(state_hash_name),
+                ::core::convert::Into::into(normalized_transition_duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(::unity2::Il2CppString, i32)` overload"]
+    fn play_in_fixed_time(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(::unity2::Il2CppString)` overload"]
+    fn play_in_fixed_time_2(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time_2(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(::unity2::Il2CppString, i32, f32)` overload"]
+    fn play_in_fixed_time_3(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time_3(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(i32, i32, f32)` overload"]
+    fn play_in_fixed_time_4(
+        self,
+        state_name_hash: impl ::core::convert::Into<i32>,
+        layer: impl ::core::convert::Into<i32>,
+        fixed_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time_4(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(fixed_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(i32, i32)` overload"]
+    fn play_in_fixed_time_5(
+        self,
+        state_name_hash: impl ::core::convert::Into<i32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time_5(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayInFixedTime(i32)` overload"]
+    fn play_in_fixed_time_6(self, state_name_hash: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_in_fixed_time_6(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(::unity2::Il2CppString, i32)` overload"]
+    fn play(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(::unity2::Il2CppString)` overload"]
+    fn play_2(self, state_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_2(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(::unity2::Il2CppString, i32, f32)` overload"]
+    fn play_3(
+        self,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_3(
+                __receiver,
+                ::core::convert::Into::into(state_name),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(i32, i32, f32)` overload"]
+    fn play_4(
+        self,
+        state_name_hash: impl ::core::convert::Into<i32>,
+        layer: impl ::core::convert::Into<i32>,
+        normalized_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_4(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(i32, i32)` overload"]
+    fn play_5(
+        self,
+        state_name_hash: impl ::core::convert::Into<i32>,
+        layer: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_5(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::convert::Into::into(layer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Play(i32)` overload"]
+    fn play_6(self, state_name_hash: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::play_6(
+                __receiver,
+                ::core::convert::Into::into(state_name_hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTarget(crate::unity_engine::avatartarget::AvatarTarget, f32)` overload"]
+    fn set_target(
+        self,
+        target_index: impl ::core::convert::Into<crate::unity_engine::avatartarget::AvatarTarget>,
+        target_normalized_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_target(
+                __receiver,
+                ::core::convert::Into::into(target_index),
+                ::core::convert::Into::into(target_normalized_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_targetPosition()` overload"]
+    fn get_target_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_target_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetRotation()` overload"]
+    fn get_target_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_target_rotation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsControlled(crate::unity_engine::transform::Transform)` overload"]
+    fn is_controlled(
+        self,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_controlled(
+                __receiver,
+                ::core::convert::Into::into(transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsBoneTransform(crate::unity_engine::transform::Transform)` overload"]
+    fn is_bone_transform(
+        self,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_bone_transform(
+                __receiver,
+                ::core::convert::Into::into(transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_avatarRoot()` overload"]
+    fn get_avatar_root(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_avatar_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBoneTransform(crate::unity_engine::humanbodybones::HumanBodyBones)` overload"]
+    fn get_bone_transform(
+        self,
+        human_bone_id: impl ::core::convert::Into<crate::unity_engine::humanbodybones::HumanBodyBones>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bone_transform(
+                __receiver,
+                ::core::convert::Into::into(human_bone_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBoneTransformInternal(i32)` overload"]
+    fn get_bone_transform_internal(
+        self,
+        human_bone_id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bone_transform_internal(
+                __receiver,
+                ::core::convert::Into::into(human_bone_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_cullingMode()` overload"]
+    fn get_culling_mode(self) -> crate::unity_engine::animatorcullingmode::AnimatorCullingMode {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_culling_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_cullingMode(crate::unity_engine::animatorcullingmode::AnimatorCullingMode)` overload"]
+    fn set_culling_mode(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::animatorcullingmode::AnimatorCullingMode>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_culling_mode(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StartPlayback()` overload"]
+    fn start_playback(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::start_playback(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StopPlayback()` overload"]
+    fn stop_playback(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::stop_playback(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_playbackTime()` overload"]
+    fn get_playback_time(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_playback_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_playbackTime(f32)` overload"]
+    fn set_playback_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_playback_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StartRecording(i32)` overload"]
+    fn start_recording(self, frame_count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::start_recording(
+                __receiver,
+                ::core::convert::Into::into(frame_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StopRecording()` overload"]
+    fn stop_recording(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::stop_recording(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_recorderStartTime()` overload"]
+    fn get_recorder_start_time(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_recorder_start_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_recorderStartTime(f32)` overload"]
+    fn set_recorder_start_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_recorder_start_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_recorderStopTime()` overload"]
+    fn get_recorder_stop_time(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_recorder_stop_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_recorderStopTime(f32)` overload"]
+    fn set_recorder_stop_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_recorder_stop_time(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_recorderMode()` overload"]
+    fn get_recorder_mode(self) -> crate::unity_engine::animatorrecordermode::AnimatorRecorderMode {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_recorder_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_runtimeAnimatorController()` overload"]
+    fn get_runtime_animator_controller(
+        self,
+    ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_runtime_animator_controller(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_runtimeAnimatorController(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` overload"]
+    fn set_runtime_animator_controller(
+        self,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_runtime_animator_controller(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_hasBoundPlayables()` overload"]
+    fn get_has_bound_playables(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_has_bound_playables(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearInternalControllerPlayable()` overload"]
+    fn clear_internal_controller_playable(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::clear_internal_controller_playable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`HasState(i32, i32)` overload"]
+    fn has_state(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        state_id: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::has_state(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(state_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_avatar()` overload"]
+    fn get_avatar(self) -> crate::unity_engine::avatar::Avatar {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_avatar(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_avatar(crate::unity_engine::avatar::Avatar)` overload"]
+    fn set_avatar(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::avatar::Avatar>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_avatar(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStats()` overload"]
+    fn get_stats(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_stats(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_playableGraph()` overload"]
+    fn get_playable_graph(self) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_playable_graph(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCurrentGraph(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
+    fn get_current_graph(self) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::playables::playablegraph::PlayableGraph,
+            >::uninit();
+            __Animator_unity2_raw::get_current_graph(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`CheckIfInIKPass()` overload"]
+    fn check_if_in_ik_pass(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::check_if_in_ik_pass(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsInIKPass()` overload"]
+    fn is_in_ik_pass(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_in_ik_pass(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetFloatString(::unity2::Il2CppString, f32)` overload"]
+    fn set_float_string(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloatID(i32, f32)` overload"]
+    fn set_float_id(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFloatString(::unity2::Il2CppString)` overload"]
+    fn get_float_string(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_float_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFloatID(i32)` overload"]
+    fn get_float_id(self, id: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_float_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBoolString(::unity2::Il2CppString, bool)` overload"]
+    fn set_bool_string(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bool_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBoolID(i32, bool)` overload"]
+    fn set_bool_id(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_bool_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBoolString(::unity2::Il2CppString)` overload"]
+    fn get_bool_string(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bool_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBoolID(i32)` overload"]
+    fn get_bool_id(self, id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_bool_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIntegerString(::unity2::Il2CppString, i32)` overload"]
+    fn set_integer_string(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_integer_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetIntegerID(i32, i32)` overload"]
+    fn set_integer_id(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_integer_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIntegerString(::unity2::Il2CppString)` overload"]
+    fn get_integer_string(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_integer_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetIntegerID(i32)` overload"]
+    fn get_integer_id(self, id: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_integer_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriggerString(::unity2::Il2CppString)` overload"]
+    fn set_trigger_string(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_trigger_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTriggerID(i32)` overload"]
+    fn set_trigger_id(self, id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_trigger_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetTriggerString(::unity2::Il2CppString)` overload"]
+    fn reset_trigger_string(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::reset_trigger_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetTriggerID(i32)` overload"]
+    fn reset_trigger_id(self, id: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::reset_trigger_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsParameterControlledByCurveString(::unity2::Il2CppString)` overload"]
+    fn is_parameter_controlled_by_curve_string(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_parameter_controlled_by_curve_string(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsParameterControlledByCurveID(i32)` overload"]
+    fn is_parameter_controlled_by_curve_id(self, id: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::is_parameter_controlled_by_curve_id(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloatStringDamp(::unity2::Il2CppString, f32, f32, f32)` overload"]
+    fn set_float_string_damp(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<f32>,
+        damp_time: impl ::core::convert::Into<f32>,
+        delta_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_string_damp(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(damp_time),
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFloatIDDamp(i32, f32, f32, f32)` overload"]
+    fn set_float_id_damp(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<f32>,
+        damp_time: impl ::core::convert::Into<f32>,
+        delta_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_float_id_damp(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(damp_time),
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_layersAffectMassCenter()` overload"]
+    fn get_layers_affect_mass_center(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_layers_affect_mass_center(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_layersAffectMassCenter(bool)` overload"]
+    fn set_layers_affect_mass_center(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_layers_affect_mass_center(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_leftFeetBottomHeight()` overload"]
+    fn get_left_feet_bottom_height(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_left_feet_bottom_height(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_rightFeetBottomHeight()` overload"]
+    fn get_right_feet_bottom_height(self) -> f32 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_right_feet_bottom_height(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_supportsOnAnimatorMove()` overload"]
+    fn get_supports_on_animator_move(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_supports_on_animator_move(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnUpdateModeChanged()` overload"]
+    fn on_update_mode_changed(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::on_update_mode_changed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCullingModeChanged()` overload"]
+    fn on_culling_mode_changed(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::on_culling_mode_changed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WriteDefaultPose()` overload"]
+    fn write_default_pose(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::write_default_pose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update(f32)` overload"]
+    fn update(self, delta_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Rebind()` overload"]
+    fn rebind(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::rebind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Rebind(bool)` overload"]
+    fn rebind_2(self, write_default_values: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::rebind_2(
+                __receiver,
+                ::core::convert::Into::into(write_default_values),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyBuiltinRootMotion()` overload"]
+    fn apply_builtin_root_motion(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::apply_builtin_root_motion(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EvaluateController()` overload"]
+    fn evaluate_controller(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::evaluate_controller(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EvaluateController(f32)` overload"]
+    fn evaluate_controller_2(self, delta_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::evaluate_controller_2(
+                __receiver,
+                ::core::convert::Into::into(delta_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrentStateName(i32)` overload"]
+    fn get_current_state_name(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_current_state_name(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetNextStateName(i32)` overload"]
+    fn get_next_state_name(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_next_state_name(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimatorStateName(i32, bool)` overload"]
+    fn get_animator_state_name(
+        self,
+        layer_index: impl ::core::convert::Into<i32>,
+        current: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_animator_state_name(
+                __receiver,
+                ::core::convert::Into::into(layer_index),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResolveHash(i32)` overload"]
+    fn resolve_hash(self, hash: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::resolve_hash(
+                __receiver,
+                ::core::convert::Into::into(hash),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_logWarnings()` overload"]
+    fn get_log_warnings(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_log_warnings(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_logWarnings(bool)` overload"]
+    fn set_log_warnings(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_log_warnings(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_fireEvents()` overload"]
+    fn get_fire_events(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_fire_events(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_fireEvents(bool)` overload"]
+    fn set_fire_events(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_fire_events(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_keepAnimatorControllerStateOnDisable()` overload"]
+    fn get_keep_animator_controller_state_on_disable(self) -> bool {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_keep_animator_controller_state_on_disable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_keepAnimatorControllerStateOnDisable(bool)` overload"]
+    fn set_keep_animator_controller_state_on_disable(
+        self,
+        value: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_keep_animator_controller_state_on_disable(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVector(::unity2::Il2CppString)` overload"]
+    fn get_vector(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_vector(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetVector(i32)` overload"]
+    fn get_vector_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_vector_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVector(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_vector(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_vector(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetVector(i32, crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_vector_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_vector_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetQuaternion(::unity2::Il2CppString)` overload"]
+    fn get_quaternion(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_quaternion(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetQuaternion(i32)` overload"]
+    fn get_quaternion_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::get_quaternion_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetQuaternion(::unity2::Il2CppString, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_quaternion(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_quaternion(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetQuaternion(i32, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_quaternion_2(
+        self,
+        id: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::set_quaternion_2(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Animator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_deltaPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_delta_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_delta_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_deltaRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_delta_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::get_delta_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_velocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_velocity_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_angularVelocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_angular_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_angular_velocity_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_rootPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_root_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_root_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rootPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_root_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::set_root_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_rootRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_root_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::get_root_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_rootRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_root_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::set_root_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_bodyPositionInternal_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_body_position_internal_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_body_position_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_bodyPositionInternal_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_body_position_internal_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::set_body_position_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_bodyRotationInternal_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_body_rotation_internal_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::get_body_rotation_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_bodyRotationInternal_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_body_rotation_internal_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::set_body_rotation_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetGoalPosition_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_goal_position_injected(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_goal_position_injected(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetGoalPosition_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_goal_position_injected(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::set_goal_position_injected(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetGoalRotation_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_goal_rotation_injected(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::get_goal_rotation_injected(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetGoalRotation_Injected(crate::unity_engine::avatarikgoal::AvatarIKGoal, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_goal_rotation_injected(
+        self,
+        goal: impl ::core::convert::Into<crate::unity_engine::avatarikgoal::AvatarIKGoal>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::set_goal_rotation_injected(
+                __receiver,
+                ::core::convert::Into::into(goal),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`GetHintPosition_Injected(crate::unity_engine::avatarikhint::AvatarIKHint, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_hint_position_injected(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_hint_position_injected(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetHintPosition_Injected(crate::unity_engine::avatarikhint::AvatarIKHint, *mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_hint_position_injected(
+        self,
+        hint: impl ::core::convert::Into<crate::unity_engine::avatarikhint::AvatarIKHint>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::set_hint_position_injected(
+                __receiver,
+                ::core::convert::Into::into(hint),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetLookAtPositionInternal_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn set_look_at_position_internal_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::set_look_at_position_internal_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetBoneLocalRotationInternal_Injected(i32, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn set_bone_local_rotation_internal_injected(
+        self,
+        human_bone_id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::set_bone_local_rotation_internal_injected(
+                __receiver,
+                ::core::convert::Into::into(human_bone_id),
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_pivotPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_pivot_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_pivot_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`MatchTarget_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, i32, *mutcrate::unity_engine::matchtargetweightmask::MatchTargetWeightMask, f32, f32, bool)` overload"]
+    fn match_target_injected(
+        self,
+        target_body_part: impl ::core::convert::Into<i32>,
+        start_normalized_time: impl ::core::convert::Into<f32>,
+        target_normalized_time: impl ::core::convert::Into<f32>,
+        complete_match: impl ::core::convert::Into<bool>,
+    ) -> (
+        crate::unity_engine::vector3::Vector3,
+        crate::unity_engine::quaternion::Quaternion,
+        crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+    ) {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::matchtargetweightmask::MatchTargetWeightMask,
+            >::uninit();
+            __Animator_unity2_raw::match_target_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::convert::Into::into(target_body_part),
+                __out_2.as_mut_ptr(),
+                ::core::convert::Into::into(start_normalized_time),
+                ::core::convert::Into::into(target_normalized_time),
+                ::core::convert::Into::into(complete_match),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+            )
+        }
+    }
+    #[doc = "`get_targetPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
+    fn get_target_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Animator_unity2_raw::get_target_position_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_targetRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
+    fn get_target_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <Animator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Animator_unity2_raw::get_target_rotation_injected(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animator")]
+impl<__T: IAnimator> IAnimatorMethods for __T {}
 
 #[cfg(feature = "unity_engine-animator")]
 impl Animator {
@@ -1541,4 +18029,23 @@ impl Animator {
         <Self as IAnimatorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-animator")]
+pub mod prelude {
+    pub use super::Animator;
+    pub use super::IAnimator;
+    pub use super::IAnimatorMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

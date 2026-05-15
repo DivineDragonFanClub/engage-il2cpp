@@ -183,3 +183,17 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "system-io-filesystemenumerableiterator_1")]
+pub mod prelude {
+    pub use super::FileSystemEnumerableIterator_1;
+    pub use super::IFileSystemEnumerableIterator_1;
+    pub use super::IFileSystemEnumerableIterator_1Methods;
+    pub use crate::system::io::iterator_1::IIterator_1;
+    #[cfg(feature = "system-io-iterator_1")]
+    pub use crate::system::io::iterator_1::IIterator_1Methods;
+    pub use crate::system::io::iterator_1::Iterator_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

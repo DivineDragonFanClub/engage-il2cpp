@@ -17,9 +17,81 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-weightutility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WeightUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_normalize_mixer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeightUtility as ::unity2::ClassIdentity>::class(),
+                "NormalizeMixer",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WeightUtility as ::unity2::ClassIdentity>::NAME,
+                    "NormalizeMixer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn normalize_mixer(
+        mixer: crate::unity_engine::playables::playable::Playable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playable::Playable,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_normalize_mixer::get_offset() as isize),
+        );
+        inner(mixer, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-weightutility")]
 impl WeightUtility {
     #[doc = "`NormalizeMixer(crate::unity_engine::playables::playable::Playable)` overload"]
-    #[method(name = "NormalizeMixer", args = 1)]
-    pub fn normalize_mixer(mixer: crate::unity_engine::playables::playable::Playable) -> f32;
+    pub fn normalize_mixer(
+        mixer: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+    ) -> f32 {
+        unsafe {
+            __WeightUtility_unity2_raw::normalize_mixer(
+                ::core::convert::Into::into(mixer),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-weightutility")]
+pub mod prelude {
+    pub use super::IWeightUtility;
+    pub use super::WeightUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

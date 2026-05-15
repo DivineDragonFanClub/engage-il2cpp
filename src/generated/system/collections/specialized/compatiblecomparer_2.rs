@@ -31,47 +31,430 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-#[::unity2::methods]
-impl CompatibleComparer_2 {
-    #[doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CompatibleComparer_2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CompatibleComparer_2,
         comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
         hash_code_provider: crate::system::collections::ihashcodeprovider::IHashCodeProvider,
-    ) -> ();
-
-    #[doc = "`Equals(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Equals", args = 2)]
-    pub fn equals(self, a: crate::system::object::Object, b: crate::system::object::Object)
-        -> bool;
-
-    #[doc = "`GetHashCode(crate::system::object::Object)` overload"]
-    #[method(name = "GetHashCode", args = 1)]
-    pub fn get_hash_code(self, obj: crate::system::object::Object) -> i32;
-
-    #[doc = "`get_Comparer()` overload"]
-    #[method(name = "get_Comparer", args = 0)]
-    pub fn get_comparer(
-        self,
-    ) -> crate::system::collections::icomparer_interface::IComparer_Interface;
-
-    #[doc = "`get_HashCodeProvider()` overload"]
-    #[method(name = "get_HashCodeProvider", args = 0)]
-    pub fn get_hash_code_provider(
-        self,
-    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider;
-
-    #[doc = "`get_DefaultComparer()` overload"]
-    #[method(name = "get_DefaultComparer", args = 0)]
-    pub fn get_default_comparer(
-    ) -> crate::system::collections::icomparer_interface::IComparer_Interface;
-
-    #[doc = "`get_DefaultHashCodeProvider()` overload"]
-    #[method(name = "get_DefaultHashCodeProvider", args = 0)]
-    pub fn get_default_hash_code_provider(
-    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CompatibleComparer_2,
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+            crate::system::collections::ihashcodeprovider::IHashCodeProvider,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, comparer, hash_code_provider, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_equals {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "Equals",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "Equals",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn equals(
+        this: CompatibleComparer_2,
+        a: crate::system::object::Object,
+        b: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            CompatibleComparer_2,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_equals::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "GetHashCode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "GetHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code(
+        this: CompatibleComparer_2,
+        obj: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            CompatibleComparer_2,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_hash_code::get_offset() as isize),
+        );
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_comparer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "get_Comparer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "get_Comparer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_comparer(
+        this: CompatibleComparer_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::icomparer_interface::IComparer_Interface {
+        let inner : extern "C" fn (CompatibleComparer_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_comparer :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hash_code_provider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "get_HashCodeProvider",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "get_HashCodeProvider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_hash_code_provider(
+        this: CompatibleComparer_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider {
+        let inner : extern "C" fn (CompatibleComparer_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_hash_code_provider :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_comparer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "get_DefaultComparer",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "get_DefaultComparer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_comparer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::icomparer_interface::IComparer_Interface {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_comparer :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_default_hash_code_provider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CompatibleComparer_2 as ::unity2::ClassIdentity>::class(),
+                "get_DefaultHashCodeProvider",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CompatibleComparer_2 as ::unity2::ClassIdentity>::NAME,
+                    "get_DefaultHashCodeProvider",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_default_hash_code_provider(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_hash_code_provider :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
+impl CompatibleComparer_2 {
+    #[doc = "`get_DefaultComparer()` overload"]
+    pub fn get_default_comparer(
+    ) -> crate::system::collections::icomparer_interface::IComparer_Interface {
+        unsafe {
+            __CompatibleComparer_2_unity2_raw::get_default_comparer(::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DefaultHashCodeProvider()` overload"]
+    pub fn get_default_hash_code_provider(
+    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider {
+        unsafe {
+            __CompatibleComparer_2_unity2_raw::get_default_hash_code_provider(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
+pub trait ICompatibleComparer_2Methods: ICompatibleComparer_2 {
+    #[doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` overload"]
+    fn ctor(
+        self,
+        comparer: impl ::core::convert::Into<
+            crate::system::collections::icomparer_interface::IComparer_Interface,
+        >,
+        hash_code_provider: impl ::core::convert::Into<
+            crate::system::collections::ihashcodeprovider::IHashCodeProvider,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <CompatibleComparer_2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CompatibleComparer_2_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(comparer),
+                ::core::convert::Into::into(hash_code_provider),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Equals(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn equals(
+        self,
+        a: impl ::core::convert::Into<crate::system::object::Object>,
+        b: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <CompatibleComparer_2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CompatibleComparer_2_unity2_raw::equals(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHashCode(crate::system::object::Object)` overload"]
+    fn get_hash_code(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe {
+            let __receiver = <CompatibleComparer_2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CompatibleComparer_2_unity2_raw::get_hash_code(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Comparer()` overload"]
+    fn get_comparer(self) -> crate::system::collections::icomparer_interface::IComparer_Interface {
+        unsafe {
+            let __receiver = <CompatibleComparer_2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CompatibleComparer_2_unity2_raw::get_comparer(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HashCodeProvider()` overload"]
+    fn get_hash_code_provider(
+        self,
+    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider {
+        unsafe {
+            let __receiver = <CompatibleComparer_2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CompatibleComparer_2_unity2_raw::get_hash_code_provider(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
+impl<__T: ICompatibleComparer_2> ICompatibleComparer_2Methods for __T {}
 
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
 impl CompatibleComparer_2 {
@@ -90,4 +473,14 @@ impl CompatibleComparer_2 {
         <Self as ICompatibleComparer_2Methods>::ctor(this, comparer, hash_code_provider);
         this
     }
+}
+
+#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
+pub mod prelude {
+    pub use super::CompatibleComparer_2;
+    pub use super::ICompatibleComparer_2;
+    pub use super::ICompatibleComparer_2Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

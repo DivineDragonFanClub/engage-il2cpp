@@ -9,34 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/puppet/Puppet.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Puppet")]
-    #[parent(crate::system::object::Object)]
-    pub struct Puppet {
-        #[rename(name = "m_BodyInst")]
-        pub m_body_inst: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RideInst")]
-        pub m_ride_inst: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BodyAnim")]
-        pub m_body_anim: crate::unity_engine::animationclip::AnimationClip,
-        #[rename(name = "m_RideAnim")]
-        pub m_ride_anim: crate::unity_engine::animationclip::AnimationClip,
-        #[rename(name = "m_Joint")]
-        pub m_joint: crate::combat::characterjoint::CharacterJoint,
-        #[rename(name = "m_Proportion")]
-        pub m_proportion: crate::combat::proportionparameters::ProportionParameters,
-        #[rename(name = "m_InitialTransform")]
-        pub m_initial_transform: crate::combat::tr::TR,
-        #[rename(name = "m_LastEvalTime")]
-        pub m_last_eval_time: f32,
-        #[rename(name = "m_DestroyableGOs")]
-        pub m_destroyable_g_os: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_trailSlots")]
-        pub m_trail_slots: ::unity2::Array<crate::unity_engine::transform::Transform>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/puppet/Puppet_Hand.md"))]
     #[repr(C)]
     #[derive(
@@ -80,119 +52,1347 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/puppet/Puppet.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Puppet")]
+    #[parent(crate::system::object::Object)]
+    pub struct Puppet {
+        #[rename(name = "m_BodyInst")]
+        pub m_body_inst: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RideInst")]
+        pub m_ride_inst: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BodyAnim")]
+        pub m_body_anim: crate::unity_engine::animationclip::AnimationClip,
+        #[rename(name = "m_RideAnim")]
+        pub m_ride_anim: crate::unity_engine::animationclip::AnimationClip,
+        #[rename(name = "m_Joint")]
+        pub m_joint: crate::combat::characterjoint::CharacterJoint,
+        #[rename(name = "m_Proportion")]
+        pub m_proportion: crate::combat::proportionparameters::ProportionParameters,
+        #[rename(name = "m_InitialTransform")]
+        pub m_initial_transform: crate::combat::tr::TR,
+        #[rename(name = "m_LastEvalTime")]
+        pub m_last_eval_time: f32,
+        #[rename(name = "m_DestroyableGOs")]
+        pub m_destroyable_g_os: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_trailSlots")]
+        pub m_trail_slots: ::unity2::Array<crate::unity_engine::transform::Transform>,
+    }
 }
 
 #[cfg(feature = "combat-puppet-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-puppet")]
-#[::unity2::methods]
-impl Puppet {
-    #[doc = "`get_RightRoot()` overload"]
-    #[method(name = "get_RightRoot", args = 0)]
-    pub fn get_right_root(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_RightTip()` overload"]
-    #[method(name = "get_RightTip", args = 0)]
-    pub fn get_right_tip(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_LeftRoot()` overload"]
-    #[method(name = "get_LeftRoot", args = 0)]
-    pub fn get_left_root(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_LeftTip()` overload"]
-    #[method(name = "get_LeftTip", args = 0)]
-    pub fn get_left_tip(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_HumanAnimationClip()` overload"]
-    #[method(name = "get_HumanAnimationClip", args = 0)]
-    pub fn get_human_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
-
-    #[doc = "`get_RideAnimationClip()` overload"]
-    #[method(name = "get_RideAnimationClip", args = 0)]
-    pub fn get_ride_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
-
-    #[doc = "`get_HumanGameObject()` overload"]
-    #[method(name = "get_HumanGameObject", args = 0)]
-    pub fn get_human_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_BaseGameObject()` overload"]
-    #[method(name = "get_BaseGameObject", args = 0)]
-    pub fn get_base_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_RootTransform()` overload"]
-    #[method(name = "get_RootTransform", args = 0)]
-    pub fn get_root_transform(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Puppet_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_right_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_RightRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_RightRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_right_root(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_right_root::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_right_tip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_RightTip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_RightTip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_right_tip(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_right_tip::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_left_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_LeftRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_LeftRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_left_root(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_left_root::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_left_tip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_LeftTip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_LeftTip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_left_tip(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_left_tip::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_human_animation_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_HumanAnimationClip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_HumanAnimationClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_human_animation_clip(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_human_animation_clip::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ride_animation_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_RideAnimationClip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_RideAnimationClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_ride_animation_clip(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_ride_animation_clip::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_human_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_HumanGameObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_HumanGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_human_game_object(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_human_game_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_base_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_BaseGameObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_BaseGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_base_game_object(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_base_game_object::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_RootTransform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_RootTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_root_transform(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_root_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: Puppet,
         joint_name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`get_IsRiding()` overload"]
-    #[method(name = "get_IsRiding", args = 0)]
-    pub fn get_is_riding(self) -> bool;
-
-    #[doc = "`get_IsFlying()` overload"]
-    #[method(name = "get_IsFlying", args = 0)]
-    pub fn get_is_flying(self) -> bool;
-
-    #[doc = "`get_IsHorse()` overload"]
-    #[method(name = "get_IsHorse", args = 0)]
-    pub fn get_is_horse(self) -> bool;
-
-    #[doc = "`get_IsValid()` overload"]
-    #[method(name = "get_IsValid", args = 0)]
-    pub fn get_is_valid(self) -> bool;
-
-    #[doc = "`set_IsValid(bool)` overload"]
-    #[method(name = "set_IsValid", args = 1)]
-    pub fn set_is_valid(self, value: bool) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, joint_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_riding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_IsRiding",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_IsRiding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_riding(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_riding::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_IsFlying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_IsFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_flying(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_flying::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_horse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_IsHorse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_IsHorse",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_horse(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_horse::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "get_IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "get_IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_valid(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_valid::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "set_IsValid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "set_IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_valid(
+        this: Puppet,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Puppet, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_valid::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Puppet,
         body_inst: crate::unity_engine::gameobject::GameObject,
         body_anim: crate::unity_engine::animationclip::AnimationClip,
         ride_inst: crate::unity_engine::gameobject::GameObject,
         ride_anim: crate::unity_engine::animationclip::AnimationClip,
-    ) -> ();
-
-    #[doc = "`CreateWeaponTrailSlots()` overload"]
-    #[method(name = "CreateWeaponTrailSlots", args = 0)]
-    pub fn create_weapon_trail_slots(self) -> ();
-
-    #[doc = "`CreateSlot(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateSlot", args = 3)]
-    pub fn create_slot(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Puppet,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::animationclip::AnimationClip,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            body_inst,
+            body_anim,
+            ride_inst,
+            ride_anim,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_weapon_trail_slots {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "CreateWeaponTrailSlots",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "CreateWeaponTrailSlots",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_weapon_trail_slots(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_weapon_trail_slots::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_slot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "CreateSlot",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "CreateSlot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_slot(
+        this: Puppet,
         parent: crate::unity_engine::transform::Transform,
         offset: crate::unity_engine::vector3::Vector3,
         name: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Evaluate(f32)` overload"]
-    #[method(name = "Evaluate", args = 1)]
-    pub fn evaluate(self, time: f32) -> ();
-
-    #[doc = "`ClearRootMovedAfterEvaluate()` overload"]
-    #[method(name = "ClearRootMovedAfterEvaluate", args = 0)]
-    pub fn clear_root_moved_after_evaluate(self) -> ();
-
-    #[doc = "`AddDestroyableGOs(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]
-    #[method(name = "AddDestroyableGOs", args = 1)]
-    pub fn add_destroyable_g_os(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(
+            Puppet,
+            crate::unity_engine::transform::Transform,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_slot::get_offset() as isize),
+        );
+        inner(this, parent, offset, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(this: Puppet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evaluate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "Evaluate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "Evaluate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn evaluate(
+        this: Puppet,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Puppet, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_evaluate::get_offset() as isize),
+            );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_root_moved_after_evaluate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "ClearRootMovedAfterEvaluate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "ClearRootMovedAfterEvaluate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_root_moved_after_evaluate(
+        this: Puppet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Puppet, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear_root_moved_after_evaluate::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_destroyable_g_os {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::gameobject::GameObject,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Puppet as ::unity2::ClassIdentity>::class(),
+                "AddDestroyableGOs",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Puppet as ::unity2::ClassIdentity>::NAME,
+                    "AddDestroyableGOs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_destroyable_g_os(
+        this: Puppet,
         gos: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Puppet,
+            ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_destroyable_g_os::get_offset() as isize),
+        );
+        inner(this, gos, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-puppet")]
+pub trait IPuppetMethods: IPuppet {
+    #[doc = "`get_RightRoot()` overload"]
+    fn get_right_root(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_right_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RightTip()` overload"]
+    fn get_right_tip(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_right_tip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_LeftRoot()` overload"]
+    fn get_left_root(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_left_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_LeftTip()` overload"]
+    fn get_left_tip(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_left_tip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_HumanAnimationClip()` overload"]
+    fn get_human_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_human_animation_clip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RideAnimationClip()` overload"]
+    fn get_ride_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_ride_animation_clip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_HumanGameObject()` overload"]
+    fn get_human_game_object(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_human_game_object(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_BaseGameObject()` overload"]
+    fn get_base_game_object(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_base_game_object(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RootTransform()` overload"]
+    fn get_root_transform(self) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_root_transform(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
+    fn get_item(
+        self,
+        joint_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(joint_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsRiding()` overload"]
+    fn get_is_riding(self) -> bool {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_is_riding(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsFlying()` overload"]
+    fn get_is_flying(self) -> bool {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_is_flying(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsHorse()` overload"]
+    fn get_is_horse(self) -> bool {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_is_horse(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsValid()` overload"]
+    fn get_is_valid(self) -> bool {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsValid(bool)` overload"]
+    fn set_is_valid(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::set_is_valid(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn ctor(
+        self,
+        body_inst: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        body_anim: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+        ride_inst: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        ride_anim: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(body_inst),
+                ::core::convert::Into::into(body_anim),
+                ::core::convert::Into::into(ride_inst),
+                ::core::convert::Into::into(ride_anim),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateWeaponTrailSlots()` overload"]
+    fn create_weapon_trail_slots(self) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::create_weapon_trail_slots(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateSlot(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]
+    fn create_slot(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        offset: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::transform::Transform {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::create_slot(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Evaluate(f32)` overload"]
+    fn evaluate(self, time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::evaluate(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearRootMovedAfterEvaluate()` overload"]
+    fn clear_root_moved_after_evaluate(self) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::clear_root_moved_after_evaluate(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddDestroyableGOs(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]
+    fn add_destroyable_g_os(
+        self,
+        gos: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::gameobject::GameObject>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Puppet as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Puppet_unity2_raw::add_destroyable_g_os(
+                __receiver,
+                ::core::convert::Into::into(gos),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-puppet")]
+impl<__T: IPuppet> IPuppetMethods for __T {}
 
 #[cfg(feature = "combat-puppet")]
 impl Puppet {
@@ -213,4 +1413,21 @@ impl Puppet {
         <Self as IPuppetMethods>::ctor(this, body_inst, body_anim, ride_inst, ride_anim);
         this
     }
+}
+
+#[cfg(feature = "combat-puppet")]
+pub mod prelude {
+    pub use super::IPuppet;
+    pub use super::IPuppetMethods;
+    pub use super::Puppet;
+    pub use super::Puppet_Hand;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

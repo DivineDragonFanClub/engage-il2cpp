@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "system-collections-generic-queuedebugview_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-queuedebugview_1")]
+pub mod prelude {
+    pub use super::IQueueDebugView_1;
+    pub use super::QueueDebugView_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

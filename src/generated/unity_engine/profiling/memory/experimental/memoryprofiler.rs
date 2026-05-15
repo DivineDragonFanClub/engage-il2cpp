@@ -36,31 +36,251 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
-#[::unity2::methods]
-impl MemoryProfiler {
-    #[doc = "`PrepareMetadata()` overload"]
-    #[method(name = "PrepareMetadata", args = 0)]
-    pub fn prepare_metadata() -> ::unity2::Array<u8>;
-
-    #[doc = "`WriteIntToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
-    #[method(name = "WriteIntToByteArray", args = 3)]
-    pub fn write_int_to_byte_array(array: ::unity2::Array<u8>, offset: i32, value: i32) -> i32;
-
-    #[doc = "`WriteStringToByteArray(::unity2::Array<u8>, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteStringToByteArray", args = 3)]
-    pub fn write_string_to_byte_array(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MemoryProfiler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare_metadata {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MemoryProfiler as ::unity2::ClassIdentity>::class(),
+                "PrepareMetadata",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                    "PrepareMetadata",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare_metadata(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_prepare_metadata::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_int_to_byte_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MemoryProfiler as ::unity2::ClassIdentity>::class(),
+                "WriteIntToByteArray",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                    "WriteIntToByteArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_int_to_byte_array(
+        array: ::unity2::Array<u8>,
+        offset: i32,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_write_int_to_byte_array::get_offset() as isize),
+            );
+        inner(array, offset, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_string_to_byte_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MemoryProfiler as ::unity2::ClassIdentity>::class(),
+                "WriteStringToByteArray",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                    "WriteStringToByteArray",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_string_to_byte_array(
         array: ::unity2::Array<u8>,
         offset: i32,
         value: ::unity2::Il2CppString,
-    ) -> i32;
-
-    #[doc = "`FinalizeSnapshot(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "FinalizeSnapshot", args = 2)]
-    pub fn finalize_snapshot(path: ::unity2::Il2CppString, result: bool) -> ();
-
-    #[doc = "`SaveScreenshotToDisk(::unity2::Il2CppString, bool, ::unity2::IntPtr, i32, crate::unity_engine::textureformat::TextureFormat, i32, i32)` overload"]
-    #[method(name = "SaveScreenshotToDisk", args = 7)]
-    pub fn save_screenshot_to_disk(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_string_to_byte_array::get_offset() as isize),
+        );
+        inner(array, offset, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize_snapshot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MemoryProfiler as ::unity2::ClassIdentity>::class(),
+                "FinalizeSnapshot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                    "FinalizeSnapshot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize_snapshot(
+        path: ::unity2::Il2CppString,
+        result: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_finalize_snapshot::get_offset() as isize),
+            );
+        inner(path, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_screenshot_to_disk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MemoryProfiler as ::unity2::ClassIdentity>::class(),
+                "SaveScreenshotToDisk",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                    "SaveScreenshotToDisk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_screenshot_to_disk(
         path: ::unity2::Il2CppString,
         result: bool,
         pixels_ptr: ::unity2::IntPtr,
@@ -68,5 +288,114 @@ impl MemoryProfiler {
         format: crate::unity_engine::textureformat::TextureFormat,
         width: i32,
         height: i32,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::IntPtr,
+            i32,
+            crate::unity_engine::textureformat::TextureFormat,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_save_screenshot_to_disk::get_offset() as isize),
+        );
+        inner(
+            path,
+            result,
+            pixels_ptr,
+            pixels_count,
+            format,
+            width,
+            height,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
+impl MemoryProfiler {
+    #[doc = "`PrepareMetadata()` overload"]
+    pub fn prepare_metadata() -> ::unity2::Array<u8> {
+        unsafe { __MemoryProfiler_unity2_raw::prepare_metadata(::core::option::Option::None) }
+    }
+    #[doc = "`WriteIntToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
+    pub fn write_int_to_byte_array(
+        array: impl ::core::convert::Into<::unity2::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __MemoryProfiler_unity2_raw::write_int_to_byte_array(
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteStringToByteArray(::unity2::Array<u8>, i32, ::unity2::Il2CppString)` overload"]
+    pub fn write_string_to_byte_array(
+        array: impl ::core::convert::Into<::unity2::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            __MemoryProfiler_unity2_raw::write_string_to_byte_array(
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FinalizeSnapshot(::unity2::Il2CppString, bool)` overload"]
+    pub fn finalize_snapshot(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        result: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __MemoryProfiler_unity2_raw::finalize_snapshot(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveScreenshotToDisk(::unity2::Il2CppString, bool, ::unity2::IntPtr, i32, crate::unity_engine::textureformat::TextureFormat, i32, i32)` overload"]
+    pub fn save_screenshot_to_disk(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        result: impl ::core::convert::Into<bool>,
+        pixels_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        pixels_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MemoryProfiler_unity2_raw::save_screenshot_to_disk(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(pixels_ptr),
+                ::core::convert::Into::into(pixels_count),
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(width),
+                ::core::convert::Into::into(height),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
+pub mod prelude {
+    pub use super::IMemoryProfiler;
+    pub use super::MemoryProfiler;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

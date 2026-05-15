@@ -15,12 +15,89 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
-#[::unity2::methods]
-impl IPointerExitHandler {
-    #[doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "OnPointerExit", args = 1)]
-    pub fn on_pointer_exit(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPointerExitHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_pointer_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPointerExitHandler as ::unity2::ClassIdentity>::class(),
+                "OnPointerExit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPointerExitHandler as ::unity2::ClassIdentity>::NAME,
+                    "OnPointerExit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_pointer_exit(
+        this: IPointerExitHandler,
         event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPointerExitHandler,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_pointer_exit::get_offset() as isize),
+        );
+        inner(this, event_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+pub trait IIPointerExitHandlerMethods: IIPointerExitHandler {
+    #[doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    fn on_pointer_exit(
+        self,
+        event_data: impl ::core::convert::Into<
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <IPointerExitHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPointerExitHandler_unity2_raw::on_pointer_exit(
+                __receiver,
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+impl<__T: IIPointerExitHandler> IIPointerExitHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+pub mod prelude {
+    pub use super::IIPointerExitHandler;
+    pub use super::IIPointerExitHandlerMethods;
+    pub use super::IPointerExitHandler;
 }

@@ -17,172 +17,1870 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-systeminfo")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SystemInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_operating_system_family {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_operatingSystemFamily",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_operatingSystemFamily",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_operating_system_family(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::operatingsystemfamily::OperatingSystemFamily {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: operatingsystemfamily :: OperatingSystemFamily = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_operating_system_family :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_processor_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_processorType",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_processorType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_processor_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_processor_type::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_device_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_deviceType",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_deviceType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_device_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::devicetype::DeviceType {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::devicetype::DeviceType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_device_type::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_device_vendor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_graphicsDeviceVendor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_graphicsDeviceVendor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_device_vendor(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_graphics_device_vendor::get_offset() as isize),
+            );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_device_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_graphicsDeviceType",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_graphicsDeviceType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_device_type(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: graphicsdevicetype :: GraphicsDeviceType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_device_type :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_uv_starts_at_top {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_graphicsUVStartsAtTop",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_graphicsUVStartsAtTop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_uv_starts_at_top(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_graphics_uv_starts_at_top::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_shader_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_graphicsShaderLevel",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_graphicsShaderLevel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_shader_level(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_graphics_shader_level::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_hidden_surface_removal_on_gpu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_hasHiddenSurfaceRemovalOnGPU",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_hasHiddenSurfaceRemovalOnGPU",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_hidden_surface_removal_on_gpu(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_has_hidden_surface_removal_on_gpu::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_shadows {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsShadows",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsShadows",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_shadows(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supports_shadows::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_copy_texture_support {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_copyTextureSupport",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_copyTextureSupport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_copy_texture_support(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::copytexturesupport::CopyTextureSupport {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: copytexturesupport :: CopyTextureSupport = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_copy_texture_support :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_render_target_array_index_from_vertex_shader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsRenderTargetArrayIndexFromVertexShader",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsRenderTargetArrayIndexFromVertexShader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_render_target_array_index_from_vertex_shader(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_supports_render_target_array_index_from_vertex_shader::get_offset()
+                        as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supported_render_target_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportedRenderTargetCount",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportedRenderTargetCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supported_render_target_count(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supported_render_target_count::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_multisampled_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsMultisampledTextures",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsMultisampledTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_multisampled_textures(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supports_multisampled_textures::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_multisample_auto_resolve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsMultisampleAutoResolve",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsMultisampleAutoResolve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_multisample_auto_resolve(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supports_multisample_auto_resolve::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_uses_reversed_z_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_usesReversedZBuffer",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_usesReversedZBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_uses_reversed_z_buffer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_uses_reversed_z_buffer::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid_enum_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::r#enum::Enum as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "IsValidEnumValue",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "IsValidEnumValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid_enum_value(
+        value: crate::system::r#enum::Enum,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::system::r#enum::Enum, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid_enum_value::get_offset() as isize),
+            );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_render_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsRenderTextureFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsRenderTextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_render_texture_format(
+        format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_render_texture_format::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_texture_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsTextureFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsTextureFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_texture_format(
+        format: crate::unity_engine::textureformat::TextureFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::textureformat::TextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_texture_format::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_graphics_fence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsGraphicsFence",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsGraphicsFence",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_graphics_fence(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supports_graphics_fence::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_supports_multiview {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "get_supportsMultiview",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_supportsMultiview",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_supports_multiview(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_supports_multiview::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_hidden_surface_removal_on_gpu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "HasHiddenSurfaceRemovalOnGPU",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "HasHiddenSurfaceRemovalOnGPU",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_hidden_surface_removal_on_gpu(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_hidden_surface_removal_on_gpu::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_shadows {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsShadows",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsShadows",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_shadows(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_shadows::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_render_target_array_index_from_vertex_shader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsRenderTargetArrayIndexFromVertexShader",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsRenderTargetArrayIndexFromVertexShader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_render_target_array_index_from_vertex_shader(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_supports_render_target_array_index_from_vertex_shader::get_offset()
+                        as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supported_render_target_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportedRenderTargetCount",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportedRenderTargetCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supported_render_target_count(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supported_render_target_count::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_multisampled_textures {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsMultisampledTextures",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsMultisampledTextures",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_multisampled_textures(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_multisampled_textures::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_multisample_auto_resolve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsMultisampleAutoResolve",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsMultisampleAutoResolve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_multisample_auto_resolve(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_multisample_auto_resolve::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uses_reversed_z_buffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "UsesReversedZBuffer",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "UsesReversedZBuffer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn uses_reversed_z_buffer(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_uses_reversed_z_buffer::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_render_texture_native {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "HasRenderTextureNative",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "HasRenderTextureNative",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn has_render_texture_native(
+        format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_has_render_texture_native::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_texture_format_native {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::textureformat::TextureFormat as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsTextureFormatNative",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsTextureFormatNative",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_texture_format_native(
+        format: crate::unity_engine::textureformat::TextureFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::textureformat::TextureFormat,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_texture_format_native::get_offset() as isize),
+        );
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_gpu_fence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsGPUFence",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsGPUFence",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_gpu_fence(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_gpu_fence::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_format_supported {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: formatusage :: FormatUsage as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "IsFormatSupported",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "IsFormatSupported",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_format_supported(
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        usage: crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+            crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_format_supported::get_offset() as isize),
+        );
+        inner(format, usage, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_compatible_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: formatusage :: FormatUsage as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "GetCompatibleFormat",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetCompatibleFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_compatible_format(
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        usage: crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat , crate :: unity_engine :: experimental :: rendering :: formatusage :: FormatUsage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_compatible_format :: get_offset () as isize) ,) ;
+        inner(format, usage, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_graphics_format {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: defaultformat :: DefaultFormat as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "GetGraphicsFormat",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetGraphicsFormat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_graphics_format(
+        format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: defaultformat :: DefaultFormat , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_graphics_format :: get_offset () as isize) ,) ;
+        inner(format, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_texture_supported_msaa_sample_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "GetRenderTextureSupportedMSAASampleCount",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderTextureSupportedMSAASampleCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_texture_supported_msaa_sample_count(
+        desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_render_texture_supported_msaa_sample_count::get_offset() as isize,
+                ),
+        );
+        inner(desc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_supports_multiview {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "SupportsMultiview",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "SupportsMultiview",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn supports_multiview(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_supports_multiview::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_texture_supported_msaa_sample_count_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SystemInfo as ::unity2::ClassIdentity>::class(),
+                "GetRenderTextureSupportedMSAASampleCount_Injected",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SystemInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetRenderTextureSupportedMSAASampleCount_Injected",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_render_texture_supported_msaa_sample_count_injected(
+        desc: *mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_get_render_texture_supported_msaa_sample_count_injected::get_offset()
+                        as isize,
+                ),
+        );
+        inner(desc, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-systeminfo")]
 impl SystemInfo {
     #[doc = "`get_operatingSystemFamily()` overload"]
-    #[method(name = "get_operatingSystemFamily", args = 0)]
     pub fn get_operating_system_family(
-    ) -> crate::unity_engine::operatingsystemfamily::OperatingSystemFamily;
-
+    ) -> crate::unity_engine::operatingsystemfamily::OperatingSystemFamily {
+        unsafe {
+            __SystemInfo_unity2_raw::get_operating_system_family(::core::option::Option::None)
+        }
+    }
     #[doc = "`get_processorType()` overload"]
-    #[method(name = "get_processorType", args = 0)]
-    pub fn get_processor_type() -> ::unity2::Il2CppString;
-
+    pub fn get_processor_type() -> ::unity2::Il2CppString {
+        unsafe { __SystemInfo_unity2_raw::get_processor_type(::core::option::Option::None) }
+    }
     #[doc = "`get_deviceType()` overload"]
-    #[method(name = "get_deviceType", args = 0)]
-    pub fn get_device_type() -> crate::unity_engine::devicetype::DeviceType;
-
+    pub fn get_device_type() -> crate::unity_engine::devicetype::DeviceType {
+        unsafe { __SystemInfo_unity2_raw::get_device_type(::core::option::Option::None) }
+    }
     #[doc = "`get_graphicsDeviceVendor()` overload"]
-    #[method(name = "get_graphicsDeviceVendor", args = 0)]
-    pub fn get_graphics_device_vendor() -> ::unity2::Il2CppString;
-
+    pub fn get_graphics_device_vendor() -> ::unity2::Il2CppString {
+        unsafe { __SystemInfo_unity2_raw::get_graphics_device_vendor(::core::option::Option::None) }
+    }
     #[doc = "`get_graphicsDeviceType()` overload"]
-    #[method(name = "get_graphicsDeviceType", args = 0)]
     pub fn get_graphics_device_type(
-    ) -> crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType;
-
+    ) -> crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType {
+        unsafe { __SystemInfo_unity2_raw::get_graphics_device_type(::core::option::Option::None) }
+    }
     #[doc = "`get_graphicsUVStartsAtTop()` overload"]
-    #[method(name = "get_graphicsUVStartsAtTop", args = 0)]
-    pub fn get_graphics_uv_starts_at_top() -> bool;
-
+    pub fn get_graphics_uv_starts_at_top() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::get_graphics_uv_starts_at_top(::core::option::Option::None)
+        }
+    }
     #[doc = "`get_graphicsShaderLevel()` overload"]
-    #[method(name = "get_graphicsShaderLevel", args = 0)]
-    pub fn get_graphics_shader_level() -> i32;
-
+    pub fn get_graphics_shader_level() -> i32 {
+        unsafe { __SystemInfo_unity2_raw::get_graphics_shader_level(::core::option::Option::None) }
+    }
     #[doc = "`get_hasHiddenSurfaceRemovalOnGPU()` overload"]
-    #[method(name = "get_hasHiddenSurfaceRemovalOnGPU", args = 0)]
-    pub fn get_has_hidden_surface_removal_on_gpu() -> bool;
-
+    pub fn get_has_hidden_surface_removal_on_gpu() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::get_has_hidden_surface_removal_on_gpu(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_supportsShadows()` overload"]
-    #[method(name = "get_supportsShadows", args = 0)]
-    pub fn get_supports_shadows() -> bool;
-
+    pub fn get_supports_shadows() -> bool {
+        unsafe { __SystemInfo_unity2_raw::get_supports_shadows(::core::option::Option::None) }
+    }
     #[doc = "`get_copyTextureSupport()` overload"]
-    #[method(name = "get_copyTextureSupport", args = 0)]
     pub fn get_copy_texture_support(
-    ) -> crate::unity_engine::rendering::copytexturesupport::CopyTextureSupport;
-
+    ) -> crate::unity_engine::rendering::copytexturesupport::CopyTextureSupport {
+        unsafe { __SystemInfo_unity2_raw::get_copy_texture_support(::core::option::Option::None) }
+    }
     #[doc = "`get_supportsRenderTargetArrayIndexFromVertexShader()` overload"]
-    #[method(name = "get_supportsRenderTargetArrayIndexFromVertexShader", args = 0)]
-    pub fn get_supports_render_target_array_index_from_vertex_shader() -> bool;
-
+    pub fn get_supports_render_target_array_index_from_vertex_shader() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::get_supports_render_target_array_index_from_vertex_shader(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_supportedRenderTargetCount()` overload"]
-    #[method(name = "get_supportedRenderTargetCount", args = 0)]
-    pub fn get_supported_render_target_count() -> i32;
-
+    pub fn get_supported_render_target_count() -> i32 {
+        unsafe {
+            __SystemInfo_unity2_raw::get_supported_render_target_count(::core::option::Option::None)
+        }
+    }
     #[doc = "`get_supportsMultisampledTextures()` overload"]
-    #[method(name = "get_supportsMultisampledTextures", args = 0)]
-    pub fn get_supports_multisampled_textures() -> i32;
-
+    pub fn get_supports_multisampled_textures() -> i32 {
+        unsafe {
+            __SystemInfo_unity2_raw::get_supports_multisampled_textures(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_supportsMultisampleAutoResolve()` overload"]
-    #[method(name = "get_supportsMultisampleAutoResolve", args = 0)]
-    pub fn get_supports_multisample_auto_resolve() -> bool;
-
+    pub fn get_supports_multisample_auto_resolve() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::get_supports_multisample_auto_resolve(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_usesReversedZBuffer()` overload"]
-    #[method(name = "get_usesReversedZBuffer", args = 0)]
-    pub fn get_uses_reversed_z_buffer() -> bool;
-
+    pub fn get_uses_reversed_z_buffer() -> bool {
+        unsafe { __SystemInfo_unity2_raw::get_uses_reversed_z_buffer(::core::option::Option::None) }
+    }
     #[doc = "`IsValidEnumValue(crate::system::r#enum::Enum)` overload"]
-    #[method(name = "IsValidEnumValue", args = 1)]
-    pub fn is_valid_enum_value(value: crate::system::r#enum::Enum) -> bool;
-
+    pub fn is_valid_enum_value(
+        value: impl ::core::convert::Into<crate::system::r#enum::Enum>,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::is_valid_enum_value(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportsRenderTextureFormat(crate::unity_engine::rendertextureformat::RenderTextureFormat)` overload"]
-    #[method(name = "SupportsRenderTextureFormat", args = 1)]
     pub fn supports_render_texture_format(
-        format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
-    ) -> bool;
-
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        >,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_render_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportsTextureFormat(crate::unity_engine::textureformat::TextureFormat)` overload"]
-    #[method(name = "SupportsTextureFormat", args = 1)]
     pub fn supports_texture_format(
-        format: crate::unity_engine::textureformat::TextureFormat,
-    ) -> bool;
-
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_texture_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_supportsGraphicsFence()` overload"]
-    #[method(name = "get_supportsGraphicsFence", args = 0)]
-    pub fn get_supports_graphics_fence() -> bool;
-
+    pub fn get_supports_graphics_fence() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::get_supports_graphics_fence(::core::option::Option::None)
+        }
+    }
     #[doc = "`get_supportsMultiview()` overload"]
-    #[method(name = "get_supportsMultiview", args = 0)]
-    pub fn get_supports_multiview() -> bool;
-
+    pub fn get_supports_multiview() -> bool {
+        unsafe { __SystemInfo_unity2_raw::get_supports_multiview(::core::option::Option::None) }
+    }
     #[doc = "`HasHiddenSurfaceRemovalOnGPU()` overload"]
-    #[method(name = "HasHiddenSurfaceRemovalOnGPU", args = 0)]
-    pub fn has_hidden_surface_removal_on_gpu() -> bool;
-
+    pub fn has_hidden_surface_removal_on_gpu() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::has_hidden_surface_removal_on_gpu(::core::option::Option::None)
+        }
+    }
     #[doc = "`SupportsShadows()` overload"]
-    #[method(name = "SupportsShadows", args = 0)]
-    pub fn supports_shadows() -> bool;
-
+    pub fn supports_shadows() -> bool {
+        unsafe { __SystemInfo_unity2_raw::supports_shadows(::core::option::Option::None) }
+    }
     #[doc = "`SupportsRenderTargetArrayIndexFromVertexShader()` overload"]
-    #[method(name = "SupportsRenderTargetArrayIndexFromVertexShader", args = 0)]
-    pub fn supports_render_target_array_index_from_vertex_shader() -> bool;
-
+    pub fn supports_render_target_array_index_from_vertex_shader() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_render_target_array_index_from_vertex_shader(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportedRenderTargetCount()` overload"]
-    #[method(name = "SupportedRenderTargetCount", args = 0)]
-    pub fn supported_render_target_count() -> i32;
-
+    pub fn supported_render_target_count() -> i32 {
+        unsafe {
+            __SystemInfo_unity2_raw::supported_render_target_count(::core::option::Option::None)
+        }
+    }
     #[doc = "`SupportsMultisampledTextures()` overload"]
-    #[method(name = "SupportsMultisampledTextures", args = 0)]
-    pub fn supports_multisampled_textures() -> i32;
-
+    pub fn supports_multisampled_textures() -> i32 {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_multisampled_textures(::core::option::Option::None)
+        }
+    }
     #[doc = "`SupportsMultisampleAutoResolve()` overload"]
-    #[method(name = "SupportsMultisampleAutoResolve", args = 0)]
-    pub fn supports_multisample_auto_resolve() -> bool;
-
+    pub fn supports_multisample_auto_resolve() -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_multisample_auto_resolve(::core::option::Option::None)
+        }
+    }
     #[doc = "`UsesReversedZBuffer()` overload"]
-    #[method(name = "UsesReversedZBuffer", args = 0)]
-    pub fn uses_reversed_z_buffer() -> bool;
-
+    pub fn uses_reversed_z_buffer() -> bool {
+        unsafe { __SystemInfo_unity2_raw::uses_reversed_z_buffer(::core::option::Option::None) }
+    }
     #[doc = "`HasRenderTextureNative(crate::unity_engine::rendertextureformat::RenderTextureFormat)` overload"]
-    #[method(name = "HasRenderTextureNative", args = 1)]
     pub fn has_render_texture_native(
-        format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
-    ) -> bool;
-
+        format: impl ::core::convert::Into<
+            crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        >,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::has_render_texture_native(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportsTextureFormatNative(crate::unity_engine::textureformat::TextureFormat)` overload"]
-    #[method(name = "SupportsTextureFormatNative", args = 1)]
     pub fn supports_texture_format_native(
-        format: crate::unity_engine::textureformat::TextureFormat,
-    ) -> bool;
-
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::supports_texture_format_native(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportsGPUFence()` overload"]
-    #[method(name = "SupportsGPUFence", args = 0)]
-    pub fn supports_gpu_fence() -> bool;
-
+    pub fn supports_gpu_fence() -> bool {
+        unsafe { __SystemInfo_unity2_raw::supports_gpu_fence(::core::option::Option::None) }
+    }
     #[doc = "`IsFormatSupported(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::formatusage::FormatUsage)` overload"]
-    #[method(name = "IsFormatSupported", args = 2)]
     pub fn is_format_supported(
-        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        usage: crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
-    ) -> bool;
-
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        usage: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
+        >,
+    ) -> bool {
+        unsafe {
+            __SystemInfo_unity2_raw::is_format_supported(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(usage),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetCompatibleFormat(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::formatusage::FormatUsage)` overload"]
-    #[method(name = "GetCompatibleFormat", args = 2)]
     pub fn get_compatible_format(
-        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        usage: crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        >,
+        usage: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::formatusage::FormatUsage,
+        >,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __SystemInfo_unity2_raw::get_compatible_format(
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(usage),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetGraphicsFormat(crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat)` overload"]
-    #[method(name = "GetGraphicsFormat", args = 1)]
     pub fn get_graphics_format(
-        format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
-
+        format: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        >,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe {
+            __SystemInfo_unity2_raw::get_graphics_format(
+                ::core::convert::Into::into(format),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetRenderTextureSupportedMSAASampleCount(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
-    #[method(name = "GetRenderTextureSupportedMSAASampleCount", args = 1)]
     pub fn get_render_texture_supported_msaa_sample_count(
-        desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-    ) -> i32;
-
+        desc: impl ::core::convert::Into<
+            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        >,
+    ) -> i32 {
+        unsafe {
+            __SystemInfo_unity2_raw::get_render_texture_supported_msaa_sample_count(
+                ::core::convert::Into::into(desc),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SupportsMultiview()` overload"]
-    #[method(name = "SupportsMultiview", args = 0)]
-    pub fn supports_multiview() -> bool;
+    pub fn supports_multiview() -> bool {
+        unsafe { __SystemInfo_unity2_raw::supports_multiview(::core::option::Option::None) }
+    }
+    #[doc = "`GetRenderTextureSupportedMSAASampleCount_Injected(*mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
+    pub fn get_render_texture_supported_msaa_sample_count_injected() -> (
+        i32,
+        crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+            >::uninit();
+            let __ret = {
+                __SystemInfo_unity2_raw::get_render_texture_supported_msaa_sample_count_injected(
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
 
-    #[doc = "`GetRenderTextureSupportedMSAASampleCount_Injected(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
-    #[method(name = "GetRenderTextureSupportedMSAASampleCount_Injected", args = 1)]
-    pub fn get_render_texture_supported_msaa_sample_count_injected(
-        desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-    ) -> i32;
+#[cfg(feature = "unity_engine-systeminfo")]
+pub mod prelude {
+    pub use super::ISystemInfo;
+    pub use super::SystemInfo;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

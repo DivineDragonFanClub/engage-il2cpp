@@ -19,24 +19,218 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-interpolatorvector2")]
-#[::unity2::methods]
-impl InterpolatorVector2 {
-    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, r#type: crate::app::curve::Curve_Type, num: i32) -> ();
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`IsEqual(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "IsEqual", args = 2)]
-    pub fn is_equal(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InterpolatorVector2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InterpolatorVector2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InterpolatorVector2 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: InterpolatorVector2,
+        r#type: crate::app::curve::Curve_Type,
+        num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InterpolatorVector2,
+            crate::app::curve::Curve_Type,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, r#type, num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InterpolatorVector2 as ::unity2::ClassIdentity>::class(),
+                "get_Value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InterpolatorVector2 as ::unity2::ClassIdentity>::NAME,
+                    "get_Value",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_value(
+        this: InterpolatorVector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            InterpolatorVector2,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_value::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_equal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InterpolatorVector2 as ::unity2::ClassIdentity>::class(),
+                "IsEqual",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <InterpolatorVector2 as ::unity2::ClassIdentity>::NAME,
+                    "IsEqual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_equal(
+        this: InterpolatorVector2,
         a: crate::unity_engine::vector2::Vector2,
         b: crate::unity_engine::vector2::Vector2,
-    ) -> bool;
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            InterpolatorVector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_equal::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-interpolatorvector2")]
+pub trait IInterpolatorVector2Methods: IInterpolatorVector2 {
+    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
+    fn ctor(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>,
+        num: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <InterpolatorVector2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InterpolatorVector2_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Value()` overload"]
+    fn get_value(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <InterpolatorVector2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InterpolatorVector2_unity2_raw::get_value(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsEqual(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    fn is_equal(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        b: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <InterpolatorVector2 as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InterpolatorVector2_unity2_raw::is_equal(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-interpolatorvector2")]
+impl<__T: IInterpolatorVector2> IInterpolatorVector2Methods for __T {}
 
 #[cfg(feature = "app-interpolatorvector2")]
 impl InterpolatorVector2 {
@@ -52,4 +246,22 @@ impl InterpolatorVector2 {
         <Self as IInterpolatorVector2Methods>::ctor(this, r#type, num);
         this
     }
+}
+
+#[cfg(feature = "app-interpolatorvector2")]
+pub mod prelude {
+    pub use super::IInterpolatorVector2;
+    pub use super::IInterpolatorVector2Methods;
+    pub use super::InterpolatorVector2;
+    pub use crate::app::interpolator_1::IInterpolator_1;
+    #[cfg(feature = "app-interpolator_1")]
+    pub use crate::app::interpolator_1::IInterpolator_1Methods;
+    pub use crate::app::interpolator_1::Interpolator_1;
+    pub use crate::app::interpolatortime::IInterpolatorTime;
+    #[cfg(feature = "app-interpolatortime")]
+    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    pub use crate::app::interpolatortime::InterpolatorTime;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

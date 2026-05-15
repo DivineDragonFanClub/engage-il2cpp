@@ -9,16 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
-        name = "GlobalPerformanceStopwatch.GlobalPerformanceStopwatch_StopwatchObject"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
-# [rename (name = "m_Parent")] pub m_parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
@@ -34,6 +24,16 @@ mod __types {
         pub m_counter:
             crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
+        name = "GlobalPerformanceStopwatch.GlobalPerformanceStopwatch_StopwatchObject"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
+# [rename (name = "m_Parent")] pub m_parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch ,
+}
 }
 
 #[cfg(
@@ -44,18 +44,270 @@ pub use __types::*;
 #[cfg(
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
 )]
-#[::unity2::methods]
-impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
-    ) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GlobalPerformanceStopwatch_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GlobalPerformanceStopwatch as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GlobalPerformanceStopwatch as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GlobalPerformanceStopwatch,
+        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GlobalPerformanceStopwatch,
+            crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, perfcounter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GlobalPerformanceStopwatch as ::unity2::ClassIdentity>::class(),
+                "GetResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GlobalPerformanceStopwatch as ::unity2::ClassIdentity>::NAME,
+                    "GetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        this: GlobalPerformanceStopwatch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
+        let inner : extern "C" fn (GlobalPerformanceStopwatch , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: diagnostics :: performanceresult :: PerformanceResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_result :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+}
 
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+pub trait IGlobalPerformanceStopwatchMethods: IGlobalPerformanceStopwatch {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` overload"]
+    fn ctor(
+        self,
+        perfcounter: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GlobalPerformanceStopwatch as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GlobalPerformanceStopwatch_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(perfcounter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetResult()` overload"]
+    fn get_result(
+        self,
+    ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
+        unsafe {
+            let __receiver =
+                <GlobalPerformanceStopwatch as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GlobalPerformanceStopwatch_unity2_raw::get_result(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+impl<__T: IGlobalPerformanceStopwatch> IGlobalPerformanceStopwatchMethods for __T {}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+impl GlobalPerformanceStopwatch {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` — overload selector"]
+    pub fn new(
+        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GlobalPerformanceStopwatch),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGlobalPerformanceStopwatchMethods>::ctor(this, perfcounter);
+        this
+    }
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject,
+        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject , crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+pub trait IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods:
+    IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject
+{
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` overload"]
+    fn ctor(
+        self,
+        parent : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch >,
+    ) -> () {
+        unsafe {
+            let __receiver = < GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = < GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+impl<__T: IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject>
+    IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods for __T
+{
 }
 
 #[cfg(
@@ -83,38 +335,14 @@ impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
 #[cfg(
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
 )]
-#[::unity2::methods]
-impl GlobalPerformanceStopwatch {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
-    ) -> ();
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result(
-        self,
-    ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult;
-}
-
-#[cfg(
-    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
-)]
-impl GlobalPerformanceStopwatch {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` — overload selector"]
-    pub fn new(
-        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GlobalPerformanceStopwatch),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGlobalPerformanceStopwatchMethods>::ctor(this, perfcounter);
-        this
-    }
+pub mod prelude {
+    pub use super::GlobalPerformanceStopwatch;
+    pub use super::GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject;
+    pub use super::IGlobalPerformanceStopwatch;
+    pub use super::IGlobalPerformanceStopwatchMethods;
+    pub use super::IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject;
+    pub use super::IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

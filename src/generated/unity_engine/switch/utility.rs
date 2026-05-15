@@ -17,9 +17,70 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-utility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Utility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_allocatable_native_memory_long {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Utility as ::unity2::ClassIdentity>::class(),
+                "GetAllocatableNativeMemoryLong",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Utility as ::unity2::ClassIdentity>::NAME,
+                    "GetAllocatableNativeMemoryLong",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_allocatable_native_memory_long(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_allocatable_native_memory_long::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-utility")]
 impl Utility {
     #[doc = "`GetAllocatableNativeMemoryLong()` overload"]
-    #[method(name = "GetAllocatableNativeMemoryLong", args = 0)]
-    pub fn get_allocatable_native_memory_long() -> i64;
+    pub fn get_allocatable_native_memory_long() -> i64 {
+        unsafe {
+            __Utility_unity2_raw::get_allocatable_native_memory_long(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-utility")]
+pub mod prelude {
+    pub use super::IUtility;
+    pub use super::Utility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

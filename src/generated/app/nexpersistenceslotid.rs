@@ -40,3 +40,12 @@ mod __types {
 
 #[cfg(feature = "app-nexpersistenceslotid-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-nexpersistenceslotid")]
+pub mod prelude {
+    pub use super::INexPersistenceSlotId;
+    pub use super::NexPersistenceSlotId;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

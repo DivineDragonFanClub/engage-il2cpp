@@ -66,3 +66,16 @@ impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
+pub mod prelude {
+    pub use super::AnonWrapper_1;
+    pub use super::IAnonWrapper_1;
+    pub use super::IAnonWrapper_1Methods;
+    pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper;
+    #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper")]
+    pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapperMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

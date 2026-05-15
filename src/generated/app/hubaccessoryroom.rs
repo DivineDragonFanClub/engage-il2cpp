@@ -12,7 +12,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -21,14 +21,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubAccessoryRoom_Shop {
+    pub struct HubAccessoryRoom_ViewMode {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubAccessoryRoom_Shop {
+    impl ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubAccessoryRoom.Shop";
+        const NAME: &'static str = "HubAccessoryRoom.ViewMode";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubAccessoryRoom_Shop {
+    impl ::unity2::IlType for HubAccessoryRoom_ViewMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -46,36 +46,18 @@ mod __types {
         }
     }
 
-    impl HubAccessoryRoom_Shop {
-        pub fn hub() -> Self {
+    impl HubAccessoryRoom_ViewMode {
+        pub fn unit_select() -> Self {
             Self { value: 0 }
         }
 
-        pub fn amiibo() -> Self {
+        pub fn accessory_select() -> Self {
             Self { value: 1 }
         }
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
-    pub struct HubAccessoryRoom {
-        #[rename(name = "_DisableList")]
-        pub disable_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_Shop")]
-        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
-        #[rename(name = "m_LastResultHash")]
-        pub m_last_result_hash: i32,
-        #[rename(name = "m_Character")]
-        pub m_character: crate::combat::character::Character,
-        #[rename(name = "m_LoadingAppearance")]
-        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
-        #[rename(name = "m_LoadingChara")]
-        pub m_loading_chara: crate::combat::character::Character,
-        #[rename(name = "m_LastPID")]
-        pub m_last_pid: ::unity2::Il2CppString,
+        pub fn preview() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
@@ -130,7 +112,29 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
+    pub struct HubAccessoryRoom {
+        #[rename(name = "_DisableList")]
+        pub disable_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_Shop")]
+        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+        #[rename(name = "m_LastResultHash")]
+        pub m_last_result_hash: i32,
+        #[rename(name = "m_Character")]
+        pub m_character: crate::combat::character::Character,
+        #[rename(name = "m_LoadingAppearance")]
+        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
+        #[rename(name = "m_LoadingChara")]
+        pub m_loading_chara: crate::combat::character::Character,
+        #[rename(name = "m_LastPID")]
+        pub m_last_pid: ::unity2::Il2CppString,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -139,14 +143,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubAccessoryRoom_ViewMode {
+    pub struct HubAccessoryRoom_Shop {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode {
+    impl ::unity2::ClassIdentity for HubAccessoryRoom_Shop {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubAccessoryRoom.ViewMode";
+        const NAME: &'static str = "HubAccessoryRoom.Shop";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -155,7 +159,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubAccessoryRoom_ViewMode {
+    impl ::unity2::IlType for HubAccessoryRoom_Shop {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -164,17 +168,13 @@ mod __types {
         }
     }
 
-    impl HubAccessoryRoom_ViewMode {
-        pub fn unit_select() -> Self {
+    impl HubAccessoryRoom_Shop {
+        pub fn hub() -> Self {
             Self { value: 0 }
         }
 
-        pub fn accessory_select() -> Self {
+        pub fn amiibo() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn preview() -> Self {
-            Self { value: 2 }
         }
     }
 }
@@ -183,110 +183,1269 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-hubaccessoryroom")]
-#[::unity2::methods]
-impl HubAccessoryRoom {
-    #[doc = "`get_SceneName()` overload"]
-    #[method(name = "get_SceneName", args = 0)]
-    pub fn get_scene_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_ReturnSceneName()` overload"]
-    #[method(name = "get_ReturnSceneName", args = 0)]
-    pub fn get_return_scene_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetUnit(crate::app::unit::Unit, crate::app::accessorydata::AccessoryData, bool, bool)` overload"]
-    #[method(name = "SetUnit", args = 4)]
-    pub fn set_unit(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubAccessoryRoom_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "get_SceneName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "get_SceneName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scene_name(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scene_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_return_scene_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "get_ReturnSceneName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "get_ReturnSceneName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_return_scene_name(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_return_scene_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "SetUnit",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "SetUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_unit(
         base_unit: crate::app::unit::Unit,
         accessory_data: crate::app::accessorydata::AccessoryData,
         is_delay_load: bool,
         is_amiibo: bool,
-    ) -> ();
-
-    #[doc = "`SetViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]
-    #[method(name = "SetViewMode", args = 1)]
-    pub fn set_view_mode(position: crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode) -> ();
-
-    #[doc = "`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop) -> ();
-
-    #[doc = "`AdditiveScene()` overload"]
-    #[method(name = "AdditiveScene", args = 0)]
-    pub fn additive_scene(self) -> ();
-
-    #[doc = "`OpenTitle()` overload"]
-    #[method(name = "OpenTitle", args = 0)]
-    pub fn open_title(self) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`UnAdditiveScene()` overload"]
-    #[method(name = "UnAdditiveScene", args = 0)]
-    pub fn un_additive_scene(self) -> ();
-
-    #[doc = "`Exit()` overload"]
-    #[method(name = "Exit", args = 0)]
-    pub fn exit(self) -> ();
-
-    #[doc = "`ExitOther()` overload"]
-    #[method(name = "ExitOther", args = 0)]
-    pub fn exit_other(self) -> ();
-
-    #[doc = "`ExitAfter()` overload"]
-    #[method(name = "ExitAfter", args = 0)]
-    pub fn exit_after(self) -> ();
-
-    #[doc = "`IsCharacterLoading()` overload"]
-    #[method(name = "IsCharacterLoading", args = 0)]
-    pub fn is_character_loading(self) -> bool;
-
-    #[doc = "`Main()` overload"]
-    #[method(name = "Main", args = 0)]
-    pub fn main(self) -> ();
-
-    #[doc = "`get_CameraPos()` overload"]
-    #[method(name = "get_CameraPos", args = 0)]
-    pub fn get_camera_pos(self) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera;
-
-    #[doc = "`set_CameraPos(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera)` overload"]
-    #[method(name = "set_CameraPos", args = 1)]
-    pub fn set_camera_pos(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::accessorydata::AccessoryData,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_unit::get_offset() as isize),
+        );
+        inner(
+            base_unit,
+            accessory_data,
+            is_delay_load,
+            is_amiibo,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_view_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "SetViewMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "SetViewMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_view_mode(
+        position: crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_view_mode::get_offset() as isize),
+        );
+        inner(position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubaccessoryroom::HubAccessoryRoom_Shop as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubAccessoryRoom,
+        shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, shop, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_additive_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "AdditiveScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "AdditiveScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn additive_scene(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_additive_scene::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "OpenTitle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "OpenTitle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_title(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open_title::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "Init",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_init::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_un_additive_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "UnAdditiveScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "UnAdditiveScene",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn un_additive_scene(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_un_additive_scene::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "Exit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "Exit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exit(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exit::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_other {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "ExitOther",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "ExitOther",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exit_other(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exit_other::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "ExitAfter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "ExitAfter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn exit_after(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_exit_after::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_character_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "IsCharacterLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "IsCharacterLoading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_character_loading(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_character_loading::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_main {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "Main",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "Main",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn main(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_main::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "get_CameraPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "get_CameraPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_camera_pos(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_camera_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "set_CameraPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "set_CameraPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_camera_pos(
+        this: HubAccessoryRoom,
         value: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera,
-    ) -> ();
-
-    #[doc = "`LoadCharacter(crate::combat::characterappearance::CharacterAppearance, ::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadCharacter", args = 2)]
-    pub fn load_character(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_camera_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "LoadCharacter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "LoadCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_character(
+        this: HubAccessoryRoom,
         appearance: crate::combat::characterappearance::CharacterAppearance,
         pid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`DestroyCurrentChar()` overload"]
-    #[method(name = "DestroyCurrentChar", args = 0)]
-    pub fn destroy_current_char(self) -> ();
-
-    #[doc = "`SetViewModeCore(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]
-    #[method(name = "SetViewModeCore", args = 1)]
-    pub fn set_view_mode_core(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            crate::combat::characterappearance::CharacterAppearance,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_character::get_offset() as isize),
+        );
+        inner(this, appearance, pid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_current_char {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "DestroyCurrentChar",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "DestroyCurrentChar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_current_char(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_current_char::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_view_mode_core {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "SetViewModeCore",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "SetViewModeCore",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_view_mode_core(
+        this: HubAccessoryRoom,
         mode: crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode,
-    ) -> ();
-
-    #[doc = "`OnShutdown()` overload"]
-    #[method(name = "OnShutdown", args = 0)]
-    pub fn on_shutdown(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoom,
+            crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_view_mode_core::get_offset() as isize),
+        );
+        inner(this, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_shutdown {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "OnShutdown",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "OnShutdown",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_shutdown(
+        this: HubAccessoryRoom,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_shutdown::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccessoryroom::HubAccessoryRoom_Shop as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoom as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoom as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, shop, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-hubaccessoryroom")]
+impl HubAccessoryRoom {
+    #[doc = "`SetUnit(crate::app::unit::Unit, crate::app::accessorydata::AccessoryData, bool, bool)` overload"]
+    pub fn set_unit(
+        base_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
+        is_delay_load: impl ::core::convert::Into<bool>,
+        is_amiibo: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __HubAccessoryRoom_unity2_raw::set_unit(
+                ::core::convert::Into::into(base_unit),
+                ::core::convert::Into::into(accessory_data),
+                ::core::convert::Into::into(is_delay_load),
+                ::core::convert::Into::into(is_amiibo),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]
+    pub fn set_view_mode(
+        position: impl ::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode>,
+    ) -> () {
+        unsafe {
+            __HubAccessoryRoom_unity2_raw::set_view_mode(
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        shop: impl ::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_Shop>,
+    ) -> () {
+        unsafe {
+            __HubAccessoryRoom_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(shop),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubaccessoryroom")]
+pub trait IHubAccessoryRoomMethods: IHubAccessoryRoom {
+    #[doc = "`get_SceneName()` overload"]
+    fn get_scene_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::get_scene_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ReturnSceneName()` overload"]
+    fn get_return_scene_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::get_return_scene_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]
+    fn ctor(
+        self,
+        shop: impl ::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_Shop>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(shop),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AdditiveScene()` overload"]
+    fn additive_scene(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::additive_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenTitle()` overload"]
+    fn open_title(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::open_title(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::init(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnAdditiveScene()` overload"]
+    fn un_additive_scene(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::un_additive_scene(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Exit()` overload"]
+    fn exit(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitOther()` overload"]
+    fn exit_other(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::exit_other(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitAfter()` overload"]
+    fn exit_after(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::exit_after(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsCharacterLoading()` overload"]
+    fn is_character_loading(self) -> bool {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::is_character_loading(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Main()` overload"]
+    fn main(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::main(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_CameraPos()` overload"]
+    fn get_camera_pos(self) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::get_camera_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_CameraPos(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera)` overload"]
+    fn set_camera_pos(
+        self,
+        value: impl ::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::set_camera_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadCharacter(crate::combat::characterappearance::CharacterAppearance, ::unity2::Il2CppString)` overload"]
+    fn load_character(
+        self,
+        appearance: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::load_character(
+                __receiver,
+                ::core::convert::Into::into(appearance),
+                ::core::convert::Into::into(pid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyCurrentChar()` overload"]
+    fn destroy_current_char(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::destroy_current_char(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetViewModeCore(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]
+    fn set_view_mode_core(
+        self,
+        mode: impl ::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::set_view_mode_core(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnShutdown()` overload"]
+    fn on_shutdown(self) -> () {
+        unsafe {
+            let __receiver = <HubAccessoryRoom as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessoryRoom_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubaccessoryroom")]
+impl<__T: IHubAccessoryRoom> IHubAccessoryRoomMethods for __T {}
 
 #[cfg(feature = "app-hubaccessoryroom")]
 impl HubAccessoryRoom {
@@ -302,4 +1461,32 @@ impl HubAccessoryRoom {
         <Self as IHubAccessoryRoomMethods>::ctor(this, shop);
         this
     }
+}
+
+#[cfg(feature = "app-hubaccessoryroom")]
+pub mod prelude {
+    pub use super::HubAccessoryRoom;
+    pub use super::HubAccessoryRoom_Label;
+    pub use super::HubAccessoryRoom_Shop;
+    pub use super::HubAccessoryRoom_ViewMode;
+    pub use super::IHubAccessoryRoom;
+    pub use super::IHubAccessoryRoomMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
+    #[cfg(feature = "app-procscenesequence_1")]
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

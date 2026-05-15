@@ -15,28 +15,342 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-ipropertycollector")]
-#[::unity2::methods]
-impl IPropertyCollector {
-    #[doc = "`PushActiveGameObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "PushActiveGameObject", args = 1)]
-    pub fn push_active_game_object(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IPropertyCollector_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push_active_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPropertyCollector as ::unity2::ClassIdentity>::class(),
+                "PushActiveGameObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPropertyCollector as ::unity2::ClassIdentity>::NAME,
+                    "PushActiveGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn push_active_game_object(
+        this: IPropertyCollector,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`PopActiveGameObject()` overload"]
-    #[method(name = "PopActiveGameObject", args = 0)]
-    pub fn pop_active_game_object(self) -> ();
-
-    #[doc = "`AddFromClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = "AddFromClip", args = 1)]
-    pub fn add_from_clip(self, clip: crate::unity_engine::animationclip::AnimationClip) -> ();
-
-    #[doc = "`AddObjectProperties(crate::unity_engine::object_2::Object_2, crate::unity_engine::animationclip::AnimationClip)` overload"]
-    #[method(name = "AddObjectProperties", args = 2)]
-    pub fn add_object_properties(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPropertyCollector,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_push_active_game_object::get_offset() as isize),
+        );
+        inner(this, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop_active_game_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPropertyCollector as ::unity2::ClassIdentity>::class(),
+                "PopActiveGameObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPropertyCollector as ::unity2::ClassIdentity>::NAME,
+                    "PopActiveGameObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop_active_game_object(
+        this: IPropertyCollector,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IPropertyCollector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_pop_active_game_object::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_from_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPropertyCollector as ::unity2::ClassIdentity>::class(),
+                "AddFromClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPropertyCollector as ::unity2::ClassIdentity>::NAME,
+                    "AddFromClip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_from_clip(
+        this: IPropertyCollector,
+        clip: crate::unity_engine::animationclip::AnimationClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPropertyCollector,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_from_clip::get_offset() as isize),
+        );
+        inner(this, clip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_object_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IPropertyCollector as ::unity2::ClassIdentity>::class(),
+                "AddObjectProperties",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IPropertyCollector as ::unity2::ClassIdentity>::NAME,
+                    "AddObjectProperties",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_object_properties(
+        this: IPropertyCollector,
         obj: crate::unity_engine::object_2::Object_2,
         clip: crate::unity_engine::animationclip::AnimationClip,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IPropertyCollector,
+            crate::unity_engine::object_2::Object_2,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_object_properties::get_offset() as isize),
+        );
+        inner(this, obj, clip, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-ipropertycollector")]
+pub trait IIPropertyCollectorMethods: IIPropertyCollector {
+    #[doc = "`PushActiveGameObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn push_active_game_object(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IPropertyCollector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPropertyCollector_unity2_raw::push_active_game_object(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopActiveGameObject()` overload"]
+    fn pop_active_game_object(self) -> () {
+        unsafe {
+            let __receiver = <IPropertyCollector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPropertyCollector_unity2_raw::pop_active_game_object(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddFromClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn add_from_clip(
+        self,
+        clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IPropertyCollector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPropertyCollector_unity2_raw::add_from_clip(
+                __receiver,
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn add_from_name<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <IPropertyCollector as ::unity2::ClassIdentity>::class(),
+                "AddFromName",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <IPropertyCollector as ::unity2::ClassIdentity>::NAME,
+                "AddFromName",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <IPropertyCollector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                IPropertyCollector,
+                ::unity2::Il2CppString,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    #[doc = "`AddObjectProperties(crate::unity_engine::object_2::Object_2, crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn add_object_properties(
+        self,
+        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+        clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IPropertyCollector as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IPropertyCollector_unity2_raw::add_object_properties(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-ipropertycollector")]
+impl<__T: IIPropertyCollector> IIPropertyCollectorMethods for __T {}
+
+#[cfg(feature = "unity_engine-timeline-ipropertycollector")]
+pub mod prelude {
+    pub use super::IIPropertyCollector;
+    pub use super::IIPropertyCollectorMethods;
+    pub use super::IPropertyCollector;
 }

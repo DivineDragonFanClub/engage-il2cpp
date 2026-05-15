@@ -25,3 +25,15 @@ mod __types {
 
 #[cfg(feature = "system-reflection-emit-localbuilder-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-emit-localbuilder")]
+pub mod prelude {
+    pub use super::ILocalBuilder;
+    pub use super::LocalBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::reflection::localvariableinfo::ILocalVariableInfo;
+    #[cfg(feature = "system-reflection-localvariableinfo")]
+    pub use crate::system::reflection::localvariableinfo::ILocalVariableInfoMethods;
+}

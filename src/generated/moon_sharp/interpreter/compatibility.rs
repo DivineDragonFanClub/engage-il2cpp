@@ -2,6 +2,8 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-compatibility-framework-types"))]
 pub mod framework;
+#[cfg(feature = "moon_sharp-interpreter-compatibility-framework-types")]
+pub use framework::{Framework, IFramework};
 #[cfg(any(
     feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkbase-types",
     feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase-types",

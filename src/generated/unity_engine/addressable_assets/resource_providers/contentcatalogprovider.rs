@@ -12,20 +12,20 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-        name = "ContentCatalogProvider.InternalOp.BundledCatalog"
+        name = "ContentCatalogProvider.InternalOp"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
-# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
-# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
-# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
-# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
-# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
+    pub struct ContentCatalogProvider_InternalOp {
+# [rename (name = "m_LocalDataPath")] pub m_local_data_path : :: unity2 :: Il2CppString ,
+# [rename (name = "m_RemoteHashValue")] pub m_remote_hash_value : :: unity2 :: Il2CppString ,
+# [rename (name = "m_LocalHashValue")] pub m_local_hash_value : :: unity2 :: Il2CppString ,
+# [rename (name = "m_ProviderInterface")] pub m_provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
+# [rename (name = "m_ContentCatalogData")] pub m_content_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
+# [rename (name = "m_ContentCatalogDataLoadOp")] pub m_content_catalog_data_load_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
+# [rename (name = "m_BundledCatalog")] pub m_bundled_catalog : crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp_BundledCatalog ,
 }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
@@ -41,20 +41,20 @@ mod __types {
 # [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-        name = "ContentCatalogProvider.InternalOp"
+        name = "ContentCatalogProvider.InternalOp.BundledCatalog"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogProvider_InternalOp {
-# [rename (name = "m_LocalDataPath")] pub m_local_data_path : :: unity2 :: Il2CppString ,
-# [rename (name = "m_RemoteHashValue")] pub m_remote_hash_value : :: unity2 :: Il2CppString ,
-# [rename (name = "m_LocalHashValue")] pub m_local_hash_value : :: unity2 :: Il2CppString ,
-# [rename (name = "m_ProviderInterface")] pub m_provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
-# [rename (name = "m_ContentCatalogData")] pub m_content_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [rename (name = "m_ContentCatalogDataLoadOp")] pub m_content_catalog_data_load_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-# [rename (name = "m_BundledCatalog")] pub m_bundled_catalog : crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp_BundledCatalog ,
+    pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
+# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
+# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
+# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
+# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
+# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
+# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
 }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]
@@ -112,99 +112,814 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "add_OnLoaded", args = 1)]
-    pub fn add_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "remove_OnLoaded", args = 1)]
-    pub fn remove_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`get_OpInProgress()` overload"]
-    #[method(name = "get_OpInProgress", args = 0)]
-    pub fn get_op_in_progress(self) -> bool;
-
-    #[doc = "`get_OpIsSuccess()` overload"]
-    #[method(name = "get_OpIsSuccess", args = 0)]
-    pub fn get_op_is_success(self) -> bool;
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, bundle_path: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Unload()` overload"]
-    #[method(name = "Unload", args = 0)]
-    pub fn unload(self) -> ();
-
-    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
-    #[method(name = "LoadCatalogFromBundleAsync", args = 0)]
-    pub fn load_catalog_from_bundle_async(self) -> ();
-
-    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "LoadTextAssetRequestComplete", args = 1)]
-    pub fn load_text_asset_request_complete(
-        self,
-        op: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`WaitForCompletion()` overload"]
-    #[method(name = "WaitForCompletion", args = 0)]
-    pub fn wait_for_completion(self) -> bool;
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ContentCatalogProvider_InternalOp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "Start",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: ContentCatalogProvider_InternalOp,
+        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+        disable_catalog_update_on_start: bool,
+        is_local_catalog_in_bundle: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_start :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            provider_interface,
+            disable_catalog_update_on_start,
+            is_local_catalog_in_bundle,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_for_completion_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "WaitForCompletionCallback",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "WaitForCompletionCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_for_completion_callback(
+        this: ContentCatalogProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_for_completion_callback::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "Release",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: ContentCatalogProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_release::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_catalog {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "LoadCatalog",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "LoadCatalog",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_catalog(
+        this: ContentCatalogProvider_InternalOp,
+        id_to_load: ::unity2::Il2CppString,
+        is_local_catalog_in_bundle: bool,
+        is_local_catalog: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp,
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_catalog::get_offset() as isize),
+        );
+        inner(
+            this,
+            id_to_load,
+            is_local_catalog_in_bundle,
+            is_local_catalog,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_catalog_load_op_complete_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "CatalogLoadOpCompleteCallback",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "CatalogLoadOpCompleteCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn catalog_load_op_complete_callback(
+        this: ContentCatalogProvider_InternalOp,
+        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_catalog_load_op_complete_callback :: get_offset () as isize) ,) ;
+        inner(this, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_transformed_internal_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "GetTransformedInternalId",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "GetTransformedInternalId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_transformed_internal_id(
+        this: ContentCatalogProvider_InternalOp,
+        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_transformed_internal_id :: get_offset () as isize) ,) ;
+        inner(this, loc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_determine_id_to_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "DetermineIdToLoad",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "DetermineIdToLoad",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn determine_id_to_load(
+        this: ContentCatalogProvider_InternalOp,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        dependency_objects : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object >,
+        disable_catalog_update_on_start: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_determine_id_to_load :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            location,
+            dependency_objects,
+            disable_catalog_update_on_start,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_catalog_loaded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                "OnCatalogLoaded",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    "OnCatalogLoaded",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_catalog_loaded(
+        this: ContentCatalogProvider_InternalOp,
+        ccd : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_on_catalog_loaded :: get_offset () as isize) ,) ;
+        inner(this, ccd, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider_InternalOp as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ContentCatalogProvider_InternalOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
+pub trait IContentCatalogProvider_InternalOpMethods: IContentCatalogProvider_InternalOp {
+    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, bool, bool)` overload"]
+    fn start(
+        self,
+        provider_interface : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+        disable_catalog_update_on_start: impl ::core::convert::Into<bool>,
+        is_local_catalog_in_bundle: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::start(
+                __receiver,
+                ::core::convert::Into::into(provider_interface),
+                ::core::convert::Into::into(disable_catalog_update_on_start),
+                ::core::convert::Into::into(is_local_catalog_in_bundle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitForCompletionCallback()` overload"]
+    fn wait_for_completion_callback(self) -> bool {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::wait_for_completion_callback(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release()` overload"]
+    fn release(self) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::release(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadCatalog(::unity2::Il2CppString, bool, bool)` overload"]
+    fn load_catalog(
+        self,
+        id_to_load: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_local_catalog_in_bundle: impl ::core::convert::Into<bool>,
+        is_local_catalog: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::load_catalog(
+                __receiver,
+                ::core::convert::Into::into(id_to_load),
+                ::core::convert::Into::into(is_local_catalog_in_bundle),
+                ::core::convert::Into::into(is_local_catalog),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CatalogLoadOpCompleteCallback(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    fn catalog_load_op_complete_callback(
+        self,
+        op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::catalog_load_op_complete_callback(
+                __receiver,
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTransformedInternalId(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    fn get_transformed_internal_id(
+        self,
+        loc : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::get_transformed_internal_id(
+                __receiver,
+                ::core::convert::Into::into(loc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DetermineIdToLoad(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>, bool)` overload"]
+    fn determine_id_to_load(
+        self,
+        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        dependency_objects: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::system::object::Object,
+            >,
+        >,
+        disable_catalog_update_on_start: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::determine_id_to_load(
+                __receiver,
+                ::core::convert::Into::into(location),
+                ::core::convert::Into::into(dependency_objects),
+                ::core::convert::Into::into(disable_catalog_update_on_start),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCatalogLoaded(crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData)` overload"]
+    fn on_catalog_loaded(
+        self,
+        ccd : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::on_catalog_loaded(
+                __receiver,
+                ::core::convert::Into::into(ccd),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogProvider_InternalOp as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogProvider_InternalOp_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl<__T: IContentCatalogProvider_InternalOp> IContentCatalogProvider_InternalOpMethods for __T {}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider_InternalOp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
+                ::core::stringify!(ContentCatalogProvider_InternalOp),
                 ::core::stringify!(new),
             )
         });
-        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
+        <Self as IContentCatalogProvider_InternalOpMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ContentCatalogProvider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ContentCatalogProvider,
         resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider,
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, resource_manager_instance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider as ::unity2::ClassIdentity>::class(),
+                "Release",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider as ::unity2::ClassIdentity>::NAME,
+                    "Release",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn release(
+        this: ContentCatalogProvider,
         location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
         obj: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_release :: get_offset () as isize) ,) ;
+        inner(this, location, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_provide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogProvider as ::unity2::ClassIdentity>::class(),
+                "Provide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogProvider as ::unity2::ClassIdentity>::NAME,
+                    "Provide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn provide(
+        this: ContentCatalogProvider,
         provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide :: get_offset () as isize) ,) ;
+        inner(this, provider_interface, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+pub trait IContentCatalogProviderMethods: IContentCatalogProvider {
+    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
+    fn ctor(
+        self,
+        resource_manager_instance: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ContentCatalogProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ContentCatalogProvider_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(resource_manager_instance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
+    fn release(
+        self,
+        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ContentCatalogProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ContentCatalogProvider_unity2_raw::release(
+                __receiver,
+                ::core::convert::Into::into(location),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    fn provide(
+        self,
+        provider_interface : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ContentCatalogProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ContentCatalogProvider_unity2_raw::provide(
+                __receiver,
+                ::core::convert::Into::into(provider_interface),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl<__T: IContentCatalogProvider> IContentCatalogProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
 impl ContentCatalogProvider {
@@ -225,81 +940,496 @@ impl ContentCatalogProvider {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider_InternalOp {
-    #[doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, bool, bool)` overload"]
-    #[method(name = "Start", args = 3)]
-    pub fn start(
-        self,
-        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-        disable_catalog_update_on_start: bool,
-        is_local_catalog_in_bundle: bool,
-    ) -> ();
-
-    #[doc = "`WaitForCompletionCallback()` overload"]
-    #[method(name = "WaitForCompletionCallback", args = 0)]
-    pub fn wait_for_completion_callback(self) -> bool;
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`LoadCatalog(::unity2::Il2CppString, bool, bool)` overload"]
-    #[method(name = "LoadCatalog", args = 3)]
-    pub fn load_catalog(
-        self,
-        id_to_load: ::unity2::Il2CppString,
-        is_local_catalog_in_bundle: bool,
-        is_local_catalog: bool,
-    ) -> ();
-
-    #[doc = "`CatalogLoadOpCompleteCallback(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "CatalogLoadOpCompleteCallback", args = 1)]
-    pub fn catalog_load_op_complete_callback(
-        self,
-        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`GetTransformedInternalId(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
-    #[method(name = "GetTransformedInternalId", args = 1)]
-    pub fn get_transformed_internal_id(
-        self,
-        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`DetermineIdToLoad(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>, bool)` overload"]
-    #[method(name = "DetermineIdToLoad", args = 3)]
-    pub fn determine_id_to_load(
-        self,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        dependency_objects : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object >,
-        disable_catalog_update_on_start: bool,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnCatalogLoaded(crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData)` overload"]
-    #[method(name = "OnCatalogLoaded", args = 1)]
-    pub fn on_catalog_loaded(
-        self,
-        ccd : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_on_loaded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "add_OnLoaded" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "add_OnLoaded" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_on_loaded(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_on_loaded :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_on_loaded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "remove_OnLoaded" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "remove_OnLoaded" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove_on_loaded(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_on_loaded :: get_offset () as isize) ,) ;
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_op_in_progress {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "get_OpInProgress" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "get_OpInProgress" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_op_in_progress(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_op_in_progress::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_op_is_success {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "get_OpIsSuccess" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "get_OpIsSuccess" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_op_is_success(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_op_is_success::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        bundle_path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, bundle_path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn finalize(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_finalize::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "Unload" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "Unload" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_catalog_from_bundle_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "LoadCatalogFromBundleAsync" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "LoadCatalogFromBundleAsync" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_catalog_from_bundle_async(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_catalog_from_bundle_async::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_text_asset_request_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
+                ),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "LoadTextAssetRequestComplete" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "LoadTextAssetRequestComplete" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_text_asset_request_complete(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            crate::unity_engine::asyncoperation::AsyncOperation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_text_asset_request_complete::get_offset() as isize),
+        );
+        inner(this, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_for_completion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () , "WaitForCompletion" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: NAME , "WaitForCompletion" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_for_completion(
+        this: ContentCatalogProvider_InternalOp_BundledCatalog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ContentCatalogProvider_InternalOp_BundledCatalog,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_for_completion::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+pub trait IContentCatalogProvider_InternalOp_BundledCatalogMethods:
+    IContentCatalogProvider_InternalOp_BundledCatalog
+{
+    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    fn add_on_loaded(
+        self,
+        value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::add_on_loaded(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    fn remove_on_loaded(
+        self,
+        value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::remove_on_loaded(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_OpInProgress()` overload"]
+    fn get_op_in_progress(self) -> bool {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::get_op_in_progress(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_OpIsSuccess()` overload"]
+    fn get_op_is_success(self) -> bool {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::get_op_is_success(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, bundle_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(bundle_path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::finalize(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Unload()` overload"]
+    fn unload(self) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::unload(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
+    fn load_catalog_from_bundle_async(self) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw :: load_catalog_from_bundle_async (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    fn load_text_asset_request_complete(
+        self,
+        op: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw :: load_text_asset_request_complete (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`WaitForCompletion()` overload"]
+    fn wait_for_completion(self) -> bool {
+        unsafe {
+            let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ContentCatalogProvider_InternalOp_BundledCatalog_unity2_raw::wait_for_completion(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl<__T: IContentCatalogProvider_InternalOp_BundledCatalog>
+    IContentCatalogProvider_InternalOp_BundledCatalogMethods for __T
+{
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider_InternalOp_BundledCatalog {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider_InternalOp),
+                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IContentCatalogProvider_InternalOpMethods>::ctor(this);
+        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+pub mod prelude {
+    pub use super::ContentCatalogProvider;
+    pub use super::ContentCatalogProvider_DependencyHashIndex;
+    pub use super::ContentCatalogProvider_InternalOp;
+    pub use super::ContentCatalogProvider_InternalOp_BundledCatalog;
+    pub use super::IContentCatalogProvider;
+    pub use super::IContentCatalogProviderMethods;
+    pub use super::IContentCatalogProvider_InternalOp;
+    pub use super::IContentCatalogProvider_InternalOpMethods;
+    pub use super::IContentCatalogProvider_InternalOp_BundledCatalog;
+    pub use super::IContentCatalogProvider_InternalOp_BundledCatalogMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+    #[cfg(
+        feature = "unity_engine-resource_management-resource_providers-resourceproviderbase"
+    )]
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
 }

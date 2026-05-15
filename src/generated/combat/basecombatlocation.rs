@@ -24,451 +24,5825 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-basecombatlocation")]
-#[::unity2::methods]
-impl BaseCombatLocation {
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`get_IsCalculated()` overload"]
-    #[method(name = "get_IsCalculated", args = 0)]
-    pub fn get_is_calculated(self) -> bool;
-
-    #[doc = "`set_IsCalculated(bool)` overload"]
-    #[method(name = "set_IsCalculated", args = 1)]
-    pub fn set_is_calculated(self, value: bool) -> ();
-
-    #[doc = "`get_IsLocated()` overload"]
-    #[method(name = "get_IsLocated", args = 0)]
-    pub fn get_is_located(self) -> bool;
-
-    #[doc = "`set_IsLocated(bool)` overload"]
-    #[method(name = "set_IsLocated", args = 1)]
-    pub fn set_is_located(self, value: bool) -> ();
-
-    #[doc = "`get_StandardFlyingHight()` overload"]
-    #[method(name = "get_StandardFlyingHight", args = 0)]
-    pub fn get_standard_flying_hight(self) -> f32;
-
-    #[doc = "`get_ShootFlyingHight()` overload"]
-    #[method(name = "get_ShootFlyingHight", args = 0)]
-    pub fn get_shoot_flying_hight(self) -> f32;
-
-    #[doc = "`get_HeightOverFlyingHight()` overload"]
-    #[method(name = "get_HeightOverFlyingHight", args = 0)]
-    pub fn get_height_over_flying_hight(self) -> f32;
-
-    #[doc = "`get_TryCount()` overload"]
-    #[method(name = "get_TryCount", args = 0)]
-    pub fn get_try_count(self) -> i32;
-
-    #[doc = "`set_TryCount(i32)` overload"]
-    #[method(name = "set_TryCount", args = 1)]
-    pub fn set_try_count(self, value: i32) -> ();
-
-    #[doc = "`get_Pattern()` overload"]
-    #[method(name = "get_Pattern", args = 0)]
-    pub fn get_pattern(self) -> i32;
-
-    #[doc = "`set_Pattern(i32)` overload"]
-    #[method(name = "set_Pattern", args = 1)]
-    pub fn set_pattern(self, value: i32) -> ();
-
-    #[doc = "`get_UseOpenStyle()` overload"]
-    #[method(name = "get_UseOpenStyle", args = 0)]
-    pub fn get_use_open_style(self) -> bool;
-
-    #[doc = "`set_UseOpenStyle(bool)` overload"]
-    #[method(name = "set_UseOpenStyle", args = 1)]
-    pub fn set_use_open_style(self, value: bool) -> ();
-
-    #[doc = "`CreateLocator(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = "CreateLocator", args = 1)]
-    pub fn create_locator(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BaseCombatLocation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: BaseCombatLocation,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_calculated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_IsCalculated",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_IsCalculated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_calculated(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_calculated::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_calculated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_IsCalculated",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_IsCalculated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_calculated(
+        this: BaseCombatLocation,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_calculated::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_located {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_IsLocated",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_IsLocated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_located(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_located::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_located {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_IsLocated",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_IsLocated",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_located(
+        this: BaseCombatLocation,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_located::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_standard_flying_hight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_StandardFlyingHight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_StandardFlyingHight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_standard_flying_hight(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_standard_flying_hight::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_shoot_flying_hight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_ShootFlyingHight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_ShootFlyingHight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_shoot_flying_hight(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_shoot_flying_hight::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height_over_flying_hight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_HeightOverFlyingHight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_HeightOverFlyingHight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_height_over_flying_hight(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_height_over_flying_hight::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_try_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_TryCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_TryCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_try_count(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_try_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_try_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_TryCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_TryCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_try_count(
+        this: BaseCombatLocation,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_try_count::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pattern {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_Pattern",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_Pattern",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pattern(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_pattern::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pattern {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_Pattern",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_Pattern",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_pattern(
+        this: BaseCombatLocation,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_pattern::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_use_open_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_UseOpenStyle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_UseOpenStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_use_open_style(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_use_open_style::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_use_open_style {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_UseOpenStyle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_UseOpenStyle",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_use_open_style(
+        this: BaseCombatLocation,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_use_open_style::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "CreateLocator",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "CreateLocator",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_locator(
         record: crate::combat::combatrecord::CombatRecord,
-    ) -> crate::combat::basecombatlocation::BaseCombatLocation;
-
-    #[doc = "`Calculate(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "Calculate", args = 1)]
-    pub fn calculate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::basecombatlocation::BaseCombatLocation {
+        let inner: extern "C" fn(
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::basecombatlocation::BaseCombatLocation = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_locator::get_offset() as isize),
+        );
+        inner(record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::charactergamestatus::CharacterGameStatus,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BaseCombatLocation,
         gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`Locate(::unity2::Array<crate::combat::character::Character>, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
-    #[method(name = "Locate", args = 2)]
-    pub fn locate(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, gs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: combat :: character :: Character > as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_LocateStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "Locate",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "Locate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
         locate_style: crate::combat::locationparams::LocationParams_LocateStyle,
-    ) -> ();
-
-    #[doc = "`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
-    #[method(name = "LocateEmblem", args = 4)]
-    pub fn locate_emblem(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            crate::combat::locationparams::LocationParams_LocateStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate::get_offset() as isize),
+        );
+        inner(this, chara_array, locate_style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_emblem {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_LocateStyle as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateEmblem",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateEmblem",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_emblem(
+        this: BaseCombatLocation,
         master_side: i32,
         master: crate::combat::character::Character,
         emblem: crate::combat::character::Character,
         locate_style: crate::combat::locationparams::LocationParams_LocateStyle,
-    ) -> ();
-
-    #[doc = "`get_Record()` overload"]
-    #[method(name = "get_Record", args = 0)]
-    pub fn get_record(self) -> crate::combat::combatrecord::CombatRecord;
-
-    #[doc = "`get_WorldPos()` overload"]
-    #[method(name = "get_WorldPos", args = 0)]
-    pub fn get_world_pos(self) -> ::unity2::Array<crate::combat::fxz::FXZ>;
-
-    #[doc = "`set_WorldPos(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
-    #[method(name = "set_WorldPos", args = 1)]
-    pub fn set_world_pos(self, value: ::unity2::Array<crate::combat::fxz::FXZ>) -> ();
-
-    #[doc = "`get_DamageCount()` overload"]
-    #[method(name = "get_DamageCount", args = 0)]
-    pub fn get_damage_count(self) -> ::unity2::Array<i32>;
-
-    #[doc = "`set_DamageCount(::unity2::Array<i32>)` overload"]
-    #[method(name = "set_DamageCount", args = 1)]
-    pub fn set_damage_count(self, value: ::unity2::Array<i32>) -> ();
-
-    #[doc = "`get_CharaTall()` overload"]
-    #[method(name = "get_CharaTall", args = 0)]
-    pub fn get_chara_tall(self) -> ::unity2::Array<f32>;
-
-    #[doc = "`set_CharaTall(::unity2::Array<f32>)` overload"]
-    #[method(name = "set_CharaTall", args = 1)]
-    pub fn set_chara_tall(self, value: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`get_CharaBodySize()` overload"]
-    #[method(name = "get_CharaBodySize", args = 0)]
-    pub fn get_chara_body_size(self) -> ::unity2::Array<f32>;
-
-    #[doc = "`set_CharaBodySize(::unity2::Array<f32>)` overload"]
-    #[method(name = "set_CharaBodySize", args = 1)]
-    pub fn set_chara_body_size(self, value: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`get_IsRiding()` overload"]
-    #[method(name = "get_IsRiding", args = 0)]
-    pub fn get_is_riding(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_IsRiding(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_IsRiding", args = 1)]
-    pub fn set_is_riding(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_IsFlying()` overload"]
-    #[method(name = "get_IsFlying", args = 0)]
-    pub fn get_is_flying(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_IsFlying(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_IsFlying", args = 1)]
-    pub fn set_is_flying(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_CanFly()` overload"]
-    #[method(name = "get_CanFly", args = 0)]
-    pub fn get_can_fly(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_CanFly(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_CanFly", args = 1)]
-    pub fn set_can_fly(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_IsBigDragon()` overload"]
-    #[method(name = "get_IsBigDragon", args = 0)]
-    pub fn get_is_big_dragon(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_IsBigDragon(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_IsBigDragon", args = 1)]
-    pub fn set_is_big_dragon(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_RoughPos()` overload"]
-    #[method(name = "get_RoughPos", args = 0)]
-    pub fn get_rough_pos(self) -> ::unity2::Array<crate::combat::fxz::FXZ>;
-
-    #[doc = "`set_RoughPos(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
-    #[method(name = "set_RoughPos", args = 1)]
-    pub fn set_rough_pos(self, value: ::unity2::Array<crate::combat::fxz::FXZ>) -> ();
-
-    #[doc = "`get_OutPos()` overload"]
-    #[method(name = "get_OutPos", args = 0)]
-    pub fn get_out_pos(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
-
-    #[doc = "`set_OutPos(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    #[method(name = "set_OutPos", args = 1)]
-    pub fn set_out_pos(self, value: ::unity2::Array<crate::unity_engine::vector3::Vector3>) -> ();
-
-    #[doc = "`get_OutDir()` overload"]
-    #[method(name = "get_OutDir", args = 0)]
-    pub fn get_out_dir(self) -> ::unity2::Array<crate::combat::fxz::FXZ>;
-
-    #[doc = "`set_OutDir(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
-    #[method(name = "set_OutDir", args = 1)]
-    pub fn set_out_dir(self, value: ::unity2::Array<crate::combat::fxz::FXZ>) -> ();
-
-    #[doc = "`get_SetFlying()` overload"]
-    #[method(name = "get_SetFlying", args = 0)]
-    pub fn get_set_flying(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`set_SetFlying(::unity2::Array<bool>)` overload"]
-    #[method(name = "set_SetFlying", args = 1)]
-    pub fn set_set_flying(self, value: ::unity2::Array<bool>) -> ();
-
-    #[doc = "`get_SkipCheckOverWall()` overload"]
-    #[method(name = "get_SkipCheckOverWall", args = 0)]
-    pub fn get_skip_check_over_wall(self) -> bool;
-
-    #[doc = "`set_SkipCheckOverWall(bool)` overload"]
-    #[method(name = "set_SkipCheckOverWall", args = 1)]
-    pub fn set_skip_check_over_wall(self, value: bool) -> ();
-
-    #[doc = "`get_StartDistance()` overload"]
-    #[method(name = "get_StartDistance", args = 0)]
-    pub fn get_start_distance(self) -> f32;
-
-    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, record: crate::combat::combatrecord::CombatRecord) -> ();
-
-    #[doc = "`BaseSetup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "BaseSetup", args = 1)]
-    pub fn base_setup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            crate::combat::character::Character,
+            crate::combat::character::Character,
+            crate::combat::locationparams::LocationParams_LocateStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_emblem::get_offset() as isize),
+        );
+        inner(
+            this,
+            master_side,
+            master,
+            emblem,
+            locate_style,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_Record",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_Record",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_record(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::combatrecord::CombatRecord {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> crate::combat::combatrecord::CombatRecord = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_record::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_world_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_WorldPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_WorldPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_world_pos(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::combat::fxz::FXZ> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_world_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_world_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::combat::fxz::FXZ> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_WorldPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_WorldPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_world_pos(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<crate::combat::fxz::FXZ>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::fxz::FXZ>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_world_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_damage_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_DamageCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_DamageCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_damage_count(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_damage_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_damage_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_DamageCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_DamageCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_damage_count(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<i32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_damage_count::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_CharaTall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_CharaTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chara_tall(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<f32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chara_tall::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_tall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_CharaTall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_CharaTall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_tall(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_chara_tall::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_body_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_CharaBodySize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_CharaBodySize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chara_body_size(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<f32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chara_body_size::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_body_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_CharaBodySize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_CharaBodySize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_body_size(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<f32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_chara_body_size::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_riding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_IsRiding",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_IsRiding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_riding(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_riding::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_riding {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_IsRiding",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_IsRiding",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_riding(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_riding::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_IsFlying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_IsFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_flying(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_flying::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_IsFlying",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_IsFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_flying(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_flying::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_fly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_CanFly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_CanFly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_can_fly(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_can_fly::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_can_fly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_CanFly",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_CanFly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_can_fly(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_can_fly::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_big_dragon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_IsBigDragon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_IsBigDragon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_big_dragon(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_big_dragon::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_big_dragon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_IsBigDragon",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_IsBigDragon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_big_dragon(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_big_dragon::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rough_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_RoughPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_RoughPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rough_pos(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::combat::fxz::FXZ> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rough_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rough_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::combat::fxz::FXZ> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_RoughPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_RoughPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rough_pos(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<crate::combat::fxz::FXZ>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::fxz::FXZ>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_rough_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_out_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_OutPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_OutPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_out_pos(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        )
+            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_out_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_out_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::unity_engine::vector3::Vector3,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_OutPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_OutPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_out_pos(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_out_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_out_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_OutDir",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_OutDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_out_dir(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::combat::fxz::FXZ> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_out_dir::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_out_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::combat::fxz::FXZ> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_OutDir",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_OutDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_out_dir(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<crate::combat::fxz::FXZ>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::fxz::FXZ>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_out_dir::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_set_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_SetFlying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_SetFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_set_flying(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<bool> {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<bool> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_set_flying::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_set_flying {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<bool> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_SetFlying",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_SetFlying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_set_flying(
+        this: BaseCombatLocation,
+        value: ::unity2::Array<bool>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<bool>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_set_flying::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skip_check_over_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_SkipCheckOverWall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_SkipCheckOverWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skip_check_over_wall(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_skip_check_over_wall::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skip_check_over_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "set_SkipCheckOverWall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_SkipCheckOverWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_skip_check_over_wall(
+        this: BaseCombatLocation,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_skip_check_over_wall::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_start_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_StartDistance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_StartDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_start_distance(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_start_distance::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BaseCombatLocation,
+        record: crate::combat::combatrecord::CombatRecord,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            crate::combat::combatrecord::CombatRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, record, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_base_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::charactergamestatus::CharacterGameStatus,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "BaseSetup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "BaseSetup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn base_setup(
+        this: BaseCombatLocation,
         gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_base_setup::get_offset() as isize),
+        );
+        inner(this, gs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::charactergamestatus::CharacterGameStatus,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: BaseCombatLocation,
         gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-    ) -> ();
-
-    #[doc = "`get_RoughPosCount()` overload"]
-    #[method(name = "get_RoughPosCount", args = 0)]
-    pub fn get_rough_pos_count(self) -> i32;
-
-    #[doc = "`SetRoughPos(i32)` overload"]
-    #[method(name = "SetRoughPos", args = 1)]
-    pub fn set_rough_pos_2(self, try_count: i32) -> ();
-
-    #[doc = "`get_PatternCount()` overload"]
-    #[method(name = "get_PatternCount", args = 0)]
-    pub fn get_pattern_count(self) -> i32;
-
-    #[doc = "`SetBattlePatern(i32)` overload"]
-    #[method(name = "SetBattlePatern", args = 1)]
-    pub fn set_battle_patern(self, pattern: i32) -> ();
-
-    #[doc = "`CalcLocation()` overload"]
-    #[method(name = "CalcLocation", args = 0)]
-    pub fn calc_location(self) -> ();
-
-    #[doc = "`get_SideAtk()` overload"]
-    #[method(name = "get_SideAtk", args = 0)]
-    pub fn get_side_atk(self) -> i32;
-
-    #[doc = "`get_SideDmg()` overload"]
-    #[method(name = "get_SideDmg", args = 0)]
-    pub fn get_side_dmg(self) -> i32;
-
-    #[doc = "`IsMoveOverWall()` overload"]
-    #[method(name = "IsMoveOverWall", args = 0)]
-    pub fn is_move_over_wall(self) -> bool;
-
-    #[doc = "`IsMoveOverWall(i32)` overload"]
-    #[method(name = "IsMoveOverWall", args = 1)]
-    pub fn is_move_over_wall_2(self, side: i32) -> bool;
-
-    #[doc = "`IsOverWall(i32, i32, i32, i32, bool)` overload"]
-    #[method(name = "IsOverWall", args = 5)]
-    pub fn is_over_wall(self, s_x: i32, s_z: i32, g_x: i32, g_z: i32, is_fly: bool) -> bool;
-
-    #[doc = "`IsWall(i32, bool)` overload"]
-    #[method(name = "IsWall", args = 2)]
-    pub fn is_wall(self, side: i32, is_brawl: bool) -> bool;
-
-    #[doc = "`IsWall(i32, i32, bool, bool)` overload"]
-    #[method(name = "IsWall", args = 4)]
-    pub fn is_wall_2(self, x: i32, z: i32, is_brawl: bool, is_fly: bool) -> bool;
-
-    #[doc = "`IsOverBorder(bool)` overload"]
-    #[method(name = "IsOverBorder", args = 1)]
-    pub fn is_over_border(self, is_debug: bool) -> bool;
-
-    #[doc = "`IsOverHeadBorder(bool)` overload"]
-    #[method(name = "IsOverHeadBorder", args = 1)]
-    pub fn is_over_head_border(self, is_debug: bool) -> bool;
-
-    #[doc = "`IsOverHeadBorder(i32, bool)` overload"]
-    #[method(name = "IsOverHeadBorder", args = 2)]
-    pub fn is_over_head_border_2(self, side: i32, is_debug: bool) -> bool;
-
-    #[doc = "`IsRotateTooMuch()` overload"]
-    #[method(name = "IsRotateTooMuch", args = 0)]
-    pub fn is_rotate_too_much(self) -> bool;
-
-    #[doc = "`IsStandable(bool)` overload"]
-    #[method(name = "IsStandable", args = 1)]
-    pub fn is_standable(self, is_debug: bool) -> bool;
-
-    #[doc = "`IsStandable(i32, bool)` overload"]
-    #[method(name = "IsStandable", args = 2)]
-    pub fn is_standable_2(self, side: i32, is_debug: bool) -> bool;
-
-    #[doc = "`IsStandable(i32, f32, bool)` overload"]
-    #[method(name = "IsStandable", args = 3)]
-    pub fn is_standable_3(self, side: i32, size: f32, is_debug: bool) -> bool;
-
-    #[doc = "`IsStandable(crate::unity_engine::vector3::Vector3, f32, i32, bool)` overload"]
-    #[method(name = "IsStandable", args = 4)]
-    pub fn is_standable_4(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup::get_offset() as isize),
+        );
+        inner(this, gs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rough_pos_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_RoughPosCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_RoughPosCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_rough_pos_count(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_rough_pos_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rough_pos_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "SetRoughPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "SetRoughPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rough_pos_2(
+        this: BaseCombatLocation,
+        try_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rough_pos_2::get_offset() as isize),
+            );
+        inner(this, try_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pattern_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_PatternCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_PatternCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_pattern_count(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_pattern_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_patern {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "SetBattlePatern",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "SetBattlePatern",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_patern(
+        this: BaseCombatLocation,
+        pattern: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_battle_patern::get_offset() as isize),
+            );
+        inner(this, pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_location {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "CalcLocation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "CalcLocation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_location(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_calc_location::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side_atk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_SideAtk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_SideAtk",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_side_atk(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_side_atk::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side_dmg {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "get_SideDmg",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_SideDmg",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_side_dmg(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_side_dmg::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_move_over_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsMoveOverWall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsMoveOverWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_move_over_wall(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_move_over_wall::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_move_over_wall_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsMoveOverWall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsMoveOverWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_move_over_wall_2(
+        this: BaseCombatLocation,
+        side: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_move_over_wall_2::get_offset() as isize),
+            );
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_over_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsOverWall",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsOverWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_over_wall(
+        this: BaseCombatLocation,
+        s_x: i32,
+        s_z: i32,
+        g_x: i32,
+        g_z: i32,
+        is_fly: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            i32,
+            i32,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_over_wall::get_offset() as isize),
+        );
+        inner(this, s_x, s_z, g_x, g_z, is_fly, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsWall",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_wall(
+        this: BaseCombatLocation,
+        side: i32,
+        is_brawl: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_wall::get_offset() as isize),
+            );
+        inner(this, side, is_brawl, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_wall_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsWall",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_wall_2(
+        this: BaseCombatLocation,
+        x: i32,
+        z: i32,
+        is_brawl: bool,
+        is_fly: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            i32,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_wall_2::get_offset() as isize),
+        );
+        inner(this, x, z, is_brawl, is_fly, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_over_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsOverBorder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsOverBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_over_border(
+        this: BaseCombatLocation,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_over_border::get_offset() as isize),
+            );
+        inner(this, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_over_head_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsOverHeadBorder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsOverHeadBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_over_head_border(
+        this: BaseCombatLocation,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_over_head_border::get_offset() as isize),
+            );
+        inner(this, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_over_head_border_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsOverHeadBorder",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsOverHeadBorder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_over_head_border_2(
+        this: BaseCombatLocation,
+        side: i32,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_over_head_border_2::get_offset() as isize),
+            );
+        inner(this, side, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_rotate_too_much {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsRotateTooMuch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsRotateTooMuch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_rotate_too_much(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_rotate_too_much::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_standable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsStandable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsStandable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_standable(
+        this: BaseCombatLocation,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_standable::get_offset() as isize),
+            );
+        inner(this, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_standable_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsStandable",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsStandable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_standable_2(
+        this: BaseCombatLocation,
+        side: i32,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_standable_2::get_offset() as isize),
+            );
+        inner(this, side, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_standable_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsStandable",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsStandable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_standable_3(
+        this: BaseCombatLocation,
+        side: i32,
+        size: f32,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_standable_3::get_offset() as isize),
+        );
+        inner(this, side, size, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_standable_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsStandable",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsStandable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_standable_4(
+        this: BaseCombatLocation,
         center: crate::unity_engine::vector3::Vector3,
         size: f32,
         mask: i32,
         is_debug: bool,
-    ) -> bool;
-
-    #[doc = "`IsOutOfMap()` overload"]
-    #[method(name = "IsOutOfMap", args = 0)]
-    pub fn is_out_of_map(self) -> bool;
-
-    #[doc = "`AboidStep()` overload"]
-    #[method(name = "AboidStep", args = 0)]
-    pub fn aboid_step(self) -> ();
-
-    #[doc = "`AboidStep(i32, f32)` overload"]
-    #[method(name = "AboidStep", args = 2)]
-    pub fn aboid_step_2(self, side: i32, dist: f32) -> ();
-
-    #[doc = "`GetHeightForFly(crate::combat::fxz::FXZ, f32, bool)` overload"]
-    #[method(name = "GetHeightForFly", args = 3)]
-    pub fn get_height_for_fly(self, pos: crate::combat::fxz::FXZ, fly: f32, is_debug: bool) -> f32;
-
-    #[doc = "`GetDist2CliffOrWall(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
-    #[method(name = "GetDist2CliffOrWall", args = 4)]
-    pub fn get_dist2_cliff_or_wall(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_standable_4::get_offset() as isize),
+        );
+        inner(this, center, size, mask, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_out_of_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsOutOfMap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsOutOfMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_out_of_map(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_out_of_map::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_aboid_step {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "AboidStep",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "AboidStep",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn aboid_step(
+        this: BaseCombatLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_aboid_step::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_aboid_step_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "AboidStep",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "AboidStep",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn aboid_step_2(
+        this: BaseCombatLocation,
+        side: i32,
+        dist: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_aboid_step_2::get_offset() as isize),
+            );
+        inner(this, side, dist, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height_for_fly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "GetHeightForFly",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "GetHeightForFly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_height_for_fly(
+        this: BaseCombatLocation,
+        pos: crate::combat::fxz::FXZ,
+        fly: f32,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            crate::combat::fxz::FXZ,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_height_for_fly::get_offset() as isize),
+        );
+        inner(this, pos, fly, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dist2_cliff_or_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "GetDist2CliffOrWall",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "GetDist2CliffOrWall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dist2_cliff_or_wall(
+        this: BaseCombatLocation,
         side: i32,
         dir: crate::combat::fxz::FXZ,
         check_dist: f32,
         is_debug: bool,
-    ) -> f32;
-
-    #[doc = "`GetDist2Cliff(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
-    #[method(name = "GetDist2Cliff", args = 4)]
-    pub fn get_dist2_cliff(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            crate::combat::fxz::FXZ,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dist2_cliff_or_wall::get_offset() as isize),
+        );
+        inner(this, side, dir, check_dist, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dist2_cliff {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "GetDist2Cliff",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "GetDist2Cliff",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dist2_cliff(
+        this: BaseCombatLocation,
         side: i32,
         dir: crate::combat::fxz::FXZ,
         check_dist: f32,
         is_debug: bool,
-    ) -> f32;
-
-    #[doc = "`GetDist2Wall(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
-    #[method(name = "GetDist2Wall", args = 4)]
-    pub fn get_dist2_wall(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            crate::combat::fxz::FXZ,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dist2_cliff::get_offset() as isize),
+        );
+        inner(this, side, dir, check_dist, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dist2_wall {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "GetDist2Wall",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "GetDist2Wall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dist2_wall(
+        this: BaseCombatLocation,
         side: i32,
         dir: crate::combat::fxz::FXZ,
         check_dist: f32,
         is_debug: bool,
-    ) -> f32;
-
-    #[doc = "`IsShootable(bool)` overload"]
-    #[method(name = "IsShootable", args = 1)]
-    pub fn is_shootable(self, is_debug: bool) -> bool;
-
-    #[doc = "`CheckCameraSpace(i32, f32, f32, bool)` overload"]
-    #[method(name = "CheckCameraSpace", args = 4)]
-    pub fn check_camera_space(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            crate::combat::fxz::FXZ,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dist2_wall::get_offset() as isize),
+        );
+        inner(this, side, dir, check_dist, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_shootable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "IsShootable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "IsShootable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_shootable(
+        this: BaseCombatLocation,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_shootable::get_offset() as isize),
+            );
+        inner(this, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_check_camera_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "CheckCameraSpace",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "CheckCameraSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn check_camera_space(
+        this: BaseCombatLocation,
         side: i32,
         forward_dist: f32,
         side_dist: f32,
         is_debug: bool,
-    ) -> bool;
-
-    #[doc = "`LocateForSolo(i32, i32)` overload"]
-    #[method(name = "LocateForSolo", args = 2)]
-    pub fn locate_for_solo(self, side: i32, try_count: i32) -> bool;
-
-    #[doc = "`LocateToOpenSpace(bool)` overload"]
-    #[method(name = "LocateToOpenSpace", args = 1)]
-    pub fn locate_to_open_space(self, is_debug: bool) -> bool;
-
-    #[doc = "`RelocateToSpace(bool)` overload"]
-    #[method(name = "RelocateToSpace", args = 1)]
-    pub fn relocate_to_space(self, is_start: bool) -> ();
-
-    #[doc = "`LocateForWin(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "LocateForWin", args = 1)]
-    pub fn locate_for_win(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            f32,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_check_camera_space::get_offset() as isize),
+        );
+        inner(
+            this,
+            side,
+            forward_dist,
+            side_dist,
+            is_debug,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_for_solo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateForSolo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateForSolo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_for_solo(
+        this: BaseCombatLocation,
+        side: i32,
+        try_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_locate_for_solo::get_offset() as isize),
+            );
+        inner(this, side, try_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_to_open_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateToOpenSpace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateToOpenSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_to_open_space(
+        this: BaseCombatLocation,
+        is_debug: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_locate_to_open_space::get_offset() as isize),
+            );
+        inner(this, is_debug, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_relocate_to_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "RelocateToSpace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "RelocateToSpace",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn relocate_to_space(
+        this: BaseCombatLocation,
+        is_start: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BaseCombatLocation, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_relocate_to_space::get_offset() as isize),
+            );
+        inner(this, is_start, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_for_win {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateForWin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateForWin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_for_win(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
-    ) -> ();
-
-    #[doc = "`LocateSoloForWin(i32, bool, crate::combat::fxz::FXZ, f32)` overload"]
-    #[method(name = "LocateSoloForWin", args = 4)]
-    pub fn locate_solo_for_win(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_for_win::get_offset() as isize),
+        );
+        inner(this, chara_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_solo_for_win {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateSoloForWin",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateSoloForWin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_solo_for_win(
+        this: BaseCombatLocation,
         side: i32,
         check_en_pos: bool,
         forward: crate::combat::fxz::FXZ,
         check_radius: f32,
-    ) -> i32;
-
-    #[doc = "`LocateForSkip(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "LocateForSkip", args = 1)]
-    pub fn locate_for_skip(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            i32,
+            bool,
+            crate::combat::fxz::FXZ,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_solo_for_win::get_offset() as isize),
+        );
+        inner(
+            this,
+            side,
+            check_en_pos,
+            forward,
+            check_radius,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_for_skip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateForSkip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateForSkip",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_for_skip(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
-    ) -> ();
-
-    #[doc = "`LocateForEndTraining(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "LocateForEndTraining", args = 1)]
-    pub fn locate_for_end_training(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_for_skip::get_offset() as isize),
+        );
+        inner(this, chara_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_for_end_training {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateForEndTraining",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateForEndTraining",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_for_end_training(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
-    ) -> ();
-
-    #[doc = "`LocateForChainAttack(crate::combat::character::Character, ::unity2::Array<crate::combat::character::Character>, i32, f32)` overload"]
-    #[method(name = "LocateForChainAttack", args = 4)]
-    pub fn locate_for_chain_attack(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_for_end_training::get_offset() as isize),
+        );
+        inner(this, chara_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_for_chain_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::combat::character::Character> as ::unity2::IlType>::il_type(
+                ),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateForChainAttack",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateForChainAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_for_chain_attack(
+        this: BaseCombatLocation,
         chain: crate::combat::character::Character,
         chars: ::unity2::Array<crate::combat::character::Character>,
         attack_hash: i32,
         chain_attack_time: f32,
-    ) -> ();
-
-    #[doc = "`RelocateAfterChainGuard(::unity2::Array<crate::combat::character::Character>, crate::combat::character::Character)` overload"]
-    #[method(name = "RelocateAfterChainGuard", args = 2)]
-    pub fn relocate_after_chain_guard(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            crate::combat::character::Character,
+            ::unity2::Array<crate::combat::character::Character>,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_for_chain_attack::get_offset() as isize),
+        );
+        inner(
+            this,
+            chain,
+            chars,
+            attack_hash,
+            chain_attack_time,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_relocate_after_chain_guard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::combat::character::Character> as ::unity2::IlType>::il_type(
+                ),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "RelocateAfterChainGuard",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "RelocateAfterChainGuard",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn relocate_after_chain_guard(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
         guard: crate::combat::character::Character,
-    ) -> ();
-
-    #[doc = "`LocateEmblemAfterCombat(crate::combat::character::Character)` overload"]
-    #[method(name = "LocateEmblemAfterCombat", args = 1)]
-    pub fn locate_emblem_after_combat(self, emblem: crate::combat::character::Character) -> ();
-
-    #[doc = "`LoadCurrentPos(::unity2::Array<crate::combat::character::Character>)` overload"]
-    #[method(name = "LoadCurrentPos", args = 1)]
-    pub fn load_current_pos(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_relocate_after_chain_guard::get_offset() as isize),
+        );
+        inner(this, chara_array, guard, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_locate_emblem_after_combat {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LocateEmblemAfterCombat",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LocateEmblemAfterCombat",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn locate_emblem_after_combat(
+        this: BaseCombatLocation,
+        emblem: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_locate_emblem_after_combat::get_offset() as isize),
+        );
+        inner(this, emblem, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_current_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::combat::character::Character,
+            > as ::unity2::IlType>::il_type(
+            )];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "LoadCurrentPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "LoadCurrentPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_current_pos(
+        this: BaseCombatLocation,
         chara_array: ::unity2::Array<crate::combat::character::Character>,
-    ) -> ();
-
-    #[doc = "`GetSoloCharacterForward(bool)` overload"]
-    #[method(name = "GetSoloCharacterForward", args = 1)]
-    pub fn get_solo_character_forward(is_enemy: bool) -> crate::combat::fxz::FXZ;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BaseCombatLocation,
+            ::unity2::Array<crate::combat::character::Character>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_current_pos::get_offset() as isize),
+        );
+        inner(this, chara_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_solo_character_forward {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                "GetSoloCharacterForward",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    "GetSoloCharacterForward",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_solo_character_forward(
+        is_enemy: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_solo_character_forward::get_offset() as isize),
+            );
+        inner(is_enemy, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BaseCombatLocation as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseCombatLocation as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
 }
+
+#[cfg(feature = "combat-basecombatlocation")]
+impl BaseCombatLocation {
+    #[doc = "`CreateLocator(crate::combat::combatrecord::CombatRecord)` overload"]
+    pub fn create_locator(
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> crate::combat::basecombatlocation::BaseCombatLocation {
+        unsafe {
+            __BaseCombatLocation_unity2_raw::create_locator(
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSoloCharacterForward(bool)` overload"]
+    pub fn get_solo_character_forward(
+        is_enemy: impl ::core::convert::Into<bool>,
+    ) -> crate::combat::fxz::FXZ {
+        unsafe {
+            __BaseCombatLocation_unity2_raw::get_solo_character_forward(
+                ::core::convert::Into::into(is_enemy),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __BaseCombatLocation_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-basecombatlocation")]
+pub trait IBaseCombatLocationMethods: IBaseCombatLocation {
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsCalculated()` overload"]
+    fn get_is_calculated(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_is_calculated(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsCalculated(bool)` overload"]
+    fn set_is_calculated(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_is_calculated(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsLocated()` overload"]
+    fn get_is_located(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_is_located(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsLocated(bool)` overload"]
+    fn set_is_located(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_is_located(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_StandardFlyingHight()` overload"]
+    fn get_standard_flying_hight(self) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_standard_flying_hight(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ShootFlyingHight()` overload"]
+    fn get_shoot_flying_hight(self) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_shoot_flying_hight(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HeightOverFlyingHight()` overload"]
+    fn get_height_over_flying_hight(self) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_height_over_flying_hight(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TryCount()` overload"]
+    fn get_try_count(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_try_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_TryCount(i32)` overload"]
+    fn set_try_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_try_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Pattern()` overload"]
+    fn get_pattern(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_pattern(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Pattern(i32)` overload"]
+    fn set_pattern(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_pattern(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UseOpenStyle()` overload"]
+    fn get_use_open_style(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_use_open_style(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_UseOpenStyle(bool)` overload"]
+    fn set_use_open_style(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_use_open_style(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn calculate(
+        self,
+        gs: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Locate(::unity2::Array<crate::combat::character::Character>, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
+    fn locate(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+        locate_style: impl ::core::convert::Into<
+            crate::combat::locationparams::LocationParams_LocateStyle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::convert::Into::into(locate_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
+    fn locate_emblem(
+        self,
+        master_side: impl ::core::convert::Into<i32>,
+        master: impl ::core::convert::Into<crate::combat::character::Character>,
+        emblem: impl ::core::convert::Into<crate::combat::character::Character>,
+        locate_style: impl ::core::convert::Into<
+            crate::combat::locationparams::LocationParams_LocateStyle,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_emblem(
+                __receiver,
+                ::core::convert::Into::into(master_side),
+                ::core::convert::Into::into(master),
+                ::core::convert::Into::into(emblem),
+                ::core::convert::Into::into(locate_style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Record()` overload"]
+    fn get_record(self) -> crate::combat::combatrecord::CombatRecord {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_record(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_WorldPos()` overload"]
+    fn get_world_pos(self) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_world_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_WorldPos(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
+    fn set_world_pos(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::combat::fxz::FXZ>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_world_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DamageCount()` overload"]
+    fn get_damage_count(self) -> ::unity2::Array<i32> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_damage_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DamageCount(::unity2::Array<i32>)` overload"]
+    fn set_damage_count(self, value: impl ::core::convert::Into<::unity2::Array<i32>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_damage_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CharaTall()` overload"]
+    fn get_chara_tall(self) -> ::unity2::Array<f32> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_chara_tall(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_CharaTall(::unity2::Array<f32>)` overload"]
+    fn set_chara_tall(self, value: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_chara_tall(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CharaBodySize()` overload"]
+    fn get_chara_body_size(self) -> ::unity2::Array<f32> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_chara_body_size(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_CharaBodySize(::unity2::Array<f32>)` overload"]
+    fn set_chara_body_size(self, value: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_chara_body_size(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsRiding()` overload"]
+    fn get_is_riding(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_is_riding(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsRiding(::unity2::Array<bool>)` overload"]
+    fn set_is_riding(self, value: impl ::core::convert::Into<::unity2::Array<bool>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_is_riding(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsFlying()` overload"]
+    fn get_is_flying(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_is_flying(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsFlying(::unity2::Array<bool>)` overload"]
+    fn set_is_flying(self, value: impl ::core::convert::Into<::unity2::Array<bool>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_is_flying(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CanFly()` overload"]
+    fn get_can_fly(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_can_fly(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_CanFly(::unity2::Array<bool>)` overload"]
+    fn set_can_fly(self, value: impl ::core::convert::Into<::unity2::Array<bool>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_can_fly(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsBigDragon()` overload"]
+    fn get_is_big_dragon(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_is_big_dragon(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsBigDragon(::unity2::Array<bool>)` overload"]
+    fn set_is_big_dragon(self, value: impl ::core::convert::Into<::unity2::Array<bool>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_is_big_dragon(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RoughPos()` overload"]
+    fn get_rough_pos(self) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_rough_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RoughPos(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
+    fn set_rough_pos(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::combat::fxz::FXZ>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_rough_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_OutPos()` overload"]
+    fn get_out_pos(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_out_pos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_OutPos(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn set_out_pos(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_out_pos(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_OutDir()` overload"]
+    fn get_out_dir(self) -> ::unity2::Array<crate::combat::fxz::FXZ> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_out_dir(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_OutDir(::unity2::Array<crate::combat::fxz::FXZ>)` overload"]
+    fn set_out_dir(
+        self,
+        value: impl ::core::convert::Into<::unity2::Array<crate::combat::fxz::FXZ>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_out_dir(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SetFlying()` overload"]
+    fn get_set_flying(self) -> ::unity2::Array<bool> {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_set_flying(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SetFlying(::unity2::Array<bool>)` overload"]
+    fn set_set_flying(self, value: impl ::core::convert::Into<::unity2::Array<bool>>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_set_flying(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SkipCheckOverWall()` overload"]
+    fn get_skip_check_over_wall(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_skip_check_over_wall(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_SkipCheckOverWall(bool)` overload"]
+    fn set_skip_check_over_wall(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_skip_check_over_wall(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_StartDistance()` overload"]
+    fn get_start_distance(self) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_start_distance(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
+    fn ctor(
+        self,
+        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(record),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BaseSetup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn base_setup(
+        self,
+        gs: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::base_setup(
+                __receiver,
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]
+    fn setup(
+        self,
+        gs: impl ::core::convert::Into<
+            ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::setup(
+                __receiver,
+                ::core::convert::Into::into(gs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RoughPosCount()` overload"]
+    fn get_rough_pos_count(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_rough_pos_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRoughPos(i32)` overload"]
+    fn set_rough_pos_2(self, try_count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_rough_pos_2(
+                __receiver,
+                ::core::convert::Into::into(try_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PatternCount()` overload"]
+    fn get_pattern_count(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_pattern_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBattlePatern(i32)` overload"]
+    fn set_battle_patern(self, pattern: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::set_battle_patern(
+                __receiver,
+                ::core::convert::Into::into(pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcLocation()` overload"]
+    fn calc_location(self) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::calc_location(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SideAtk()` overload"]
+    fn get_side_atk(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_side_atk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SideDmg()` overload"]
+    fn get_side_dmg(self) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_side_dmg(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsMoveOverWall()` overload"]
+    fn is_move_over_wall(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_move_over_wall(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsMoveOverWall(i32)` overload"]
+    fn is_move_over_wall_2(self, side: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_move_over_wall_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverWall(i32, i32, i32, i32, bool)` overload"]
+    fn is_over_wall(
+        self,
+        s_x: impl ::core::convert::Into<i32>,
+        s_z: impl ::core::convert::Into<i32>,
+        g_x: impl ::core::convert::Into<i32>,
+        g_z: impl ::core::convert::Into<i32>,
+        is_fly: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_over_wall(
+                __receiver,
+                ::core::convert::Into::into(s_x),
+                ::core::convert::Into::into(s_z),
+                ::core::convert::Into::into(g_x),
+                ::core::convert::Into::into(g_z),
+                ::core::convert::Into::into(is_fly),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsWall(i32, bool)` overload"]
+    fn is_wall(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        is_brawl: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_wall(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(is_brawl),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsWall(i32, i32, bool, bool)` overload"]
+    fn is_wall_2(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        is_brawl: impl ::core::convert::Into<bool>,
+        is_fly: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_wall_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(is_brawl),
+                ::core::convert::Into::into(is_fly),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverBorder(bool)` overload"]
+    fn is_over_border(self, is_debug: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_over_border(
+                __receiver,
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverHeadBorder(bool)` overload"]
+    fn is_over_head_border(self, is_debug: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_over_head_border(
+                __receiver,
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverHeadBorder(i32, bool)` overload"]
+    fn is_over_head_border_2(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_over_head_border_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRotateTooMuch()` overload"]
+    fn is_rotate_too_much(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_rotate_too_much(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStandable(bool)` overload"]
+    fn is_standable(self, is_debug: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_standable(
+                __receiver,
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStandable(i32, bool)` overload"]
+    fn is_standable_2(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_standable_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStandable(i32, f32, bool)` overload"]
+    fn is_standable_3(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        size: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_standable_3(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsStandable(crate::unity_engine::vector3::Vector3, f32, i32, bool)` overload"]
+    fn is_standable_4(
+        self,
+        center: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        size: impl ::core::convert::Into<f32>,
+        mask: impl ::core::convert::Into<i32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_standable_4(
+                __receiver,
+                ::core::convert::Into::into(center),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(mask),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOutOfMap()` overload"]
+    fn is_out_of_map(self) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_out_of_map(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AboidStep()` overload"]
+    fn aboid_step(self) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::aboid_step(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AboidStep(i32, f32)` overload"]
+    fn aboid_step_2(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        dist: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::aboid_step_2(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(dist),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHeightForFly(crate::combat::fxz::FXZ, f32, bool)` overload"]
+    fn get_height_for_fly(
+        self,
+        pos: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        fly: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_height_for_fly(
+                __receiver,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(fly),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDist2CliffOrWall(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
+    fn get_dist2_cliff_or_wall(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        dir: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        check_dist: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_dist2_cliff_or_wall(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(dir),
+                ::core::convert::Into::into(check_dist),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDist2Cliff(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
+    fn get_dist2_cliff(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        dir: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        check_dist: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_dist2_cliff(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(dir),
+                ::core::convert::Into::into(check_dist),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDist2Wall(i32, crate::combat::fxz::FXZ, f32, bool)` overload"]
+    fn get_dist2_wall(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        dir: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        check_dist: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::get_dist2_wall(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(dir),
+                ::core::convert::Into::into(check_dist),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsShootable(bool)` overload"]
+    fn is_shootable(self, is_debug: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::is_shootable(
+                __receiver,
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckCameraSpace(i32, f32, f32, bool)` overload"]
+    fn check_camera_space(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        forward_dist: impl ::core::convert::Into<f32>,
+        side_dist: impl ::core::convert::Into<f32>,
+        is_debug: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::check_camera_space(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(forward_dist),
+                ::core::convert::Into::into(side_dist),
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateForSolo(i32, i32)` overload"]
+    fn locate_for_solo(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        try_count: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_for_solo(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(try_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateToOpenSpace(bool)` overload"]
+    fn locate_to_open_space(self, is_debug: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_to_open_space(
+                __receiver,
+                ::core::convert::Into::into(is_debug),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RelocateToSpace(bool)` overload"]
+    fn relocate_to_space(self, is_start: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::relocate_to_space(
+                __receiver,
+                ::core::convert::Into::into(is_start),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateForWin(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn locate_for_win(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_for_win(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateSoloForWin(i32, bool, crate::combat::fxz::FXZ, f32)` overload"]
+    fn locate_solo_for_win(
+        self,
+        side: impl ::core::convert::Into<i32>,
+        check_en_pos: impl ::core::convert::Into<bool>,
+        forward: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
+        check_radius: impl ::core::convert::Into<f32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_solo_for_win(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(check_en_pos),
+                ::core::convert::Into::into(forward),
+                ::core::convert::Into::into(check_radius),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateForSkip(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn locate_for_skip(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_for_skip(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateForEndTraining(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn locate_for_end_training(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_for_end_training(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateForChainAttack(crate::combat::character::Character, ::unity2::Array<crate::combat::character::Character>, i32, f32)` overload"]
+    fn locate_for_chain_attack(
+        self,
+        chain: impl ::core::convert::Into<crate::combat::character::Character>,
+        chars: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+        attack_hash: impl ::core::convert::Into<i32>,
+        chain_attack_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_for_chain_attack(
+                __receiver,
+                ::core::convert::Into::into(chain),
+                ::core::convert::Into::into(chars),
+                ::core::convert::Into::into(attack_hash),
+                ::core::convert::Into::into(chain_attack_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RelocateAfterChainGuard(::unity2::Array<crate::combat::character::Character>, crate::combat::character::Character)` overload"]
+    fn relocate_after_chain_guard(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+        guard: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::relocate_after_chain_guard(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::convert::Into::into(guard),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LocateEmblemAfterCombat(crate::combat::character::Character)` overload"]
+    fn locate_emblem_after_combat(
+        self,
+        emblem: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::locate_emblem_after_combat(
+                __receiver,
+                ::core::convert::Into::into(emblem),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadCurrentPos(::unity2::Array<crate::combat::character::Character>)` overload"]
+    fn load_current_pos(
+        self,
+        chara_array: impl ::core::convert::Into<::unity2::Array<crate::combat::character::Character>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BaseCombatLocation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BaseCombatLocation_unity2_raw::load_current_pos(
+                __receiver,
+                ::core::convert::Into::into(chara_array),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-basecombatlocation")]
+impl<__T: IBaseCombatLocation> IBaseCombatLocationMethods for __T {}
 
 #[cfg(feature = "combat-basecombatlocation")]
 impl BaseCombatLocation {
@@ -484,4 +5858,14 @@ impl BaseCombatLocation {
         <Self as IBaseCombatLocationMethods>::ctor(this, record);
         this
     }
+}
+
+#[cfg(feature = "combat-basecombatlocation")]
+pub mod prelude {
+    pub use super::BaseCombatLocation;
+    pub use super::IBaseCombatLocation;
+    pub use super::IBaseCombatLocationMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

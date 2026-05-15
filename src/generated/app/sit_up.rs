@@ -2,3 +2,10 @@
 
 #[cfg(any(feature = "app-sit_up-musclesitupsequence-types"))]
 pub mod musclesitupsequence;
+#[cfg(feature = "app-sit_up-musclesitupsequence")]
+pub use musclesitupsequence::IMuscleSitupSequenceMethods;
+#[cfg(feature = "app-sit_up-musclesitupsequence-types")]
+pub use musclesitupsequence::{
+    IMuscleSitupSequence, MuscleSitupSequence, MuscleSitupSequence_Label,
+    MuscleSitupSequence_judgeRank,
+};

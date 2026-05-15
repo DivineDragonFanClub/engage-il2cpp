@@ -11,6 +11,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct ItemListYesNoDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
     #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
     #[parent(crate::system::object::Object)]
@@ -18,11 +23,6 @@ mod __types {
         #[rename(name = "num")]
         pub num: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct ItemListYesNoDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))]
     #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.ItemParam")]
@@ -41,77 +41,304 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-#[::unity2::methods]
-impl ItemListYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
-                ::core::stringify!(new),
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemListYesNoDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_ItemParamList",
+                0,
+                param_types,
+                false,
             )
         });
-        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_ItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-#[::unity2::methods]
-impl ItemListYesNoDialog {
-    #[doc = "`get_m_ItemParamList()` overload"]
-    #[method(name = "get_m_ItemParamList", args = 0)]
-    pub fn get_m_item_param_list(
-        self,
+    pub unsafe fn get_m_item_param_list(
+        this: ItemListYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
-    >;
-
-    #[doc = "`set_m_ItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)` overload"]
-    #[method(name = "set_m_ItemParamList", args = 1)]
-    pub fn set_m_item_param_list(
-        self,
+    > {
+        let inner: extern "C" fn(
+            ItemListYesNoDialog,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_item_param_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_item_param_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_ItemParamList",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_ItemParamList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_item_param_list(
+        this: ItemListYesNoDialog,
         value: crate::system::collections::generic::list_1::List_1<
             crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
         >,
-    ) -> ();
-
-    #[doc = "`get_m_MoneyParam()` overload"]
-    #[method(name = "get_m_MoneyParam", args = 0)]
-    pub fn get_m_money_param(
-        self,
-    ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam;
-
-    #[doc = "`set_m_MoneyParam(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
-    #[method(name = "set_m_MoneyParam", args = 1)]
-    pub fn set_m_money_param(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemListYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_item_param_list::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "get_m_MoneyParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "get_m_MoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_money_param(
+        this: ItemListYesNoDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam {
+        let inner : extern "C" fn (ItemListYesNoDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_m_money_param :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_money_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "set_m_MoneyParam",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "set_m_MoneyParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_money_param(
+        this: ItemListYesNoDialog,
         value: crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemListYesNoDialog,
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_money_param::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         message: ::unity2::Il2CppString,
         item_param_list: crate::system::collections::generic::list_1::List_1<
             crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
         >,
         money_param: crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
-    ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            message,
+            item_param_list,
+            money_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemlistdialogcontent :: ItemListDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemListYesNoDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuitem::BasicMenuItem,
         >,
@@ -121,8 +348,172 @@ impl ItemListYesNoDialog {
             crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
         >,
         money_param: crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemListYesNoDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::itemlistdialogcontent::ItemListDialogContent,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            message,
+            item_param_list,
+            money_param,
+            __unity2_method_info,
+        )
+    }
 }
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl ItemListYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+        >,
+        money_param: impl ::core::convert::Into<
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+        >,
+    ) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog {
+        unsafe {
+            __ItemListYesNoDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(item_param_list),
+                ::core::convert::Into::into(money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+pub trait IItemListYesNoDialogMethods: IItemListYesNoDialog {
+    #[doc = "`get_m_ItemParamList()` overload"]
+    fn get_m_item_param_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+    > {
+        unsafe {
+            let __receiver = <ItemListYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemListYesNoDialog_unity2_raw::get_m_item_param_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_ItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)` overload"]
+    fn set_m_item_param_list(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemListYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemListYesNoDialog_unity2_raw::set_m_item_param_list(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_MoneyParam()` overload"]
+    fn get_m_money_param(self) -> crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam {
+        unsafe {
+            let __receiver = <ItemListYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemListYesNoDialog_unity2_raw::get_m_money_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_MoneyParam(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
+    fn set_m_money_param(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemListYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemListYesNoDialog_unity2_raw::set_m_money_param(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::itemlistdialogcontent::ItemListDialogContent,
+        >,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam,
+            >,
+        >,
+        money_param: impl ::core::convert::Into<
+            crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <ItemListYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemListYesNoDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(item_param_list),
+                ::core::convert::Into::into(money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl<__T: IItemListYesNoDialog> IItemListYesNoDialogMethods for __T {}
 
 #[cfg(feature = "app-itemlistyesnodialog")]
 impl ItemListYesNoDialog {
@@ -158,12 +549,164 @@ impl ItemListYesNoDialog {
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-#[::unity2::methods]
-impl ItemListYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemListYesNoDialog_MoneyParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemListYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+pub trait IItemListYesNoDialog_MoneyParamMethods: IItemListYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ItemListYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ItemListYesNoDialog_MoneyParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl<__T: IItemListYesNoDialog_MoneyParam> IItemListYesNoDialog_MoneyParamMethods for __T {}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl ItemListYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemListYesNoDialog_ItemParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemListYesNoDialog_ItemParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemListYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ItemListYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ItemListYesNoDialog_ItemParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl<__T: IItemListYesNoDialog_ItemParam> IItemListYesNoDialog_ItemParamMethods for __T {}
 
 #[cfg(feature = "app-itemlistyesnodialog")]
 impl ItemListYesNoDialog_ItemParam {
@@ -179,4 +722,32 @@ impl ItemListYesNoDialog_ItemParam {
         <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+pub mod prelude {
+    pub use super::IItemListYesNoDialog;
+    pub use super::IItemListYesNoDialogMethods;
+    pub use super::IItemListYesNoDialog_ItemParam;
+    pub use super::IItemListYesNoDialog_ItemParamMethods;
+    pub use super::IItemListYesNoDialog_MoneyParam;
+    pub use super::IItemListYesNoDialog_MoneyParamMethods;
+    pub use super::ItemListYesNoDialog;
+    pub use super::ItemListYesNoDialog_ItemParam;
+    pub use super::ItemListYesNoDialog_MoneyParam;
+    pub use crate::app::basicdialog::IBasicDialog;
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    pub use crate::app::basicmenu::IBasicMenu;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    pub use crate::app::procinst::IProcInst;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    pub use crate::app::yesnodialog::IYesNoDialog;
+    #[cfg(feature = "app-yesnodialog")]
+    pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

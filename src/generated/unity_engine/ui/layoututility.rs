@@ -17,70 +17,749 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-layoututility")]
-#[::unity2::methods]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LayoutUtility_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetMinSize",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetMinSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_size(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        axis: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_min_size::get_offset() as isize),
+        );
+        inner(rect, axis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetPreferredSize",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_size(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        axis: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_size::get_offset() as isize),
+        );
+        inner(rect, axis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetFlexibleSize",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetFlexibleSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_size(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        axis: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flexible_size::get_offset() as isize),
+        );
+        inner(rect, axis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetMinWidth",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetMinWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_width(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_min_width::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetPreferredWidth",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_width(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_width::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetFlexibleWidth",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetFlexibleWidth",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_width(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flexible_width::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetMinHeight",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetMinHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_min_height(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_min_height::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_preferred_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetPreferredHeight",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetPreferredHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_preferred_height(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_preferred_height::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flexible_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetFlexibleHeight",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetFlexibleHeight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_flexible_height(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_flexible_height::get_offset() as isize),
+        );
+        inner(rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layout_property {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<
+                    crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+                    f32,
+                > as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetLayoutProperty",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetLayoutProperty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layout_property(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        property: crate::system::func_2::Func_2<
+            crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+            f32,
+        >,
+        default_value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::system::func_2::Func_2<
+                crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+                f32,
+            >,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layout_property::get_offset() as isize),
+        );
+        inner(rect, property, default_value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layout_property_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface , f32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LayoutUtility as ::unity2::ClassIdentity>::class(),
+                "GetLayoutProperty",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutUtility as ::unity2::ClassIdentity>::NAME,
+                    "GetLayoutProperty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_layout_property_2(
+        rect: crate::unity_engine::recttransform::RectTransform,
+        property: crate::system::func_2::Func_2<
+            crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+            f32,
+        >,
+        default_value: f32,
+        source: *mut crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::recttransform::RectTransform,
+            crate::system::func_2::Func_2<
+                crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+                f32,
+            >,
+            f32,
+            *mut crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_layout_property_2::get_offset() as isize),
+        );
+        inner(rect, property, default_value, source, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-layoututility")]
 impl LayoutUtility {
     #[doc = "`GetMinSize(crate::unity_engine::recttransform::RectTransform, i32)` overload"]
-    #[method(name = "GetMinSize", args = 2)]
-    pub fn get_min_size(rect: crate::unity_engine::recttransform::RectTransform, axis: i32) -> f32;
-
+    pub fn get_min_size(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        axis: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_min_size(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(axis),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPreferredSize(crate::unity_engine::recttransform::RectTransform, i32)` overload"]
-    #[method(name = "GetPreferredSize", args = 2)]
     pub fn get_preferred_size(
-        rect: crate::unity_engine::recttransform::RectTransform,
-        axis: i32,
-    ) -> f32;
-
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        axis: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_preferred_size(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(axis),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetFlexibleSize(crate::unity_engine::recttransform::RectTransform, i32)` overload"]
-    #[method(name = "GetFlexibleSize", args = 2)]
     pub fn get_flexible_size(
-        rect: crate::unity_engine::recttransform::RectTransform,
-        axis: i32,
-    ) -> f32;
-
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        axis: impl ::core::convert::Into<i32>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_flexible_size(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(axis),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetMinWidth(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetMinWidth", args = 1)]
-    pub fn get_min_width(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_min_width(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_min_width(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPreferredWidth(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetPreferredWidth", args = 1)]
-    pub fn get_preferred_width(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_preferred_width(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_preferred_width(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetFlexibleWidth(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetFlexibleWidth", args = 1)]
-    pub fn get_flexible_width(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_flexible_width(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_flexible_width(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetMinHeight(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetMinHeight", args = 1)]
-    pub fn get_min_height(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_min_height(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_min_height(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetPreferredHeight(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetPreferredHeight", args = 1)]
-    pub fn get_preferred_height(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_preferred_height(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_preferred_height(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetFlexibleHeight(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "GetFlexibleHeight", args = 1)]
-    pub fn get_flexible_height(rect: crate::unity_engine::recttransform::RectTransform) -> f32;
-
+    pub fn get_flexible_height(
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_flexible_height(
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`GetLayoutProperty(crate::unity_engine::recttransform::RectTransform, crate::system::func_2::Func_2<crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,f32>, f32)` overload"]
-    #[method(name = "GetLayoutProperty", args = 3)]
     pub fn get_layout_property(
-        rect: crate::unity_engine::recttransform::RectTransform,
-        property: crate::system::func_2::Func_2<
-            crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
-            f32,
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        property: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<
+                crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+                f32,
+            >,
         >,
-        default_value: f32,
-    ) -> f32;
-
-    #[doc = "`GetLayoutProperty(crate::unity_engine::recttransform::RectTransform, crate::system::func_2::Func_2<crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,f32>, f32, crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface)` overload"]
-    #[method(name = "GetLayoutProperty", args = 4)]
+        default_value: impl ::core::convert::Into<f32>,
+    ) -> f32 {
+        unsafe {
+            __LayoutUtility_unity2_raw::get_layout_property(
+                ::core::convert::Into::into(rect),
+                ::core::convert::Into::into(property),
+                ::core::convert::Into::into(default_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLayoutProperty(crate::unity_engine::recttransform::RectTransform, crate::system::func_2::Func_2<crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,f32>, f32, *mutcrate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface)` overload"]
     pub fn get_layout_property_2(
-        rect: crate::unity_engine::recttransform::RectTransform,
-        property: crate::system::func_2::Func_2<
-            crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
-            f32,
+        rect: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+        property: impl ::core::convert::Into<
+            crate::system::func_2::Func_2<
+                crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+                f32,
+            >,
         >,
-        default_value: f32,
-        source: crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
-    ) -> f32;
+        default_value: impl ::core::convert::Into<f32>,
+    ) -> (
+        f32,
+        crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::ui::ilayoutelement_interface::ILayoutElement_Interface,
+            >::uninit();
+            let __ret = {
+                __LayoutUtility_unity2_raw::get_layout_property_2(
+                    ::core::convert::Into::into(rect),
+                    ::core::convert::Into::into(property),
+                    ::core::convert::Into::into(default_value),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-layoututility")]
+pub mod prelude {
+    pub use super::ILayoutUtility;
+    pub use super::LayoutUtility;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

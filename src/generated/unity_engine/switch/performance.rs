@@ -9,7 +9,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -18,14 +18,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Performance_Debug_HudMode {
+    pub struct Performance_CpuBoostMode {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Performance_Debug_HudMode {
+    impl ::unity2::ClassIdentity for Performance_CpuBoostMode {
         const NAMESPACE: &'static str = "UnityEngine.Switch";
 
-        const NAME: &'static str = "Performance.Debug.HudMode";
+        const NAME: &'static str = "Performance.CpuBoostMode";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,7 +34,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Performance_Debug_HudMode {
+    impl ::unity2::IlType for Performance_CpuBoostMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -43,21 +43,13 @@ mod __types {
         }
     }
 
-    impl Performance_Debug_HudMode {
-        pub fn none() -> Self {
+    impl Performance_CpuBoostMode {
+        pub fn normal() -> Self {
             Self { value: 0 }
         }
 
-        pub fn basic() -> Self {
+        pub fn fast_load() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn memory() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn gpu_counters() -> Self {
-            Self { value: 3 }
         }
     }
 
@@ -114,12 +106,7 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Performance_Debug {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
-    #[parent(crate::system::object::Object)]
-    pub struct Performance {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -128,14 +115,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Performance_CpuBoostMode {
+    pub struct Performance_Debug_HudMode {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Performance_CpuBoostMode {
+    impl ::unity2::ClassIdentity for Performance_Debug_HudMode {
         const NAMESPACE: &'static str = "UnityEngine.Switch";
 
-        const NAME: &'static str = "Performance.CpuBoostMode";
+        const NAME: &'static str = "Performance.Debug.HudMode";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -144,7 +131,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Performance_CpuBoostMode {
+    impl ::unity2::IlType for Performance_Debug_HudMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -153,51 +140,338 @@ mod __types {
         }
     }
 
-    impl Performance_CpuBoostMode {
-        pub fn normal() -> Self {
+    impl Performance_Debug_HudMode {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn fast_load() -> Self {
+        pub fn basic() -> Self {
             Self { value: 1 }
         }
+
+        pub fn memory() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn gpu_counters() -> Self {
+            Self { value: 3 }
+        }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
+    #[parent(crate::system::object::Object)]
+    pub struct Performance {}
 }
 
 #[cfg(feature = "unity_engine-switch-performance-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-switch-performance")]
-#[::unity2::methods]
-impl Performance_Debug {
-    #[doc = "`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]
-    #[method(name = "SetHUDMode", args = 1)]
-    pub fn set_hud_mode(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Performance_Debug_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hud_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_Debug_HudMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance_Debug as ::unity2::ClassIdentity>::class(),
+                "SetHUDMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance_Debug as ::unity2::ClassIdentity>::NAME,
+                    "SetHUDMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hud_mode(
         mode: crate::unity_engine::switch::performance::Performance_Debug_HudMode,
-    ) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hud_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "unity_engine-switch-performance")]
-#[::unity2::methods]
+impl Performance_Debug {
+    #[doc = "`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]
+    pub fn set_hud_mode(
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
+        >,
+    ) -> () {
+        unsafe {
+            __Performance_Debug_unity2_raw::set_hud_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-performance")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Performance_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cpu_boost_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_CpuBoostMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance as ::unity2::ClassIdentity>::class(),
+                "SetCpuBoostMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance as ::unity2::ClassIdentity>::NAME,
+                    "SetCpuBoostMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cpu_boost_mode(
+        mode: crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_cpu_boost_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cpu_boost_mode_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_CpuBoostMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance as ::unity2::ClassIdentity>::class(),
+                "SetCpuBoostMode_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance as ::unity2::ClassIdentity>::NAME,
+                    "SetCpuBoostMode_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_cpu_boost_mode_internal(
+        mode: crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_cpu_boost_mode_internal::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance as ::unity2::ClassIdentity>::class(),
+                "get_mode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance as ::unity2::ClassIdentity>::NAME,
+                    "get_mode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mode(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mode :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance as ::unity2::ClassIdentity>::class(),
+                "GetMode_Internal",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance as ::unity2::ClassIdentity>::NAME,
+                    "GetMode_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mode_internal(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mode_internal :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-performance")]
 impl Performance {
     #[doc = "`SetCpuBoostMode(crate::unity_engine::switch::performance::Performance_CpuBoostMode)` overload"]
-    #[method(name = "SetCpuBoostMode", args = 1)]
     pub fn set_cpu_boost_mode(
-        mode: crate::unity_engine::switch::performance::Performance_CpuBoostMode,
-    ) -> ();
-
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+        >,
+    ) -> () {
+        unsafe {
+            __Performance_unity2_raw::set_cpu_boost_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetCpuBoostMode_Internal(crate::unity_engine::switch::performance::Performance_CpuBoostMode)` overload"]
-    #[method(name = "SetCpuBoostMode_Internal", args = 1)]
     pub fn set_cpu_boost_mode_internal(
-        mode: crate::unity_engine::switch::performance::Performance_CpuBoostMode,
-    ) -> ();
-
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::switch::performance::Performance_CpuBoostMode,
+        >,
+    ) -> () {
+        unsafe {
+            __Performance_unity2_raw::set_cpu_boost_mode_internal(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`get_mode()` overload"]
-    #[method(name = "get_mode", args = 0)]
-    pub fn get_mode() -> crate::unity_engine::switch::performance::Performance_PerformanceMode;
-
+    pub fn get_mode() -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
+        unsafe { __Performance_unity2_raw::get_mode(::core::option::Option::None) }
+    }
     #[doc = "`GetMode_Internal()` overload"]
-    #[method(name = "GetMode_Internal", args = 0)]
     pub fn get_mode_internal(
-    ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode;
+    ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
+        unsafe { __Performance_unity2_raw::get_mode_internal(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-performance")]
+pub mod prelude {
+    pub use super::IPerformance;
+    pub use super::IPerformance_Debug;
+    pub use super::Performance;
+    pub use super::Performance_CpuBoostMode;
+    pub use super::Performance_Debug;
+    pub use super::Performance_Debug_HudMode;
+    pub use super::Performance_PerformanceMode;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

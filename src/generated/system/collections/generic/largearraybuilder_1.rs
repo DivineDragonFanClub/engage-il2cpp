@@ -74,11 +74,22 @@ impl<T0: ::unity2::ClassIdentity> LargeArrayBuilder_1<T0> {
     #[method(name = "ToArray", args = 0)]
     pub fn to_array(self) -> ::unity2::Array<T0>;
 
-    #[doc = "`TryMove(::unity2::Array<T0>)` overload"]
+    #[doc = "`TryMove(*mut::unity2::Array<T0>)` overload"]
     #[method(name = "TryMove", args = 1)]
-    pub fn try_move(self, array: ::unity2::Array<T0>) -> bool;
+    pub fn try_move(self, array: *mut ::unity2::Array<T0>) -> bool;
 
     #[doc = "`AllocateBuffer()` overload"]
     #[method(name = "AllocateBuffer", args = 0)]
     pub fn allocate_buffer(self) -> ();
+}
+
+#[cfg(feature = "system-collections-generic-largearraybuilder_1")]
+pub mod prelude {
+    pub use super::LargeArrayBuilder_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
 }

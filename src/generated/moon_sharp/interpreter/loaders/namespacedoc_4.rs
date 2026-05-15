@@ -15,3 +15,12 @@ mod __types {
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-namespacedoc_4-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-namespacedoc_4")]
+pub mod prelude {
+    pub use super::INamespaceDoc_4;
+    pub use super::NamespaceDoc_4;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

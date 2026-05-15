@@ -257,3 +257,16 @@ impl<T0: ::unity2::ClassIdentity> CapabilityBase_1<T0> {
         this
     }
 }
+
+#[cfg(feature = "app-capabilitybase_1")]
+pub mod prelude {
+    pub use super::CapabilityBase_1;
+    pub use super::ICapabilityBase_1;
+    pub use super::ICapabilityBase_1Methods;
+    pub use crate::app::capabilitydefinition::ICapabilityDefinition;
+    #[cfg(feature = "app-capabilitydefinition")]
+    pub use crate::app::capabilitydefinition::ICapabilityDefinitionMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

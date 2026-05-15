@@ -71,3 +71,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
         this
     }
 }
+
+#[cfg(feature = "tm_pro-fastaction_3")]
+pub mod prelude {
+    pub use super::FastAction_3;
+    pub use super::IFastAction_3;
+    pub use super::IFastAction_3Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

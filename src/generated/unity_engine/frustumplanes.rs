@@ -44,3 +44,14 @@ mod __types {
 
 #[cfg(feature = "unity_engine-frustumplanes-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-frustumplanes")]
+pub mod prelude {
+    pub use super::FrustumPlanes;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

@@ -60,3 +60,17 @@ mod __types {
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontfeaturelookupflags-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontfeaturelookupflags")]
+pub mod prelude {
+    pub use super::FontFeatureLookupFlags;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::r#enum::IEnum;
+    #[cfg(feature = "system-r#enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+}

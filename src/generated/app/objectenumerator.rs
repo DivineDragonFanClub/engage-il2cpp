@@ -18,93 +18,1040 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-objectenumerator")]
-#[::unity2::methods]
-impl ObjectEnumerator {
-    #[doc = "`FindByName(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindByName", args = 2)]
-    pub fn find_by_name(
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ObjectEnumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByName",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_name(
         name: ::unity2::Il2CppString,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`FindByNameImpl(::unity2::Il2CppString, crate::unity_engine::scene_management::scene::Scene)` overload"]
-    #[method(name = "FindByNameImpl", args = 2)]
-    pub fn find_by_name_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_name::get_offset() as isize),
+        );
+        inner(name, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_name_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::scene::Scene as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByNameImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByNameImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_name_impl(
+        this: ObjectEnumerator,
         name: ::unity2::Il2CppString,
         scene: crate::unity_engine::scene_management::scene::Scene,
-    ) -> ();
-
-    #[doc = "`FindByNameImpl(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindByNameImpl", args = 2)]
-    pub fn find_by_name_impl_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            ::unity2::Il2CppString,
+            crate::unity_engine::scene_management::scene::Scene,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_name_impl::get_offset() as isize),
+        );
+        inner(this, name, scene, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_name_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByNameImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByNameImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_name_impl_2(
+        this: ObjectEnumerator,
         name: ::unity2::Il2CppString,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`FindByLayer(i32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindByLayer", args = 2)]
-    pub fn find_by_layer(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_name_impl_2::get_offset() as isize),
+        );
+        inner(this, name, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_layer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByLayer",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByLayer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_layer(
         layer: i32,
         root: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`FindByLayer(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindByLayer", args = 2)]
-    pub fn find_by_layer_2(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_layer::get_offset() as isize),
+        );
+        inner(layer, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_layer_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByLayer",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByLayer",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_layer_2(
         layer: ::unity2::Il2CppString,
         root: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`FindByLayerImpl(i32, crate::unity_engine::scene_management::scene::Scene)` overload"]
-    #[method(name = "FindByLayerImpl", args = 2)]
-    pub fn find_by_layer_impl(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_layer_2::get_offset() as isize),
+        );
+        inner(layer, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_layer_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::scene::Scene as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByLayerImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByLayerImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_layer_impl(
+        this: ObjectEnumerator,
         layer: i32,
         scene: crate::unity_engine::scene_management::scene::Scene,
-    ) -> ();
-
-    #[doc = "`FindByLayerImpl(i32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindByLayerImpl", args = 2)]
-    pub fn find_by_layer_impl_2(
-        self,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            i32,
+            crate::unity_engine::scene_management::scene::Scene,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_layer_impl::get_offset() as isize),
+        );
+        inner(this, layer, scene, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_by_layer_impl_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindByLayerImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindByLayerImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_by_layer_impl_2(
+        this: ObjectEnumerator,
         layer: i32,
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`FindParent(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindParent", args = 1)]
-    pub fn find_parent(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            i32,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_by_layer_impl_2::get_offset() as isize),
+        );
+        inner(this, layer, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindParent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindParent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_parent(
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`FindParentImpl(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "FindParentImpl", args = 1)]
-    pub fn find_parent_impl(self, transform: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`FindChild(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "FindChild", args = 1)]
-    pub fn find_child(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_parent::get_offset() as isize),
+        );
+        inner(game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_parent_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindParentImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindParentImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_parent_impl(
+        this: ObjectEnumerator,
+        transform: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_parent_impl::get_offset() as isize),
+        );
+        inner(this, transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_child {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindChild",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindChild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_child(
         game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`FindChildImpl(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "FindChildImpl", args = 1)]
-    pub fn find_child_impl(self, transform: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`SetActive(bool)` overload"]
-    #[method(name = "SetActive", args = 1)]
-    pub fn set_active(self, enabled: bool) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`Dump()` overload"]
-    #[method(name = "Dump", args = 0)]
-    pub fn dump(self) -> crate::app::objectenumerator::ObjectEnumerator;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_child::get_offset() as isize),
+        );
+        inner(game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_child_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "FindChildImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "FindChildImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find_child_impl(
+        this: ObjectEnumerator,
+        transform: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find_child_impl::get_offset() as isize),
+        );
+        inner(this, transform, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "SetActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: ObjectEnumerator,
+        enabled: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_active::get_offset() as isize),
+        );
+        inner(this, enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "Dump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump(
+        this: ObjectEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        let inner: extern "C" fn(
+            ObjectEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::objectenumerator::ObjectEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dump::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ObjectEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ObjectEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
+
+#[cfg(feature = "app-objectenumerator")]
+impl ObjectEnumerator {
+    #[doc = "`FindByName(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_by_name(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            __ObjectEnumerator_unity2_raw::find_by_name(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindByLayer(i32, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_by_layer(
+        layer: impl ::core::convert::Into<i32>,
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            __ObjectEnumerator_unity2_raw::find_by_layer(
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(root),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindByLayer(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_by_layer_2(
+        layer: impl ::core::convert::Into<::unity2::Il2CppString>,
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            __ObjectEnumerator_unity2_raw::find_by_layer_2(
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(root),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindParent(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_parent(
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            __ObjectEnumerator_unity2_raw::find_parent(
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindChild(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn find_child(
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            __ObjectEnumerator_unity2_raw::find_child(
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-objectenumerator")]
+pub trait IObjectEnumeratorMethods: IObjectEnumerator {
+    #[doc = "`FindByNameImpl(::unity2::Il2CppString, crate::unity_engine::scene_management::scene::Scene)` overload"]
+    fn find_by_name_impl(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        scene: impl ::core::convert::Into<crate::unity_engine::scene_management::scene::Scene>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_by_name_impl(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(scene),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindByNameImpl(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn find_by_name_impl_2(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_by_name_impl_2(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindByLayerImpl(i32, crate::unity_engine::scene_management::scene::Scene)` overload"]
+    fn find_by_layer_impl(
+        self,
+        layer: impl ::core::convert::Into<i32>,
+        scene: impl ::core::convert::Into<crate::unity_engine::scene_management::scene::Scene>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_by_layer_impl(
+                __receiver,
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(scene),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindByLayerImpl(i32, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn find_by_layer_impl_2(
+        self,
+        layer: impl ::core::convert::Into<i32>,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_by_layer_impl_2(
+                __receiver,
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindParentImpl(crate::unity_engine::transform::Transform)` overload"]
+    fn find_parent_impl(
+        self,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_parent_impl(
+                __receiver,
+                ::core::convert::Into::into(transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindChildImpl(crate::unity_engine::transform::Transform)` overload"]
+    fn find_child_impl(
+        self,
+        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::find_child_impl(
+                __receiver,
+                ::core::convert::Into::into(transform),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(
+        self,
+        enabled: impl ::core::convert::Into<bool>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    pub fn set_enable<M0: ::unity2::IlType + ::core::marker::Copy>(
+        self,
+        enabled: impl ::core::convert::Into<bool>,
+    ) -> crate::app::objectenumerator::ObjectEnumerator {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "SetEnable",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                "SetEnable",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(
+                ObjectEnumerator,
+                bool,
+                ::unity2::OptionalMethod,
+            ) -> crate::app::objectenumerator::ObjectEnumerator =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn is_component<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> bool {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <ObjectEnumerator as ::unity2::ClassIdentity>::class(),
+                "IsComponent",
+                0,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <ObjectEnumerator as ::unity2::ClassIdentity>::NAME,
+                "IsComponent",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let __f: extern "C" fn(ObjectEnumerator, ::unity2::OptionalMethod) -> bool =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`Dump()` overload"]
+    fn dump(self) -> crate::app::objectenumerator::ObjectEnumerator {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::dump(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ObjectEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ObjectEnumerator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-objectenumerator")]
+impl<__T: IObjectEnumerator> IObjectEnumeratorMethods for __T {}
 
 #[cfg(feature = "app-objectenumerator")]
 impl ObjectEnumerator {
@@ -120,4 +1067,17 @@ impl ObjectEnumerator {
         <Self as IObjectEnumeratorMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-objectenumerator")]
+pub mod prelude {
+    pub use super::IObjectEnumerator;
+    pub use super::IObjectEnumeratorMethods;
+    pub use super::ObjectEnumerator;
+    pub use crate::system::collections::generic::list_1::IList_1;
+    #[cfg(feature = "system-collections-generic-list_1")]
+    pub use crate::system::collections::generic::list_1::IList_1Methods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

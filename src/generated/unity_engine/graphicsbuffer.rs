@@ -18,3 +18,12 @@ mod __types {
 
 #[cfg(feature = "unity_engine-graphicsbuffer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-graphicsbuffer")]
+pub mod prelude {
+    pub use super::GraphicsBuffer;
+    pub use super::IGraphicsBuffer;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}

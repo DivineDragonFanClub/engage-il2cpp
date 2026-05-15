@@ -36,3 +36,12 @@ impl<T0: ::unity2::ClassIdentity> GlobalLinkedListNodeCache_1<T0> {
         node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
     ) -> ();
 }
+
+#[cfg(feature = "unity_engine-resource_management-util-globallinkedlistnodecache_1")]
+pub mod prelude {
+    pub use super::GlobalLinkedListNodeCache_1;
+    pub use super::IGlobalLinkedListNodeCache_1;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+}
